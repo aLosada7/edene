@@ -1,0 +1,17 @@
+$space-values-line : (110, 150) !default;
+
+$space-prefixes-line : (line : line-height) !default;
+
+@mixin make-spaces-line() {
+
+  @each $attr-short,
+  $attr-long in $space-prefixes-line {
+    @each $value in $space-values-line {
+      .#{$attr-short}-#{$value} {
+        #{$attr-long}: #{$value}#{'%'};
+      }
+    }
+  }
+}
+
+@include make-spaces-line();

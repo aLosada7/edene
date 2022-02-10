@@ -1,0 +1,80 @@
+import { Meta, Preview } from '@storybook/addon-docs';
+import { transitions } from '../../../src/foundations/animation';
+
+<Meta
+    title="Documentation/Foundations/Transitions"
+    parameters={{ previewTabs: { canvas: { hidden: true } } }}
+/>
+
+# Icons
+
+## Usage
+
+Transitions are exported from foundations
+
+## List of available animations
+
+### Short
+
+<div
+    id="transition-short"
+    style={{
+        width: '100px',
+        height: '100px',
+        backgroundColor: 'red',
+        transition: 'transform ' + transitions.short,
+    }}
+>
+    {' '}
+</div>
+<button
+    style={{ margin: '1rem 0 2rem' }}
+    onClick={() => {
+        document.getElementById('transition-short').style.transform =
+            'translateX(500px)';
+    }}
+>
+    Transition short
+</button>
+
+<div
+    id="transition-medium"
+    style={{
+        width: '100px',
+        height: '100px',
+        backgroundColor: 'blue',
+        transition: 'transform ' + transitions.medium,
+    }}
+>
+    {' '}
+</div>
+<button
+    style={{ margin: '1rem 0 2rem' }}
+    onClick={() => {
+        document.getElementById('transition-medium').style.transform =
+            'translateX(500px)';
+    }}
+>
+    Transition medium
+</button>
+
+<div
+    id="transition-long"
+    style={{
+        width: '100px',
+        height: '100px',
+        backgroundColor: 'green',
+        transition: 'transform ' + transitions.long,
+    }}
+>
+    {' '}
+</div>
+<button
+    style={{ margin: '1rem 0 2rem' }}
+    onClick={() => {
+        document.getElementById('transition-long').style.transform =
+            'translateX(500px)';
+    }}
+>
+    Transition long
+</button>

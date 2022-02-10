@@ -1,0 +1,29 @@
+@import 'partials/media-queries';
+
+@import 'partials/colors';
+@import 'partials/font-weight';
+@import 'partials/grid';
+@import 'partials/line';
+@import 'partials/section';
+@import 'partials/size';
+@import 'partials/dimensions';
+@import 'partials/spacing';
+@import 'partials/tags';
+@import 'partials/text';
+@import 'partials/visibility';
+
+// TODO: Revise
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+    border-width: 0px;
+    border-style: solid;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+}

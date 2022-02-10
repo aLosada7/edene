@@ -1,0 +1,15 @@
+.btn-group {
+  position: relative;
+  display: inline-flex;
+}
+
+.dropdown-menu {
+  visibility: hidden;
+  opacity: 0.5;
+  transition: all 0.35s;
+}
+
+.dropdown-menu.open {
+  visibility: visible;
+  opacity: 1;
+}

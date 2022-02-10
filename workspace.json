@@ -1,0 +1,8 @@
+{
+    "version": 2,
+    "projects": {
+        "dana": "libs/dana",
+        "dana-labs": "libs/dana-labs",
+        "dana-template": "apps/dana-template"
+    }
+}

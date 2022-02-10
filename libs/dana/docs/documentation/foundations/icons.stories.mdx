@@ -1,0 +1,224 @@
+import { Meta, Preview } from '@storybook/addon-docs';
+import {
+    SvgLinkedin,
+    SvgGithub,
+    SvgArrowRight,
+    SvgEyeStrike,
+    SvgEye,
+    SvgPlus,
+    SvgMinus,
+    SvgChevronDown,
+    SvgChevronLeft,
+    SvgChevronRight,
+    SearchIcon,
+    SvgBell,
+    SvgGrid3x3GapFill,
+    SvgSuccess,
+    SvgCaution,
+    SvgValidated,
+    SvgGraduation,
+    CloseIcon,
+} from '../../../src/foundations/icons';
+import { Container, Row, Col, Text } from '../../../src';
+
+<Meta
+    title="Documentation/Foundations/Icons"
+    parameters={{ previewTabs: { canvas: { hidden: true } } }}
+/>
+
+# Icons
+
+## Usage
+
+Import an icon directly from **@dana/icons**. For example:
+
+```typescript
+import { SvgLinkedin } from '@dana/icons';
+```
+
+An icon allow the following parameters:
+
+-   size: The size of the icon: Possible values are: **'xsmall' | 'small' | 'medium' | 'large' | any number**
+
+<Preview>
+    <SvgGithub size="large" />
+</Preview>
+
+<Preview>
+    <SvgGithub size="48" />
+</Preview>
+
+## List of available icons
+
+<div style={{ display: 'flex', flexWrap: 'wrap', margin: '0px-7em' }}>
+    <div
+        style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'Col',
+            margin: '1rem',
+        }}
+    >
+        <SvgLinkedin size="large" />
+        <span style={{ fontSize: 12 }}>SvgLinkedin</span>
+    </div>
+    <div
+        style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'Col',
+            margin: '1rem',
+        }}
+    >
+        <SvgGithub size="large" />
+        <span style={{ fontSize: 12 }}>SvgGithub</span>
+    </div>
+    <div
+        style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'Col',
+            margin: '1rem',
+        }}
+    >
+        <SvgChevronDown size="large" />
+        <span style={{ fontSize: 12 }}>SvgChevronDown</span>
+    </div>
+    <div
+        style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'Col',
+            margin: '1rem',
+        }}
+    >
+        <SvgChevronLeft size="large" />
+        <span style={{ fontSize: 12 }}>SvgChevronLeft</span>
+    </div>
+    <div
+        style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'Col',
+            margin: '1rem',
+        }}
+    >
+        <SvgChevronRight size="large" />
+        <span style={{ fontSize: 12 }}>SvgChevronRight</span>
+    </div>
+    <div
+        style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'Col',
+            margin: '1rem',
+        }}
+    >
+        <SvgEyeStrike size="large" />
+        <span style={{ fontSize: 12 }}>SvgEyeStrike</span>
+    </div>
+    <div
+        style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'Col',
+            margin: '1rem',
+        }}
+    >
+        <SvgEye size="large" />
+        <span style={{ fontSize: 12 }}>SvgEye</span>
+    </div>
+    <div
+        style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'Col',
+            margin: '1rem',
+        }}
+    >
+        <SvgPlus size="large" />
+        <span style={{ fontSize: 12 }}>SvgPlus</span>
+    </div>
+    <div
+        style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'Col',
+            margin: '1rem',
+        }}
+    >
+        <SvgMinus size="large" />
+        <span style={{ fontSize: 12 }}>SvgMinus</span>
+    </div>
+    <div
+        style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'Col',
+            margin: '1rem',
+        }}
+    >
+        <SvgBell size="large" />
+        <span style={{ fontSize: 12 }}>SvgBell</span>
+    </div>
+    <div
+        style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'Col',
+            margin: '1rem',
+        }}
+    >
+        <SvgGrid3x3GapFill size="large" />
+        <span style={{ fontSize: 12 }}>SvgGrid3x3GapFill</span>
+    </div>
+</div>
+
+<Container>
+    <Row>
+        <Col sm={12} lg={4} align="center" direction="column">
+            <SvgArrowRight size="large" />
+            <Text mt={12}>SvgArrowRight</Text>
+        </Col>
+        <Col sm={12} lg={4} align="center" direction="column">
+            <SvgCaution size="large" />
+            <Text mt={12}>SvgCaution</Text>
+        </Col>
+    </Row>
+</Container>
+
+<Container>
+    <Row>
+        <Col sm={12} lg={4} align="center" direction="column">
+            <SvgSuccess size="large" />
+            <Text mt={12}>SvgSuccess</Text>
+        </Col>
+        <Col sm={12} lg={4} align="center" direction="column">
+            <SvgValidated size="large" />
+            <Text mt={12}>SvgValidated</Text>
+        </Col>
+        <Col sm={12} lg={4} align="center" direction="column">
+            <SvgGraduation size="large" />
+            <Text mt={12}>SvgGraduation</Text>
+        </Col>
+        <Col sm={12} lg={4} align="center" direction="column">
+            <CloseIcon size="large" />
+            <Text mt={12}>CloseIcon</Text>
+        </Col>
+        <Col sm={12} lg={4} align="center" direction="column">
+            <SearchIcon size="large" />
+            <Text mt={12}>SearchIcon</Text>
+        </Col>
+    </Row>
+</Container>

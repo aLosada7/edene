@@ -1,0 +1,9 @@
+.is-visibile-desktop {
+  display: block;
+}
+
+.is-hidden-mobile {
+  @media only screen and (max-width: $bp-large) {
+    display: none;
+  }
+}

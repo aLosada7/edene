@@ -1,0 +1,21 @@
+$dimension-values : (0, 50, 100, 150, 200, 250, 350, 400, 450, 500, 550, 600, 650, 700,
+  750, 800, 850, 900, 950, 1000) !default;
+
+// width and height shorthands
+$dimension-prefixes : (w : width, h : height) !default;
+
+@mixin make-dimensions() {
+
+  @each $attr-short,
+  $attr-long in $dimension-prefixes {
+    @each $value in $dimension-values {
+      .#{$attr-short}-#{$value} {
+        #{$attr-long}: #{$value}#{'px'};
+        min-#{$attr-long}: #{$value}#{'px'} !important;
+        max-#{$attr-long}: #{$value}#{'px'} !important;
+      }
+    }
+  }
+}
+
+@include make-dimensions();

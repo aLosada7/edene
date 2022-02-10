@@ -1,0 +1,64 @@
+{
+    "root": "apps/dana-template",
+    "sourceRoot": "apps/dana-template/src",
+    "projectType": "application",
+    "targets": {
+        "build": {
+            "executor": "@nrwl/web:build",
+            "outputs": ["{options.outputPath}"],
+            "defaultConfiguration": "production",
+            "options": {
+                "outputPath": "dist/apps/dana-template",
+                "index": "apps/dana-template/src/index.html",
+                "baseHref": "/",
+                "main": "apps/dana-template/src/main.tsx",
+                "polyfills": "apps/dana-template/src/polyfills.ts",
+                "tsConfig": "apps/dana-template/tsconfig.app.json",
+                "assets": [
+                    "apps/dana-template/src/favicon.ico",
+                    "apps/dana-template/src/assets"
+                ],
+                "styles": [],
+                "scripts": [],
+                "webpackConfig": "@nrwl/react/plugins/webpack"
+            },
+            "configurations": {
+                "production": {
+                    "fileReplacements": [
+                        {
+                            "replace": "apps/dana-template/src/environments/environment.ts",
+                            "with": "apps/dana-template/src/environments/environment.prod.ts"
+                        }
+                    ],
+                    "optimization": true,
+                    "outputHashing": "all",
+                    "sourceMap": false,
+                    "namedChunks": false,
+                    "extractLicenses": true,
+                    "vendorChunk": false
+                }
+            }
+        },
+        "serve": {
+            "executor": "@nrwl/web:dev-server",
+            "options": {
+                "buildTarget": "dana-template:build",
+                "hmr": true
+            },
+            "configurations": {
+                "production": {
+                    "buildTarget": "dana-template:build:production",
+                    "hmr": false
+                }
+            }
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "outputs": ["{options.outputFile}"],
+            "options": {
+                "lintFilePatterns": ["apps/dana-template/**/*.{ts,tsx,js,jsx}"]
+            }
+        }
+    },
+    "tags": []
+}
