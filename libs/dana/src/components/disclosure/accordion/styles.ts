@@ -47,6 +47,7 @@ export const button = () => css`
     border: none;
     text-align: left;
     color: black;
+    border-radius: 0;
 
     :hover {
         background-color: ${background.secondary};

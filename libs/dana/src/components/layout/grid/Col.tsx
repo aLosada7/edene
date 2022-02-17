@@ -6,9 +6,9 @@ type Align = '' | 'center' | 'vertical-center' | 'horizontal-center';
 export type IColumnDirection = 'row' | 'column';
 
 export interface ColumnProps {
-    sm: ColSize;
+    sm?: ColSize;
     md?: ColSize | null;
-    lg: ColSize;
+    lg?: ColSize | null;
     xl?: ColSize | null;
     verticalStack?: number;
     horizontalStack?: number;
@@ -18,9 +18,9 @@ export interface ColumnProps {
 }
 
 export const Col = ({
-    sm,
+    sm = 24,
     md = null,
-    lg,
+    lg = null,
     xl = null,
     verticalStack = 0,
     horizontalStack = 0,
