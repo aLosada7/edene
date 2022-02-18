@@ -15,11 +15,11 @@ const fontSizes = [12, 14, 16, 18, 20, 24, 28, 34, 42, 50, 70];
 
 const fonts = {
     titlepiece: 'GT Guardian Titlepiece, Georgia, serif',
-    headlineSerif: '"TT Interphases Variable", Arial, Helvetica, sans-serif',
+    headlineSerif: 'Merriweather, Arial, sans-serif',
     bodySerif:
         'GuardianTextEgyptian, Guardian Text Egyptian Web, Georgia, serif',
-    bodySans:
-        '-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+    bodySans: 'Lato, Arial, sans-serif',
+    // 'Lato', Arial, sans-serif;
     // 'Guardian Text Sans Web, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif',
 };
 

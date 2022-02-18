@@ -9,7 +9,6 @@ import {
     TextInput,
     Textarea,
     Button,
-    whiteColor,
 } from '@dana';
 import { contactCard } from './styles';
 
@@ -20,7 +19,9 @@ export function ContactForm() {
                 <CardBody>
                     <Row>
                         <Col sm={24} lg={8}>
-                            Column 1
+                            <Text size="h3" mt={4}>
+                                Column 1
+                            </Text>
                         </Col>
                         <Col sm={24} lg={16} direction="column" align="center">
                             <Row>
@@ -34,30 +35,20 @@ export function ContactForm() {
                                 </Col>
                             </Row>
                             <Form>
-                                <Container noPadding>
+                                <Container pv={0} mt={4}>
                                     <Row>
                                         <Col sm={24} lg={12}>
-                                            <TextInput
-                                                label="Name"
-                                                cssLabelOverrides={whiteColor}
-                                            />
+                                            <TextInput label="Name" />
                                         </Col>
                                         <Col sm={24} lg={12}>
-                                            <TextInput
-                                                label="Email"
-                                                cssLabelOverrides={whiteColor}
-                                            />
+                                            <TextInput label="Email" />
                                         </Col>
                                     </Row>
                                     <Row>
                                         <Col sm={24} lg={24}>
-                                            <Textarea
-                                                label="Comments"
-                                                cssLabelOverrides={whiteColor}
-                                            ></Textarea>
+                                            <Textarea label="Comments"></Textarea>
                                         </Col>
                                     </Row>
-                                    {/* Form Actions */}
                                     <Row>
                                         <Col sm={24} lg={24}>
                                             <Button>Button</Button>

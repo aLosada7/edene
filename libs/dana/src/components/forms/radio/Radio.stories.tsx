@@ -1,6 +1,6 @@
 import { Radio, RadioProps } from './Radio';
-import { asChromaticStory } from '../../../../lib/story-intents';
-import type { Story } from '../../../../lib/storybook-emotion-10-fixes';
+import { asChromaticStory } from '../../../lib/story-intents';
+import type { Story } from '../../../lib/storybook-emotion-10-fixes';
 
 export default {
     title: 'Components/Forms/Radio',

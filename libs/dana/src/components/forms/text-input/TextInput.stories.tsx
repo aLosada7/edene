@@ -1,6 +1,6 @@
 import { TextInput, TextInputProps } from './TextInput';
-import { asPlayground, asChromaticStory } from '../../../../lib/story-intents';
-import type { Story } from '../../../../lib/storybook-emotion-10-fixes';
+import { asPlayground, asChromaticStory } from '../../../lib/story-intents';
+import type { Story } from '../../../lib/storybook-emotion-10-fixes';
 import { useState } from 'react';
 
 export default {

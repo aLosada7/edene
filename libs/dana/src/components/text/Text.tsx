@@ -3,12 +3,11 @@ import { flexText, text, textColor } from './styles';
 import { Color, PaletteColor } from '../../foundations/palette';
 import useThemeContext from '../../foundations/theme/useThemeContext';
 
-export type IFontWeight = 'medium';
-export type IFontSize = 'sm' | 'md' | 'lg' | 'h3';
+export type IFontSize = 'xxsm' | 'sm' | 'md' | 'lg' | 'h3' | 'h4' | 'h5';
 export type ITextAlign = 'inherit' | 'left' | 'center' | 'right';
 export interface TextProps {
     mt?: number;
-    weight?: IFontWeight;
+    weight?: number;
     size?: IFontSize;
     color?: Color | PaletteColor;
     align?: ITextAlign;
@@ -19,7 +18,7 @@ export interface TextProps {
 
 export const Text = ({
     mt = 0,
-    weight = 'medium',
+    weight = 0,
     size = 'lg',
     color = 'primary',
     align = 'inherit',

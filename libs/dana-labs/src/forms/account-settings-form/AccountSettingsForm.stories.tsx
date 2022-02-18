@@ -27,7 +27,7 @@ export const AccountSettings = () => (
             <Col sm={24} md={8} lg={8}>
                 <Text size="h3">Personal Info</Text>
             </Col>
-            <Col sm={24} md={16} lg={16} verticalStack={6}>
+            <Col sm={24} md={16} lg={16} verticalStack={2}>
                 <TextInput label="Name" />
 
                 <TextInput label="Email" required />
@@ -44,11 +44,15 @@ export const AccountSettings = () => (
         </Row>
         <Row py={4}>
             <Col sm={24} md={8} lg={8}></Col>
-            <Col sm={24} md={16} lg={16} horizontalStack={2}>
+            <Col sm={24} md={16} lg={16} horizontalStack={4}>
                 <Button color="teal" onClick={action('onSubmit')}>
                     Save
                 </Button>
-                <Button variant="outline" onClick={action('onCancel')}>
+                <Button
+                    variant="outline"
+                    color="gray"
+                    onClick={action('onCancel')}
+                >
                     Cancel
                 </Button>
             </Col>

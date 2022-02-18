@@ -36,7 +36,7 @@ export default ({ ...props }: LayoutProps) => {
                     [Template]
                 </HeaderName>
                 <SideNav
-                    isFixedNav
+                    width={64}
                     aria-label="Side navigation"
                     isChildOfHeader={true}
                     expanded={isSideNavExpanded}

@@ -1,7 +1,7 @@
 import useHover from '../../../hooks/useHover';
 import { Container, Text } from '../..';
-import { asChromaticStory } from '../../../../lib/story-intents';
-import type { Story } from '../../../../lib/storybook-emotion-10-fixes';
+import { asChromaticStory } from '../../../lib/story-intents';
+import type { Story } from '../../../lib/storybook-emotion-10-fixes';
 import { useRef } from 'react';
 import { Tooltip } from './Tooltip';
 

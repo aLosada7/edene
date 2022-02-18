@@ -1,26 +1,35 @@
 import React from 'react';
+import styled from '@emotion/styled';
 import { Container, ContainerProps } from './Container';
-import { asChromaticStory } from '../../../../lib/story-intents';
-import type { Story } from '../../../../lib/storybook-emotion-10-fixes';
+import { asChromaticStory } from '../../../lib/story-intents';
+import type { Story } from '../../../lib/storybook-emotion-10-fixes';
 import { Col } from './Col';
 import { Row } from './Row';
+import { css } from '@emotion/react';
 
 export default {
     title: 'Components/Layout/Grid',
     component: Container,
 };
 
+const col = css`
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    background-color: rgba(86, 61, 124, 0.15);
+    border: 1px solid rgba(86, 61, 124, 0.2);
+`;
+
 export const ThreeCols: Story<ContainerProps> = (args: ContainerProps) => (
     <Container>
         <Row>
-            <Col sm={24} lg={8}>
-                <p>One of three columns</p>
+            <Col cssOverrides={col} sm={24} lg={8}>
+                One of three columns
             </Col>
-            <Col sm={24} lg={8}>
-                <p>One of three columns</p>
+            <Col cssOverrides={col} sm={24} lg={8}>
+                One of three columns
             </Col>
-            <Col sm={24} lg={8}>
-                <p>One of three columns</p>
+            <Col cssOverrides={col} sm={24} lg={8}>
+                One of three columns
             </Col>
         </Row>
     </Container>
@@ -34,22 +43,22 @@ export const TwoAndThreeCols: Story<ContainerProps> = (
 ) => (
     <Container>
         <Row>
-            <Col md={12}>
-                <p>One of two columns</p>
+            <Col cssOverrides={col} md={12}>
+                One of two columns
             </Col>
-            <Col md={12}>
-                <p>One of two columns</p>
+            <Col cssOverrides={col} md={12}>
+                One of two columns
             </Col>
         </Row>
         <Row>
-            <Col lg={8}>
-                <p>One of three columns</p>
+            <Col cssOverrides={col} lg={8}>
+                One of three columns
             </Col>
-            <Col lg={8}>
-                <p>One of three columns</p>
+            <Col cssOverrides={col} lg={8}>
+                One of three columns
             </Col>
-            <Col lg={8}>
-                <p>One of three columns</p>
+            <Col cssOverrides={col} lg={8}>
+                One of three columns
             </Col>
         </Row>
     </Container>
@@ -59,17 +68,17 @@ asChromaticStory(TwoAndThreeCols);
 export const FourCols: Story<ContainerProps> = (args: ContainerProps) => (
     <Container>
         <Row>
-            <Col lg={12}>
-                <p>One of two columns</p>
+            <Col cssOverrides={col} lg={12}>
+                One of two columns
             </Col>
-            <Col lg={12}>
-                <p>One of two columns</p>
+            <Col cssOverrides={col} lg={12}>
+                One of two columns
             </Col>
-            <Col lg={12}>
-                <p>One of two columns</p>
+            <Col cssOverrides={col} lg={12}>
+                One of two columns
             </Col>
-            <Col lg={12}>
-                <p>One of two columns</p>
+            <Col cssOverrides={col} lg={12}>
+                One of two columns
             </Col>
         </Row>
     </Container>
@@ -77,36 +86,30 @@ export const FourCols: Story<ContainerProps> = (args: ContainerProps) => (
 asChromaticStory(TwoAndThreeCols);
 
 export const RowsAndColumns: Story<ContainerProps> = (args: ContainerProps) => (
-    <Container pv={16}>
+    <Container>
         <Row>
-            <Col md={12}>
-                <p>
-                    Pero que pasa niño un texto con un poco de longitud dale
-                    dale dale dale dale
-                </p>
+            <Col cssOverrides={col} md={12}>
+                One of two columns
             </Col>
             <Col md={12} direction="column">
-                <Container>
+                <>
                     <Row>
-                        <Col md={12}>
-                            <p>
-                                Pero que pasa niño un texto con un poco de
-                                longitud dale dale dale dale dale
-                            </p>
+                        <Col cssOverrides={col} md={12}>
+                            One of two columns
                         </Col>
-                        <Col md={12}>
-                            <p>texto</p>
+                        <Col cssOverrides={col} md={12}>
+                            One of two columns
                         </Col>
                     </Row>
                     <Row>
-                        <Col md={12}>
-                            <p>Photo</p>
+                        <Col cssOverrides={col} md={12}>
+                            One of two columns
                         </Col>
-                        <Col md={12}>
-                            <p>texto</p>
+                        <Col cssOverrides={col} md={12}>
+                            One of two columns
                         </Col>
                     </Row>
-                </Container>
+                </>
             </Col>
         </Row>
     </Container>
@@ -115,17 +118,17 @@ asChromaticStory(TwoAndThreeCols);
 
 export const FourColsWithoutContainer: Story<ContainerProps> = () => (
     <Row>
-        <Col md={12}>
-            <p>One of two columns</p>
+        <Col cssOverrides={col} md={12}>
+            One of two columns
         </Col>
-        <Col md={12}>
-            <p>One of two columns</p>
+        <Col cssOverrides={col} md={12}>
+            One of two columns
         </Col>
-        <Col md={12}>
-            <p>One of two columns</p>
+        <Col cssOverrides={col} md={12}>
+            One of two columns
         </Col>
-        <Col md={12}>
-            <p>One of two columns</p>
+        <Col cssOverrides={col} md={12}>
+            One of two columns
         </Col>
     </Row>
 );

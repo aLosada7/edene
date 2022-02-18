@@ -178,6 +178,18 @@ export const altFill = {
 };
 
 export const colorsPalette = {
+    black: {
+        default: {
+            background: '#FCFCFC',
+            color: '#1C1E20',
+            hover: '#485963',
+        },
+        primary: {
+            background: '#FCFCFC',
+            color: '#1C1E20',
+            hover: '#485963',
+        },
+    },
     teal: {
         primary: {
             background: 'rgb(48, 144, 142)',

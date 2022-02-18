@@ -13,6 +13,7 @@ export const badge = (color: IBadgeColor, variant: string) => css`
     white-space: nowrap;
     vertical-align: baseline;
     border-radius: 0.25rem;
+    width: fit-content;
 
     ${variant === 'success' &&
     `

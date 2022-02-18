@@ -27,6 +27,7 @@ export const headerName = ({ theme = defaultTheme }) => css`
     font-weight: 400;
     line-height: 1.28572;
     letter-spacing: 0.16px;
+    -webkit-font-smoothing: antialiased;
     display: flex;
     height: 100%;
     align-items: center;

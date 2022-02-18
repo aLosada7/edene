@@ -1,3 +1,4 @@
+import { Image } from '../../image';
 import { cardImage } from './styles';
 
 export interface CardImageProps {
@@ -6,5 +7,5 @@ export interface CardImageProps {
 }
 
 export const CardImage = ({ src, alt, ...props }: CardImageProps) => {
-    return <img src={src} alt={alt} css={cardImage} />;
+    return <Image src={src} alt={alt} cssOverrides={cardImage} />;
 };

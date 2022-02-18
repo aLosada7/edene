@@ -4,7 +4,7 @@ import React from 'react';
 import { Container, Row } from '../..';
 import { Button, ButtonProps } from './Button';
 import ButtonGroup from './ButtonGroup';
-import { StoryHStack } from '../../../../lib/general-story-components';
+import { StoryHStack } from '../../../lib/general-story-components';
 
 export default {
     component: Button,

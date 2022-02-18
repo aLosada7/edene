@@ -1,12 +1,15 @@
 import { css } from '@emotion/react';
+import { defaultTheme } from 'libs/dana/src/foundations/theme/defaultTheme';
+import { textSans } from 'libs/dana/src/foundations/typography/api';
 import { background } from '../../../foundations';
 import { focusHalo } from '../../../foundations/accesibility';
 import { transitions } from '../../../foundations/animation';
 import { from } from '../../../foundations/mq';
 
-export const sidenav = ({ expanded, isChildOfHeader }: any) => css`
-    position: fixed;
+export const sidenav = ({ width, expanded, isChildOfHeader }: any) => css`
     z-index: 8000;
+    max-width: 100%;
+    width: 100%;
     top: 0;
     bottom: 0;
     left: 0;
@@ -15,13 +18,17 @@ export const sidenav = ({ expanded, isChildOfHeader }: any) => css`
     height: 100%;
     flex-direction: column;
     flex: 1 1 150px; // stretching (ocupy all the space) flex-grow flex-shrink flex-basis
-    background-color: white;
+    background-color: transparent;
 
-    ${(expanded || !isChildOfHeader) &&
-    `width: 16rem;
-    max-width: 16rem;`}
+    ${width !== 0 &&
+    (expanded || !isChildOfHeader) &&
+    `position: fixed;
+    width: calc(${width} * 0.25rem);
+    max-width: calc(${width} * 0.25rem)`}
 
-    ${from.desktop} {
+    ${width === 0 && `width: 100%;`}
+
+    ${from.desktop && width !== 0} {
         width: 16rem;
         max-width: 16rem;
     }
@@ -33,7 +40,7 @@ export const sideNavDivider = css`
     background-color: #e0e0e0;
 `;
 
-export const sidenavIcon = css`
+export const sideNavWithIcon = css`
     display: flex;
     flex: 0 0 1rem;
     align-items: center;
@@ -46,18 +53,18 @@ export const navItems = css`
     overflow: hidden;
     list-style-type: none;
     flex: 1 1 0%;
-    padding: 1rem 0 0;
+    padding: 0;
+    margin: 0;
     overflow-y: auto;
 `;
 
 export const navMenuLink = css`
-    display: inline-block;
+    width: 100%;
     padding: 0;
     border: 0;
     appearance: none;
     background: none;
     cursor: pointer;
-    width: 100%;
     font-size: 0.875rem;
     font-weight: 600;
     line-height: 1.28572;
@@ -65,7 +72,7 @@ export const navMenuLink = css`
     outline: 2 px solid transparent;
     outline-offset: -2px;
     display: flex;
-    height: 2rem;
+    min-height: 2rem;
     align-items: center;
     padding: 0 1rem;
     color: #525252;
@@ -74,10 +81,7 @@ export const navMenuLink = css`
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-
-    :hover {
-        background-color: ${background.secondary};
-    }
+    white-space: nowrap;
 
     &:focus {
         ${focusHalo};
@@ -113,22 +117,57 @@ export const chevronIconUp = css`
     }
 `;
 
-export const navItem = css`
+export const navItem = (
+    { theme = defaultTheme },
+    isActive: boolean,
+    activeColor: string | null,
+    hoverColor: string | null
+) => css`
     overflow: hidden;
     width: auto;
     height: auto;
+
+    background-color: ${theme.sideNav.background};
+
+    ${isActive &&
+    (activeColor
+        ? `background-color: ${activeColor}`
+        : `background-color: ${theme.sideNav.active}`)};
+
+    ${isActive} {
+        :hover {
+            background-color: ${hoverColor ? hoverColor : theme.sideNav.hover};
+        }
+    }
 `;
 
-export const navItemActive = (expanded: boolean) => css`
-    button {
+export const sideNavPrincipal = () => css`
+    margin-bottom: 0.5rem;
+
+    span {
+        ${textSans.xxsmall({ fontWeight: 'bold' })};
+        color: rgb(82, 82, 82);
+        text-transform: uppercase;
+    }
+`;
+
+export const navItemActive = (
+    expanded: boolean,
+    activeColor?: string | null,
+    hideIcon?: boolean
+) => css`
+    button,
+    a {
         position: relative;
 
-        &[aria-expanded='false'] {
-            background-color: ${background.secondary};
-        }
+        ${!expanded &&
+        !activeColor &&
+        `background-color: ${background.secondary};`}
 
         ${!expanded &&
-        `:before {
+        !hideIcon &&
+        `
+        :before {
             position: absolute;
             top: 0;
             bottom: 0;
@@ -138,19 +177,23 @@ export const navItemActive = (expanded: boolean) => css`
             content: '';
         }`}
     }
+
+    button[aria-expanded='false'] {
+        background-color: ${background.secondary};
+    }
 `;
 
 export const navLink = css`
     ${navMenuLink}
 
+    width: inherit;
+    justify-content: space-between;
+
     text-decoration: none;
     font-family: Arial;
     font-stretch: 100%;
     word-spacing: 0px;
-
-    :hover {
-        background-color: ${background.secondary};
-    }
+    -webkit-font-smoothing: antialiased;
 
     &:focus {
         ${focusHalo};
@@ -163,22 +206,7 @@ export const navMenuSubLink = css`
     height: 2rem;
     min-height: 2rem;
     position: relative;
-    padding-left: 5.5rem;
-
-    span {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        color: #525252;
-        font-size: 0.875rem;
-        letter-spacing: 0.1px;
-        line-height: 1.25rem;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        font-weight: 400;
-    }
+    padding-left: 2rem;
 
     &[aria-current='page'] {
         background-color: ${background.secondary};
@@ -197,6 +225,20 @@ export const navMenuSubLink = css`
             font-weight: 600;
         }
     }
+`;
+
+export const navMenuSubLinkText = css`
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #525252;
+    letter-spacing: 0.1px;
+    line-height: 1.25rem;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-weight: 400;
 `;
 
 const expandedBodyStyles = css`
@@ -245,4 +287,8 @@ export const navOverlay = css`
         height: 0;
         opacity: 0;
     }
+`;
+
+export const sideNavBadge = css`
+    min-width: 25px;
 `;

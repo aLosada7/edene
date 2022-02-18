@@ -1,3 +1,5 @@
+import { SerializedStyles } from '@emotion/react';
+import useThemeContext from 'libs/dana/src/foundations/theme/useThemeContext';
 import {
     Children,
     cloneElement,
@@ -16,7 +18,6 @@ import {
     navItemActive,
     navMenuLink,
     navSubmenuIcon,
-    sidenavIcon,
 } from './styles';
 
 export interface SideNavMenuProps
@@ -25,16 +26,25 @@ export interface SideNavMenuProps
     children: ReactElement[];
     title: string;
     isActive?: boolean;
+    /** Received from parent */
+    activeColor?: string | null;
+    /** Received from parent */
+    hoverColor?: string | null;
+    cssOverrides?: SerializedStyles | SerializedStyles[];
     icon?: React.ReactElement;
 }
 
 export const SideNavMenu = ({
-    children,
     title,
     isActive = false,
     icon,
+    activeColor = null,
+    hoverColor = null,
+    cssOverrides,
+    children,
     ...props
 }: SideNavMenuProps) => {
+    const theme = useThemeContext();
     const [expanded, setExpanded] = useState(false);
     const collapse = () => setExpanded(false);
     const expand = () => setExpanded(true);
@@ -44,18 +54,19 @@ export const SideNavMenu = ({
     }
 
     return (
-        <li css={[navItem, isActive ? navItemActive(expanded) : null]}>
+        <li
+            css={[
+                navItem(theme, isActive, activeColor, hoverColor),
+                isActive && navItemActive(expanded),
+            ]}
+        >
             <button
                 type="button"
                 aria-expanded={expanded}
                 onClick={handleClick}
-                css={[navMenuLink]}
+                css={[navMenuLink, cssOverrides]}
             >
-                {icon ? (
-                    <div css={sidenavIcon}>
-                        {cloneElement(icon, { size: 'large' })}
-                    </div>
-                ) : null}
+                {icon && cloneElement(icon, { size: 'large' })}
                 <span>{title}</span>
                 <div
                     css={[
@@ -71,7 +82,7 @@ export const SideNavMenu = ({
                 hidden={!expanded}
             >
                 {Children.map(children, (child) => {
-                    return cloneElement(child, {});
+                    return cloneElement(child, { activeColor, hoverColor });
                 })}
             </ul>
         </li>

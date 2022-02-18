@@ -1,5 +1,5 @@
 import useThemeContext from '../../../foundations/theme/useThemeContext';
-import { cloneElement } from 'react';
+import { ButtonHTMLAttributes, cloneElement } from 'react';
 import { Badge } from '../../data-display/badge';
 import {
     headerGlobalAction,
@@ -10,7 +10,8 @@ import {
 
 export type TooltipAlignment = 'end';
 
-export interface HeaderGlobalActionProps {
+export interface HeaderGlobalActionProps
+    extends ButtonHTMLAttributes<HTMLButtonElement> {
     /**
      * An assistive text to show aria-label value.
      * By default its value is true:
@@ -35,12 +36,12 @@ export const HeaderGlobalAction = ({
                 headerGlobalAction(theme),
                 showAriaLabel ? headerGlobalActionAriaLabel : null,
             ]}
-            aria-label={props['aria-label']}
+            {...props}
         >
             {showAriaLabel ? (
                 <div css={actionAssistiveText}>{props['aria-label']}</div>
             ) : null}
-            {cloneElement(children, { size: 'small' })}
+            {cloneElement(children, { size: 'xsmall' })}
             {badge ? (
                 <Badge text={badge.toString()} cssOverrides={headerIconBadge} />
             ) : null}

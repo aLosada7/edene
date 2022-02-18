@@ -1,5 +1,5 @@
 import { Story, Meta } from '@storybook/react';
-import { asChromaticStory } from '../../../../lib/story-intents';
+import { asChromaticStory } from '../../../lib/story-intents';
 import { Card, CardActions, CardBody, CardImage, CardProps } from '.';
 import { Badge, Container, Row, Col, Text, Button, Divider } from '../..';
 import {
@@ -24,9 +24,7 @@ export const ImageAndBody: Story<CardProps> = () => (
                     alt="Image Example"
                 ></CardImage>
                 <CardBody>
-                    <Text weight="medium" size="lg">
-                        Basics of Angular
-                    </Text>
+                    <Text size="lg">Basics of Angular</Text>
                     <Text mt={4}>
                         Introductory course for Angular and framework basics
                     </Text>
@@ -51,7 +49,7 @@ export const BodyAndActions: Story<CardProps> = (args) => (
                         <SvgValidated size="xsmall" color="rgb(22, 163, 74)" />
                     </Row>
 
-                    <Text mt={16} weight="medium" size="lg">
+                    <Text mt={16} size="lg">
                         Basics of Angular
                     </Text>
                     <Text mt={2} cssOverrides={cardDescription}>

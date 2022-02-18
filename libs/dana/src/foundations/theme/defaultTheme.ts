@@ -2,8 +2,8 @@ import { background, colorsPalette, fill, text } from '../palette';
 import { Theme } from './types';
 
 export const defaultTheme: Theme = {
-    title: 'garnet',
-    ...colorsPalette.garnet,
+    title: 'black',
+    ...colorsPalette.black,
     label: {
         text: text.inputLabel,
         optionalText: text.supporting,
@@ -15,6 +15,11 @@ export const defaultTheme: Theme = {
         headerGlobalAction: {
             fill: '#ffffff',
         },
+    },
+    sideNav: {
+        background: 'transparent',
+        active: 'transparent',
+        hover: '#e5e5e5',
     },
 };
 

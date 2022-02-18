@@ -1,40 +1,42 @@
-import { colorsPalette, from } from '@dana';
 import { css } from '@emotion/react';
-import { defaultTheme } from '../../foundations/theme/defaultTheme';
-import { IFontSize, IFontWeight, ITextAlign } from './Text';
+import {
+    colorsPalette,
+    defaultTheme,
+    headline,
+    textSans,
+} from '@dana-foundations';
+import { IFontSize, ITextAlign } from './Text';
 
 export const text = (
     mt: number,
-    weight: IFontWeight,
+    weight: number,
     size: IFontSize,
     text: ITextAlign
 ) => css`
     margin-top: calc(${mt} * 0.25rem);
 
-    ${weight === 'medium' && 'font-weight: 500;'}
-
-    ${size === 'sm' && 'font-size: 0.5rem;'}
-    ${size === 'md' && 'font-size: 0.75rem;'}
-    ${size === 'lg' && 'font-size: 1rem;'}
-
     // from bbc
-    ${size === 'h3' && 'font-size: 24px;'}
+    ${size === 'xxsm' && textSans.xxsmall({ fontWeight: 'regular' })}
+    ${size === 'sm' && textSans.small({ fontWeight: 'regular' })}
+    ${size === 'md' && textSans.medium({ fontWeight: 'regular' })}
+    ${size === 'lg' && textSans.large({ fontWeight: 'regular' })}
 
-    ${from.tablet} {
-        ${size === 'h3' && 'font-size: 28px;'}
-    }
+    ${size === 'h3' && headline.small({ fontWeight: 'bold' })}
+    ${size === 'h4' && headline.xxsmall({ fontWeight: 'bold' })}
+    ${size === 'h5' && headline.xxxsmall({ fontWeight: 'bold' })}
 
+    ${weight !== 0 && `weight: ${weight}`};
     text-align: ${text};
 `;
 
 export const textColor = ({ theme = defaultTheme }, color: string) => css`
-    ${color === 'primary' && `color: ${theme.primary.background}`}
+    ${color === 'primary' && `color: ${theme.primary.color}`}
 
-    ${color === 'default' && `color: ${theme.default.background}`}
+    ${color === 'default' && `color: ${theme.default.color}`}
 
     ${color !== 'primary' &&
     color !== 'default' &&
-    `color: ${(colorsPalette as any)[color].primary.background}`}
+    `color: ${(colorsPalette as any)[color].primary.color}`}
 `;
 
 export const flexText = css`

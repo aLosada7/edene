@@ -1,4 +1,7 @@
 const rootMain = require('../../../.storybook/main');
+const path = require('path');
+
+const toPath = (_path) => path.join(process.cwd(), _path);
 
 module.exports = {
     ...rootMain,
@@ -18,7 +21,13 @@ module.exports = {
             config = await rootMain.webpackFinal(config, { configType });
         }
 
-        // add your own webpack tweaks if needed
+        config.resolve.alias = {
+            ...config.resolve.alias,
+            '@emotion/core': toPath('node_modules/@emotion/react'),
+            // You should add this row
+            '@emotion/styled': toPath('node_modules/@emotion/styled'),
+            'emotion-theming': toPath('node_modules/@emotion/react'),
+        };
 
         return config;
     },

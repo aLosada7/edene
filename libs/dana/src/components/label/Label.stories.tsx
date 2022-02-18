@@ -1,6 +1,6 @@
 import { Label, LabelProps } from './Label';
-import { asPlayground, asChromaticStory } from '../../../lib/story-intents';
-import type { Story } from '../../../lib/storybook-emotion-10-fixes';
+import { asPlayground, asChromaticStory } from '../../lib/story-intents';
+import type { Story } from '../../lib/storybook-emotion-10-fixes';
 
 export default {
     title: 'Dana/Label',

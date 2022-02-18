@@ -31,3 +31,4 @@ export { SvgCaution } from './caution';
 
 // New Naming
 export { CloseIcon } from './close-icon';
+export { CartIcon } from './cart';

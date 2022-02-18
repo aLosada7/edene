@@ -4,8 +4,8 @@ import { defaultTheme } from '../../foundations/theme/defaultTheme';
 import { textSans } from '../../foundations/typography/api';
 
 export const label = css`
+    width: 100%;
     margin-bottom: 0.5rem;
-    margin-right: 0.75rem;
 `;
 
 export const labelText = ({ theme = defaultTheme }) => css`

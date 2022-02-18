@@ -1,6 +1,11 @@
-import { headline as headlineAsObj } from './api';
+import { headline as headlineAsObj, textSans as textSansAsObj } from './api';
 
-import { FontScaleArgs, FontScaleFunctionStr, HeadlineSizes } from './types';
+import {
+    FontScaleArgs,
+    FontScaleFunctionStr,
+    HeadlineSizes,
+    TextSansSizes,
+} from './types';
 
 import { objectStylesToString } from './object-styles-to-string';
 
@@ -37,4 +42,13 @@ const headline = Object.fromEntries(
     })
 ) as TypographyApi<HeadlineSizes>;
 
-export { headline };
+const textSans = Object.fromEntries(
+    Object.entries(textSansAsObj).map(([key, func]) => {
+        return [
+            key,
+            (options?: FontScaleArgs) => objectStylesToString(func(options)),
+        ];
+    })
+) as TypographyApi<TextSansSizes>;
+
+export { headline, textSans };

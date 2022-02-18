@@ -18,7 +18,7 @@ export const btn = ({ theme = defaultTheme }, size: IButtonSize) => css`
     letter-spacing: 0.16px;
     min-width: 2.5rem;
     height: 2.5rem;
-    border-radius: 0.5rem;
+    border-radius: 4px;
     cursor: pointer;
     outline: none;
     text-align: left;
@@ -49,7 +49,8 @@ export const btn = ({ theme = defaultTheme }, size: IButtonSize) => css`
 export const btnColor = (
     { theme = defaultTheme },
     color: string,
-    variant: IButtonVariant
+    variant: IButtonVariant,
+    isButtonBlock: boolean
 ) => css`
     ${color === 'primary' && buttonColorStyles(theme.primary, variant)}
 
@@ -57,19 +58,21 @@ export const btnColor = (
 
     ${color !== 'primary' &&
     color !== 'default' &&
-    buttonColorStyles((colorsPalette as any)[color].primary, variant)}
+    buttonColorStyles((colorsPalette as any)[color].primary, variant)};
+
+    ${isButtonBlock && `width: 100%;`}
 `;
 
 const buttonColorStyles = (kind: any, variant: string) => css`
     background-color: ${kind.background};
-    border: 1px solid ${kind.background};
+    border: 1px solid ${kind.color};
     color: ${kind.color};
     :hover {
         background-color: ${kind.hover};
     }
 
     ${variant === 'outline' &&
-    `background-color: white; color: ${kind.background}; :hover { background-color: transparent;}`}
+    `background-color: white; color: ${kind.color}; :hover { background-color: transparent;}`}
 `;
 
 const buttonIcon = css`

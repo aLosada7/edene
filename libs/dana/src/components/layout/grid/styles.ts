@@ -5,11 +5,26 @@ import { IRowAlign, IRowDirection } from './Row';
 
 export const gridContainer = (
     marginTop: number,
-    verticalPadding: number
+    verticalPadding: number,
+    horizontalPadding: number
 ) => css`
-    max-width: 99rem;
-    padding: 0 calc(${verticalPadding} * 0.25rem);
-    margin-top: calc(${marginTop} * 0.25rem);
+    max-width: 1224px;
+    margin-left: auto;
+    margin-right: auto;
+
+    padding-left: 6vw;
+    padding-right: 6vw;
+
+    ${from.tablet} {
+        padding-left: 3vw;
+        padding-right: 3vw;
+
+        ${verticalPadding !== 0 &&
+        `padding-top: calc(${verticalPadding} * 0.25rem); padding-bottom: calc(${verticalPadding} * 0.25rem);`}
+        ${horizontalPadding !== 0 &&
+        `padding-right: calc(${horizontalPadding} * 0.25rem); padding-left: calc(${horizontalPadding} * 0.25rem);`}
+        margin-top: calc(${marginTop} * 0.25rem);
+    }
 
     > *:not(:first-of-type) {
         margin-top: 1rem;
@@ -40,6 +55,7 @@ export const gridRow = (
 `;
 
 export const gridColumn = (
+    noPadding: boolean,
     direction: IColumnDirection,
     align: string,
     verticalStack: number,
@@ -48,14 +64,18 @@ export const gridColumn = (
     // For debugging purposes
     /* border: 1px solid red; */
     padding: 0 1rem;
+    ${noPadding && 'padding: 0'}
 
     ${(direction === 'column' || verticalStack !== 0) &&
     `flex-direction: column;`}
 
-    > *:not(:first-of-type) {
-        margin-top: calc(${verticalStack} * 0.25rem);
-        margin-left: calc(${horizontalStack} * 0.25rem);
-    }
+    ${verticalStack !== 0 &&
+    `> *:not(:first-of-type) {
+        margin-top: calc(${verticalStack} * 0.25rem);`}
+
+${horizontalStack !== 0 &&
+    `* { margin-right: calc(${horizontalStack} * 0.25rem);}`}
+
 
     ${gridColumnsAlign(align)}
 `;
@@ -66,8 +86,9 @@ const flexWidth = {
     6: '25%',
     8: '33.3%',
     12: '50%',
-    24: '100%',
     16: '66.6%',
+    18: '75%',
+    24: '100%',
 };
 
 export const gridColumnsAlign = (align: string) => css`

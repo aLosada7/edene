@@ -1,6 +1,6 @@
 import { Input, InputProps } from './Input';
-import type { Story } from '../../../../lib/storybook-emotion-10-fixes';
-import { asChromaticStory, asPlayground } from '../../../../lib/story-intents';
+import type { Story } from '../../../lib/storybook-emotion-10-fixes';
+import { asChromaticStory, asPlayground } from '../../../lib/story-intents';
 
 export default {
     title: 'Components/Forms/Input',

@@ -1,7 +1,7 @@
 import { Accordion, AccordionProps } from './index';
 import { Story } from '@storybook/react';
 import { AccordionRow } from './AccordionRow';
-import { asChromaticStory, asPlayground } from '../../../lib/story-intents';
+import { asChromaticStory, asPlayground } from '../../lib/story-intents';
 import { Container } from '..';
 
 export default {

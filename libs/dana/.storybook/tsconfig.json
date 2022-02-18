@@ -18,7 +18,6 @@
     "include": [
         "../src/**/*",
         "*.js",
-        "../lib",
         "../icons",
         "preview.tsx",
         "../setupTests.ts"

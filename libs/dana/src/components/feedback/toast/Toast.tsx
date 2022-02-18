@@ -1,4 +1,5 @@
-import { Button, CloseIcon } from '@dana';
+import { Button } from '@dana-components';
+import { CloseIcon } from '@dana-icons';
 import { ToastMessage, ToastOptions } from './ToastManager';
 import React, { useEffect } from 'react';
 import './styles.scss';

@@ -32,12 +32,6 @@ export interface InputProps
      * Only for radio buttons
      */
     checked?: boolean;
-    /**
-     * The contents of the text area. This is necessary when using the [controlled approach](https://reactjs.org/docs/forms.html#controlled-components) to form state management.
-     *
-     * _Note: if you pass the `value` prop, you MUST also pass an `onChange` handler, or the field will be rendered as read-only._
-     */
-    onChange?: ChangeEventHandler<HTMLInputElement>;
     leftIcon?: JSX.Element;
 }
 
@@ -48,7 +42,6 @@ export const Input = ({
     optional = false,
     error,
     success,
-    onChange,
     leftIcon,
     cssOverrides,
     ...props
@@ -80,7 +73,6 @@ export const Input = ({
                 aria-invalid={!!error}
                 aria-describedby={error || success ? descriptionId(id) : ''}
                 checked={checked}
-                onChange={onChange}
                 {...props}
             />
         </>

@@ -1,3 +1,4 @@
+import { SerializedStyles } from '@emotion/react';
 import { ReactElement } from 'react';
 import { gridRow } from './styles';
 
@@ -13,15 +14,21 @@ export interface RowProps {
     /** Vertical padding */
     py?: number;
     children?: ReactElement | ReactElement[];
+    cssOverrides?: SerializedStyles | SerializedStyles[];
 }
 
 export const Row = ({
-    children,
     align = '',
     direction = 'row',
     px = 0,
     py = 0,
+    children,
+    cssOverrides,
     ...props
 }: RowProps) => {
-    return <div css={() => gridRow(align, direction, px, py)}>{children}</div>;
+    return (
+        <div css={[gridRow(align, direction, px, py), cssOverrides]}>
+            {children}
+        </div>
+    );
 };

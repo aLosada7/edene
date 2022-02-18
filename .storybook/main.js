@@ -1,3 +1,23 @@
+const path = require('path');
+const fs = require('fs');
+const { merge } = require('webpack-merge');
+
+function getPackageDir(filepath) {
+    let currDir = path.dirname(require.resolve(filepath));
+    while (true) {
+        if (fs.existsSync(path.join(currDir, 'package.json'))) {
+            return currDir;
+        }
+        const { dir, root } = path.parse(currDir);
+        if (dir === root) {
+            throw new Error(
+                `Could not find package.json in the parent directories starting from ${filepath}.`
+            );
+        }
+        currDir = dir;
+    }
+}
+
 module.exports = {
     stories: [],
     addons: [
@@ -16,11 +36,15 @@ module.exports = {
         '@storybook/addon-actions',
         '@storybook/addon-measure',
     ],
-    // uncomment the property below if you want to apply some webpack config globally
-    // webpackFinal: async (config, { configType }) => {
-    //   // Make whatever fine-grained changes you need that should apply to all storybook configs
-
-    //   // Return the altered config
-    //   return config;
-    // },
+    webpackFinal: async (config) => {
+        return merge(config, {
+            resolve: {
+                alias: {
+                    '@emotion/core': getPackageDir('@emotion/react'),
+                    '@emotion/styled': getPackageDir('@emotion/styled'),
+                    'emotion-theming': getPackageDir('@emotion/react'),
+                },
+            },
+        });
+    },
 };

@@ -1,7 +1,7 @@
 import React from 'react';
 import { RadioGroup, RadioGroupProps, Radio } from '.';
-import { asChromaticStory } from '../../../../lib/story-intents';
-import type { Story } from '../../../../lib/storybook-emotion-10-fixes';
+import { asChromaticStory } from '../../../lib/story-intents';
+import type { Story } from '../../../lib/storybook-emotion-10-fixes';
 
 export default {
     title: 'Components/Forms/Radio',

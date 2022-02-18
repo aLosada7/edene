@@ -11,4 +11,5 @@ export interface Theme {
     accent?: ThemeMin;
     header?: any;
     label?: any;
+    sideNav?: any;
 }

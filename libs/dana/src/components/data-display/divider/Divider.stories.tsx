@@ -1,6 +1,6 @@
 import { Divider, DividerProps } from './Divider';
-import { asPlayground, asChromaticStory } from '../../../../lib/story-intents';
-import type { Story } from '../../../../lib/storybook-emotion-10-fixes';
+import { asPlayground, asChromaticStory } from '../../../lib/story-intents';
+import type { Story } from '../../../lib/storybook-emotion-10-fixes';
 import { Container } from '../..';
 
 export default {

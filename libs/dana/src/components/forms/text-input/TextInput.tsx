@@ -1,4 +1,4 @@
-import { InputHTMLAttributes } from 'react';
+import { ChangeEventHandler, InputHTMLAttributes } from 'react';
 import { SerializedStyles } from '@emotion/react';
 
 import {
@@ -58,6 +58,12 @@ export interface TextInputProps
      */
     value?: string;
     leftIcon?: JSX.Element;
+    /**
+     * The contents of the text area. This is necessary when using the [controlled approach](https://reactjs.org/docs/forms.html#controlled-components) to form state management.
+     *
+     * _Note: if you pass the `value` prop, you MUST also pass an `onChange` handler, or the field will be rendered as read-only._
+     */
+    onChange?: ChangeEventHandler<HTMLInputElement>;
     cssLabelOverrides?: SerializedStyles | SerializedStyles[];
 }
 
@@ -69,6 +75,7 @@ export const TextInput = ({
     error,
     success,
     leftIcon,
+    onChange,
     cssOverrides,
     cssLabelOverrides,
     ...props
@@ -110,6 +117,7 @@ export const TextInput = ({
                 success={success}
                 error={error}
                 leftIcon={leftIcon}
+                onChange={onChange}
                 css={(theme: any) => [
                     width ? widths[width] : widthFluid,
                     cssOverrides,

@@ -7,6 +7,7 @@ import {
     SideNav,
     SideNavProps,
     SideNavItems,
+    SideNavPrincipal,
     SideNavItem,
     SideNavMenu,
     SideNavMenuItem,
@@ -16,7 +17,6 @@ import {
     HeaderName,
     HeaderGlobalBar,
     HeaderGlobalAction,
-    SideNavLink,
     HeaderPanel,
     HeaderMenuButton,
 } from '.';
@@ -26,6 +26,7 @@ import {
     SvgGrid3x3GapFill,
     SearchIcon,
 } from '../../../foundations/icons';
+import { Badge } from '@dana';
 
 export default {
     component: SideNav,
@@ -39,54 +40,45 @@ const template = css`
 `;
 
 const main = css`
-    margin-left: 16rem;
+    margin-left: 4rem;
     padding: 2rem;
     background: #fff;
     will-change: margin-left;
 `;
 
+const sideNavHeader = css`
+    background-color: #fff;
+`;
+
 export const FixedSideNav: Story<SideNavProps> = () => (
     <div css={template}>
-        <SideNav isFixedNav aria-label="Side navigation">
+        <SideNav width={64} aria-label="Side navigation">
             <SideNavItems>
-                <SideNavMenu title="L0 menu">
-                    <SideNavMenuItem href="javascript:void(0)">
-                        L0 menu item
-                    </SideNavMenuItem>
-                    <SideNavMenuItem href="javascript:void(0)">
-                        L0 menu item
-                    </SideNavMenuItem>
-                    <SideNavMenuItem href="javascript:void(0)">
-                        L0 menu item
-                    </SideNavMenuItem>
-                </SideNavMenu>
-                <SideNavMenu title="L0 menu" isActive={true}>
-                    <SideNavMenuItem href="javascript:void(0)">
-                        L0 menu item
-                    </SideNavMenuItem>
-                    <SideNavMenuItem
-                        href="javascript:void(0)"
+                <SideNavPrincipal title="Principal">
+                    <SideNavMenu title="L0 menu">
+                        <SideNavMenuItem>L0 menu item</SideNavMenuItem>
+                        <SideNavMenuItem>L0 menu item</SideNavMenuItem>
+                        <SideNavMenuItem>L0 menu item</SideNavMenuItem>
+                    </SideNavMenu>
+                    <SideNavMenu title="L0 menu">
+                        <SideNavMenuItem>L0 menu item</SideNavMenuItem>
+                        <SideNavMenuItem>L0 menu item</SideNavMenuItem>
+                        <SideNavMenuItem>L0 menu item</SideNavMenuItem>
+                    </SideNavMenu>
+                    <SideNavMenu title="L0 menu">
+                        <SideNavMenuItem>L0 menu item</SideNavMenuItem>
+                        <SideNavMenuItem>L0 menu item</SideNavMenuItem>
+                        <SideNavMenuItem>L0 menu item</SideNavMenuItem>
+                    </SideNavMenu>
+                    <SideNavItem>Link</SideNavItem>
+                    <SideNavItem
+                        isActive
                         aria-current="page"
+                        badge={<Badge color="gray" text="7" />}
                     >
-                        L0 menu item
-                    </SideNavMenuItem>
-                    <SideNavMenuItem href="javascript:void(0)">
-                        L0 menu item
-                    </SideNavMenuItem>
-                </SideNavMenu>
-                <SideNavMenu title="L0 menu">
-                    <SideNavMenuItem href="javascript:void(0)">
-                        L0 menu item
-                    </SideNavMenuItem>
-                    <SideNavMenuItem href="javascript:void(0)">
-                        L0 menu item
-                    </SideNavMenuItem>
-                    <SideNavMenuItem href="javascript:void(0)">
-                        L0 menu item
-                    </SideNavMenuItem>
-                </SideNavMenu>
-                <SideNavItem href="javascript:void(0)">Link</SideNavItem>
-                <SideNavItem href="javascript:void(0)">Link</SideNavItem>
+                        Link
+                    </SideNavItem>
+                </SideNavPrincipal>
             </SideNavItems>
         </SideNav>
         <main css={main}>
@@ -97,47 +89,28 @@ export const FixedSideNav: Story<SideNavProps> = () => (
 
 export const FixedSideNavWDivider: Story<SideNavProps> = () => (
     <div css={template}>
-        <SideNav isFixedNav aria-label="Side navigation">
+        <SideNav width={64} aria-label="Side navigation">
             <SideNavItems>
                 <SideNavMenu title="L0 menu">
-                    <SideNavMenuItem href="javascript:void(0)">
-                        L0 menu item
-                    </SideNavMenuItem>
-                    <SideNavMenuItem href="javascript:void(0)">
-                        L0 menu item
-                    </SideNavMenuItem>
-                    <SideNavMenuItem href="javascript:void(0)">
-                        L0 menu item
-                    </SideNavMenuItem>
+                    <SideNavMenuItem>L0 menu item</SideNavMenuItem>
+                    <SideNavMenuItem>L0 menu item</SideNavMenuItem>
+                    <SideNavMenuItem>L0 menu item</SideNavMenuItem>
                 </SideNavMenu>
-                <SideNavMenu title="L0 menu" isActive={true}>
-                    <SideNavMenuItem href="javascript:void(0)">
+                <SideNavMenu title="L0 menu" isActive>
+                    <SideNavMenuItem>L0 menu item</SideNavMenuItem>
+                    <SideNavMenuItem aria-current="page">
                         L0 menu item
                     </SideNavMenuItem>
-                    <SideNavMenuItem
-                        href="javascript:void(0)"
-                        aria-current="page"
-                    >
-                        L0 menu item
-                    </SideNavMenuItem>
-                    <SideNavMenuItem href="javascript:void(0)">
-                        L0 menu item
-                    </SideNavMenuItem>
+                    <SideNavMenuItem>L0 menu item</SideNavMenuItem>
                 </SideNavMenu>
                 <SideNavMenu title="L0 menu">
-                    <SideNavMenuItem href="javascript:void(0)">
-                        L0 menu item
-                    </SideNavMenuItem>
-                    <SideNavMenuItem href="javascript:void(0)">
-                        L0 menu item
-                    </SideNavMenuItem>
-                    <SideNavMenuItem href="javascript:void(0)">
-                        L0 menu item
-                    </SideNavMenuItem>
+                    <SideNavMenuItem>L0 menu item</SideNavMenuItem>
+                    <SideNavMenuItem>L0 menu item</SideNavMenuItem>
+                    <SideNavMenuItem>L0 menu item</SideNavMenuItem>
                 </SideNavMenu>
                 <SideNavDivider />
-                <SideNavItem href="javascript:void(0)">Link</SideNavItem>
-                <SideNavItem href="javascript:void(0)">Link</SideNavItem>
+                <SideNavItem>Link</SideNavItem>
+                <SideNavItem>Link</SideNavItem>
             </SideNavItems>
         </SideNav>
         <main css={main}>
@@ -148,50 +121,27 @@ export const FixedSideNavWDivider: Story<SideNavProps> = () => (
 
 export const FixedSideNavWIcons: Story<SideNavProps> = () => (
     <div css={template}>
-        <SideNav isFixedNav aria-label="Side navigation">
+        <SideNav width={64} aria-label="Side navigation">
             <SideNavItems>
                 <SideNavMenu icon={<SvgEye />} title="L0 menu">
-                    <SideNavMenuItem href="javascript:void(0)">
-                        L0 menu item
-                    </SideNavMenuItem>
-                    <SideNavMenuItem href="javascript:void(0)">
-                        L0 menu item
-                    </SideNavMenuItem>
-                    <SideNavMenuItem href="javascript:void(0)">
-                        L0 menu item
-                    </SideNavMenuItem>
+                    <SideNavMenuItem>L0 menu item</SideNavMenuItem>
+                    <SideNavMenuItem>L0 menu item</SideNavMenuItem>
+                    <SideNavMenuItem>L0 menu item</SideNavMenuItem>
                 </SideNavMenu>
                 <SideNavMenu icon={<SvgEye />} title="L0 menu" isActive={true}>
-                    <SideNavMenuItem href="javascript:void(0)">
+                    <SideNavMenuItem>L0 menu item</SideNavMenuItem>
+                    <SideNavMenuItem aria-current="page">
                         L0 menu item
                     </SideNavMenuItem>
-                    <SideNavMenuItem
-                        href="javascript:void(0)"
-                        aria-current="page"
-                    >
-                        L0 menu item
-                    </SideNavMenuItem>
-                    <SideNavMenuItem href="javascript:void(0)">
-                        L0 menu item
-                    </SideNavMenuItem>
+                    <SideNavMenuItem>L0 menu item</SideNavMenuItem>
                 </SideNavMenu>
                 <SideNavMenu icon={<SvgEye />} title="L0 menu">
-                    <SideNavMenuItem href="javascript:void(0)">
-                        L0 menu item
-                    </SideNavMenuItem>
-                    <SideNavMenuItem href="javascript:void(0)">
-                        L0 menu item
-                    </SideNavMenuItem>
-                    <SideNavMenuItem href="javascript:void(0)">
-                        L0 menu item
-                    </SideNavMenuItem>
+                    <SideNavMenuItem>L0 menu item</SideNavMenuItem>
+                    <SideNavMenuItem>L0 menu item</SideNavMenuItem>
+                    <SideNavMenuItem>L0 menu item</SideNavMenuItem>
                 </SideNavMenu>
-                <SideNavLink icon={<SvgEye />} href="javascript:void(0)">
-                    Link
-                </SideNavLink>
-                <SideNavLink icon={<SvgEye />} href="javascript:void(0)">
-                    Link
-                </SideNavLink>
+                <SideNavItem icon={<SvgEye />}>Link</SideNavItem>
+                <SideNavItem icon={<SvgEye />}>Link</SideNavItem>
             </SideNavItems>
         </SideNav>
         <main css={main}>
@@ -265,50 +215,32 @@ export const HeaderBaseWSidenav: Story<HeaderProps> = () => {
                 [Library]
             </HeaderName>
             <SideNav
-                isFixedNav
+                width={64}
                 aria-label="Side navigation"
                 isChildOfHeader={true}
                 expanded={isSideNavExpanded}
+                cssOverrides={sideNavHeader}
             >
                 <SideNavItems>
                     <SideNavMenu title="L0 menu">
-                        <SideNavMenuItem href="javascript:void(0)">
-                            L0 menu item
-                        </SideNavMenuItem>
-                        <SideNavMenuItem href="javascript:void(0)">
-                            L0 menu item
-                        </SideNavMenuItem>
-                        <SideNavMenuItem href="javascript:void(0)">
-                            L0 menu item
-                        </SideNavMenuItem>
+                        <SideNavMenuItem>L0 menu item</SideNavMenuItem>
+                        <SideNavMenuItem>L0 menu item</SideNavMenuItem>
+                        <SideNavMenuItem>L0 menu item</SideNavMenuItem>
                     </SideNavMenu>
                     <SideNavMenu title="L0 menu" isActive={true}>
-                        <SideNavMenuItem href="javascript:void(0)">
+                        <SideNavMenuItem>L0 menu item</SideNavMenuItem>
+                        <SideNavMenuItem aria-current="page">
                             L0 menu item
                         </SideNavMenuItem>
-                        <SideNavMenuItem
-                            href="javascript:void(0)"
-                            aria-current="page"
-                        >
-                            L0 menu item
-                        </SideNavMenuItem>
-                        <SideNavMenuItem href="javascript:void(0)">
-                            L0 menu item
-                        </SideNavMenuItem>
+                        <SideNavMenuItem>L0 menu item</SideNavMenuItem>
                     </SideNavMenu>
                     <SideNavMenu title="L0 menu">
-                        <SideNavMenuItem href="javascript:void(0)">
-                            L0 menu item
-                        </SideNavMenuItem>
-                        <SideNavMenuItem href="javascript:void(0)">
-                            L0 menu item
-                        </SideNavMenuItem>
-                        <SideNavMenuItem href="javascript:void(0)">
-                            L0 menu item
-                        </SideNavMenuItem>
+                        <SideNavMenuItem>L0 menu item</SideNavMenuItem>
+                        <SideNavMenuItem>L0 menu item</SideNavMenuItem>
+                        <SideNavMenuItem>L0 menu item</SideNavMenuItem>
                     </SideNavMenu>
-                    <SideNavItem href="javascript:void(0)">Link</SideNavItem>
-                    <SideNavItem href="javascript:void(0)">Link</SideNavItem>
+                    <SideNavItem>Link</SideNavItem>
+                    <SideNavItem>Link</SideNavItem>
                 </SideNavItems>
             </SideNav>
             <HeaderGlobalBar>

@@ -4,6 +4,23 @@
     "projectType": "library",
     "tags": [],
     "targets": {
+        "build": {
+            "executor": "@nrwl/web:package",
+            "outputs": ["{options.outputPath}"],
+            "options": {
+                "outputPath": "dist/libs/dana",
+                "tsConfig": "libs/dana/tsconfig.lib.json",
+                "project": "libs/dana/package.json",
+                "entryFile": "libs/dana/src/index.ts",
+                "external": ["react/jsx-runtime"],
+                "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+                "assets": [{
+                    "glob": "libs/dana/README.md",
+                    "input": ".",
+                    "output": "."
+                }]
+            }
+        },
         "lint": {
             "executor": "@nrwl/linter:eslint",
             "outputs": ["{options.outputFile}"],

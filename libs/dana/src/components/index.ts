@@ -11,3 +11,4 @@ export * from './feedback';
 
 export * from './accordion';
 export * from './fade-in';
+export * from './image';
