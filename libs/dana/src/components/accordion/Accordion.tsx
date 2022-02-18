@@ -1,10 +1,10 @@
 import { Children, cloneElement, ReactElement, ReactNode } from 'react';
-import { Props } from '../../../helpers';
+import { Props } from '../../helpers';
 
 import { accordion } from './styles';
 
 export interface AccordionProps extends Props {
-    children: ReactElement[];
+    children: ReactElement | ReactElement[];
     /**
      * If toggle label has to be shown (only in desktop).
      */

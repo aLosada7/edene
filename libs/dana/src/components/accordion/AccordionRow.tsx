@@ -1,8 +1,8 @@
 import { css } from '@emotion/react';
 import { useState, HTMLAttributes } from 'react';
-import { visuallyHidden as _visuallyHidden } from '../../../foundations/accesibility';
-import { Props } from '../../../helpers/types';
-import { SvgChevronRight } from '../../../foundations/icons/chevron-right';
+import { visuallyHidden as _visuallyHidden } from '../../foundations/accesibility';
+import { Props } from '../../helpers/types';
+import { SvgChevronRight } from '../../foundations/icons/chevron-right';
 import {
     accordionRow,
     button,

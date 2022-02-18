@@ -1,11 +1,11 @@
 import React from 'react';
-import { Text } from '../..';
-import { asChromaticStory } from '../../../../lib/story-intents';
-import type { Story } from '../../../../lib/storybook-emotion-10-fixes';
+import { Text } from '..';
+import { asChromaticStory } from '../../../lib/story-intents';
+import type { Story } from '../../../lib/storybook-emotion-10-fixes';
 import { FadeIn } from './FadeIn';
 
 export default {
-    title: 'Components/Animations/FadeIn',
+    title: 'Animations/FadeIn',
     component: FadeIn,
 };
 

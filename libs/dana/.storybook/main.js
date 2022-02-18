@@ -7,7 +7,7 @@ module.exports = {
 
     stories: [
         ...rootMain.stories,
-        '../docs/**/*.stories.mdx',
+        '../src/docs/*.stories.mdx',
         '../src/components/**/*.stories.mdx',
         '../src/components/**/*.stories.@(ts|tsx|js|jsx)',
     ],

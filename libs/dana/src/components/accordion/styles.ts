@@ -1,11 +1,11 @@
 import { css } from '@emotion/react';
-import { background, neutral } from '../../../foundations';
-import { focusHalo, visuallyHidden } from '../../../foundations/accesibility';
-import { transitions } from '../../../foundations/animation';
-import { from, until } from '../../../foundations/mq';
-import { shadows } from '../../../foundations/shadows';
+import { background, neutral } from '../../foundations';
+import { focusHalo, visuallyHidden } from '../../foundations/accesibility';
+import { transitions } from '../../foundations/animation';
+import { from, until } from '../../foundations/mq';
+import { shadows } from '../../foundations/shadows';
 
-import { textSans } from '../../../foundations/typography/api';
+import { textSans } from '../../foundations/typography/api';
 
 export const accordion = (variant: string) => css`
     ${variant === 'bordered' &&

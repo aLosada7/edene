@@ -15,5 +15,12 @@
         "../**/*.spec.tsx",
         "../**/*.spec.jsx"
     ],
-    "include": ["../src/**/*", "*.js", "../lib", "../icons", "preview.tsx"]
+    "include": [
+        "../src/**/*",
+        "*.js",
+        "../lib",
+        "../icons",
+        "preview.tsx",
+        "../setupTests.ts"
+    ]
 }
