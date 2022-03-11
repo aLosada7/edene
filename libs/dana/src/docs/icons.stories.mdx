@@ -1,25 +1,33 @@
 import { Meta, Preview } from '@storybook/addon-docs';
+import { css } from '@emotion/react';
+
 import {
+    ArrowRightIcon,
+    TicketsIcon,
+    ValidIcon,
+    SuccessIcon,
     SvgLinkedin,
-    SvgGithub,
-    SvgArrowRight,
-    SvgEyeStrike,
-    SvgEye,
-    SvgPlus,
-    SvgMinus,
-    SvgChevronDown,
-    SvgChevronLeft,
-    SvgChevronRight,
-    SearchIcon,
-    SvgBell,
-    SvgGrid3x3GapFill,
-    SvgSuccess,
-    SvgCaution,
-    SvgValidated,
-    SvgGraduation,
+    GithubIcon,
+    EyeIcon,
+    EyeStrikeIcon,
     CloseIcon,
-} from '../foundations/icons';
+    CautionIcon,
+    GraduationIcon,
+    BellIcon,
+    CartIcon,
+    ClockIcon,
+    Grid3x3GapIcon,
+    LinkedinIcon,
+    ChevronDownIcon,
+    ChevronLeftIcon,
+    ChevronRightIcon,
+    SearchIcon,
+    MinusIcon,
+    PlusIcon,
+    FoodIcon,
+} from '@dana-icons';
 import { Container, Row, Col, Text } from '../components';
+import { StoryGridElement } from '../lib/general-story-components';
 
 <Meta
     title="Foundations/Icons"
@@ -38,187 +46,151 @@ import { SvgLinkedin } from '@dana/icons';
 
 An icon allow the following parameters:
 
--   size: The size of the icon: Possible values are: **'xsmall' | 'small' | 'medium' | 'large' | any number**
+-   size: The size of the icon: Possible values are: **'xsmall' | 'small' | 'medium' | 'large'**
 
 <Preview>
-    <SvgGithub size="large" />
+    <GithubIcon size="small" />
 </Preview>
 
 <Preview>
-    <SvgGithub size="48" />
+    <GithubIcon size="large" />
 </Preview>
 
 ## List of available icons
 
-<div style={{ display: 'flex', flexWrap: 'wrap', margin: '0px-7em' }}>
-    <div
-        style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'Col',
-            margin: '1rem',
-        }}
-    >
-        <SvgLinkedin size="large" />
-        <span style={{ fontSize: 12 }}>SvgLinkedin</span>
-    </div>
-    <div
-        style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'Col',
-            margin: '1rem',
-        }}
-    >
-        <SvgGithub size="large" />
-        <span style={{ fontSize: 12 }}>SvgGithub</span>
-    </div>
-    <div
-        style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'Col',
-            margin: '1rem',
-        }}
-    >
-        <SvgChevronDown size="large" />
-        <span style={{ fontSize: 12 }}>SvgChevronDown</span>
-    </div>
-    <div
-        style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'Col',
-            margin: '1rem',
-        }}
-    >
-        <SvgChevronLeft size="large" />
-        <span style={{ fontSize: 12 }}>SvgChevronLeft</span>
-    </div>
-    <div
-        style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'Col',
-            margin: '1rem',
-        }}
-    >
-        <SvgChevronRight size="large" />
-        <span style={{ fontSize: 12 }}>SvgChevronRight</span>
-    </div>
-    <div
-        style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'Col',
-            margin: '1rem',
-        }}
-    >
-        <SvgEyeStrike size="large" />
-        <span style={{ fontSize: 12 }}>SvgEyeStrike</span>
-    </div>
-    <div
-        style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'Col',
-            margin: '1rem',
-        }}
-    >
-        <SvgEye size="large" />
-        <span style={{ fontSize: 12 }}>SvgEye</span>
-    </div>
-    <div
-        style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'Col',
-            margin: '1rem',
-        }}
-    >
-        <SvgPlus size="large" />
-        <span style={{ fontSize: 12 }}>SvgPlus</span>
-    </div>
-    <div
-        style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'Col',
-            margin: '1rem',
-        }}
-    >
-        <SvgMinus size="large" />
-        <span style={{ fontSize: 12 }}>SvgMinus</span>
-    </div>
-    <div
-        style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'Col',
-            margin: '1rem',
-        }}
-    >
-        <SvgBell size="large" />
-        <span style={{ fontSize: 12 }}>SvgBell</span>
-    </div>
-    <div
-        style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'Col',
-            margin: '1rem',
-        }}
-    >
-        <SvgGrid3x3GapFill size="large" />
-        <span style={{ fontSize: 12 }}>SvgGrid3x3GapFill</span>
-    </div>
-</div>
-
-<Container>
+<Container mt={4}>
     <Row>
-        <Col sm={12} lg={4} align="center" direction="column">
-            <SvgArrowRight size="large" />
-            <Text mt={12}>SvgArrowRight</Text>
-        </Col>
-        <Col sm={12} lg={4} align="center" direction="column">
-            <SvgCaution size="large" />
-            <Text mt={12}>SvgCaution</Text>
-        </Col>
-    </Row>
-</Container>
-
-<Container>
-    <Row>
-        <Col sm={12} lg={4} align="center" direction="column">
-            <SvgSuccess size="large" />
-            <Text mt={12}>SvgSuccess</Text>
-        </Col>
-        <Col sm={12} lg={4} align="center" direction="column">
-            <SvgValidated size="large" />
-            <Text mt={12}>SvgValidated</Text>
-        </Col>
-        <Col sm={12} lg={4} align="center" direction="column">
-            <SvgGraduation size="large" />
-            <Text mt={12}>SvgGraduation</Text>
-        </Col>
-        <Col sm={12} lg={4} align="center" direction="column">
-            <CloseIcon size="large" />
-            <Text mt={12}>CloseIcon</Text>
-        </Col>
-        <Col sm={12} lg={4} align="center" direction="column">
-            <SearchIcon size="large" />
-            <Text mt={12}>SearchIcon</Text>
-        </Col>
+        <StoryGridElement>
+            <ArrowRightIcon />
+            <Text size="xsm" mt={2}>
+                ArrowRightIcon
+            </Text>
+        </StoryGridElement>
+        <StoryGridElement>
+            <TicketsIcon />
+            <Text size="xsm" mt={2}>
+                TicketsIcon
+            </Text>
+        </StoryGridElement>
+        <StoryGridElement>
+            <ValidIcon />
+            <Text size="xsm" mt={2}>
+                ValidIcon
+            </Text>
+        </StoryGridElement>
+        <StoryGridElement>
+            <SuccessIcon />
+            <Text size="xsm" mt={2}>
+                SuccessIcon
+            </Text>
+        </StoryGridElement>
+        <StoryGridElement>
+            <EyeIcon />
+            <Text size="xsm" mt={2}>
+                EyeIcon
+            </Text>
+        </StoryGridElement>
+        <StoryGridElement>
+            <EyeStrikeIcon />
+            <Text size="xsm" mt={2}>
+                EyeStrikeIcon
+            </Text>
+        </StoryGridElement>
+        <StoryGridElement>
+            <CloseIcon />
+            <Text size="xsm" mt={2}>
+                CloseIcon
+            </Text>
+        </StoryGridElement>
+        <StoryGridElement>
+            <CautionIcon />
+            <Text size="xsm" mt={2}>
+                CautionIcon
+            </Text>
+        </StoryGridElement>
+        <StoryGridElement>
+            <GraduationIcon />
+            <Text size="xsm" mt={2}>
+                GraduationIcon
+            </Text>
+        </StoryGridElement>
+        <StoryGridElement>
+            <GithubIcon />
+            <Text size="xsm" mt={2}>
+                GithubIcon
+            </Text>
+        </StoryGridElement>
+        <StoryGridElement>
+            <BellIcon />
+            <Text size="xsm" mt={2}>
+                BellIcon
+            </Text>
+        </StoryGridElement>
+        <StoryGridElement>
+            <CartIcon />
+            <Text size="xsm" mt={2}>
+                CartIcon
+            </Text>
+        </StoryGridElement>
+        <StoryGridElement>
+            <ClockIcon />
+            <Text size="xsm" mt={2}>
+                ClockIcon
+            </Text>
+        </StoryGridElement>
+        <StoryGridElement>
+            <Grid3x3GapIcon />
+            <Text size="xsm" mt={2}>
+                Grid3x3GapIcon
+            </Text>
+        </StoryGridElement>
+        <StoryGridElement>
+            <LinkedinIcon />
+            <Text size="xsm" mt={2}>
+                LinkedinIcon
+            </Text>
+        </StoryGridElement>
+        <StoryGridElement>
+            <ChevronDownIcon />
+            <Text size="xsm" mt={2}>
+                ChevronDownIcon
+            </Text>
+        </StoryGridElement>
+        <StoryGridElement>
+            <ChevronLeftIcon />
+            <Text size="xsm" mt={2}>
+                ChevronLeftIcon
+            </Text>
+        </StoryGridElement>
+        <StoryGridElement>
+            <SearchIcon />
+            <Text size="xsm" mt={2}>
+                SearchIcon
+            </Text>
+        </StoryGridElement>
+        <StoryGridElement>
+            <ChevronRightIcon />
+            <Text size="xsm" mt={2}>
+                ChevronRightIcon
+            </Text>
+        </StoryGridElement>
+        <StoryGridElement>
+            <MinusIcon />
+            <Text size="xsm" mt={2}>
+                MinusIcon
+            </Text>
+        </StoryGridElement>
+        <StoryGridElement>
+            <PlusIcon />
+            <Text size="xsm" mt={2}>
+                PlusIcon
+            </Text>
+        </StoryGridElement>
+        <StoryGridElement>
+            <FoodIcon />
+            <Text size="xsm" mt={2}>
+                FoodIcon
+            </Text>
+        </StoryGridElement>
     </Row>
 </Container>

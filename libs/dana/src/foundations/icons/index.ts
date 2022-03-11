@@ -1,34 +1,37 @@
 // social networks
-export { SvgGithub } from './github';
-export { SvgLinkedin } from './linkedin';
+export { GithubIcon } from './GithubIcon';
+export { LinkedinIcon } from './LinkedinIcon';
 
 // arrows
-export { SvgArrowRight } from './arrow-right';
+export { ArrowRightIcon } from './ArrowRightIcon';
 
 // chevron (without arrows)
-export { SvgChevronDown } from './chevron-down';
-export { SvgChevronLeft } from './chevron-left';
-export { SvgChevronRight } from './chevron-right';
+export { ChevronDownIcon } from './ChevronDownIcon';
+export { ChevronLeftIcon } from './ChevronLeftIcon';
+export { ChevronRightIcon } from './ChevronRightIcon';
 
 // eye
-export { SvgEyeStrike } from './eye-strike';
-export { SvgEye } from './eye';
-export { SvgGraduation } from './graduation';
+export { EyeStrikeIcon } from './EyeStrikeIcon';
+export { EyeIcon } from './EyeIcon';
+export { GraduationIcon } from './GraduationIcon';
 
 // signs
-export { SvgPlus } from './plus';
-export { SvgMinus } from './minus';
-export { SvgValidated } from './validated';
+export { PlusIcon } from './PlusIcon';
+export { MinusIcon } from './MinusIcon';
+export { ValidIcon } from './ValidIcon';
 
 // menu
-export { SearchIcon } from './search-icon';
-export { SvgBell } from './bell';
-export { SvgGrid3x3GapFill } from './grid-3x3-gap-fill';
+export { SearchIcon } from './SearchIcon';
+export { BellIcon } from './BellIcon';
+export { Grid3x3GapIcon } from './Grid3x3GapIcon';
 
 // forms
-export { SvgSuccess } from './success';
-export { SvgCaution } from './caution';
+export { SuccessIcon } from './SuccessIcon';
+export { CautionIcon } from './CautionIcon';
 
 // New Naming
-export { CloseIcon } from './close-icon';
-export { CartIcon } from './cart';
+export { CloseIcon } from './CloseIcon';
+export { CartIcon } from './CartIcon';
+export { ClockIcon } from './ClockIcon';
+export { TicketsIcon } from './TicketsIcon';
+export { FoodIcon } from './FoodIcon';
