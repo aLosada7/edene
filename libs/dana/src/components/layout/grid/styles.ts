@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import { from } from '../../../foundations/mq';
-import { IColumnDirection, ColSize } from './Col';
+import { IColumnDirection, ColSize, Align } from './Col';
 import { IRowAlign, IRowDirection } from './Row';
 
 export const gridContainer = (
@@ -15,7 +15,7 @@ export const gridContainer = (
     padding-left: 6vw;
     padding-right: 6vw;
 
-    ${from.tablet} {
+    ${from.phablet} {
         padding-left: 3vw;
         padding-right: 3vw;
 
@@ -55,16 +55,14 @@ export const gridRow = (
 `;
 
 export const gridColumn = (
-    noPadding: boolean,
     direction: IColumnDirection,
-    align: string,
+    align: Align,
     verticalStack: number,
     horizontalStack: number
 ) => css`
     // For debugging purposes
     /* border: 1px solid red; */
     padding: 0 1rem;
-    ${noPadding && 'padding: 0'}
 
     ${(direction === 'column' || verticalStack !== 0) &&
     `flex-direction: column;`}
@@ -74,7 +72,7 @@ export const gridColumn = (
         margin-top: calc(${verticalStack} * 0.25rem);`}
 
 ${horizontalStack !== 0 &&
-    `* { margin-right: calc(${horizontalStack} * 0.25rem);}`}
+    `> * { margin-right: calc(${horizontalStack} * 0.25rem);}`}
 
 
     ${gridColumnsAlign(align)}
@@ -82,30 +80,42 @@ ${horizontalStack !== 0 &&
 
 const flexWidth = {
     0: '0%',
+    2: '8.3%',
+    3: '12.45%',
     4: '16.6%',
     6: '25%',
     8: '33.3%',
     12: '50%',
     16: '66.6%',
     18: '75%',
+    20: '83.3%',
+    21: '87.45',
+    22: '91.6%',
     24: '100%',
 };
 
-export const gridColumnsAlign = (align: string) => css`
+export const gridColumnsAlign = (align: Align) => css`
     display: flex;
 
-    ${align === 'center'} {
+    ${align === 'center' &&
+    `
         justify-content: center;
-        align-items: center;
-    }
+        align-items: center;`}
 
-    ${align === 'vertical-center'} {
+    ${align === 'vertical-center' &&
+    `
         align-items: center;
-    }
+    `}
 
-    ${align === 'horizontal-center'} {
+    ${align === 'horizontal-center' &&
+    `
         justify-content: center;
-    }
+    `}
+
+${align === 'horizontal-end' &&
+    `
+        justify-content: end;
+    `}
 `;
 
 export const gridColumnSize = (
@@ -124,17 +134,17 @@ export const gridColumnSize = (
         ${md &&
         `flex-basis: ${flexWidth[md]};
             min-width: ${flexWidth[md]};`}
+    }
 
-        ${from.desktop} {
-            ${lg &&
-            `flex-basis: ${flexWidth[lg]};
+    ${from.desktop} {
+        ${lg &&
+        `flex-basis: ${flexWidth[lg]};
             min-width: ${flexWidth[lg]};`}
-        }
+    }
 
-        ${from.wide} {
-            ${xl &&
-            `flex-basis: ${flexWidth[xl]};
+    ${from.wide} {
+        ${xl &&
+        `flex-basis: ${flexWidth[xl]};
             min-width: ${flexWidth[xl]};`}
-        }
     }
 `;

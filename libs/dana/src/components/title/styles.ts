@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
 import { colorsPalette, headline, textSans } from '@dana-foundations';
 import { defaultTheme } from '@dana-theme';
-import { IFontSize, ITextAlign } from './Text';
+import { IFontSize, ITextAlign } from './Title';
 import { Color, ComponentColors } from '../../foundations/colors/types';
 import {
     ColorOptions,
@@ -9,7 +9,7 @@ import {
     isOfComponentColors,
 } from '../../foundations/colors/api';
 
-export const text = (
+export const title = (
     mt: number,
     mb: number,
     size: IFontSize,
@@ -18,12 +18,9 @@ export const text = (
     margin-top: calc(${mt} * 0.25rem);
     margin-bottom: calc(${mb} * 0.25rem);
 
-    // from bbc
-    ${size === 'xxsm' && textSans.xxsmall({ fontWeight: 'light' })}
-    ${size === 'xsm' && textSans.xsmall({ fontWeight: 'light' })}
-    ${size === 'sm' && textSans.small({ fontWeight: 'light' })}
-    ${size === 'md' && textSans.medium({ fontWeight: 'light' })}
-    ${size === 'lg' && textSans.large({ fontWeight: 'light' })}
+    ${size === 'h3' && headline.small({ fontWeight: 'bolder' })}
+    ${size === 'h4' && headline.xxsmall({ fontWeight: 'bold' })}
+    ${size === 'h5' && headline.xxxsmall({ fontWeight: 'bold' })}
 
     text-align: ${text};
 `;

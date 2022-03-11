@@ -8,7 +8,7 @@ import {
 } from 'react';
 import { Props } from '../../../helpers';
 import { select, selectButton, selectItems, showItems } from './styles';
-import { SvgChevronDown } from '../../../foundations/icons';
+import { ChevronDownIcon } from '../../../foundations/icons';
 import { field, input } from '../input/styles';
 import { generateSourceId } from '../../../foundations/accesibility';
 import { FormInput } from '../input/types';
@@ -59,7 +59,7 @@ export const Select = ({
             <div css={[input, select, cssOverrides]} id={inputId}>
                 <Button
                     cssOverrides={selectButton}
-                    rightIcon={<SvgChevronDown size="medium" />}
+                    rightIcon={<ChevronDownIcon size="medium" />}
                     onClick={() => setShowOptions(!showOptions)}
                 >
                     <div>{selectValue.current}</div>

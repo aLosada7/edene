@@ -2,6 +2,7 @@
 
 export * from './label';
 export * from './text';
+export * from './title';
 
 export * from './forms';
 export * from './data-display';
@@ -12,3 +13,6 @@ export * from './feedback';
 export * from './accordion';
 export * from './fade-in';
 export * from './image';
+export * from './modal';
+export * from './MenuButton';
+export * from './ActionButton';

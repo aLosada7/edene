@@ -1,6 +1,6 @@
 import { SerializedStyles } from '@emotion/react';
 import { ButtonHTMLAttributes, useState } from 'react';
-import { Props } from '../../../helpers';
+import { Props } from '../../helpers';
 import { menu, menuLine, menuOpen } from './styles';
 
 export interface MenuButtonProps

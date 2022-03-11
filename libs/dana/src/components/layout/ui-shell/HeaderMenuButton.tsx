@@ -1,4 +1,4 @@
-import { MenuButton } from '../../navigation/menu-button';
+import { MenuButton } from '../../MenuButton';
 import { headerMenuButton } from './stylesHeader';
 
 export type TooltipAlignment = 'end';

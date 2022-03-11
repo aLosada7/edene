@@ -1,17 +1,28 @@
+import { IButtonSize } from '../../../foundations/size';
 import { cloneElement } from 'react';
 import { btnGroup } from './styles';
-
-export type IButtonGroupVariant = 'basic' | 'outline';
+import { IButtonBlock, IButtonVariant } from './Button';
 
 export interface ButtonGroupProps {
-    variant?: IButtonGroupVariant;
+    size?: IButtonSize | IButtonBlock;
+    variant?: IButtonVariant;
     children: React.ReactElement[];
 }
 
-export function ButtonGroup({ children, variant, ...props }: ButtonGroupProps) {
+export function ButtonGroup({
+    children,
+    size,
+    variant,
+    ...props
+}: ButtonGroupProps) {
+    const elementArgs = {
+        ...(size ? { size } : {}),
+        ...(variant ? { variant } : {}),
+    };
+
     return (
         <div css={btnGroup} role="group">
-            {children.map((child) => cloneElement(child, { variant }))}
+            {children.map((child) => cloneElement(child, elementArgs))}
         </div>
     );
 }

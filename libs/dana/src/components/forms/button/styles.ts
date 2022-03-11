@@ -7,6 +7,7 @@ import { defaultTheme } from '../../../foundations/theme/defaultTheme';
 
 export const btnGroup = css`
     display: inline-flex;
+    width: 100%;
 
     *:not(:first-of-type) {
         margin-inline-start: 0.5rem;
@@ -52,27 +53,42 @@ export const btnColor = (
     variant: IButtonVariant,
     isButtonBlock: boolean
 ) => css`
-    ${color === 'primary' && buttonColorStyles(theme.primary, variant)}
+    ${color === 'primary' && buttonColorStyles(theme.palette.primary, variant)}
 
-    ${color === 'default' && buttonColorStyles(theme.default, variant)}
+    ${color === 'secondary' &&
+    buttonColorStyles(theme.palette.secondary, variant)}
+
+    ${color === 'accent' && buttonColorStyles(theme.palette.accent, variant)}
 
     ${color !== 'primary' &&
     color !== 'default' &&
-    buttonColorStyles((colorsPalette as any)[color].primary, variant)};
+    color !== 'accent' &&
+    buttonColorStyles((colorsPalette as any)[color], variant)};
 
     ${isButtonBlock && `width: 100%;`}
 `;
 
-const buttonColorStyles = (kind: any, variant: string) => css`
-    background-color: ${kind.background};
-    border: 1px solid ${kind.color};
-    color: ${kind.color};
+const buttonColorStyles = (colorScheme: any, variant: IButtonVariant) => css`
+    background-color: ${colorScheme.background};
+    border: 1px solid ${colorScheme.background};
+    color: ${colorScheme.color};
+    fill: ${colorScheme.color};
     :hover {
-        background-color: ${kind.hover};
+        background-color: ${colorScheme.hover};
     }
 
     ${variant === 'outline' &&
-    `background-color: white; color: ${kind.color}; :hover { background-color: transparent;}`}
+    `
+    background-color: #fff;
+    color: ${colorScheme.background};
+    fill: ${colorScheme.background};
+    border-color: ${colorScheme.background};
+    :hover {
+        color: #fff;
+        fill: #fff;
+        background-color: ${colorScheme.background}
+    }
+    `}
 `;
 
 const buttonIcon = css`
@@ -91,4 +107,9 @@ export const buttonIconRight = css`
     ${buttonIcon}
 
     margin-inline-start: 0.5rem;
+    margin-inline-end: 0;
+
+    * {
+        margin: 0;
+    }
 `;

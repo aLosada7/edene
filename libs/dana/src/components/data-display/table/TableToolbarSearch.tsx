@@ -59,7 +59,6 @@ export const TableToolbarSearch = ({
             {!isSearchOpen ? (
                 <Button
                     cssOverrides={tableToolbarSearchButton}
-                    color="transparent"
                     size="xsmall"
                     onClick={() => setSearchOpen(!isSearchOpen)}
                 >

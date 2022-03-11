@@ -1,16 +1,16 @@
 import { IButtonSize } from '../../../foundations/size';
 import { ButtonHTMLAttributes, cloneElement } from 'react';
 import { btn, btnColor, buttonIconLeft, buttonIconRight } from './styles';
-import { Color, PaletteColor } from '../../../foundations/palette';
 import { SerializedStyles } from '@emotion/react';
 import useThemeContext from '../../../foundations/theme/useThemeContext';
+import { Color, ComponentColors } from 'libs/dana/src/foundations/colors/types';
 
-export type IButtonVariant = 'basic' | 'outline';
+export type IButtonVariant = 'filled' | 'outline';
 export type IButtonBlock = 'block';
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     id?: string;
-    color?: Color | PaletteColor;
+    color?: Color | ComponentColors;
     variant?: IButtonVariant;
     size?: IButtonSize | IButtonBlock;
     leftIcon?: JSX.Element;
@@ -22,11 +22,12 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 export const Button = ({
     color = 'primary',
-    variant = 'basic',
+    variant = 'filled',
     size = 'medium',
     leftIcon,
     rightIcon,
     disabled,
+    children,
     cssOverrides,
     ...props
 }: ButtonProps) => {
@@ -49,14 +50,20 @@ export const Button = ({
             {leftIcon ? (
                 <span css={buttonIconLeft}>
                     {cloneElement(leftIcon, {
-                        size,
+                        size: 'small',
+                        color: 'inherit',
                     })}
                 </span>
             ) : null}
-            {props.children}
+            {typeof children === 'string'
+                ? children
+                : cloneElement(children as JSX.Element, { color: 'inherit' })}
             {rightIcon ? (
                 <span css={buttonIconRight}>
-                    {cloneElement(rightIcon, { size })}
+                    {cloneElement(rightIcon, {
+                        size: 'small',
+                        color: 'inherit',
+                    })}
                 </span>
             ) : null}
         </button>

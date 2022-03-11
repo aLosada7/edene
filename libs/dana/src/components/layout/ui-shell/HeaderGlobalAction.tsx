@@ -41,7 +41,7 @@ export const HeaderGlobalAction = ({
             {showAriaLabel ? (
                 <div css={actionAssistiveText}>{props['aria-label']}</div>
             ) : null}
-            {cloneElement(children, { size: 'xsmall' })}
+            {cloneElement(children, { size: 'small' })}
             {badge ? (
                 <Badge text={badge.toString()} cssOverrides={headerIconBadge} />
             ) : null}

@@ -1,7 +1,7 @@
 import { Children, cloneElement, ReactElement, useRef, useState } from 'react';
 import { Props } from '../../../helpers';
 import { textarea } from './styles';
-import { SvgChevronDown } from '../../../foundations/icons';
+import { ChevronDownIcon } from '../../../foundations/icons';
 import { field, input } from '../input/styles';
 import { generateSourceId } from '../../../foundations/accesibility';
 import { FormInput } from '../input/types';

@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 import { useState, HTMLAttributes } from 'react';
 import { visuallyHidden as _visuallyHidden } from '../../foundations/accesibility';
 import { Props } from '../../helpers/types';
-import { SvgChevronRight } from '../../foundations/icons/chevron-right';
+import { ChevronRightIcon } from '../../foundations/icons/ChevronRightIcon';
 import {
     accordionRow,
     button,
@@ -89,11 +89,11 @@ export const AccordionRow = ({
                             )}
                         </span>
                     )}
-                    <SvgChevronRight />
+                    <ChevronRightIcon />
                 </div>
             </button>
             <div css={expanded ? expandedBody : collapsedBody}>
-                <div css={expandedBodyChildren} hidden={!expanded}>
+                <div css={expandedBodyChildren} aria-hidden={!expanded}>
                     {children}
                 </div>
             </div>

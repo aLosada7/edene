@@ -1,4 +1,4 @@
-import { SvgArrowRight, SvgCaution } from '../../../foundations/icons';
+import { ArrowRightIcon, CautionIcon } from '../../../foundations/icons';
 import { Meta } from '@storybook/react';
 import React from 'react';
 import { Container, Row } from '../..';
@@ -18,21 +18,29 @@ export default {
     ],
 } as Meta;
 
-export const basic = () => (
+export const filled = () => (
     <StoryHStack>
         <Button>Button</Button>
-        <Button color="default">Button</Button>
-        <Button color="pink">Button</Button>
+        <Button color="secondary">Button</Button>
+        <Button color="accent">Button</Button>
+        <Button color="success">Button</Button>
+        <Button color="dark">Button</Button>
     </StoryHStack>
 );
 
 export const outlines = () => (
     <StoryHStack>
         <Button variant="outline">Button</Button>
-        <Button variant="outline" color="default">
+        <Button variant="outline" color="secondary">
             Button
         </Button>
-        <Button variant="outline" color="pink">
+        <Button variant="outline" color="accent">
+            Button
+        </Button>
+        <Button variant="outline" color="success">
+            Button
+        </Button>
+        <Button variant="outline" color="dark">
             Button
         </Button>
     </StoryHStack>
@@ -40,61 +48,37 @@ export const outlines = () => (
 
 export const withVariants = () => (
     <StoryHStack>
-        <Button variant="basic" color="teal">
-            Button
-        </Button>
-        <Button variant="outline" color="teal">
-            Button
-        </Button>
+        <Button>Button</Button>
+        <Button variant="outline">Button</Button>
     </StoryHStack>
 );
 
 export const withSizes = () => (
     <StoryHStack>
-        <Button color="teal" size="xsmall">
-            Button
-        </Button>
-        <Button color="teal" size="small">
-            Button
-        </Button>
-        <Button color="teal" size="medium">
-            Button
-        </Button>
-        <Button color="teal" size="large">
-            Button
-        </Button>
+        <Button size="xsmall">Button</Button>
+        <Button size="small">Button</Button>
+        <Button size="medium">Button</Button>
+        <Button size="large">Button</Button>
     </StoryHStack>
 );
 
 export const withIcon = () => (
     <>
         <StoryHStack>
-            <Button leftIcon={<SvgCaution />}>Caution</Button>
-            <Button rightIcon={<SvgArrowRight />} variant="outline">
+            <Button leftIcon={<CautionIcon />}>Caution</Button>
+            <Button rightIcon={<ArrowRightIcon />} variant="outline">
                 Call us
             </Button>
         </StoryHStack>
         <StoryHStack>
-            <Button leftIcon={<SvgCaution />} color="default">
-                Caution
-            </Button>
-            <Button
-                rightIcon={<SvgArrowRight />}
-                color="default"
-                variant="outline"
-            >
+            <Button leftIcon={<CautionIcon />}>Caution</Button>
+            <Button rightIcon={<ArrowRightIcon />} variant="outline">
                 Call us
             </Button>
         </StoryHStack>
         <StoryHStack>
-            <Button leftIcon={<SvgCaution />} color="teal">
-                Caution
-            </Button>
-            <Button
-                rightIcon={<SvgArrowRight />}
-                color="teal"
-                variant="outline"
-            >
+            <Button leftIcon={<CautionIcon />}>Caution</Button>
+            <Button rightIcon={<ArrowRightIcon />} variant="outline">
                 Call us
             </Button>
         </StoryHStack>
@@ -102,25 +86,28 @@ export const withIcon = () => (
 );
 
 export const withDisabled = () => (
-    <Row align="space-between-center">
-        <Button variant="basic" color="teal" disabled>
+    <StoryHStack>
+        <Button disabled>Button</Button>
+        <Button variant="outline" disabled>
             Button
         </Button>
-        <Button variant="outline" color="teal" disabled>
-            Button
-        </Button>
-    </Row>
+    </StoryHStack>
 );
 
 export const iconButton = () => (
-    <Button color="teal" size="xsmall">
-        <SvgArrowRight size="xsmall" />
-    </Button>
+    <StoryHStack>
+        <Button>
+            <ArrowRightIcon />
+        </Button>
+        <Button variant="outline">
+            <ArrowRightIcon />
+        </Button>
+    </StoryHStack>
 );
 
 export const withButtonGroup = () => (
     <ButtonGroup variant="outline">
-        <Button color="teal">Save</Button>
-        <Button color="gray">Cancel</Button>
+        <Button color="success">Save</Button>
+        <Button color="accent">Cancel</Button>
     </ButtonGroup>
 );

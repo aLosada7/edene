@@ -1,8 +1,8 @@
-import { Button } from '@dana-components';
 import { CloseIcon } from '@dana-icons';
 import { ToastMessage, ToastOptions } from './ToastManager';
 import React, { useEffect } from 'react';
 import './styles.scss';
+import { ActionButton } from '@dana-components';
 
 export interface ToastProps extends ToastOptions {
     id: string;
@@ -28,9 +28,9 @@ export const Toast: React.FC<ToastProps> = (props) => {
         <div>
             <div className={'toast-header'}>
                 <div>{message.title}</div>
-                <Button onClick={destroy}>
-                    <CloseIcon size="medium" />
-                </Button>
+                <ActionButton onClick={destroy}>
+                    <CloseIcon />
+                </ActionButton>
             </div>
             <div className={'toast-body'}>{message.content}</div>
         </div>

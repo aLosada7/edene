@@ -1,6 +1,7 @@
 import { NumberInput, NumberInputProps } from './NumberInput';
 import { asPlayground, asChromaticStory } from '../../../lib/story-intents';
 import type { Story } from '../../../lib/storybook-emotion-10-fixes';
+import { action } from '@storybook/addon-actions';
 
 export default {
     title: 'Components/Forms/Number Input',
@@ -11,7 +12,7 @@ export default {
 };
 
 const Template: Story<NumberInputProps> = (args: NumberInputProps) => (
-    <NumberInput {...args} />
+    <NumberInput {...args} onChange={action('onChange')} />
 );
 
 // *****************************************************************************

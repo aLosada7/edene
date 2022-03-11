@@ -14,6 +14,8 @@ export interface InputProps
     extends InputHTMLAttributes<HTMLInputElement>,
         Props {
     id: string;
+    /** The input type */
+    type: string;
     /**
      * Adds the word "Optional" after the label. Non-optional fields are rendered with the `required` attribute.
      */
@@ -37,6 +39,7 @@ export interface InputProps
 
 export const Input = ({
     id,
+    type = 'text',
     value,
     checked = undefined,
     optional = false,
@@ -56,7 +59,7 @@ export const Input = ({
                 </span>
             ) : null}
             <input
-                type="text"
+                type={type}
                 css={[
                     inputE,
                     success || error

@@ -9,7 +9,7 @@ export const label = css`
 `;
 
 export const labelText = ({ theme = defaultTheme }) => css`
-    ${textSans.small({ fontWeight: 'medium', lineHeight: 'loose' })};
+    ${textSans.small({ fontWeight: 'regular', lineHeight: 'loose' })};
     color: ${theme.label.text};
 `;
 

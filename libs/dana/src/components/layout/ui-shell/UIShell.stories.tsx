@@ -21,9 +21,9 @@ import {
     HeaderMenuButton,
 } from '.';
 import {
-    SvgBell,
-    SvgEye,
-    SvgGrid3x3GapFill,
+    BellIcon,
+    GraduationIcon,
+    Grid3x3GapIcon,
     SearchIcon,
 } from '../../../foundations/icons';
 import { Badge } from '@dana';
@@ -123,25 +123,29 @@ export const FixedSideNavWIcons: Story<SideNavProps> = () => (
     <div css={template}>
         <SideNav width={64} aria-label="Side navigation">
             <SideNavItems>
-                <SideNavMenu icon={<SvgEye />} title="L0 menu">
+                <SideNavMenu icon={<GraduationIcon />} title="L0 menu">
                     <SideNavMenuItem>L0 menu item</SideNavMenuItem>
                     <SideNavMenuItem>L0 menu item</SideNavMenuItem>
                     <SideNavMenuItem>L0 menu item</SideNavMenuItem>
                 </SideNavMenu>
-                <SideNavMenu icon={<SvgEye />} title="L0 menu" isActive={true}>
+                <SideNavMenu
+                    icon={<GraduationIcon />}
+                    title="L0 menu"
+                    isActive={true}
+                >
                     <SideNavMenuItem>L0 menu item</SideNavMenuItem>
                     <SideNavMenuItem aria-current="page">
                         L0 menu item
                     </SideNavMenuItem>
                     <SideNavMenuItem>L0 menu item</SideNavMenuItem>
                 </SideNavMenu>
-                <SideNavMenu icon={<SvgEye />} title="L0 menu">
+                <SideNavMenu icon={<GraduationIcon />} title="L0 menu">
                     <SideNavMenuItem>L0 menu item</SideNavMenuItem>
                     <SideNavMenuItem>L0 menu item</SideNavMenuItem>
                     <SideNavMenuItem>L0 menu item</SideNavMenuItem>
                 </SideNavMenu>
-                <SideNavItem icon={<SvgEye />}>Link</SideNavItem>
-                <SideNavItem icon={<SvgEye />}>Link</SideNavItem>
+                <SideNavItem icon={<GraduationIcon />}>Link</SideNavItem>
+                <SideNavItem icon={<GraduationIcon />}>Link</SideNavItem>
             </SideNavItems>
         </SideNav>
         <main css={main}>
@@ -168,10 +172,10 @@ export const HeaderBaseWActions: Story<HeaderProps> = () => (
                 <SearchIcon />
             </HeaderGlobalAction>
             <HeaderGlobalAction badge={7} aria-label="Notifications">
-                <SvgBell />
+                <BellIcon />
             </HeaderGlobalAction>
             <HeaderGlobalAction aria-label="App" tooltipAlignment="end">
-                <SvgGrid3x3GapFill />
+                <Grid3x3GapIcon />
             </HeaderGlobalAction>
         </HeaderGlobalBar>
     </Header>
@@ -187,10 +191,10 @@ export const HeaderBaseWActionsAndPanel: Story<HeaderProps> = () => (
                 <SearchIcon />
             </HeaderGlobalAction>
             <HeaderGlobalAction aria-label="Notifications">
-                <SvgBell />
+                <BellIcon />
             </HeaderGlobalAction>
             <HeaderGlobalAction aria-label="App" tooltipAlignment="end">
-                <SvgGrid3x3GapFill />
+                <Grid3x3GapIcon />
             </HeaderGlobalAction>
         </HeaderGlobalBar>
         <HeaderPanel aria-label="Header Panel" expanded></HeaderPanel>
@@ -248,10 +252,10 @@ export const HeaderBaseWSidenav: Story<HeaderProps> = () => {
                     <SearchIcon />
                 </HeaderGlobalAction>
                 <HeaderGlobalAction aria-label="Notifications">
-                    <SvgBell />
+                    <BellIcon />
                 </HeaderGlobalAction>
                 <HeaderGlobalAction aria-label="App" tooltipAlignment="end">
-                    <SvgGrid3x3GapFill />
+                    <Grid3x3GapIcon />
                 </HeaderGlobalAction>
             </HeaderGlobalBar>
         </Header>

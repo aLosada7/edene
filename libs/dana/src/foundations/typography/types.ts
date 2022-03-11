@@ -1,7 +1,7 @@
 export type ScaleUnit = 'rem' | 'px';
 export type Category = 'titlepiece' | 'headline' | 'body' | 'textSans';
 export type LineHeight = 'tight' | 'regular' | 'loose';
-export type FontWeight = 'light' | 'regular' | 'medium' | 'bold' | 'bolder';
+export type FontWeight = 'light' | 'regular' | 'bold' | 'bolder';
 export type FontStyle = 'normal' | 'italic';
 export type FontWeightDefinition = { hasItalic: boolean };
 export type Option<A> = A | null;

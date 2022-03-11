@@ -1,12 +1,12 @@
 import { action } from '@storybook/addon-actions';
 
-import { asPlayground, asChromaticStory } from '../../../lib/story-intents';
-import type { Story } from '../../../lib/storybook-emotion-10-fixes';
+import { asChromaticStory } from '../../lib/story-intents';
+import type { Story } from '../../lib/storybook-emotion-10-fixes';
 
 import { MenuButton, MenuButtonProps } from './MenuButton';
 
 export default {
-    title: 'Components/Navigation/Menu Button',
+    title: 'Components/Navigation/MenuButton',
     component: MenuButton,
 };
 

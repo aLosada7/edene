@@ -2,13 +2,16 @@ import { SerializedStyles } from '@emotion/react';
 import { ReactNode } from 'react';
 import { gridColumnSize, gridColumn } from './styles';
 
-export type ColSize = 0 | 4 | 6 | 8 | 12 | 16 | 18 | 24;
-type Align = '' | 'center' | 'vertical-center' | 'horizontal-center';
+export type ColSize = 0 | 2 | 3 | 4 | 6 | 8 | 12 | 16 | 18 | 20 | 21 | 22 | 24;
+export type Align =
+    | ''
+    | 'horizontal-end'
+    | 'center'
+    | 'vertical-center'
+    | 'horizontal-center';
 export type IColumnDirection = 'row' | 'column';
 
 export interface ColumnProps {
-    /** Only affects right and left */
-    noPadding?: boolean;
     sm?: ColSize;
     md?: ColSize | null;
     lg?: ColSize | null;
@@ -22,7 +25,6 @@ export interface ColumnProps {
 }
 
 export const Col = ({
-    noPadding = false,
     sm = 24,
     md = null,
     lg = null,
@@ -39,13 +41,7 @@ export const Col = ({
         <div
             css={[
                 gridColumnSize(sm, md, lg, xl),
-                gridColumn(
-                    noPadding,
-                    direction,
-                    align,
-                    verticalStack,
-                    horizontalStack
-                ),
+                gridColumn(direction, align, verticalStack, horizontalStack),
                 cssOverrides,
             ]}
         >

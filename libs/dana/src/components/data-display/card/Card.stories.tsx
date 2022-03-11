@@ -3,10 +3,10 @@ import { asChromaticStory } from '../../../lib/story-intents';
 import { Card, CardActions, CardBody, CardImage, CardProps } from '.';
 import { Badge, Container, Row, Col, Text, Button, Divider } from '../..';
 import {
-    SvgArrowRight,
-    SvgBell,
-    SvgGraduation,
-    SvgValidated,
+    ArrowRightIcon,
+    BellIcon,
+    GraduationIcon,
+    ValidIcon,
 } from '../../../foundations/icons';
 import { cardDescription, cardStatus, h3 } from './storiesStyles';
 
@@ -46,7 +46,7 @@ export const BodyAndActions: Story<CardProps> = (args) => (
                             variant="success"
                             cssOverrides={cardStatus}
                         ></Badge>
-                        <SvgValidated size="xsmall" color="rgb(22, 163, 74)" />
+                        <ValidIcon size="xsmall" color="rgb(22, 163, 74)" />
                     </Row>
 
                     <Text mt={16} size="lg">
@@ -59,10 +59,10 @@ export const BodyAndActions: Story<CardProps> = (args) => (
                     <Divider width={12} />
 
                     <Row direction="column">
-                        <Text icon={<SvgBell size="small" />}>
+                        <Text icon={<BellIcon size="small" />}>
                             <span>30 minutes</span>
                         </Text>
-                        <Text icon={<SvgGraduation size="small" />}>
+                        <Text icon={<GraduationIcon size="small" />}>
                             <span>Completed twice</span>
                         </Text>
                     </Row>
@@ -70,7 +70,10 @@ export const BodyAndActions: Story<CardProps> = (args) => (
                 <CardActions>
                     <Divider />
                     <Row align="end-center" px={6} py={4}>
-                        <Button variant="outline" rightIcon={<SvgArrowRight />}>
+                        <Button
+                            variant="outline"
+                            rightIcon={<ArrowRightIcon />}
+                        >
                             Continue
                         </Button>
                     </Row>

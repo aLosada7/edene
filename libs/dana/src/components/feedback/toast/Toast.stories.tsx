@@ -14,7 +14,6 @@ export default {
 export const Default: Story = () => {
     return (
         <Button
-            color="gray"
             onClick={() => {
                 toast.show('Welcome to the Campaign', {
                     duration: 10000,
@@ -31,7 +30,6 @@ export const Default: Story = () => {
 export const WithTitleAndDescription: Story = () => {
     return (
         <Button
-            color="gray"
             onClick={() => {
                 toast.show(
                     {

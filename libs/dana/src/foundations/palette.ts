@@ -1,4 +1,3 @@
-export type Color = 'primary' | 'default';
 export type PaletteColor = 'garnet' | 'gray' | 'teal' | 'pink' | 'transparent';
 
 // Arrays of colours should have pillar colors first
@@ -69,16 +68,16 @@ const colors = {
         '#69D1CA',
     ],
     grays: [
-        '#000000', //neutral-0
-        '#121212', //neutral-7
-        '#1A1A1A', //neutral-10
-        '#333333', //neutral-20
-        '#707070', //neutral-46
-        '#999999', //neutral-60
-        '#DCDCDC', //neutral-86
-        '#EDEDED', //neutral-93
-        '#F6F6F6', //neutral-97
-        '#FFFFFF', //neutral-100
+        '#000000', //grays-0
+        '#121212', //grays-7
+        '#1A1A1A', //grays-10
+        '#333333', //grays-20
+        '#707070', //grays-46
+        '#999999', //grays-60
+        '#DCDCDC', //grays-86
+        '#EDEDED', //grays-93
+        '#F6F6F6', //grays-97
+        '#FFFFFF', //grays-100
         '#222527',
         '#303538',
         '#3F464A',
@@ -90,17 +89,17 @@ const colors = {
     ],
 };
 
-export const neutral = {
+export const grays = {
     0: colors.grays[0],
-    7: colors.grays[1],
-    10: colors.grays[2],
-    20: colors.grays[3],
-    46: colors.grays[4],
-    60: colors.grays[5],
-    86: colors.grays[6],
-    93: colors.grays[7],
-    97: colors.grays[8],
-    100: colors.grays[9],
+    1: colors.grays[1],
+    2: colors.grays[2],
+    3: colors.grays[3],
+    4: colors.grays[4],
+    5: colors.grays[5],
+    6: colors.grays[6],
+    7: colors.grays[7],
+    8: colors.grays[8],
+    9: colors.grays[9],
 };
 export const error = {
     400: colors.reds[3],
@@ -129,43 +128,43 @@ export const altBackground = {
 };
 
 export const text = {
-    primary: neutral[7],
-    supporting: neutral[46],
+    primary: grays[7],
+    supporting: grays[4],
     success: success[400],
     error: error[400],
-    ctaPrimary: neutral[100],
-    anchorSecondary: neutral[7],
-    userInput: neutral[7],
-    inputLabel: neutral[7],
-    inputError: neutral[7],
-    inputLabelSupporting: neutral[46],
-    groupLabel: neutral[7],
-    groupLabelSupporting: neutral[46],
+    ctaPrimary: grays[9],
+    anchorSecondary: grays[7],
+    userInput: grays[7],
+    inputLabel: grays[7],
+    inputError: grays[7],
+    inputLabelSupporting: grays[4],
+    groupLabel: grays[7],
+    groupLabelSupporting: grays[4],
     toolbar: '#f4f4f4',
 };
 
 export const altText = {
-    primary: neutral[7],
-    supporting: neutral[46],
+    primary: grays[7],
+    supporting: grays[4],
     success: success[400],
     error: error[400],
-    ctaPrimary: neutral[100],
-    anchorSecondary: neutral[7],
-    userInput: neutral[7],
-    inputLabel: neutral[7],
-    inputError: neutral[7],
-    inputLabelSupporting: neutral[46],
-    groupLabel: neutral[7],
-    groupLabelSupporting: neutral[46],
+    ctaPrimary: grays[9],
+    anchorSecondary: grays[7],
+    userInput: grays[7],
+    inputLabel: grays[7],
+    inputError: grays[7],
+    inputLabelSupporting: grays[4],
+    groupLabel: grays[7],
+    groupLabelSupporting: grays[4],
     toolbar: '#1C1E20',
 };
 
 export const border = {
-    primary: neutral[60],
-    secondary: neutral[86],
+    primary: grays[5],
+    secondary: grays[6],
     success: success[400],
     error: error[400],
-    input: neutral[60],
+    input: grays[5],
     focusHalo: focus[400],
 };
 
@@ -178,61 +177,94 @@ export const altFill = {
 };
 
 export const colorsPalette = {
-    black: {
-        default: {
-            background: '#FCFCFC',
-            color: '#1C1E20',
-            hover: '#485963',
-        },
-        primary: {
-            background: '#FCFCFC',
-            color: '#1C1E20',
-            hover: '#485963',
-        },
+    primary: {
+        background: '#37B9F1',
+        color: '#fff',
+        hover: 'rgb(34, 139, 230)',
+    },
+    secondary: {
+        background: '#494B67',
+        color: '#fff',
+        hover: '#343549',
+    },
+    accent: {
+        background: '#FF006C',
+        color: '#fff',
+        hover: '#CC0056',
+    },
+    success: {
+        background: 'rgb(48, 144, 142)',
+        color: 'white',
+        hover: 'rgb(44, 122, 123)',
+    },
+    dark: {
+        background: '#100F10',
+        color: '#FCFCFC',
+        hover: '#485963',
     },
     teal: {
-        primary: {
-            background: 'rgb(48, 144, 142)',
-            color: 'white',
-            hover: 'rgb(44, 122, 123)',
-        },
+        background: 'rgb(48, 144, 142)',
+        color: 'white',
+        hover: 'rgb(44, 122, 123)',
     },
     gray: {
-        primary: {
-            background: 'rgb(211, 219, 229)',
-            color: 'black',
-            hover: 'rgb(226, 232, 240)',
-        },
+        background: 'rgb(211, 219, 229)',
+        color: 'black',
+        hover: 'rgb(226, 232, 240)',
     },
     pink: {
-        default: {
-            background: 'rgb(227, 227, 232)',
-            color: 'rgb(115, 112, 124)',
-            hover: 'transparent',
-        },
-        primary: {
-            background: 'rgb(211, 62, 139)',
-            color: 'white',
-            hover: 'rgb(184, 50, 128)',
-        },
+        background: 'rgb(227, 227, 232)',
+        color: 'rgb(115, 112, 124)',
+        hover: 'transparent',
     },
     transparent: {
-        primary: {
-            background: 'transparent',
-            color: 'black',
-            hover: 'transparent',
-        },
+        background: 'transparent',
+        color: '#000',
+        hover: 'transparent',
     },
-    garnet: {
-        default: {
-            background: 'rgb(227, 227, 232)',
-            color: 'rgb(115, 112, 124)',
-            hover: 'rgb(227, 227, 232)',
-        },
-        primary: {
-            background: 'rgb(103, 14, 54)',
-            color: 'rgba(255, 255, 255, 0.96)',
-            hover: 'rgb(103, 14, 54)',
-        },
-    },
+    // teal: {
+    //     primary: {
+    //         background: 'rgb(48, 144, 142)',
+    //         color: 'white',
+    //         hover: 'rgb(44, 122, 123)',
+    //     },
+    // },
+    // gray: {
+    //     primary: {
+    //         background: 'rgb(211, 219, 229)',
+    //         color: 'black',
+    //         hover: 'rgb(226, 232, 240)',
+    //     },
+    // },
+    // pink: {
+    //     default: {
+    //         background: 'rgb(227, 227, 232)',
+    //         color: 'rgb(115, 112, 124)',
+    //         hover: 'transparent',
+    //     },
+    //     primary: {
+    //         background: 'rgb(211, 62, 139)',
+    //         color: 'white',
+    //         hover: 'rgb(184, 50, 128)',
+    //     },
+    // },
+    // transparent: {
+    //     primary: {
+    //         background: 'transparent',
+    //         color: 'black',
+    //         hover: 'transparent',
+    //     },
+    // },
+    // garnet: {
+    //     default: {
+    //         background: 'rgb(227, 227, 232)',
+    //         color: 'rgb(115, 112, 124)',
+    //         hover: 'rgb(227, 227, 232)',
+    //     },
+    //     primary: {
+    //         background: 'rgb(103, 14, 54)',
+    //         color: 'rgba(255, 255, 255, 0.96)',
+    //         hover: 'rgb(103, 14, 54)',
+    //     },
+    // },
 };

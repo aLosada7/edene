@@ -16,7 +16,7 @@ import {
     descriptionId,
     generateSourceId,
 } from '../../../foundations/accesibility';
-import { SvgCaution, SvgSuccess } from '../../../foundations/icons';
+import { CautionIcon, SuccessIcon } from '../../../foundations/icons';
 import { text } from '../../../foundations/palette';
 import { Text } from '../../text';
 import { Input } from '../..';
@@ -90,7 +90,7 @@ export const TextInput = ({
         >
             {error && (
                 <Text
-                    icon={<SvgCaution size="xsmall" color={text.error} />}
+                    icon={<CautionIcon size="xsmall" color="accent" />}
                     cssOverrides={[errorMessage, inlineMessage]}
                 >
                     <span id={descriptionId(textInputId)}>{error}</span>
@@ -98,7 +98,7 @@ export const TextInput = ({
             )}
             {!error && success && (
                 <Text
-                    icon={<SvgSuccess size="xsmall" color={text.success} />}
+                    icon={<SuccessIcon size="xsmall" color="success" />}
                     cssOverrides={[successMessage, inlineMessage]}
                 >
                     <span id={descriptionId(textInputId)}>{success}</span>

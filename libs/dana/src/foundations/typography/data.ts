@@ -25,7 +25,7 @@ const fonts = {
 
 const lineHeights = [1.15, 1.35, 1.5];
 
-const fontWeights = [300, 400, 500, 600, 700];
+const fontWeights = [400, 500, 600, 700];
 
 const titlepieceSizes: TitlepieceSizes = {
     small: fontSizes[8], //42px
@@ -125,9 +125,8 @@ const lineHeightMapping: { [lineHight in LineHeight]: number } = {
 };
 
 const fontWeightMapping: { [fontWeight in FontWeight]: number } = {
-    light: fontWeights[0],
-    regular: fontWeights[1],
-    medium: fontWeights[2],
+    light: fontWeights[1],
+    regular: fontWeights[2],
     bold: fontWeights[3],
     bolder: fontWeights[4],
 };
@@ -146,7 +145,7 @@ const availableFonts: {
         light: {
             hasItalic: true,
         },
-        medium: {
+        regular: {
             hasItalic: true,
         },
         bold: {
@@ -163,9 +162,6 @@ const availableFonts: {
     },
     textSans: {
         regular: {
-            hasItalic: true,
-        },
-        medium: {
             hasItalic: true,
         },
         bold: {

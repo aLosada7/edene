@@ -1,10 +1,10 @@
 import { defaultTheme } from './defaultTheme';
-import { ThemeProvider } from './themeProvider';
+import { DanaTheme } from './themeProvider';
 
 const theme = { ...defaultTheme };
 
 const ThemeDecorator = (storyFn: () => any) => {
-    return <ThemeProvider theme={theme}>{storyFn()}</ThemeProvider>;
+    return <DanaTheme theme={theme}>{storyFn()}</DanaTheme>;
 };
 
 export default ThemeDecorator;

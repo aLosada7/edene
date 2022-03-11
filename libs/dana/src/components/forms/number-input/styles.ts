@@ -8,17 +8,15 @@ export const numberInputWrapper = () => css`
     align-items: center;
     justify-content: center;
     height: 44px;
-    border: 2px solid rgb(153, 153, 153);
 `;
 
-export const input = () => css`
+export const input = css`
     flex: 1;
-    border: 0;
-    outline: none;
-    background: transparent;
     text-indent: 1rem;
     font-size: 1.25rem;
     width: 200px;
+    padding: 0;
+    pointer-events: none;
 
     /* Chrome, Safari, Edge, Opera */
     ::-webkit-outer-spin-button,

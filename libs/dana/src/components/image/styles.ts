@@ -1,4 +1,3 @@
-import { from } from '@dana';
 import { css } from '@emotion/react';
 
 export const img = (size: string) => css`
@@ -11,9 +10,7 @@ export const img = (size: string) => css`
     -o-object-fit: cover;
     object-fit: cover;
 
-    ${from.desktop} {
-        ${size === 'c' && `height: 304px !important;`}
-        ${size === 'd' && `height: 194px !important;`}
-        ${size === 'e' && `height: 124px !important;`}
-    }
+    ${size === 'c' && `height: 304px !important;`}
+    ${size === 'd' && `height: 194px !important;`}
+    ${size === 'e' && `height: 124px !important;`}
 `;

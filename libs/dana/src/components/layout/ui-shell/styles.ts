@@ -86,6 +86,10 @@ export const navMenuLink = css`
     &:focus {
         ${focusHalo};
     }
+
+    svg {
+        margin-right: 0.5rem;
+    }
 `;
 
 const chevronIcon = css`

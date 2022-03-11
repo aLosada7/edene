@@ -1,9 +1,14 @@
-import { background, colorsPalette, fill, text } from '../palette';
+import { background, colorsPalette, fill, grays, text } from '../palette';
 import { Theme } from './types';
 
 export const defaultTheme: Theme = {
-    title: 'black',
-    ...colorsPalette.black,
+    name: 'default',
+    palette: {
+        primary: colorsPalette.primary,
+        secondary: colorsPalette.secondary,
+        accent: colorsPalette.accent,
+        grays,
+    },
     label: {
         text: text.inputLabel,
         optionalText: text.supporting,
@@ -20,6 +25,11 @@ export const defaultTheme: Theme = {
         background: 'transparent',
         active: 'transparent',
         hover: '#e5e5e5',
+    },
+    text: grays[1],
+    title: {
+        h4: 'hsl(202, 57%, 15%)',
+        h5: 'hsl(201, 23%, 34%)',
     },
 };
 

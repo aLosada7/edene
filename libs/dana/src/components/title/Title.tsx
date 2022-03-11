@@ -1,19 +1,11 @@
 import { cloneElement, ReactElement } from 'react';
-import { flexText, text, textColorCss } from './styles';
+import { flexText, title, textColorCss } from './styles';
 import useThemeContext from '../../foundations/theme/useThemeContext';
 import { DanaColor } from '../../foundations/colors/types';
 
-export type IFontSize =
-    | 'xxsm'
-    | 'xsm'
-    | 'sm'
-    | 'md'
-    | 'lg'
-    | 'h3'
-    | 'h4'
-    | 'h5';
+export type IFontSize = 'h3' | 'h4' | 'h5';
 export type ITextAlign = 'inherit' | 'left' | 'center' | 'right';
-export interface TextProps {
+export interface TitleProps {
     mt?: number;
     // in titles only soon
     mb?: number;
@@ -25,24 +17,26 @@ export interface TextProps {
     children: ReactElement | string;
 }
 
-export const Text = ({
+export const Title = ({
     mt = 0,
     mb = 0,
-    size = 'lg',
+    size = 'h5',
     color,
     align = 'inherit',
     icon,
     children,
     cssOverrides,
     ...props
-}: TextProps) => {
+}: TitleProps) => {
     const { theme } = useThemeContext();
-    const textColor = color || (theme ? theme.text : 'dark');
+    const textColor = color || (theme ? theme.title[size] : 'dark');
+
+    const Element = size || 'div';
 
     return (
-        <div
+        <Element
             css={[
-                text(mt, mb, size, align),
+                title(mt, mb, size, align),
                 textColorCss({ theme, color: textColor }),
                 icon ? flexText : null,
                 cssOverrides,
@@ -50,6 +44,6 @@ export const Text = ({
         >
             {icon ? cloneElement(icon, { color: 'inherit' }) : null}
             {children}
-        </div>
+        </Element>
     );
 };

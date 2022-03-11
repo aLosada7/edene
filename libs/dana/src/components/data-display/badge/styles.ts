@@ -20,7 +20,7 @@ export const badge = (color: IBadgeColor, variant: string) => css`
     background-color: rgb(220, 252, 231);
     color: rgb(22, 101, 52);`}
 
-    background-color: ${colorsPalette[color].primary.background};
-    border: 1px solid ${colorsPalette[color].primary.background};
-    color: ${colorsPalette[color].primary.color};
+    background-color: ${colorsPalette[color].background};
+    border: 1px solid ${colorsPalette[color].background};
+    color: ${colorsPalette[color].color};
 `;

@@ -7,7 +7,7 @@ import {
     ReactElement,
     useState,
 } from 'react';
-import { SvgChevronRight } from '../../../foundations/icons';
+import { ChevronRightIcon } from '../../../foundations/icons';
 import { Props } from '../../../helpers/types';
 import {
     chevronIconDown,
@@ -66,7 +66,7 @@ export const SideNavMenu = ({
                 onClick={handleClick}
                 css={[navMenuLink, cssOverrides]}
             >
-                {icon && cloneElement(icon, { size: 'large' })}
+                {icon && cloneElement(icon, { size: 'small' })}
                 <span>{title}</span>
                 <div
                     css={[
@@ -74,7 +74,7 @@ export const SideNavMenu = ({
                         expanded ? chevronIconUp : chevronIconDown,
                     ]}
                 >
-                    <SvgChevronRight size="small" />
+                    <ChevronRightIcon size="small" />
                 </div>
             </button>
             <ul

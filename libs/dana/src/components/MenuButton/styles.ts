@@ -1,5 +1,5 @@
 import { css } from '@emotion/react';
-import { transitions } from '../../../foundations/animation';
+import { transitions } from '../../foundations/animation';
 
 export const menu = () => css`
     position: relative;

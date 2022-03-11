@@ -1,5 +1,5 @@
 import { css } from '@emotion/react';
-import { background, neutral } from '../../foundations';
+import { background, grays } from '../../foundations';
 import { focusHalo, visuallyHidden } from '../../foundations/accesibility';
 import { transitions } from '../../foundations/animation';
 import { from, until } from '../../foundations/mq';
@@ -25,7 +25,7 @@ export const accordionRow = (variant: string) => css`
 
     ${variant === 'bordered' &&
     `
-    :not(:first-child) { border-top: 1px solid ${neutral[93]}; }`}
+    :not(:first-child) { border-top: 1px solid ${grays[8]}; }`}
 `;
 
 const buttonStyles = css`
@@ -65,7 +65,7 @@ export const toggle = css`
 `;
 
 export const toggleLabel = css`
-    ${textSans.small({ fontWeight: 'medium' })};
+    ${textSans.small({ fontWeight: 'regular' })};
 
     ${until.tablet} {
         ${visuallyHidden}

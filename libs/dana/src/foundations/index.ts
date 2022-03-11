@@ -18,5 +18,4 @@ export const palette = {
 };
 
 export * from './commonStyles';
-export * from './theme';
 export * from './typography';

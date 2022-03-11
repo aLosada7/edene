@@ -8,10 +8,10 @@ export const buttonSize = {
 };
 
 export const iconSize = {
-    xsmall: 20,
-    small: 26,
-    medium: 16,
-    large: 40,
+    xsmall: 12,
+    small: 16,
+    medium: 24,
+    large: 32,
     big: 60,
 };
 

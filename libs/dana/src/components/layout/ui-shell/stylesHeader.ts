@@ -138,7 +138,7 @@ export const actionAssistiveText = css`
     pointer-events: none;
 `;
 
-export const headerPanel = css`
+export const headerPanel = (backgroundColor: string, textColor: string) => css`
     position: fixed;
     z-index: 8000;
     top: 3rem;
@@ -147,16 +147,16 @@ export const headerPanel = css`
     overflow: hidden;
     width: 0;
     border: none;
-    background-color: #161616;
-    color: #c6c6c6;
-    transition: width 0.11s;
-    will-change: width;
+    height: fit-content;
+    background-color: ${backgroundColor};
+    color: ${textColor};
+    padding: 1rem 0;
 `;
 
 export const headerPanelExpanded = css`
     width: 16rem;
-    border-right: 1px solid #393939;
-    border-left: 1px solid #393939;
+    min-height: 255px;
+    border-bottom-left-radius: 8px;
 `;
 
 export const headerMenuButton = (isAlwaysVisible: boolean) => css`
