@@ -12,7 +12,7 @@ import {
 } from '@dana';
 import { contactCard } from './styles';
 
-export function ContactForm() {
+export const ContactForm = () => {
     return (
         <Container>
             <Card cssOverrides={contactCard}>
@@ -62,6 +62,4 @@ export function ContactForm() {
             </Card>
         </Container>
     );
-}
-
-export default ContactForm;
+};

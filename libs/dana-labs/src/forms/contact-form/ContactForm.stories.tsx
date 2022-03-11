@@ -3,6 +3,7 @@ import { ContactForm } from './ContactForm';
 
 export default {
     title: 'DanaLabs/Forms',
+    component: ContactForm,
 } as Meta;
 
 const Template: Story = () => <ContactForm />;

@@ -45,12 +45,12 @@ export const AccountSettings = () => (
         <Row py={4}>
             <Col sm={24} md={8} lg={8}></Col>
             <Col sm={24} md={16} lg={16} horizontalStack={4}>
-                <Button color="teal" onClick={action('onSubmit')}>
+                <Button color="success" onClick={action('onSubmit')}>
                     Save
                 </Button>
                 <Button
                     variant="outline"
-                    color="gray"
+                    color="dark"
                     onClick={action('onCancel')}
                 >
                     Cancel

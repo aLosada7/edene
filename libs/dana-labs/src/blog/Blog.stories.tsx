@@ -5,11 +5,13 @@ import {
     Row,
     Image,
     Text,
+    Title,
     Badge,
     SideNav,
     SideNavItems,
     SideNavPrincipal,
     SideNavItem,
+    until,
 } from '@dana';
 import mountain from '../../assets/img/mountain.jpg';
 import { css } from '@emotion/react';
@@ -32,7 +34,7 @@ const BlogAllSection = (
             <Text size="xxsm" mt={2}>
                 01 Jan 2022
             </Text>
-            <Text size="h5">My 2021 Annual Review</Text>
+            <Title>My 2021 Annual Review</Title>
             <Text size="sm" mt={2}>
                 Allows to obtain more information about different options.
             </Text>
@@ -51,7 +53,9 @@ export const Blog = () => (
     <>
         <section className="page-section py-section">
             <Container ph={16}>
-                <Text size="h4">Featured blog posts</Text>
+                <Title size="h4" mb={4}>
+                    Featured blog posts
+                </Title>
                 <Row>
                     <Col
                         lg={12}
@@ -69,7 +73,7 @@ export const Blog = () => (
                             <Text size="xxsm" mt={2}>
                                 01 Jan 2022
                             </Text>
-                            <Text size="h3">My 2021 Annual Review</Text>
+                            <Title size="h3">My 2021 Annual Review</Title>
                             <Text size="sm" mt={2}>
                                 Allows to obtain more information about
                                 different options.
@@ -91,8 +95,19 @@ export const Blog = () => (
                         `}
                     >
                         <article>
-                            <Row>
-                                <Col md={12} noPadding>
+                            <Row
+                                cssOverrides={css`
+                                    ${until.desktop} {
+                                        margin: 0;
+                                    }
+                                `}
+                            >
+                                <Col
+                                    md={12}
+                                    cssOverrides={css`
+                                        padding: 0;
+                                    `}
+                                >
                                     <Image
                                         src={mountain}
                                         alt="Picture of a mountain"
@@ -106,11 +121,14 @@ export const Blog = () => (
                                     md={12}
                                     direction="column"
                                     cssOverrides={css`
+                                        ${until.phablet} {
+                                            padding: 0;
+                                        }
                                         margin-bottom: 1.5rem;
                                     `}
                                 >
                                     <Text size="xxsm">01 Jan 2022</Text>
-                                    <Text size="h5">My 2021 Annual Review</Text>
+                                    <Title>My 2021 Annual Review</Title>
                                     <Text size="sm" mt={2}>
                                         Allows to obtain more information about
                                         different options.
@@ -126,8 +144,19 @@ export const Blog = () => (
                             </Row>
                         </article>
                         <article>
-                            <Row>
-                                <Col md={12} noPadding>
+                            <Row
+                                cssOverrides={css`
+                                    ${until.desktop} {
+                                        margin: 0;
+                                    }
+                                `}
+                            >
+                                <Col
+                                    md={12}
+                                    cssOverrides={css`
+                                        padding: 0;
+                                    `}
+                                >
                                     <Image
                                         src={mountain}
                                         alt="Picture of a mountain"
@@ -137,9 +166,17 @@ export const Blog = () => (
                                         `}
                                     />
                                 </Col>
-                                <Col md={12} direction="column">
+                                <Col
+                                    md={12}
+                                    direction="column"
+                                    cssOverrides={css`
+                                        ${until.phablet} {
+                                            padding: 0;
+                                        }
+                                    `}
+                                >
                                     <Text size="xxsm">01 Jan 2022</Text>
-                                    <Text size="h5">My 2021 Annual Review</Text>
+                                    <Title>My 2021 Annual Review</Title>
                                     <Text size="sm" mt={2}>
                                         Allows to obtain more information about
                                         different options.
@@ -160,9 +197,11 @@ export const Blog = () => (
         </section>
         <section className="page-section py-section">
             <Container pv={8} ph={16}>
-                <Text size="h4">All blog posts</Text>
+                <Title size="h4" mb={4}>
+                    All blog posts
+                </Title>
                 <Row>
-                    <Col md={6}>
+                    <Col md={8} lg={6}>
                         <SideNav aria-label="Side navigation">
                             <SideNavItems
                                 hideIcon
@@ -184,6 +223,7 @@ export const Blog = () => (
                                         href="javascript:void(0)"
                                         cssOverrides={css`
                                             border-radius: 8px;
+                                            margin-bottom: 0.7rem;
                                         `}
                                     >
                                         Angular
@@ -192,7 +232,7 @@ export const Blog = () => (
                             </SideNavItems>
                         </SideNav>
                     </Col>
-                    <Col md={18}>
+                    <Col md={16} lg={18}>
                         <Row>
                             {BlogAllSection}
                             {BlogAllSection}

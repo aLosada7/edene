@@ -14,13 +14,11 @@
                 "entryFile": "libs/dana-labs/src/index.ts",
                 "external": ["react/jsx-runtime"],
                 "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
-                "assets": [
-                    {
-                        "glob": "libs/dana-labs/README.md",
-                        "input": ".",
-                        "output": "."
-                    }
-                ]
+                "assets": [{
+                    "glob": "libs/dana-labs/README.md",
+                    "input": ".",
+                    "output": "."
+                }]
             }
         },
         "lint": {
@@ -67,6 +65,16 @@
                 "ci": {
                     "quiet": true
                 }
+            }
+        },
+        "chromatic": {
+            "executor": "@nrwl/workspace:run-commands",
+            "options": {
+                "commands": [
+                    "nx run dana-labs:build-storybook",
+                    "npx chromatic --project-token=41d3c7df1e28 -d=dist/storybook/dana-labs --auto-accept-changes"
+                ],
+                "parallel": false
             }
         }
     }
