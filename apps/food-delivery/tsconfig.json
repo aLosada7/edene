@@ -2,12 +2,14 @@
     "extends": "../../tsconfig.base.json",
     "compilerOptions": {
         "jsx": "react-jsx",
+        "jsxImportSource": "@emotion/react",
         "allowJs": true,
         "esModuleInterop": true,
         "allowSyntheticDefaultImports": true,
         "forceConsistentCasingInFileNames": true,
         "strict": true,
         "noImplicitReturns": true,
+        "lib": ["dom", "es2019"],
         "noFallthroughCasesInSwitch": true
     },
     "files": [],
