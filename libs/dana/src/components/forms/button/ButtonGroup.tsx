@@ -1,18 +1,23 @@
 import { IButtonSize } from '../../../foundations/size';
-import { cloneElement } from 'react';
+import { cloneElement, ReactElement } from 'react';
 import { btnGroup } from './styles';
 import { IButtonBlock, IButtonVariant } from './Button';
+import { SerializedStyles } from '@emotion/react';
 
 export interface ButtonGroupProps {
+    as?: 'footer';
     size?: IButtonSize | IButtonBlock;
     variant?: IButtonVariant;
-    children: React.ReactElement[];
+    children: ReactElement | ReactElement[];
+    cssOverrides?: SerializedStyles | SerializedStyles[];
 }
 
 export function ButtonGroup({
+    as,
     children,
     size,
     variant,
+    cssOverrides,
     ...props
 }: ButtonGroupProps) {
     const elementArgs = {
@@ -20,10 +25,14 @@ export function ButtonGroup({
         ...(variant ? { variant } : {}),
     };
 
+    const Element = as || 'div';
+
     return (
-        <div css={btnGroup} role="group">
-            {children.map((child) => cloneElement(child, elementArgs))}
-        </div>
+        <Element css={[btnGroup(size), cssOverrides]} role="group">
+            {(Array.isArray(children) ? children : [children]).map((child) =>
+                cloneElement(child, elementArgs)
+            )}
+        </Element>
     );
 }
 

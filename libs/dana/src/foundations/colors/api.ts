@@ -8,7 +8,7 @@ const isOfColor = (color: string) => {
 };
 
 const isOfComponentColors = (color: string) => {
-    return ['success', 'dark', 'transparent'].includes(color);
+    return ['success', 'danger', 'dark', 'transparent'].includes(color);
 };
 
 export interface ColorOptions {

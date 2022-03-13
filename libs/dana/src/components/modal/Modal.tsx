@@ -1,11 +1,11 @@
+import { css } from '@emotion/react';
 import React, { ReactElement } from 'react';
 import { CloseIcon } from '../../foundations/icons/CloseIcon';
 import { ActionButton } from '../ActionButton';
 import { Card, CardBody } from '../data-display';
-import { Button } from '../forms';
 import { Row } from '../layout';
 import { Overlay } from '../overlay/Overlay';
-import { Text } from '../text';
+import { Title } from '../title';
 import { cardHeader, cardOverrides, modal } from './styles';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
@@ -14,7 +14,7 @@ export interface ModalProps {
     opened: boolean;
     /** Called when close button clicked and when escape key is pressed */
     onClose(): void;
-    children: ReactElement | ReactElement[] | string;
+    children: ReactElement[];
 }
 
 export const Modal = ({
@@ -30,18 +30,23 @@ export const Modal = ({
         <>
             <div css={modal}>
                 <Card cssOverrides={cardOverrides}>
-                    <CardBody>
+                    <CardBody
+                        cssOverrides={css`
+                            padding: 1.2rem 2rem;
+                        `}
+                    >
                         <Row
                             align="space-between-center"
                             cssOverrides={cardHeader}
                         >
-                            <Text size="h5">{title}</Text>
+                            <Title size="h4">{title}</Title>
                             <ActionButton onClick={onClose}>
                                 <CloseIcon />
                             </ActionButton>
                         </Row>
-                        <div>{children}</div>
+                        {children[0]}
                     </CardBody>
+                    {children[1]}
                 </Card>
             </div>
             <Overlay />

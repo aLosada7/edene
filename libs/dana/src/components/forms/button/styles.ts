@@ -2,16 +2,17 @@ import { css } from '@emotion/react';
 import { disabled } from '../../../foundations/accesibility';
 import { colorsPalette } from '../../../foundations';
 import { buttonSize, IButtonSize } from '../../../foundations/size';
-import { IButtonVariant } from './Button';
+import { IButtonBlock, IButtonVariant } from './Button';
 import { defaultTheme } from '../../../foundations/theme/defaultTheme';
 
-export const btnGroup = css`
+export const btnGroup = (size?: IButtonSize | IButtonBlock) => css`
     display: inline-flex;
-    width: 100%;
 
     *:not(:first-of-type) {
         margin-inline-start: 0.5rem;
     }
+
+    ${size === 'block' && `width: 100%;`}
 `;
 
 export const btn = ({ theme = defaultTheme }, size: IButtonSize) => css`
@@ -87,6 +88,18 @@ const buttonColorStyles = (colorScheme: any, variant: IButtonVariant) => css`
         color: #fff;
         fill: #fff;
         background-color: ${colorScheme.background}
+    }
+    `}
+
+    ${variant === 'link' &&
+    `
+    background-color: transparent;
+    color: ${colorScheme.background};
+    fill: ${colorScheme.background};
+    border: none;
+    :hover {
+        background-color: transparent;
+        color: ${colorScheme.hover}
     }
     `}
 `;

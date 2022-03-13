@@ -5,7 +5,7 @@ import { SerializedStyles } from '@emotion/react';
 import useThemeContext from '../../../foundations/theme/useThemeContext';
 import { Color, ComponentColors } from 'libs/dana/src/foundations/colors/types';
 
-export type IButtonVariant = 'filled' | 'outline';
+export type IButtonVariant = 'filled' | 'outline' | 'link';
 export type IButtonBlock = 'block';
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {

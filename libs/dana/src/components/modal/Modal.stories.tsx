@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Button } from '../..';
+import { Container, Button, ModalFooter, ModalContent, Text } from '../..';
 import { asChromaticStory } from '../../lib/story-intents';
 import type { Story } from '../../lib/storybook-emotion-10-fixes';
 import { Modal } from './Modal';
@@ -18,10 +18,22 @@ const Template: Story = () => {
                 <Button onClick={() => setOpened(true)}>Open Modal</Button>
                 <Modal
                     opened={opened}
-                    title="My modal"
+                    title="Deactivate account"
                     onClose={() => setOpened(false)}
                 >
-                    My modal
+                    <ModalContent>
+                        <Text size="sm" color="hsl(212, 18%, 35%)">
+                            Are vou sure vou want to deactivate vour account? Bi
+                            doing this you will lose all of your saved data and
+                            will not ha ahlata ratriovs it.
+                        </Text>
+                    </ModalContent>
+                    <ModalFooter>
+                        <Button variant="link" color="dark">
+                            Cancel
+                        </Button>
+                        <Button color="danger">Deactivate</Button>
+                    </ModalFooter>
                 </Modal>
             </>
         </Container>

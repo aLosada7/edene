@@ -197,6 +197,11 @@ export const colorsPalette = {
         color: 'white',
         hover: 'rgb(44, 122, 123)',
     },
+    danger: {
+        background: '#DC3545',
+        color: 'white',
+        hover: '#C82333',
+    },
     dark: {
         background: '#100F10',
         color: '#FCFCFC',

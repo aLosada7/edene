@@ -7,6 +7,8 @@ import {
     Button,
     NumberInput,
     Title,
+    ModalContent,
+    ModalFooter,
 } from '@dana-components';
 import { css } from '@emotion/react';
 import React, { useState } from 'react';
@@ -76,48 +78,54 @@ export const RestaurantPage = () => {
                         title={foodSelected ? foodSelected.name : 'Fail'}
                         onClose={() => setFoodSelected(null)}
                     >
-                        {foodSelected && foodSelected.price ? (
-                            <Container
-                                cssOverrides={css`
-                                    text-align: center;
-                                `}
-                            >
-                                <Text size="md">
-                                    <>
-                                        {(foodSelected.options || []).includes(
-                                            'vegetarian'
-                                        ) && `🌱 Vegetarian`}
-                                    </>
-                                </Text>
-
-                                <Text>{foodSelected.description}</Text>
-
-                                <Text size="xsm">
-                                    {(foodSelected.price / 100).toFixed(2) +
-                                        ' €'}
-                                </Text>
-
-                                <NumberInput
-                                    min={1}
-                                    value={quantity}
-                                    onChange={setQuantity}
-                                />
-
-                                <Button
+                        <ModalContent>
+                            {foodSelected && foodSelected.price ? (
+                                <Container
                                     cssOverrides={css`
-                                        margin-top: 1.5rem;
+                                        text-align: center;
                                     `}
-                                    onClick={handleNewCartProduct}
                                 >
-                                    <>
-                                        Add to cart (
-                                        {foodSelected.price * quantity} €)
-                                    </>
-                                </Button>
-                            </Container>
-                        ) : (
-                            <div>error</div>
-                        )}
+                                    <Text size="md">
+                                        <>
+                                            {(
+                                                foodSelected.options || []
+                                            ).includes('vegetarian') &&
+                                                `🌱 Vegetarian`}
+                                        </>
+                                    </Text>
+
+                                    <Text>{foodSelected.description}</Text>
+
+                                    <Text size="xsm">
+                                        {(foodSelected.price / 100).toFixed(2) +
+                                            ' €'}
+                                    </Text>
+
+                                    <NumberInput
+                                        min={1}
+                                        value={quantity}
+                                        onChange={setQuantity}
+                                    />
+                                </Container>
+                            ) : (
+                                <div>error</div>
+                            )}
+                        </ModalContent>
+                        <ModalFooter
+                            cssOverrides={css`
+                                justify-content: center;
+                            `}
+                        >
+                            <Button onClick={handleNewCartProduct}>
+                                <>
+                                    Add to cart (
+                                    {(foodSelected
+                                        ? foodSelected.price / 100
+                                        : 0) * quantity}{' '}
+                                    €)
+                                </>
+                            </Button>
+                        </ModalFooter>
                     </Modal>
                 </Col>
             </Row>

@@ -24,6 +24,7 @@ export const filled = () => (
         <Button color="secondary">Button</Button>
         <Button color="accent">Button</Button>
         <Button color="success">Button</Button>
+        <Button color="danger">Button</Button>
         <Button color="dark">Button</Button>
     </StoryHStack>
 );
@@ -40,7 +41,31 @@ export const outlines = () => (
         <Button variant="outline" color="success">
             Button
         </Button>
+        <Button variant="outline" color="danger">
+            Button
+        </Button>
         <Button variant="outline" color="dark">
+            Button
+        </Button>
+    </StoryHStack>
+);
+
+export const links = () => (
+    <StoryHStack>
+        <Button variant="link">Button</Button>
+        <Button variant="link" color="secondary">
+            Button
+        </Button>
+        <Button variant="link" color="accent">
+            Button
+        </Button>
+        <Button variant="link" color="success">
+            Button
+        </Button>
+        <Button variant="link" color="danger">
+            Button
+        </Button>
+        <Button variant="link" color="dark">
             Button
         </Button>
     </StoryHStack>
