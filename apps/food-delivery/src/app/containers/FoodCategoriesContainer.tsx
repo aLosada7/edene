@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Text } from '@dana';
+import { Row, Title } from '@dana';
 
 import { FoodCategory } from '../components/FoodCategory';
 import { FoodCategoryAll } from '../components/FoodCategoryAll';
@@ -23,7 +23,9 @@ export const FoodCategoriesContainer = ({
 
     return (
         <>
-            <Text size="h4">Food Categories</Text>
+            <Title size="h4" mb={4}>
+                Food Categories
+            </Title>
             <Row>
                 <FoodCategoryAll onSelect={onSelect} />
                 <>{foodCategories}</>

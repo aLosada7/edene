@@ -16,7 +16,7 @@ asPlayground(Playground);
 // *****************************************************************************
 
 export const basic = () => (
-    <Container mt={10}>
+    <Container mt={8}>
         <Divider />
     </Container>
 );

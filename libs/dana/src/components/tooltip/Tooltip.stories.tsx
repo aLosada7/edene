@@ -15,7 +15,7 @@ const Template: Story = () => {
     const [hoverRef, hovering] = useHover(ref);
 
     return (
-        <Container mt={10}>
+        <Container mt={8}>
             <div ref={hoverRef}>
                 <Text>Hover me!</Text>
                 {hovering && <Tooltip />}

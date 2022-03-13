@@ -11,7 +11,7 @@ export default {
     title: 'Components/Forms/Button',
     decorators: [
         (Story: any) => (
-            <Container mt={10}>
+            <Container mt={8}>
                 <Story />
             </Container>
         ),

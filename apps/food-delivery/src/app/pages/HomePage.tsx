@@ -6,7 +6,7 @@ import { RestaurantListContainer } from '../containers/RestaurantListContainer';
 export const HomePage = () => {
     const [foodKindSelected, setFoodKindSelected] = useState('all');
     return (
-        <Container ph={16} pv={8}>
+        <Container ph={24} pv={8}>
             <FoodCategoriesContainer onSelect={setFoodKindSelected} />
             <RestaurantListContainer foodKind={foodKindSelected} />
         </Container>

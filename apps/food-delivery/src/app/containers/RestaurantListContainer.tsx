@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Text } from '@dana';
+import { Container, Title } from '@dana';
 
 import { RestaurantSummary } from '../components/RestaurantSummary';
 import {
@@ -20,9 +20,9 @@ export const RestaurantListContainer = ({ foodKind }: { foodKind: string }) => {
 
     return (
         <>
-            <Text size="h4">
+            <Title size="h4" mb={4}>
                 <span>{selectedFoodName} Restaurants</span>
-            </Text>
+            </Title>
             <Container ph={48}>
                 {selectedFoodRestaurants.map((restaurant: IRestaurant) => (
                     <RestaurantSummary restaurant={restaurant} />

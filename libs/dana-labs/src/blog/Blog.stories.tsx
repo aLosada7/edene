@@ -52,7 +52,7 @@ const BlogAllSection = (
 export const Blog = () => (
     <>
         <section className="page-section py-section">
-            <Container ph={16}>
+            <Container ph={12}>
                 <Title size="h4" mb={4}>
                     Featured blog posts
                 </Title>
@@ -196,7 +196,7 @@ export const Blog = () => (
             </Container>
         </section>
         <section className="page-section py-section">
-            <Container pv={8} ph={16}>
+            <Container pv={8} ph={12}>
                 <Title size="h4" mb={4}>
                     All blog posts
                 </Title>

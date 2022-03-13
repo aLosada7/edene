@@ -20,7 +20,7 @@ export const Playground = Template.bind({});
 asPlayground(Playground);
 
 export const solid = () => (
-    <Container mt={10}>
+    <Container mt={8}>
         <StoryHStack>
             <Badge color="gray" text="GRAY" />
             <Badge color="teal" text="TEAL" />

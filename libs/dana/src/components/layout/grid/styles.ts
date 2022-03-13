@@ -1,12 +1,14 @@
 import { css } from '@emotion/react';
+
 import { from } from '../../../foundations/mq';
 import { IColumnDirection, ColSize, Align } from './Col';
+import { DanaScale } from './Container';
 import { IRowAlign, IRowDirection } from './Row';
 
 export const gridContainer = (
-    marginTop: number,
-    verticalPadding: number,
-    horizontalPadding: number
+    marginTop: DanaScale,
+    verticalPadding: DanaScale,
+    horizontalPadding: DanaScale
 ) => css`
     max-width: 1224px;
     margin-left: auto;

@@ -13,7 +13,7 @@ const Template: Story = () => {
     const [opened, setOpened] = useState(false);
 
     return (
-        <Container mt={10}>
+        <Container mt={8}>
             <>
                 <Button onClick={() => setOpened(true)}>Open Modal</Button>
                 <Modal

@@ -1,0 +1,20 @@
+import { Meta, Preview } from '@storybook/addon-docs';
+import { css } from '@emotion/react';
+
+import { Image } from '../components';
+import scale from '../../assets/img/scale.jpg';
+
+<Meta
+    title="Foundations/Scale"
+    parameters={{ previewTabs: { canvas: { hidden: true } } }}
+/>
+
+# Scale
+
+<Image
+    src={scale}
+    alt="Dana Scale"
+    cssOverrides={css`
+        height: auto !important;
+    `}
+/>

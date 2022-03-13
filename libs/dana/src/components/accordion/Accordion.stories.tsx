@@ -9,7 +9,7 @@ export default {
     component: Accordion,
     decorators: [
         (Story: any) => (
-            <Container mt={10}>
+            <Container mt={8}>
                 <Story />
             </Container>
         ),
