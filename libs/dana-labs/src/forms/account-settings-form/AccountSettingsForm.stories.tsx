@@ -11,7 +11,7 @@ import {
     Option,
     Textarea,
     Checkbox,
-    Text,
+    Title,
 } from '@dana';
 
 export default {
@@ -25,7 +25,7 @@ export const AccountSettings = () => (
         <Divider />
         <Row py={4}>
             <Col sm={24} md={8} lg={8}>
-                <Text size="h3">Personal Info</Text>
+                <Title size="h3">Personal Info</Title>
             </Col>
             <Col sm={24} md={16} lg={16} verticalStack={2}>
                 <TextInput label="Name" />

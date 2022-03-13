@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text } from '..';
+import { Title } from '..';
 import { asChromaticStory } from '../../lib/story-intents';
 import type { Story } from '../../lib/storybook-emotion-10-fixes';
 import { FadeIn } from './FadeIn';
@@ -12,7 +12,7 @@ export default {
 export const Default: Story = () => {
     return (
         <>
-            <Text size="h3">FadeIn Transition</Text>
+            <Title size="h3">FadeIn Transition</Title>
             <FadeIn delay="1s">
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.

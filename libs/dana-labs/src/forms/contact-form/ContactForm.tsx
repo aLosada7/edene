@@ -5,6 +5,7 @@ import {
     Card,
     CardBody,
     Text,
+    Title,
     Form,
     TextInput,
     Textarea,
@@ -19,19 +20,19 @@ export const ContactForm = () => {
                 <CardBody>
                     <Row>
                         <Col sm={24} lg={8}>
-                            <Text size="h3" mt={4}>
+                            <Title size="h3" mt={4}>
                                 Column 1
-                            </Text>
+                            </Title>
                         </Col>
                         <Col sm={24} lg={16} direction="column" align="center">
                             <Row>
                                 <Col sm={24} lg={24} direction="column">
-                                    <Text size="h3" mt={4}>
+                                    <Title size="h3" mt={4}>
                                         Let's talk
-                                    </Text>
-                                    <Text size="h3">
+                                    </Title>
+                                    <Title size="h3">
                                         Give me some information.
-                                    </Text>
+                                    </Title>
                                 </Col>
                             </Row>
                             <Form>

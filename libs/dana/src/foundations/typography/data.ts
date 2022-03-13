@@ -11,7 +11,7 @@ import type {
     TypographySizes,
 } from './types';
 
-const fontSizes = [12, 14, 16, 18, 20, 24, 28, 34, 42, 50, 70];
+const fontSizes = [12, 14, 16, 18, 20, 24, 30, 36, 42, 50, 70];
 
 const fonts = {
     titlepiece: 'GT Guardian Titlepiece, Georgia, serif',
@@ -55,8 +55,8 @@ const textSansSizes: TextSansSizes = {
     medium: fontSizes[3], //18px
     large: fontSizes[4], //20px
     xlarge: fontSizes[5], //24px
-    xxlarge: fontSizes[6], //28px
-    xxxlarge: fontSizes[7], //34px
+    xxlarge: fontSizes[6], //30px
+    xxxlarge: fontSizes[7], //36px
 };
 
 const fontSizeMapping: {

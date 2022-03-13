@@ -1,4 +1,4 @@
-import { Button, ButtonGroup, Container, Text } from '@dana-components';
+import { Button, ButtonGroup, Container, Text, Title } from '@dana-components';
 import { useNavigate } from 'react-router-dom';
 import { Cart } from '../components/Cart';
 import useCartContext from '../context/cart/useCartContext';
@@ -28,7 +28,7 @@ export const CheckoutPage = () => {
 
     return (
         <Container ph={48}>
-            <Text size="h3">Checkout</Text>
+            <Title size="h3">Checkout</Title>
 
             {cart}
             <ButtonGroup size="block">

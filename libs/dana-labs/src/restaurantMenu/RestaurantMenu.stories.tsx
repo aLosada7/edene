@@ -75,7 +75,7 @@ export const RestaurantMenu = () => (
                 </Title>
                 <Card>
                     <CardBody>
-                        <Title>A food name</Title>
+                        <Text weight="bold">A food name</Text>
                         <Text size="md" mt={2}>
                             A food description
                         </Text>
@@ -86,13 +86,13 @@ export const RestaurantMenu = () => (
                 </Card>
                 <Card>
                     <CardBody>
-                        <Title>
+                        <Text weight="bold">
                             <>
                                 A vegetarian food name{'  '}
                                 {`🌱`}
                             </>
-                        </Title>
-                        <Text size="md" mt={2}>
+                        </Text>
+                        <Text size="sm" mt={2}>
                             A vegetarian food description
                         </Text>
                         <Text size="lg" mt={1}>{`${(1000 / 100).toFixed(

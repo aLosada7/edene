@@ -1,4 +1,4 @@
-import { Card, CardBody, Col, Row, Image, Text } from '@dana-components';
+import { Card, CardBody, Col, Row, Image, Text, Title } from '@dana-components';
 import { ClockIcon, TicketsIcon } from '@dana-icons';
 import { css } from '@emotion/react';
 import { NavLink } from 'react-router-dom';
@@ -25,12 +25,10 @@ export const RestaurantSummary = ({
                         />
                     </Col>
                     <Col md={8} direction="column">
-                        <Text size="h5" mt={2}>
+                        <Text size="md" weight="bold" mt={2}>
                             {restaurant.name}
                         </Text>
-                        <Text size="xsm" mt={2}>
-                            {restaurant.kind}
-                        </Text>
+                        <Text size="xsm">{restaurant.kind}</Text>
                     </Col>
                     <Col md={12} direction="column">
                         <Text

@@ -2,22 +2,25 @@ import { cloneElement, ReactElement } from 'react';
 import { flexText, text, textColorCss } from './styles';
 import useThemeContext from '../../foundations/theme/useThemeContext';
 import { DanaColor } from '../../foundations/colors/types';
+import { FontWeight } from '../../foundations/typography/types';
 
-export type IFontSize =
+export type ITextFontSize =
     | 'xxsm'
     | 'xsm'
     | 'sm'
     | 'md'
     | 'lg'
-    | 'h3'
-    | 'h4'
-    | 'h5';
+    | 'xlg'
+    | 'xxlg'
+    | 'xxxlg';
+
 export type ITextAlign = 'inherit' | 'left' | 'center' | 'right';
 export interface TextProps {
     mt?: number;
     // in titles only soon
     mb?: number;
-    size?: IFontSize;
+    size?: ITextFontSize;
+    weight?: FontWeight;
     color?: DanaColor;
     align?: ITextAlign;
     icon?: ReactElement;
@@ -28,7 +31,8 @@ export interface TextProps {
 export const Text = ({
     mt = 0,
     mb = 0,
-    size = 'lg',
+    size = 'md',
+    weight,
     color,
     align = 'inherit',
     icon,
@@ -42,7 +46,7 @@ export const Text = ({
     return (
         <div
             css={[
-                text(mt, mb, size, align),
+                text(mt, mb, size, align, weight),
                 textColorCss({ theme, color: textColor }),
                 icon ? flexText : null,
                 cssOverrides,

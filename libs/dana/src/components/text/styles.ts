@@ -1,19 +1,21 @@
 import { css } from '@emotion/react';
-import { colorsPalette, headline, textSans } from '@dana-foundations';
+import { colorsPalette, textSans } from '@dana-foundations';
 import { defaultTheme } from '@dana-theme';
-import { IFontSize, ITextAlign } from './Text';
+import { ITextFontSize, ITextAlign } from './Text';
 import { Color, ComponentColors } from '../../foundations/colors/types';
 import {
     ColorOptions,
     isOfColor,
     isOfComponentColors,
 } from '../../foundations/colors/api';
+import { FontWeight } from '../../foundations/typography/types';
 
 export const text = (
     mt: number,
     mb: number,
-    size: IFontSize,
-    text: ITextAlign
+    size: ITextFontSize,
+    text: ITextAlign,
+    weight?: FontWeight
 ) => css`
     margin-top: calc(${mt} * 0.25rem);
     margin-bottom: calc(${mb} * 0.25rem);
@@ -24,6 +26,11 @@ export const text = (
     ${size === 'sm' && textSans.small({ fontWeight: 'light' })}
     ${size === 'md' && textSans.medium({ fontWeight: 'light' })}
     ${size === 'lg' && textSans.large({ fontWeight: 'light' })}
+    ${size === 'xlg' && textSans.xlarge({ fontWeight: 'light' })}
+    ${size === 'xxlg' && textSans.xxlarge({ fontWeight: 'light' })}
+    ${size === 'xxxlg' && textSans.xxxlarge({ fontWeight: 'light' })}
+
+    ${weight && `font-weight: ${weight};`}
 
     text-align: ${text};
 `;
