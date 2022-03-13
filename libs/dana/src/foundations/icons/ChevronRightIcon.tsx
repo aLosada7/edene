@@ -7,8 +7,8 @@ export const ChevronRightIcon = ({ size, color }: IconProps) => (
             width="inherit"
             fill="inherit"
             focusable="false"
-            viewBox="0 0 24 24"
-            aria-labelledby="cesta"
+            viewBox="-2 -2 20 20"
+            aria-labelledby="chevron-right"
             role="img"
             aria-hidden="false"
         >

@@ -66,7 +66,11 @@ export const SideNavMenu = ({
                 onClick={handleClick}
                 css={[navMenuLink, cssOverrides]}
             >
-                {icon && cloneElement(icon, { size: 'small' })}
+                {icon &&
+                    cloneElement(icon, {
+                        size: 'small',
+                        color: 'hsl(212, 20%, 68%)',
+                    })}
                 <span>{title}</span>
                 <div
                     css={[

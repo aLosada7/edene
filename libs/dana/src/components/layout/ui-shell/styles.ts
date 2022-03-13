@@ -75,7 +75,7 @@ export const navMenuLink = css`
     min-height: 2rem;
     align-items: center;
     padding: 0 1rem;
-    color: #525252;
+    color: hsl(212, 20%, 13%);
     transition: color 110ms, background-color 110ms, outline 110ms;
     -webkit-user-select: none;
     -moz-user-select: none;

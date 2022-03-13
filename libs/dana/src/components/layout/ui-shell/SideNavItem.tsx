@@ -49,7 +49,11 @@ export const SideNavItem = ({
         >
             <a css={navLink} href={href} {...props}>
                 <span css={sideNavWithIcon}>
-                    {icon && cloneElement(icon, { size: 'small' })}
+                    {icon &&
+                        cloneElement(icon, {
+                            size: 'small',
+                            color: 'hsl(212, 20%, 68%)',
+                        })}
                     {children}
                 </span>
 
