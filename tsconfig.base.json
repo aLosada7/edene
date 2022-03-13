@@ -19,8 +19,8 @@
             "@dana": ["libs/dana/src/index.ts"],
             "@dana-components": ["libs/dana/src/components/index.ts"],
             "@dana-foundations": ["libs/dana/src/foundations/index.ts"],
-            "@dana-theme": ["libs/dana/src/foundations/theme/index.ts"],
-            "@dana-icons": ["libs/dana/src/foundations/icons/index.ts"]
+            "@dana-icons": ["libs/dana/src/foundations/icons/index.ts"],
+            "@dana-theme": ["libs/dana/src/foundations/theme/index.ts"]
         }
     },
     "exclude": ["node_modules", "tmp"]

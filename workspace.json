@@ -3,6 +3,7 @@
     "projects": {
         "dana": "libs/dana",
         "dana-labs": "libs/dana-labs",
-        "dana-template": "apps/dana-template"
+        "dana-template": "apps/dana-template",
+        "food-delivery": "apps/food-delivery"
     }
 }

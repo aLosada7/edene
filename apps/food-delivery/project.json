@@ -1,0 +1,72 @@
+{
+    "root": "apps/food-delivery",
+    "sourceRoot": "apps/food-delivery/src",
+    "projectType": "application",
+    "targets": {
+        "build": {
+            "executor": "@nrwl/web:build",
+            "outputs": ["{options.outputPath}"],
+            "defaultConfiguration": "production",
+            "options": {
+                "outputPath": "dist/apps/food-delivery",
+                "index": "apps/food-delivery/src/index.html",
+                "baseHref": "/",
+                "main": "apps/food-delivery/src/main.tsx",
+                "polyfills": "apps/food-delivery/src/polyfills.ts",
+                "tsConfig": "apps/food-delivery/tsconfig.app.json",
+                "assets": [
+                    "apps/food-delivery/src/favicon.ico",
+                    "apps/food-delivery/src/assets"
+                ],
+                "styles": ["apps/food-delivery/src/styles.scss"],
+                "scripts": [],
+                "webpackConfig": "@nrwl/react/plugins/webpack"
+            },
+            "configurations": {
+                "production": {
+                    "fileReplacements": [
+                        {
+                            "replace": "apps/food-delivery/src/environments/environment.ts",
+                            "with": "apps/food-delivery/src/environments/environment.prod.ts"
+                        }
+                    ],
+                    "optimization": true,
+                    "outputHashing": "all",
+                    "sourceMap": false,
+                    "namedChunks": false,
+                    "extractLicenses": true,
+                    "vendorChunk": false
+                }
+            }
+        },
+        "serve": {
+            "executor": "@nrwl/web:dev-server",
+            "options": {
+                "buildTarget": "food-delivery:build",
+                "hmr": true
+            },
+            "configurations": {
+                "production": {
+                    "buildTarget": "food-delivery:build:production",
+                    "hmr": false
+                }
+            }
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "outputs": ["{options.outputFile}"],
+            "options": {
+                "lintFilePatterns": ["apps/food-delivery/**/*.{ts,tsx,js,jsx}"]
+            }
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "outputs": ["coverage/apps/food-delivery"],
+            "options": {
+                "jestConfig": "apps/food-delivery/jest.config.js",
+                "passWithNoTests": true
+            }
+        }
+    },
+    "tags": []
+}
