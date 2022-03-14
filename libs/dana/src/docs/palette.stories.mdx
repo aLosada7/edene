@@ -1,6 +1,6 @@
 import { Meta, Preview } from '@storybook/addon-docs';
 
-import { neutral, error, success } from '../foundations/palette';
+import { grays, error, success } from '../foundations/palette';
 import { Row, Col } from '../components';
 
 <Meta
@@ -10,17 +10,17 @@ import { Row, Col } from '../components';
 
 # Palette
 
-## Neutral
+## Grays
 
 <Row>
     <Col sm={12} lg={6} align="center">
         <div
             className="paletteColour"
-            style={{ backgroundColor: neutral[0] }}
+            style={{ width: '100%', height: '100%', backgroundColor: grays[0] }}
         ></div>
     </Col>
     <Col sm={12} lg={6} align="center">
-        <p>neutral.0</p>
+        <p>grays.0</p>
     </Col>
 </Row>
 
@@ -28,11 +28,11 @@ import { Row, Col } from '../components';
     <Col sm={12} lg={6} align="center">
         <div
             className="paletteColour"
-            style={{ backgroundColor: neutral[7] }}
+            style={{ width: '100%', height: '100%', backgroundColor: grays[1] }}
         ></div>
     </Col>
     <Col sm={12} lg={6} align="center">
-        <p>neutral.7</p>
+        <p>grays.1</p>
     </Col>
 </Row>
 
@@ -40,11 +40,11 @@ import { Row, Col } from '../components';
     <Col sm={12} lg={6} align="center">
         <div
             className="paletteColour"
-            style={{ backgroundColor: neutral[10] }}
+            style={{ width: '100%', height: '100%', backgroundColor: grays[2] }}
         ></div>
     </Col>
     <Col sm={12} lg={6} align="center">
-        <p>neutral.10</p>
+        <p>grays.2</p>
     </Col>
 </Row>
 
@@ -52,11 +52,11 @@ import { Row, Col } from '../components';
     <Col sm={12} lg={6} align="center">
         <div
             className="paletteColour"
-            style={{ backgroundColor: neutral[20] }}
+            style={{ width: '100%', height: '100%', backgroundColor: grays[3] }}
         ></div>
     </Col>
     <Col sm={12} lg={6} align="center">
-        <p>neutral.20</p>
+        <p>grays.3</p>
     </Col>
 </Row>
 
@@ -64,11 +64,11 @@ import { Row, Col } from '../components';
     <Col sm={12} lg={6} align="center">
         <div
             className="paletteColour"
-            style={{ backgroundColor: neutral[46] }}
+            style={{ width: '100%', height: '100%', backgroundColor: grays[4] }}
         ></div>
     </Col>
     <Col sm={12} lg={6} align="center">
-        <p>neutral.46</p>
+        <p>grays.4</p>
     </Col>
 </Row>
 
@@ -76,11 +76,11 @@ import { Row, Col } from '../components';
     <Col sm={12} lg={6} align="center">
         <div
             className="paletteColour"
-            style={{ backgroundColor: neutral[60] }}
+            style={{ width: '100%', height: '100%', backgroundColor: grays[5] }}
         ></div>
     </Col>
     <Col sm={12} lg={6} align="center">
-        <p>neutral.60</p>
+        <p>grays.5</p>
     </Col>
 </Row>
 
@@ -88,11 +88,11 @@ import { Row, Col } from '../components';
     <Col sm={12} lg={6} align="center">
         <div
             className="paletteColour"
-            style={{ backgroundColor: neutral[86] }}
+            style={{ width: '100%', height: '100%', backgroundColor: grays[6] }}
         ></div>
     </Col>
     <Col sm={12} lg={6} align="center">
-        <p>neutral.86</p>
+        <p>grays.6</p>
     </Col>
 </Row>
 
@@ -100,11 +100,11 @@ import { Row, Col } from '../components';
     <Col sm={12} lg={6} align="center">
         <div
             className="paletteColour"
-            style={{ backgroundColor: neutral[93] }}
+            style={{ width: '100%', height: '100%', backgroundColor: grays[7] }}
         ></div>
     </Col>
     <Col sm={12} lg={6} align="center">
-        <p>neutral.93</p>
+        <p>grays.7</p>
     </Col>
 </Row>
 
@@ -112,11 +112,11 @@ import { Row, Col } from '../components';
     <Col sm={12} lg={6} align="center">
         <div
             className="paletteColour"
-            style={{ backgroundColor: neutral[97] }}
+            style={{ width: '100%', height: '100%', backgroundColor: grays[8] }}
         ></div>
     </Col>
     <Col sm={12} lg={6} align="center">
-        <p>neutral.97</p>
+        <p>grays.8</p>
     </Col>
 </Row>
 
@@ -124,11 +124,11 @@ import { Row, Col } from '../components';
     <Col sm={12} lg={6} align="center">
         <div
             className="paletteColour"
-            style={{ backgroundColor: neutral[100] }}
+            style={{ width: '100%', height: '100%', backgroundColor: grays[9] }}
         ></div>
     </Col>
     <Col sm={12} lg={6} align="center">
-        <p>neutral.100</p>
+        <p>grays.9</p>
     </Col>
 </Row>
 
@@ -140,7 +140,11 @@ import { Row, Col } from '../components';
     <Col sm={12} lg={6} align="center">
         <div
             className="paletteColour"
-            style={{ backgroundColor: error[400] }}
+            style={{
+                width: '100%',
+                height: '100%',
+                backgroundColor: error[400],
+            }}
         ></div>
     </Col>
     <Col sm={12} lg={6} align="center">
@@ -152,7 +156,11 @@ import { Row, Col } from '../components';
     <Col sm={12} lg={6} align="center">
         <div
             className="paletteColour"
-            style={{ backgroundColor: error[500] }}
+            style={{
+                width: '100%',
+                height: '100%',
+                backgroundColor: error[500],
+            }}
         ></div>
     </Col>
     <Col sm={12} lg={6} align="center">
@@ -166,7 +174,11 @@ import { Row, Col } from '../components';
     <Col sm={12} lg={6} align="center">
         <div
             className="paletteColour"
-            style={{ backgroundColor: success[400] }}
+            style={{
+                width: '100%',
+                height: '100%',
+                backgroundColor: success[400],
+            }}
         ></div>
     </Col>
     <Col sm={12} lg={6} align="center">
@@ -178,7 +190,11 @@ import { Row, Col } from '../components';
     <Col sm={12} lg={6} align="center">
         <div
             className="paletteColour"
-            style={{ backgroundColor: success[500] }}
+            style={{
+                width: '100%',
+                height: '100%',
+                backgroundColor: success[500],
+            }}
         ></div>
     </Col>
     <Col sm={12} lg={6} align="center">
