@@ -68,16 +68,16 @@ const colors = {
         '#69D1CA',
     ],
     grays: [
-        '#000000', //grays-0
-        '#121212', //grays-7
-        '#1A1A1A', //grays-10
-        '#333333', //grays-20
-        '#707070', //grays-46
-        '#999999', //grays-60
-        '#DCDCDC', //grays-86
-        '#EDEDED', //grays-93
-        '#F6F6F6', //grays-97
-        '#FFFFFF', //grays-100
+        '#212529', //grays-0
+        '#343a40', //grays-7
+        '#495057', //grays-10
+        '#868e96', //grays-20
+        '#adb5bd', //grays-46
+        '#ced4da', //grays-60
+        '#dee2e6', //grays-86
+        '#e9ecef', //grays-93
+        '#f1f3f5', //grays-97
+        '#F8F9FA', //grays-100
         '#222527',
         '#303538',
         '#3F464A',
@@ -128,7 +128,7 @@ export const altBackground = {
 };
 
 export const text = {
-    primary: grays[7],
+    primary: grays[0],
     supporting: grays[4],
     success: success[400],
     error: error[400],

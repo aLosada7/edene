@@ -10,7 +10,7 @@ export const defaultTheme: Theme = {
         grays,
     },
     label: {
-        text: text.inputLabel,
+        text: grays[1],
         optionalText: text.supporting,
         supportingText: text.supporting,
     },

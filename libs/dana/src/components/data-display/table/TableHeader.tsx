@@ -14,7 +14,7 @@ export const TableHeader = ({
     ...props
 }: TableHeaderProps) => {
     return (
-        <th css={() => cellAlign(align)} key={key}>
+        <th css={[cellAlign(align)]} key={key}>
             {children}
         </th>
     );

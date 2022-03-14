@@ -4,7 +4,7 @@ import { Props } from '../../../helpers';
 import { breadcrumb } from './styles';
 
 export interface BreadcrumbProps extends Props {
-    children: ReactElement[];
+    children: ReactElement | ReactElement[];
 }
 
 export const Breadcrumb = ({

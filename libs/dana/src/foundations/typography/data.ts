@@ -125,10 +125,10 @@ const lineHeightMapping: { [lineHight in LineHeight]: number } = {
 };
 
 const fontWeightMapping: { [fontWeight in FontWeight]: number } = {
-    light: fontWeights[1],
-    regular: fontWeights[2],
-    bold: fontWeights[3],
-    bolder: fontWeights[4],
+    light: fontWeights[0],
+    regular: fontWeights[1],
+    bold: fontWeights[2],
+    bolder: fontWeights[3],
 };
 
 const availableFonts: {
@@ -161,11 +161,17 @@ const availableFonts: {
         },
     },
     textSans: {
+        light: {
+            hasItalic: true,
+        },
         regular: {
             hasItalic: true,
         },
         bold: {
             hasItalic: false,
+        },
+        bolder: {
+            hasItalic: true,
         },
     },
 };

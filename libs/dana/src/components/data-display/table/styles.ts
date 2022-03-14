@@ -1,11 +1,5 @@
+import { grays, textSans } from '@dana-foundations';
 import { css } from '@emotion/react';
-
-export const figcaption = css`
-    border-left: 1px solid rgb(110, 110, 115);
-    color: rgb(110, 110, 115);
-    font-weight: bold; // TODO: change to normal
-    padding-left: 0.5rem;
-`;
 
 // TableContainer
 export const tableContainerHeader = css`
@@ -70,11 +64,15 @@ export const table = css`
 
 // Head
 export const thead = css`
-    font-size: 0.875rem;
-    font-weight: 600;
-    line-height: 1.28572;
-    letter-spacing: 0.16px;
-    background-color: #e0e0e0;
+    ${textSans.xsmall({ fontWeight: 'bold' })}
+    background-color: ${grays[8]};
+`;
+
+export const tr = css`
+    width: 100%;
+    height: 3rem;
+    border: none;
+    color: ${grays[2]};
 `;
 
 export const cellAlign = (align: string) => css`
@@ -83,16 +81,11 @@ export const cellAlign = (align: string) => css`
 
 // Body
 export const tbody = css`
-    font-size: 0.875rem;
-    font-weight: 400;
-    line-height: 1.28572;
-    letter-spacing: 0.16px;
     width: 100%;
-    background-color: #f4f4f4;
+    background-color: ${grays[9]};
 `;
 
-export const tr = css`
-    width: 100%;
-    height: 3rem;
-    border: none;
+export const cell = css`
+    ${textSans.xsmall({ fontWeight: 'light', lineHeight: 'loose' })}
+    color: ${grays[1]};
 `;

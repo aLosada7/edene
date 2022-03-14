@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { cellAlign } from './styles';
+import { cell, cellAlign } from './styles';
 
 export interface TableCellProps {
     align?: 'left' | 'center' | 'right';
@@ -11,5 +11,5 @@ export const TableCell = ({
     align = 'center',
     ...props
 }: TableCellProps) => {
-    return <th css={() => cellAlign(align)}>{children}</th>;
+    return <th css={[cell, cellAlign(align)]}>{children}</th>;
 };
