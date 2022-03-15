@@ -1,4 +1,4 @@
-import { Button, Container, Title, Text } from '@dana-components';
+import { Button, Container, Title, Alert } from '@dana-components';
 import { useNavigate } from 'react-router-dom';
 
 export const CompletedOrderPage = () => {
@@ -10,9 +10,7 @@ export const CompletedOrderPage = () => {
                 Order Completed
             </Title>
 
-            <Text mb={6}>
-                We have received your order. You will have it at home soon!
-            </Text>
+            <Alert>We have received your order.</Alert>
 
             <Button onClick={() => navigate('/')}>Start a new order</Button>
         </Container>

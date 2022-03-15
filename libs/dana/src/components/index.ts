@@ -17,3 +17,4 @@ export * from './modal';
 export * from './MenuButton';
 export * from './ActionButton';
 export * from './Tabs';
+export * from './Alert';

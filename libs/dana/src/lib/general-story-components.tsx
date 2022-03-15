@@ -13,6 +13,12 @@ export const StoryHStack = ({ children }: StoryHelperProps) => (
     </Row>
 );
 
+export const StoryVStack = ({ children }: StoryHelperProps) => (
+    <Row>
+        <Col verticalStack={2}>{children}</Col>
+    </Row>
+);
+
 export const StoryGridElement = ({ children }: StoryHelperProps) => (
     <Col
         sm={8}
