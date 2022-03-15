@@ -75,7 +75,6 @@ export const Input = ({
                 aria-required={!optional}
                 aria-invalid={!!error}
                 aria-describedby={error || success ? descriptionId(id) : ''}
-                checked={checked}
                 {...props}
             />
         </>
