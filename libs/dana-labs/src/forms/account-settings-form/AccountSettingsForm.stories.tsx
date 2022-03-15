@@ -21,13 +21,13 @@ export default {
 
 export const AccountSettings = () => (
     <Form>
-        <h1>Account Settings</h1>
+        <Title size="h4">Account Settings</Title>
         <Divider />
         <Row py={4}>
-            <Col sm={24} md={8} lg={8}>
-                <Title size="h3">Personal Info</Title>
+            <Col md={8} lg={8}>
+                <Title size="h4">Personal Info</Title>
             </Col>
-            <Col sm={24} md={16} lg={16} verticalStack={2}>
+            <Col md={16} direction="column">
                 <TextInput label="Name" />
 
                 <TextInput label="Email" required />
@@ -45,15 +45,15 @@ export const AccountSettings = () => (
         <Row py={4}>
             <Col sm={24} md={8} lg={8}></Col>
             <Col sm={24} md={16} lg={16} horizontalStack={4}>
-                <Button color="success" onClick={action('onSubmit')}>
-                    Save
-                </Button>
                 <Button
-                    variant="outline"
+                    variant="link"
                     color="dark"
                     onClick={action('onCancel')}
                 >
                     Cancel
+                </Button>
+                <Button color="success" onClick={action('onSubmit')}>
+                    Save
                 </Button>
             </Col>
         </Row>

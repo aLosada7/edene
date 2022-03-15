@@ -17,8 +17,6 @@ export const Icon = ({
     const { theme } = useThemeContext();
     const iconColor = color || (theme ? theme.text : '#000');
 
-    console.log(iconColor);
-
     return (
         <>
             {cloneElement(children, {
