@@ -6,8 +6,6 @@ export const GeneralForm = () => {
             <h1>General Form</h1>
             <Form>
                 <TextInput label="Product Name" />
-
-                <NumberInput label="Quantity" />
             </Form>
         </>
     );

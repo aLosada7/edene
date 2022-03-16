@@ -8,6 +8,8 @@ import { shadows } from '../../foundations/shadows';
 import { textSans } from '../../foundations/typography/api';
 
 export const accordion = (variant: string) => css`
+    padding: 0;
+
     ${variant === 'bordered' &&
     `
     box-shadow: ${shadows.primary};

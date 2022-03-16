@@ -2,12 +2,11 @@ import { action } from '@storybook/addon-actions';
 
 import css from '@emotion/css';
 import { Story, Meta } from '@storybook/react';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import {
     SideNav,
     SideNavProps,
     SideNavItems,
-    SideNavPrincipal,
     SideNavItem,
     SideNavMenu,
     SideNavMenuItem,
@@ -31,19 +30,16 @@ import { Badge } from '@dana';
 export default {
     component: SideNav,
     title: 'Components/Layout/UI Shell',
+    parameters: {
+        layout: 'fullscreen',
+    },
 } as Meta;
 
-const template = css`
-    position: relative;
-    width: 100%;
-    display: flex;
-`;
-
 const main = css`
-    margin-left: 4rem;
-    padding: 2rem;
-    background: #fff;
-    will-change: margin-left;
+    margin-left: 256px;
+
+    width: 100%;
+    min-height: 100vh;
 `;
 
 const sideNavHeader = css`
@@ -51,45 +47,43 @@ const sideNavHeader = css`
 `;
 
 export const FixedSideNav: Story<SideNavProps> = () => (
-    <div css={template}>
-        <SideNav width={64} aria-label="Side navigation">
+    <>
+        <SideNav isFixed width={256} aria-label="Side navigation">
             <SideNavItems>
-                <SideNavPrincipal title="Principal">
-                    <SideNavMenu title="L0 menu">
-                        <SideNavMenuItem>L0 menu item</SideNavMenuItem>
-                        <SideNavMenuItem>L0 menu item</SideNavMenuItem>
-                        <SideNavMenuItem>L0 menu item</SideNavMenuItem>
-                    </SideNavMenu>
-                    <SideNavMenu title="L0 menu">
-                        <SideNavMenuItem>L0 menu item</SideNavMenuItem>
-                        <SideNavMenuItem>L0 menu item</SideNavMenuItem>
-                        <SideNavMenuItem>L0 menu item</SideNavMenuItem>
-                    </SideNavMenu>
-                    <SideNavMenu title="L0 menu">
-                        <SideNavMenuItem>L0 menu item</SideNavMenuItem>
-                        <SideNavMenuItem>L0 menu item</SideNavMenuItem>
-                        <SideNavMenuItem>L0 menu item</SideNavMenuItem>
-                    </SideNavMenu>
-                    <SideNavItem>Link</SideNavItem>
-                    <SideNavItem
-                        isActive
-                        aria-current="page"
-                        badge={<Badge color="gray" text="7" />}
-                    >
-                        Link
-                    </SideNavItem>
-                </SideNavPrincipal>
+                <SideNavMenu title="L0 menu">
+                    <SideNavMenuItem>L0 menu item</SideNavMenuItem>
+                    <SideNavMenuItem>L0 menu item</SideNavMenuItem>
+                    <SideNavMenuItem>L0 menu item</SideNavMenuItem>
+                </SideNavMenu>
+                <SideNavMenu title="L0 menu">
+                    <SideNavMenuItem>L0 menu item</SideNavMenuItem>
+                    <SideNavMenuItem>L0 menu item</SideNavMenuItem>
+                    <SideNavMenuItem>L0 menu item</SideNavMenuItem>
+                </SideNavMenu>
+                <SideNavMenu title="L0 menu">
+                    <SideNavMenuItem>L0 menu item</SideNavMenuItem>
+                    <SideNavMenuItem>L0 menu item</SideNavMenuItem>
+                    <SideNavMenuItem>L0 menu item</SideNavMenuItem>
+                </SideNavMenu>
+                <SideNavItem>Link</SideNavItem>
+                <SideNavItem
+                    isActive
+                    aria-current="page"
+                    badge={<Badge color="gray" text="7" />}
+                >
+                    Link
+                </SideNavItem>
             </SideNavItems>
         </SideNav>
         <main css={main}>
             <p>Some text</p>
         </main>
-    </div>
+    </>
 );
 
 export const FixedSideNavWDivider: Story<SideNavProps> = () => (
-    <div css={template}>
-        <SideNav width={64} aria-label="Side navigation">
+    <>
+        <SideNav isFixed width={256} aria-label="Side navigation">
             <SideNavItems>
                 <SideNavMenu title="L0 menu">
                     <SideNavMenuItem>L0 menu item</SideNavMenuItem>
@@ -116,12 +110,12 @@ export const FixedSideNavWDivider: Story<SideNavProps> = () => (
         <main css={main}>
             <p>Some text</p>
         </main>
-    </div>
+    </>
 );
 
 export const FixedSideNavWIcons: Story<SideNavProps> = () => (
-    <div css={template}>
-        <SideNav width={64} aria-label="Side navigation">
+    <>
+        <SideNav isFixed width={256} aria-label="Side navigation">
             <SideNavItems>
                 <SideNavMenu icon={<GraduationIcon />} title="L0 menu">
                     <SideNavMenuItem>L0 menu item</SideNavMenuItem>
@@ -151,7 +145,7 @@ export const FixedSideNavWIcons: Story<SideNavProps> = () => (
         <main css={main}>
             <p>Some text</p>
         </main>
-    </div>
+    </>
 );
 
 export const HeaderBase: Story<HeaderProps> = () => (
@@ -219,9 +213,8 @@ export const HeaderBaseWSidenav: Story<HeaderProps> = () => {
                 [Library]
             </HeaderName>
             <SideNav
-                width={64}
+                width={256}
                 aria-label="Side navigation"
-                isChildOfHeader={true}
                 expanded={isSideNavExpanded}
                 cssOverrides={sideNavHeader}
             >

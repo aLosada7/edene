@@ -5,5 +5,6 @@ import './styles.scss';
 export const parameters = {
     viewport,
     backgrounds,
+    layout: 'fullscreen',
     actions: { argTypesRegex: '^on[A-Z].*' },
 };

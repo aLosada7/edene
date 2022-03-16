@@ -24,8 +24,10 @@ export const ImageAndBody: Story<CardProps> = () => (
                     alt="Image Example"
                 ></CardImage>
                 <CardBody>
-                    <Text size="lg">Basics of Angular</Text>
-                    <Text mt={4}>
+                    <Text color="hsl(212, 56%, 16%)" size="lg">
+                        Basics of Angular
+                    </Text>
+                    <Text color="hsl(212, 18%, 35%)" mt={4}>
                         Introductory course for Angular and framework basics
                     </Text>
                 </CardBody>

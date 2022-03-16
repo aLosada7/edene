@@ -5,6 +5,7 @@ export const divider = (dividerWidth?: number) => css`
     border-bottom-width: 1px;
     border-color: rgb(226, 232, 240);
     width: 100%;
+    border-style: solid;
 
     ${dividerWidth && `width: calc(${dividerWidth} * 0.25rem)`}
 `;

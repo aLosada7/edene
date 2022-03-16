@@ -59,18 +59,6 @@ const viewportEntries = Object.entries(breakpoints).map(([name, width]) => {
 
 export const viewport = {
     viewports: {
-        responsive: {
-            name: 'Responsive',
-            styles: {
-                width: '100%',
-                height: '100%',
-                border: 'none',
-                display: 'block',
-                margin: '0',
-                boxShadow: 'none',
-            },
-        },
         ...Object.fromEntries(viewportEntries),
     },
-    defaultViewport: 'responsive',
 };

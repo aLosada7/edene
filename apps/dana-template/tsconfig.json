@@ -9,6 +9,7 @@
         "forceConsistentCasingInFileNames": true,
         "strict": true,
         "noImplicitReturns": true,
+        "lib": ["es5", "es6", "es7", "es2017", "es2019", "es2020", "dom"],
         "noFallthroughCasesInSwitch": true
     },
     "files": [],

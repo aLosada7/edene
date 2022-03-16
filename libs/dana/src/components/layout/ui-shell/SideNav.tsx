@@ -1,38 +1,66 @@
-import { sidenav, sidenavHeader, navOverlay } from './styles';
+import { sidenav, sidenavHeader, navOverlay, aside } from './styles';
 import React from 'react';
 import { SerializedStyles } from '@emotion/react';
+import { headerHeight } from './stylesHeader';
 export interface SideNavProps {
-    /** Means navbar is fixed. Each unit is multiplied by 0.25rem **/
+    /** Means navbar is fixed. Unit measured in px **/
+    isFixed?: boolean;
     width?: number;
     expanded?: boolean;
-    isChildOfHeader?: boolean;
+    headerHeight?: number;
     'aria-label': string;
+    onClick?: any;
     children: JSX.Element;
     cssOverrides?: SerializedStyles | SerializedStyles[];
+    cssOverridesAside?: SerializedStyles | SerializedStyles[];
 }
 
 export const SideNav = ({
-    width = 0,
+    isFixed = false,
+    width = 256,
     expanded = false,
-    isChildOfHeader = false,
+    onClick,
     children,
     cssOverrides,
+    cssOverridesAside,
     ...props
 }: SideNavProps) => {
-    return (
-        <aside style={{ width: '100%' }}>
-            <div css={expanded ? navOverlay : null}></div>
-            <nav
+    const SideNavWrapper = ({ children }: any) => {
+        if (!isFixed) return <>{children}</>;
+
+        return (
+            <aside
                 css={[
-                    sidenav({ width, expanded, isChildOfHeader }),
-                    isChildOfHeader ? sidenavHeader : null,
-                    cssOverrides,
+                    aside(expanded, width, props.headerHeight),
+                    cssOverridesAside,
                 ]}
-                aria-label={props['aria-label']}
             >
                 {children}
-            </nav>
-        </aside>
+            </aside>
+        );
+    };
+
+    return (
+        <>
+            <div css={expanded ? navOverlay : null} onClick={onClick}></div>
+            <SideNavWrapper isFixed={isFixed} width={width}>
+                <nav
+                    css={[
+                        sidenav({
+                            width,
+                            expanded,
+                        }),
+                        props.headerHeight
+                            ? sidenavHeader(expanded, props.headerHeight)
+                            : null,
+                        cssOverrides,
+                    ]}
+                    aria-label={props['aria-label']}
+                >
+                    {children}
+                </nav>
+            </SideNavWrapper>
+        </>
     );
 };
 

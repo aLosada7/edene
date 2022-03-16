@@ -1,5 +1,4 @@
-import { SerializedStyles } from '@emotion/react';
-import React, { Children, cloneElement } from 'react';
+import React, { Children, cloneElement, ReactElement } from 'react';
 import { sideNavPrincipal } from './styles';
 
 export interface SideNavPrincipalProps {
@@ -10,7 +9,7 @@ export interface SideNavPrincipalProps {
     activeColor?: string | null;
     /** Received from parent */
     hoverColor?: string | null;
-    children: JSX.Element[];
+    children: ReactElement | ReactElement[];
     cssOverrides?: any;
 }
 export const SideNavPrincipal = ({

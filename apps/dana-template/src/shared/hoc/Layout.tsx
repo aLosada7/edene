@@ -10,38 +10,78 @@ import {
     SideNavItems,
     SideNavMenu,
     SideNavMenuItem,
-    SvgBell,
-    SvgGrid3x3GapFill,
+    BellIcon,
+    Grid3x3GapIcon,
     SearchIcon,
-    ThemeProvider,
+    from,
+    SideNavPrincipal,
 } from '@dana';
+import { Outlet } from 'react-router-dom';
+import { css } from '@emotion/react';
 
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
-export interface LayoutProps {}
+const headerHeight = 48; // default
+const sideNavWidth = 256;
 
-export default ({ ...props }: LayoutProps) => {
-    const [isSideNavExpanded, setSideNavExpanded] = useState(false);
+const header = (isSideNavExpanded: boolean) => css`
+    ${isSideNavExpanded && from.desktop} {
+        margin-left: ${sideNavWidth}px;
+    }
+`;
+
+const main = (isSideNavExpanded: boolean) => css`
+    ${isSideNavExpanded && from.desktop} {
+        margin-left: ${sideNavWidth}px;
+    }
+    margin-top: ${headerHeight}px;
+
+    width: 100%;
+    min-height: 100vh;
+
+    background-color: hsl(210, 32%, 93%);
+    will-change: margin-left;
+`;
+
+const aside = (isSideNavExpanded: boolean) =>
+    css`
+        ${!isSideNavExpanded && `display: none;`}
+    `;
+
+const sideNav = css`
+    background-color: #fff;
+`;
+
+export default () => {
+    const [isSideNavExpanded, setSideNavExpanded] = useState(
+        window.innerWidth > 980
+    );
     const handleSideNavExpand = () => setSideNavExpanded(!isSideNavExpanded);
 
     return (
-        <ThemeProvider>
-            <Header isFixed aria-label="Dana Template">
+        <>
+            <Header
+                isFixed
+                cssOverrides={header(isSideNavExpanded)}
+                aria-label="Dana Template"
+            >
                 <HeaderMenuButton
+                    alwaysVisible
                     aria-label="Open menu"
                     onClick={handleSideNavExpand}
                     variant="light"
                     isActive={isSideNavExpanded}
                 />
-                <HeaderName href="/" prefix="DANA">
-                    [Template]
-                </HeaderName>
-                <SideNav
-                    width={64}
-                    aria-label="Side navigation"
-                    isChildOfHeader={true}
-                    expanded={isSideNavExpanded}
-                >
-                    <SideNavItems>
+            </Header>
+            <SideNav
+                isFixed
+                width={sideNavWidth}
+                aria-label="Side navigation"
+                onClick={handleSideNavExpand}
+                expanded={isSideNavExpanded}
+                cssOverrides={sideNav}
+                cssOverridesAside={aside(isSideNavExpanded)}
+            >
+                <SideNavItems>
+                    <SideNavPrincipal title="Components">
                         <SideNavMenu title="Forms">
                             <SideNavMenuItem href="/generalForm">
                                 General Form (*)
@@ -53,49 +93,17 @@ export default ({ ...props }: LayoutProps) => {
                                 Form Upload (*)
                             </SideNavMenuItem>
                         </SideNavMenu>
-                        <SideNavMenu title="L0 menu" isActive={true}>
-                            <SideNavMenuItem href="javascript:void(0)">
-                                L0 menu item
-                            </SideNavMenuItem>
-                            <SideNavMenuItem
-                                href="javascript:void(0)"
-                                aria-current="page"
-                            >
-                                L0 menu item
-                            </SideNavMenuItem>
-                            <SideNavMenuItem href="javascript:void(0)">
-                                L0 menu item
-                            </SideNavMenuItem>
-                        </SideNavMenu>
-                        <SideNavMenu title="L0 menu">
-                            <SideNavMenuItem href="javascript:void(0)">
-                                L0 menu item
-                            </SideNavMenuItem>
-                            <SideNavMenuItem href="javascript:void(0)">
-                                L0 menu item
-                            </SideNavMenuItem>
-                            <SideNavMenuItem href="javascript:void(0)">
-                                L0 menu item
-                            </SideNavMenuItem>
-                        </SideNavMenu>
-                        <SideNavItem href="/ui/dana-components">
-                            Dana Components
+                    </SideNavPrincipal>
+                    <SideNavPrincipal title="Templates">
+                        <SideNavItem isActive href="templates/game-summary">
+                            Game Summary
                         </SideNavItem>
-                        <SideNavItem href="ui/datatable">DataTable</SideNavItem>
-                    </SideNavItems>
-                </SideNav>
-                <HeaderGlobalBar>
-                    <HeaderGlobalAction aria-label="Search">
-                        <SearchIcon />
-                    </HeaderGlobalAction>
-                    <HeaderGlobalAction aria-label="Notifications" badge={7}>
-                        <SvgBell />
-                    </HeaderGlobalAction>
-                    <HeaderGlobalAction aria-label="App" tooltipAlignment="end">
-                        <SvgGrid3x3GapFill />
-                    </HeaderGlobalAction>
-                </HeaderGlobalBar>
-            </Header>
-        </ThemeProvider>
+                    </SideNavPrincipal>
+                </SideNavItems>
+            </SideNav>
+            <main css={main(isSideNavExpanded)}>
+                <Outlet />
+            </main>
+        </>
     );
 };

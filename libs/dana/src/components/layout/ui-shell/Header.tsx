@@ -1,22 +1,23 @@
 import { SerializedStyles } from '@emotion/react';
+import { Children, cloneElement } from 'react';
 import useThemeContext from '../../../foundations/theme/useThemeContext';
 import { header, headerPosition, headerHeight } from './stylesHeader';
 
 export interface HeaderProps {
     /**
      * The height of the header
-     * By default its value is 12 = 3rem
+     * By default its value is 48px
      */
     isFixed?: boolean;
     height?: number;
     'aria-label': string;
-    children: React.ReactElement | React.ReactElement[];
+    children?: React.ReactElement | React.ReactElement[];
     cssOverrides?: SerializedStyles | SerializedStyles[];
 }
 
 export const Header = ({
     isFixed = false,
-    height = 12,
+    height = 48,
     children,
     cssOverrides,
     ...props
@@ -34,7 +35,12 @@ export const Header = ({
             role="banner"
             aria-label={props['aria-label']}
         >
-            {children}
+            {children &&
+                Children.map(children, (child) => {
+                    return cloneElement(child, {
+                        headerHeight: height,
+                    });
+                })}
         </header>
     );
 };

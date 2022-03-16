@@ -8,14 +8,14 @@ export interface HeaderMenuButtonProps {
     /**
      * Choose if you want to show the menu button independently of the viewport size
      */
-    isAlwaysVisible?: boolean;
+    alwaysVisible?: boolean;
     isActive?: boolean;
     onClick: any;
     variant: 'light' | 'dark';
 }
 
 export const HeaderMenuButton = ({
-    isAlwaysVisible = false,
+    alwaysVisible = false,
     isActive = false,
     variant,
     onClick,
@@ -23,7 +23,9 @@ export const HeaderMenuButton = ({
 }: HeaderMenuButtonProps) => {
     return (
         <MenuButton
-            cssOverrides={headerMenuButton(isAlwaysVisible)}
+            alwaysVisible={alwaysVisible}
+            isActive={isActive}
+            cssOverrides={headerMenuButton(alwaysVisible)}
             variant={variant}
             aria-label={props['aria-label']}
             onClick={onClick}

@@ -3,7 +3,7 @@ import { defaultTheme } from '../../../foundations/theme/defaultTheme';
 import { from } from '../../../foundations/mq';
 
 export const header = ({ theme = defaultTheme }) => css`
-    z-index: 8000;
+    z-index: 1000;
     top: 0;
     right: 0;
     left: 0;
@@ -19,7 +19,7 @@ export const headerPosition = (isFixed: boolean) => css`
 
 export const headerHeight = (height: number) =>
     css`
-        height: calc(${height} * 0.25rem);
+        height: ${height}px;
     `;
 
 export const headerName = ({ theme = defaultTheme }) => css`
@@ -159,10 +159,10 @@ export const headerPanelExpanded = css`
     border-bottom-left-radius: 8px;
 `;
 
-export const headerMenuButton = (isAlwaysVisible: boolean) => css`
+export const headerMenuButton = (alwaysVisible: boolean) => css`
     width: 1rem;
 
-    ${!isAlwaysVisible && from.desktop} {
+    ${!alwaysVisible && from.desktop} {
         display: none;
     }
 `;

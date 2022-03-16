@@ -1,37 +1,44 @@
 import { css } from '@emotion/react';
 import { defaultTheme } from 'libs/dana/src/foundations/theme/defaultTheme';
 import { textSans } from 'libs/dana/src/foundations/typography/api';
-import { background } from '../../../foundations';
+import { background, grays } from '../../../foundations';
 import { focusHalo } from '../../../foundations/accesibility';
 import { transitions } from '../../../foundations/animation';
 import { from } from '../../../foundations/mq';
 
-export const sidenav = ({ width, expanded, isChildOfHeader }: any) => css`
-    z-index: 8000;
-    max-width: 100%;
-    width: 100%;
+export const aside = (
+    expanded: boolean,
+    width: number,
+    headerHeight?: number
+) => css`
+    position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
-    width: 0;
+    width: ${width}px;
+    z-index: 100;
+    background-color: #fff;
+
+    ${!headerHeight && expanded && `z-index: 1000;`}
+
+    ${expanded && from.desktop} {
+        display: block;
+    }
+`;
+
+export const sidenav = ({ width, expanded }: any) => css`
+    z-index: 8000;
+    max-width: 100%;
+    width: ${width}px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    max-width: 100%;
     display: flex;
-    height: 100%;
     flex-direction: column;
-    flex: 1 1 150px; // stretching (ocupy all the space) flex-grow flex-shrink flex-basis
     background-color: transparent;
 
-    ${width !== 0 &&
-    (expanded || !isChildOfHeader) &&
-    `position: fixed;
-    width: calc(${width} * 0.25rem);
-    max-width: calc(${width} * 0.25rem)`}
-
-    ${width === 0 && `width: 100%;`}
-
-    ${from.desktop && width !== 0} {
-        width: 16rem;
-        max-width: 16rem;
-    }
+    ${expanded && `position: absolute;`}
 `;
 
 export const sideNavDivider = css`
@@ -146,11 +153,12 @@ export const navItem = (
 `;
 
 export const sideNavPrincipal = () => css`
-    margin-bottom: 0.5rem;
+    padding-left: 1rem;
+    margin-top: 1.5rem;
 
     span {
         ${textSans.xxsmall({ fontWeight: 'bold' })};
-        color: rgb(82, 82, 82);
+        color: ${grays[0]};
         text-transform: uppercase;
     }
 `;
@@ -271,8 +279,16 @@ export const collapsedBody = css`
     ${collapsedBodyStyles};
 `;
 
-export const sidenavHeader = css`
-    top: 3rem;
+export const sidenavHeader = (expanded: boolean, headerHeight: number) => css`
+    top: ${headerHeight}px;
+
+    ${!expanded && `display: none;`}
+    ${expanded && `height: 100vh;`}
+
+    ${from.desktop} {
+        position: absolute;
+        display: block;
+    }
 `;
 
 export const navOverlay = css`
@@ -283,6 +299,7 @@ export const navOverlay = css`
     height: 100vh;
     background-color: rgba(22, 22, 22, 0.5);
     opacity: 1;
+    z-index: 100;
     transition: opacity ${transitions.medium},
         background-color ${transitions.medium};
 

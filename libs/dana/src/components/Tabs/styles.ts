@@ -1,8 +1,8 @@
 import { css } from '@emotion/react';
+import { grays } from '../../foundations/palette';
 
 export const tabs = css`
     display: flex;
-    overflow: auto hidden;
     width: auto;
     max-width: 100%;
     flex-direction: row;
@@ -10,10 +10,12 @@ export const tabs = css`
     margin: 0;
     list-style: none;
     outline: 0;
+    border-bottom: 2px solid ${grays[5]};
 `;
 
 export const tab = css`
     display: flex;
+    position: relative;
     padding: 0;
     cursor: pointer;
 `;
@@ -23,6 +25,13 @@ export const tabSelected = css`
     font-weight: 600;
     line-height: 1.28572;
     letter-spacing: 0.16px;
-    border-bottom: 2px solid #0f62fe;
     color: #161616;
+
+    ::after {
+        content: '';
+        border-bottom: 2px solid #0f62fe;
+        width: 100%;
+        position: absolute;
+        bottom: -2px;
+    }
 `;

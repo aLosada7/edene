@@ -6,6 +6,7 @@ import { menu, menuLine, menuOpen } from './styles';
 export interface MenuButtonProps
     extends ButtonHTMLAttributes<HTMLButtonElement>,
         Props {
+    alwaysVisible?: boolean;
     isActive?: boolean;
     onClick: any;
     variant?: 'light' | 'dark';
@@ -13,6 +14,7 @@ export interface MenuButtonProps
 }
 
 export const MenuButton = ({
+    alwaysVisible = false,
     isActive = false,
     onClick,
     variant = 'dark',
@@ -29,7 +31,9 @@ export const MenuButton = ({
             }}
             aria-label={props['aria-label']}
         >
-            <div css={[menuLine(variant), active ? menuOpen : '']}></div>
+            <div
+                css={[menuLine(variant), active && !alwaysVisible && menuOpen]}
+            ></div>
         </button>
     );
 };
