@@ -10,7 +10,6 @@ export { SideNavMenu } from './SideNavMenu';
 export type { SideNavMenuProps } from './SideNavMenu';
 export { SideNavMenuItem } from './SideNavMenuItem';
 export type { SideNavMenuItemProps } from './SideNavMenuItem';
-export { SideNavDivider } from './SideNavDivider';
 
 export { Header } from './Header';
 export type { HeaderProps } from './Header';

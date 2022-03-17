@@ -10,7 +10,6 @@ import {
     SideNavItem,
     SideNavMenu,
     SideNavMenuItem,
-    SideNavDivider,
     Header,
     HeaderProps,
     HeaderName,
@@ -25,7 +24,7 @@ import {
     Grid3x3GapIcon,
     SearchIcon,
 } from '../../../foundations/icons';
-import { Badge } from '@dana';
+import { Badge, Divider } from '@dana';
 
 export default {
     component: SideNav,
@@ -102,7 +101,7 @@ export const FixedSideNavWDivider: Story<SideNavProps> = () => (
                     <SideNavMenuItem>L0 menu item</SideNavMenuItem>
                     <SideNavMenuItem>L0 menu item</SideNavMenuItem>
                 </SideNavMenu>
-                <SideNavDivider />
+                <Divider />
                 <SideNavItem>Link</SideNavItem>
                 <SideNavItem>Link</SideNavItem>
             </SideNavItems>
