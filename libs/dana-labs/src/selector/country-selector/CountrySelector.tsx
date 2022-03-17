@@ -1,4 +1,5 @@
-import { Container, Select, Option } from '@dana';
+import { Select, Option } from '@dana';
+import { css } from '@emotion/react';
 
 const getFlagEmoji = (countryCode: any) => {
     const codePoints = countryCode
@@ -8,21 +9,23 @@ const getFlagEmoji = (countryCode: any) => {
     return String.fromCodePoint(...codePoints);
 };
 
+const marginRight = css`
+    margin-right: 6px;
+`;
+
 export function CountrySelector() {
     return (
-        <Container>
-            <Select label="Country">
-                <Option value="canada">
-                    <span>{getFlagEmoji('CA')} Canada</span>
-                </Option>
-                <Option value="usa">
-                    <span>{getFlagEmoji('us')} United States</span>
-                </Option>
-                <Option value="newzeland">
-                    <span>{getFlagEmoji('nz')} New Zeland</span>
-                </Option>
-            </Select>
-        </Container>
+        <Select label="Country">
+            <Option value="canada">
+                <span css={marginRight}>{getFlagEmoji('CA')}</span>Canada
+            </Option>
+            <Option value="usa">
+                <span css={marginRight}>{getFlagEmoji('us')}</span>United States
+            </Option>
+            <Option value="newzeland">
+                <span css={marginRight}>{getFlagEmoji('nz')}</span>New Zeland
+            </Option>
+        </Select>
     );
 }
 

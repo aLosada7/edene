@@ -101,7 +101,7 @@ export const FixedSideNavWDivider: Story<SideNavProps> = () => (
                     <SideNavMenuItem>L0 menu item</SideNavMenuItem>
                     <SideNavMenuItem>L0 menu item</SideNavMenuItem>
                 </SideNavMenu>
-                <Divider />
+                <Divider mt={2} mb={2} mh={4} />
                 <SideNavItem>Link</SideNavItem>
                 <SideNavItem>Link</SideNavItem>
             </SideNavItems>

@@ -17,12 +17,13 @@ export const gridContainer = (
     padding-left: 6vw;
     padding-right: 6vw;
 
+    ${verticalPadding !== 0 &&
+    `padding-top: calc(${verticalPadding} * 0.25rem); padding-bottom: calc(${verticalPadding} * 0.25rem);`}
+
     ${from.phablet} {
         padding-left: 3vw;
         padding-right: 3vw;
 
-        ${verticalPadding !== 0 &&
-        `padding-top: calc(${verticalPadding} * 0.25rem); padding-bottom: calc(${verticalPadding} * 0.25rem);`}
         ${horizontalPadding !== 0 &&
         `padding-right: calc(${horizontalPadding} * 0.25rem); padding-left: calc(${horizontalPadding} * 0.25rem);`}
         margin-top: calc(${marginTop} * 0.25rem);

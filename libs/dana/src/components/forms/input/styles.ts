@@ -17,6 +17,7 @@ export const field = css`
 
 export const input = css`
     width: 100%;
+    background-color: #fff;
     box-sizing: border-box;
     height: ${height.inputMedium}px;
     ${textSans.medium({ lineHeight: 'regular' })};

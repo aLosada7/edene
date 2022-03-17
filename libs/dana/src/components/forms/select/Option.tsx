@@ -1,3 +1,4 @@
+import { ReactNode } from 'react';
 import { Props } from '../../../helpers';
 import { option, select, selectItems } from './styles';
 
@@ -9,7 +10,7 @@ type SelectHandler = (
 export interface OptionProps extends Props {
     value: string;
     onClick?: SelectHandler;
-    children?: React.ReactElement | string;
+    children?: ReactNode;
 }
 
 export const Option = ({
