@@ -1,6 +1,7 @@
 import { css } from '@emotion/react';
 import { defaultTheme } from '../../../foundations/theme/defaultTheme';
 import { from } from '../../../foundations/mq';
+import { shadows } from 'libs/dana/src/foundations/shadows';
 
 export const header = ({ theme = defaultTheme }) => css`
     z-index: 1000;
@@ -151,6 +152,9 @@ export const headerPanel = (backgroundColor: string, textColor: string) => css`
     background-color: ${backgroundColor};
     color: ${textColor};
     padding: 1rem 0;
+    display: flex;
+    align-items: center;
+    box-shadow: ${shadows.light};
 `;
 
 export const headerPanelExpanded = css`

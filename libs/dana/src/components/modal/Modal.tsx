@@ -49,7 +49,7 @@ export const Modal = ({
                     {children[1]}
                 </Card>
             </div>
-            <Overlay />
+            <Overlay onClick={onClose} />
         </>
     );
 };

@@ -1,5 +1,5 @@
 import { overlay } from './styles';
 
-export const Overlay = () => {
-    return <div css={overlay}></div>;
+export const Overlay = ({ onClick }: { onClick: () => void }) => {
+    return <div css={overlay} onClick={onClick}></div>;
 };

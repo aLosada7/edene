@@ -29,7 +29,11 @@ const Template: Story = () => {
                         </Text>
                     </ModalContent>
                     <ModalFooter>
-                        <Button variant="link" color="dark">
+                        <Button
+                            variant="link"
+                            color="dark"
+                            onClick={() => setOpened(false)}
+                        >
                             Cancel
                         </Button>
                         <Button color="danger">Deactivate</Button>

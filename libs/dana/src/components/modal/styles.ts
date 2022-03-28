@@ -1,4 +1,5 @@
 import { css } from '@emotion/react';
+import { shadows } from '../../foundations/shadows';
 
 export const modal = css`
     position: absolute;
@@ -16,6 +17,7 @@ export const modal = css`
 export const cardOverrides = css`
     background-color: #fff;
     width: 500px;
+    box-shadow: ${shadows.darkest};
 `;
 
 export const cardHeader = css`
@@ -29,6 +31,7 @@ export const modalFooter = css`
     justify-content: flex-end;
     align-items: center;
 
+    border-radius: 8px;
     padding: 1rem 1.5rem;
     background: hsl(210, 38%, 97%);
 `;

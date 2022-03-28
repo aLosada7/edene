@@ -4,7 +4,7 @@ export const card = css`
     display: block;
     transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
-    border-radius: 4px;
+    border-radius: 8px;
     text-decoration: none;
     -webkit-font-smoothing: antialiased;
 
