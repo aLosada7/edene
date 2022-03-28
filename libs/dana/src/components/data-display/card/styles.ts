@@ -1,3 +1,4 @@
+import { from, grays, textSans } from '@dana-foundations';
 import { css } from '@emotion/react';
 
 export const card = css`
@@ -10,10 +11,30 @@ export const card = css`
 
     box-shadow: 0 2px 1px -1px rgb(0 0 0 / 20%), 0 1px 1px 0 rgb(0 0 0 / 14%),
         0 1px 3px 0 rgb(0 0 0 / 12%);
+
+    ${from.phablet} {
+        width: 100%;
+    }
+`;
+
+export const cardHeader = css`
+    min-height: 1rem;
+    padding: 0.5rem;
+    background-color: ${grays[8]};
+    color: ${grays[2]};
+    letter-spacing: 0.5px;
+
+    div {
+        ${textSans.xsmall({ fontWeight: 'bold' })}
+    }
 `;
 
 export const cardBody = css`
-    padding: 1rem;
+    padding: 0.5rem 1rem;
+
+    ${textSans.xsmall({ fontWeight: 'light', lineHeight: 'loose' })}
+    background-color: ${grays[9]};
+    color: ${grays[1]};
 `;
 
 export const cardImage = css`
