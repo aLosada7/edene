@@ -4,6 +4,7 @@
         "dana": "libs/dana",
         "dana-labs": "libs/dana-labs",
         "dana-template": "apps/dana-template",
-        "food-delivery": "apps/food-delivery"
+        "food-delivery": "apps/food-delivery",
+        "user-list-redux": "apps/user-list-redux"
     }
 }

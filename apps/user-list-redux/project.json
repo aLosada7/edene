@@ -1,0 +1,74 @@
+{
+    "root": "apps/user-list-redux",
+    "sourceRoot": "apps/user-list-redux/src",
+    "projectType": "application",
+    "targets": {
+        "build": {
+            "executor": "@nrwl/web:build",
+            "outputs": ["{options.outputPath}"],
+            "defaultConfiguration": "production",
+            "options": {
+                "outputPath": "dist/apps/user-list-redux",
+                "index": "apps/user-list-redux/src/index.html",
+                "baseHref": "/",
+                "main": "apps/user-list-redux/src/main.tsx",
+                "polyfills": "apps/user-list-redux/src/polyfills.ts",
+                "tsConfig": "apps/user-list-redux/tsconfig.app.json",
+                "assets": [
+                    "apps/user-list-redux/src/favicon.ico",
+                    "apps/user-list-redux/src/assets"
+                ],
+                "styles": [],
+                "scripts": [],
+                "webpackConfig": "@nrwl/react/plugins/webpack"
+            },
+            "configurations": {
+                "production": {
+                    "fileReplacements": [
+                        {
+                            "replace": "apps/user-list-redux/src/environments/environment.ts",
+                            "with": "apps/user-list-redux/src/environments/environment.prod.ts"
+                        }
+                    ],
+                    "optimization": true,
+                    "outputHashing": "all",
+                    "sourceMap": false,
+                    "namedChunks": false,
+                    "extractLicenses": true,
+                    "vendorChunk": false
+                }
+            }
+        },
+        "serve": {
+            "executor": "@nrwl/web:dev-server",
+            "options": {
+                "buildTarget": "user-list-redux:build",
+                "hmr": true
+            },
+            "configurations": {
+                "production": {
+                    "buildTarget": "user-list-redux:build:production",
+                    "hmr": false
+                }
+            }
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "outputs": ["{options.outputFile}"],
+            "options": {
+                "lintFilePatterns": [
+                    "apps/user-list-redux/**/*.{ts,tsx,js,jsx}"
+                ]
+            }
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "outputs": ["coverage/apps/user-list-redux"],
+            "options": {
+                "jestConfig": "apps/user-list-redux/jest.config.js",
+                "passWithNoTests": true
+            }
+        }
+    },
+    "tags": []
+}
