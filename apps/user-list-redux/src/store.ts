@@ -3,6 +3,7 @@ import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 import rootReducer from './app/reducers/rootReducer';
 import promiseMiddleware from 'redux-promise-middleware';
+
 export default function configureStore() {
     return createStore(
         rootReducer,

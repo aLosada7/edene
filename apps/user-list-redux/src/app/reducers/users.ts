@@ -12,10 +12,11 @@ export default (
                 ...state,
                 loading: true,
             };
-        case 'GET_USERS_FULLFILLED':
+        case 'GET_USERS_FULFILLED':
             return {
                 ...state,
-                users: action.payload.data,
+                loading: false,
+                users: state.users.concat(action.payload.data),
             };
         case 'GET_USERS_REJECTED':
             return Object.assign({}, state, {

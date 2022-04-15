@@ -1,17 +1,21 @@
-import { render } from '@testing-library/react';
+import { screen, render } from '@testing-library/react';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
 
+import rootReducer from './reducers/rootReducer';
 import App from './app';
 
+const store = createStore(rootReducer);
+
+const Wrapper = ({ children }: any) => (
+    <Provider store={store}>{children}</Provider>
+);
+
 describe('App', () => {
-    it('should render successfully', () => {
-        const { baseElement } = render(<App />);
+    it('renders correctly', async () => {
+        const { asFragment } = render(<App />, { wrapper: Wrapper });
 
-        expect(baseElement).toBeTruthy();
-    });
-
-    it('should have a greeting as the title', () => {
-        const { getByText } = render(<App />);
-
-        expect(getByText('Welcome to user-list-redux!')).toBeTruthy();
+        // same than tree.toJSON()
+        expect(asFragment()).toMatchSnapshot();
     });
 });

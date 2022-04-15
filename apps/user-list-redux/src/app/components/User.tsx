@@ -1,6 +1,4 @@
-import React from 'react';
 import { IUser } from '../types/user';
-import './User.css';
 
 interface UserProps {
     user: IUser;
