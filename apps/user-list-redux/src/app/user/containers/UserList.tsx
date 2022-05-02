@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 
 import { getUsers } from '../actions/users';
 import User from '../components/User';
-import { IUser } from '../types/user';
+import { IUser } from '../model/user';
 
 export function UserList({ getUsers, users }: any) {
     console.log(users);
