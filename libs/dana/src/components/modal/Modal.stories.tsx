@@ -1,48 +1,84 @@
 import React, { useState } from 'react';
-import { Container, Button, ModalFooter, ModalContent, Text } from '../..';
-import { asChromaticStory } from '../../lib/story-intents';
-import type { Story } from '../../lib/storybook-emotion-10-fixes';
-import { Modal } from './Modal';
+import { Meta, Story } from '@storybook/react';
+
+import Modal from './Modal';
+import { Button } from '../forms/button';
+import { ModalsProvider } from './ModalsProvider';
+import { useModals } from './useModals';
+import { StoryHStack } from '../../lib/general-story-components';
+import ModalHeader from './ModalHeader';
+import ModalBody from './ModalBody';
+
+// Estilos
+// Tecla esc
+// Cerrar cuando pulsas en el Overlay
 
 export default {
-    title: 'Components/Modal',
     component: Modal,
-};
+    title: 'Components/Modal',
+    decorators: [
+        (Story: any) => (
+            <ModalsProvider>
+                <Story />
+            </ModalsProvider>
+        ),
+    ],
+} as Meta;
 
 const Template: Story = () => {
-    const [opened, setOpened] = useState(false);
+    const [showModal, setShowModal] = useState(false);
 
     return (
-        <Container mt={8}>
-            <>
-                <Button onClick={() => setOpened(true)}>Open Modal</Button>
-                <Modal
-                    opened={opened}
-                    title="Deactivate account"
-                    onClose={() => setOpened(false)}
-                >
-                    <ModalContent>
-                        <Text size="sm" color="hsl(212, 18%, 35%)">
-                            Are vou sure vou want to deactivate vour account? Bi
-                            doing this you will lose all of your saved data and
-                            will not ha ahlata ratriovs it.
-                        </Text>
-                    </ModalContent>
-                    <ModalFooter>
-                        <Button
-                            variant="link"
-                            color="dark"
-                            onClick={() => setOpened(false)}
-                        >
-                            Cancel
-                        </Button>
-                        <Button color="danger">Deactivate</Button>
-                    </ModalFooter>
-                </Modal>
-            </>
-        </Container>
+        <>
+            <Button onClick={() => setShowModal(true)}>Show modal</Button>
+            <Modal show={showModal} onClose={() => setShowModal(false)}>
+                <ModalHeader
+                    title="Modal example"
+                    onClose={() => setShowModal(false)}
+                />
+                <ModalBody>
+                    <Button onClick={() => setShowModal(false)}>
+                        Close modal
+                    </Button>
+                </ModalBody>
+            </Modal>
+        </>
     );
 };
 
 export const Default = Template.bind({});
-asChromaticStory(Default);
+
+// **************************************************************************************************
+
+const ModalsProviderTemplate: Story = () => {
+    const modals = useModals();
+
+    const closeModal = (id: string) => {
+        modals.closeModal(id);
+    };
+
+    const openModal = (id: string) => {
+        const newModalId = (+id + 1).toString();
+
+        modals.openModal({
+            id: newModalId,
+            title: `Modal ${newModalId}`,
+            children: (
+                <StoryHStack>
+                    <Button onClick={() => openModal(newModalId)}>
+                        Launch another modal
+                    </Button>
+                    <Button onClick={() => closeModal(newModalId)}>
+                        Close modal
+                    </Button>
+                </StoryHStack>
+            ),
+        });
+    };
+
+    return <Button onClick={() => openModal('0')}>Launch demo modal</Button>;
+};
+
+// **************************************************************************************************
+
+export const Provider = ModalsProviderTemplate.bind({});
