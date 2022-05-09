@@ -14,7 +14,7 @@ export interface TitleProps {
     align?: ITextAlign;
     icon?: ReactElement;
     cssOverrides?: any;
-    children: ReactElement | string;
+    children: ReactElement | React.ReactNode | string;
 }
 
 export const Title = ({
