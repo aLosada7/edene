@@ -7,8 +7,8 @@ import {
     Button,
     NumberInput,
     Title,
-    ModalContent,
-    ModalFooter,
+    ModalBody,
+    ModalHeader,
 } from '@dana-components';
 import { css } from '@emotion/react';
 import React, { useState } from 'react';
@@ -74,11 +74,14 @@ export const RestaurantPage = () => {
                     )}
 
                     <Modal
-                        opened={foodSelected !== null}
-                        title={foodSelected ? foodSelected.name : 'Fail'}
+                        show={foodSelected !== null}
                         onClose={() => setFoodSelected(null)}
                     >
-                        <ModalContent>
+                        <ModalHeader
+                            title={foodSelected ? foodSelected.name : 'Fail'}
+                            onClose={() => setFoodSelected(null)}
+                        />
+                        <ModalBody>
                             {foodSelected && foodSelected.price ? (
                                 <Container
                                     cssOverrides={css`
@@ -106,26 +109,23 @@ export const RestaurantPage = () => {
                                         value={quantity}
                                         onChange={setQuantity}
                                     />
+
+                                    <div>
+                                        <Button onClick={handleNewCartProduct}>
+                                            <>
+                                                Add to cart (
+                                                {(foodSelected
+                                                    ? foodSelected.price / 100
+                                                    : 0) * quantity}{' '}
+                                                €)
+                                            </>
+                                        </Button>
+                                    </div>
                                 </Container>
                             ) : (
                                 <div>error</div>
                             )}
-                        </ModalContent>
-                        <ModalFooter
-                            cssOverrides={css`
-                                justify-content: center;
-                            `}
-                        >
-                            <Button onClick={handleNewCartProduct}>
-                                <>
-                                    Add to cart (
-                                    {(foodSelected
-                                        ? foodSelected.price / 100
-                                        : 0) * quantity}{' '}
-                                    €)
-                                </>
-                            </Button>
-                        </ModalFooter>
+                        </ModalBody>
                     </Modal>
                 </Col>
             </Row>

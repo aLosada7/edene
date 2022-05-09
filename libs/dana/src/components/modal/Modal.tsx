@@ -1,55 +1,76 @@
 import { css } from '@emotion/react';
-import React, { ReactElement } from 'react';
-import { CloseIcon } from '../../foundations/icons/CloseIcon';
-import { ActionButton } from '../ActionButton';
+import React, { useEffect, useRef } from 'react';
 import { Card, CardBody } from '../data-display';
-import { Row } from '../layout';
-import { Overlay } from '../overlay/Overlay';
-import { Title } from '../title';
-import { cardHeader, cardOverrides, modal } from './styles';
+import { cardOverrides, modal } from './styles';
 
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
-export interface ModalProps {
-    title: string;
-    opened: boolean;
+interface ModalProps {
+    id?: string;
+    /* Disables onClock trigger for escape key press */
+    closeOnEscape?: boolean;
+    /* Disables focus trap */
+    trapFocus?: boolean;
+    show: boolean;
+    title?: string;
     /** Called when close button clicked and when escape key is pressed */
-    onClose(): void;
-    children: ReactElement[];
+    onClose(modalId: string): void;
+    children: React.ReactElement[];
 }
 
-export const Modal = ({
-    title,
-    opened,
-    children,
+const Modal = ({
+    id,
+    closeOnEscape = true,
+    trapFocus = false,
+    show,
     onClose,
-    ...props
+    children,
 }: ModalProps) => {
-    if (!opened) return <></>;
+    const idRef = useRef<string>('');
+    const modalRef = useRef<HTMLElement | null>(null);
+
+    const closeOnEscapePress = (event: KeyboardEvent) => {
+        if (!trapFocus && event.code === 'Escape' && closeOnEscape) {
+            onClose(idRef.current);
+        }
+    };
+
+    const handleClick = (event: any) => {
+        if (modalRef.current && !modalRef.current?.contains(event.target)) {
+            onClose(idRef.current);
+        }
+    };
+
+    useEffect(() => {
+        if (id) idRef.current = id;
+        if (!trapFocus) {
+            window.addEventListener('keydown', closeOnEscapePress);
+            return () =>
+                window.removeEventListener('keydown', closeOnEscapePress);
+        }
+
+        return undefined;
+    }, [id, trapFocus]);
+
+    if (!show) return <></>;
 
     return (
-        <>
-            <div css={modal}>
-                <Card cssOverrides={cardOverrides}>
-                    <CardBody
-                        cssOverrides={css`
-                            padding: 1.2rem 2rem;
-                        `}
-                    >
-                        <Row
-                            align="space-between-center"
-                            cssOverrides={cardHeader}
-                        >
-                            <Title size="h4">{title}</Title>
-                            <ActionButton onClick={onClose}>
-                                <CloseIcon />
-                            </ActionButton>
-                        </Row>
-                        {children[0]}
-                    </CardBody>
-                    {children[1]}
-                </Card>
-            </div>
-            <Overlay onClick={onClose} />
-        </>
+        <div css={modal} onClick={handleClick}>
+            <Card
+                role="dialog"
+                cssOverrides={cardOverrides}
+                aria-modal="true"
+                ref={modalRef}
+            >
+                <CardBody
+                    cssOverrides={css`
+                        padding: 1.2rem 2rem;
+                    `}
+                >
+                    {children}
+                </CardBody>
+            </Card>
+        </div>
     );
 };
+export default Modal;
+
+export type { ModalProps };

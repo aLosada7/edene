@@ -1,37 +1,40 @@
 import { css } from '@emotion/react';
+import { from } from '../../foundations/mq';
 import { shadows } from '../../foundations/shadows';
 
 export const modal = css`
-    position: absolute;
-    inset: 0px;
-    z-index: 11;
-    overflow-y: auto;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     display: flex;
-    -webkit-box-pack: center;
     justify-content: center;
     align-items: flex-start;
-    position: absolute;
-    top: 25%;
+    padding: 3rem 1rem;
+    background-color: rgba(22, 22, 22, 0.5);
+    z-index: 9000;
+    opacity: 1;
+    transition: opacity 200ms;
+    visibility: visible;
 `;
 
 export const cardOverrides = css`
     background-color: #fff;
-    width: 500px;
+    width: fit-content !important;
     box-shadow: ${shadows.darkest};
+
+    ${from.phablet} {
+        height: auto;
+        min-width: 500px;
+        max-width: 75%;
+    }
 `;
 
-export const cardHeader = css`
-    margin-left: 0;
-    margin-right: 0;
-    margin-bottom: 1rem;
-`;
-
-export const modalFooter = css`
+export const modalHeader = css`
     display: flex;
-    justify-content: flex-end;
     align-items: center;
-
-    border-radius: 8px;
-    padding: 1rem 1.5rem;
-    background: hsl(210, 38%, 97%);
+    justify-content: space-between;
+    margin-bottom: 16px;
+    margin-right: -9px;
 `;
