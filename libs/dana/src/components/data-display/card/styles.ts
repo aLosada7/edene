@@ -33,7 +33,6 @@ export const cardBody = css`
     padding: 0.5rem 1rem;
 
     ${textSans.xsmall({ fontWeight: 'light', lineHeight: 'loose' })}
-    background-color: ${grays[9]};
     color: ${grays[1]};
 `;
 
