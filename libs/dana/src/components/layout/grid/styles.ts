@@ -20,7 +20,7 @@ export const gridContainer = (
     ${verticalPadding !== 0 &&
     `padding-top: calc(${verticalPadding} * 0.25rem); padding-bottom: calc(${verticalPadding} * 0.25rem);`}
 
-    ${from.phablet} {
+    ${from.desktop} {
         padding-left: 3vw;
         padding-right: 3vw;
 

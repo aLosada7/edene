@@ -1,7 +1,7 @@
 import { headerGlobalBar } from './stylesHeader';
 
 export interface HeaderGlobalBarProps {
-    children: React.ReactElement | React.ReactElement[];
+    children: React.ReactNode;
 }
 
 export const HeaderGlobalBar = ({
