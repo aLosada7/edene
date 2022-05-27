@@ -51,8 +51,8 @@ const bodySizes: BodySizes = {
 const textSansSizes: TextSansSizes = {
     xxsmall: fontSizes[0], //12px
     xsmall: fontSizes[1], //14px
-    small: fontSizes[2], //16px
-    medium: fontSizes[3], //18px
+    small: fontSizes[2], //15px
+    medium: fontSizes[3], //17px
     large: fontSizes[4], //20px
     xlarge: fontSizes[5], //24px
     xxlarge: fontSizes[6], //30px
