@@ -2,6 +2,8 @@ import React, { ChangeEventHandler, cloneElement } from 'react';
 import { InputHTMLAttributes } from 'react';
 import { descriptionId } from '../../../foundations/accesibility';
 import { Props } from '../../../helpers';
+import { InlineError } from '../../InlineFeedback/InlineError';
+import { InlineSuccess } from '../../InlineFeedback/InlineSuccess';
 import {
     errorInput,
     input as inputE,
@@ -49,6 +51,10 @@ export const Input = ({
     cssOverrides,
     ...props
 }: InputProps) => {
+    const Error = error ? <InlineError>{error}</InlineError> : null;
+    const Success =
+        !error && success ? <InlineSuccess>{success}</InlineSuccess> : null;
+
     return (
         <>
             {leftIcon ? (
@@ -77,6 +83,8 @@ export const Input = ({
                 aria-describedby={error || success ? descriptionId(id) : ''}
                 {...props}
             />
+            {Error}
+            {Success}
         </>
     );
 };

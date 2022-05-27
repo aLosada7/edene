@@ -1,12 +1,11 @@
-import { Children, cloneElement, ReactElement, useRef, useState } from 'react';
 import { Props } from '../../../helpers';
 import { textarea } from './styles';
-import { ChevronDownIcon } from '../../../foundations/icons';
-import { field, input } from '../input/styles';
+import { input } from '../input/styles';
 import { generateSourceId } from '../../../foundations/accesibility';
 import { FormInput } from '../input/types';
-import { Button, Label } from '../..';
+import { Label } from '../..';
 import { SerializedStyles } from '@emotion/react';
+import { FormGroup } from '../../FormGroup';
 
 export interface TextareaProps extends Props, FormInput {
     cssLabelOverrides?: SerializedStyles | SerializedStyles[];
@@ -30,9 +29,9 @@ export const Textarea = ({
     ) : null;
 
     return (
-        <div role="group" css={field}>
+        <FormGroup>
             {label}
             <textarea css={[input, textarea]} id={inputId}></textarea>
-        </div>
+        </FormGroup>
     );
 };

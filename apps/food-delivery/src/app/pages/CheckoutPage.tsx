@@ -1,17 +1,44 @@
-import { Button, ButtonGroup, Container, Text, Title } from '@dana-components';
+import {
+    Button,
+    ButtonGroup,
+    Checkbox,
+    Container,
+    Text,
+    Title,
+} from '@dana-components';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Cart } from '../components/Cart';
 import useCartContext from '../context/cart/useCartContext';
 import { IFoodInfo } from '../context/restaurants';
 
+interface ICheckoutErrors {
+    [key: string]: string;
+}
+
 export const CheckoutPage = () => {
+    const [checked, setChecked] = useState(false);
+    const [formErrors, setFormErrors] = useState<ICheckoutErrors>({});
     const { products, dispatch } = useCartContext();
     const navigate = useNavigate();
 
     const handleRemoveCartProduct = (product: IFoodInfo) =>
         dispatch({ type: 'REMOVE_PRODUCT', payload: { product } });
 
+    const isValidOrder = () => {
+        let errors = {};
+        if (!checked)
+            errors = {
+                ...errors,
+                checked: 'You must agree before submitting.',
+            };
+
+        setFormErrors(errors);
+        return Object.keys(errors).length === 0;
+    };
+
     const handleCompleteOrder = () => {
+        if (!isValidOrder()) return;
         dispatch({ type: 'CLEAR_CART' });
         navigate('/order-completed');
     };
@@ -31,6 +58,14 @@ export const CheckoutPage = () => {
             <Title size="h3">Checkout</Title>
 
             {cart}
+
+            <Checkbox
+                label="I accept terms and conditions."
+                checked={checked}
+                onClick={() => setChecked(!checked)}
+                error={formErrors.checked}
+            />
+
             <ButtonGroup size="block">
                 <Button
                     color="dark"

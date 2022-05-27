@@ -2,11 +2,15 @@ import { css } from '@emotion/react';
 import { focusHalo } from '../../../foundations/accesibility';
 
 export const checkbox = css`
-    cursor: pointer;
-    display: inline-flex;
-    -webkit-box-align: center;
-    align-items: center;
-    vertical-align: top;
+    position: relative;
+    display: block;
+`;
+
+export const checkboxLabel = css`
+    margin-left: 24px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: space-around;
     position: relative;
 
     &:focus {
@@ -16,7 +20,12 @@ export const checkbox = css`
 
 export const checkboxInput = css`
     width: 1rem;
-    margin-right: 0.4rem;
+    position: absolute;
+    margin-top: 0.3rem;
+    margin-left: -24px;
+    height: auto;
+    position: absolute;
+    top: 0;
 
     &:focus {
         outline: none;

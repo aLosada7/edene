@@ -9,10 +9,11 @@ import {
 import { Props } from '../../../helpers';
 import { select, selectButton, selectItems, showItems } from './styles';
 import { ChevronDownIcon } from '../../../foundations/icons';
-import { field, input } from '../input/styles';
+import { input } from '../input/styles';
 import { generateSourceId } from '../../../foundations/accesibility';
 import { FormInput } from '../input/types';
 import { Button, Label } from '../..';
+import { FormGroup } from '../../FormGroup';
 
 export interface SelectProps extends Props, FormInput {
     value?: string;
@@ -54,7 +55,7 @@ export const Select = ({
     ) : null;
 
     return (
-        <div role="group" css={field}>
+        <FormGroup>
             {label}
             <div css={[input, select, cssOverrides]} id={inputId}>
                 <Button
@@ -73,6 +74,6 @@ export const Select = ({
                     })}
                 </ul>
             </div>
-        </div>
+        </FormGroup>
     );
 };

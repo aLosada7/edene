@@ -1,23 +1,21 @@
-import {
-    ChangeEventHandler,
-    InputHTMLAttributes,
-    useEffect,
-    useState,
-} from 'react';
+import { useEffect, useState } from 'react';
 
 import { input, numberInputWrapper, subtractButton, sumButton } from './styles';
 import { MinusIcon, PlusIcon } from '../../../foundations/icons';
 import { Label } from '../../label';
-import { field } from '../input/styles';
 import { generateSourceId } from 'libs/dana/src/foundations/accesibility';
 import { FormInput } from '../input/types';
 import { Props } from '../../../helpers';
 import { SerializedStyles } from '@emotion/react';
 import { Input } from '../input';
+import { FormGroup } from '../../FormGroup';
 export interface NumberInputProps extends Props, FormInput {
     min?: number;
     max?: number;
     value?: number;
+    /**
+     * Appears as an inline error message.
+     */
     error?: string;
     /**
      * Appears as an inline success message.
@@ -44,8 +42,6 @@ export const NumberInput = ({
     optional = false,
     max,
     min,
-    error,
-    success,
     onChange,
     cssOverrides,
     cssLabelOverrides,
@@ -66,7 +62,7 @@ export const NumberInput = ({
     const subtract = () =>
         setValue(!min || (min && value > min) ? value - 1 : value);
     return (
-        <div role="group" css={field}>
+        <FormGroup>
             {labelText && (
                 <Label
                     text={labelText}
@@ -79,12 +75,11 @@ export const NumberInput = ({
                     id={textInputId}
                     value={value}
                     optional={optional}
-                    success={success}
-                    error={error}
                     onChange={(event) => setValue(Number(event.target.value))}
                     css={[input, cssOverrides]}
                     min={min}
                     max={max}
+                    {...props}
                 />
 
                 <button
@@ -103,6 +98,6 @@ export const NumberInput = ({
                     <PlusIcon />
                 </button>
             </div>
-        </div>
+        </FormGroup>
     );
 };

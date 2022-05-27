@@ -103,7 +103,7 @@ export const AccountSettings = () => (
 
                     <Textarea label="Small description"></Textarea>
 
-                    <Checkbox>I accept the conditions.</Checkbox>
+                    <Checkbox label="I accept the conditions."></Checkbox>
                 </Col>
             </Row>
             <Row py={4}>

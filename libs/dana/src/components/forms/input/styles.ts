@@ -4,17 +4,6 @@ import { focusHalo } from '../../../foundations/accesibility';
 import { height } from '../../../foundations/size';
 import { textSans } from '../../../foundations/typography/api';
 
-export const field = css`
-    display: inline-flex;
-    flex-direction: column;
-    width: 100%;
-    height: fit-content;
-
-    :not(:first-of-type) {
-        margin-top: 20px;
-    }
-`;
-
 export const input = css`
     width: 100%;
     background-color: #fff;
