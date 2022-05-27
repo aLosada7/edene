@@ -1,27 +1,13 @@
 import { ChangeEventHandler, InputHTMLAttributes } from 'react';
 import { SerializedStyles } from '@emotion/react';
 
-import {
-    inlineMessage,
-    successMessage,
-    errorMessage,
-    width10,
-    width30,
-    width4,
-    widthFluid,
-} from './styles';
+import { width10, width30, width4, widthFluid } from './styles';
 import { Label } from '../../label';
 import { Props } from '../../../helpers';
-import {
-    descriptionId,
-    generateSourceId,
-} from '../../../foundations/accesibility';
-import { CautionIcon, SuccessIcon } from '../../../foundations/icons';
-import { text } from '../../../foundations/palette';
-import { Text } from '../../text';
+import { generateSourceId } from '../../../foundations/accesibility';
 import { Input } from '../..';
-import { field } from '../input/styles';
 import { FormInput } from '../input/types';
+import { FormGroup } from '../../FormGroup';
 
 export type Width = 30 | 10 | 4;
 
@@ -72,8 +58,6 @@ export const TextInput = ({
     label: labelText,
     optional = false,
     width,
-    error,
-    success,
     leftIcon,
     onChange,
     cssOverrides,
@@ -87,42 +71,24 @@ export const TextInput = ({
             cssOverrides={cssLabelOverrides}
             text={labelText}
             optional={optional}
-        >
-            {error && (
-                <Text
-                    icon={<CautionIcon size="xsmall" color="accent" />}
-                    cssOverrides={[errorMessage, inlineMessage]}
-                >
-                    <span id={descriptionId(textInputId)}>{error}</span>
-                </Text>
-            )}
-            {!error && success && (
-                <Text
-                    icon={<SuccessIcon size="xsmall" color="success" />}
-                    cssOverrides={[successMessage, inlineMessage]}
-                >
-                    <span id={descriptionId(textInputId)}>{success}</span>
-                </Text>
-            )}
-        </Label>
+        />
     ) : null;
 
     return (
-        <div role="group" css={field}>
+        <FormGroup>
             {label}
             <Input
                 type="text"
                 id={textInputId}
                 optional={optional}
-                success={success}
-                error={error}
                 leftIcon={leftIcon}
                 onChange={onChange}
                 css={(theme: any) => [
                     width ? widths[width] : widthFluid,
                     cssOverrides,
                 ]}
+                {...props}
             />
-        </div>
+        </FormGroup>
     );
 };

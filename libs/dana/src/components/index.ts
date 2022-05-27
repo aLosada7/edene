@@ -20,3 +20,4 @@ export * from './Alert';
 export * from './Avatar';
 export * from './Toast';
 export * from './InlineFeedback';
+export * from './FormGroup';

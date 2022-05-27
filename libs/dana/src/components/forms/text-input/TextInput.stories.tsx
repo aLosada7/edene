@@ -71,7 +71,7 @@ asChromaticStory(Width4TextInput);
 
 export const ErrorTextInput = Template.bind({});
 ErrorTextInput.args = {
-    error: 'The email address entered is not valid',
+    error: 'The email address entered is not valid.',
 };
 asChromaticStory(ErrorTextInput);
 
@@ -79,7 +79,7 @@ asChromaticStory(ErrorTextInput);
 
 export const SuccessTextInput = Template.bind({});
 SuccessTextInput.args = {
-    success: 'Your email address has been registered successfully',
+    success: 'Your email address has been registered successfully.',
 };
 asChromaticStory(SuccessTextInput);
 

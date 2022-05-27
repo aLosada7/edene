@@ -1,10 +1,8 @@
-import { SerializedStyles } from '@emotion/react';
-import { LabelHTMLAttributes, ReactNode } from 'react';
+import { LabelHTMLAttributes } from 'react';
 import useThemeContext from '../../foundations/theme/useThemeContext';
 import { Props } from '../../helpers';
 import { label, labelText } from './styles';
 import { SupportingText } from './SupportingText';
-import { Text } from './Text';
 
 export interface LabelProps
     extends LabelHTMLAttributes<HTMLLabelElement>,
@@ -38,7 +36,7 @@ export const Label = ({
 }: LabelProps) => {
     const theme = useThemeContext();
     return (
-        <label css={() => [label, labelText(theme), cssOverrides]}>
+        <label css={() => [label, labelText(theme), cssOverrides]} {...props}>
             {/*<Text hideLabel={hideLabel} optional={optional} />*/}
             {supporting ? (
                 <SupportingText hideLabel={hideLabel}>
