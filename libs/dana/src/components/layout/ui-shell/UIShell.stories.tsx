@@ -167,7 +167,7 @@ export const HeaderBaseWActions: Story<HeaderProps> = () => (
             <HeaderGlobalAction badge={7} aria-label="Notifications">
                 <BellIcon />
             </HeaderGlobalAction>
-            <HeaderGlobalAction aria-label="App" tooltipAlignment="end">
+            <HeaderGlobalAction aria-label="App">
                 <Grid3x3GapIcon />
             </HeaderGlobalAction>
         </HeaderGlobalBar>
@@ -186,7 +186,7 @@ export const HeaderBaseWActionsAndPanel: Story<HeaderProps> = () => (
             <HeaderGlobalAction aria-label="Notifications">
                 <BellIcon />
             </HeaderGlobalAction>
-            <HeaderGlobalAction aria-label="App" tooltipAlignment="end">
+            <HeaderGlobalAction aria-label="App">
                 <Grid3x3GapIcon />
             </HeaderGlobalAction>
         </HeaderGlobalBar>
@@ -246,7 +246,7 @@ export const HeaderBaseWSidenav: Story<HeaderProps> = () => {
                 <HeaderGlobalAction aria-label="Notifications">
                     <BellIcon />
                 </HeaderGlobalAction>
-                <HeaderGlobalAction aria-label="App" tooltipAlignment="end">
+                <HeaderGlobalAction aria-label="App">
                     <Grid3x3GapIcon />
                 </HeaderGlobalAction>
             </HeaderGlobalBar>

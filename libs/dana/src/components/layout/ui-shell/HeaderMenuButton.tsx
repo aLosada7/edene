@@ -1,8 +1,6 @@
 import { MenuButton } from '../../MenuButton';
 import { headerMenuButton } from './stylesHeader';
 
-export type TooltipAlignment = 'end';
-
 export interface HeaderMenuButtonProps {
     'aria-label': string;
     /**

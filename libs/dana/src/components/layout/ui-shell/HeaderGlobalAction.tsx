@@ -8,8 +8,6 @@ import {
     headerGlobalActionAriaLabel,
 } from './stylesHeader';
 
-export type TooltipAlignment = 'end';
-
 export interface HeaderGlobalActionProps
     extends ButtonHTMLAttributes<HTMLButtonElement> {
     /**
@@ -18,7 +16,6 @@ export interface HeaderGlobalActionProps
      */
     showAriaLabel?: boolean;
     'aria-label': string;
-    tooltipAlignment?: TooltipAlignment;
     badge?: number;
     children: React.ReactElement;
 }

@@ -1,7 +1,6 @@
-import { headerPanel, headerPanelExpanded } from './stylesHeader';
 import React from 'react';
 
-export type TooltipAlignment = 'end';
+import { headerPanel, headerPanelExpanded } from './stylesHeader';
 
 export interface HeaderPanelProps {
     children?: React.ReactElement | React.ReactElement[];

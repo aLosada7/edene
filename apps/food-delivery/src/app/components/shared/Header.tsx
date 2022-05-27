@@ -1,3 +1,7 @@
+import { css } from '@emotion/react';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import {
     Header as DanaHeader,
     HeaderName,
@@ -5,20 +9,21 @@ import {
     HeaderGlobalAction,
     HeaderPanel,
     Container,
-    Row,
-    Col,
-    Text,
     Button,
 } from '@dana';
-
 import { CartIcon } from '@dana-icons';
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+
 import useCartContext from '../../context/cart/useCartContext';
 import { IFoodInfo } from '../../context/restaurants';
 import { Cart } from '../Cart';
 
-export const Header = () => {
+const userHeading = css`
+    display: flex;
+    align-items: center;
+    color: #f4f4f4;
+`;
+
+export const Header = ({ name }: { name?: string }) => {
     const [expanded, setExpanded] = useState(false);
 
     const { products, dispatch } = useCartContext();
@@ -35,9 +40,13 @@ export const Header = () => {
         <DanaHeader isFixed aria-label="Food Delivery">
             <HeaderName href="#">Food Delivery</HeaderName>
             <HeaderGlobalBar>
+                {name && (
+                    <span role="heading" aria-level={1} css={userHeading}>
+                        {name}
+                    </span>
+                )}
                 <HeaderGlobalAction
                     aria-label="App"
-                    tooltipAlignment="end"
                     badge={products.length}
                     onClick={toggleRightPanel}
                 >

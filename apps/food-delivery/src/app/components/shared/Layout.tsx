@@ -6,7 +6,7 @@ import { Header } from './Header';
 export const Layout = () => {
     return (
         <div>
-            <Header />
+            <Header name="Usuario invitado" />
             <main className={styles.main}>
                 <Outlet />
             </main>
