@@ -11,7 +11,6 @@ export const input = css`
     height: ${height.inputMedium}px;
     ${textSans.medium({ lineHeight: 'regular' })};
     padding: 0 1rem;
-    outline: transparent solid 2px;
     border: 1px solid rgb(226, 232, 240);
     border-radius: 6px;
 

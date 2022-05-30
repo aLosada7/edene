@@ -1,6 +1,8 @@
-import { Checkbox, CheckboxProps } from '.';
-import { asChromaticStory, asPlayground } from '../../../lib/story-intents';
-import type { Story } from '../../../lib/storybook-emotion-10-fixes';
+import { Checkbox, CheckboxProps } from './Checkbox';
+import { CheckboxGroup } from './CheckboxGroup';
+import { asChromaticStory, asPlayground } from '../../lib/story-intents';
+import type { Story } from '../../lib/storybook-emotion-10-fixes';
+import { useState } from 'react';
 
 export default {
     title: 'Components/Forms/Checkbox',
@@ -40,3 +42,14 @@ SuccessCheckbox.args = {
 asChromaticStory(SuccessCheckbox);
 
 // *****************************************************************************
+
+export const Group = () => {
+    const [values, setValues] = useState([]);
+
+    return (
+        <CheckboxGroup value={values} onChange={setValues}>
+            <Checkbox label="Save information to pay faster next time" />
+            <Checkbox label="My billing and shipping address are the same" />
+        </CheckboxGroup>
+    );
+};
