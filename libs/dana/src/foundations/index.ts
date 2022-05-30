@@ -19,3 +19,4 @@ export const palette = {
 
 export * from './commonStyles';
 export * from './typography';
+export * from './accesibility';

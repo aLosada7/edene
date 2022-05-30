@@ -1,25 +1,19 @@
 import { generateSourceId } from '../../../foundations/accesibility';
-import { Input } from '..';
+import { Input } from '../../forms';
 import { Label } from '../../label';
-import { radio, radioInput } from './styles';
+import { useRadioGroup } from '../useRadioGroup';
+import { radio, radioInput } from '../styles';
 
 export interface RadioProps {
     id?: string;
     checked?: boolean;
     value?: string;
-    onChange?: any;
     children: string;
 }
 
-export const Radio = ({
-    id,
-    checked = false,
-    value,
-    onChange,
-    children,
-    ...props
-}: RadioProps) => {
+export const Radio = ({ id, children, ...props }: RadioProps) => {
     const radioId = id || generateSourceId();
+    const group = useRadioGroup();
 
     return (
         <Label cssOverrides={radio} text={children}>
@@ -27,9 +21,9 @@ export const Radio = ({
                 cssOverrides={radioInput}
                 type="radio"
                 id={radioId}
-                value={value}
-                checked={checked}
-                onChange={onChange}
+                checked={group.value === props.value}
+                onChange={group.onChange}
+                {...props}
             />
         </Label>
     );
