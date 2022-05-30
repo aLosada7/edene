@@ -1,3 +1,5 @@
+import { SerializedStyles } from '@emotion/react';
+
 import { generateSourceId } from '../../../foundations/accesibility';
 import { Input } from '../../forms';
 import { Label } from '../../label';
@@ -9,16 +11,31 @@ export interface RadioProps {
     checked?: boolean;
     value?: string;
     children: string;
+    cssOverrides?: SerializedStyles;
+    cssLabelOverrides?: SerializedStyles;
 }
 
-export const Radio = ({ id, children, ...props }: RadioProps) => {
+export const Radio = ({
+    id,
+    children,
+    cssOverrides,
+    cssLabelOverrides,
+    ...props
+}: RadioProps) => {
     const radioId = id || generateSourceId();
     const group = useRadioGroup();
 
     return (
-        <Label cssOverrides={radio} text={children}>
+        <Label
+            cssOverrides={
+                cssLabelOverrides ? [radio, cssLabelOverrides] : radio
+            }
+            text={children}
+        >
             <Input
-                cssOverrides={radioInput}
+                cssOverrides={
+                    cssOverrides ? [radioInput, cssOverrides] : radioInput
+                }
                 type="radio"
                 id={radioId}
                 checked={group.value === props.value}

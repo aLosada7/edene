@@ -10,7 +10,9 @@ import {
     Checkbox,
     TextInput,
 } from '@dana';
-import { optionWrapper } from './styles';
+import { MaterialIcon } from '@dana-icons';
+
+import { optionWrapper, onlyRadio } from './styles';
 
 export default {
     title: 'DanaLabs/Forms',
@@ -31,18 +33,23 @@ const Template: Story<RadioGroupProps> = (props: RadioGroupProps) => {
             >
                 <div css={optionWrapper}>
                     <Radio value="1">Credit or debit card</Radio>
-                    <TextInput placeholder="Card Number" />
+                    <TextInput
+                        placeholder="Card Number"
+                        leftIcon={<MaterialIcon>credit_card</MaterialIcon>}
+                    />
                     <TextInput placeholder="Card holder name" />
                 </div>
                 <div css={optionWrapper}>
-                    <Radio value="2">$17/month with Affirt</Radio>
+                    <Radio value="2" cssLabelOverrides={onlyRadio}>
+                        $17/month with Affirt
+                    </Radio>
                 </div>
                 <div css={optionWrapper}>
-                    <Radio value="3">Solana Pay</Radio>
+                    <Radio value="3" cssLabelOverrides={onlyRadio}>
+                        Solana Pay
+                    </Radio>
                 </div>
             </RadioGroup>
-            <Checkbox label="Save information to pay faster next time" />
-            <Checkbox label="My billing and shipping address are the same" />
         </Container>
     );
 };
