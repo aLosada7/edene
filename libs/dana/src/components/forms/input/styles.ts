@@ -36,6 +36,7 @@ export const leftIconInput = css`
     display: flex;
     justify-content: center;
     align-items: center;
+    color: rgb(226, 232, 240);
 `;
 
 export const leftIconInInput = css`

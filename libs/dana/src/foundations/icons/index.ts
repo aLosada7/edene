@@ -1,3 +1,5 @@
+export * from './MaterialIcon';
+
 // social networks
 export { GithubIcon } from './GithubIcon';
 export { LinkedinIcon } from './LinkedinIcon';

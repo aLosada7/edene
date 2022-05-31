@@ -1,7 +1,12 @@
 import { css } from '@emotion/react';
-import { focusHalo } from '../../../foundations/accesibility';
+import { focusHalo } from '../../foundations/accesibility';
+
+export const radioGroup = css`
+    margin: 0;
+`;
 
 export const radio = css`
+    width: auto;
     cursor: pointer;
     display: inline-flex;
     -webkit-box-align: center;

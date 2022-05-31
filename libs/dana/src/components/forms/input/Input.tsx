@@ -43,7 +43,6 @@ export const Input = ({
     id,
     type = 'text',
     value,
-    checked = undefined,
     optional = false,
     error,
     success,
