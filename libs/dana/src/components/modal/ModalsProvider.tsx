@@ -1,6 +1,7 @@
 import { createContext, useReducer } from 'react';
-import { Modal, ModalBody, ModalHeader } from '.';
-import { Overlay } from '../overlay/Overlay';
+import Modal from './Modal';
+import ModalBody from './ModalBody';
+import ModalHeader from './ModalHeader';
 import { modalsReducer } from './reducer';
 import { ModalSettings, ModalState } from './types';
 

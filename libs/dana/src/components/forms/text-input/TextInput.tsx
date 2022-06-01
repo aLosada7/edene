@@ -5,7 +5,7 @@ import { width10, width30, width4, widthFluid } from './styles';
 import { Label } from '../../label';
 import { Props } from '../../../helpers';
 import { generateSourceId } from '../../../foundations/accesibility';
-import { Input } from '../..';
+import { Input } from '../../forms/input';
 import { FormInput } from '../input/types';
 import { FormGroup } from '../../FormGroup';
 

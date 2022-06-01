@@ -12,7 +12,8 @@ import { ChevronDownIcon } from '../../../foundations/icons';
 import { input } from '../input/styles';
 import { generateSourceId } from '../../../foundations/accesibility';
 import { FormInput } from '../input/types';
-import { Button, Label } from '../..';
+import { Button } from '../../forms/button';
+import { Label } from '../../label';
 import { FormGroup } from '../../FormGroup';
 
 export interface SelectProps extends Props, FormInput {

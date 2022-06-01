@@ -1,6 +1,4 @@
-import { css } from '@emotion/react';
-
-import { Text } from '..';
+import { Text } from '../text';
 import useThemeContext from '../../foundations/theme/useThemeContext';
 import { Props } from '../../helpers';
 import { alert, alertColor } from './styles';

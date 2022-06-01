@@ -1,7 +1,8 @@
-import { Input, Label } from '@dana';
 import { SerializedStyles } from '@emotion/react';
 import { generateSourceId } from '../../../foundations/accesibility';
 import { FormGroup } from '../../FormGroup';
+import { Label } from '../../label';
+import { Input } from '../input';
 import { FormInput } from '../input/types';
 import { checkbox, checkboxInput, checkboxLabel } from './styles';
 
