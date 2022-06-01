@@ -11,7 +11,7 @@ export * from './layout';
 
 export * from './accordion';
 export * from './fade-in';
-export * from './image';
+export * from './Image';
 export * from './modal';
 export * from './MenuButton';
 export * from './ActionButton';
