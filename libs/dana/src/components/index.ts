@@ -9,7 +9,7 @@ export * from './data-display';
 export * from './navigation';
 export * from './layout';
 
-export * from './accordion';
+export * from './Accordion';
 export * from './fade-in';
 export * from './Image';
 export * from './modal';
