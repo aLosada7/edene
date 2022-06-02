@@ -22,3 +22,4 @@ export * from './Toast';
 export * from './InlineFeedback';
 export * from './FormGroup';
 export * from './RadioGroup';
+export * from './Badge';

@@ -1,10 +1,10 @@
 import React from 'react';
 
 import { Badge, BadgeProps } from './Badge';
-import { asPlayground, asChromaticStory } from '../../../lib/story-intents';
-import type { Story } from '../../../lib/storybook-emotion-10-fixes';
-import { Container, Row } from '../..';
-import { StoryHStack } from '../../../lib/general-story-components';
+import { asPlayground, asChromaticStory } from '../../lib/story-intents';
+import type { Story } from '../../lib/storybook-emotion-10-fixes';
+import { Container, Row } from '..';
+import { StoryHStack } from '../../lib/general-story-components';
 
 export default {
     title: 'Components/Data Display/Badge',

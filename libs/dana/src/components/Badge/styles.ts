@@ -1,5 +1,5 @@
 import { css } from '@emotion/react';
-import { colorsPalette } from '../../../foundations';
+import { colorsPalette } from '../../foundations';
 import { IBadgeColor } from './Badge';
 
 export const badge = (color: IBadgeColor, variant: string) => css`
