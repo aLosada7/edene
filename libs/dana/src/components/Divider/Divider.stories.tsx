@@ -1,7 +1,7 @@
 import { Divider, DividerProps } from './Divider';
-import { asPlayground, asChromaticStory } from '../../../lib/story-intents';
-import type { Story } from '../../../lib/storybook-emotion-10-fixes';
-import { Container } from '../..';
+import { asPlayground, asChromaticStory } from '../../lib/story-intents';
+import type { Story } from '../../lib/storybook-emotion-10-fixes';
+import { Container } from '..';
 
 export default {
     title: 'Components/Data Display/Divider',
