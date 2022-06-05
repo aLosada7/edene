@@ -23,3 +23,4 @@ export * from './InlineFeedback';
 export * from './FormGroup';
 export * from './RadioGroup';
 export * from './Badge';
+export * from './Card';

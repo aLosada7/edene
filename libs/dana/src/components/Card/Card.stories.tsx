@@ -1,14 +1,14 @@
 import { Story, Meta } from '@storybook/react';
-import { asChromaticStory } from '../../../lib/story-intents';
+import { asChromaticStory } from '../../lib/story-intents';
 import { Card, CardActions, CardBody, CardImage, CardProps } from '.';
-import { Badge, Container, Row, Col, Text, Button, Divider } from '../..';
+import { Badge, Row, Col, Text, Button, Divider } from '..';
 import {
     ArrowRightIcon,
     BellIcon,
     GraduationIcon,
     ValidIcon,
-} from '../../../foundations/icons';
-import { cardDescription, cardStatus, h3 } from './storiesStyles';
+} from '../../foundations/icons';
+import { cardDescription, cardStatus } from './storiesStyles';
 
 export default {
     component: Card,

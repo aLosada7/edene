@@ -1,6 +1,6 @@
 import { SerializedStyles } from '@emotion/react';
 import { ReactElement } from 'react';
-import { Text } from '../../text';
+import { Text } from '../text';
 import { cardHeader } from './styles';
 
 export interface CardHeaderProps {

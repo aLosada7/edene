@@ -1,4 +1,4 @@
-import { Image } from '../../Image';
+import { Image } from '../Image';
 import { cardImage } from './styles';
 
 export interface CardImageProps {
