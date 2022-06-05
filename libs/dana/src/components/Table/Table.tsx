@@ -1,5 +1,5 @@
 import { ReactElement, TableHTMLAttributes } from 'react';
-import { Props } from '../../../helpers';
+import { Props } from '../../helpers';
 import { table, tableContent } from './styles';
 
 export interface TableProps

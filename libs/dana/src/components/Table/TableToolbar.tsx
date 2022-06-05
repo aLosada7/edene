@@ -1,5 +1,5 @@
 import { ReactElement } from 'react';
-import { Props } from '../../../helpers';
+import { Props } from '../../helpers';
 import { tableToolbar } from './styles';
 
 export interface TableToolbarProps extends Props {
