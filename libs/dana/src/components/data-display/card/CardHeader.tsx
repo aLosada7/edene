@@ -8,14 +8,10 @@ export interface CardHeaderProps {
     cssOverrides?: SerializedStyles | SerializedStyles[];
 }
 
-export const CardHeader = ({
-    children,
-    cssOverrides,
-    ...props
-}: CardHeaderProps) => {
+export const CardHeader = ({ children, ...props }: CardHeaderProps) => {
     return (
         <div css={cardHeader}>
-            <Text size="xsm" css={cssOverrides}>
+            <Text size="xsm" {...props}>
                 {children}
             </Text>
         </div>
