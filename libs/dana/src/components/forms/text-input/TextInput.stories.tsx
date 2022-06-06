@@ -2,6 +2,7 @@ import { TextInput, TextInputProps } from './TextInput';
 import { asPlayground, asChromaticStory } from '../../../lib/story-intents';
 import type { Story } from '../../../lib/storybook-emotion-10-fixes';
 import { useState } from 'react';
+import { ArrowRightIcon } from '@dana-icons';
 
 export default {
     title: 'Components/Forms/Text Input',
@@ -84,3 +85,9 @@ SuccessTextInput.args = {
 asChromaticStory(SuccessTextInput);
 
 // *****************************************************************************
+
+export const WithLeftIcon = Template.bind({});
+WithLeftIcon.args = {
+    leftIcon: 'search',
+};
+asChromaticStory(WithLeftIcon);

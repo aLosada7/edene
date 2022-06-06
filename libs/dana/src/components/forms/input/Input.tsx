@@ -1,16 +1,18 @@
-import React, { ChangeEventHandler, cloneElement } from 'react';
+import React, { useCallback } from 'react';
 import { InputHTMLAttributes } from 'react';
 import { descriptionId } from '../../../foundations/accesibility';
 import { Props } from '../../../helpers';
 import { InlineError } from '../../InlineFeedback/InlineError';
 import { InlineSuccess } from '../../InlineFeedback/InlineSuccess';
 import {
-    errorInput,
+    inputWrapper,
     input as inputE,
+    errorInput,
     successInput,
     leftIconInput,
     leftIconInInput,
 } from './styles';
+import { MaterialIcon } from '@dana-icons';
 
 export interface InputProps
     extends InputHTMLAttributes<HTMLInputElement>,
@@ -36,7 +38,7 @@ export interface InputProps
      * Only for radio buttons
      */
     checked?: boolean;
-    leftIcon?: JSX.Element;
+    leftIcon?: string;
 }
 
 export const Input = ({
@@ -56,13 +58,11 @@ export const Input = ({
 
     return (
         <>
-            {leftIcon ? (
-                <span css={leftIconInput}>
-                    {cloneElement(leftIcon, {
-                        size: 'medium',
-                    })}
-                </span>
-            ) : null}
+            {leftIcon && (
+                <div css={leftIconInput}>
+                    <MaterialIcon>{leftIcon}</MaterialIcon>
+                </div>
+            )}
             <input
                 type={type}
                 css={[

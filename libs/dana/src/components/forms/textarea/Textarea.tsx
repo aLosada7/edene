@@ -1,10 +1,11 @@
+import { SerializedStyles } from '@emotion/react';
+
 import { Props } from '../../../helpers';
 import { textarea } from './styles';
 import { input } from '../input/styles';
 import { generateSourceId } from '../../../foundations/accesibility';
 import { FormInput } from '../input/types';
 import { Label } from '../../label';
-import { SerializedStyles } from '@emotion/react';
 import { FormGroup } from '../../FormGroup';
 
 export interface TextareaProps extends Props, FormInput {

@@ -4,6 +4,7 @@ import { Props } from '../../helpers';
 import { Button } from '../forms/button';
 import { Select, Option } from '../forms/select';
 import { TextInput } from '../forms/text-input';
+import { Row, Col } from '../layout';
 import {
     tableToolbarSearch,
     tableToolbarSearchButton,
@@ -29,35 +30,10 @@ export const TableToolbarSearch = ({
             ]}
         >
             {isSearchOpen ? (
-                <>
-                    <TextInput
-                        leftIcon={<SearchIcon />}
-                        cssOverrides={tableToolbarSearchInput}
-                    ></TextInput>
-                    <Select cssOverrides={tableToolbarSearchInput} value="all">
-                        <Option value="all">
-                            <span>All</span>
-                        </Option>
-                        <Option value="name">
-                            <span>Name</span>
-                        </Option>
-                        <Option value="protocol">
-                            <span>Protocol</span>
-                        </Option>
-                        <Option value="port">
-                            <span>Port</span>
-                        </Option>
-                        <Option value="rule">
-                            <span>Rule</span>
-                        </Option>
-                        <Option value="groups">
-                            <span>Attached Groups</span>
-                        </Option>
-                        <Option value="status">
-                            <span>Status</span>
-                        </Option>
-                    </Select>
-                </>
+                <TextInput
+                    leftIcon="search"
+                    cssOverrides={tableToolbarSearchInput}
+                ></TextInput>
             ) : null}
             {!isSearchOpen ? (
                 <Button
@@ -68,6 +44,32 @@ export const TableToolbarSearch = ({
                     <SearchIcon size="medium" />
                 </Button>
             ) : null}
+            {/* <Select
+                            cssOverrides={tableToolbarSearchInput}
+                            value="all"
+                        >
+                            <Option value="all">
+                                <span>All</span>
+                            </Option>
+                            <Option value="name">
+                                <span>Name</span>
+                            </Option>
+                            <Option value="protocol">
+                                <span>Protocol</span>
+                            </Option>
+                            <Option value="port">
+                                <span>Port</span>
+                            </Option>
+                            <Option value="rule">
+                                <span>Rule</span>
+                            </Option>
+                            <Option value="groups">
+                                <span>Attached Groups</span>
+                            </Option>
+                            <Option value="status">
+                                <span>Status</span>
+                            </Option>
+                        </Select> */}
         </div>
     );
 };

@@ -43,7 +43,7 @@ export interface TextInputProps
      * _Note: if you pass the `value` prop, you MUST also pass an `onChange` handler, or the field will be rendered as read-only_
      */
     value?: string;
-    leftIcon?: JSX.Element;
+    leftIcon?: string;
     /**
      * The contents of the text area. This is necessary when using the [controlled approach](https://reactjs.org/docs/forms.html#controlled-components) to form state management.
      *
@@ -58,7 +58,6 @@ export const TextInput = ({
     label: labelText,
     optional = false,
     width,
-    leftIcon,
     onChange,
     cssOverrides,
     cssLabelOverrides,
@@ -81,7 +80,6 @@ export const TextInput = ({
                 type="text"
                 id={textInputId}
                 optional={optional}
-                leftIcon={leftIcon}
                 onChange={onChange}
                 css={(theme: any) => [
                     width ? widths[width] : widthFluid,
