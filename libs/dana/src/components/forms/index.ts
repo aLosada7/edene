@@ -1,4 +1,3 @@
-export * from './number-input';
 export * from './button';
 export * from './form';
 export * from './input';

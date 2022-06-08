@@ -1,6 +1,6 @@
 import { NumberInput, NumberInputProps } from './NumberInput';
-import { asPlayground, asChromaticStory } from '../../../lib/story-intents';
-import type { Story } from '../../../lib/storybook-emotion-10-fixes';
+import { asPlayground, asChromaticStory } from '../../lib/story-intents';
+import type { Story } from '../../lib/storybook-emotion-10-fixes';
 import { action } from '@storybook/addon-actions';
 
 export default {
