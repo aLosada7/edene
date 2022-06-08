@@ -25,3 +25,4 @@ export * from './Badge';
 export * from './Card';
 export * from './Divider';
 export * from './Table';
+export * from './TextInput';

@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { forwardRef, useCallback } from 'react';
 import { InputHTMLAttributes } from 'react';
 import { descriptionId } from '../../../foundations/accesibility';
 import { Props } from '../../../helpers';
@@ -41,49 +41,50 @@ export interface InputProps
     leftIcon?: string;
 }
 
-export const Input = ({
-    id,
-    type = 'text',
-    value,
-    optional = false,
-    error,
-    success,
-    leftIcon,
-    cssOverrides,
-    ...props
-}: InputProps) => {
-    const Error = error ? <InlineError>{error}</InlineError> : null;
-    const Success =
-        !error && success ? <InlineSuccess>{success}</InlineSuccess> : null;
+export const Input = forwardRef<HTMLInputElement, InputProps>(
+    (props: InputProps, ref) => {
+        const {
+            id,
+            optional = false,
+            error,
+            success,
+            leftIcon,
+            cssOverrides,
+            ...rest
+        } = props;
 
-    return (
-        <>
-            {leftIcon && (
-                <div css={leftIconInput}>
-                    <MaterialIcon>{leftIcon}</MaterialIcon>
-                </div>
-            )}
-            <input
-                type={type}
-                css={[
-                    inputE,
-                    success || error
-                        ? success
-                            ? successInput
-                            : errorInput
-                        : null,
-                    leftIcon ? leftIconInInput : null,
-                    cssOverrides,
-                ]}
-                id={id}
-                value={value}
-                aria-required={!optional}
-                aria-invalid={!!error}
-                aria-describedby={error || success ? descriptionId(id) : ''}
-                {...props}
-            />
-            {Error}
-            {Success}
-        </>
-    );
-};
+        const Error = error ? <InlineError>{error}</InlineError> : null;
+        const Success =
+            !error && success ? <InlineSuccess>{success}</InlineSuccess> : null;
+
+        return (
+            <>
+                {leftIcon && (
+                    <div css={leftIconInput}>
+                        <MaterialIcon>{leftIcon}</MaterialIcon>
+                    </div>
+                )}
+                <input
+                    id={id}
+                    ref={ref}
+                    css={[
+                        inputE,
+                        success || error
+                            ? success
+                                ? successInput
+                                : errorInput
+                            : null,
+                        leftIcon ? leftIconInInput : null,
+                        cssOverrides,
+                    ]}
+                    aria-required={!optional}
+                    aria-invalid={!!error}
+                    aria-describedby={error || success ? descriptionId(id) : ''}
+                    {...rest}
+                />
+                {Error}
+                {Success}
+            </>
+        );
+    }
+);

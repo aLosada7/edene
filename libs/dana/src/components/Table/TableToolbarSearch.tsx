@@ -3,7 +3,7 @@ import React, { InputHTMLAttributes, useState } from 'react';
 import { Props } from '../../helpers';
 import { Button } from '../forms/button';
 import { Select, Option } from '../forms/select';
-import { TextInput } from '../forms/text-input';
+import { TextInput } from '../TextInput';
 import { Row, Col } from '../layout';
 import {
     tableToolbarSearch,

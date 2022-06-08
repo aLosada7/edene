@@ -1,5 +1,5 @@
 import { css } from '@emotion/react';
-import { text } from '../../../foundations/palette';
+import { text } from '../../foundations/palette';
 
 export const inlineMessage = css`
     svg {
