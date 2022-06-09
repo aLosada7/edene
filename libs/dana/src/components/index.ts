@@ -9,6 +9,7 @@ export * from './navigation';
 export * from './layout';
 
 export * from './Accordion';
+export * from './Checkbox';
 export * from './fade-in';
 export * from './Image';
 export * from './modal';
