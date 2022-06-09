@@ -1,6 +1,6 @@
 import { ReactElement } from 'react';
 import { Props } from '../../helpers';
-import { Button } from '../forms';
+import { Button } from '../Button';
 import { tab, tabSelected } from './styles';
 
 export interface TabProps extends Props {

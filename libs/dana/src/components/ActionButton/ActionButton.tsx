@@ -1,7 +1,7 @@
 import { SerializedStyles } from '@emotion/react';
 import { ButtonHTMLAttributes, cloneElement, useState } from 'react';
 import { Props } from '../../helpers';
-import { Button } from '../forms/button';
+import { Button } from '../Button';
 import { actionButton } from './styles';
 
 export interface ActionButtonProps

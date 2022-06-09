@@ -12,7 +12,7 @@ import { ChevronDownIcon } from '../../../foundations/icons';
 import { input } from '../input/styles';
 import { generateSourceId } from '../../../foundations/accesibility';
 import { FormInput } from '../input/types';
-import { Button } from '../../forms/button';
+import { Button } from '../../Button';
 import { Label } from '../../label';
 import { FormGroup } from '../../FormGroup';
 
@@ -64,7 +64,7 @@ export const Select = ({
                     rightIcon={<ChevronDownIcon size="medium" />}
                     onClick={() => setShowOptions(!showOptions)}
                 >
-                    <div>{selectValue.current}</div>
+                    Valor actual
                 </Button>
                 <ul css={[selectItems, showOptions ? showItems : null]}>
                     {Children.map(children, (child) => {

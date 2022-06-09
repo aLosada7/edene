@@ -1,9 +1,9 @@
 import { css } from '@emotion/react';
-import { disabled } from '../../../foundations/accesibility';
-import { colorsPalette } from '../../../foundations';
-import { buttonSize, IButtonSize } from '../../../foundations/size';
+import { disabled } from '../../foundations/accesibility';
+import { colorsPalette } from '../../foundations';
+import { buttonSize, IButtonSize } from '../../foundations/size';
 import { IButtonBlock, IButtonVariant } from './Button';
-import { defaultTheme } from '../../../foundations/theme/defaultTheme';
+import { defaultTheme } from '../../foundations/theme/defaultTheme';
 
 export const btnGroup = (size?: IButtonSize | IButtonBlock) => css`
     display: inline-flex;

@@ -1,10 +1,11 @@
-import { ArrowRightIcon, CautionIcon } from '../../../foundations/icons';
+import { ArrowRightIcon, CautionIcon } from '../../foundations/icons';
 import { Meta } from '@storybook/react';
-import React from 'react';
-import { Container, Row } from '../..';
+import React, { useRef } from 'react';
+import { Container, Row } from '..';
 import { Button, ButtonProps } from './Button';
 import ButtonGroup from './ButtonGroup';
-import { StoryHStack } from '../../../lib/general-story-components';
+import { StoryHStack } from '../../lib/general-story-components';
+import { Link } from 'react-router-dom';
 
 export default {
     component: Button,
@@ -110,7 +111,7 @@ export const withIcon = () => (
     </>
 );
 
-export const withDisabled = () => (
+export const disabled = () => (
     <StoryHStack>
         <Button disabled>Button</Button>
         <Button variant="outline" disabled>
@@ -119,7 +120,7 @@ export const withDisabled = () => (
     </StoryHStack>
 );
 
-export const iconButton = () => (
+export const withIconOnly = () => (
     <StoryHStack>
         <Button>
             <ArrowRightIcon />
@@ -130,9 +131,25 @@ export const iconButton = () => (
     </StoryHStack>
 );
 
-export const withButtonGroup = () => (
+export const buttonGroup = () => (
     <ButtonGroup variant="outline">
         <Button color="success">Save</Button>
         <Button color="accent">Cancel</Button>
+    </ButtonGroup>
+);
+
+export const WithRef = () => {
+    const ref = useRef<HTMLButtonElement>(null);
+    return <Button ref={ref}>Ref</Button>;
+};
+
+export const AsPolymorphic = () => (
+    <ButtonGroup variant="outline">
+        <Button component="a" href="#">
+            Link
+        </Button>
+        {/* <Button component={Link} to="/hello">
+            hello
+        </Button> */}
     </ButtonGroup>
 );

@@ -1,4 +1,4 @@
-import { IButtonSize } from '../../../foundations/size';
+import { IButtonSize } from '../../foundations/size';
 import { cloneElement, ReactElement } from 'react';
 import { btnGroup } from './styles';
 import { IButtonBlock, IButtonVariant } from './Button';

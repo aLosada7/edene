@@ -2,7 +2,7 @@ import React from 'react';
 import { Meta, Story } from '@storybook/react';
 
 import Toast from './Toast';
-import { Button } from '../forms/button';
+import { Button } from '../Button';
 import { ToastsProvider } from './ToastsProvider';
 import { useToasts } from './useToasts';
 
