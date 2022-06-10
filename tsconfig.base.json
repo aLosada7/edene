@@ -16,11 +16,11 @@
         "baseUrl": ".",
         "paths": {
             "@alvarolosada/dana-labs": ["libs/dana-labs/src/index.ts"],
-            "@dana-tests": ["libs/dana-tests/src/index.ts"],
             "@dana": ["libs/dana/src/index.ts"],
             "@dana-components": ["libs/dana/src/components/index.ts"],
             "@dana-foundations": ["libs/dana/src/foundations/index.ts"],
             "@dana-icons": ["libs/dana/src/foundations/icons/index.ts"],
+            "@dana-tests": ["libs/dana-tests/src/index.ts"],
             "@dana-theme": ["libs/dana/src/foundations/theme/index.ts"]
         }
     },

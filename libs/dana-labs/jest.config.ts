@@ -1,4 +1,5 @@
-module.exports = {
+/* eslint-disable */
+export default {
     displayName: 'dana-labs',
     preset: '../../jest.preset.js',
     transform: {

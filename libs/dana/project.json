@@ -1,81 +1,95 @@
 {
-    "root": "libs/dana",
-    "sourceRoot": "libs/dana/src",
-    "projectType": "library",
-    "tags": [],
-    "targets": {
-        "build": {
-            "executor": "@nrwl/web:package",
-            "outputs": ["{options.outputPath}"],
-            "options": {
-                "outputPath": "dist/libs/dana",
-                "tsConfig": "libs/dana/tsconfig.lib.json",
-                "project": "libs/dana/package.json",
-                "entryFile": "libs/dana/src/index.ts",
-                "external": ["react/jsx-runtime"],
-                "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
-                "assets": [{
-                    "glob": "libs/dana/README.md",
-                    "input": ".",
-                    "output": "."
-                }]
-            }
-        },
-        "lint": {
-            "executor": "@nrwl/linter:eslint",
-            "outputs": ["{options.outputFile}"],
-            "options": {
-                "lintFilePatterns": ["libs/dana/**/*.{ts,tsx,js,jsx}"]
-            }
-        },
-        "test": {
-            "executor": "@nrwl/jest:jest",
-            "outputs": ["coverage/libs/dana"],
-            "options": {
-                "jestConfig": "libs/dana/jest.config.js",
-                "passWithNoTests": true
-            }
-        },
-        "storybook": {
-            "executor": "@nrwl/storybook:storybook",
-            "options": {
-                "uiFramework": "@storybook/react",
-                "port": 4400,
-                "config": {
-                    "configFolder": "libs/dana/.storybook"
-                }
-            },
-            "configurations": {
-                "ci": {
-                    "quiet": true
-                }
-            }
-        },
-        "build-storybook": {
-            "executor": "@nrwl/storybook:build",
-            "outputs": ["{options.outputPath}"],
-            "options": {
-                "uiFramework": "@storybook/react",
-                "outputPath": "dist/storybook/dana",
-                "config": {
-                    "configFolder": "libs/dana/.storybook"
-                }
-            },
-            "configurations": {
-                "ci": {
-                    "quiet": true
-                }
-            }
-        },
-        "chromatic": {
-            "executor": "@nrwl/workspace:run-commands",
-            "options": {
-                "commands": [
-                    "nx run dana:build-storybook",
-                    "npx chromatic --project-token=609c91b911d0 -d=dist/storybook/dana --auto-accept-changes"
-                ],
-                "parallel": false
-            }
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/dana/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:rollup",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/libs/dana",
+        "tsConfig": "libs/dana/tsconfig.lib.json",
+        "project": "libs/dana/package.json",
+        "entryFile": "libs/dana/src/index.ts",
+        "external": [
+          "react/jsx-runtime"
+        ],
+        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+        "assets": [
+          {
+            "glob": "libs/dana/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "libs/dana/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "coverage/libs/dana"
+      ],
+      "options": {
+        "jestConfig": "libs/dana/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "storybook": {
+      "executor": "@nrwl/storybook:storybook",
+      "options": {
+        "uiFramework": "@storybook/react",
+        "port": 4400,
+        "config": {
+          "configFolder": "libs/dana/.storybook"
         }
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "build-storybook": {
+      "executor": "@nrwl/storybook:build",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "uiFramework": "@storybook/react",
+        "outputPath": "dist/storybook/dana",
+        "config": {
+          "configFolder": "libs/dana/.storybook"
+        }
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "chromatic": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          "nx run dana:build-storybook",
+          "npx chromatic --project-token=609c91b911d0 -d=dist/storybook/dana --auto-accept-changes"
+        ],
+        "parallel": false
+      }
     }
+  }
 }

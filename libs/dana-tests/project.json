@@ -1,15 +1,19 @@
 {
-    "root": "libs/dana-tests",
-    "sourceRoot": "libs/dana-tests/src",
-    "projectType": "library",
-    "tags": [],
-    "targets": {
-        "lint": {
-            "executor": "@nrwl/linter:eslint",
-            "outputs": ["{options.outputFile}"],
-            "options": {
-                "lintFilePatterns": ["libs/dana-tests/**/*.{ts,tsx,js,jsx}"]
-            }
-        }
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/dana-tests/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "libs/dana-tests/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
     }
+  }
 }
