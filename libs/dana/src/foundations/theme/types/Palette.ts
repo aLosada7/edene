@@ -4,18 +4,9 @@ export interface Palette {
     accent: PaletteSchema;
     grays: any;
 }
+
 export interface PaletteSchema {
     background: string;
     color: string;
     hover: string;
-}
-
-export interface Theme {
-    name: string;
-    palette: Palette;
-    header?: any;
-    label?: any;
-    sideNav?: any;
-    text: string;
-    title: any;
 }

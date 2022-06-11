@@ -5,3 +5,5 @@ export * from './themeProvider';
 export { useThemeContext };
 
 export * from './defaultTheme';
+
+export * from './types';
