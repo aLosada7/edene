@@ -1,10 +1,9 @@
-import { SerializedStyles } from '@emotion/react';
 import useThemeContext from 'libs/dana/src/foundations/theme/useThemeContext';
 import {
     Children,
     cloneElement,
     HTMLAttributes,
-    ReactElement,
+    useRef,
     useState,
 } from 'react';
 import { ChevronRightIcon } from '../../../foundations/icons';
@@ -18,20 +17,21 @@ import {
     navItemActive,
     navMenuLink,
     navSubmenuIcon,
+    navigationLevel,
 } from './styles';
 
 export interface SideNavMenuProps
     extends Omit<HTMLAttributes<HTMLDivElement>, 'onClick'>,
         Props {
-    children: ReactElement[];
     title: string;
     isActive?: boolean;
     /** Received from parent */
     activeColor?: string | null;
     /** Received from parent */
     hoverColor?: string | null;
-    cssOverrides?: SerializedStyles | SerializedStyles[];
     icon?: React.ReactElement;
+    navigationChildren?: number;
+    children: React.ReactElement | React.ReactElement[];
 }
 
 export const SideNavMenu = ({
@@ -42,24 +42,22 @@ export const SideNavMenu = ({
     hoverColor = null,
     cssOverrides,
     children,
+    /* from parent */
+    navigationChildren = 0,
     ...props
 }: SideNavMenuProps) => {
     const theme = useThemeContext();
+    const navigationLevelRef = useRef(navigationChildren + 1);
     const [expanded, setExpanded] = useState(false);
     const collapse = () => setExpanded(false);
     const expand = () => setExpanded(true);
 
-    function handleClick(event: React.MouseEvent<HTMLButtonElement>) {
+    const handleClick = () => {
         expanded ? collapse() : expand();
-    }
+    };
 
     return (
-        <li
-            css={[
-                navItem(theme, isActive, activeColor, hoverColor),
-                isActive && navItemActive(expanded),
-            ]}
-        >
+        <li css={[navItem(theme), isActive && navItemActive(expanded)]}>
             <button
                 type="button"
                 aria-expanded={expanded}
@@ -71,7 +69,7 @@ export const SideNavMenu = ({
                         size: 'small',
                         color: 'hsl(212, 20%, 68%)',
                     })}
-                <span>{title}</span>
+                <span css={[navigationLevel(navigationChildren)]}>{title}</span>
                 <div
                     css={[
                         navSubmenuIcon,
@@ -85,9 +83,15 @@ export const SideNavMenu = ({
                 css={expanded ? expandedBody : collapsedBody}
                 hidden={!expanded}
             >
-                {Children.map(children, (child) => {
-                    return cloneElement(child, { activeColor, hoverColor });
-                })}
+                {Array.isArray(children)
+                    ? Children.map(children, (child) =>
+                          cloneElement(child, {
+                              navigationChildren: navigationLevelRef.current,
+                          })
+                      )
+                    : cloneElement(children, {
+                          navigationChildren: navigationLevelRef.current,
+                      })}
             </ul>
         </li>
     );

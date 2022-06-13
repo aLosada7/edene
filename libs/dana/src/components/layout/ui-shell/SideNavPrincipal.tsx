@@ -19,7 +19,6 @@ export const SideNavPrincipal = ({
     hoverColor = null,
     children,
     cssOverrides,
-    ...props
 }: SideNavPrincipalProps) => {
     return (
         <>
