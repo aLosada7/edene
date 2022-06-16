@@ -1,5 +1,7 @@
+import useThemeContext from './useThemeContext';
+
 export * from './themeContext';
 export * from './themeProvider';
-export * from './useThemeContext';
+export { useThemeContext };
 
 export * from './defaultTheme';
