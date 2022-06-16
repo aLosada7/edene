@@ -1,25 +1,36 @@
-import useHover from '../../hooks/useHover';
-import { Button, Container, Text } from '..';
+import { Container } from '../layout/grid/Container';
+import { Text } from '../text';
 import { asChromaticStory } from '../../lib/story-intents';
+import { useState } from 'react';
+
 import type { Story } from '../../lib/storybook-emotion-10-fixes';
-import { useRef } from 'react';
-import { Tabs, Tab } from '../Tabs';
+import { Tabs, Tab, TabsProps } from '../Tabs';
 
 export default {
-    title: 'Components/Overlay/Tooltip',
+    title: 'Components/Navigation/Tabs',
     component: Tabs,
 };
 
-const Template: Story = () => {
+const Tab1 = <Text>Content for first tab goes here.</Text>;
+const Tab2 = <Text>Content for second tab goes here.</Text>;
+
+const Template: Story<TabsProps> = (
+    args: Omit<TabsProps, 'active' | 'onTabChange'>
+) => {
+    const [selected, setSelected] = useState('1');
+
     return (
         <Container mt={8}>
-            <Tabs>
-                <Tab id="tab-1" label="Tab label 1">
-                    <Text>Content for first tab goes here.</Text>
+            <Tabs
+                active={selected}
+                onTabChange={(tabKey) => setSelected(tabKey)}
+                {...args}
+            >
+                <Tab tabKey="1" label="Tab 1">
+                    {Tab1}
                 </Tab>
-                <Tab id="tab-2" label="Tab label 2">
-                    <Text>Content for second tab goes here.</Text>
-                    <Button>With a button</Button>
+                <Tab tabKey="2" label="Tab 2">
+                    {Tab2}
                 </Tab>
             </Tabs>
         </Container>
@@ -28,3 +39,49 @@ const Template: Story = () => {
 
 export const Default = Template.bind({});
 asChromaticStory(Default);
+
+export const Vertical = Template.bind({});
+Vertical.args = {
+    orientation: 'vertical',
+};
+asChromaticStory(Default);
+
+export const WithTabDisabled: Story = () => {
+    const [selected, setSelected] = useState('2');
+
+    return (
+        <Container mt={8}>
+            <Tabs
+                active={selected}
+                onTabChange={(tabKey) => setSelected(tabKey)}
+            >
+                <Tab tabKey="1" label="Tab 1" disabled>
+                    {Tab1}
+                </Tab>
+                <Tab tabKey="2" label="Tab 2">
+                    {Tab2}
+                </Tab>
+            </Tabs>
+        </Container>
+    );
+};
+
+export const WithTabHidden: Story = () => {
+    const [selected, setSelected] = useState('2');
+
+    return (
+        <Container mt={8}>
+            <Tabs
+                active={selected}
+                onTabChange={(tabKey) => setSelected(tabKey)}
+            >
+                <Tab tabKey="1" label="Tab 1" hidden>
+                    {Tab1}
+                </Tab>
+                <Tab tabKey="2" label="Tab 2">
+                    {Tab2}
+                </Tab>
+            </Tabs>
+        </Container>
+    );
+};
