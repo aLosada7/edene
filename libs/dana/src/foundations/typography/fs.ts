@@ -4,7 +4,6 @@ import {
     fontSizeMapping,
     fontWeightMapping,
     lineHeightMapping,
-    remFontSizeMapping,
 } from './data';
 import type { FontStyle, FontWeightDefinition, Fs, Option } from './types';
 
@@ -27,10 +26,7 @@ export const fs: Fs =
     (category) =>
     (level, { lineHeight, fontWeight, fontStyle, unit }) => {
         const fontFamilyValue = fontMapping[category];
-        const fontSizeValue =
-            unit === 'px'
-                ? fontSizeMapping[category][level]
-                : `${remFontSizeMapping[category][level]}rem`;
+        const fontSizeValue = fontSizeMapping[category][level];
         const lineHeightValue =
             unit === 'px'
                 ? // line-height is defined as a unitless value, so we multiply
