@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AuthenticationSignInPage } from '../../app/authentication/signIn/pages/AuthenticationSignInPage';
 import { Home } from '../../app/Home';
 import Layout from './Layout';
-import { GameSummaryTemplate } from '../../app/templates/GameSummaryTemplate';
+import { ScoreboardPage } from '../../app/scoreboard/pages/ScoreboardPage';
 
 export default () => {
     return (
@@ -23,7 +23,7 @@ export default () => {
 
                     <Route
                         path="/templates/game-summary"
-                        element={<GameSummaryTemplate />}
+                        element={<ScoreboardPage />}
                     />
                 </Route>
             </Routes>
