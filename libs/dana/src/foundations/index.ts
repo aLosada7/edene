@@ -17,6 +17,7 @@ export const palette = {
     text,
 };
 
+export * from './colors';
 export * from './commonStyles';
 export * from './typography';
 export * from './accesibility';

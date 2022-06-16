@@ -25,6 +25,18 @@ export const getColor = ({ color, theme = defaultTheme }: ColorOptions) => {
     return color;
 };
 
+export const getBackgroundColor = ({
+    color,
+    theme = defaultTheme,
+}: ColorOptions) => {
+    if (isOfColor(color)) return theme.palette[color as Color].background;
+
+    if (isOfComponentColors(color))
+        return colorsPalette[color as ComponentColors].background;
+
+    return color;
+};
+
 // getSharedColorScheme
 
 export { isOfColor, isOfComponentColors };
