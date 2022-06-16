@@ -155,10 +155,8 @@ export const collapsedBody = css`
 `;
 
 export const expandedBodyChildren = css`
-    ${textSans.xsmall({ fontWeight: 'regular' })};
-    padding-top: 0.5rem;
-    padding-bottom: 1.5rem;
-    padding-left: 1rem;
+    ${textSans.small({ fontWeight: 'regular' })};
+    padding: 0.5rem 1rem;
 
     ${from.tablet} {
         padding-right: 25%;
