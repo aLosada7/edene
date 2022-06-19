@@ -1,9 +1,11 @@
+export type IToastVariant = 'info' | 'success' | 'error';
+
 export interface ToastSettings {
     id?: string;
-    title: React.ReactNode;
-    body: React.ReactNode;
-    /** The amount of time the toast will be shown in milliseconds */
+    title: string;
+    description: string;
     duration?: number;
+    variant?: IToastVariant;
     /** Called when close button clicked and when escape key is pressed */
     onClose?(): void;
 }

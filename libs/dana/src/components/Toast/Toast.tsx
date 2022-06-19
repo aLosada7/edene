@@ -1,13 +1,31 @@
 import { useCallback, useEffect } from 'react';
-import { toast } from './styles';
+import { MaterialIcon } from '../../foundations/icons/MaterialIcon';
+import { toast, toastIcon } from './styles';
+import { IToastVariant } from './types';
 
 interface ToastProps {
     hideToast(): void;
     duration?: number;
+    variant?: IToastVariant;
     children: React.ReactNode;
 }
 
-const Toast = ({ hideToast, duration, children, ...props }: ToastProps) => {
+const defaultProps: Required<Pick<ToastProps, 'variant'>> = {
+    variant: 'info',
+};
+
+const Toast = (props: ToastProps) => {
+    const { hideToast, variant, duration, children, ...rest } = {
+        ...defaultProps,
+        ...props,
+    };
+
+    const getToastIcon = (variant: IToastVariant) => {
+        if (variant === 'success') return 'done';
+        if (variant === 'error') return 'close';
+        return 'info';
+    };
+
     const toastTimeout = useCallback(() => {
         const timer = setTimeout(() => hideToast(), duration);
 
@@ -21,7 +39,12 @@ const Toast = ({ hideToast, duration, children, ...props }: ToastProps) => {
     });
 
     return (
-        <div css={toast} {...props}>
+        <div css={toast(variant)} {...rest}>
+            <div css={toastIcon(variant)}>
+                <MaterialIcon variant="outlined" color="#FCFCFC">
+                    {getToastIcon(variant)}
+                </MaterialIcon>
+            </div>
             {children}
         </div>
     );

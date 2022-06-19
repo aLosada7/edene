@@ -58,7 +58,7 @@ export const ToastsProvider = ({ children }: ToastsProviderProps) => {
     };
 
     const getToastProps = (toast: ToastState) => {
-        const { body: toastChildren, ...rest } = toast.props;
+        const { description: toastChildren, ...rest } = toast.props;
         return {
             toastProps: {
                 ...rest,

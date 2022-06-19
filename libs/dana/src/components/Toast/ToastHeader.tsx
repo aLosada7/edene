@@ -1,10 +1,11 @@
 import { CloseIcon } from '../../foundations/icons/CloseIcon';
 import { ActionButton } from '../ActionButton';
-import { toastHeader } from './styles';
+import { Title } from '../title';
+import { toastHeader, toastTitle } from './styles';
 
 interface ToastHeaderProps {
     id: string;
-    title?: React.ReactNode;
+    title?: string;
     onClose(id: string): void;
 }
 
@@ -18,7 +19,7 @@ const ToastHeader = ({ id, title, onClose, ...props }: ToastHeaderProps) => {
             data-dismiss="toast"
             {...props}
         >
-            {title}
+            <Title cssOverrides={toastTitle}>{title}</Title>
             <ActionButton onClick={closeToast}>
                 <CloseIcon />
             </ActionButton>
