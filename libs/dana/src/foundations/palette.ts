@@ -6,9 +6,9 @@ const colors = {
         '#660505',
         '#8B0000',
         '#AB0613',
-        '#C70000', // error-400
+        '#C70000', // error
         '#FF5943',
-        '#FF9081', // error-500
+        '#FF9081',
         '#FFBAC8',
         '#FFF4F2',
     ],
@@ -62,7 +62,7 @@ const colors = {
     greens: [
         '#185E36',
         '#22874D', // success-400
-        '#58D08B', // success-500
+        '#58D08B',
         '#4B8878',
         '#65A897',
         '#69D1CA',
@@ -101,15 +101,10 @@ export const grays = {
     8: colors.grays[8],
     9: colors.grays[9],
 };
-export const error = {
-    400: colors.reds[3],
-    500: colors.reds[5],
-};
 
-export const success = {
-    400: colors.greens[1],
-    500: colors.greens[2],
-};
+export const info = colors.blues[3];
+export const error = colors.reds[3];
+export const success = colors.greens[1];
 
 export const focus = {
     400: colors.blues[13],
@@ -130,8 +125,8 @@ export const altBackground = {
 export const text = {
     primary: grays[0],
     supporting: grays[4],
-    success: success[400],
-    error: error[400],
+    success: success,
+    error: error,
     ctaPrimary: grays[9],
     anchorSecondary: grays[7],
     userInput: grays[7],
@@ -146,8 +141,8 @@ export const text = {
 export const altText = {
     primary: grays[7],
     supporting: grays[4],
-    success: success[400],
-    error: error[400],
+    success: success,
+    error: error,
     ctaPrimary: grays[9],
     anchorSecondary: grays[7],
     userInput: grays[7],
@@ -162,10 +157,10 @@ export const altText = {
 export const border = {
     primary: grays[5],
     secondary: grays[6],
-    success: success[400],
-    error: error[400],
+    success: success,
+    error: error,
     input: grays[5],
-    focusHalo: focus[400],
+    focusHalo: focus,
 };
 
 export const fill = {
