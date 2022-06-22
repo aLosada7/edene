@@ -4,7 +4,7 @@ import { from } from '../../../foundations/mq';
 import { shadows } from 'libs/dana/src/foundations/shadows';
 
 export const header = ({ theme = defaultTheme }) => css`
-    z-index: 1000;
+    z-index: 50;
     top: 0;
     right: 0;
     left: 0;

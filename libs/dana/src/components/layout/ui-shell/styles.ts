@@ -1,3 +1,4 @@
+import { Theme } from '@dana-theme';
 import { css } from '@emotion/react';
 import { defaultTheme } from 'libs/dana/src/foundations/theme/defaultTheme';
 import { textSans } from 'libs/dana/src/foundations/typography/api';
@@ -19,7 +20,7 @@ export const aside = (
     z-index: 100;
     background-color: #fff;
 
-    ${!headerHeight && expanded && `z-index: 1000;`}
+    ${!headerHeight && expanded && `z-index: 50;`}
 
     ${expanded && from.desktop} {
         display: block;
@@ -136,13 +137,13 @@ export const navItem = ({ theme = defaultTheme }) => css`
     background-color: ${theme.sideNav.background};
 `;
 
-export const sideNavPrincipal = () => css`
+export const sideNavPrincipal = (theme: Theme) => css`
     padding-left: 1rem;
     margin-top: 1.5rem;
 
     span {
         ${textSans.xxsmall({ fontWeight: 'bold' })};
-        color: ${grays[0]};
+        color: ${theme.color};
         text-transform: uppercase;
     }
 `;

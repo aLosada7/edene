@@ -38,10 +38,10 @@ export const Text = ({
     icon,
     children,
     cssOverrides,
-    ...props
 }: TextProps) => {
     const { theme } = useThemeContext();
-    const textColor = color || (theme ? theme.text : 'dark');
+
+    const textColor = color || 'inherit';
 
     return (
         <div

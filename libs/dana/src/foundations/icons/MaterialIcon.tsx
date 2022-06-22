@@ -13,8 +13,6 @@ export const MaterialIcon = ({
     cssOverrides,
     size = 'medium',
 }: IconProps) => {
-    console.log(size);
-    console.log(iconSize[size]);
     return (
         <span
             className={`material-icons${

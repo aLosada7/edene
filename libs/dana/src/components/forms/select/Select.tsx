@@ -61,7 +61,7 @@ export const Select = ({
             <div css={[input, select, cssOverrides]} id={inputId}>
                 <Button
                     cssOverrides={selectButton}
-                    rightIcon={<ChevronDownIcon size="medium" />}
+                    rightIcon="expand_more"
                     onClick={() => setShowOptions(!showOptions)}
                 >
                     Valor actual

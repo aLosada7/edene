@@ -19,67 +19,21 @@ export default {
     ],
 } as Meta;
 
-export const filled = () => (
+export const filled = () => <Button>Button</Button>;
+
+export const outlines = () => <Button variant="outline">Button</Button>;
+
+export const links = () => <Button variant="link">Button</Button>;
+
+export const variants = () => (
     <StoryHStack>
         <Button>Button</Button>
-        <Button color="secondary">Button</Button>
-        <Button color="accent">Button</Button>
-        <Button color="success">Button</Button>
-        <Button color="danger">Button</Button>
-        <Button color="dark">Button</Button>
-    </StoryHStack>
-);
-
-export const outlines = () => (
-    <StoryHStack>
         <Button variant="outline">Button</Button>
-        <Button variant="outline" color="secondary">
-            Button
-        </Button>
-        <Button variant="outline" color="accent">
-            Button
-        </Button>
-        <Button variant="outline" color="success">
-            Button
-        </Button>
-        <Button variant="outline" color="danger">
-            Button
-        </Button>
-        <Button variant="outline" color="dark">
-            Button
-        </Button>
-    </StoryHStack>
-);
-
-export const links = () => (
-    <StoryHStack>
         <Button variant="link">Button</Button>
-        <Button variant="link" color="secondary">
-            Button
-        </Button>
-        <Button variant="link" color="accent">
-            Button
-        </Button>
-        <Button variant="link" color="success">
-            Button
-        </Button>
-        <Button variant="link" color="danger">
-            Button
-        </Button>
-        <Button variant="link" color="dark">
-            Button
-        </Button>
     </StoryHStack>
 );
 
-export const withVariants = () => (
-    <StoryHStack>
-        <Button>Button</Button>
-        <Button variant="outline">Button</Button>
-    </StoryHStack>
-);
-
-export const withSizes = () => (
+export const sizes = () => (
     <StoryHStack>
         <Button size="xsmall">Button</Button>
         <Button size="small">Button</Button>
@@ -91,20 +45,22 @@ export const withSizes = () => (
 export const withIcon = () => (
     <>
         <StoryHStack>
-            <Button leftIcon={<CautionIcon />}>Caution</Button>
-            <Button rightIcon={<ArrowRightIcon />} variant="outline">
+            <Button leftIcon="home">Home</Button>
+            <Button rightIcon="arrow_forward">Call us</Button>
+        </StoryHStack>
+        <StoryHStack>
+            <Button leftIcon="home" variant="outline">
+                Home
+            </Button>
+            <Button rightIcon="arrow_forward" variant="outline">
                 Call us
             </Button>
         </StoryHStack>
         <StoryHStack>
-            <Button leftIcon={<CautionIcon />}>Caution</Button>
-            <Button rightIcon={<ArrowRightIcon />} variant="outline">
-                Call us
+            <Button leftIcon="home" variant="link">
+                Home
             </Button>
-        </StoryHStack>
-        <StoryHStack>
-            <Button leftIcon={<CautionIcon />}>Caution</Button>
-            <Button rightIcon={<ArrowRightIcon />} variant="outline">
+            <Button rightIcon="arrow_forward" variant="link">
                 Call us
             </Button>
         </StoryHStack>
@@ -134,7 +90,7 @@ export const withIconOnly = () => (
 export const buttonGroup = () => (
     <ButtonGroup variant="outline">
         <Button color="success">Save</Button>
-        <Button color="accent">Cancel</Button>
+        <Button>Cancel</Button>
     </ButtonGroup>
 );
 

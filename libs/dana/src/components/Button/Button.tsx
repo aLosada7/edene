@@ -7,6 +7,7 @@ import { btn, btnColor, buttonIconLeft, buttonIconRight } from './styles';
 import useThemeContext from '../../foundations/theme/useThemeContext';
 import { DanaColor } from 'libs/dana/src/foundations/colors/types';
 import { Props } from '../../helpers';
+import { MaterialIcon } from '../../foundations/icons/MaterialIcon';
 
 export type IButtonVariant = 'filled' | 'outline' | 'link';
 export type IButtonBlock = 'block';
@@ -18,8 +19,8 @@ export interface SharedButtonProps extends Props {
     color?: DanaColor;
     variant?: IButtonVariant;
     size?: IButtonSize | IButtonBlock;
-    leftIcon?: JSX.Element;
-    rightIcon?: JSX.Element;
+    leftIcon?: string;
+    rightIcon?: string;
     disabled?: boolean;
     children?: JSX.Element | string;
 }
@@ -35,7 +36,7 @@ export const Button: ButtonComponent = forwardRef(
         const {
             component,
             type,
-            color = 'primary',
+            color,
             variant = 'filled',
             size = 'medium',
             leftIcon,
@@ -46,10 +47,9 @@ export const Button: ButtonComponent = forwardRef(
             ...rest
         } = props;
 
-        const theme = useThemeContext();
+        const { theme } = useThemeContext();
 
         const isButtonBlock = size === 'block';
-
         const Element = component || 'button';
 
         return (
@@ -61,7 +61,7 @@ export const Button: ButtonComponent = forwardRef(
                         theme,
                         isButtonBlock ? 'medium' : (size as IButtonSize)
                     ),
-                    btnColor(theme, color, variant, isButtonBlock),
+                    btnColor(theme, variant, isButtonBlock, color),
                     cssOverrides,
                 ]}
                 ref={ref}
@@ -69,12 +69,9 @@ export const Button: ButtonComponent = forwardRef(
                 {...rest}
             >
                 {leftIcon ? (
-                    <span css={buttonIconLeft}>
-                        {cloneElement(leftIcon, {
-                            size: 'small',
-                            color: 'inherit',
-                        })}
-                    </span>
+                    <MaterialIcon size="small" cssOverrides={buttonIconLeft}>
+                        {leftIcon}
+                    </MaterialIcon>
                 ) : null}
                 {typeof children === 'string'
                     ? children
@@ -82,12 +79,9 @@ export const Button: ButtonComponent = forwardRef(
                           color: 'inherit',
                       })}
                 {rightIcon ? (
-                    <span css={buttonIconRight}>
-                        {cloneElement(rightIcon, {
-                            size: 'small',
-                            color: 'inherit',
-                        })}
-                    </span>
+                    <MaterialIcon size="small" cssOverrides={buttonIconRight}>
+                        {rightIcon}
+                    </MaterialIcon>
                 ) : null}
             </Element>
         );

@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 
-import { ColorOptions, getBackgroundColor, textSans } from '@dana-foundations';
+import { ColorOptions, getColor, textSans } from '@dana-foundations';
 
 import { grays } from '../../foundations/palette';
 import { defaultTheme } from '@dana-theme';
@@ -40,22 +40,22 @@ export const tabSelected = (
     orientation: 'horizontal' | 'vertical',
     { color, theme = defaultTheme }: ColorOptions
 ) => css`
-    color: ${getBackgroundColor({ theme, color })};
+    color: ${getColor({ theme, color })};
 
     :hover {
-        color: ${getBackgroundColor({ theme, color })};
+        color: ${getColor({ theme, color })};
     }
 
     ::after {
         content: '';
 
         ${orientation === 'horizontal'
-            ? `border-bottom: 2px solid ${getBackgroundColor({
+            ? `border-bottom: 2px solid ${getColor({
                   theme,
                   color,
               })};
               bottom: -2px;`
-            : `border-right: 2px solid ${getBackgroundColor({
+            : `border-right: 2px solid ${getColor({
                   theme,
                   color,
               })};

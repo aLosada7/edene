@@ -26,11 +26,10 @@ export const Title = ({
     icon,
     children,
     cssOverrides,
-    ...props
 }: TitleProps) => {
     const { theme } = useThemeContext();
-    const textColor = color || (theme ? theme.title[size] : 'dark');
 
+    const textColor = color || 'inherit';
     const Element = size || 'div';
 
     return (

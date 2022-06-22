@@ -1,9 +1,15 @@
 import { css } from '@emotion/react';
 import { disabled } from '../../foundations/accesibility';
-import { colorsPalette } from '../../foundations';
+import {
+    colorsPalette,
+    DanaColor,
+    getColor,
+    getHoverColor,
+} from '../../foundations';
 import { buttonSize, IButtonSize } from '../../foundations/size';
 import { IButtonBlock, IButtonVariant } from './Button';
 import { defaultTheme } from '../../foundations/theme/defaultTheme';
+import { Theme } from '../../foundations/theme/types';
 
 export const btnGroup = (size?: IButtonSize | IButtonBlock) => css`
     display: inline-flex;
@@ -50,56 +56,58 @@ export const btn = ({ theme = defaultTheme }, size: IButtonSize) => css`
 
 export const btnColor = (
     { theme = defaultTheme },
-    color: string,
     variant: IButtonVariant,
-    isButtonBlock: boolean
+    isButtonBlock: boolean,
+    color?: DanaColor
 ) => css`
-    ${color === 'primary' && buttonColorStyles(theme.palette.primary, variant)}
-
-    ${color === 'secondary' &&
-    buttonColorStyles(theme.palette.secondary, variant)}
-
-    ${color === 'accent' && buttonColorStyles(theme.palette.accent, variant)}
-
-    ${color !== 'primary' &&
-    color !== 'default' &&
-    color !== 'accent' &&
-    buttonColorStyles((colorsPalette as any)[color], variant)};
+    ${buttonColorStyles(
+        theme,
+        getColor({ theme, color }),
+        getHoverColor({ theme, color }),
+        variant
+    )};
 
     ${isButtonBlock && `width: 100%;`}
 `;
 
-const buttonColorStyles = (colorScheme: any, variant: IButtonVariant) => css`
-    background-color: ${colorScheme.background};
-    border: 1px solid ${colorScheme.background};
-    color: ${colorScheme.color};
-    fill: ${colorScheme.color};
+const buttonColorStyles = (
+    theme: Theme,
+    color: string,
+    hoverColor: string,
+    variant: IButtonVariant
+) => css`
+    background-color: ${color};
+    border: 1px solid ${color};
+    color: ${theme.white};
+    fill: ${theme.white};
     :hover {
-        background-color: ${colorScheme.hover};
+        background-color: ${hoverColor};
     }
 
     ${variant === 'outline' &&
     `
-    background-color: #fff;
-    color: ${colorScheme.background};
-    fill: ${colorScheme.background};
-    border-color: ${colorScheme.background};
+    background-color: ${theme.white};
+    color: ${color};
+    fill: ${color};
+    border-color: ${color};
+
     :hover {
-        color: #fff;
-        fill: #fff;
-        background-color: ${colorScheme.background}
+        background-color: ${theme.white};
+        color: ${hoverColor};
+        fill: ${hoverColor};
+        border-color: ${hoverColor};
     }
     `}
 
     ${variant === 'link' &&
     `
     background-color: transparent;
-    color: ${colorScheme.background};
-    fill: ${colorScheme.background};
+    color: ${color};
+    fill: ${color};
     border: none;
     :hover {
         background-color: transparent;
-        color: ${colorScheme.hover}
+        color: ${hoverColor}
     }
     `}
 `;
