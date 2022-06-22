@@ -6,6 +6,7 @@ import { from } from '@dana';
 
 import { SideNav } from './SideNav';
 import { Header } from './Header';
+import { Settings } from '../settings/Settings';
 
 const headerHeight = 48; // default
 const sideNavWidth = 256;
@@ -42,6 +43,7 @@ export default () => {
                 onToggleSideNav={toggleSideNav}
             />
             <SideNav sideNavWidth={sideNavWidth} expanded={isSideNavExpanded} />
+            <Settings />
             <main css={main(isSideNavExpanded)}>
                 <Outlet />
             </main>
