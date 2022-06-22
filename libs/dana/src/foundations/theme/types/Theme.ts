@@ -1,8 +1,10 @@
-import { Palette } from './Palette';
-
 export interface Theme {
     name: string;
-    palette: Palette;
+    color: string;
+    hover: string;
+    white?: string;
+    black?: string;
+    colors?: Record<string, unknown>;
     header?: any;
     label?: any;
     sideNav?: any;

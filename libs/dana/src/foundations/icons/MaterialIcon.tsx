@@ -1,19 +1,28 @@
-import { Icon } from './Icon';
-import { IconProps } from './types';
+import { css } from '@emotion/react';
+
+import { iconSize } from '../size';
+import { IconProps, IconSize } from './types';
+
+const materialIcon = (size: IconSize) => css`
+    font-size: ${iconSize[size]};
+`;
 
 export const MaterialIcon = ({
-    size,
-    color,
     children,
     variant = 'filled',
-}: IconProps) => (
-    <Icon size={size} color={color}>
+    cssOverrides,
+    size = 'medium',
+}: IconProps) => {
+    console.log(size);
+    console.log(iconSize[size]);
+    return (
         <span
             className={`material-icons${
                 variant === 'outlined' ? '-outlined' : ''
             }`}
+            css={[materialIcon(size), cssOverrides]}
         >
             {children}
         </span>
-    </Icon>
-);
+    );
+};

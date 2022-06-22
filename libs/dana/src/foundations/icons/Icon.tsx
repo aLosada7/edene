@@ -1,6 +1,6 @@
 import React, { cloneElement, ReactElement } from 'react';
 import { getColor } from '../colors/api';
-import { Color, ComponentColors, DanaColor } from '../colors/types';
+import { DanaColor } from '../colors/types';
 import { iconSize } from '../size';
 import useThemeContext from '../theme/useThemeContext';
 import { IconSize } from './types';
@@ -15,7 +15,7 @@ export const Icon = ({
     children: ReactElement;
 }) => {
     const { theme } = useThemeContext();
-    const iconColor = color || (theme ? theme.text : '#000');
+    const iconColor = color || theme.black;
 
     return (
         <>
@@ -26,9 +26,3 @@ export const Icon = ({
         </>
     );
 };
-
-// width={
-//     size && isFirstCharacterALetter(size)
-//         ? iconSize[size]
-//         : `${size}px`
-// }

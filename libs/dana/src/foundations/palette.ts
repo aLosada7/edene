@@ -1,7 +1,7 @@
 export type PaletteColor = 'garnet' | 'gray' | 'teal' | 'pink' | 'transparent';
 
 // Arrays of colours should have pillar colors first
-const colors = {
+export const colors = {
     reds: [
         '#660505',
         '#8B0000',
@@ -26,7 +26,7 @@ const colors = {
         '#003C60',
         '#004E7C',
         '#005689',
-        '#0077B6',
+        '#0077B6', // info
         '#00B2FF',
         '#90DCFF',
         '#F1F8FC',
@@ -36,7 +36,7 @@ const colors = {
         '#007ABC',
         '#506991',
         '#C1D8FC',
-        '#0093E0', //focus-400
+        '#0093E0', //focus
     ],
     browns: [
         '#2B2625',
@@ -61,7 +61,7 @@ const colors = {
     ],
     greens: [
         '#185E36',
-        '#22874D', // success-400
+        '#22874D', // success
         '#58D08B',
         '#4B8878',
         '#65A897',
@@ -102,13 +102,17 @@ export const grays = {
     9: colors.grays[9],
 };
 
+export const brandColor = '#37B9F1';
+export const brandHover = 'rgb(34, 139, 230)';
+
+export const white = '#FCFCFC';
+export const black = '#1C1E20';
+
 export const info = colors.blues[3];
 export const error = colors.reds[3];
 export const success = colors.greens[1];
 
-export const focus = {
-    400: colors.blues[13],
-};
+export const focus = colors.blues[13];
 
 export const background = {
     primary: '#161616',
@@ -172,58 +176,36 @@ export const altFill = {
 };
 
 export const colorsPalette = {
-    primary: {
-        background: '#37B9F1',
-        color: '#fff',
-        hover: 'rgb(34, 139, 230)',
-    },
-    secondary: {
-        background: '#494B67',
-        color: '#fff',
-        hover: '#343549',
-    },
-    accent: {
-        background: '#FF006C',
-        color: '#fff',
-        hover: '#CC0056',
-    },
     success: {
         dark: '#155724',
-        background: 'rgb(48, 144, 142)',
-        color: 'white',
+        color: 'rgb(48, 144, 142)',
         hover: 'rgb(44, 122, 123)',
         light: '#d4edda',
     },
     danger: {
         dark: '#721c24',
-        background: '#DC3545',
-        color: 'white',
+        color: '#DC3545',
         hover: '#C82333',
         light: '#f8d7da',
     },
     dark: {
-        background: '#100F10',
-        color: '#FCFCFC',
+        color: '#100F10',
         hover: '#485963',
     },
     teal: {
-        background: 'rgb(48, 144, 142)',
-        color: 'white',
+        color: 'rgb(48, 144, 142)',
         hover: 'rgb(44, 122, 123)',
     },
     gray: {
-        background: 'rgb(211, 219, 229)',
-        color: 'black',
+        color: 'rgb(211, 219, 229)',
         hover: 'rgb(226, 232, 240)',
     },
     pink: {
-        background: 'rgb(227, 227, 232)',
-        color: 'rgb(115, 112, 124)',
+        color: 'rgb(227, 227, 232)',
         hover: 'transparent',
     },
     transparent: {
-        background: 'transparent',
-        color: '#000',
+        color: 'transparent',
         hover: 'transparent',
     },
     // teal: {
