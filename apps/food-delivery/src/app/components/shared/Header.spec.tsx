@@ -1,3 +1,4 @@
+import { DanaTheme } from '@dana-theme';
 import { faker } from '@faker-js/faker';
 import { render, screen } from '@testing-library/react';
 
@@ -12,7 +13,11 @@ jest.mock('react-router-dom', () => ({
 describe('Header component tests', () => {
     it('it renders the given name in the header', () => {
         const name = faker.name.firstName();
-        render(<Header name={name} />);
+        render(
+            <DanaTheme>
+                <Header name={name} />
+            </DanaTheme>
+        );
         expect(screen.getByText(`${name}`)).toBeInTheDocument();
         expect(
             screen.getByRole('heading', { name: `${name}` })
