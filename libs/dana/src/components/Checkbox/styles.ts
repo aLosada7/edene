@@ -1,5 +1,5 @@
 import { css } from '@emotion/react';
-import { focusHalo } from '../../../foundations/accesibility';
+import { focusHalo } from '../../foundations/accesibility';
 
 export const checkbox = css`
     position: relative;

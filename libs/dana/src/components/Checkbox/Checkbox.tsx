@@ -1,13 +1,17 @@
+import React from 'react';
 import { SerializedStyles } from '@emotion/react';
-import { generateSourceId } from '../../../foundations/accesibility';
-import { FormGroup } from '../../FormGroup';
-import { Label } from '../../label';
-import { Input } from '../input';
-import { FormInput } from '../input/types';
+
+import { generateSourceId } from '../../foundations/accesibility';
+import { FormGroup } from '../FormGroup';
+import { FormInput } from '../forms/input/types';
 import { checkbox, checkboxInput, checkboxLabel } from './styles';
+import { useCheckboxGroup } from './useCheckboxGroup';
+import { Input } from '../forms/input';
+import { Label } from '../label';
 
 export interface CheckboxProps extends FormInput {
     checked?: boolean;
+    // value?: (string | number)[];
     onClick?: any;
     /**
      * Appears as an inline error message.
@@ -24,17 +28,19 @@ export interface CheckboxProps extends FormInput {
 
 export const Checkbox = ({
     id,
-    checked = false,
     optional = false,
-    onClick,
     label,
     cssLabelOverrides,
     ...props
 }: CheckboxProps) => {
     const textInputId = id || generateSourceId();
+    const group = useCheckboxGroup();
+
+    const Wrapper = ({ children }: { children: React.ReactNode }) =>
+        group.isGroup ? <>{children}</> : <FormGroup>{children}</FormGroup>;
 
     return (
-        <FormGroup>
+        <Wrapper>
             <div css={checkbox}>
                 <Label
                     cssOverrides={
@@ -47,16 +53,13 @@ export const Checkbox = ({
                     htmlFor={textInputId}
                 >
                     <Input
-                        cssOverrides={checkboxInput}
                         type="checkbox"
+                        cssOverrides={checkboxInput}
                         id={textInputId}
-                        optional={optional}
-                        onClick={onClick}
-                        checked={checked}
                         {...props}
                     ></Input>
                 </Label>
             </div>
-        </FormGroup>
+        </Wrapper>
     );
 };
