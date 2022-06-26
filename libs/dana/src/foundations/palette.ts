@@ -197,7 +197,7 @@ export const colorsPalette = {
         hover: 'rgb(44, 122, 123)',
     },
     gray: {
-        color: 'rgb(211, 219, 229)',
+        color: 'rgb(211, 219, 229);',
         hover: 'rgb(226, 232, 240)',
     },
     pink: {

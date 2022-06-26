@@ -4,7 +4,7 @@ import { Theme } from '../theme/types';
 import { ComponentColors, DanaColor } from './types';
 
 const isOfComponentColors = (color: string) => {
-    return ['success', 'danger', 'dark', 'transparent'].includes(color);
+    return ['success', 'danger', 'dark', 'gray', 'transparent'].includes(color);
 };
 
 export interface ColorOptions {
