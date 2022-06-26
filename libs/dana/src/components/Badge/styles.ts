@@ -1,27 +1,22 @@
+import { DanaColor, getColor } from '@dana-foundations';
+import { defaultTheme, Theme } from '@dana-theme';
 import { css } from '@emotion/react';
-import { colorsPalette } from '../../foundations';
-import { IBadgeColor } from './Badge';
 
-export const badge = (color: IBadgeColor, variant: string) => css`
+export const badge = ({ theme = defaultTheme }, color?: DanaColor) => css`
+    ${badgeColorStyles(theme, getColor({ theme, color }))};
+
     font-size: 10px;
     font-weight: 600;
     line-height: 13px;
     padding: 2px 6px;
-    background: #1abb9c;
-    color: #fff;
     text-align: center;
     white-space: nowrap;
     vertical-align: baseline;
     border-radius: 0.25rem;
     width: fit-content;
+`;
 
-    ${variant === 'success' &&
-    `
-    background-color: rgb(220, 252, 231);
-    color: rgb(22, 101, 52);`}
-
-    // TODO: Fix this
-    background-color: red;
-    border: 1px solid red;
-    color: ${colorsPalette[color].color};
+const badgeColorStyles = (theme: Theme, color: string) => css`
+    background-color: ${color};
+    color: ${theme.black};
 `;

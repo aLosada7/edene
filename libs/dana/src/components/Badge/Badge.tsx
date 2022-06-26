@@ -1,22 +1,28 @@
 import { SerializedStyles } from '@emotion/react';
+
+import { useThemeContext } from '@dana-theme';
+
+import { DanaColor } from '../../foundations/colors';
 import { badge } from './styles';
 
-export type IBadgeColor = 'gray' | 'teal' | 'pink';
-export type IBadgeVariant = 'default' | 'primary';
+export type IBadgeVariant = 'filled' | 'outlined';
 
 export interface BadgeProps {
     text: string;
-    color?: IBadgeColor;
-    variant?: string;
+    color?: DanaColor;
     cssOverrides?: SerializedStyles | SerializedStyles[];
 }
 
-export const Badge = ({
-    text,
-    color = 'teal',
-    variant = 'default',
-    cssOverrides,
-    ...props
-}: BadgeProps) => {
-    return <span css={[badge(color, variant), cssOverrides]}>{text}</span>;
+export const Badge = (props: BadgeProps) => {
+    const { text, color, cssOverrides, ...rest } = {
+        ...props,
+    };
+
+    const { theme } = useThemeContext();
+
+    return (
+        <span css={[badge(theme, color), cssOverrides]} {...rest}>
+            {text}
+        </span>
+    );
 };
