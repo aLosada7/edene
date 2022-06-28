@@ -1,4 +1,4 @@
-import { SerializedStyles, Interpolation, Theme } from '@emotion/react';
+import { SerializedStyles } from '@emotion/react';
 
 export type ThemeName = 'default';
 
@@ -7,5 +7,5 @@ export interface Props {
     /**
      * Override component styles by passing in the result of [emotion's `css` function/prop](https://emotion.sh/docs/introduction).
      */
-    cssOverrides?: SerializedStyles | SerializedStyles[] | Interpolation<Theme>;
+    cssOverrides?: SerializedStyles | SerializedStyles[];
 }

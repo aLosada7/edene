@@ -1,4 +1,5 @@
 import React, { forwardRef } from 'react';
+import { SerializedStyles } from '@emotion/react';
 
 import {
     useThemeContext,
@@ -47,12 +48,15 @@ export const Tab: TabComponent = forwardRef(
                 color="dark"
                 ref={ref}
                 onClick={() => onTabChange(tabKey)}
-                cssOverrides={[
-                    tab,
-                    isActiveTab && tabSelected(orientation, { theme, color }),
-                    hidden && tabHidden,
-                    cssOverrides,
-                ]}
+                cssOverrides={
+                    [
+                        tab,
+                        isActiveTab &&
+                            tabSelected(orientation, { theme, color }),
+                        hidden && tabHidden,
+                        cssOverrides,
+                    ] as SerializedStyles[]
+                }
                 {...rest}
             >
                 {label}
