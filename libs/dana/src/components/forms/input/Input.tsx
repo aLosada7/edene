@@ -1,16 +1,18 @@
-import React, { ChangeEventHandler, cloneElement } from 'react';
+import React, { forwardRef, useCallback } from 'react';
 import { InputHTMLAttributes } from 'react';
 import { descriptionId } from '../../../foundations/accesibility';
 import { Props } from '../../../helpers';
 import { InlineError } from '../../InlineFeedback/InlineError';
 import { InlineSuccess } from '../../InlineFeedback/InlineSuccess';
 import {
-    errorInput,
+    inputWrapper,
     input as inputE,
+    errorInput,
     successInput,
     leftIconInput,
     leftIconInInput,
 } from './styles';
+import { MaterialIcon } from '@dana-icons';
 
 export interface InputProps
     extends InputHTMLAttributes<HTMLInputElement>,
@@ -36,54 +38,53 @@ export interface InputProps
      * Only for radio buttons
      */
     checked?: boolean;
-    leftIcon?: JSX.Element;
+    leftIcon?: string;
 }
 
-export const Input = ({
-    id,
-    type = 'text',
-    value,
-    optional = false,
-    error,
-    success,
-    leftIcon,
-    cssOverrides,
-    ...props
-}: InputProps) => {
-    const Error = error ? <InlineError>{error}</InlineError> : null;
-    const Success =
-        !error && success ? <InlineSuccess>{success}</InlineSuccess> : null;
+export const Input = forwardRef<HTMLInputElement, InputProps>(
+    (props: InputProps, ref) => {
+        const {
+            id,
+            optional = false,
+            error,
+            success,
+            leftIcon,
+            cssOverrides,
+            ...rest
+        } = props;
 
-    return (
-        <>
-            {leftIcon ? (
-                <span css={leftIconInput}>
-                    {cloneElement(leftIcon, {
-                        size: 'medium',
-                    })}
-                </span>
-            ) : null}
-            <input
-                type={type}
-                css={[
-                    inputE,
-                    success || error
-                        ? success
-                            ? successInput
-                            : errorInput
-                        : null,
-                    leftIcon ? leftIconInInput : null,
-                    cssOverrides,
-                ]}
-                id={id}
-                value={value}
-                aria-required={!optional}
-                aria-invalid={!!error}
-                aria-describedby={error || success ? descriptionId(id) : ''}
-                {...props}
-            />
-            {Error}
-            {Success}
-        </>
-    );
-};
+        const Error = error ? <InlineError>{error}</InlineError> : null;
+        const Success =
+            !error && success ? <InlineSuccess>{success}</InlineSuccess> : null;
+
+        return (
+            <>
+                {leftIcon && (
+                    <div css={leftIconInput}>
+                        <MaterialIcon>{leftIcon}</MaterialIcon>
+                    </div>
+                )}
+                <input
+                    id={id}
+                    ref={ref}
+                    css={[
+                        inputE,
+                        success || error
+                            ? success
+                                ? successInput
+                                : errorInput
+                            : null,
+                        leftIcon ? leftIconInInput : null,
+                        cssOverrides,
+                    ]}
+                    aria-required={!optional}
+                    aria-invalid={!!error}
+                    aria-describedby={error || success ? descriptionId(id) : ''}
+                    {...rest}
+                />
+                {Error}
+                {Success}
+            </>
+        );
+    }
+);

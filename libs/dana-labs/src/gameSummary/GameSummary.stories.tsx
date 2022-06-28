@@ -1,5 +1,7 @@
+import { css } from '@emotion/react';
+import { useState } from 'react';
+
 import {
-    Container,
     DanaTheme,
     grays,
     Tab,
@@ -19,7 +21,6 @@ import {
     CardHeader,
     Avatar,
 } from '@dana';
-import { css } from '@emotion/react';
 import { rows } from './rows';
 import { theme } from './theme';
 
@@ -157,27 +158,32 @@ const GameStandings = () => (
     </Card>
 );
 
-const TeamStandings = () => (
-    <Container>
-        <Row>
-            <Col md={8} direction="column">
-                <TeamStats />
-                <Scoring />
-            </Col>
-            <Col md={16}>
-                <GameStandings />
-            </Col>
-        </Row>
-    </Container>
+const TeamSummary = () => (
+    <Row>
+        <Col md={8} direction="column">
+            <TeamStats />
+            <Scoring />
+        </Col>
+        <Col md={16}>
+            <GameStandings />
+        </Col>
+    </Row>
 );
 
-export const GameSummary = () => (
-    <Tabs>
-        <Tab id="tab-1" label="🇨🇦 Canada">
-            <TeamStandings />
-        </Tab>
-        <Tab id="tab-2" label="🇺🇸 United States">
-            <TeamStandings />
-        </Tab>
-    </Tabs>
-);
+export const GameSummary = () => {
+    const [teamSelected, setTeamSelected] = useState('canada');
+
+    const onChange = (tabKey: string) => {
+        setTeamSelected(tabKey);
+    };
+    return (
+        <Tabs active={teamSelected} onTabChange={onChange}>
+            <Tab tabKey="canada" label="🇨🇦 Canada">
+                <TeamSummary />
+            </Tab>
+            <Tab tabKey="eeuu" label="🇺🇸 United States">
+                <TeamSummary />
+            </Tab>
+        </Tabs>
+    );
+};

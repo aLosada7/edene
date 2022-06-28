@@ -44,7 +44,6 @@ export interface TextSansSizes extends TypographySizes {
     large: number;
     xlarge: number;
     xxlarge: number;
-    xxxlarge: number;
 }
 
 export type Fs = (category: Category) => (

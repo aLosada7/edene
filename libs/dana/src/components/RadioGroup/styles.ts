@@ -10,7 +10,7 @@ export const radio = css`
     cursor: pointer;
     display: inline-flex;
     -webkit-box-align: center;
-    align-items: center;
+    align-items: baseline;
     vertical-align: top;
     position: relative;
 

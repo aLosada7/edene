@@ -38,7 +38,8 @@ export const gridRow = (
     align: IRowAlign,
     direction: IRowDirection,
     paddingHorizontal: number,
-    paddingVertical: number
+    paddingVertical: number,
+    noGlutters: boolean
 ) => css`
     display: flex;
     flex-wrap: wrap;
@@ -51,10 +52,15 @@ export const gridRow = (
 
     ${direction === 'column' && `flex-direction: column;`}
 
+    ${align === 'start-center' &&
+    `justify-content: start; align-items: center;`}
+
     ${align === 'end-center' && `justify-content: end; align-items: center;`}
 
     ${align === 'space-between-center' &&
     `justify-content: space-between; align-items: center;`}
+
+    ${noGlutters && `margin: 0`}
 `;
 
 export const gridColumn = (

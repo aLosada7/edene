@@ -1,6 +1,6 @@
 import useThemeContext from '../../../foundations/theme/useThemeContext';
 import { ButtonHTMLAttributes, cloneElement } from 'react';
-import { Badge } from '../../data-display/badge';
+import { Badge } from '../../Badge';
 import {
     headerGlobalAction,
     actionAssistiveText,

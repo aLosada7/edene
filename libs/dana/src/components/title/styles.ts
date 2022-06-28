@@ -1,13 +1,8 @@
 import { css } from '@emotion/react';
-import { colorsPalette, headline, textSans } from '@dana-foundations';
+import { headline } from '@dana-foundations';
 import { defaultTheme } from '@dana-theme';
 import { IFontSize, ITextAlign } from './Title';
-import { Color, ComponentColors } from '../../foundations/colors/types';
-import {
-    ColorOptions,
-    isOfColor,
-    isOfComponentColors,
-} from '../../foundations/colors/api';
+import { ColorOptions, getColor } from '../../foundations/colors/api';
 
 export const title = (
     mt: number,
@@ -29,18 +24,9 @@ export const textColorCss = ({
     color,
     theme = defaultTheme,
 }: ColorOptions) => css`
-    color: ${getTextColor({ theme, color })};
-    fill: ${getTextColor({ theme, color })};
+    color: ${getColor({ theme, color })};
+    fill: ${getColor({ theme, color })};
 `;
-
-export const getTextColor = ({ color, theme = defaultTheme }: ColorOptions) => {
-    if (isOfColor(color)) return theme.palette[color as Color].background;
-
-    if (isOfComponentColors(color))
-        return colorsPalette[color as ComponentColors].background;
-
-    return color;
-};
 
 export const flexText = css`
     display: flex;

@@ -1,3 +1,4 @@
+import { Theme } from '@dana-theme';
 import { css } from '@emotion/react';
 import { defaultTheme } from 'libs/dana/src/foundations/theme/defaultTheme';
 import { textSans } from 'libs/dana/src/foundations/typography/api';
@@ -19,7 +20,7 @@ export const aside = (
     z-index: 100;
     background-color: #fff;
 
-    ${!headerHeight && expanded && `z-index: 1000;`}
+    ${!headerHeight && expanded && `z-index: 50;`}
 
     ${expanded && from.desktop} {
         display: block;
@@ -128,53 +129,29 @@ export const chevronIconUp = css`
     }
 `;
 
-export const navItem = (
-    { theme = defaultTheme },
-    isActive: boolean,
-    activeColor: string | null,
-    hoverColor: string | null
-) => css`
+export const navItem = ({ theme = defaultTheme }) => css`
     overflow: hidden;
     width: auto;
     height: auto;
 
     background-color: ${theme.sideNav.background};
-
-    ${isActive &&
-    (activeColor
-        ? `background-color: ${activeColor}`
-        : `background-color: ${theme.sideNav.active}`)};
-
-    ${isActive} {
-        :hover {
-            background-color: ${hoverColor ? hoverColor : theme.sideNav.hover};
-        }
-    }
 `;
 
-export const sideNavPrincipal = () => css`
+export const sideNavPrincipal = (theme: Theme) => css`
     padding-left: 1rem;
     margin-top: 1.5rem;
 
     span {
         ${textSans.xxsmall({ fontWeight: 'bold' })};
-        color: ${grays[0]};
+        color: ${theme.color};
         text-transform: uppercase;
     }
 `;
 
-export const navItemActive = (
-    expanded: boolean,
-    activeColor?: string | null,
-    hideIcon?: boolean
-) => css`
+export const navItemActive = (expanded: boolean, hideIcon?: boolean) => css`
     button,
     a {
         position: relative;
-
-        ${!expanded &&
-        !activeColor &&
-        `background-color: ${background.secondary};`}
 
         ${!expanded &&
         !hideIcon &&
@@ -198,6 +175,7 @@ export const navItemActive = (
 export const navLink = css`
     ${navMenuLink}
 
+    position: relative;
     width: inherit;
     justify-content: space-between;
 
@@ -212,15 +190,9 @@ export const navLink = css`
     }
 `;
 
-export const navMenuSubLink = css`
-    ${navLink}
-
-    height: 2rem;
-    min-height: 2rem;
-    position: relative;
-    padding-left: 2rem;
-
-    &[aria-current='page'] {
+export const navMenuLinkActive = css`
+    &[aria-current='page'],
+    &.active {
         background-color: ${background.secondary};
 
         :before {
@@ -239,6 +211,15 @@ export const navMenuSubLink = css`
     }
 `;
 
+export const navMenuSubLink = css`
+    ${navLink}
+
+    height: 2rem;
+    min-height: 2rem;
+
+    ${navMenuLinkActive}
+`;
+
 export const navMenuSubLinkText = css`
     overflow: hidden;
     text-overflow: ellipsis;
@@ -253,15 +234,12 @@ export const navMenuSubLinkText = css`
     font-weight: 400;
 `;
 
-const expandedBodyStyles = css`
+export const expandedBody = css`
     max-height: 93.75rem;
     transition: max-height ${transitions.medium};
     overflow: hidden;
     height: auto;
-`;
-
-export const expandedBody = css`
-    ${expandedBodyStyles};
+    padding: 0;
 `;
 
 export const collapsedBodyStyles = css`
@@ -312,4 +290,8 @@ export const navOverlay = css`
 
 export const sideNavBadge = css`
     min-width: 25px;
+`;
+
+export const navigationLevel = (level: number) => css`
+    padding-left: calc(${level} * 0.5rem);
 `;

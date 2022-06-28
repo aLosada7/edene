@@ -38,15 +38,15 @@ export const ContactForm = () => {
                             <Form>
                                 <Container pv={0} mt={4}>
                                     <Row>
-                                        <Col sm={24} lg={12}>
+                                        <Col md={12}>
                                             <TextInput label="Name" />
                                         </Col>
-                                        <Col sm={24} lg={12}>
+                                        <Col md={12}>
                                             <TextInput label="Email" />
                                         </Col>
                                     </Row>
                                     <Row>
-                                        <Col sm={24} lg={24}>
+                                        <Col>
                                             <Textarea label="Comments"></Textarea>
                                         </Col>
                                     </Row>

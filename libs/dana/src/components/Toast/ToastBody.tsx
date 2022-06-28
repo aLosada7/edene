@@ -1,9 +1,12 @@
+import { toastBody } from './styles';
+import { Text } from '../text';
+
 interface ToastBodyProps {
-    children: React.ReactNode;
+    children: string;
 }
 
 const ToastBody = ({ children }: ToastBodyProps) => {
-    return <p>{children}</p>;
+    return <Text cssOverrides={toastBody}>{children}</Text>;
 };
 
 export default ToastBody;

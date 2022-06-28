@@ -12,6 +12,7 @@ type Menu = { [P in MenuCategory]?: IFoodInfo[] };
 
 export interface IRestaurant {
     kind: string;
+    rating: number; // 1 to 5
     slug: string;
     name: string;
     food: Menu;
@@ -30,6 +31,7 @@ export const restaurants: IFoodOffer[] = [
         restaurants: [
             {
                 kind: 'Burguer',
+                rating: 4,
                 slug: 'rest1',
                 name: 'Restaurant 1',
                 food: {
@@ -53,6 +55,7 @@ export const restaurants: IFoodOffer[] = [
             },
             {
                 kind: 'Burguer',
+                rating: 2,
                 slug: 'rest2',
                 name: 'Restaurant 2',
                 food: {
@@ -74,6 +77,7 @@ export const restaurants: IFoodOffer[] = [
         restaurants: [
             {
                 kind: 'Pizza',
+                rating: 3,
                 slug: 'rest3',
                 name: 'Restaurant 3',
                 food: {
@@ -95,6 +99,7 @@ export const restaurants: IFoodOffer[] = [
         restaurants: [
             {
                 kind: 'Sandwiches',
+                rating: 5,
                 slug: 'pretasandwich',
                 name: 'Pret A Sandwich',
                 food: {

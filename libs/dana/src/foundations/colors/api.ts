@@ -1,23 +1,19 @@
 import { colorsPalette } from '../palette';
 import { defaultTheme } from '../theme';
 import { Theme } from '../theme/types';
-import { Color, ComponentColors, DanaColor } from './types';
-
-const isOfColor = (color: string) => {
-    return ['primary', 'secondary', 'accent'].includes(color);
-};
+import { ComponentColors, DanaColor } from './types';
 
 const isOfComponentColors = (color: string) => {
-    return ['success', 'danger', 'dark', 'transparent'].includes(color);
+    return ['success', 'danger', 'dark', 'gray', 'transparent'].includes(color);
 };
 
 export interface ColorOptions {
-    theme?: Theme;
-    color: DanaColor;
+    theme: Theme;
+    color?: DanaColor;
 }
 
 export const getColor = ({ color, theme = defaultTheme }: ColorOptions) => {
-    if (isOfColor(color)) return theme.palette[color as Color].color;
+    if (!color) return theme.color;
 
     if (isOfComponentColors(color))
         return colorsPalette[color as ComponentColors].color;
@@ -25,6 +21,16 @@ export const getColor = ({ color, theme = defaultTheme }: ColorOptions) => {
     return color;
 };
 
-// getSharedColorScheme
+export const getHoverColor = ({
+    color,
+    theme = defaultTheme,
+}: ColorOptions) => {
+    if (!color) return theme.hover;
 
-export { isOfColor, isOfComponentColors };
+    if (isOfComponentColors(color))
+        return colorsPalette[color as ComponentColors].hover;
+
+    return color;
+};
+
+export { isOfComponentColors };

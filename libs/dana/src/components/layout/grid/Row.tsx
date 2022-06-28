@@ -2,7 +2,11 @@ import { SerializedStyles } from '@emotion/react';
 import { ReactElement } from 'react';
 import { gridRow } from './styles';
 
-export type IRowAlign = '' | 'end-center' | 'space-between-center';
+export type IRowAlign =
+    | ''
+    | 'start-center'
+    | 'end-center'
+    | 'space-between-center';
 export type IRowDirection = 'row' | 'column';
 
 export interface RowProps {
@@ -13,6 +17,7 @@ export interface RowProps {
     px?: number;
     /** Vertical padding */
     py?: number;
+    noGlutters?: boolean;
     children?: ReactElement | ReactElement[];
     cssOverrides?: SerializedStyles | SerializedStyles[];
 }
@@ -22,12 +27,15 @@ export const Row = ({
     direction = 'row',
     px = 0,
     py = 0,
+    noGlutters = false,
     children,
     cssOverrides,
     ...props
 }: RowProps) => {
     return (
-        <div css={[gridRow(align, direction, px, py), cssOverrides]}>
+        <div
+            css={[gridRow(align, direction, px, py, noGlutters), cssOverrides]}
+        >
             {children}
         </div>
     );

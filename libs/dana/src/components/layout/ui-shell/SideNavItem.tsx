@@ -1,53 +1,55 @@
-import { SerializedStyles } from '@emotion/react';
-import useThemeContext from 'libs/dana/src/foundations/theme/useThemeContext';
 import React, { cloneElement, LinkHTMLAttributes } from 'react';
+
+import { PolymorphicComponentProps } from '@dana-theme';
+
+import { Props } from '../../../helpers';
+import useThemeContext from 'libs/dana/src/foundations/theme/useThemeContext';
 import {
     navItem,
     navLink,
     sideNavBadge,
     sideNavWithIcon,
-    navItemActive,
+    navMenuLinkActive,
 } from './styles';
 
-export interface SideNavItemProps
-    extends LinkHTMLAttributes<HTMLAnchorElement> {
-    href?: string;
+export interface SharedSideNavItemProps
+    extends LinkHTMLAttributes<HTMLAnchorElement>,
+        Props {
     icon?: React.ReactElement;
     badge?: React.ReactElement;
-    isActive?: boolean;
-    /** Received from parent */
     hideIcon?: boolean;
-    /** Received from parent */
-    activeColor?: string | null;
-    /** Received from parent */
-    hoverColor?: string | null;
-    cssOverrides?: SerializedStyles | SerializedStyles[];
     children: React.ReactNode;
 }
 
-export const SideNavItem = ({
-    href,
-    icon,
-    badge,
-    isActive = false,
-    hideIcon = false,
-    activeColor = null,
-    hoverColor = null,
-    cssOverrides,
-    children,
-    ...props
-}: SideNavItemProps) => {
+export type SideNavItemProps<C> = PolymorphicComponentProps<
+    C,
+    SharedSideNavItemProps
+>;
+
+type SideNavItemComponent = <C = 'a'>(
+    props: SideNavItemProps<C>
+) => React.ReactElement;
+
+export const SideNavItem: SideNavItemComponent = ((
+    props: SideNavItemProps<'a'>
+) => {
+    const {
+        component,
+        icon,
+        badge,
+        hideIcon = false,
+        cssOverrides,
+        children,
+        ...rest
+    } = props;
+
     const theme = useThemeContext();
 
+    const Element = component || 'a';
+
     return (
-        <li
-            css={[
-                navItem(theme, isActive, activeColor, hoverColor),
-                isActive && navItemActive(false, activeColor, hideIcon),
-                cssOverrides,
-            ]}
-        >
-            <a css={navLink} href={href} {...props}>
+        <li css={[navItem(theme), cssOverrides]}>
+            <Element css={[navLink, navMenuLinkActive]} {...rest}>
                 <span css={sideNavWithIcon}>
                     {icon &&
                         cloneElement(icon, {
@@ -58,7 +60,7 @@ export const SideNavItem = ({
                 </span>
 
                 {badge && cloneElement(badge, { cssOverrides: [sideNavBadge] })}
-            </a>
+            </Element>
         </li>
     );
-};
+}) as any;

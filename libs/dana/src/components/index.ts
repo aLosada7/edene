@@ -5,11 +5,12 @@ export * from './text';
 export * from './title';
 
 export * from './forms';
-export * from './data-display';
 export * from './navigation';
 export * from './layout';
 
-export * from './accordion';
+export * from './Accordion';
+export * from './Button';
+export * from './Checkbox';
 export * from './fade-in';
 export * from './Image';
 export * from './modal';
@@ -22,3 +23,9 @@ export * from './Toast';
 export * from './InlineFeedback';
 export * from './FormGroup';
 export * from './RadioGroup';
+export * from './Badge';
+export * from './Card';
+export * from './Divider';
+export * from './Table';
+export * from './TextInput';
+export * from './NumberInput';

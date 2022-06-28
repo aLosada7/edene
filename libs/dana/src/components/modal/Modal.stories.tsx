@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Meta, Story } from '@storybook/react';
 
 import Modal from './Modal';
-import { Button } from '../forms/button';
+import { Button } from '../Button';
 import { ModalsProvider } from './ModalsProvider';
 import { useModals } from './useModals';
 import { StoryHStack } from '../../lib/general-story-components';

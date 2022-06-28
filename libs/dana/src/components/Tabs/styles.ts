@@ -1,7 +1,16 @@
 import { css } from '@emotion/react';
-import { grays } from '../../foundations/palette';
 
-export const tabs = css`
+import { ColorOptions, getColor, textSans } from '@dana-foundations';
+
+import { grays } from '../../foundations/palette';
+import { defaultTheme } from '@dana-theme';
+import { TabsOrientation } from './useTabs';
+
+export const tabs = (orientation: TabsOrientation) => css`
+    display: ${orientation === 'horizontal' ? 'block' : 'flex'};
+`;
+
+export const tabList = (orientation: TabsOrientation) => css`
     display: flex;
     width: auto;
     max-width: 100%;
@@ -10,28 +19,58 @@ export const tabs = css`
     margin: 0;
     list-style: none;
     outline: 0;
-    border-bottom: 2px solid ${grays[5]};
+    ${orientation === 'horizontal'
+        ? `border-bottom: 2px solid ${grays[5]};`
+        : `border-right: 2px solid ${grays[5]};`}
+
+    ${orientation === 'vertical' &&
+    `flex-flow: column wrap;
+    align-items: flex-start;`}
 `;
 
 export const tab = css`
+    ${textSans.small({ fontWeight: 'regular' })};
+    padding: 0 1rem;
     display: flex;
     position: relative;
-    padding: 0;
     cursor: pointer;
 `;
 
-export const tabSelected = css`
-    font-size: 0.875rem;
-    font-weight: 600;
-    line-height: 1.28572;
-    letter-spacing: 0.16px;
-    color: #161616;
+export const tabSelected = (
+    orientation: 'horizontal' | 'vertical',
+    { color, theme = defaultTheme }: ColorOptions
+) => css`
+    color: ${getColor({ theme, color })};
+
+    :hover {
+        color: ${getColor({ theme, color })};
+    }
 
     ::after {
         content: '';
-        border-bottom: 2px solid #0f62fe;
+
+        ${orientation === 'horizontal'
+            ? `border-bottom: 2px solid ${getColor({
+                  theme,
+                  color,
+              })};
+              bottom: -2px;`
+            : `border-right: 2px solid ${getColor({
+                  theme,
+                  color,
+              })};
+              right: -2px;
+              height: 100%;`}
+
         width: 100%;
         position: absolute;
-        bottom: -2px;
     }
+`;
+
+export const tabHidden = css`
+    display: none;
+`;
+
+export const tabPanel = (orientation: TabsOrientation) => css`
+    ${orientation === 'horizontal' ? `padding-top: 10px` : `padding-left: 10px`}
 `;

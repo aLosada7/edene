@@ -1,3 +1,4 @@
+import { useThemeContext } from '@dana-theme';
 import React, { Children, cloneElement, ReactElement } from 'react';
 import { sideNavPrincipal } from './styles';
 
@@ -19,11 +20,12 @@ export const SideNavPrincipal = ({
     hoverColor = null,
     children,
     cssOverrides,
-    ...props
 }: SideNavPrincipalProps) => {
+    const { theme } = useThemeContext();
+
     return (
         <>
-            <li css={[sideNavPrincipal, cssOverrides]}>
+            <li css={[sideNavPrincipal(theme), cssOverrides]}>
                 <span>{title}</span>
             </li>
             {Children.map(children, (child) => {

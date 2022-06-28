@@ -1,14 +1,24 @@
-import { background, colorsPalette, fill, grays, text } from '../palette';
+import {
+    background,
+    colorsPalette,
+    fill,
+    grays,
+    text,
+    white,
+    black,
+    brandColor,
+    brandHover,
+    colors,
+} from '../palette';
 import { Theme } from './types';
 
 export const defaultTheme: Theme = {
     name: 'default',
-    palette: {
-        primary: colorsPalette.primary,
-        secondary: colorsPalette.secondary,
-        accent: colorsPalette.accent,
-        grays,
-    },
+    color: brandColor,
+    hover: brandHover,
+    white,
+    black,
+    colors,
     label: {
         text: grays[1],
         optionalText: text.supporting,

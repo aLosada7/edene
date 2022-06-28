@@ -1,10 +1,10 @@
 {
-    "root": "apps/dana-template",
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
     "sourceRoot": "apps/dana-template/src",
     "projectType": "application",
     "targets": {
         "build": {
-            "executor": "@nrwl/web:build",
+            "executor": "@nrwl/web:webpack",
             "outputs": ["{options.outputPath}"],
             "defaultConfiguration": "production",
             "options": {
@@ -36,6 +36,12 @@
                     "namedChunks": false,
                     "extractLicenses": true,
                     "vendorChunk": false
+                },
+                "development": {
+                    "extractLicenses": false,
+                    "optimization": false,
+                    "sourceMap": true,
+                    "vendorChunk": true
                 }
             }
         },
@@ -49,8 +55,12 @@
                 "production": {
                     "buildTarget": "dana-template:build:production",
                     "hmr": false
+                },
+                "development": {
+                    "buildTarget": "dana-template:build:development"
                 }
-            }
+            },
+            "defaultConfiguration": "development"
         },
         "lint": {
             "executor": "@nrwl/linter:eslint",

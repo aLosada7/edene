@@ -35,7 +35,7 @@ const Template: Story<RadioGroupProps> = (props: RadioGroupProps) => {
                     <Radio value="1">Credit or debit card</Radio>
                     <TextInput
                         placeholder="Card Number"
-                        leftIcon={<MaterialIcon>credit_card</MaterialIcon>}
+                        leftIcon="credit_card"
                     />
                     <TextInput placeholder="Card holder name" />
                 </div>

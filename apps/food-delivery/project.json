@@ -1,10 +1,10 @@
 {
-    "root": "apps/food-delivery",
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
     "sourceRoot": "apps/food-delivery/src",
     "projectType": "application",
     "targets": {
         "build": {
-            "executor": "@nrwl/web:build",
+            "executor": "@nrwl/web:webpack",
             "outputs": ["{options.outputPath}"],
             "defaultConfiguration": "production",
             "options": {
@@ -36,6 +36,12 @@
                     "namedChunks": false,
                     "extractLicenses": true,
                     "vendorChunk": false
+                },
+                "development": {
+                    "extractLicenses": false,
+                    "optimization": false,
+                    "sourceMap": true,
+                    "vendorChunk": true
                 }
             }
         },
@@ -49,8 +55,12 @@
                 "production": {
                     "buildTarget": "food-delivery:build:production",
                     "hmr": false
+                },
+                "development": {
+                    "buildTarget": "food-delivery:build:development"
                 }
-            }
+            },
+            "defaultConfiguration": "development"
         },
         "lint": {
             "executor": "@nrwl/linter:eslint",
@@ -63,7 +73,7 @@
             "executor": "@nrwl/jest:jest",
             "outputs": ["coverage/apps/food-delivery"],
             "options": {
-                "jestConfig": "apps/food-delivery/jest.config.js",
+                "jestConfig": "apps/food-delivery/jest.config.ts",
                 "passWithNoTests": true
             }
         }

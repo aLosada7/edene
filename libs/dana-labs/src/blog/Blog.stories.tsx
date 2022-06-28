@@ -211,7 +211,6 @@ export const Blog = () => (
                                 <SideNavPrincipal title="Blog categories">
                                     <SideNavItem
                                         href="javascript:void(0)"
-                                        isActive
                                         badge={<Badge color="gray" text="3" />}
                                         cssOverrides={css`
                                             border-radius: 8px;

@@ -1,9 +1,11 @@
 {
-    "version": 2,
-    "projects": {
-        "dana": "libs/dana",
-        "dana-labs": "libs/dana-labs",
-        "dana-template": "apps/dana-template",
-        "food-delivery": "apps/food-delivery"
-    }
+  "version": 2,
+  "projects": {
+    "dana": "libs/dana",
+    "dana-labs": "libs/dana-labs",
+    "dana-template": "apps/dana-template",
+    "dana-tests": "libs/dana-tests",
+    "food-delivery": "apps/food-delivery"
+  },
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json"
 }

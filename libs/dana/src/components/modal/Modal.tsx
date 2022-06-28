@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import React, { useEffect, useRef } from 'react';
-import { Card, CardBody } from '../data-display';
+import { Card, CardBody } from '../Card';
 import { cardOverrides, modal } from './styles';
 
 interface ModalProps {

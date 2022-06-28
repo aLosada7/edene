@@ -14,6 +14,7 @@ import { css } from '@emotion/react';
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { MenuCategory } from '../components/MenuCategory';
+import { RestaurantRating } from '../components/RestaurantRating';
 import useCartContext from '../context/cart/useCartContext';
 import { IFoodInfo, IFoodOffer, restaurants } from '../context/restaurants';
 
@@ -42,8 +43,17 @@ export const RestaurantPage = () => {
     return (
         <Container>
             <Row>
-                <Col md={6}>{restaurant.name}</Col>
-                <Col md={18} direction="column">
+                <Col
+                    direction="column"
+                    lg={6}
+                    cssOverrides={css`
+                        margin-bottom: 1.5rem;
+                    `}
+                >
+                    <Title size="h3">{restaurant.name}</Title>
+                    <RestaurantRating stars={restaurant.rating} />
+                </Col>
+                <Col lg={18} direction="column">
                     <Title size="h3">Menu</Title>
 
                     {/* Starters */}
