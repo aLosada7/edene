@@ -1,8 +1,12 @@
+import { IUser } from '../model/user';
+
 export default (
     state = {
-        users: [],
-        loading: false,
+        list: [],
+        total: 0,
+        isNextPageLoading: false,
         error: null,
+        hasNextPage: true,
     },
     action: { type: any; payload?: any }
 ) => {
@@ -10,17 +14,18 @@ export default (
         case 'GET_USERS_PENDING':
             return {
                 ...state,
-                loading: true,
+                isNextPageLoading: true,
             };
         case 'GET_USERS_FULFILLED':
             return {
                 ...state,
-                loading: false,
-                users: state.users.concat(action.payload.data),
+                isNextPageLoading: false,
+                list: state.list.concat(action.payload.data.data),
+                total: action.payload.data.totalPassengers,
             };
         case 'GET_USERS_REJECTED':
             return Object.assign({}, state, {
-                loading: false,
+                isNextPageLoading: false,
                 error: true,
             });
         default:

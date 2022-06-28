@@ -2,9 +2,11 @@ import users from './users';
 
 describe('User reducer', () => {
     const initialState = {
-        users: [],
-        loading: false,
+        list: [],
+        isNextPageLoading: false,
         error: null,
+        total: 0,
+        hasNextPage: true,
     };
 
     it('returns the initial state when an action type is not passed', () => {
@@ -18,7 +20,7 @@ describe('User reducer', () => {
         const reducer = users(initialState, {
             type: 'GET_USERS_PENDING',
         });
-        expect(reducer).toEqual({ ...initialState, loading: true });
+        expect(reducer).toEqual({ ...initialState, isNextPageLoading: true });
     });
 
     it('handles GET_USERS_FULLFILLED as expected', () => {
@@ -28,7 +30,7 @@ describe('User reducer', () => {
         });
         expect(reducer).toEqual({
             ...initialState,
-            users: [{ id: 1, name: 'John' }],
+            list: [{ id: 1, name: 'John' }],
         });
     });
 
@@ -37,6 +39,10 @@ describe('User reducer', () => {
             type: 'GET_USERS_REJECTED',
             payload: { data: [{ id: 1, name: 'John' }] },
         });
-        expect(reducer).toEqual({ error: true, loading: false, users: [] });
+        expect(reducer).toEqual({
+            error: true,
+            isNextPageLoading: false,
+            list: [],
+        });
     });
 });

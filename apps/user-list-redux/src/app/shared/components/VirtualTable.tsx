@@ -104,6 +104,7 @@ export default function VirtualTable({
 
     return (
         <VirtualTableContext.Provider value={{ Header }}>
+            <p>hola</p>
             <AutoSizer>
                 {({ height, width }) => (
                     <InfiniteLoader
