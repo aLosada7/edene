@@ -16,7 +16,7 @@ const Circle = ({ children }: { children: ReactElement }) => {
             css={css`
                 width: 50px;
                 height: 50px;
-                background-color: ${theme.palette.accent.background};
+                background-color: ${theme.black};
                 border-radius: 50%;
                 display: flex;
                 justify-content: center;

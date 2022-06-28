@@ -4,6 +4,7 @@ import { css } from '@emotion/react';
 import { NavLink } from 'react-router-dom';
 
 import { IRestaurant } from '../context/restaurants';
+import { RestaurantRating } from './RestaurantRating';
 
 export const RestaurantSummary = ({
     restaurant,
@@ -28,7 +29,8 @@ export const RestaurantSummary = ({
                         <Text size="md" weight="bold" mt={2}>
                             {restaurant.name}
                         </Text>
-                        <Text size="xsm">{restaurant.kind}</Text>
+                        <Text size="sm">{restaurant.kind}</Text>
+                        <RestaurantRating stars={restaurant.rating} />
                     </Col>
                     <Col md={12} direction="column">
                         <Text
