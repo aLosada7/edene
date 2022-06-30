@@ -138,7 +138,9 @@ const GameStandings = () => (
                     <TableHeader key="rebounds" align="right">
                         Rebounds
                     </TableHeader>
-                    <TableHeader key="rebounds">+/-</TableHeader>
+                    <TableHeader key="+-" align="right">
+                        +/-
+                    </TableHeader>
                 </TableHead>
                 <TableBody>
                     {rows.map((row) => (
@@ -149,7 +151,7 @@ const GameStandings = () => (
                             <TableCell align="right">{row.points}</TableCell>
                             <TableCell align="right">{row.assists}</TableCell>
                             <TableCell align="right">{row.rebounds}</TableCell>
-                            <TableCell>{row['+/-']}</TableCell>
+                            <TableCell align="right">{row['+/-']}</TableCell>
                         </TableRow>
                     ))}
                 </TableBody>

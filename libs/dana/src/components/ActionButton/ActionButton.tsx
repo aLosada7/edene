@@ -1,5 +1,6 @@
 import { SerializedStyles } from '@emotion/react';
-import { ButtonHTMLAttributes, cloneElement, useState } from 'react';
+import { ButtonHTMLAttributes, cloneElement } from 'react';
+
 import { MaterialIcon } from '../../foundations/icons/MaterialIcon';
 import { Props } from '../../helpers';
 import { Button } from '../Button';
@@ -9,7 +10,6 @@ export interface ActionButtonProps
     extends ButtonHTMLAttributes<HTMLButtonElement>,
         Props {
     children: React.ReactElement | string;
-    cssOverrides?: SerializedStyles | SerializedStyles[];
 }
 
 export const ActionButton = ({
@@ -18,7 +18,11 @@ export const ActionButton = ({
     ...props
 }: ActionButtonProps) => {
     return (
-        <Button color="transparent" cssOverrides={actionButton} {...props}>
+        <Button
+            color="transparent"
+            cssOverrides={[actionButton, cssOverrides] as SerializedStyles[]}
+            {...props}
+        >
             {typeof children === 'string' ? (
                 <MaterialIcon>{children as string}</MaterialIcon>
             ) : (
