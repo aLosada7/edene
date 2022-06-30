@@ -30,21 +30,13 @@ export const TeamStandingsComponent = () => (
         >
             <Table>
                 <TableHead>
-                    <TableHeader key="#">#</TableHeader>
-                    <TableHeader key="position">Pos.</TableHeader>
-                    <TableHeader key="name" align="left">
-                        Name
-                    </TableHeader>
-                    <TableHeader key="points" align="right">
-                        Points
-                    </TableHeader>
-                    <TableHeader key="assist" align="right">
-                        Assists
-                    </TableHeader>
-                    <TableHeader key="rebounds" align="right">
-                        Rebounds
-                    </TableHeader>
-                    <TableHeader key="+-">+/-</TableHeader>
+                    <TableHeader>#</TableHeader>
+                    <TableHeader>Pos.</TableHeader>
+                    <TableHeader align="left">Name</TableHeader>
+                    <TableHeader align="right">Points</TableHeader>
+                    <TableHeader align="right">Assists</TableHeader>
+                    <TableHeader align="right">Rebounds</TableHeader>
+                    <TableHeader align="right">+/-</TableHeader>
                 </TableHead>
                 <TableBody>
                     {players.map((player: Player, index) => (
@@ -59,7 +51,7 @@ export const TeamStandingsComponent = () => (
                             <TableCell align="right">
                                 {player.rebounds}
                             </TableCell>
-                            <TableCell>{player['+/-']}</TableCell>
+                            <TableCell align="right">{player['+/-']}</TableCell>
                         </TableRow>
                     ))}
                 </TableBody>
