@@ -66,7 +66,6 @@ export const FixedSideNav: Story<SideNavProps> = () => (
                 </SideNavMenu>
                 <SideNavItem>Link</SideNavItem>
                 <SideNavItem
-                    isActive
                     aria-current="page"
                     badge={<Badge color="gray" text="7" />}
                 >
@@ -195,18 +194,19 @@ export const HeaderBaseWActionsAndPanel: Story<HeaderProps> = () => (
 );
 
 export const HeaderBaseWSidenav: Story<HeaderProps> = () => {
-    const [isSideNavExpanded, setIsSideNavExpanded] = useState(false);
-    const onClickSideNavExpand = () => {
-        action('onClickSideNavExpand');
-        setIsSideNavExpanded(!isSideNavExpanded);
+    const [isOpen, setIsOpen] = React.useState(false);
+
+    const toggleMenu = () => {
+        setIsOpen(!isOpen);
     };
+
     return (
         <Header isFixed aria-label="DANA Library Name">
             <HeaderMenuButton
-                aria-label="Open menu"
-                onClick={onClickSideNavExpand}
                 variant="light"
-                isActive={isSideNavExpanded}
+                active={isOpen}
+                aria-label="Open menu"
+                onClick={toggleMenu}
             />
             <HeaderName href="#" prefix="DANA">
                 [Library]
@@ -214,7 +214,8 @@ export const HeaderBaseWSidenav: Story<HeaderProps> = () => {
             <SideNav
                 width={256}
                 aria-label="Side navigation"
-                expanded={isSideNavExpanded}
+                open={isOpen}
+                onOverlayClicked={toggleMenu}
                 cssOverrides={sideNavHeader}
             >
                 <SideNavItems>

@@ -1,15 +1,18 @@
-import { sidenav, sidenavHeader, navOverlay, aside } from './styles';
 import React from 'react';
 import { SerializedStyles } from '@emotion/react';
-import { headerHeight } from './stylesHeader';
+
+import { sidenav, sidenavHeader, navOverlay, aside } from './styles';
+import { from } from '@dana-foundations';
+
 export interface SideNavProps {
     /** Means navbar is fixed. Unit measured in px **/
     isFixed?: boolean;
     width?: number;
-    expanded?: boolean;
+    mobileWidth?: number | 'full';
+    open?: boolean;
     headerHeight?: number;
     'aria-label': string;
-    onClick?: any;
+    onOverlayClicked?: () => void;
     children: JSX.Element;
     cssOverrides?: SerializedStyles | SerializedStyles[];
     cssOverridesAside?: SerializedStyles | SerializedStyles[];
@@ -18,50 +21,38 @@ export interface SideNavProps {
 export const SideNav = ({
     isFixed = false,
     width = 256,
-    expanded = false,
-    onClick,
+    mobileWidth,
+    open = false,
+    headerHeight,
+    onOverlayClicked,
     children,
     cssOverrides,
     cssOverridesAside,
     ...props
-}: SideNavProps) => {
-    const SideNavWrapper = ({ children }: any) => {
-        if (!isFixed) return <>{children}</>;
-
-        return (
-            <aside
+}: SideNavProps) => (
+    <>
+        <div css={navOverlay(open)} onClick={onOverlayClicked} />
+        <aside
+            css={[
+                aside(isFixed, open, width, mobileWidth, headerHeight),
+                cssOverridesAside,
+            ]}
+        >
+            <nav
                 css={[
-                    aside(expanded, width, props.headerHeight),
-                    cssOverridesAside,
+                    sidenav({
+                        width,
+                        open,
+                    }),
+                    headerHeight ? sidenavHeader(open, headerHeight) : null,
+                    cssOverrides,
                 ]}
+                aria-label={props['aria-label']}
             >
                 {children}
-            </aside>
-        );
-    };
-
-    return (
-        <>
-            <div css={expanded ? navOverlay : null} onClick={onClick}></div>
-            <SideNavWrapper isFixed={isFixed} width={width}>
-                <nav
-                    css={[
-                        sidenav({
-                            width,
-                            expanded,
-                        }),
-                        props.headerHeight
-                            ? sidenavHeader(expanded, props.headerHeight)
-                            : null,
-                        cssOverrides,
-                    ]}
-                    aria-label={props['aria-label']}
-                >
-                    {children}
-                </nav>
-            </SideNavWrapper>
-        </>
-    );
-};
+            </nav>
+        </aside>
+    </>
+);
 
 export default SideNav;

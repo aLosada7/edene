@@ -7,7 +7,7 @@ export interface MenuButtonProps
     extends ButtonHTMLAttributes<HTMLButtonElement>,
         Props {
     alwaysVisible?: boolean;
-    isActive?: boolean;
+    active?: boolean;
     onClick: any;
     variant?: 'light' | 'dark';
     cssOverrides?: any;
@@ -15,22 +15,13 @@ export interface MenuButtonProps
 
 export const MenuButton = ({
     alwaysVisible = false,
-    isActive = false,
-    onClick,
+    active = false,
     variant = 'dark',
     cssOverrides,
     ...props
 }: MenuButtonProps) => {
-    const [active, setActive] = useState(isActive);
     return (
-        <button
-            css={[menu, cssOverrides]}
-            onClick={() => {
-                setActive(!active);
-                onClick(active);
-            }}
-            aria-label={props['aria-label']}
-        >
+        <button css={[menu, cssOverrides]} {...props}>
             <div
                 css={[menuLine(variant), active && !alwaysVisible && menuOpen]}
             ></div>

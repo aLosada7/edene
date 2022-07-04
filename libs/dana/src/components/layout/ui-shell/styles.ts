@@ -2,42 +2,75 @@ import { Theme } from '@dana-theme';
 import { css } from '@emotion/react';
 import { defaultTheme } from 'libs/dana/src/foundations/theme/defaultTheme';
 import { textSans } from 'libs/dana/src/foundations/typography/api';
-import { background, grays } from '../../../foundations';
+import { background } from '../../../foundations';
 import { focusHalo } from '../../../foundations/accesibility';
 import { transitions } from '../../../foundations/animation';
-import { from } from '../../../foundations/mq';
+import { from } from '@dana-foundations';
 
 export const aside = (
-    expanded: boolean,
+    fixed: boolean,
+    open: boolean,
     width: number,
+    mobileWidth?: number | 'full',
     headerHeight?: number
 ) => css`
     position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
-    width: ${width}px;
-    z-index: 100;
+
+    ${asideWidth(open, width, mobileWidth)}
+    transition: transform ${transitions.short};
+
     background-color: #fff;
+    z-index: 100;
 
-    ${!headerHeight && expanded && `z-index: 50;`}
+    ${!fixed && `${headerHeight && `top: ${headerHeight}px;`}`}
+`;
 
-    ${expanded && from.desktop} {
-        display: block;
-    }
+const asideWidth = (
+    open: boolean,
+    width: number,
+    mobileWidth?: number | 'full'
+) => css`
+    width: ${width}px;
+    transform: ${open
+        ? 'translateX(0)'
+        : `translateX(-${width}px);
+    `};
+
+    ${mobileWidth &&
+    typeof mobileWidth === 'number' &&
+    `
+    width: ${mobileWidth}px;`};
+
+    ${mobileWidth &&
+    mobileWidth === 'full' &&
+    `
+    width: 100%;
+    transform: ${
+        open
+            ? 'translateX(0)'
+            : `translateX(-100%);
+    `
+    }`};
 `;
 
 export const sidenav = ({ width, expanded }: any) => css`
-    z-index: 8000;
     max-width: 100%;
-    width: ${width}px;
+    width: 100%;
+
     top: 0;
     bottom: 0;
     left: 0;
     max-width: 100%;
+
     display: flex;
     flex-direction: column;
+
     background-color: transparent;
+    z-index: 8000;
+    overflow-y: scroll;
 
     ${expanded && `position: absolute;`}
 `;
@@ -257,11 +290,9 @@ export const collapsedBody = css`
     ${collapsedBodyStyles};
 `;
 
-export const sidenavHeader = (expanded: boolean, headerHeight: number) => css`
-    top: ${headerHeight}px;
-
-    ${!expanded && `display: none;`}
-    ${expanded && `height: 100vh;`}
+export const sidenavHeader = (open: boolean, headerHeight: number) => css`
+    ${!open && `display: none;`}
+    ${open && `height: 100%;`}
 
     ${from.desktop} {
         position: absolute;
@@ -269,7 +300,7 @@ export const sidenavHeader = (expanded: boolean, headerHeight: number) => css`
     }
 `;
 
-export const navOverlay = css`
+export const navOverlay = (open: boolean) => css`
     position: fixed;
     top: 3rem;
     left: 0;
@@ -286,6 +317,9 @@ export const navOverlay = css`
         height: 0;
         opacity: 0;
     }
+
+    // display only if sidenav is open
+    ${!open && `display: none`}
 `;
 
 export const sideNavBadge = css`
