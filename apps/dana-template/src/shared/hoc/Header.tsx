@@ -27,10 +27,10 @@ export const Header = ({
         >
             <HeaderMenuButton
                 alwaysVisible
+                active={isSideNavExpanded}
                 aria-label="Open menu"
                 onClick={onToggleSideNav}
                 variant="light"
-                isActive={isSideNavExpanded}
             />
         </DanaHeader>
     );

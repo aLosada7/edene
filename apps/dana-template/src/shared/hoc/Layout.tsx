@@ -24,27 +24,24 @@ const main = (isSideNavExpanded: boolean) => css`
 `;
 
 export default () => {
-    const [isSideNavExpanded, setSideNavExpanded] = useState(
-        window.innerWidth > 980
-    );
-    const toggleSideNav = () => setSideNavExpanded(!isSideNavExpanded);
+    const [sideNavOpen, setSideNavOpen] = useState(window.innerWidth > 980);
 
-    const sideNavProps = {
-        sideNavWidth,
-        isSideNavExpanded,
-        onToggleSideNav: toggleSideNav,
-    };
+    const toggleSideNav = () => setSideNavOpen(!sideNavOpen);
 
     return (
         <>
             <Header
                 sideNavWidth={sideNavWidth}
-                isSideNavExpanded={isSideNavExpanded}
+                isSideNavExpanded={sideNavOpen}
                 onToggleSideNav={toggleSideNav}
             />
-            <SideNav sideNavWidth={sideNavWidth} expanded={isSideNavExpanded} />
+            <SideNav
+                sideNavWidth={sideNavWidth}
+                open={sideNavOpen}
+                onClose={toggleSideNav}
+            />
             <Settings />
-            <main css={main(isSideNavExpanded)}>
+            <main css={main(sideNavOpen)}>
                 <Outlet />
             </main>
         </>

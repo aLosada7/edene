@@ -47,7 +47,8 @@
             "executor": "@nrwl/web:dev-server",
             "options": {
                 "buildTarget": "dana-template:build",
-                "hmr": true
+                "hmr": true,
+                "port": 4201
             },
             "configurations": {
                 "production": {

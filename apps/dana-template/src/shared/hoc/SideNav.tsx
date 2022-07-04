@@ -9,30 +9,28 @@ import {
     SideNavMenuItem,
     SideNavPrincipal,
 } from '@dana';
+import { transitions } from 'libs/dana/src/foundations/animation';
 
-const aside = (isSideNavExpanded: boolean) =>
-    css`
-        ${!isSideNavExpanded && `display: none;`}
-    `;
-
-const sideNav = css`
+const aside = (open: boolean, width: number) => css`
     background-color: #fff;
+
+    transform: ${open ? 'translateX(0)' : `translateX(-${width}px)`};
+    transition: transform ${transitions.short};
 `;
 
 interface SideNavProps {
     sideNavWidth: number;
-    expanded: boolean;
+    open: boolean;
+    onClose: () => void;
 }
 
-export const SideNav = ({ sideNavWidth, expanded }: SideNavProps) => {
+export const SideNav = ({ sideNavWidth, ...props }: SideNavProps) => {
     return (
         <DanaSideNav
-            isFixed
             width={sideNavWidth}
             aria-label="Side navigation"
-            expanded={expanded}
-            cssOverrides={sideNav}
-            cssOverridesAside={aside(expanded)}
+            cssOverridesAside={aside(props.open, sideNavWidth)}
+            {...props}
         >
             <SideNavItems>
                 <SideNavPrincipal title="Components">
@@ -41,12 +39,14 @@ export const SideNav = ({ sideNavWidth, expanded }: SideNavProps) => {
                             <SideNavMenuItem
                                 component={NavLink}
                                 to="/form/signin/basic"
+                                {...props}
                             >
                                 Basic
                             </SideNavMenuItem>
                             <SideNavMenuItem
                                 component={NavLink}
                                 to="/form/signin/modern"
+                                {...props}
                             >
                                 Modern
                             </SideNavMenuItem>
@@ -57,6 +57,7 @@ export const SideNav = ({ sideNavWidth, expanded }: SideNavProps) => {
                     <SideNavItem
                         component={NavLink}
                         to="templates/game-summary"
+                        {...props}
                     >
                         Game Summary
                     </SideNavItem>
