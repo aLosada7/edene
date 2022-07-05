@@ -15,7 +15,7 @@ interface SettingContentProps {
     onClose: () => void;
 }
 
-const themes: Theme[] = [defaultTheme, tealPalette, pinkPalette];
+const themes: Partial<Theme>[] = [defaultTheme, tealPalette, pinkPalette];
 
 export const SettingContent = ({ open, onClose }: SettingContentProps) => {
     const { theme, setTheme } = useThemeContext();
@@ -38,7 +38,7 @@ export const SettingContent = ({ open, onClose }: SettingContentProps) => {
 
             <Container mt={4}>
                 <Row>
-                    {themes.map((themeOption: Theme) => (
+                    {themes.map((themeOption: Partial<Theme>) => (
                         <div
                             key={themeOption.name}
                             style={{
@@ -55,7 +55,7 @@ export const SettingContent = ({ open, onClose }: SettingContentProps) => {
                                     backgroundColor: themeOption.color,
                                 }}
                             />
-                            <Text>{themeOption.name}</Text>
+                            <Text>{themeOption.name as string}</Text>
                         </div>
                     ))}
                 </Row>

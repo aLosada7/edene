@@ -4,6 +4,7 @@ export interface Theme {
     hover: string;
     white?: string;
     black?: string;
+    grays: Record<string, string>;
     colors?: Record<string, unknown>;
     header?: any;
     label?: any;

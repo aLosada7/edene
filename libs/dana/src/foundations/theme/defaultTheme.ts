@@ -17,6 +17,7 @@ export const defaultTheme: Theme = {
     hover: brandHover,
     white,
     black,
+    grays,
     colors,
     label: {
         text: grays[1],
