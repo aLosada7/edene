@@ -1,13 +1,17 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { lazy } from 'react';
 
 import { Home } from '../../app/Home';
 import Layout from './Layout';
-const AuthenticationSignInPage = React.lazy(
+const AuthenticationSignInPage = lazy(
     () =>
         import('../../app/authentication/signIn/pages/AuthenticationSignInPage')
 );
-const ScoreboardPage = React.lazy(
+const ScoreboardPage = lazy(
     () => import('../../app/scoreboard/pages/ScoreboardPage')
+);
+const FlightStatusPage = lazy(
+    () => import('../../app/flightStatus/pages/FlightStatusPage')
 );
 
 export default () => {
@@ -28,6 +32,10 @@ export default () => {
                     <Route
                         path="/templates/game-summary"
                         element={<ScoreboardPage />}
+                    />
+                    <Route
+                        path="/templates/flight-status"
+                        element={<FlightStatusPage />}
                     />
                 </Route>
             </Routes>
