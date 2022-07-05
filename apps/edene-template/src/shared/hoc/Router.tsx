@@ -1,9 +1,14 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import { AuthenticationSignInPage } from '../../app/authentication/signIn/pages/AuthenticationSignInPage';
 import { Home } from '../../app/Home';
 import Layout from './Layout';
-import { ScoreboardPage } from '../../app/scoreboard/pages/ScoreboardPage';
+const AuthenticationSignInPage = React.lazy(
+    () =>
+        import('../../app/authentication/signIn/pages/AuthenticationSignInPage')
+);
+const ScoreboardPage = React.lazy(
+    () => import('../../app/scoreboard/pages/ScoreboardPage')
+);
 
 export default () => {
     return (
