@@ -12,6 +12,7 @@
   "dependencies": {
     "@emotion/react": "11.9.0",
     "@emotion/styled": "11.8.1",
+    "@netlify-builder/deploy": "^5.0.0",
     "@nrwl/next": "14.2.4",
     "@storybook/core-server": "6.5.8",
     "@types/mdx": "^2.0.1",
