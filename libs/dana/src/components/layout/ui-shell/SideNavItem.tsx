@@ -18,6 +18,7 @@ export interface SharedSideNavItemProps
     icon?: React.ReactElement;
     badge?: React.ReactElement;
     hideIcon?: boolean;
+    onClose?: () => void;
     children: React.ReactNode;
 }
 
@@ -39,6 +40,7 @@ export const SideNavItem: SideNavItemComponent = ((
         badge,
         hideIcon = false,
         cssOverrides,
+        onClose,
         children,
         ...rest
     } = props;
@@ -50,14 +52,16 @@ export const SideNavItem: SideNavItemComponent = ((
     return (
         <li css={[navItem(theme), cssOverrides]}>
             <Element css={[navLink, navMenuLinkActive]} {...rest}>
-                <span css={sideNavWithIcon}>
-                    {icon &&
-                        cloneElement(icon, {
-                            size: 'small',
-                            color: 'hsl(212, 20%, 68%)',
-                        })}
-                    {children}
-                </span>
+                <div onClick={onClose}>
+                    <span css={sideNavWithIcon}>
+                        {icon &&
+                            cloneElement(icon, {
+                                size: 'small',
+                                color: 'hsl(212, 20%, 68%)',
+                            })}
+                        {children}
+                    </span>
+                </div>
 
                 {badge && cloneElement(badge, { cssOverrides: [sideNavBadge] })}
             </Element>

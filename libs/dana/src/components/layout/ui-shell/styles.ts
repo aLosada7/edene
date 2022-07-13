@@ -19,25 +19,22 @@ export const aside = (
     bottom: 0;
     left: 0;
 
-    ${asideWidth(open, width, mobileWidth)}
+    ${asideWidth(fixed, open, width, mobileWidth)}
     transition: transform ${transitions.short};
 
     background-color: #fff;
     z-index: 100;
 
-    ${!fixed && `${headerHeight && `top: ${headerHeight}px;`}`}
+    ${!fixed && headerHeight && `top: ${headerHeight}px;`}
 `;
 
 const asideWidth = (
+    fixed: boolean,
     open: boolean,
     width: number,
     mobileWidth?: number | 'full'
 ) => css`
-    width: ${width}px;
-    transform: ${open
-        ? 'translateX(0)'
-        : `translateX(-${width}px);
-    `};
+    ${!mobileWidth && `width: ${width}px;`}
 
     ${mobileWidth &&
     typeof mobileWidth === 'number' &&
@@ -48,12 +45,25 @@ const asideWidth = (
     mobileWidth === 'full' &&
     `
     width: 100%;
-    transform: ${
-        open
-            ? 'translateX(0)'
-            : `translateX(-100%);
+    ${
+        !fixed &&
+        `
+        transform: ${
+            open
+                ? 'translateX(0);'
+                : `translateX(-100%);
+        `
+        }
     `
-    }`};
+    }
+    `}
+
+    ${from.desktop} {
+        width: ${width}px;
+        ${!fixed &&
+        `
+            transform: ${open ? 'translateX(0)' : `translateX(-${width}px)`};`}
+    }
 `;
 
 export const sidenav = ({ width, expanded }: any) => css`
@@ -312,11 +322,11 @@ export const navOverlay = (open: boolean) => css`
     transition: opacity ${transitions.medium},
         background-color ${transitions.medium};
 
-    ${from.desktop} {
+    /* ${from.desktop} {
         width: 0;
         height: 0;
         opacity: 0;
-    }
+    } */
 
     // display only if sidenav is open
     ${!open && `display: none`}

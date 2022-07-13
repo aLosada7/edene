@@ -1,8 +1,9 @@
-import { action } from '@storybook/addon-actions';
-
-import css from '@emotion/css';
+import { css } from '@emotion/react';
 import { Story, Meta } from '@storybook/react';
-import React, { useState } from 'react';
+import React from 'react';
+
+import { Badge, Divider } from '@dana';
+
 import {
     SideNav,
     SideNavProps,
@@ -24,7 +25,6 @@ import {
     Grid3x3GapIcon,
     SearchIcon,
 } from '../../../foundations/icons';
-import { Badge, Divider } from '@dana';
 
 export default {
     component: SideNav,
@@ -207,6 +207,7 @@ export const HeaderBaseWSidenav: Story<HeaderProps> = () => {
                 active={isOpen}
                 aria-label="Open menu"
                 onClick={toggleMenu}
+                alwaysVisible
             />
             <HeaderName href="#" prefix="DANA">
                 [Library]
@@ -215,7 +216,7 @@ export const HeaderBaseWSidenav: Story<HeaderProps> = () => {
                 width={256}
                 aria-label="Side navigation"
                 open={isOpen}
-                onOverlayClicked={toggleMenu}
+                onClose={toggleMenu}
                 cssOverrides={sideNavHeader}
             >
                 <SideNavItems>
