@@ -9,6 +9,7 @@ import { textSans } from '../../foundations/typography/api';
 
 export const accordion = (variant: string) => css`
     padding: 0;
+    margin: 0;
 
     ${variant === 'bordered' &&
     `
