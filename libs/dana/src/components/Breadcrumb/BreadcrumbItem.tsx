@@ -1,5 +1,5 @@
 import { HTMLAttributes } from 'react';
-import { Props } from '../../../helpers';
+import { Props } from '../../helpers';
 import { breadcrumbItem, breadcrumbItemLink } from './styles';
 
 export interface BreadcrumbItemProps

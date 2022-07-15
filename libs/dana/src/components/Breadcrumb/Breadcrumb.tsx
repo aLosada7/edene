@@ -1,5 +1,5 @@
 import { Children, cloneElement, ReactElement } from 'react';
-import { Props } from '../../../helpers';
+import { Props } from '../../helpers';
 
 import { breadcrumb } from './styles';
 

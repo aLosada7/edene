@@ -1,15 +1,13 @@
 import { css } from '@emotion/react';
 import { textSans } from 'libs/dana/src/foundations/typography/api';
 
-import { from } from '../../../foundations';
-import { transitions } from '../../../foundations/animation';
+import { transitions } from '../../foundations/animation';
 
 export const breadcrumb = css`
     list-style-type: none;
-
-    ${from.tablet} {
-        display: flex;
-    }
+    display: flex;
+    flex-flow: wrap;
+    padding: 0;
 `;
 
 export const breadcrumbItem = ({ active }: any) => css`

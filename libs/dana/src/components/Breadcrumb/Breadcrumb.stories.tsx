@@ -1,6 +1,6 @@
 import { Breadcrumb, BreadcrumbProps } from './Breadcrumb';
-import { asPlayground, asChromaticStory } from '../../../lib/story-intents';
-import type { Story } from '../../../lib/storybook-emotion-10-fixes';
+import { asPlayground, asChromaticStory } from '../../lib/story-intents';
+import type { Story } from '../../lib/storybook-emotion-10-fixes';
 import { BreadcrumbItem } from './BreadcrumbItem';
 
 export default {
