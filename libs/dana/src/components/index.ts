@@ -28,6 +28,7 @@ export * from './RadioGroup';
 export * from './Badge';
 export * from './Card';
 export * from './Divider';
+export * from './Select';
 export * from './Table';
 export * from './TextInput';
 export * from './NumberInput';

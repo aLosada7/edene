@@ -6,14 +6,14 @@ import {
     useState,
     useEffect,
 } from 'react';
-import { Props } from '../../../helpers';
+import { Props } from '../../helpers';
 import { select, selectButton, selectItems, showItems } from './styles';
-import { input } from '../../Input/styles';
-import { generateSourceId } from '../../../foundations/accesibility';
-import { FormInput } from '../../Input/types';
-import { Button } from '../../Button';
-import { Label } from '../../Label';
-import { FormGroup } from '../../FormGroup';
+import { input } from '../Input/styles';
+import { generateSourceId } from '../../foundations/accesibility';
+import { FormInput } from '../Input/types';
+import { Button } from '../Button';
+import { Label } from '../Label';
+import { FormGroup } from '../FormGroup';
 
 export interface SelectProps extends Props, FormInput {
     value?: string;

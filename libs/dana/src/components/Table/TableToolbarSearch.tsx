@@ -2,9 +2,7 @@ import { SearchIcon } from '@dana-icons';
 import React, { InputHTMLAttributes, useState } from 'react';
 import { Props } from '../../helpers';
 import { Button } from '../Button';
-import { Select, Option } from '../forms/select';
 import { TextInput } from '../TextInput';
-import { Row, Col } from '../layout';
 import {
     tableToolbarSearch,
     tableToolbarSearchButton,
@@ -18,7 +16,6 @@ export interface TableToolbarSearchProps
 
 export const TableToolbarSearch = ({
     cssOverrides,
-    ...props
 }: TableToolbarSearchProps) => {
     const [isSearchOpen, setSearchOpen] = useState(false);
     return (

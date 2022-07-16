@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { Props } from '../../../helpers';
+import { Props } from '../../helpers';
 import { option, select, selectItems } from './styles';
 
 type SelectHandler = (
