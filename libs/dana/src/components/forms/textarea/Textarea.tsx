@@ -2,9 +2,9 @@ import { SerializedStyles } from '@emotion/react';
 
 import { Props } from '../../../helpers';
 import { textarea } from './styles';
-import { input } from '../input/styles';
+import { input } from '../../Input/styles';
 import { generateSourceId } from '../../../foundations/accesibility';
-import { FormInput } from '../input/types';
+import { FormInput } from '../../Input/types';
 import { Label } from '../../label';
 import { FormGroup } from '../../FormGroup';
 

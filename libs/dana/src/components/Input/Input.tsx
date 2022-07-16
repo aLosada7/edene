@@ -1,9 +1,9 @@
 import React, { forwardRef, useCallback } from 'react';
 import { InputHTMLAttributes } from 'react';
-import { descriptionId } from '../../../foundations/accesibility';
-import { Props } from '../../../helpers';
-import { InlineError } from '../../InlineFeedback/InlineError';
-import { InlineSuccess } from '../../InlineFeedback/InlineSuccess';
+import { descriptionId } from '../../foundations/accesibility';
+import { Props } from '../../helpers';
+import { InlineError } from '../InlineFeedback/InlineError';
+import { InlineSuccess } from '../InlineFeedback/InlineSuccess';
 import {
     inputWrapper,
     input as inputE,

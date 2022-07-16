@@ -3,10 +3,10 @@ import { SerializedStyles } from '@emotion/react';
 
 import { generateSourceId } from '../../foundations/accesibility';
 import { FormGroup } from '../FormGroup';
-import { FormInput } from '../forms/input/types';
+import { FormInput } from '../Input/types';
 import { checkbox, checkboxInput, checkboxLabel } from './styles';
 import { useCheckboxGroup } from './useCheckboxGroup';
-import { Input } from '../forms/input';
+import { Input } from '../Input';
 import { Label } from '../label';
 
 export interface CheckboxProps extends FormInput {

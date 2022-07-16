@@ -1,8 +1,8 @@
 import { css } from '@emotion/react';
-import { border } from '../../../foundations';
-import { focusHalo } from '../../../foundations/accesibility';
-import { height } from '../../../foundations/size';
-import { textSans } from '../../../foundations/typography/api';
+import { border } from '../../foundations';
+import { focusHalo } from '../../foundations/accesibility';
+import { height } from '../../foundations/size';
+import { textSans } from '../../foundations/typography/api';
 
 export const inputWrapper = css`
     position: absolute;

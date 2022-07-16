@@ -4,10 +4,10 @@ import { input, numberInputWrapper, subtractButton, sumButton } from './styles';
 import { MinusIcon, PlusIcon } from '../../foundations/icons';
 import { Label } from '../label';
 import { generateSourceId } from 'libs/dana/src/foundations/accesibility';
-import { FormInput } from '../forms/input/types';
+import { FormInput } from '../Input/types';
 import { Props } from '../../helpers';
 import { SerializedStyles } from '@emotion/react';
-import { Input } from '../forms/input';
+import { Input } from '../Input';
 import { FormGroup } from '../FormGroup';
 export interface NumberInputProps
     extends Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>,

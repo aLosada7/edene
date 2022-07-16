@@ -1,12 +1,12 @@
-import { ChangeEventHandler, forwardRef, InputHTMLAttributes } from 'react';
+import { forwardRef, InputHTMLAttributes } from 'react';
 import { SerializedStyles } from '@emotion/react';
 
 import { width10, width30, width4, widthFluid } from './styles';
 import { Label } from '../label';
 import { Props } from '../../helpers';
 import { generateSourceId } from '../../foundations/accesibility';
-import { Input } from '../forms/input';
-import { FormInput } from '../forms/input/types';
+import { Input } from '../Input';
+import { FormInput } from '../Input/types';
 import { FormGroup } from '../FormGroup';
 
 export type Width = 30 | 10 | 4;
