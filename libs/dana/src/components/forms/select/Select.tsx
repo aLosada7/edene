@@ -12,7 +12,7 @@ import { input } from '../../Input/styles';
 import { generateSourceId } from '../../../foundations/accesibility';
 import { FormInput } from '../../Input/types';
 import { Button } from '../../Button';
-import { Label } from '../../label';
+import { Label } from '../../Label';
 import { FormGroup } from '../../FormGroup';
 
 export interface SelectProps extends Props, FormInput {

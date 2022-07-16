@@ -1,6 +1,5 @@
 // import '../sass/partials/headings.scss';
 
-export * from './label';
 export * from './text';
 export * from './Title';
 
@@ -14,6 +13,7 @@ export * from './Checkbox';
 export * from './fade-in';
 export * from './Form';
 export * from './Input';
+export * from './Label';
 export * from './Image';
 export * from './Modal';
 export * from './MenuButton';

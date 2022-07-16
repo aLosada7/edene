@@ -7,7 +7,7 @@ import { FormInput } from '../Input/types';
 import { checkbox, checkboxInput, checkboxLabel } from './styles';
 import { useCheckboxGroup } from './useCheckboxGroup';
 import { Input } from '../Input';
-import { Label } from '../label';
+import { Label } from '../Label';
 
 export interface CheckboxProps extends FormInput {
     checked?: boolean;

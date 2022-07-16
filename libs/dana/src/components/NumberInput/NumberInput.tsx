@@ -2,7 +2,7 @@ import { forwardRef, InputHTMLAttributes, useEffect, useState } from 'react';
 
 import { input, numberInputWrapper, subtractButton, sumButton } from './styles';
 import { MinusIcon, PlusIcon } from '../../foundations/icons';
-import { Label } from '../label';
+import { Label } from '../Label';
 import { generateSourceId } from 'libs/dana/src/foundations/accesibility';
 import { FormInput } from '../Input/types';
 import { Props } from '../../helpers';

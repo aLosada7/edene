@@ -1,8 +1,8 @@
 import { SerializedStyles } from '@emotion/react';
 
 import { generateSourceId } from '../../../foundations/accesibility';
-import { Input } from '../../forms';
-import { Label } from '../../label';
+import { Input } from '../../Input';
+import { Label } from '../../Label';
 import { useRadioGroup } from '../useRadioGroup';
 import { radio, radioInput } from '../styles';
 

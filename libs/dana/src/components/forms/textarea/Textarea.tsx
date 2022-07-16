@@ -5,7 +5,7 @@ import { textarea } from './styles';
 import { input } from '../../Input/styles';
 import { generateSourceId } from '../../../foundations/accesibility';
 import { FormInput } from '../../Input/types';
-import { Label } from '../../label';
+import { Label } from '../../Label';
 import { FormGroup } from '../../FormGroup';
 
 export interface TextareaProps extends Props, FormInput {

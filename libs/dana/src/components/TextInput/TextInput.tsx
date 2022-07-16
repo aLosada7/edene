@@ -2,7 +2,7 @@ import { forwardRef, InputHTMLAttributes } from 'react';
 import { SerializedStyles } from '@emotion/react';
 
 import { width10, width30, width4, widthFluid } from './styles';
-import { Label } from '../label';
+import { Label } from '../Label';
 import { Props } from '../../helpers';
 import { generateSourceId } from '../../foundations/accesibility';
 import { Input } from '../Input';
