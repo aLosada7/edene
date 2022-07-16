@@ -1,5 +1,5 @@
 import { Container } from '../layout/grid/Container';
-import { Text } from '../text';
+import { Text } from '../Text';
 import { asChromaticStory } from '../../lib/story-intents';
 import { useState } from 'react';
 

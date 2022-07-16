@@ -1,5 +1,5 @@
 import { toastBody } from './styles';
-import { Text } from '../text';
+import { Text } from '../Text';
 
 interface ToastBodyProps {
     children: string;

@@ -1,6 +1,6 @@
 // import '../sass/partials/headings.scss';
 
-export * from './text';
+export * from './Text';
 export * from './Title';
 
 export * from './layout';
@@ -30,6 +30,7 @@ export * from './Card';
 export * from './Divider';
 export * from './Select';
 export * from './Table';
+export * from './Text';
 export * from './Textarea';
 export * from './TextInput';
 export * from './NumberInput';

@@ -1,4 +1,4 @@
-import { Text } from '../text';
+import { Text } from '../Text';
 import useThemeContext from '../../foundations/theme/useThemeContext';
 import { Props } from '../../helpers';
 import { alert, alertColor } from './styles';
