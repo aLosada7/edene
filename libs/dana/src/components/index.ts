@@ -21,6 +21,7 @@ export * from './ActionButton';
 export * from './Tabs';
 export * from './Alert';
 export * from './Avatar';
+export * from './Overlay';
 export * from './Toast';
 export * from './InlineFeedback';
 export * from './FormGroup';
