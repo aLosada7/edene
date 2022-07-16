@@ -3,7 +3,6 @@
 export * from './text';
 export * from './Title';
 
-export * from './forms';
 export * from './layout';
 
 export * from './Accordion';
@@ -31,6 +30,7 @@ export * from './Card';
 export * from './Divider';
 export * from './Select';
 export * from './Table';
+export * from './Textarea';
 export * from './TextInput';
 export * from './NumberInput';
 export * from './Tooltip';

@@ -1,6 +1,6 @@
 import { Textarea } from '.';
-import { asChromaticStory, asPlayground } from '../../../lib/story-intents';
-import type { Story } from '../../../lib/storybook-emotion-10-fixes';
+import { asChromaticStory, asPlayground } from '../../lib/story-intents';
+import type { Story } from '../../lib/storybook-emotion-10-fixes';
 
 export default {
     title: 'Components/Forms/Textarea',
