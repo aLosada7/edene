@@ -12,6 +12,7 @@ export * from './Breadcrumb';
 export * from './Button';
 export * from './Checkbox';
 export * from './fade-in';
+export * from './Form';
 export * from './Image';
 export * from './Modal';
 export * from './MenuButton';
