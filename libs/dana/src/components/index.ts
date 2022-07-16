@@ -2,7 +2,7 @@
 
 export * from './label';
 export * from './text';
-export * from './title';
+export * from './Title';
 
 export * from './forms';
 export * from './layout';

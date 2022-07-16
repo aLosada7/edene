@@ -1,6 +1,6 @@
 import { CloseIcon } from '../../foundations/icons/CloseIcon';
 import { ActionButton } from '../ActionButton';
-import { Title } from '../title';
+import { Title } from '../Title';
 import { toastHeader, toastTitle } from './styles';
 
 interface ToastHeaderProps {
