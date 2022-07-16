@@ -13,7 +13,7 @@ export * from './Button';
 export * from './Checkbox';
 export * from './fade-in';
 export * from './Image';
-export * from './modal';
+export * from './Modal';
 export * from './MenuButton';
 export * from './ActionButton';
 export * from './Tabs';
