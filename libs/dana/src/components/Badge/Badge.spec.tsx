@@ -1,4 +1,4 @@
-import { renderWithAct } from '@dana-tests';
+import { renderWithAct } from '@dana/utils';
 import { DanaTheme } from '@dana-theme';
 
 import { Badge, BadgeProps } from './Badge';

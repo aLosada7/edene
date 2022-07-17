@@ -24,10 +24,12 @@
             },
             "configurations": {
                 "production": {
-                    "fileReplacements": [{
-                        "replace": "apps/dana-template/src/environments/environment.ts",
-                        "with": "apps/dana-template/src/environments/environment.prod.ts"
-                    }],
+                    "fileReplacements": [
+                        {
+                            "replace": "apps/dana-template/src/environments/environment.ts",
+                            "with": "apps/dana-template/src/environments/environment.prod.ts"
+                        }
+                    ],
                     "optimization": true,
                     "outputHashing": "all",
                     "sourceMap": false,
@@ -69,7 +71,7 @@
             }
         },
         "deploy": {
-            "builder": "@netlify-builder/deploy:deploy",
+            "executor": "@netlify-builder/deploy:deploy",
             "options": {
                 "outputPath": "dist/apps/dana-template",
                 "siteId": "cb556dad-569b-4128-8b6b-2de4a7ffc11e"
