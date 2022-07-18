@@ -41,7 +41,7 @@ export function Avatar({
         <div css={avatar(shape, { theme })}>
             {props.src ? (
                 <img
-                    src={props.src}
+                    src={props.src as any}
                     css={avatarImg(shape, outline)}
                     alt="Avatar"
                 ></img>
@@ -51,7 +51,7 @@ export function Avatar({
                 </div>
             ) : (
                 <img
-                    src={defaultAvatar}
+                    src={defaultAvatar as any}
                     css={avatarImg('circle')}
                     alt="Default Avatar"
                 ></img>
