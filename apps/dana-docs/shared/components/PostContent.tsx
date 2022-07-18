@@ -4,15 +4,15 @@ import {
     Title,
     Text,
     Image,
-    Accordion,
-    AccordionRow,
     Breadcrumb,
     BreadcrumbItem,
     MenuButton,
 } from '@dana-components';
+import { Accordion, AccordionRow, Button, Tabs, Tab } from '@edene/components';
+
 import CodeBlock from './CodeBlock';
 
-const H2Title = (props) => <Title size="h3" mt={8} {...props} />;
+const H2Title = (props) => <Title size="h4" mt={8} mb={4} {...props} />;
 const PText = (props) => <Text mt={4} {...props} />;
 
 const generalComponents = {
@@ -29,6 +29,7 @@ const generalComponents = {
             {...props}
         />
     ),
+    table: (props) => <table style={{ width: '100%' }} {...props} />,
 };
 
 const danaComponents = {
@@ -37,6 +38,9 @@ const danaComponents = {
     Breadcrumb,
     BreadcrumbItem,
     MenuButton,
+    Button,
+    Tabs,
+    Tab,
 };
 
 const components = { ...generalComponents, ...danaComponents };

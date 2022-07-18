@@ -5,7 +5,7 @@ import fs from 'fs';
 
 import PostContent from '../../shared/components/PostContent';
 import {
-    getParsedFileContentBySlug,
+    getParsedFileOverviewContentBySlug,
     renderMarkdown,
 } from '../../shared/utils/markdown/markdown';
 import { MarkdownRenderingResult } from '../../shared/utils/markdown/types';
@@ -14,7 +14,7 @@ interface ArticleProps extends ParsedUrlQuery {
     slug: string;
 }
 
-const POSTS_PATH = join(process.cwd(), 'apps/dana-docs/_articles/overview');
+const POSTS_PATH = join(process.cwd(), 'content/docs/overview');
 
 const Overview = ({ html }) => {
     return (
@@ -30,7 +30,7 @@ export const getStaticProps: GetStaticProps<MarkdownRenderingResult> = async ({
     params: ArticleProps;
 }) => {
     // read markdown file into content and frontmatter
-    const articleMarkdownContent = getParsedFileContentBySlug(
+    const articleMarkdownContent = getParsedFileOverviewContentBySlug(
         params.slug,
         POSTS_PATH
     );

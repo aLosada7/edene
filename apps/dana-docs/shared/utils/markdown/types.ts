@@ -6,10 +6,14 @@ export interface FrontMatter {
 
 export interface MarkdownDocument {
     frontMatter: FrontMatter;
-    content: string;
+    content?: string;
+    usage?: string;
+    props?: string;
 }
 
 export interface MarkdownRenderingResult {
     frontMatter: FrontMatter;
-    html: MDXRemoteSerializeResult;
+    content?: MDXRemoteSerializeResult;
+    usage?: MDXRemoteSerializeResult;
+    props?: MDXRemoteSerializeResult;
 }

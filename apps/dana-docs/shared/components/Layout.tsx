@@ -32,7 +32,7 @@ export const Layout = ({ children }) => {
                     onClick={toggleMenu}
                     alwaysVisible
                 />
-                <HeaderName href="#">Dana Docs</HeaderName>
+                <HeaderName href="/">Edene</HeaderName>
                 <SideNav open={sideNavOpen} onClose={toggleMenu} />
             </Header>
             <main css={main}>{children}</main>

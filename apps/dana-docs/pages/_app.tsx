@@ -1,15 +1,17 @@
-import { DanaTheme } from '@dana-theme';
 import { AppProps } from 'next/app';
 
+import { EdeneTheme, pinkTheme } from '@edene/foundations';
+
+import './styles.scss';
 import { Layout } from '../shared/components/Layout';
 
 function App({ Component, pageProps }: AppProps) {
     return (
-        <DanaTheme>
+        <EdeneTheme theme={pinkTheme}>
             <Layout>
                 <Component {...pageProps} />
             </Layout>
-        </DanaTheme>
+        </EdeneTheme>
     );
 }
 

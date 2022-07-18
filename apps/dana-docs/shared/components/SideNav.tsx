@@ -18,6 +18,8 @@ interface SideNavProps {
     onClose: () => void;
 }
 
+const components = ['Accordion', 'Button', 'Tabs'];
+
 export const SideNav = ({ open, ...props }: SideNavProps) => {
     return (
         <DanaSideNav
@@ -36,24 +38,15 @@ export const SideNav = ({ open, ...props }: SideNavProps) => {
                     <SideNavItem {...props}>Getting started</SideNavItem>
                 </ActiveLink>
                 <SideNavPrincipal title="Components">
-                    <ActiveLink
-                        href="/components/accordion"
-                        activeClassName="active"
-                    >
-                        <SideNavItem {...props}>Accordion</SideNavItem>
-                    </ActiveLink>
-                    <ActiveLink
-                        href="/components/breadcrumb"
-                        activeClassName="active"
-                    >
-                        <SideNavItem {...props}>Breadcrumb</SideNavItem>
-                    </ActiveLink>
-                    <ActiveLink
-                        href="/components/menu-button"
-                        activeClassName="active"
-                    >
-                        <SideNavItem {...props}>MenuButton</SideNavItem>
-                    </ActiveLink>
+                    {components.map((component) => (
+                        <ActiveLink
+                            key={component}
+                            href={`/components/${component.toLowerCase()}`}
+                            activeClassName="active"
+                        >
+                            <SideNavItem {...props}>{component}</SideNavItem>
+                        </ActiveLink>
+                    ))}
                 </SideNavPrincipal>
             </SideNavItems>
         </DanaSideNav>

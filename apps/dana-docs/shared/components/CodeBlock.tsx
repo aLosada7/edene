@@ -1,13 +1,9 @@
 import { css } from '@emotion/react';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 
-import {
-    Accordion,
-    AccordionRow,
-    Breadcrumb,
-    BreadcrumbItem,
-    MenuButton,
-} from '@dana-components';
+import { Breadcrumb, BreadcrumbItem, MenuButton, Text } from '@dana-components';
+
+import { Accordion, AccordionRow, Button, Tabs, Tab } from '@edene/components';
 
 const codeBlock = css`
     background-color: rgba(248, 249, 250, 0.65);
@@ -39,18 +35,28 @@ const scope = {
     Breadcrumb,
     BreadcrumbItem,
     MenuButton,
+    Button,
+    Tabs,
+    Tab,
+    Text,
 };
 
-const CodeBlock = ({ children: code, editable = false }: any) => (
-    <LiveProvider code={code} disabled={!editable} scope={scope}>
-        <div css={preview}>
-            <LivePreview />
-        </div>
-        {editable && <LiveError />}
-        <div css={codeBlock}>
-            <LiveEditor />
-        </div>
-    </LiveProvider>
-);
+const CodeBlock = ({ children: code, editable = false, className }: any) => {
+    const language = className?.replace(/language-/, '');
+
+    return (
+        <LiveProvider code={code} disabled={!editable} scope={scope}>
+            {language === 'tsx' && (
+                <div css={preview}>
+                    <LivePreview />
+                </div>
+            )}
+            {editable && <LiveError />}
+            <div css={codeBlock}>
+                <LiveEditor />
+            </div>
+        </LiveProvider>
+    );
+};
 
 export default CodeBlock;
