@@ -16,7 +16,7 @@ interface ArticleProps extends ParsedUrlQuery {
     slug: string;
 }
 
-const POSTS_PATH = join(process.cwd(), 'apps/dana-docs/_articles/components');
+const POSTS_PATH = join(process.cwd(), 'content/docs/components');
 
 const Components = ({ frontMatter, html }) => {
     return (
@@ -24,10 +24,14 @@ const Components = ({ frontMatter, html }) => {
             <Title mb={4}>{frontMatter.title}</Title>
             <Text>
                 <Row>
-                <GithubIcon />
-                <a href={frontMatter.sourceCode} target="_blank" rel="noreferrer">
-                    View source code
-                </a>
+                    <GithubIcon />
+                    <a
+                        href={frontMatter.sourceCode}
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        View source code
+                    </a>
                 </Row>
             </Text>
             <PostContent content={html} />
