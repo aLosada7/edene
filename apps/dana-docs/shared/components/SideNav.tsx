@@ -1,5 +1,7 @@
 import { css } from '@emotion/react';
 
+import ActiveLink from './ActiveLink';
+
 import {
     SideNav as DanaSideNav,
     SideNavItem,
@@ -13,24 +15,39 @@ const sideNav = css`
 
 interface SideNavProps {
     open: boolean;
-    onOverlayClicked: () => void;
+    onClose: () => void;
 }
 
-export const SideNav = (props: SideNavProps) => {
+export const SideNav = ({ open, ...props }: SideNavProps) => {
     return (
         <DanaSideNav
             mobileWidth="full"
             aria-label="Side navigation"
             cssOverrides={sideNav}
-            {...props}
+            open={open}
         >
             <SideNavItems>
-                <SideNavItem>Installation</SideNavItem>
+                <ActiveLink
+                    href="/getting-started/overview"
+                    activeClassName="active"
+                >
+                    <SideNavItem {...props}>Overview</SideNavItem>
+                </ActiveLink>
                 <SideNavPrincipal title="Foundations">
-                    <SideNavItem>Colors</SideNavItem>
+                    <ActiveLink
+                        href="/foundations/colors"
+                        activeClassName="active"
+                    >
+                        <SideNavItem {...props}>Colors</SideNavItem>
+                    </ActiveLink>
                 </SideNavPrincipal>
                 <SideNavPrincipal title="Components">
-                    <SideNavItem>Icon</SideNavItem>
+                    <ActiveLink
+                        href="/components/button"
+                        activeClassName="active"
+                    >
+                        <SideNavItem {...props}>Button</SideNavItem>
+                    </ActiveLink>
                 </SideNavPrincipal>
             </SideNavItems>
         </DanaSideNav>
