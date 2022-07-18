@@ -30,6 +30,7 @@ export const Layout = ({ children }) => {
                     active={sideNavOpen}
                     aria-label="Open menu"
                     onClick={toggleMenu}
+                    alwaysVisible
                 />
                 <HeaderName href="#">Dana Docs</HeaderName>
                 <SideNav open={sideNavOpen} onClose={toggleMenu} />

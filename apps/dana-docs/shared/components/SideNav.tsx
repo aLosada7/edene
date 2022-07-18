@@ -22,8 +22,10 @@ export const SideNav = ({ open, ...props }: SideNavProps) => {
     return (
         <DanaSideNav
             mobileWidth="full"
+            headerHeight={48}
             aria-label="Side navigation"
             cssOverrides={sideNav}
+            onClose={props.onClose}
             open={open}
         >
             <SideNavItems>
