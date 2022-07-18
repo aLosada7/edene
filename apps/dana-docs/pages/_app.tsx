@@ -1,18 +1,16 @@
+import { DanaTheme } from '@dana-theme';
 import { AppProps } from 'next/app';
-import Head from 'next/head';
-import './styles.css';
 
-function CustomApp({ Component, pageProps }: AppProps) {
+import { Layout } from '../shared/components/Layout';
+
+function App({ Component, pageProps }: AppProps) {
     return (
-        <>
-            <Head>
-                <title>Welcome to dana-docs!</title>
-            </Head>
-            <main className="app">
+        <DanaTheme>
+            <Layout>
                 <Component {...pageProps} />
-            </main>
-        </>
+            </Layout>
+        </DanaTheme>
     );
 }
 
-export default CustomApp;
+export default App;
