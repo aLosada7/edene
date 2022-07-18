@@ -28,25 +28,17 @@ export const SideNav = ({ open, ...props }: SideNavProps) => {
         >
             <SideNavItems>
                 <ActiveLink
-                    href="/getting-started/overview"
+                    href="/overview/getting-started"
                     activeClassName="active"
                 >
-                    <SideNavItem {...props}>Overview</SideNavItem>
+                    <SideNavItem {...props}>Getting started</SideNavItem>
                 </ActiveLink>
-                <SideNavPrincipal title="Foundations">
-                    <ActiveLink
-                        href="/foundations/colors"
-                        activeClassName="active"
-                    >
-                        <SideNavItem {...props}>Colors</SideNavItem>
-                    </ActiveLink>
-                </SideNavPrincipal>
                 <SideNavPrincipal title="Components">
                     <ActiveLink
-                        href="/components/button"
+                        href="/components/accordion"
                         activeClassName="active"
                     >
-                        <SideNavItem {...props}>Button</SideNavItem>
+                        <SideNavItem {...props}>Accordion</SideNavItem>
                     </ActiveLink>
                 </SideNavPrincipal>
             </SideNavItems>
