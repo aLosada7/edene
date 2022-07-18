@@ -3,11 +3,12 @@
     "projects": {
         "components": "libs/components",
         "dana": "libs/dana",
+        "foundations": "libs/foundations",
+        "utils": "libs/utils",
+        "dana-docs": "apps/dana-docs",
         "dana-labs": "libs/dana-labs",
         "dana-template": "apps/dana-template",
-        "food-delivery": "apps/food-delivery",
-        "foundations": "libs/foundations",
-        "utils": "libs/utils"
+        "food-delivery": "apps/food-delivery"
     },
     "$schema": "./node_modules/nx/schemas/workspace-schema.json"
 }
