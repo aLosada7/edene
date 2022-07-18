@@ -1,8 +1,5 @@
-import React, { ReactElement } from 'react';
+import { EdeneColor, Props } from '@edene/foundations';
 
-import { EdeneColor } from '@edene/foundations';
-
-import { Props } from '../../helpers';
 import { tabList, tabs, tabPanel } from './styles';
 import { TabsProvider } from './useTabs';
 
@@ -11,7 +8,7 @@ export interface TabsProps extends Props {
     color?: EdeneColor;
     orientation?: 'horizontal' | 'vertical';
     onTabChange: (tabKey: string) => void;
-    children: ReactElement | ReactElement[];
+    children: React.ReactElement | React.ReactElement[];
 }
 
 const defaultProps: Required<Pick<TabsProps, 'orientation'>> = {
@@ -27,7 +24,7 @@ export const Tabs = (props: TabsProps) => {
 
     return (
         <TabsProvider value={context}>
-            <div css={tabs(context.orientation)}>
+            <div css={tabs(context.orientation)} {...props}>
                 <div css={tabList(context.orientation)} role="tablist">
                     {children}
                 </div>

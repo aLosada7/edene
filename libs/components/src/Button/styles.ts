@@ -1,15 +1,16 @@
 import { css } from '@emotion/react';
-import { disabled } from '../../foundations/accesibility';
+
 import {
-    colorsPalette,
     EdeneColor,
     getColor,
     getHoverColor,
-} from '../../foundations';
-import { buttonSize, IButtonSize } from '../../foundations/size';
-import { IButtonBlock, IButtonVariant } from './Button';
-import { defaultTheme } from '../../foundations/theme/defaultTheme';
-import { Theme } from '../../foundations/theme/types';
+    disabled,
+    buttonSize,
+    defaultTheme,
+    Theme,
+} from '@edene/foundations';
+
+import { IButtonSize, IButtonBlock, IButtonVariant } from './Button';
 
 export const btnGroup = (size?: IButtonSize | IButtonBlock) => css`
     display: inline-flex;

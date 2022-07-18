@@ -1,7 +1,7 @@
 import { cloneElement, ReactElement } from 'react';
 import { flexText, title, textColorCss } from './styles';
 import useThemeContext from '../../foundations/theme/useThemeContext';
-import { DanaColor } from '../../foundations/colors/types';
+import { EdeneColor } from '@edene/foundations';
 
 export type IFontSize = 'h3' | 'h4' | 'h5';
 export type ITextAlign = 'inherit' | 'left' | 'center' | 'right';
@@ -10,7 +10,7 @@ export interface TitleProps {
     // in titles only soon
     mb?: number;
     size?: IFontSize;
-    color?: DanaColor;
+    color?: EdeneColor;
     align?: ITextAlign;
     icon?: ReactElement;
     cssOverrides?: any;

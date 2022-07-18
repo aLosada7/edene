@@ -1,4 +1,4 @@
-export type DanaColor = ComponentColors | string;
+export type EdeneColor = ComponentColors | string;
 
 export type ComponentColors =
     | 'success'

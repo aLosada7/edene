@@ -2,14 +2,14 @@ import { SerializedStyles } from '@emotion/react';
 
 import { useThemeContext } from '@dana-theme';
 
-import { DanaColor } from '../../foundations/colors';
+import { EdeneColor } from '@edene/foundations';
 import { badge } from './styles';
 
 export type IBadgeVariant = 'filled' | 'outlined';
 
 export interface BadgeProps {
     text: string;
-    color?: DanaColor;
+    color?: EdeneColor;
     cssOverrides?: SerializedStyles | SerializedStyles[];
 }
 

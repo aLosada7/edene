@@ -1,6 +1,6 @@
 import { SerializedStyles } from '@emotion/react';
 import { Children, cloneElement } from 'react';
-import useThemeContext from '../../../foundations/theme/useThemeContext';
+import { useThemeContext } from '@dana-theme';
 import { header, headerPosition, headerHeight } from './stylesHeader';
 
 export interface HeaderProps {

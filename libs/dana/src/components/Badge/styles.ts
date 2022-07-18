@@ -1,8 +1,8 @@
-import { DanaColor, getColor } from '@dana-foundations';
+import { EdeneColor, getColor } from '@dana-foundations';
 import { defaultTheme, Theme } from '@dana-theme';
 import { css } from '@emotion/react';
 
-export const badge = ({ theme = defaultTheme }, color?: DanaColor) => css`
+export const badge = ({ theme = defaultTheme }, color?: EdeneColor) => css`
     ${badgeColorStyles(theme, getColor({ theme, color }))};
 
     font-size: 10px;

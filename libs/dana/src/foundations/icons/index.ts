@@ -3,6 +3,7 @@ export * from './MaterialIcon';
 // social networks
 export { GithubIcon } from './GithubIcon';
 export { LinkedinIcon } from './LinkedinIcon';
+export { StorybookIcon} from './StorybookIcon'
 
 // arrows
 export { ArrowRightIcon } from './ArrowRightIcon';

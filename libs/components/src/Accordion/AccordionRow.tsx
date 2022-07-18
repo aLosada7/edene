@@ -21,7 +21,7 @@ const visuallyHidden = css`
 `;
 
 export interface AccordionRowProps
-    extends Omit<HTMLAttributes<HTMLDivElement>, 'onClick'>,
+    extends Omit<HTMLAttributes<HTMLLIElement>, 'onClick'>,
         Props {
     /**
      * A line of text to summarise the information that lies within the expanded state.
@@ -49,6 +49,8 @@ export const AccordionRow = ({
     hideToggleLabel = false,
     variant = 'borderless',
     onClick = () => undefined,
+    cssOverrides,
+    ...props
 }: AccordionRowProps) => {
     const [expanded, setExpanded] = useState(false);
     const collapse = () => setExpanded(false);
@@ -58,8 +60,9 @@ export const AccordionRow = ({
         expanded ? collapse() : expand();
         onClick(event);
     }
+
     return (
-        <li css={accordionRow(variant)}>
+        <li css={[accordionRow(variant), cssOverrides]} {...props}>
             <button
                 type="button"
                 aria-expanded={expanded}

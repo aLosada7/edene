@@ -1,7 +1,7 @@
 import { cloneElement, ReactElement } from 'react';
 import { flexText, text, textColorCss } from './styles';
 import useThemeContext from '../../foundations/theme/useThemeContext';
-import { DanaColor } from '../../foundations/colors/types';
+import { EdeneColor } from '@edene/foundations';
 import { FontWeight } from '../../foundations/typography/types';
 
 export type ITextFontSize =
@@ -21,7 +21,7 @@ export interface TextProps {
     mb?: number;
     size?: ITextFontSize;
     weight?: FontWeight;
-    color?: DanaColor;
+    color?: EdeneColor;
     align?: ITextAlign;
     icon?: ReactElement;
     cssOverrides?: any;

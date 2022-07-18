@@ -1,6 +1,7 @@
 export * from './accesibility';
 export * from './breakpoints';
 export * from './colors';
+export * from './helpers';
 export * from './icons';
 export * from './palette';
 export * from './shadows';

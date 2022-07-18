@@ -1,18 +1,17 @@
-import React, { cloneElement, ReactElement } from 'react';
-import { getColor } from '../colors/api';
-import { EdeneColor } from '../colors/types';
-import { iconSize } from '../size';
-import useThemeContext from '../theme/useThemeContext';
-import { IconSize } from './types';
+import { cloneElement } from 'react';
+import { getColor } from '../../colors/api';
+import { EdeneColor } from '../../colors/types';
+import useThemeContext from '../../theme/useThemeContext';
+import { iconSize, IconSize } from '../../sizes';
 
-export const Icon = ({
+export const SvgIcon = ({
     children,
     size = 'medium',
     color,
 }: {
     size?: IconSize;
     color?: EdeneColor;
-    children: ReactElement;
+    children: React.ReactElement;
 }) => {
     const { theme } = useThemeContext();
     const iconColor = color || theme.black;

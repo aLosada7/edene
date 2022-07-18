@@ -1,5 +1,5 @@
 import { Children, cloneElement, ReactElement } from 'react';
-import { Props } from '../helpers';
+import { Props } from '@edene/foundations';
 
 import { accordion } from './styles';
 
@@ -19,13 +19,12 @@ export const Accordion = ({
     children,
     hideToggleLabel = false,
     variant = 'borderless',
+    cssOverrides,
     ...props
-}: AccordionProps) => {
-    return (
-        <ul css={accordion(variant)}>
-            {Children.map(children, (child) => {
-                return cloneElement(child, { hideToggleLabel, variant });
-            })}
-        </ul>
-    );
-};
+}: AccordionProps) => (
+    <ul css={[accordion(variant), cssOverrides]} {...props}>
+        {Children.map(children, (child) => {
+            return cloneElement(child, { hideToggleLabel, variant });
+        })}
+    </ul>
+);

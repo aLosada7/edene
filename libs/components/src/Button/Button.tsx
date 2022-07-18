@@ -1,14 +1,16 @@
 import { cloneElement, forwardRef } from 'react';
 
-import { PolymorphicComponentProps, PolymorphicRef } from '@dana-theme';
+import { PolymorphicComponentProps, PolymorphicRef } from '@edene/foundations';
 
-import { IButtonSize } from '../../foundations/size';
+import {
+    EdeneColor,
+    useThemeContext,
+    Props,
+    Icon,
+} from '@edene/foundations';
 import { btn, btnColor, buttonIconLeft, buttonIconRight } from './styles';
-import useThemeContext from '../../foundations/theme/useThemeContext';
-import { EdeneColor } from 'libs/dana/src/foundations/colors/types';
-import { Props } from '../../helpers';
-import { MaterialIcon } from '../../foundations/icons/MaterialIcon';
 
+export type IButtonSize = 'xsmall' | 'small' | 'medium' | 'large';
 export type IButtonVariant = 'filled' | 'outline' | 'link';
 export type IButtonBlock = 'block';
 
@@ -69,9 +71,9 @@ export const Button: ButtonComponent = forwardRef(
                 {...rest}
             >
                 {leftIcon ? (
-                    <MaterialIcon size="small" cssOverrides={buttonIconLeft}>
+                    <Icon size="small" cssOverrides={buttonIconLeft}>
                         {leftIcon}
-                    </MaterialIcon>
+                    </Icon>
                 ) : null}
                 {typeof children === 'string'
                     ? children
@@ -79,9 +81,9 @@ export const Button: ButtonComponent = forwardRef(
                           color: 'inherit',
                       })}
                 {rightIcon ? (
-                    <MaterialIcon size="small" cssOverrides={buttonIconRight}>
+                    <Icon size="small" cssOverrides={buttonIconRight}>
                         {rightIcon}
-                    </MaterialIcon>
+                    </Icon>
                 ) : null}
             </Element>
         );

@@ -1,6 +1,4 @@
 import {
-    background,
-    fill,
     grays,
     text,
     white,
@@ -8,8 +6,8 @@ import {
     brandColor,
     brandHover,
     colors,
-} from '../palette';
-import { Theme } from './types';
+} from '../../palette';
+import { Theme } from '../types';
 
 export const defaultTheme: Theme = {
     name: 'default',
@@ -41,6 +39,3 @@ export const defaultTheme: Theme = {
         h5: 'hsl(201, 23%, 34%)',
     },
 };
-
-/** deprecated */
-export const defaultThemeOld = { text, background, fill };

@@ -1,24 +1,12 @@
-import {
-    background,
-    colorsPalette,
-    fill,
-    grays,
-    text,
-    white,
-    black,
-    brandColor,
-    brandHover,
-    colors,
-} from '../palette';
-import { Theme } from './types';
+import { black, grays, text, white } from '../../palette';
+import { Theme } from '..';
 
-export const defaultTheme: Theme = {
-    name: 'default',
-    color: brandColor,
-    hover: brandHover,
+export const tealTheme: Theme = {
+    name: 'teal',
+    color: 'rgb(48, 144, 142)',
+    hover: 'rgb(44, 122, 123)',
     white,
     black,
-    colors,
     label: {
         text: grays[1],
         optionalText: text.supporting,
@@ -42,6 +30,3 @@ export const defaultTheme: Theme = {
         h5: 'hsl(201, 23%, 34%)',
     },
 };
-
-/** deprecated */
-export const defaultThemeOld = { text, background, fill };

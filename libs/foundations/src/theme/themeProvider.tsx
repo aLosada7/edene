@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
-import { defaultTheme } from './defaultTheme';
+import { defaultTheme } from './defaultThemes/defaultTheme';
 import { ThemeContext } from './themeContext';
 import { Theme } from './types/Theme';
 
-export const DanaTheme = ({ theme: userTheme, children }: any) => {
+export const EdeneTheme = ({ theme: userTheme, children }: any) => {
     const [themeValue, setThemeValue] = useState<Theme>();
 
     const onThemeSelected = (theme: Theme) => {

@@ -1,6 +1,6 @@
 import { createContext, useContext } from 'react';
 
-import { EdeneColor } from '@dana-foundations';
+import { EdeneColor } from '@edene/foundations';
 
 export type TabsOrientation = 'horizontal' | 'vertical';
 

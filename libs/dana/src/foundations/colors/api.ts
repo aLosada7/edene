@@ -1,7 +1,7 @@
 import { colorsPalette } from '../palette';
 import { defaultTheme } from '../theme';
 import { Theme } from '../theme/types';
-import { ComponentColors, DanaColor } from './types';
+import { ComponentColors, EdeneColor } from './types';
 
 const isOfComponentColors = (color: string) => {
     return ['success', 'danger', 'dark', 'gray', 'transparent'].includes(color);
@@ -9,7 +9,7 @@ const isOfComponentColors = (color: string) => {
 
 export interface ColorOptions {
     theme: Theme;
-    color?: DanaColor;
+    color?: EdeneColor;
 }
 
 export const getColor = ({ color, theme = defaultTheme }: ColorOptions) => {
