@@ -40,6 +40,18 @@ export const SideNav = ({ open, ...props }: SideNavProps) => {
                     >
                         <SideNavItem {...props}>Accordion</SideNavItem>
                     </ActiveLink>
+                    <ActiveLink
+                        href="/components/breadcrumb"
+                        activeClassName="active"
+                    >
+                        <SideNavItem {...props}>Breadcrumb</SideNavItem>
+                    </ActiveLink>
+                    <ActiveLink
+                        href="/components/menu-button"
+                        activeClassName="active"
+                    >
+                        <SideNavItem {...props}>MenuButton</SideNavItem>
+                    </ActiveLink>
                 </SideNavPrincipal>
             </SideNavItems>
         </DanaSideNav>

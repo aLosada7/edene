@@ -15,6 +15,15 @@ const codeBlock = css`
     border-radius: 4px;
     border-top-right-radius: 0;
     border-top-left-radius: 0;
+
+    pre {
+        overflow-x: auto;
+        pointer-events: auto !important;
+
+        .token-line {
+            white-space: pre;
+        }
+    }
 `;
 
 const preview = css`
@@ -33,7 +42,7 @@ const scope = {
 };
 
 const CodeBlock = ({ children: code, editable = false }: any) => (
-    <LiveProvider code={code} disabled={editable} scope={scope}>
+    <LiveProvider code={code} disabled={!editable} scope={scope}>
         <div css={preview}>
             <LivePreview />
         </div>
