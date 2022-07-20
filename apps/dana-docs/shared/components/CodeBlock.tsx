@@ -1,9 +1,17 @@
 import { css } from '@emotion/react';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 
-import { Breadcrumb, BreadcrumbItem, MenuButton, Text } from '@dana-components';
+import { MenuButton, Text } from '@dana-components';
 
-import { Accordion, AccordionRow, Button, Tabs, Tab } from '@edene/components';
+import {
+    Accordion,
+    AccordionRow,
+    Button,
+    Tabs,
+    Tab,
+    Breadcrumb,
+    BreadcrumbItem,
+} from '@edene/components';
 
 const codeBlock = css`
     background-color: rgba(248, 249, 250, 0.65);

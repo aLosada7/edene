@@ -18,7 +18,7 @@ interface SideNavProps {
     onClose: () => void;
 }
 
-const components = ['Accordion', 'Button', 'Tabs'];
+const components = ['Accordion', 'Button', 'Tabs', 'Breadcrumb'];
 
 export const SideNav = ({ open, ...props }: SideNavProps) => {
     return (
@@ -36,6 +36,12 @@ export const SideNav = ({ open, ...props }: SideNavProps) => {
                     activeClassName="active"
                 >
                     <SideNavItem {...props}>Getting started</SideNavItem>
+                </ActiveLink>
+                <ActiveLink
+                    href="/overview/overriding-styles"
+                    activeClassName="active"
+                >
+                    <SideNavItem {...props}>Overriding Styles</SideNavItem>
                 </ActiveLink>
                 <SideNavPrincipal title="Components">
                     {components.map((component) => (

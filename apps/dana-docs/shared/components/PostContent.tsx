@@ -1,14 +1,15 @@
 import { MDXRemote } from 'next-mdx-remote';
 
+import { Title, Text, Image, MenuButton } from '@dana-components';
 import {
-    Title,
-    Text,
-    Image,
+    Accordion,
+    AccordionRow,
+    Button,
+    Tabs,
+    Tab,
     Breadcrumb,
     BreadcrumbItem,
-    MenuButton,
-} from '@dana-components';
-import { Accordion, AccordionRow, Button, Tabs, Tab } from '@edene/components';
+} from '@edene/components';
 
 import CodeBlock from './CodeBlock';
 
