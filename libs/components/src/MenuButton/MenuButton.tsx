@@ -1,6 +1,6 @@
 import { ButtonHTMLAttributes } from 'react';
 
-import { Props } from '../../helpers';
+import { Props } from '@edene/foundations';
 import { menu, menuLine, menuOpen } from './styles';
 
 export interface MenuButtonProps

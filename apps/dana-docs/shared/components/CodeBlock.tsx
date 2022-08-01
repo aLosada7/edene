@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 
-import { MenuButton, Text } from '@dana-components';
+import { Text } from '@dana-components';
 
 import {
     Accordion,
@@ -11,6 +11,7 @@ import {
     Tab,
     Breadcrumb,
     BreadcrumbItem,
+    MenuButton,
 } from '@edene/components';
 
 const codeBlock = css`
