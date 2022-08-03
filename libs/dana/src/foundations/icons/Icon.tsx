@@ -18,11 +18,11 @@ export const Icon = ({
     const iconColor = color || theme.black;
 
     return (
-        <>
+        <span>
             {cloneElement(children, {
                 fill: getColor({ theme, color: iconColor }),
                 width: iconSize[size],
             })}
-        </>
+        </span>
     );
 };

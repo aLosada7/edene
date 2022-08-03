@@ -1,5 +1,5 @@
 import { css } from '@emotion/react';
-import { useState } from 'react';
+import { Fragment, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import {
@@ -101,12 +101,12 @@ export const RestaurantPage = () => {
                                     `}
                                 >
                                     <Text size="md">
-                                        <>
+                                        <Fragment>
                                             {(
                                                 foodSelected.options || []
                                             ).includes('vegetarian') &&
                                                 `🌱 Vegetarian`}
-                                        </>
+                                        </Fragment>
                                     </Text>
 
                                     <Text>{foodSelected.description}</Text>
@@ -124,13 +124,13 @@ export const RestaurantPage = () => {
 
                                     <div>
                                         <Button onClick={handleNewCartProduct}>
-                                            <>
+                                            <Fragment>
                                                 Add to cart (
                                                 {(foodSelected
                                                     ? foodSelected.price / 100
                                                     : 0) * quantity}{' '}
                                                 €)
-                                            </>
+                                            </Fragment>
                                         </Button>
                                     </div>
                                 </Container>

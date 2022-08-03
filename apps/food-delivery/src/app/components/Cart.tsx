@@ -1,3 +1,5 @@
+import { Fragment } from 'react';
+
 import { Row, Col, Text, ActionButton } from '@edene/components';
 import { Icon } from '@edene/foundations';
 
@@ -13,7 +15,7 @@ export const Cart = ({
     }[];
     onRemoveCartProduct: (product: IFoodInfo) => void;
 }) => (
-    <>
+    <Fragment>
         {products.map((cartProduct) => (
             <Row key={cartProduct.product.id}>
                 <Col sm={18} direction="column">
@@ -22,7 +24,7 @@ export const Cart = ({
                     </Text>
                     <Text size="lg">{cartProduct.product.name}</Text>
                     <Text size="sm">
-                        <>Qty: {cartProduct.quantity}</>
+                        <Fragment>Qty: {cartProduct.quantity}</Fragment>
                     </Text>
                 </Col>
                 <Col sm={6} align="horizontal-end">
@@ -36,7 +38,7 @@ export const Cart = ({
         ))}
         <div>
             <Text>
-                <>
+                <Fragment>
                     Subtotal:{' '}
                     {(
                         products.reduce(
@@ -47,8 +49,8 @@ export const Cart = ({
                             0
                         ) / 100
                     ).toFixed(2) + ' €'}
-                </>
+                </Fragment>
             </Text>
         </div>
-    </>
+    </Fragment>
 );

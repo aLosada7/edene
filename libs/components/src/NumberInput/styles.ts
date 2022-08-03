@@ -31,9 +31,8 @@ export const input = css`
     }
 `;
 
-export const sumButton = () => css`
+const operationButton = css`
     position: absolute;
-    right: 12px;
     background: transparent;
     border: none;
     cursor: pointer;
@@ -46,17 +45,12 @@ export const sumButton = () => css`
     }
 `;
 
-export const subtractButton = () => css`
-    position: absolute;
-    right: 50px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
+export const sumButton = () => css`
+    ${operationButton}
+    right: 82px;
+`;
 
-    svg {
-        width: 30px;
-        height: 30px;
-        fill: black;
-        pointer-events: none;
-    }
+export const subtractButton = () => css`
+    ${operationButton}
+    right: 118px;
 `;
