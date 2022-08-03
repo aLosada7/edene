@@ -1,6 +1,6 @@
 {
     "$schema": "../../node_modules/nx/schemas/project-schema.json",
-    "sourceRoot": "apps/dana-docs",
+    "sourceRoot": "apps/edene-docs",
     "projectType": "application",
     "targets": {
         "build": {
@@ -8,8 +8,8 @@
             "outputs": ["{options.outputPath}"],
             "defaultConfiguration": "production",
             "options": {
-                "root": "apps/dana-docs",
-                "outputPath": "dist/apps/dana-docs"
+                "root": "apps/edene-docs",
+                "outputPath": "dist/apps/edene-docs"
             },
             "configurations": {
                 "development": {},
@@ -20,16 +20,16 @@
             "executor": "@nrwl/next:server",
             "defaultConfiguration": "development",
             "options": {
-                "buildTarget": "dana-docs:build",
+                "buildTarget": "edene-docs:build",
                 "dev": true
             },
             "configurations": {
                 "development": {
-                    "buildTarget": "dana-docs:build:development",
+                    "buildTarget": "edene-docs:build:development",
                     "dev": true
                 },
                 "production": {
-                    "buildTarget": "dana-docs:build:production",
+                    "buildTarget": "edene-docs:build:production",
                     "dev": false
                 }
             }
@@ -37,14 +37,14 @@
         "export": {
             "executor": "@nrwl/next:export",
             "options": {
-                "buildTarget": "dana-docs:build:production"
+                "buildTarget": "edene-docs:build:production"
             }
         },
         "test": {
             "executor": "@nrwl/jest:jest",
-            "outputs": ["coverage/apps/dana-docs"],
+            "outputs": ["coverage/apps/edene-docs"],
             "options": {
-                "jestConfig": "apps/dana-docs/jest.config.ts",
+                "jestConfig": "apps/edene-docs/jest.config.ts",
                 "passWithNoTests": true
             }
         },
@@ -52,7 +52,7 @@
             "executor": "@nrwl/linter:eslint",
             "outputs": ["{options.outputFile}"],
             "options": {
-                "lintFilePatterns": ["apps/dana-docs/**/*.{ts,tsx,js,jsx}"]
+                "lintFilePatterns": ["apps/edene-docs/**/*.{ts,tsx,js,jsx}"]
             }
         }
     },

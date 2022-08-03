@@ -4,7 +4,7 @@
         "animations": "libs/animations",
         "components": "libs/components",
         "dana": "libs/dana",
-        "dana-docs": "apps/dana-docs",
+        "edene-docs": "apps/edene-docs",
         "dana-labs": "libs/dana-labs",
         "edene-template": "apps/edene-template",
         "food-delivery": "apps/food-delivery",
