@@ -5,7 +5,7 @@
         "components": "libs/components",
         "dana": "libs/dana",
         "edene-docs": "apps/edene-docs",
-        "dana-labs": "libs/dana-labs",
+        "edene-pro-lab": "libs/edene-pro-lab",
         "edene-template": "apps/edene-template",
         "food-delivery": "apps/food-delivery",
         "foundations": "libs/foundations",
