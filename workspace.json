@@ -6,7 +6,7 @@
         "dana": "libs/dana",
         "dana-docs": "apps/dana-docs",
         "dana-labs": "libs/dana-labs",
-        "dana-template": "apps/dana-template",
+        "edene-template": "apps/edene-template",
         "food-delivery": "apps/food-delivery",
         "foundations": "libs/foundations",
         "hooks": "libs/hooks",

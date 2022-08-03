@@ -1,6 +1,6 @@
 {
     "$schema": "../../node_modules/nx/schemas/project-schema.json",
-    "sourceRoot": "apps/dana-template/src",
+    "sourceRoot": "apps/edene-template/src",
     "projectType": "application",
     "targets": {
         "build": {
@@ -8,15 +8,15 @@
             "outputs": ["{options.outputPath}"],
             "defaultConfiguration": "production",
             "options": {
-                "outputPath": "dist/apps/dana-template",
-                "index": "apps/dana-template/src/index.html",
+                "outputPath": "dist/apps/edene-template",
+                "index": "apps/edene-template/src/index.html",
                 "baseHref": "/",
-                "main": "apps/dana-template/src/main.tsx",
-                "polyfills": "apps/dana-template/src/polyfills.ts",
-                "tsConfig": "apps/dana-template/tsconfig.app.json",
+                "main": "apps/edene-template/src/main.tsx",
+                "polyfills": "apps/edene-template/src/polyfills.ts",
+                "tsConfig": "apps/edene-template/tsconfig.app.json",
                 "assets": [
-                    "apps/dana-template/src/favicon.ico",
-                    "apps/dana-template/src/assets"
+                    "apps/edene-template/src/favicon.ico",
+                    "apps/edene-template/src/assets"
                 ],
                 "styles": [],
                 "scripts": [],
@@ -26,8 +26,8 @@
                 "production": {
                     "fileReplacements": [
                         {
-                            "replace": "apps/dana-template/src/environments/environment.ts",
-                            "with": "apps/dana-template/src/environments/environment.prod.ts"
+                            "replace": "apps/edene-template/src/environments/environment.ts",
+                            "with": "apps/edene-template/src/environments/environment.prod.ts"
                         }
                     ],
                     "optimization": true,
@@ -48,17 +48,17 @@
         "serve": {
             "executor": "@nrwl/web:dev-server",
             "options": {
-                "buildTarget": "dana-template:build",
+                "buildTarget": "edene-template:build",
                 "hmr": true,
                 "port": 4201
             },
             "configurations": {
                 "production": {
-                    "buildTarget": "dana-template:build:production",
+                    "buildTarget": "edene-template:build:production",
                     "hmr": false
                 },
                 "development": {
-                    "buildTarget": "dana-template:build:development"
+                    "buildTarget": "edene-template:build:development"
                 }
             },
             "defaultConfiguration": "development"
@@ -67,13 +67,13 @@
             "executor": "@nrwl/linter:eslint",
             "outputs": ["{options.outputFile}"],
             "options": {
-                "lintFilePatterns": ["apps/dana-template/**/*.{ts,tsx,js,jsx}"]
+                "lintFilePatterns": ["apps/edene-template/**/*.{ts,tsx,js,jsx}"]
             }
         },
         "deploy": {
             "executor": "@netlify-builder/deploy:deploy",
             "options": {
-                "outputPath": "dist/apps/dana-template",
+                "outputPath": "dist/apps/edene-template",
                 "siteId": "cb556dad-569b-4128-8b6b-2de4a7ffc11e"
             }
         }

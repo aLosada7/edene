@@ -8,7 +8,7 @@
         "start": "nx serve",
         "build": "nx build",
         "test": "nx test",
-        "build:dana-template": "nx build dana-template"
+        "build:edene-template": "nx build edene-template"
     },
     "private": true,
     "dependencies": {
