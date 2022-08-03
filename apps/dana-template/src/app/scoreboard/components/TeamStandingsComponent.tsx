@@ -9,7 +9,7 @@ import {
     TableCell,
     Card,
     CardBody,
-} from '@dana';
+} from '@edene/components';
 
 import { players } from '../data/players';
 import { Player } from '../types/Player';

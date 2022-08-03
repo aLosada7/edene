@@ -7,10 +7,8 @@ import {
     RadioGroup,
     RadioGroupProps,
     Radio,
-    Checkbox,
     TextInput,
-} from '@dana';
-import { MaterialIcon } from '@dana-icons';
+} from '@edene/components';
 
 import { optionWrapper, onlyRadio } from './styles';
 

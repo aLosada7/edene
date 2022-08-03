@@ -1,4 +1,6 @@
 import React from 'react';
+import { css } from '@emotion/react';
+
 import {
     Container,
     Col,
@@ -11,10 +13,10 @@ import {
     SideNavItems,
     SideNavPrincipal,
     SideNavItem,
-    until,
-} from '@dana';
+} from '@edene/components';
+import { until } from '@edene/foundations';
+
 import mountain from '../../assets/img/mountain.jpg';
-import { css } from '@emotion/react';
 
 export default {
     title: 'DanaLabs/Blog',

@@ -2,8 +2,6 @@ import { css } from '@emotion/react';
 import { useState } from 'react';
 
 import {
-    DanaTheme,
-    grays,
     Tab,
     Tabs,
     Title,
@@ -20,7 +18,9 @@ import {
     Text,
     CardHeader,
     Avatar,
-} from '@dana';
+} from '@edene/components';
+import { EdeneTheme, grays } from '@edene/foundations';
+
 import { rows } from './rows';
 import { theme } from './theme';
 
@@ -28,14 +28,14 @@ export default {
     title: 'DanaLabs',
     decorators: [
         (Story: any) => (
-            <DanaTheme theme={theme}>
+            <EdeneTheme theme={theme}>
                 <section style={{ backgroundColor: grays[7] }}>
                     <Title size="h3" mb={2}>
                         Game Summary
                     </Title>
                     <Story />
                 </section>
-            </DanaTheme>
+            </EdeneTheme>
         ),
     ],
 };

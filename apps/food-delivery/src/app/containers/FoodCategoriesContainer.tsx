@@ -1,5 +1,4 @@
-import React from 'react';
-import { Row, Text } from '@dana';
+import { Row, Text } from '@edene/components';
 
 import { FoodCategory } from '../components/FoodCategory';
 import { FoodCategoryAll } from '../components/FoodCategoryAll';

@@ -8,7 +8,7 @@ import {
     Row,
     Col,
     Text,
-} from '@dana-components';
+} from '@edene/components';
 
 export const BestScorerComponent = () => (
     <Card

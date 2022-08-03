@@ -1,3 +1,7 @@
+import { css } from '@emotion/react';
+import { useState } from 'react';
+import { useParams } from 'react-router-dom';
+
 import {
     Container,
     Row,
@@ -9,10 +13,8 @@ import {
     Title,
     ModalBody,
     ModalHeader,
-} from '@dana-components';
-import { css } from '@emotion/react';
-import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
+} from '@edene/components';
+
 import { MenuCategory } from '../components/MenuCategory';
 import { RestaurantRating } from '../components/RestaurantRating';
 import useCartContext from '../context/cart/useCartContext';

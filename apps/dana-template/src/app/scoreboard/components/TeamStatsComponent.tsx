@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 
-import { Row, Col, Card, CardBody, Text, CardHeader } from '@dana';
+import { Row, Col, Card, CardBody, Text, CardHeader } from '@edene/components';
 
 export const TeamStatsComponent = () => (
     <Card

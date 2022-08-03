@@ -4,13 +4,13 @@ import {
     Col,
     Card,
     CardBody,
-    Text,
     Title,
     Form,
     TextInput,
     Textarea,
     Button,
-} from '@dana';
+} from '@edene/components';
+
 import { contactCard } from './styles';
 
 export const ContactForm = () => {

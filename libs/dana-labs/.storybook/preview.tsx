@@ -1,6 +1,6 @@
 import { addDecorator } from '@storybook/react';
 
-import ThemeDecorator from '@dana-theme';
+import { ThemeDecorator } from '@edene/foundations';
 
 import { viewport } from './preview/viewport';
 import { backgrounds } from './preview/backgrounds';

@@ -1,3 +1,4 @@
+import { css } from '@emotion/react';
 import { action } from '@storybook/addon-actions';
 
 import {
@@ -14,9 +15,9 @@ import {
     Checkbox,
     Title,
     Text,
-} from '@dana';
+} from '@edene/components';
+
 import CountrySelector from '../../selector/country-selector/CountrySelector';
-import { css } from '@emotion/react';
 
 export default {
     title: 'DanaLabs/Forms',

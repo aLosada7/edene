@@ -1,5 +1,5 @@
-import { ActionButton, Container, Row, Title, Text } from '@dana-components';
-import { defaultTheme, MaterialIcon, Theme, useThemeContext } from '@dana';
+import { ActionButton, Container, Row, Title, Text } from '@edene/components';
+import { defaultTheme, Icon, Theme, useThemeContext } from '@edene/foundations';
 
 import {
     settingsContent,
@@ -29,7 +29,7 @@ export const SettingContent = ({ open, onClose }: SettingContentProps) => {
                     cssOverrides={settingsContentHeaderContent}
                 >
                     <Row align="start-center" noGlutters>
-                        <MaterialIcon>settings</MaterialIcon>
+                        <Icon>settings</Icon>
                         <Title>Settings</Title>
                     </Row>
                     <ActionButton onClick={onClose}>close</ActionButton>

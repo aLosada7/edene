@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { Container, Text } from '@dana-components';
+import { Container, Text } from '@edene/components';
 
 import { asPlayground, asChromaticStory } from '../lib/story-intents';
 import type { Story } from '../lib/storybook-emotion-10-fixes';

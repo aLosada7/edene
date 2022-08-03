@@ -1,4 +1,5 @@
-import { Row, Col } from '@dana-components';
+import { Row, Col } from '@edene/components';
+
 import { BestScorerComponent } from '../components/BestScorerComponent';
 import { TeamStandingsComponent } from '../components/TeamStandingsComponent';
 import { TeamStatsComponent } from '../components/TeamStatsComponent';

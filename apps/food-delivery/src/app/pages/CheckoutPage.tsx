@@ -1,3 +1,6 @@
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import {
     Button,
     ButtonGroup,
@@ -5,9 +8,8 @@ import {
     Container,
     Text,
     Title,
-} from '@dana-components';
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+} from '@edene/components';
+
 import { Cart } from '../components/Cart';
 import useCartContext from '../context/cart/useCartContext';
 import { IFoodInfo } from '../context/restaurants';

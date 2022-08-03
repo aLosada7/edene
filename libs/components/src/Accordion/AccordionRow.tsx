@@ -1,7 +1,6 @@
 import { css } from '@emotion/react';
 import { useState, HTMLAttributes } from 'react';
-import { visuallyHidden as _visuallyHidden, Icon } from '@edene/foundations';
-import { Props } from '../helpers/types';
+import { visuallyHidden as _visuallyHidden, Icon, Props } from '@edene/foundations';
 import {
     accordionRow,
     button,

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import { css } from '@emotion/react';
 
-import { from } from '@dana';
+import { from } from '@edene/foundations';
 
 import { SideNav } from './SideNav';
 import { Header } from './Header';

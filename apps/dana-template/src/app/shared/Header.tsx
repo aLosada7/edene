@@ -1,6 +1,7 @@
-import { Text } from '@dana-components';
 import { css } from '@emotion/react';
-import useThemeContext from 'libs/dana/src/foundations/theme/useThemeContext';
+
+import { Text } from '@edene/components';
+import { useThemeContext } from '@edene/foundations';
 
 export interface HeaderProps {
     title: string;

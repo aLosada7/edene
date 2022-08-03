@@ -1,17 +1,7 @@
 {
     "extends": "../../tsconfig.base.json",
     "compilerOptions": {
-        "jsx": "react-jsx",
-        "jsxImportSource": "@emotion/react",
-        "allowJs": true,
-        "esModuleInterop": true,
-        "allowSyntheticDefaultImports": true,
-        "forceConsistentCasingInFileNames": true,
-        "strict": true,
-        "noImplicitReturns": true,
-        "noFallthroughCasesInSwitch": true,
-        "lib": ["es5", "es6", "es7", "es2017", "es2019", "es2020", "dom"],
-        "types": ["node", "jest"]
+        "target": "es5"
     },
     "files": [],
     "include": [],

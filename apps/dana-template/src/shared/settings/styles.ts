@@ -1,8 +1,6 @@
 import { css } from '@emotion/react';
 
-import { info } from '@dana-foundations';
-import { transitions } from 'libs/dana/src/foundations/animation';
-import { Theme } from '@dana-theme';
+import { info, transitions, Theme } from '@edene/foundations';
 
 export const settings = (theme: Theme) => css`
     position: fixed;

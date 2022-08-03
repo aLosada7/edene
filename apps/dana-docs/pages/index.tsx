@@ -1,9 +1,13 @@
+import { FadeIn } from '@edene/animations';
+
 export function Index() {
     return (
-        <h1>
-            <span> Hello there, </span>
-            Welcome edene 👋
-        </h1>
+        <FadeIn>
+            <h1>
+                <span> Hello there, </span>
+                Welcome to edene 👋
+            </h1>
+        </FadeIn>
     );
 }
 

@@ -1,4 +1,4 @@
-import { DanaTheme } from '@dana-theme';
+import { EdeneTheme } from '@edene/foundations';
 import { StrictMode } from 'react';
 import * as ReactDOM from 'react-dom/client';
 
@@ -9,8 +9,8 @@ const root = ReactDOM.createRoot(
 );
 root.render(
     <StrictMode>
-        <DanaTheme>
+        <EdeneTheme>
             <Router />
-        </DanaTheme>
+        </EdeneTheme>
     </StrictMode>
 );

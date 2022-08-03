@@ -1,6 +1,4 @@
-import React from 'react';
-
-import { Card, CardBody, Text } from '@dana-components';
+import { Card, CardBody, Text } from '@edene/components';
 import { IFoodInfo } from '../context/restaurants';
 
 export const MenuSummary = ({

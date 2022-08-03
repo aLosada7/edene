@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { randomId } from '../utils';
+import { randomId } from './randomId';
 import { useIsomorphicEffect } from '../useIsomorphicEffect/useIsomorphicEffect';
 
 export function useUuid(staticId?: string) {

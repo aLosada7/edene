@@ -3,12 +3,12 @@ import { join } from 'path';
 import { ParsedUrlQuery } from 'querystring';
 import fs from 'fs';
 
-import PostContent from '../../shared/components/PostContent';
+import PostContent from '../../components/PostContent';
 import {
     getParsedFileOverviewContentBySlug,
     renderMarkdown,
-} from '../../shared/utils/markdown/markdown';
-import { MarkdownRenderingResult } from '../../shared/utils/markdown/types';
+} from '../../utils/markdown/markdown';
+import { MarkdownRenderingResult } from '../../utils/markdown/types';
 
 interface ArticleProps extends ParsedUrlQuery {
     slug: string;

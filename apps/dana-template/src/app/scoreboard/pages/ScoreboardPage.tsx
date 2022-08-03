@@ -1,8 +1,6 @@
-import { Suspense, useState } from 'react';
+import React, { Suspense, useState } from 'react';
 
-import { Tabs, Tab } from '@dana-components';
-
-import React from 'react';
+import { Tabs, Tab } from '@edene/components';
 
 import { Header } from '../../shared';
 

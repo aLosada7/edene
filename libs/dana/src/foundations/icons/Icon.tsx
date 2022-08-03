@@ -1,4 +1,4 @@
-import React, { cloneElement, ReactElement } from 'react';
+import { cloneElement, ReactElement } from 'react';
 import { getColor } from '../colors/api';
 import { EdeneColor } from '../colors/types';
 import { iconSize } from '../size';

@@ -1,4 +1,4 @@
-import { Form, TextInput } from '@dana';
+import { Form, TextInput } from '@edene/components';
 
 export const AuthenticationSignInFormComponent = () => (
     <Form>

@@ -3,7 +3,7 @@ import { AppProps } from 'next/app';
 import { EdeneTheme, pinkTheme } from '@edene/foundations';
 
 import './styles.scss';
-import { Layout } from '../shared/components/Layout';
+import { Layout } from '../components/Layout';
 
 function App({ Component, pageProps }: AppProps) {
     return (

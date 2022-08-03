@@ -1,5 +1,4 @@
-import { black, grays, text, white } from '@dana-foundations';
-import { Theme } from '@dana-theme';
+import { black, grays, text, white, Theme } from '@edene/foundations';
 
 export const pinkPalette: Theme = {
     name: 'pink',

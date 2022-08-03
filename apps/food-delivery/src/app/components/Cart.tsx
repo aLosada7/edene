@@ -1,6 +1,6 @@
-import React from 'react';
+import { Row, Col, Text, ActionButton } from '@edene/components';
+import { Icon } from '@edene/foundations';
 
-import { Row, Col, Text, ActionButton, CloseIcon } from '@dana';
 import { IFoodInfo } from '../context/restaurants';
 
 export const Cart = ({
@@ -29,7 +29,7 @@ export const Cart = ({
                     <ActionButton
                         onClick={() => onRemoveCartProduct(cartProduct.product)}
                     >
-                        <CloseIcon />
+                        <Icon>close</Icon>
                     </ActionButton>
                 </Col>
             </Row>

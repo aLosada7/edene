@@ -24,11 +24,11 @@ asPlayground(Playground);
 export const Filled = () => <Button>Button</Button>;
 asChromaticStory(Filled);
 
-export const Outlines = () => <Button variant="outline">Button</Button>;
-asChromaticStory(Outlines);
+export const Outline = () => <Button variant="outline">Button</Button>;
+asChromaticStory(Outline);
 
-export const Links = () => <Button variant="link">Button</Button>;
-asChromaticStory(Links);
+export const Link = () => <Button variant="link">Button</Button>;
+asChromaticStory(Link);
 
 export const Variants = () => (
     <StoryHStack>

@@ -32,3 +32,4 @@ const textSans = Object.fromEntries(
 ) as TypographyApi<TextSansSizes>;
 
 export { headline, textSans };
+export * from './types';

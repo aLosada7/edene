@@ -1,14 +1,16 @@
 {
     "version": 2,
     "projects": {
+        "animations": "libs/animations",
         "components": "libs/components",
         "dana": "libs/dana",
-        "foundations": "libs/foundations",
-        "utils": "libs/utils",
         "dana-docs": "apps/dana-docs",
         "dana-labs": "libs/dana-labs",
         "dana-template": "apps/dana-template",
-        "food-delivery": "apps/food-delivery"
+        "food-delivery": "apps/food-delivery",
+        "foundations": "libs/foundations",
+        "hooks": "libs/hooks",
+        "utils": "libs/utils"
     },
     "$schema": "./node_modules/nx/schemas/workspace-schema.json"
 }

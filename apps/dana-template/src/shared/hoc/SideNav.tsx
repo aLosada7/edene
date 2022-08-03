@@ -8,8 +8,8 @@ import {
     SideNavMenu,
     SideNavMenuItem,
     SideNavPrincipal,
-} from '@dana';
-import { transitions } from 'libs/dana/src/foundations/animation';
+} from '@edene/components';
+import { transitions } from '@edene/foundations';
 
 const aside = (open: boolean, width: number) => css`
     background-color: #fff;

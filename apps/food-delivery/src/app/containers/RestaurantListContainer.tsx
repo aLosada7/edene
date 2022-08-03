@@ -1,5 +1,4 @@
-import React from 'react';
-import { Container, Title } from '@dana';
+import { Container, Title } from '@edene/components';
 
 import { RestaurantSummary } from '../components/RestaurantSummary';
 import {

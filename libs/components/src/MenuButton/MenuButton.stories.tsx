@@ -6,7 +6,7 @@ import type { Story } from '../lib/storybook-emotion-10-fixes';
 import { MenuButton, MenuButtonProps } from './MenuButton';
 
 export default {
-    title: 'Components/Navigation/MenuButton',
+    title: 'Components/MenuButton',
     component: MenuButton,
 };
 
