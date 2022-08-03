@@ -1,4 +1,5 @@
 import { css } from '@emotion/react';
+import { Fragment } from 'react';
 
 import { Container, ContainerProps } from './Container';
 import { asChromaticStory } from '../lib/story-intents';
@@ -89,7 +90,7 @@ export const RowsAndColumns: Story<ContainerProps> = (args: ContainerProps) => (
                 One of two columns
             </Col>
             <Col md={12} direction="column">
-                <>
+                <Fragment>
                     <Row>
                         <Col cssOverrides={col} md={12}>
                             One of two columns
@@ -106,7 +107,7 @@ export const RowsAndColumns: Story<ContainerProps> = (args: ContainerProps) => (
                             One of two columns
                         </Col>
                     </Row>
-                </>
+                </Fragment>
             </Col>
         </Row>
     </Container>

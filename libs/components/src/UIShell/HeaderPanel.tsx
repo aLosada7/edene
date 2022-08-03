@@ -1,9 +1,9 @@
-import React from 'react';
+import { Fragment, ReactElement } from 'react';
 
 import { headerPanel, headerPanelExpanded } from './stylesHeader';
 
 export interface HeaderPanelProps {
-    children?: React.ReactElement | React.ReactElement[];
+    children?: ReactElement | ReactElement[];
     backgroundColor?: string;
     textColor?: string;
     'aria-label': string;
@@ -11,7 +11,7 @@ export interface HeaderPanelProps {
 }
 
 export const HeaderPanel = ({
-    children = <></>,
+    children = <Fragment></Fragment>,
     backgroundColor = '#000',
     textColor = '#c6c6c6',
     expanded = false,

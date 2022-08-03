@@ -1,5 +1,5 @@
 import { Meta } from '@storybook/react';
-import { useRef } from 'react';
+import { Fragment, useRef } from 'react';
 
 import { LinkedinIcon } from '@edene/foundations';
 
@@ -50,7 +50,7 @@ export const Sizes = () => (
 asChromaticStory(Sizes);
 
 export const WithIcon = () => (
-    <>
+    <Fragment>
         <StoryHStack>
             <Button leftIcon="home">Home</Button>
             <Button rightIcon="arrow_forward">Call us</Button>
@@ -71,7 +71,7 @@ export const WithIcon = () => (
                 Call us
             </Button>
         </StoryHStack>
-    </>
+    </Fragment>
 );
 asChromaticStory(WithIcon);
 

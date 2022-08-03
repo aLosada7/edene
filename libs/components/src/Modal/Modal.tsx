@@ -1,5 +1,5 @@
 import { css } from '@emotion/react';
-import React, { useEffect, useRef } from 'react';
+import { ReactElement, useEffect, useRef, Fragment } from 'react';
 import { Card, CardBody } from '../Card';
 import { cardOverrides, modal } from './styles';
 
@@ -13,7 +13,7 @@ interface ModalProps {
     title?: string;
     /** Called when close button clicked and when escape key is pressed */
     onClose(modalId: string): void;
-    children: React.ReactElement[];
+    children: ReactElement[];
 }
 
 const Modal = ({
@@ -50,7 +50,7 @@ const Modal = ({
         return undefined;
     }, [id, trapFocus]);
 
-    if (!show) return <></>;
+    if (!show) return <Fragment></Fragment>;
 
     return (
         <div css={modal} onClick={handleClick}>

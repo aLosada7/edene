@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import { Meta, Story } from '@storybook/react';
 
 import Modal from './Modal';
@@ -29,7 +29,7 @@ const Template: Story = () => {
     const [showModal, setShowModal] = useState(false);
 
     return (
-        <>
+        <Fragment>
             <Button onClick={() => setShowModal(true)}>Show modal</Button>
             <Modal show={showModal} onClose={() => setShowModal(false)}>
                 <ModalHeader
@@ -42,7 +42,7 @@ const Template: Story = () => {
                     </Button>
                 </ModalBody>
             </Modal>
-        </>
+        </Fragment>
     );
 };
 

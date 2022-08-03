@@ -29,7 +29,7 @@ export default () => {
     const toggleSideNav = () => setSideNavOpen(!sideNavOpen);
 
     return (
-        <>
+        <div>
             <Header
                 sideNavWidth={sideNavWidth}
                 isSideNavExpanded={sideNavOpen}
@@ -44,6 +44,6 @@ export default () => {
             <main css={main(sideNavOpen)}>
                 <Outlet />
             </main>
-        </>
+        </div>
     );
 };

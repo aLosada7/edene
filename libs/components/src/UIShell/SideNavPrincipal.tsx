@@ -1,4 +1,4 @@
-import { Children, cloneElement, ReactElement } from 'react';
+import { Children, cloneElement, Fragment, ReactElement } from 'react';
 
 import { useThemeContext, Props } from '@edene/foundations';
 
@@ -25,7 +25,7 @@ export const SideNavPrincipal = ({
     const { theme } = useThemeContext();
 
     return (
-        <>
+        <Fragment>
             <li css={[sideNavPrincipal(theme), cssOverrides]}>
                 <span>{title}</span>
             </li>
@@ -36,6 +36,6 @@ export const SideNavPrincipal = ({
                     hoverColor,
                 });
             })}
-        </>
+        </Fragment>
     );
 };

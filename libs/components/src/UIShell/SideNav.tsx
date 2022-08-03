@@ -1,4 +1,5 @@
 import { SerializedStyles } from '@emotion/react';
+import { Fragment } from 'react';
 
 import { sidenav, sidenavHeader, navOverlay, aside } from './styles';
 
@@ -28,7 +29,7 @@ export const SideNav = ({
     cssOverridesAside,
     ...props
 }: SideNavProps) => (
-    <>
+    <Fragment>
         {!isFixed && headerHeight && (
             <div css={navOverlay(open)} onClick={onClose} />
         )}
@@ -52,7 +53,7 @@ export const SideNav = ({
                 {children}
             </nav>
         </aside>
-    </>
+    </Fragment>
 );
 
 export default SideNav;

@@ -1,11 +1,11 @@
-import React from 'react';
+import { Fragment, ReactNode } from 'react';
 
 interface ModalBodyProps {
-    children: React.ReactNode;
+    children: ReactNode;
 }
 
 const ModalBody = ({ children }: ModalBodyProps) => {
-    return <>{children}</>;
+    return <Fragment>{children}</Fragment>;
 };
 
 export default ModalBody;

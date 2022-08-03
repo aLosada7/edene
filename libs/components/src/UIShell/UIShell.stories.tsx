@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import { Story, Meta } from '@storybook/react';
-import React from 'react';
+import { Fragment, useState } from 'react';
 
 import { Badge, Divider } from '@edene/components';
 
@@ -41,7 +41,7 @@ const sideNavHeader = css`
 `;
 
 export const FixedSideNav: Story<SideNavProps> = () => (
-    <>
+    <Fragment>
         <SideNav isFixed width={256} aria-label="Side navigation">
             <SideNavItems>
                 <SideNavMenu title="L0 menu">
@@ -71,11 +71,11 @@ export const FixedSideNav: Story<SideNavProps> = () => (
         <main css={main}>
             <p>Some text</p>
         </main>
-    </>
+    </Fragment>
 );
 
 export const FixedSideNavWDivider: Story<SideNavProps> = () => (
-    <>
+    <Fragment>
         <SideNav isFixed width={256} aria-label="Side navigation">
             <SideNavItems>
                 <SideNavMenu title="L0 menu">
@@ -103,11 +103,11 @@ export const FixedSideNavWDivider: Story<SideNavProps> = () => (
         <main css={main}>
             <p>Some text</p>
         </main>
-    </>
+    </Fragment>
 );
 
 export const FixedSideNavWIcons: Story<SideNavProps> = () => (
-    <>
+    <Fragment>
         <SideNav isFixed width={256} aria-label="Side navigation">
             <SideNavItems>
                 <SideNavMenu icon={<Icon>school</Icon>} title="L0 menu">
@@ -138,7 +138,7 @@ export const FixedSideNavWIcons: Story<SideNavProps> = () => (
         <main css={main}>
             <p>Some text</p>
         </main>
-    </>
+    </Fragment>
 );
 
 export const HeaderBase: Story<HeaderProps> = () => (
@@ -189,7 +189,7 @@ export const HeaderBaseWActionsAndPanel: Story<HeaderProps> = () => (
 );
 
 export const HeaderBaseWSidenav: Story<HeaderProps> = () => {
-    const [isOpen, setIsOpen] = React.useState(false);
+    const [isOpen, setIsOpen] = useState(false);
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);

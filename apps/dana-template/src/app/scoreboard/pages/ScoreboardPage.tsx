@@ -16,7 +16,7 @@ export const ScoreboardPage = () => {
     };
 
     return (
-        <>
+        <div>
             <Header title="Scoreboard" />
 
             <Tabs active={teamSelected} onTabChange={onChange}>
@@ -29,6 +29,6 @@ export const ScoreboardPage = () => {
                     </Suspense>
                 </Tab>
             </Tabs>
-        </>
+        </div>
     );
 };
