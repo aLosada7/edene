@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { ReactNode, useState } from 'react';
 import { css } from '@emotion/react';
 
 import { HeaderMenuButton, Header, HeaderName } from '@edene/components';
@@ -15,7 +15,7 @@ const main = () => css`
     will-change: margin-left;
 `;
 
-export const Layout = ({ children }) => {
+export const Layout = ({ children }: { children: ReactNode }) => {
     const [sideNavOpen, setSideNavOpen] = useState(false);
 
     const toggleMenu = () => {

@@ -1,29 +1,38 @@
 import { MDXRemote } from 'next-mdx-remote';
 
-import { Title, Text, Image } from '@edene/components';
+import {
+    Title,
+    Text,
+    Image,
+    ImageProps,
+    TitleProps,
+    TextProps,
+} from '@edene/components';
 import * as edeneComponents from '@edene/components';
 import * as edeneAnimations from '@edene/animations';
 
 import CodeBlock from './CodeBlock';
 
-const H2Title = (props) => <Title size="h4" mt={8} mb={4} {...props} />;
-const PText = (props) => <Text mt={4} {...props} />;
+const H2Title = (props: TitleProps) => (
+    <Title size="h4" mt={8} mb={4} {...props} />
+);
+const PText = (props: TextProps) => <Text mt={4} {...props} />;
 
 const generalComponents = {
     h2: H2Title,
     p: PText,
-    pre: (props) => <div {...props} />,
-    img: (props) => {
+    pre: (props: any) => <div {...props} />,
+    img: (props: ImageProps) => {
         return <Image size="c" objectFit="contain" targetBlank {...props} />;
     },
     code: CodeBlock,
-    ul: (props) => (
+    ul: (props: any) => (
         <ul
             style={{ marginLeft: '2rem', listStyle: 'disc !important' }}
             {...props}
         />
     ),
-    table: (props) => <table style={{ width: '100%' }} {...props} />,
+    table: (props: any) => <table style={{ width: '100%' }} {...props} />,
 };
 
 const components = {
@@ -32,7 +41,7 @@ const components = {
     ...edeneAnimations,
 };
 
-const PostContent = ({ content }) => (
+const PostContent = ({ content }: any) => (
     <MDXRemote {...content} components={components} />
 );
 

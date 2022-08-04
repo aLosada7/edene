@@ -20,7 +20,7 @@ const platformText = css`
     }
 `;
 
-export const ComponentHeader = ({frontMatter}) => (
+export const ComponentHeader = ({ frontMatter }: any) => (
     <>
         <Title mb={4}>{frontMatter.title}</Title>
         <Text cssOverrides={platformText}>

@@ -20,7 +20,7 @@ interface ArticleProps extends ParsedUrlQuery {
 
 const POSTS_PATH = join(process.cwd(), 'content/docs/animations');
 
-const Animations = ({ slug, frontMatter, usage, props }) => {
+const Animations = ({ slug, frontMatter, usage, props }: any) => {
     const [selectedTab, setSelectedTab] = useState('usage');
 
     const router = useRouter();
@@ -29,7 +29,7 @@ const Animations = ({ slug, frontMatter, usage, props }) => {
         if (router.query.tab) setSelectedTab(router.query.tab as string);
     }, [router.query]);
 
-    const onTabSelected = (tabKey) => {
+    const onTabSelected = (tabKey: string) => {
         setSelectedTab(tabKey);
         router.push(
             { href: '/animations/[slug]', query: { tab: tabKey } },

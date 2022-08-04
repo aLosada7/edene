@@ -4,15 +4,13 @@ title: 'Edene - Getting Started'
 
 # Getting started
 
-> Installing our shared components and utilities into your application.
-
 ## Welcome! 🤗 🎊 🤝
 
 Thank you for looking at the Docs!
 
-## Install
+## Installation
 
-Our library for the web lives in this repository. It is written in TypeScript, but you can still use our code even if your application is written in JavaScript.
+Our Design System lives in [this repository](https://github.com/aLosada7/edene). It is written in TypeScript, but you can still use our code even if your application is written in JavaScript.
 
 This guide assumes you have some familiarity with React and Babel. Setting up a React project from scratch is outside the scope of this guide.
 
@@ -32,7 +30,23 @@ $ yarn add react@^17.0.1 @emotion/react@^11.1.2
 We publish the library with components written in [React](https://reactjs.org/) and [Emotion](https://emotion.sh/).
 
 ```shell
-$ npm install @dana
+$ npm install @edene/foundations @edene/components
+```
+
+You also need to add support for [Google Icons](https://fonts.google.com/icons?selected=Material+Icons). Add to your HTML
+
+```html
+<link
+    rel="stylesheet"
+    type="text/css"
+    href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined"
+/>
+```
+
+Or optionally to your SCSS.
+
+```scss
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined');
 ```
 
 Then use to import the Accordion:

@@ -3,6 +3,8 @@ import { join } from 'path';
 import { ParsedUrlQuery } from 'querystring';
 import fs from 'fs';
 
+import { Container } from '@edene/components';
+
 import PostContent from '../../components/PostContent';
 import {
     getParsedFileOverviewContentBySlug,
@@ -16,11 +18,11 @@ interface ArticleProps extends ParsedUrlQuery {
 
 const POSTS_PATH = join(process.cwd(), 'content/docs/overview');
 
-const Overview = ({ html }) => {
+const Overview = ({ html }: any) => {
     return (
-        <>
+        <Container>
             <PostContent content={html} />
-        </>
+        </Container>
     );
 };
 

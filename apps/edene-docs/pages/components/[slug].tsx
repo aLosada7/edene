@@ -20,12 +20,12 @@ interface ArticleProps extends ParsedUrlQuery {
 
 const POSTS_PATH = join(process.cwd(), 'content/docs/components');
 
-const Components = ({ slug, frontMatter, usage, props }) => {
+const Components = ({ slug, frontMatter, usage, props }: any) => {
     const [selectedTab, setSelectedTab] = useState('usage');
 
     const router = useRouter();
 
-    const onTabSelected = (tabKey) => {
+    const onTabSelected = (tabKey: string) => {
         setSelectedTab(tabKey);
         router.push(
             { href: '/components/[slug]', query: { tab: tabKey } },
