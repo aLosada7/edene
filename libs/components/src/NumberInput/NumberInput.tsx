@@ -1,8 +1,9 @@
 import { forwardRef, InputHTMLAttributes, useEffect, useState } from 'react';
 import { SerializedStyles } from '@emotion/react';
 
-import { Icon, Props, generateSourceId } from '@edene/foundations';
+import { Props, generateSourceId } from '@edene/foundations';
 
+import { Icon } from '../icons';
 import { input, numberInputWrapper, subtractButton, sumButton } from './styles';
 import { Label } from '../Label';
 import { FormInput } from '../Input/types';

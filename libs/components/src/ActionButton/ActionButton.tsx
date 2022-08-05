@@ -1,8 +1,9 @@
 import { SerializedStyles } from '@emotion/react';
 import { ButtonHTMLAttributes, cloneElement } from 'react';
 
-import { Icon, Props } from '@edene/foundations';
+import { Props } from '@edene/foundations';
 
+import { Icon } from '../icons';
 import { Button } from '../Button';
 import { actionButton } from './styles';
 

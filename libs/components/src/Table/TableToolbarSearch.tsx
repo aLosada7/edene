@@ -1,5 +1,8 @@
 import { InputHTMLAttributes, useState } from 'react';
-import { Props, Icon } from '@edene/foundations';
+
+import { Props } from '@edene/foundations';
+
+import { Icon } from '../icons';
 import { Button } from '../Button';
 import { TextInput } from '../TextInput';
 import {

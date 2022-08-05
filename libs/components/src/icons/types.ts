@@ -1,6 +1,4 @@
-import { Props } from '../helpers';
-import { EdeneColor } from '../colors/types';
-import { IconSize } from '../sizes';
+import { Props, EdeneColor, IconSize } from '@edene/foundations';
 
 export type IconVariant = 'filled' | 'outlined';
 

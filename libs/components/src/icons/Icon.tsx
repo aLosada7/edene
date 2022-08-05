@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 
-import { IconSize, iconSize } from '../sizes';
+import { IconSize, iconSize } from '@edene/foundations';
 import { IconProps } from './types';
 
 const materialIcon = (size: IconSize) => css`

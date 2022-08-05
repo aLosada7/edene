@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { Icon } from '@edene/foundations';
-
+import { Icon } from '../icons';
 import { ActionButton } from '../ActionButton';
 import ModalTitle from './ModalTitle';
 import { modalHeader } from './styles';

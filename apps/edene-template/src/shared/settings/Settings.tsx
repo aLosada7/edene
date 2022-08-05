@@ -1,6 +1,7 @@
 import { Fragment, useState } from 'react';
 
-import { Icon, useThemeContext } from '@edene/foundations';
+import { Icon } from '@edene/components';
+import { useThemeContext } from '@edene/foundations';
 
 import { overlay, settings } from './styles';
 import { SettingContent } from './SettingContent';

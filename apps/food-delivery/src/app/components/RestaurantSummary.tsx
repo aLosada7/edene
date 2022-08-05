@@ -1,8 +1,7 @@
 import { css } from '@emotion/react';
 import { NavLink } from 'react-router-dom';
 
-import { Card, CardBody, Col, Row, Image, Text } from '@edene/components';
-import { Icon } from '@edene/foundations';
+import { Card, CardBody, Col, Row, Image, Text, Icon } from '@edene/components';
 
 import { IRestaurant } from '../context/restaurants';
 import { RestaurantRating } from './RestaurantRating';

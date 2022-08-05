@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 import { Story, Meta } from '@storybook/react';
 import { Fragment, useState } from 'react';
 
-import { Badge, Divider } from '@edene/components';
+import { Badge, Divider, Icon } from '@edene/components';
 
 import {
     SideNav,
@@ -19,7 +19,6 @@ import {
     HeaderPanel,
     HeaderMenuButton,
 } from '.';
-import { Icon } from '@edene/foundations';
 
 export default {
     component: SideNav,

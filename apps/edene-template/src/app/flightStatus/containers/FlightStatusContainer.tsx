@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
 
-import { Card, CardBody, Container, Text } from '@edene/components';
-import { Icon, textSans, Theme, useThemeContext } from '@edene/foundations';
+import { Card, CardBody, Container, Text, Icon } from '@edene/components';
+import { textSans, Theme, useThemeContext } from '@edene/foundations';
 
 import { DateBadgeComponent } from '../components/DateBadgeComponent';
 import { TimelineComponent } from '../components/TimelineComponent';

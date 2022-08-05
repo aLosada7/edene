@@ -1,8 +1,7 @@
 import { Meta } from '@storybook/react';
 import { Fragment, useRef } from 'react';
 
-import { LinkedinIcon } from '@edene/foundations';
-
+import { Icon } from '../icons';
 import { Button, ButtonProps } from './Button';
 import ButtonGroup from './ButtonGroup';
 import type { Story } from '../lib/storybook-emotion-10-fixes';
@@ -88,10 +87,10 @@ asChromaticStory(Disabled);
 export const WithIconOnly = () => (
     <StoryHStack>
         <Button>
-            <LinkedinIcon />
+            <Icon>home</Icon>
         </Button>
         <Button variant="outline">
-            <LinkedinIcon />
+            <Icon>home</Icon>
         </Button>
     </StoryHStack>
 );

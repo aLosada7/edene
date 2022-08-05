@@ -1,6 +1,6 @@
 import { action } from '@storybook/addon-actions';
 
-import { Icon } from '@edene/foundations';
+import { Icon } from '@edene/components';
 
 import { asChromaticStory } from '../lib/story-intents';
 import type { Story } from '../lib/storybook-emotion-10-fixes';

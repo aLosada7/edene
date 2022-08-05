@@ -10,8 +10,8 @@ import {
     HeaderPanel,
     Container,
     Button,
+    Icon,
 } from '@edene/components';
-import { Icon } from '@edene/foundations';
 
 import useCartContext from '../../context/cart/useCartContext';
 import { IFoodInfo } from '../../context/restaurants';

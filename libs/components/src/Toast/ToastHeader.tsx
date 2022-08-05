@@ -1,4 +1,4 @@
-import { Icon } from '@edene/foundations';
+import { Icon } from '../icons';
 import { ActionButton } from '../ActionButton';
 import { Title } from '../Title';
 import { toastHeader, toastTitle } from './styles';

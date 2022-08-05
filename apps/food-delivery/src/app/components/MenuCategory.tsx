@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
 
-import { Row, Col, Title } from '@edene/components';
-import { from, useThemeContext, Icon } from '@edene/foundations';
+import { Row, Col, Title, Icon } from '@edene/components';
+import { from, useThemeContext } from '@edene/foundations';
 
 import { IFoodInfo } from '../context/restaurants';
 import { MenuSummary } from './MenuSummary';
