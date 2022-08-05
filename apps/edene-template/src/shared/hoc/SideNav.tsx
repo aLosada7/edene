@@ -61,6 +61,12 @@ export const SideNav = ({ sideNavWidth, ...props }: SideNavProps) => {
                     >
                         Game Summary
                     </SideNavItem>
+                    <SideNavItem
+                        component={NavLink}
+                        to="templates/flight-status"
+                    >
+                        Flight Status
+                    </SideNavItem>
                 </SideNavPrincipal>
             </SideNavItems>
         </DanaSideNav>

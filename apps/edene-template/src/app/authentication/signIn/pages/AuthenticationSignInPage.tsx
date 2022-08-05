@@ -1,5 +1,7 @@
 import { AuthenticationSignInContainer } from '../containers/AuthenticationSignInContainer';
 
-export const AuthenticationSignInPage = () => {
+const AuthenticationSignInPage = () => {
     return <AuthenticationSignInContainer />;
 };
+
+export default AuthenticationSignInPage;

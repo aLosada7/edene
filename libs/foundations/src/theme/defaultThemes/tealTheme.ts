@@ -1,12 +1,10 @@
-import { black, grays, text, white } from '../../palette';
+import { grays, text } from '../../palette';
 import { Theme } from '..';
 
-export const tealTheme: Theme = {
+export const tealTheme: Partial<Theme> = {
     name: 'teal',
     color: 'rgb(48, 144, 142)',
     hover: 'rgb(44, 122, 123)',
-    white,
-    black,
     label: {
         text: grays[1],
         optionalText: text.supporting,

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { Suspense, useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import { css } from '@emotion/react';
 
@@ -42,7 +42,9 @@ export default () => {
             />
             <Settings />
             <main css={main(sideNavOpen)}>
-                <Outlet />
+                <Suspense fallback={<div>Loading...</div>}>
+                    <Outlet />
+                </Suspense>
             </main>
         </div>
     );
