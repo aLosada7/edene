@@ -1,6 +1,6 @@
-import { DanaTheme } from '@dana-theme';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { jsx } from '@emotion/core';
+
+import { EdeneTheme } from '@edene/foundations';
 
 import { Layout } from './components/shared/Layout';
 import { theme } from './theme';
@@ -12,7 +12,7 @@ import { CompletedOrderPage } from './pages/CompletedOrderPage';
 
 export function App() {
     return (
-        <DanaTheme theme={theme}>
+        <EdeneTheme theme={theme}>
             <CartProvider>
                 <Router>
                     <Routes>
@@ -34,7 +34,7 @@ export function App() {
                     </Routes>
                 </Router>
             </CartProvider>
-        </DanaTheme>
+        </EdeneTheme>
     );
 }
 

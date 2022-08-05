@@ -1,6 +1,5 @@
-import React from 'react';
-
-import { Card, CardBody, Text } from '@dana-components';
+import { Card, CardBody, Text } from '@edene/components';
+import { Fragment } from 'react';
 import { IFoodInfo } from '../context/restaurants';
 
 export const MenuSummary = ({
@@ -13,11 +12,11 @@ export const MenuSummary = ({
     <Card onClick={() => onClick(food)}>
         <CardBody>
             <Text weight="bold">
-                <>
+                <Fragment>
                     {food.name}
                     {'  '}
                     {(food.options || []).includes('vegetarian') && `🌱`}
-                </>
+                </Fragment>
             </Text>
             <Text size="sm" mt={2}>
                 {food.description}

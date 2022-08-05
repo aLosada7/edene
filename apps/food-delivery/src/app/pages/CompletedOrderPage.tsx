@@ -1,5 +1,6 @@
-import { Button, Container, Title, Alert } from '@dana-components';
 import { useNavigate } from 'react-router-dom';
+
+import { Button, Container, Title, Alert } from '@edene/components';
 
 export const CompletedOrderPage = () => {
     const navigate = useNavigate();

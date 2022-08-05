@@ -1,5 +1,7 @@
-import { Container } from '@dana-components';
 import { useState } from 'react';
+
+import { Container } from '@edene/components';
+
 import { FoodCategoriesContainer } from '../containers/FoodCategoriesContainer';
 import { RestaurantListContainer } from '../containers/RestaurantListContainer';
 

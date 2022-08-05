@@ -1,6 +1,5 @@
 import {
     background,
-    colorsPalette,
     fill,
     grays,
     text,

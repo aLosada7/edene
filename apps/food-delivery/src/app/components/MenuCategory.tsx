@@ -1,14 +1,13 @@
-import { Row, Col, Text, Title } from '@dana-components';
-import { from } from '@dana-foundations';
-import { FoodIcon } from '@dana-icons';
 import { css } from '@emotion/react';
-import useThemeContext from 'libs/dana/src/foundations/theme/useThemeContext';
-import React, { ReactElement } from 'react';
+
+import { Row, Col, Title } from '@edene/components';
+import { from, useThemeContext } from '@edene/foundations';
+import { FoodIcon } from '@dana-icons';
 
 import { IFoodInfo } from '../context/restaurants';
 import { MenuSummary } from './MenuSummary';
 
-const Circle = ({ children }: { children: ReactElement }) => {
+const Circle = ({ children }: { children: React.ReactElement }) => {
     const { theme } = useThemeContext();
 
     return (

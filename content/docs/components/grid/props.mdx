@@ -1,0 +1,37 @@
+---
+title: 'Grid'
+scope: 'props'
+---
+
+## Container
+
+| Name     | Type                           | Description                        |
+| :------- | :----------------------------- | :--------------------------------- |
+| pv       | DanaScale                      | Each unit is multipled by 0.25 rem |
+| ph       | DanaScale                      | Each unit is multipled by 0.25 rem |
+| mt       | DanaScale                      | Each unit is multipled by 0.25 rem |
+| children | ReactElement \| ReactElement[] | Text for the elements              |
+
+## Row
+
+| Name      | Type                                                   | Description                        |
+| :-------- | :----------------------------------------------------- | :--------------------------------- |
+| px        | DanaScale                                              | Each unit is multipled by 0.25 rem |
+| py        | DanaScale                                              | Each unit is multipled by 0.25 rem |
+| align     | 'start-center \| 'end-center \| 'space-between-center' | Row contents aligment              |
+| direction | 'row' \| 'column'                                      | Each unit is multipled by 0.25 rem |
+| children  | ReactElement \| string                                 | Text for the elements              |
+
+## Col
+
+| Name            | Type                                                                   | Description                          |
+| :-------------- | :--------------------------------------------------------------------- | :----------------------------------- |
+| sm              | DanaScale                                                              | Maximum width for small devices      |
+| md              | DanaScale                                                              | Maximum width for medium devices     |
+| lg              | DanaScale                                                              | Maximum width for large devices      |
+| xl              | DanaScale                                                              | Maximum width for xtra-large devices |
+| verticalStack   | DanaScale                                                              | Each unit is multipled by 0.25 rem   |
+| horizontalStack | DanaScale                                                              | Each unit is multipled by 0.25 rem   |
+| align           | 'horizontal-end \| 'center \| 'vertical-center' \| 'horizontal-center' | Column contents aligment             |
+| direction       | 'row' \| 'column'                                                      | Each unit is multipled by 0.25 rem   |
+| children        | ReactElement \| string                                                 | Text for the elements                |

@@ -1,7 +1,8 @@
-import { Card, CardBody, Col, Row, Image, Text, Title } from '@dana-components';
-import { ClockIcon, TicketsIcon } from '@dana-icons';
 import { css } from '@emotion/react';
 import { NavLink } from 'react-router-dom';
+
+import { Card, CardBody, Col, Row, Image, Text } from '@edene/components';
+import { ClockIcon, TicketsIcon } from '@dana-icons';
 
 import { IRestaurant } from '../context/restaurants';
 import { RestaurantRating } from './RestaurantRating';

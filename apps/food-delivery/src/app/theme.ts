@@ -1,4 +1,4 @@
-import { defaultTheme } from '@dana-theme';
+import { defaultTheme } from '@edene/foundations';
 
 export const theme = {
     ...defaultTheme,

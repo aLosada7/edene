@@ -1,5 +1,6 @@
-import React from 'react';
-import { Container, Title } from '@dana';
+import { Fragment } from 'react';
+
+import { Container, Title } from '@edene/components';
 
 import { RestaurantSummary } from '../components/RestaurantSummary';
 import {
@@ -19,7 +20,7 @@ export const RestaurantListContainer = ({ foodKind }: { foodKind: string }) => {
         foodRestaurants.map((food: IFoodOffer) => food.restaurants).flat();
 
     return (
-        <>
+        <Fragment>
             <Title size="h4" mb={4}>
                 <span>{selectedFoodName} Restaurants</span>
             </Title>
@@ -28,6 +29,6 @@ export const RestaurantListContainer = ({ foodKind }: { foodKind: string }) => {
                     <RestaurantSummary restaurant={restaurant} />
                 ))}
             </Container>
-        </>
+        </Fragment>
     );
 };

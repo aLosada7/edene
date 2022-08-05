@@ -10,7 +10,7 @@ import {
     HeaderPanel,
     Container,
     Button,
-} from '@dana';
+} from '@edene/components';
 import { CartIcon } from '@dana-icons';
 
 import useCartContext from '../../context/cart/useCartContext';

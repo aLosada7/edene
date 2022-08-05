@@ -1,6 +1,6 @@
-import React, { cloneElement, ReactElement } from 'react';
+import { cloneElement, ReactElement } from 'react';
 import { getColor } from '../colors/api';
-import { DanaColor } from '../colors/types';
+import { EdeneColor } from '../colors/types';
 import { iconSize } from '../size';
 import useThemeContext from '../theme/useThemeContext';
 import { IconSize } from './types';
@@ -11,18 +11,18 @@ export const Icon = ({
     color,
 }: {
     size?: IconSize;
-    color?: DanaColor;
+    color?: EdeneColor;
     children: ReactElement;
 }) => {
     const { theme } = useThemeContext();
     const iconColor = color || theme.black;
 
     return (
-        <>
+        <span>
             {cloneElement(children, {
                 fill: getColor({ theme, color: iconColor }),
                 width: iconSize[size],
             })}
-        </>
+        </span>
     );
 };

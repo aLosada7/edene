@@ -1,4 +1,4 @@
-import { Card, CardBody, CardImage, Col, Text } from '@dana-components';
+import { Card, CardBody, CardImage, Col, Text } from '@edene/components';
 import { css } from '@emotion/react';
 
 export const FoodCategoryAll = ({

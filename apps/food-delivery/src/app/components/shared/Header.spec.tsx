@@ -1,4 +1,4 @@
-import { DanaTheme } from '@dana-theme';
+import { EdeneTheme } from '@edene/foundations';
 import { faker } from '@faker-js/faker';
 import { render, screen } from '@testing-library/react';
 
@@ -14,9 +14,9 @@ describe('Header component tests', () => {
     it('it renders the given name in the header', () => {
         const name = faker.name.firstName();
         render(
-            <DanaTheme>
+            <EdeneTheme>
                 <Header name={name} />
-            </DanaTheme>
+            </EdeneTheme>
         );
         expect(screen.getByText(`${name}`)).toBeInTheDocument();
         expect(

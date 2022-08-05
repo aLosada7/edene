@@ -21,3 +21,6 @@ export * from './colors';
 export * from './commonStyles';
 export * from './typography';
 export * from './accesibility';
+export * from './shadows';
+export * from './animation';
+export * from './icons';

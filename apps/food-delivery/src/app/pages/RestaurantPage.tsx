@@ -1,3 +1,7 @@
+import { css } from '@emotion/react';
+import { Fragment, useState } from 'react';
+import { useParams } from 'react-router-dom';
+
 import {
     Container,
     Row,
@@ -9,10 +13,8 @@ import {
     Title,
     ModalBody,
     ModalHeader,
-} from '@dana-components';
-import { css } from '@emotion/react';
-import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
+} from '@edene/components';
+
 import { MenuCategory } from '../components/MenuCategory';
 import { RestaurantRating } from '../components/RestaurantRating';
 import useCartContext from '../context/cart/useCartContext';
@@ -99,12 +101,12 @@ export const RestaurantPage = () => {
                                     `}
                                 >
                                     <Text size="md">
-                                        <>
+                                        <Fragment>
                                             {(
                                                 foodSelected.options || []
                                             ).includes('vegetarian') &&
                                                 `🌱 Vegetarian`}
-                                        </>
+                                        </Fragment>
                                     </Text>
 
                                     <Text>{foodSelected.description}</Text>
@@ -122,13 +124,13 @@ export const RestaurantPage = () => {
 
                                     <div>
                                         <Button onClick={handleNewCartProduct}>
-                                            <>
+                                            <Fragment>
                                                 Add to cart (
                                                 {(foodSelected
                                                     ? foodSelected.price / 100
                                                     : 0) * quantity}{' '}
                                                 €)
-                                            </>
+                                            </Fragment>
                                         </Button>
                                     </div>
                                 </Container>
