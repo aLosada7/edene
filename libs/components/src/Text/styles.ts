@@ -3,7 +3,7 @@ import { css } from '@emotion/react';
 import {
     defaultTheme,
     textSans,
-    ColorOptions,
+    ThemeOptions,
     getColor,
     FontWeight,
 } from '@edene/foundations';
@@ -37,7 +37,7 @@ export const text = (
 export const textColorCss = ({
     color,
     theme = defaultTheme,
-}: ColorOptions) => css`
+}: ThemeOptions) => css`
     color: ${getColor({ theme, color })};
     fill: ${getColor({ theme, color })};
 `;

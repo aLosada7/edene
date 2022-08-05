@@ -20,6 +20,7 @@ interface SideNavProps {
 
 const COMPONENTS = [
     'Accordion',
+    'Alert',
     'Breadcrumb',
     'Button',
     'Tabs',

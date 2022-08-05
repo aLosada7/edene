@@ -7,12 +7,12 @@ const isOfComponentColors = (color: string) => {
     return ['success', 'danger', 'dark', 'gray', 'transparent'].includes(color);
 };
 
-export interface ColorOptions {
+export interface ThemeOptions {
     theme: Theme;
     color?: EdeneColor;
 }
 
-export const getColor = ({ color, theme = defaultTheme }: ColorOptions) => {
+export const getColor = ({ color, theme = defaultTheme }: ThemeOptions) => {
     if (!color) return theme.color;
 
     if (isOfComponentColors(color))
@@ -24,7 +24,7 @@ export const getColor = ({ color, theme = defaultTheme }: ColorOptions) => {
 export const getHoverColor = ({
     color,
     theme = defaultTheme,
-}: ColorOptions) => {
+}: ThemeOptions) => {
     if (!color) return theme.hover;
 
     if (isOfComponentColors(color))

@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 import {
     defaultTheme,
     headline,
-    ColorOptions,
+    ThemeOptions,
     getColor,
 } from '@edene/foundations';
 import { IFontSize, ITextAlign } from './Title';
@@ -26,7 +26,7 @@ export const title = (
 export const textColorCss = ({
     color,
     theme = defaultTheme,
-}: ColorOptions) => css`
+}: ThemeOptions) => css`
     color: ${getColor({ theme, color })};
     fill: ${getColor({ theme, color })};
 `;
