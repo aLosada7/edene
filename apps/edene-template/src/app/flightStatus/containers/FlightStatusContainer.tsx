@@ -73,7 +73,7 @@ export const FlightStatusContainer = () => {
                             <Card cssOverrides={note(theme)}>
                                 <CardBody>
                                     <Text cssOverrides={noteTitle}>
-                                        Thank you for traveling with DANA
+                                        Thank you for traveling with EDENE
                                         Flights.
                                     </Text>
                                     <br />
@@ -81,7 +81,7 @@ export const FlightStatusContainer = () => {
                                         Thank you for choosing us as your
                                         trusted airline. We hope you have
                                         enjoyed travelling with{' '}
-                                        <b>DANA Flights</b>.
+                                        <b>EDENE Flights</b>.
                                     </Text>
                                 </CardBody>
                             </Card>

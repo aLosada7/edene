@@ -1,3 +1,3 @@
 export function randomId() {
-    return `dana-${Math.random().toString(36).slice(2, 11)}`;
+    return `edene-${Math.random().toString(36).slice(2, 11)}`;
 }

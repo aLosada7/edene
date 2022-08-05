@@ -6,41 +6,33 @@
     "targets": {
         "build": {
             "executor": "@nrwl/web:rollup",
-            "outputs": [
-                "{options.outputPath}"
-            ],
+            "outputs": ["{options.outputPath}"],
             "options": {
                 "outputPath": "dist/libs/edene-pro-lab",
                 "tsConfig": "libs/edene-pro-lab/tsconfig.lib.json",
                 "project": "libs/edene-pro-lab/package.json",
                 "entryFile": "libs/edene-pro-lab/src/index.ts",
-                "external": [
-                    "react/jsx-runtime"
-                ],
+                "external": ["react/jsx-runtime"],
                 "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
-                "assets": [{
-                    "glob": "libs/edene-pro-lab/README.md",
-                    "input": ".",
-                    "output": "."
-                }]
+                "assets": [
+                    {
+                        "glob": "libs/edene-pro-lab/README.md",
+                        "input": ".",
+                        "output": "."
+                    }
+                ]
             }
         },
         "lint": {
             "executor": "@nrwl/linter:eslint",
-            "outputs": [
-                "{options.outputFile}"
-            ],
+            "outputs": ["{options.outputFile}"],
             "options": {
-                "lintFilePatterns": [
-                    "libs/edene-pro-lab/**/*.{ts,tsx,js,jsx}"
-                ]
+                "lintFilePatterns": ["libs/edene-pro-lab/**/*.{ts,tsx,js,jsx}"]
             }
         },
         "test": {
             "executor": "@nrwl/jest:jest",
-            "outputs": [
-                "coverage/libs/edene-pro-lab"
-            ],
+            "outputs": ["coverage/libs/edene-pro-lab"],
             "options": {
                 "jestConfig": "libs/edene-pro-lab/jest.config.ts",
                 "passWithNoTests": true
@@ -63,9 +55,7 @@
         },
         "build-storybook": {
             "executor": "@nrwl/storybook:build",
-            "outputs": [
-                "{options.outputPath}"
-            ],
+            "outputs": ["{options.outputPath}"],
             "options": {
                 "uiFramework": "@storybook/react",
                 "outputPath": "dist/storybook/edene-pro-lab",

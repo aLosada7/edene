@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 
-import { Header as DanaHeader, HeaderMenuButton } from '@edene/components';
+import { Header as EdeneHeader, HeaderMenuButton } from '@edene/components';
 import { from } from '@edene/foundations';
 
 const header = (sideNavWidth: number, isSideNavExpanded: boolean) => css`
@@ -21,10 +21,10 @@ export const Header = ({
     onToggleSideNav,
 }: HeaderProps) => {
     return (
-        <DanaHeader
+        <EdeneHeader
             isFixed
             cssOverrides={header(sideNavWidth, isSideNavExpanded)}
-            aria-label="Dana Template"
+            aria-label="Edene Template"
         >
             <HeaderMenuButton
                 alwaysVisible
@@ -33,6 +33,6 @@ export const Header = ({
                 onClick={onToggleSideNav}
                 variant="light"
             />
-        </DanaHeader>
+        </EdeneHeader>
     );
 };

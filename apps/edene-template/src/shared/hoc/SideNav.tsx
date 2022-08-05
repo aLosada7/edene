@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 import { css } from '@emotion/react';
 
 import {
-    SideNav as DanaSideNav,
+    SideNav as EdeneSideNav,
     SideNavItem,
     SideNavItems,
     SideNavMenu,
@@ -26,7 +26,7 @@ interface SideNavProps {
 
 export const SideNav = ({ sideNavWidth, ...props }: SideNavProps) => {
     return (
-        <DanaSideNav
+        <EdeneSideNav
             width={sideNavWidth}
             aria-label="Side navigation"
             cssOverridesAside={aside(props.open, sideNavWidth)}
@@ -69,6 +69,6 @@ export const SideNav = ({ sideNavWidth, ...props }: SideNavProps) => {
                     </SideNavItem>
                 </SideNavPrincipal>
             </SideNavItems>
-        </DanaSideNav>
+        </EdeneSideNav>
     );
 };

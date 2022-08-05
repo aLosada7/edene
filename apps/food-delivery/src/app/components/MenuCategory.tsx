@@ -1,8 +1,7 @@
 import { css } from '@emotion/react';
 
 import { Row, Col, Title } from '@edene/components';
-import { from, useThemeContext } from '@edene/foundations';
-import { FoodIcon } from '@dana-icons';
+import { from, useThemeContext, Icon } from '@edene/foundations';
 
 import { IFoodInfo } from '../context/restaurants';
 import { MenuSummary } from './MenuSummary';
@@ -55,7 +54,7 @@ export const MenuCategory = ({
             `}
         >
             <Circle>
-                <FoodIcon color="#fff" />
+                <Icon color="#fff">restaurant</Icon>
             </Circle>
         </Col>
         <Col md={20} lg={22} direction="column" verticalStack={4}>

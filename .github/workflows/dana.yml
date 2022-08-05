@@ -1,6 +1,6 @@
 # Run interaction tests with Jest
 
-name: 'dana library CI'
+name: 'edene library CI'
 
 on: [push, pull_request]
 
@@ -13,4 +13,4 @@ jobs:
             - name: Install dependencies
               run: yarn
             - name: Run tests
-              run: npx nx run dana:test
+              run: npx nx run edene:test

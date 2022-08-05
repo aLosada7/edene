@@ -142,16 +142,16 @@ export const FixedSideNavWIcons: Story<SideNavProps> = () => (
 );
 
 export const HeaderBase: Story<HeaderProps> = () => (
-    <Header isFixed aria-label="DANA Library Name">
-        <HeaderName href="#" prefix="DANA">
+    <Header isFixed aria-label="EDENE Library Name">
+        <HeaderName href="#" prefix="EDENE">
             [Library]
         </HeaderName>
     </Header>
 );
 
 export const HeaderBaseWActions: Story<HeaderProps> = () => (
-    <Header isFixed aria-label="DANA Library Name">
-        <HeaderName href="#" prefix="DANA">
+    <Header isFixed aria-label="EDENE Library Name">
+        <HeaderName href="#" prefix="EDENE">
             [Library]
         </HeaderName>
         <HeaderGlobalBar>
@@ -169,8 +169,8 @@ export const HeaderBaseWActions: Story<HeaderProps> = () => (
 );
 
 export const HeaderBaseWActionsAndPanel: Story<HeaderProps> = () => (
-    <Header isFixed aria-label="DANA Library Name">
-        <HeaderName href="#" prefix="DANA">
+    <Header isFixed aria-label="EDENE Library Name">
+        <HeaderName href="#" prefix="EDENE">
             [Library]
         </HeaderName>
         <HeaderGlobalBar>
@@ -196,7 +196,7 @@ export const HeaderBaseWSidenav: Story<HeaderProps> = () => {
     };
 
     return (
-        <Header isFixed aria-label="DANA Library Name">
+        <Header isFixed aria-label="EDENE Library Name">
             <HeaderMenuButton
                 variant="light"
                 active={isOpen}
@@ -204,7 +204,7 @@ export const HeaderBaseWSidenav: Story<HeaderProps> = () => {
                 onClick={toggleMenu}
                 alwaysVisible
             />
-            <HeaderName href="#" prefix="DANA">
+            <HeaderName href="#" prefix="EDENE">
                 [Library]
             </HeaderName>
             <SideNav

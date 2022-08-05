@@ -20,7 +20,7 @@ import {
 import CountrySelector from '../../selector/country-selector/CountrySelector';
 
 export default {
-    title: 'DanaLabs/Forms',
+    title: 'EdeneProLab/Forms',
     component: Form,
     decorators: [
         (Story: any) => (
