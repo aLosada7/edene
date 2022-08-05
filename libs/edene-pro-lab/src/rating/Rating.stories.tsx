@@ -3,7 +3,7 @@ import { Rating, RatingProps } from './Rating';
 
 export default {
     component: Rating,
-    title: 'DanaLabs/Rating',
+    title: 'EdeneProLab/Rating',
 } as Meta;
 
 const Template: Story<RatingProps> = (args: RatingProps) => (

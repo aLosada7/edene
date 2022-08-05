@@ -1,7 +1,7 @@
 import { randomId } from './randomId';
 
-describe('@dana/hooks/randomId', () => {
-    it('returns random id with dana- prefix', () => {
-        expect(randomId().includes('dana-')).toBe(true);
+describe('@edene/hooks/randomId', () => {
+    it('returns random id with edene- prefix', () => {
+        expect(randomId().includes('edene-')).toBe(true);
     });
 });

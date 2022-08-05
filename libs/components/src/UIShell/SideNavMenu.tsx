@@ -6,7 +6,8 @@ import {
     useState,
 } from 'react';
 
-import { useThemeContext, Props, Icon } from '@edene/foundations';
+import { Icon } from '../icons';
+import { useThemeContext, Props } from '@edene/foundations';
 
 import {
     chevronIconDown,

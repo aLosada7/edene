@@ -13,7 +13,7 @@ import {
 import { optionWrapper, onlyRadio } from './styles';
 
 export default {
-    title: 'DanaLabs/Forms',
+    title: 'EdeneProLab/Forms',
 } as Meta;
 
 const Template: Story<RadioGroupProps> = (props: RadioGroupProps) => {

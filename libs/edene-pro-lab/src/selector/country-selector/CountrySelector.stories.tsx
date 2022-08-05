@@ -3,7 +3,7 @@ import { CountrySelector } from './CountrySelector';
 
 export default {
     component: CountrySelector,
-    title: 'DanaLabs/Selector',
+    title: 'EdeneProLab/Selector',
 } as Meta;
 
 const Template: Story = () => <CountrySelector />;

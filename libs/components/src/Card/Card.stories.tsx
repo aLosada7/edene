@@ -1,7 +1,7 @@
 import { Meta } from '@storybook/react';
 import { css } from '@emotion/react';
 
-import { Icon } from '@edene/foundations';
+import { Icon } from '@edene/components';
 
 import { asChromaticStory } from '../lib/story-intents';
 import type { Story } from '../lib/storybook-emotion-10-fixes';

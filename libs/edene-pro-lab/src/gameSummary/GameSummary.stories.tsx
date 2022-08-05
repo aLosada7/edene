@@ -25,7 +25,7 @@ import { rows } from './rows';
 import { theme } from './theme';
 
 export default {
-    title: 'DanaLabs',
+    title: 'EdeneProLab',
     decorators: [
         (Story: any) => (
             <EdeneTheme theme={theme}>

@@ -23,18 +23,11 @@
         "noUnusedLocals": true,
         "strict": true,
         "paths": {
-            "@alvarolosada/edene-pro-lab": ["libs/edene-pro-lab/src/index.ts"],
-            "@dana": ["libs/dana/src/index.ts"],
-            "@dana-components": ["libs/dana/src/components/index.ts"],
-            "@dana-foundations": ["libs/dana/src/foundations/index.ts"],
-            "@dana-icons": ["libs/dana/src/foundations/icons/index.ts"],
-            "@dana-theme": ["libs/dana/src/foundations/theme/index.ts"],
-            "@dana/dana": ["libs/dana/src/index.ts"],
-            "@dana/utils": ["libs/utils/src/index.ts"],
             "@edene/animations": ["libs/animations/src/index.ts"],
             "@edene/components": ["libs/components/src/index.ts"],
             "@edene/foundations": ["libs/foundations/src/index.ts"],
-            "@edene/hooks": ["libs/hooks/src/index.ts"]
+            "@edene/hooks": ["libs/hooks/src/index.ts"],
+            "@edene/utils": ["libs/utils/src/index.ts"]
         }
     },
     "exclude": ["node_modules", "tmp"]

@@ -1,8 +1,7 @@
 import { css } from '@emotion/react';
 import { NavLink } from 'react-router-dom';
 
-import { Card, CardBody, Col, Row, Image, Text } from '@edene/components';
-import { ClockIcon, TicketsIcon } from '@dana-icons';
+import { Card, CardBody, Col, Row, Image, Text, Icon } from '@edene/components';
 
 import { IRestaurant } from '../context/restaurants';
 import { RestaurantRating } from './RestaurantRating';
@@ -36,7 +35,7 @@ export const RestaurantSummary = ({
                     <Col md={12} direction="column">
                         <Text
                             size="xsm"
-                            icon={<TicketsIcon size="medium" />}
+                            icon={<Icon>confirmation_number</Icon>}
                             mt={4}
                         >
                             Entrega desde 1.90€ sin pedido mínimo
@@ -44,7 +43,7 @@ export const RestaurantSummary = ({
                         <Text
                             size="xsm"
                             color="success"
-                            icon={<ClockIcon size="medium" />}
+                            icon={<Icon>schedule</Icon>}
                         >
                             25 - 30 min.
                         </Text>

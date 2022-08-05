@@ -1,5 +1,6 @@
 import { useCallback, useEffect } from 'react';
-import { Icon } from '@edene/foundations';
+
+import { Icon } from '../icons';
 import { toast, toastIcon } from './styles';
 import { IToastVariant } from './types';
 

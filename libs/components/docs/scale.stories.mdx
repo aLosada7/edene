@@ -1,0 +1,35 @@
+import { Meta, Preview } from '@storybook/addon-docs';
+import { css } from '@emotion/react';
+
+import { Image } from '../components';
+import spacingScale from '../../assets/img/spacingScale.jpg';
+import textScale from '../../assets/img/textScale.png';
+
+<Meta
+    title="Foundations/Scale"
+    parameters={{ previewTabs: { canvas: { hidden: true } } }}
+/>
+
+# Scale
+
+## Spacing Scale
+
+<Image
+    src={spacingScale}
+    alt="Edene Spacing Scale"
+    cssOverrides={css`
+        height: auto !important;
+    `}
+/>
+
+## Text Scale
+
+### Text Sans
+
+<Image
+    src={textScale}
+    alt="Edene Text Scale"
+    cssOverrides={css`
+        height: auto !important;
+    `}
+/>

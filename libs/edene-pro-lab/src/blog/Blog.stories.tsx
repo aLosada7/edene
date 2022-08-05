@@ -19,7 +19,7 @@ import { until } from '@edene/foundations';
 import mountain from '../../assets/img/mountain.jpg';
 
 export default {
-    title: 'DanaLabs/Blog',
+    title: 'EdeneProLab/Blog',
 };
 
 const BlogAllSection = (

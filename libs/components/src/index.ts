@@ -30,3 +30,5 @@ export * from './Title';
 export * from './Toast';
 export * from './Tooltip';
 export * from './UIShell';
+
+export * from './icons';

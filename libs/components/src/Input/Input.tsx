@@ -1,8 +1,8 @@
 import { forwardRef, InputHTMLAttributes } from 'react';
 
 import { descriptionId, Props } from '@edene/foundations';
-import { Icon } from '@edene/foundations';
 
+import { Icon } from '../icons';
 import { InlineError } from '../InlineFeedback/InlineError';
 import { InlineSuccess } from '../InlineFeedback/InlineSuccess';
 import {

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { renderWithAct } from '@dana/utils';
+import { renderWithAct } from '@edene/utils';
 import { EdeneTheme } from '@edene/foundations';
 
 import { Badge, BadgeProps } from './Badge';

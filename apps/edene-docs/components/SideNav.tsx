@@ -3,7 +3,7 @@ import { css } from '@emotion/react';
 import ActiveLink from './ActiveLink';
 
 import {
-    SideNav as DanaSideNav,
+    SideNav as EdeneSideNav,
     SideNavItem,
     SideNavItems,
     SideNavPrincipal,
@@ -33,7 +33,7 @@ const ANIMATIONS = ['FadeIn'].sort((a, b) => a.localeCompare(b));
 
 export const SideNav = ({ open, ...props }: SideNavProps) => {
     return (
-        <DanaSideNav
+        <EdeneSideNav
             mobileWidth="full"
             headerHeight={48}
             aria-label="Side navigation"
@@ -77,6 +77,6 @@ export const SideNav = ({ open, ...props }: SideNavProps) => {
                     ))}
                 </SideNavPrincipal>
             </SideNavItems>
-        </DanaSideNav>
+        </EdeneSideNav>
     );
 };

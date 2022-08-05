@@ -1,5 +1,12 @@
-import { ActionButton, Container, Row, Title, Text } from '@edene/components';
-import { defaultTheme, Icon, Theme, useThemeContext } from '@edene/foundations';
+import {
+    ActionButton,
+    Container,
+    Row,
+    Title,
+    Text,
+    Icon,
+} from '@edene/components';
+import { defaultTheme, Theme, useThemeContext } from '@edene/foundations';
 
 import {
     settingsContent,

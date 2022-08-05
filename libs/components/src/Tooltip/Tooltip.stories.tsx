@@ -7,7 +7,7 @@ import { useRef } from 'react';
 import { Tooltip } from './Tooltip';
 
 export default {
-    title: 'Components/Overlay/Tooltip',
+    title: 'Components/Tooltip',
     component: Tooltip,
 };
 

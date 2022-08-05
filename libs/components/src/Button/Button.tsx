@@ -1,13 +1,14 @@
 import { cloneElement, forwardRef } from 'react';
 
-import { PolymorphicComponentProps, PolymorphicRef } from '@edene/foundations';
-
 import {
+    PolymorphicComponentProps,
+    PolymorphicRef,
     EdeneColor,
     useThemeContext,
     Props,
-    Icon,
 } from '@edene/foundations';
+
+import { Icon } from '../icons';
 import { btn, btnColor, buttonIconLeft, buttonIconRight } from './styles';
 
 export type IButtonSize = 'xsmall' | 'small' | 'medium' | 'large';

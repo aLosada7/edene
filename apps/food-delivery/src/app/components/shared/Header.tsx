@@ -3,15 +3,15 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import {
-    Header as DanaHeader,
+    Header as EdeneHeader,
     HeaderName,
     HeaderGlobalBar,
     HeaderGlobalAction,
     HeaderPanel,
     Container,
     Button,
+    Icon,
 } from '@edene/components';
-import { CartIcon } from '@dana-icons';
 
 import useCartContext from '../../context/cart/useCartContext';
 import { IFoodInfo } from '../../context/restaurants';
@@ -37,7 +37,7 @@ export const Header = ({ name }: { name?: string }) => {
         dispatch({ type: 'REMOVE_PRODUCT', payload: { product } });
 
     return (
-        <DanaHeader isFixed aria-label="Food Delivery">
+        <EdeneHeader isFixed aria-label="Food Delivery">
             <HeaderName href="#">Food Delivery</HeaderName>
             <HeaderGlobalBar>
                 {name && (
@@ -50,7 +50,7 @@ export const Header = ({ name }: { name?: string }) => {
                     badge={products.length}
                     onClick={toggleRightPanel}
                 >
-                    <CartIcon />
+                    <Icon>shopping_cart</Icon>
                 </HeaderGlobalAction>
             </HeaderGlobalBar>
             <HeaderPanel
@@ -75,6 +75,6 @@ export const Header = ({ name }: { name?: string }) => {
                     </Button>
                 </Container>
             </HeaderPanel>
-        </DanaHeader>
+        </EdeneHeader>
     );
 };

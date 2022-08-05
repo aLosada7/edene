@@ -11,15 +11,15 @@
                 "tsConfig": "libs/components/tsconfig.lib.json",
                 "project": "libs/components/package.json",
                 "entryFile": "libs/components/src/index.ts",
-                "external": [
-                    "react/jsx-runtime"
-                ],
+                "external": ["react/jsx-runtime"],
                 "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
-                "assets": [{
-                    "glob": "libs/components/README.md",
-                    "input": ".",
-                    "output": "."
-                }]
+                "assets": [
+                    {
+                        "glob": "libs/components/README.md",
+                        "input": ".",
+                        "output": "."
+                    }
+                ]
             }
         },
         "lint": {

@@ -24,7 +24,7 @@ export const Layout = ({ children }: { children: ReactNode }) => {
 
     return (
         <>
-            <Header isFixed aria-label="DANA Library Name">
+            <Header isFixed aria-label="EDENE Library Name">
                 <HeaderMenuButton
                     variant="light"
                     active={sideNavOpen}
