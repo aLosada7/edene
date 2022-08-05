@@ -3,7 +3,7 @@ import { css } from '@emotion/react';
 import {
     EdeneColor,
     getColor,
-    getHoverColor,
+    getDarkenColor,
     disabled,
     buttonSize,
     defaultTheme,
@@ -64,7 +64,7 @@ export const btnColor = (
     ${buttonColorStyles(
         theme,
         getColor({ theme, color }),
-        getHoverColor({ theme, color }),
+        getDarkenColor({ theme, color }),
         variant
     )};
 

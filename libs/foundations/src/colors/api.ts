@@ -21,7 +21,7 @@ export const getColor = ({ color, theme = defaultTheme }: ThemeOptions) => {
     return color;
 };
 
-export const getHoverColor = ({
+export const getDarkenColor = ({
     color,
     theme = defaultTheme,
 }: ThemeOptions) => {
