@@ -30,7 +30,7 @@
             "@dana-icons": ["libs/dana/src/foundations/icons/index.ts"],
             "@dana-theme": ["libs/dana/src/foundations/theme/index.ts"],
             "@dana/dana": ["libs/dana/src/index.ts"],
-            "@dana/utils": ["libs/utils/src/index.ts"],
+            "@edene/utils": ["libs/utils/src/index.ts"],
             "@edene/animations": ["libs/animations/src/index.ts"],
             "@edene/components": ["libs/components/src/index.ts"],
             "@edene/foundations": ["libs/foundations/src/index.ts"],
