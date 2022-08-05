@@ -13,4 +13,4 @@ jobs:
             - name: Install dependencies
               run: yarn
             - name: Run tests
-              run: npx nx run edene:test
+              run: npx nx run-many --target=test --all
