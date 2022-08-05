@@ -9,8 +9,9 @@ export default {
 
 const Template = () => (
     <StoryVStack>
-        <Alert>Button</Alert>
-        <Alert color="danger">Button</Alert>
+        <Alert>This is a default alert</Alert>
+        <Alert color="success">This is a success alert</Alert>
+        <Alert color="danger">This is a danger alert</Alert>
     </StoryVStack>
 );
 

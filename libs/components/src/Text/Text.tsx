@@ -1,4 +1,4 @@
-import { cloneElement, ReactElement } from 'react';
+import { cloneElement, HTMLAttributes, ReactElement, ReactNode } from 'react';
 
 import {
     EdeneColor,
@@ -20,7 +20,7 @@ export type ITextFontSize =
 
 export type ITextAlign = 'inherit' | 'left' | 'center' | 'right';
 
-export interface TextProps extends Props {
+export interface TextProps extends HTMLAttributes<HTMLDivElement>, Props {
     mt?: number;
     // in titles only soon
     mb?: number;
@@ -29,7 +29,7 @@ export interface TextProps extends Props {
     color?: EdeneColor;
     align?: ITextAlign;
     icon?: ReactElement;
-    children: ReactElement | string;
+    children: ReactNode | string;
 }
 
 export const Text = ({

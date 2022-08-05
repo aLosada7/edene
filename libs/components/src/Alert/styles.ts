@@ -1,5 +1,5 @@
 import { css } from '@emotion/react';
-import { colorsPalette, defaultTheme } from '@edene/foundations';
+import { ThemeOptions, defaultTheme, getColor } from '@edene/foundations';
 
 export const alert = css`
     position: relative;
@@ -9,11 +9,10 @@ export const alert = css`
     border-radius: 0.25rem;
 `;
 
-export const alertColor = ({ theme = defaultTheme }, color: string) => css`
-    ${alertColorStyles((colorsPalette as any)[color])}
-`;
-
-const alertColorStyles = (colorScheme: any) => css`
-    background-color: ${colorScheme.light};
-    color: ${colorScheme.background};
+export const alertTheme = ({
+    color,
+    theme = defaultTheme,
+}: ThemeOptions) => css`
+    background-color: ${getColor({ theme, color })};
+    color: ${theme.white};
 `;
