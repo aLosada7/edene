@@ -1,4 +1,4 @@
-import { Header } from '../../shared';
+import { Header } from '../../../shared';
 import { FlightTimelineContainer } from '../containers/FlightTimelineContainer';
 
 const FlightTimelinePage = () => {

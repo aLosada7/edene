@@ -5,16 +5,22 @@ import { Home } from '../../app/Home';
 import Layout from './Layout';
 const AuthenticationSignInPage = lazy(
     () =>
-        import('../../app/authentication/signIn/pages/AuthenticationSignInPage')
+        import(
+            '../../app/pages/authentication/signIn/pages/AuthenticationSignInPage'
+        )
 );
 const ScoreboardPage = lazy(
-    () => import('../../app/scoreboard/pages/ScoreboardPage')
+    () => import('../../app/applications/scoreboard/pages/ScoreboardPage')
 );
-const FlightStatusPage = lazy(
-    () => import('../../app/flightTimeline/pages/FlightTimelinePage')
+const FlightTimelinePage = lazy(
+    () =>
+        import('../../app/applications/flightTimeline/pages/FlightTimelinePage')
 );
 const ContractRegisterPage = lazy(
-    () => import('../../app/contractRegister/pages/ContractRegisterPage')
+    () =>
+        import(
+            '../../app/applications/contractRegister/pages/ContractRegisterPage'
+        )
 );
 
 export default () => {
@@ -33,8 +39,8 @@ export default () => {
                         element={<ScoreboardPage />}
                     />
                     <Route
-                        path="/applications/flight-status"
-                        element={<FlightStatusPage />}
+                        path="/applications/flight-timeline"
+                        element={<FlightTimelinePage />}
                     />
                     <Route
                         path="/applications/contract-register"

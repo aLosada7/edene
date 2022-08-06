@@ -1,4 +1,4 @@
-import { Header } from '../../shared/Header';
+import { Header } from '../../../shared/Header';
 import { ContractRegisterContainer } from '../containers/ContractRegisterContainer';
 
 const ContractRegisterPage = () => (
