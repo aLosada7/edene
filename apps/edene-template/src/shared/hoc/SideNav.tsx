@@ -24,6 +24,8 @@ interface SideNavProps {
     onClose: () => void;
 }
 
+const APPLICATIONS = ['Game Summary', 'Flight Timeline', 'Contract Register'];
+
 export const SideNav = ({ sideNavWidth, ...props }: SideNavProps) => {
     return (
         <EdeneSideNav
@@ -34,25 +36,18 @@ export const SideNav = ({ sideNavWidth, ...props }: SideNavProps) => {
         >
             <SideNavItems>
                 <SideNavPrincipal title="Applications">
-                    <SideNavItem
-                        component={NavLink}
-                        to="applications/game-summary"
-                        {...props}
-                    >
-                        Game Summary
-                    </SideNavItem>
-                    <SideNavItem
-                        component={NavLink}
-                        to="applications/flight-timeline"
-                    >
-                        Flight Timeline
-                    </SideNavItem>
-                    <SideNavItem
-                        component={NavLink}
-                        to="applications/contract-register"
-                    >
-                        Contract Register
-                    </SideNavItem>
+                    {APPLICATIONS.map((application) => (
+                        <SideNavItem
+                            key={application}
+                            component={NavLink}
+                            to={`applications/${application
+                                .replace(' ', '-')
+                                .toLowerCase()}`}
+                            {...props}
+                        >
+                            {application}
+                        </SideNavItem>
+                    ))}
                 </SideNavPrincipal>
                 <SideNavPrincipal title="Pages">
                     <SideNavMenu title="Authentication">
