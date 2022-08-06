@@ -1,3 +1,3 @@
 export * from './defaultTheme';
-export * from './pinkTheme';
+export * from './blueTheme';
 export * from './tealTheme';

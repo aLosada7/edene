@@ -6,7 +6,13 @@ import {
     Text,
     Icon,
 } from '@edene/components';
-import { defaultTheme, Theme, useThemeContext } from '@edene/foundations';
+import {
+    defaultTheme,
+    Theme,
+    useThemeContext,
+    tealTheme,
+    blueTheme,
+} from '@edene/foundations';
 
 import {
     settingsContent,
@@ -14,15 +20,13 @@ import {
     settingsContentHeaderContent,
     settingsThemeOption,
 } from './styles';
-import { tealPalette } from '../palettes/tealPalette';
-import { pinkPalette } from '../palettes/pinkPalette';
 
 interface SettingContentProps {
     open: boolean;
     onClose: () => void;
 }
 
-const themes: Partial<Theme>[] = [defaultTheme, tealPalette, pinkPalette];
+const themes: Partial<Theme>[] = [defaultTheme, tealTheme, blueTheme];
 
 export const SettingContent = ({ open, onClose }: SettingContentProps) => {
     const { theme, setTheme } = useThemeContext();
