@@ -160,7 +160,7 @@ export const navSubmenuIcon = css`
 
 export const chevronIconDown = css`
     ${chevronIcon};
-    svg {
+    span {
         transform: rotate(90deg);
         transition: transform ${transitions.medium};
     }
@@ -168,7 +168,7 @@ export const chevronIconDown = css`
 
 export const chevronIconUp = css`
     ${chevronIcon};
-    svg {
+    span {
         transform: rotate(270deg);
         transition: transform ${transitions.medium};
     }
