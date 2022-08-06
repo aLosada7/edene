@@ -21,12 +21,14 @@ interface SideNavProps {
 const COMPONENTS = [
     'Accordion',
     'Alert',
+    'Badge',
     'Breadcrumb',
     'Button',
     'Tabs',
     'Text',
     'Title',
     'Grid',
+    'Badge',
 ].sort((a, b) => a.localeCompare(b));
 
 const ANIMATIONS = ['FadeIn'].sort((a, b) => a.localeCompare(b));
