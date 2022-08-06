@@ -2,23 +2,15 @@ import { Meta } from '@storybook/react';
 import { Fragment, useRef } from 'react';
 
 import { Icon } from '../icons';
-import { Button, ButtonProps } from './Button';
+import { Button } from './Button';
 import ButtonGroup from './ButtonGroup';
-import type { Story } from '../lib/storybook-emotion-10-fixes';
 import { StoryHStack } from '../lib/general-story-components';
-import { asPlayground, asChromaticStory } from '../lib/story-intents';
+import { asChromaticStory } from '../lib/story-intents';
 
 export default {
     component: Button,
     title: 'Components/Button',
 } as Meta;
-
-const Template: Story<ButtonProps<'button'>> = (
-    args: ButtonProps<'button'>
-) => <Button {...args} />;
-
-export const Playground = Template.bind({});
-asPlayground(Playground);
 
 export const Filled = () => <Button>Button</Button>;
 asChromaticStory(Filled);

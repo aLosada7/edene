@@ -1,7 +1,6 @@
 import { css } from '@emotion/react';
 
-import { Title, Text } from '@edene/components';
-import { GithubIcon, StorybookIcon } from '@edene/foundations';
+import { Title, Text, GithubIcon, StorybookIcon } from '@edene/components';
 
 const platformText = css`
     a {
@@ -24,13 +23,13 @@ export const ComponentHeader = ({ frontMatter }: any) => (
     <>
         <Title mb={4}>{frontMatter.title}</Title>
         <Text cssOverrides={platformText}>
-            <a href={frontMatter.sourceCode} target="_blank" rel="noreferrer">
+            <a href={frontMatter.source} target="_blank" rel="noreferrer">
                 <GithubIcon size="small" />
                 <span>View source code</span>
             </a>
         </Text>
         <Text cssOverrides={platformText}>
-            <a href={frontMatter.sourceCode} target="_blank" rel="noreferrer">
+            <a href={frontMatter.storybook} target="_blank" rel="noreferrer">
                 <StorybookIcon size="small" />
                 <span>Storybook</span>
             </a>
