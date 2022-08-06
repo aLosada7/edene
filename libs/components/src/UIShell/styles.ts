@@ -182,7 +182,7 @@ export const navItem = ({ theme = defaultTheme }) => css`
     background-color: ${theme.sideNav.background};
 `;
 
-export const sideNavPrincipal = (theme: Theme) => css`
+export const sideNavPrincipal = ({ theme = defaultTheme }) => css`
     padding-left: 1rem;
     margin-top: 1.5rem;
 
@@ -193,7 +193,11 @@ export const sideNavPrincipal = (theme: Theme) => css`
     }
 `;
 
-export const navItemActive = (expanded: boolean, hideIcon?: boolean) => css`
+export const navItemActive = (
+    theme: Theme,
+    expanded: boolean,
+    hideIcon?: boolean
+) => css`
     button,
     a {
         position: relative;
@@ -235,7 +239,7 @@ export const navLink = css`
     }
 `;
 
-export const navMenuLinkActive = css`
+export const navMenuLinkActive = ({ theme = defaultTheme }) => css`
     &[aria-current='page'],
     &.active {
         background-color: ${background.secondary};
@@ -246,7 +250,7 @@ export const navMenuLinkActive = css`
             bottom: 0;
             left: 0;
             width: 4px;
-            background-color: #0f62fe;
+            background-color: ${theme.color};
             content: '';
         }
 
@@ -256,13 +260,13 @@ export const navMenuLinkActive = css`
     }
 `;
 
-export const navMenuSubLink = css`
+export const navMenuSubLink = ({ theme = defaultTheme }) => css`
     ${navLink}
 
     height: 2rem;
     min-height: 2rem;
 
-    ${navMenuLinkActive}
+    ${navMenuLinkActive({ theme })}
 `;
 
 export const navMenuSubLinkText = css`

@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 
-import { info, transitions, Theme } from '@edene/foundations';
+import { transitions, Theme } from '@edene/foundations';
 
 export const settings = (theme: Theme) => css`
     position: fixed;
@@ -10,7 +10,7 @@ export const settings = (theme: Theme) => css`
     width: 40px;
     height: 40px;
 
-    background-color: ${info};
+    background-color: ${theme.color};
     color: ${theme.white};
 
     border-top-left-radius: 0.5rem;

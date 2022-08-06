@@ -45,13 +45,13 @@ export const SideNavMenuItem: SideNavMenuItemComponent = ((
         ...rest
     } = props;
 
-    const theme = useThemeContext();
+    const { theme } = useThemeContext();
 
     const Element = component || 'a';
 
     return (
         <li css={navItem(theme)}>
-            <Element css={[navMenuSubLink, cssOverrides]} {...rest}>
+            <Element css={[navMenuSubLink({ theme }), cssOverrides]} {...rest}>
                 <span
                     css={[
                         navMenuSubLinkText,

@@ -64,7 +64,7 @@ export const Button: ButtonComponent = forwardRef(
                         theme,
                         isButtonBlock ? 'medium' : (size as IButtonSize)
                     ),
-                    btnColor(theme, variant, isButtonBlock, color),
+                    btnColor({ theme, color }, variant, isButtonBlock),
                     cssOverrides,
                 ]}
                 ref={ref}

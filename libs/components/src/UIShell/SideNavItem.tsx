@@ -47,13 +47,13 @@ export const SideNavItem: SideNavItemComponent = ((
         ...rest
     } = props;
 
-    const theme = useThemeContext();
+    const { theme } = useThemeContext();
 
     const Element = component || 'a';
 
     return (
-        <li css={[navItem(theme), cssOverrides]}>
-            <Element css={[navLink, navMenuLinkActive]} {...rest}>
+        <li css={[navItem({ theme }), cssOverrides]}>
+            <Element css={[navLink, navMenuLinkActive({ theme })]} {...rest}>
                 <div onClick={onClose}>
                     <span css={sideNavWithIcon}>
                         {icon &&

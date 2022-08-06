@@ -1,13 +1,13 @@
 import { css } from '@emotion/react';
 
 import {
-    EdeneColor,
     getColor,
     getDarkenColor,
     disabled,
     buttonSize,
     defaultTheme,
     Theme,
+    ThemeOptions,
 } from '@edene/foundations';
 
 import { IButtonSize, IButtonBlock, IButtonVariant } from './Button';
@@ -56,10 +56,9 @@ export const btn = ({ theme = defaultTheme }, size: IButtonSize) => css`
 `;
 
 export const btnColor = (
-    { theme = defaultTheme },
+    { theme = defaultTheme, color }: ThemeOptions,
     variant: IButtonVariant,
-    isButtonBlock: boolean,
-    color?: EdeneColor
+    isButtonBlock: boolean
 ) => css`
     ${buttonColorStyles(
         theme,
@@ -129,7 +128,7 @@ export const buttonIconRight = css`
     ${buttonIcon}
 
     position: absolute;
-    right: 1.5rem;
+    right: 0.5rem;
 
     * {
         margin: 0;

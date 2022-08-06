@@ -47,7 +47,7 @@ export const SideNavMenu = ({
     navigationChildren = 0,
     ...props
 }: SideNavMenuProps) => {
-    const theme = useThemeContext();
+    const { theme } = useThemeContext();
     const navigationLevelRef = useRef(navigationChildren + 1);
     const [expanded, setExpanded] = useState(false);
     const collapse = () => setExpanded(false);
@@ -58,7 +58,12 @@ export const SideNavMenu = ({
     };
 
     return (
-        <li css={[navItem(theme), isActive && navItemActive(expanded)]}>
+        <li
+            css={[
+                navItem({ theme }),
+                isActive && navItemActive(theme, expanded),
+            ]}
+        >
             <button
                 type="button"
                 aria-expanded={expanded}
