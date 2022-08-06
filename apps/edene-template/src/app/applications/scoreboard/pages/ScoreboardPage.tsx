@@ -2,7 +2,7 @@ import React, { Suspense, useState } from 'react';
 
 import { Tabs, Tab } from '@edene/components';
 
-import { Header } from '../../shared';
+import { Header } from '../../../shared';
 
 const ScoreboardContainer = React.lazy(
     () => import('../containers/ScoreboardContainer')

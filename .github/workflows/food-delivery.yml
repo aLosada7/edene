@@ -1,6 +1,6 @@
 # Run interaction tests with Jest
 
-name: 'food-delivery app CI'
+name: 'Food Delivery app CI'
 
 on: [push, pull_request]
 

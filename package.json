@@ -35,7 +35,7 @@
         "react-router-dom": "6.3.0",
         "regenerator-runtime": "0.13.7",
         "remark-frontmatter": "4.0.1",
-        "tslib": "2.0.0"
+        "tslib": "2.4.0"
     },
     "devDependencies": {
         "@babel/core": "7.12.13",

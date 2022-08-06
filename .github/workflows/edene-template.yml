@@ -1,0 +1,21 @@
+name: 'Edene Template CI'
+
+on: [push, pull_request]
+
+jobs:
+    deploy:
+        name: Publish to Netlify
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - name: Install dependencies
+              run: yarn
+            - name: Build app
+              run: npx nx run edene-template:build:production
+            - name: Netlify Deploy
+              uses: netlify/actions/cli@master
+              env:
+                  NETLIFY_AUTH_TOKEN: ${{ secrets.EDENE_TEMPLATE_NETLIFY_TOKEN }}
+                  NETLIFY_SITE_ID: ${{ secrets.EDENE_TEMPLATE_NETLIFY_SITE_ID }}
+              with:
+                  args: deploy --dir=dist/apps/edene-template --prod

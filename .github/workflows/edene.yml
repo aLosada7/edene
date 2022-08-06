@@ -1,16 +1,28 @@
-# Run interaction tests with Jest
+name: 'Edene CI'
 
-name: 'edene library CI'
-
-on: [push, pull_request]
+on: push
 
 jobs:
-    # Run interaction tests with Jest
-    interaction:
+    components-chromatic:
+        name: Publish components to Chromatic
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v1
+            - name: Install dependencies
+              run: yarn
+            - name: Build components storybook
+              run: npx nx run components:build-storybook
+            - name: Publish to Chromatic
+              uses: chromaui/action@v1
+              with:
+                  projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+                  storybookBuildDir: 'dist/storybook/components'
+    components-test:
+        name: Test components
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v2
             - name: Install dependencies
               run: yarn
             - name: Run tests
-              run: npx nx run-many --target=test --all
+              run: npx nx run components:test

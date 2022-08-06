@@ -5,13 +5,22 @@ import { Home } from '../../app/Home';
 import Layout from './Layout';
 const AuthenticationSignInPage = lazy(
     () =>
-        import('../../app/authentication/signIn/pages/AuthenticationSignInPage')
+        import(
+            '../../app/pages/authentication/signIn/pages/AuthenticationSignInPage'
+        )
 );
 const ScoreboardPage = lazy(
-    () => import('../../app/scoreboard/pages/ScoreboardPage')
+    () => import('../../app/applications/scoreboard/pages/ScoreboardPage')
 );
-const FlightStatusPage = lazy(
-    () => import('../../app/flightStatus/pages/FlightStatusPage')
+const FlightTimelinePage = lazy(
+    () =>
+        import('../../app/applications/flightTimeline/pages/FlightTimelinePage')
+);
+const ContractRegisterPage = lazy(
+    () =>
+        import(
+            '../../app/applications/contractRegister/pages/ContractRegisterPage'
+        )
 );
 
 export default () => {
@@ -21,21 +30,21 @@ export default () => {
                 <Route path="/" element={<Layout />}>
                     <Route index element={<Home />} />
                     <Route
-                        path="/form/signin/basic"
-                        element={<AuthenticationSignInPage />}
-                    />
-                    <Route
-                        path="/form/signin/modern"
+                        path="/pages/signin/classic"
                         element={<AuthenticationSignInPage />}
                     />
 
                     <Route
-                        path="/templates/game-summary"
+                        path="/applications/game-summary"
                         element={<ScoreboardPage />}
                     />
                     <Route
-                        path="/templates/flight-status"
-                        element={<FlightStatusPage />}
+                        path="/applications/flight-timeline"
+                        element={<FlightTimelinePage />}
+                    />
+                    <Route
+                        path="/applications/contract-register"
+                        element={<ContractRegisterPage />}
                     />
                 </Route>
             </Routes>
