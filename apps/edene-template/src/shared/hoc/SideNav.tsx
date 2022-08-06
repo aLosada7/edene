@@ -33,40 +33,33 @@ export const SideNav = ({ sideNavWidth, ...props }: SideNavProps) => {
             {...props}
         >
             <SideNavItems>
-                <SideNavPrincipal title="Components">
-                    <SideNavMenu title="Authentication">
-                        <SideNavMenu title="Sign In">
-                            <SideNavMenuItem
-                                component={NavLink}
-                                to="/form/signin/basic"
-                                {...props}
-                            >
-                                Basic
-                            </SideNavMenuItem>
-                            <SideNavMenuItem
-                                component={NavLink}
-                                to="/form/signin/modern"
-                                {...props}
-                            >
-                                Modern
-                            </SideNavMenuItem>
-                        </SideNavMenu>
-                    </SideNavMenu>
-                </SideNavPrincipal>
-                <SideNavPrincipal title="Templates">
+                <SideNavPrincipal title="Applications">
                     <SideNavItem
                         component={NavLink}
-                        to="templates/game-summary"
+                        to="applications/game-summary"
                         {...props}
                     >
                         Game Summary
                     </SideNavItem>
                     <SideNavItem
                         component={NavLink}
-                        to="templates/flight-status"
+                        to="applications/flight-status"
                     >
-                        Flight Status
+                        Flight Timeline
                     </SideNavItem>
+                </SideNavPrincipal>
+                <SideNavPrincipal title="Pages">
+                    <SideNavMenu title="Authentication">
+                        <SideNavMenu title="Sign In">
+                            <SideNavMenuItem
+                                component={NavLink}
+                                to="/pages/signin/classic"
+                                {...props}
+                            >
+                                Basic
+                            </SideNavMenuItem>
+                        </SideNavMenu>
+                    </SideNavMenu>
                 </SideNavPrincipal>
             </SideNavItems>
         </EdeneSideNav>

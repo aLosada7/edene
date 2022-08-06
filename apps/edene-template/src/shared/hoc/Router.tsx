@@ -11,7 +11,7 @@ const ScoreboardPage = lazy(
     () => import('../../app/scoreboard/pages/ScoreboardPage')
 );
 const FlightStatusPage = lazy(
-    () => import('../../app/flightStatus/pages/FlightStatusPage')
+    () => import('../../app/flightTimeline/pages/FlightTimelinePage')
 );
 
 export default () => {
@@ -21,20 +21,16 @@ export default () => {
                 <Route path="/" element={<Layout />}>
                     <Route index element={<Home />} />
                     <Route
-                        path="/form/signin/basic"
-                        element={<AuthenticationSignInPage />}
-                    />
-                    <Route
-                        path="/form/signin/modern"
+                        path="/pages/signin/classic"
                         element={<AuthenticationSignInPage />}
                     />
 
                     <Route
-                        path="/templates/game-summary"
+                        path="/applications/game-summary"
                         element={<ScoreboardPage />}
                     />
                     <Route
-                        path="/templates/flight-status"
+                        path="/applications/flight-status"
                         element={<FlightStatusPage />}
                     />
                 </Route>

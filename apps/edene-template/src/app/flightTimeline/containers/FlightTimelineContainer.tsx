@@ -51,7 +51,7 @@ const noteTitle = css`
     ${textSans.medium({ fontWeight: 'bold' })};
 `;
 
-export const FlightStatusContainer = () => {
+export const FlightTimelineContainer = () => {
     const { theme } = useThemeContext();
     return (
         <Container>
