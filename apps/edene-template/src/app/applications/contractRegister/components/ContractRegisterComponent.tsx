@@ -53,9 +53,15 @@ export const ContractRegisterComponent = () => {
 
             <Title mt={4}>Tenants</Title>
             <Person />
+            <Button variant="link" leftIcon="add">
+                Add tenant
+            </Button>
 
             <Title mt={4}>Landlords</Title>
             <Person />
+            <Button variant="link" leftIcon="add">
+                Add landlord
+            </Button>
 
             <Row align="space-between-center" py={2}>
                 <Button leftIcon="arrow_back" variant="link">
