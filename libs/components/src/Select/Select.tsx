@@ -59,8 +59,9 @@ export const Select = ({
             {label}
             <div css={[input, select, cssOverrides]} id={inputId}>
                 <Button
+                    component="div"
                     cssOverrides={selectButton}
-                    rightIcon="expand_more"
+                    rightIcon="unfold_more"
                     onClick={(e: any) => {
                         e.preventDefault();
                         setShowOptions(!showOptions);

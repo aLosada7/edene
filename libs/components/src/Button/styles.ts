@@ -128,8 +128,8 @@ export const buttonIconLeft = css`
 export const buttonIconRight = css`
     ${buttonIcon}
 
-    margin-inline-start: 0.5rem;
-    margin-inline-end: 0;
+    position: absolute;
+    right: 1.5rem;
 
     * {
         margin: 0;
