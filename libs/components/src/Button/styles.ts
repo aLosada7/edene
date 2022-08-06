@@ -87,7 +87,7 @@ const buttonColorStyles = (
 
     ${variant === 'outline' &&
     `
-    background-color: ${theme.white};
+    background-color: transparent;
     color: ${color};
     fill: ${color};
     border-color: ${color};

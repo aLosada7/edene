@@ -18,7 +18,7 @@ import { FormGroup } from '../FormGroup';
 
 export interface SelectProps extends Props, FormInput {
     value?: string;
-    children: ReactElement[];
+    children: ReactElement | ReactElement[];
 }
 
 export const Select = ({
@@ -30,7 +30,7 @@ export const Select = ({
     cssOverrides,
 }: SelectProps) => {
     const [showOptions, setShowOptions] = useState(false);
-    // const [value, setValue] = useState('');
+    const [value, setValue] = useState('');
     const selectValue = useRef<HTMLDivElement | null>(null);
 
     const inputId = id || generateSourceId();
@@ -46,7 +46,7 @@ export const Select = ({
 
     const handleOnClick = (child: any, value: string) => {
         selectValue.current = child;
-        // setValue(value);
+        setValue(value);
         setShowOptions(false);
     };
 
@@ -61,9 +61,12 @@ export const Select = ({
                 <Button
                     cssOverrides={selectButton}
                     rightIcon="expand_more"
-                    onClick={() => setShowOptions(!showOptions)}
+                    onClick={(e: any) => {
+                        e.preventDefault();
+                        setShowOptions(!showOptions);
+                    }}
                 >
-                    Valor actual
+                    {value}
                 </Button>
                 <ul css={[selectItems, showOptions ? showItems : null]}>
                     {Children.map(children, (child) => {

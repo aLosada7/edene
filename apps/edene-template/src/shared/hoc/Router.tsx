@@ -13,6 +13,9 @@ const ScoreboardPage = lazy(
 const FlightStatusPage = lazy(
     () => import('../../app/flightTimeline/pages/FlightTimelinePage')
 );
+const ContractRegisterPage = lazy(
+    () => import('../../app/contractRegister/pages/ContractRegisterPage')
+);
 
 export default () => {
     return (
@@ -32,6 +35,10 @@ export default () => {
                     <Route
                         path="/applications/flight-status"
                         element={<FlightStatusPage />}
+                    />
+                    <Route
+                        path="/applications/contract-register"
+                        element={<ContractRegisterPage />}
                     />
                 </Route>
             </Routes>

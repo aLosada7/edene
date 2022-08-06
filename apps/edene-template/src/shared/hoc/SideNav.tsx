@@ -43,9 +43,15 @@ export const SideNav = ({ sideNavWidth, ...props }: SideNavProps) => {
                     </SideNavItem>
                     <SideNavItem
                         component={NavLink}
-                        to="applications/flight-status"
+                        to="applications/flight-timeline"
                     >
                         Flight Timeline
+                    </SideNavItem>
+                    <SideNavItem
+                        component={NavLink}
+                        to="applications/contract-register"
+                    >
+                        Contract Register
                     </SideNavItem>
                 </SideNavPrincipal>
                 <SideNavPrincipal title="Pages">

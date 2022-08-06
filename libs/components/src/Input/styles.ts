@@ -14,7 +14,7 @@ export const input = css`
     line-height: 1.5;
     background-color: #fff;
     ${textSans.medium({ lineHeight: 'regular' })};
-    padding: 0 1rem;
+    padding: 0 0.5rem;
     border: 1px solid rgb(226, 232, 240);
     border-radius: 6px;
     text-indent: 10px;
