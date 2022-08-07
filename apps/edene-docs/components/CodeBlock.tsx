@@ -21,15 +21,29 @@ const codeBlock = css`
     }
 `;
 
-const preview = css`
+const preview = (componentWidth: boolean) => css`
     border: 1px solid #f1f3f5;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
     padding: 1rem;
+
+    ${componentWidth &&
+    `
+        > div {
+            max-width: 540px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    `}
 `;
+
+const centeredComponents = ['Accordion'];
 
 const CodeBlock = ({ children: code, editable = false, className }: any) => {
     const language = className?.replace(/language-/, '');
+    const isCenteredComponent = centeredComponents.some((component) =>
+        code.startsWith(`<${component}`)
+    );
 
     return (
         <LiveProvider
@@ -38,7 +52,7 @@ const CodeBlock = ({ children: code, editable = false, className }: any) => {
             scope={{ ...edeneComponents, ...edeneAnimations, css }}
         >
             {language === 'tsx' && (
-                <div css={preview}>
+                <div css={preview(isCenteredComponent)}>
                     <LivePreview />
                 </div>
             )}
