@@ -1,7 +1,6 @@
 import { Divider, DividerProps } from './Divider';
 import { asPlayground, asChromaticStory } from '../lib/story-intents';
 import type { Story } from '../lib/storybook-emotion-10-fixes';
-import { Container } from '..';
 
 export default {
     title: 'Components/Divider',
@@ -15,9 +14,5 @@ asPlayground(Playground);
 
 // *****************************************************************************
 
-export const basic = () => (
-    <Container mt={8}>
-        <Divider />
-    </Container>
-);
-asChromaticStory(basic);
+export const Default = () => <Divider />;
+asChromaticStory(Default);
