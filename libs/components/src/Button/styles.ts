@@ -22,14 +22,12 @@ export const btnGroup = (size?: IButtonSize | IButtonBlock) => css`
     ${size === 'block' && `width: 100%;`}
 `;
 
-export const btn = ({ theme = defaultTheme }, size: IButtonSize) => css`
+export const btn = (size: IButtonSize) => css`
     font-weight: 400;
     letter-spacing: 0.16px;
     min-width: 2.5rem;
-    height: 2.5rem;
     border-radius: 4px;
     cursor: pointer;
-    outline: none;
     text-align: left;
     text-decoration: none;
     border-width: 1px;
@@ -46,9 +44,8 @@ export const btn = ({ theme = defaultTheme }, size: IButtonSize) => css`
     outline-offset: 2px;
     width: auto;
     line-height: 1.2;
-
     font-size: ${buttonSize[size].font};
-    padding: 0 calc(${buttonSize[size].padding} * 0.25rem);
+    padding: 8px calc(${buttonSize[size].padding} * 0.25rem);
 
     &[disabled] {
         ${disabled}

@@ -5,7 +5,7 @@ import { HeaderMenuButton, Header, HeaderName } from '@edene/components';
 
 import { SideNav } from './SideNav';
 
-const headerHeight = 64;
+const headerHeight = 48;
 
 const main = () => css`
     margin-top: ${headerHeight}px;

@@ -10,9 +10,9 @@ export const buttonSize = {
 export const iconSize = {
     xsmall: 12,
     small: 16,
-    medium: 24,
-    large: 32,
-    big: 60,
+    medium: 20,
+    large: 28,
+    big: 48,
 };
 
 // momentarily

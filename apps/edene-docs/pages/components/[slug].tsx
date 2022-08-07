@@ -39,7 +39,7 @@ const Components = ({ slug, frontMatter, usage, props }: any) => {
     }, [router.query]);
 
     return (
-        <Container>
+        <Container pv={8}>
             <ComponentHeader frontMatter={frontMatter} />
             <ComponentTabs
                 selectedTab={selectedTab}

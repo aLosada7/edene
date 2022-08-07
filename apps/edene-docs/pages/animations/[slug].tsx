@@ -39,7 +39,7 @@ const Animations = ({ slug, frontMatter, usage, props }: any) => {
     };
 
     return (
-        <Container>
+        <Container pv={8}>
             <ComponentHeader frontMatter={frontMatter} />
             <ComponentTabs
                 selectedTab={selectedTab}
