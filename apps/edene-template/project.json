@@ -16,7 +16,8 @@
                 "tsConfig": "apps/edene-template/tsconfig.app.json",
                 "assets": [
                     "apps/edene-template/src/favicon.ico",
-                    "apps/edene-template/src/assets"
+                    "apps/edene-template/src/assets",
+                    "apps/edene-template/src/netlify.toml"
                 ],
                 "styles": [],
                 "scripts": [],
@@ -24,12 +25,10 @@
             },
             "configurations": {
                 "production": {
-                    "fileReplacements": [
-                        {
-                            "replace": "apps/edene-template/src/environments/environment.ts",
-                            "with": "apps/edene-template/src/environments/environment.prod.ts"
-                        }
-                    ],
+                    "fileReplacements": [{
+                        "replace": "apps/edene-template/src/environments/environment.ts",
+                        "with": "apps/edene-template/src/environments/environment.prod.ts"
+                    }],
                     "optimization": true,
                     "outputHashing": "all",
                     "sourceMap": false,
