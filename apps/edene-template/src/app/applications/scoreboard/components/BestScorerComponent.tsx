@@ -21,7 +21,7 @@ export const BestScorerComponent = () => (
         <CardSection>
             <Row py={1}>
                 <Col lg={8} direction="column" align="center">
-                    <Avatar shape="circle" />
+                    <Avatar shape="circle" size={80} />
                 </Col>
                 <Col lg={16} direction="column">
                     <Row direction="column" px={2}>

@@ -1,6 +1,6 @@
-import { Props } from '@edene/foundations';
-import { SerializedStyles } from '@emotion/react';
 import React from 'react';
+
+import { Props } from '@edene/foundations';
 
 import { card } from './styles';
 
