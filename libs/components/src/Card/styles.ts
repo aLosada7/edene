@@ -14,7 +14,7 @@ export const card = css`
         0 1px 3px 0 rgb(0 0 0 / 12%);
 
     ${from.phablet} {
-        width: 100%;
+        width: fit-content;
     }
 `;
 
@@ -30,13 +30,12 @@ export const cardHeader = css`
     }
 `;
 
-export const cardBody = css`
-    padding: 20px 1rem;
+export const cardSection = (borderBottom?: boolean) => css`
+    padding: 10px 20px;
 
-    ${textSans.xsmall({ fontWeight: 'light', lineHeight: 'loose' })}
-    color: ${grays[1]};
+    ${borderBottom && `border-bottom: 1px solid ${grays[7]}`}
 `;
 
-export const cardImage = css`
+export const cardMedia = css`
     max-width: 100%;
 `;

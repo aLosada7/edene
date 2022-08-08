@@ -33,7 +33,7 @@ export interface TextInputProps
      * the width will default to 100% of the field's container.
      */
     width?: Width;
-    leftIcon?: string;
+    iconLeft?: string;
     cssLabelOverrides?: SerializedStyles | SerializedStyles[];
 }
 

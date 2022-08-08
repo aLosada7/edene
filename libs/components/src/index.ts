@@ -6,6 +6,7 @@ export * from './Badge';
 export * from './Breadcrumb';
 export * from './Button';
 export * from './Card';
+export * from './Carousel';
 export * from './Checkbox';
 export * from './Divider';
 export * from './Form';

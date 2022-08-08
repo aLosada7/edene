@@ -33,7 +33,7 @@ export const errorInput = css`
     border: 2px solid ${border.error};
 `;
 
-export const leftIconInput = css`
+export const iconLeftInput = css`
     position: absolute;
     height: ${height.inputMedium}px;
     display: flex;
@@ -44,6 +44,6 @@ export const leftIconInput = css`
     color: rgb(226, 232, 240);
 `;
 
-export const leftIconInInput = css`
+export const iconLeftInInput = css`
     text-indent: 2.5rem;
 `;

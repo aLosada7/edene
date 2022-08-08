@@ -1,7 +1,15 @@
 import { css } from '@emotion/react';
 import { NavLink } from 'react-router-dom';
 
-import { Card, CardBody, Col, Row, Image, Text, Icon } from '@edene/components';
+import {
+    Card,
+    CardSection,
+    Col,
+    Row,
+    Image,
+    Text,
+    Icon,
+} from '@edene/components';
 
 import { IRestaurant } from '../context/restaurants';
 import { RestaurantRating } from './RestaurantRating';
@@ -13,7 +21,7 @@ export const RestaurantSummary = ({
 }) => (
     <Card>
         <NavLink to={restaurant.slug}>
-            <CardBody>
+            <CardSection>
                 <Row direction="row">
                     <Col md={4}>
                         <Image
@@ -49,7 +57,7 @@ export const RestaurantSummary = ({
                         </Text>
                     </Col>
                 </Row>
-            </CardBody>
+            </CardSection>
         </NavLink>
     </Card>
 );

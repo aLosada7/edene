@@ -1,88 +1,153 @@
 import { Meta } from '@storybook/react';
 import { css } from '@emotion/react';
 
-import { Icon } from '@edene/components';
-
 import { asChromaticStory } from '../lib/story-intents';
 import type { Story } from '../lib/storybook-emotion-10-fixes';
-import { Card, CardActions, CardBody, CardImage, CardProps } from '.';
-import { Badge, Row, Col, Text, Button, Divider } from '..';
-
-const cardStatus = css`
-    position: inherit;
-`;
-
-const cardDescription = css`
-    color: rgb(100, 116, 139);
-`;
+import { Card, CardSection, CardMedia, CardProps } from '.';
+import { Text } from '../Text';
+import { ActionButton } from '../ActionButton';
+import { Button } from '../Button';
+import { grays } from '@edene/foundations';
+import { Col, Row } from '../Grid';
+import { Icon } from '../icons';
+import { Avatar } from '../Avatar';
+import avatarSrc from '../../assets/img/avatar.jpeg';
+import house1Src from '../../assets/img/house1.jpg';
+import house2Src from '../../assets/img/house2.jpg';
 
 export default {
     component: Card,
     title: 'Components/Card',
+    decorators: [
+        (Story: Story) => (
+            <div style={{ maxWidth: '540px' }}>
+                <Story />
+            </div>
+        ),
+    ],
 } as Meta;
 
-export const ImageAndBody: Story<CardProps> = () => (
-    <Row>
-        <Col sm={24} md={12} lg={8} xl={6}>
-            <Card>
-                <CardImage
-                    src="http://angular-material.fusetheme.com/assets/images/ui/angular-material/scenes/autocomplete.scene.png"
-                    alt="Image Example"
-                ></CardImage>
-                <CardBody>
-                    <Text color="hsl(212, 56%, 16%)" size="lg">
-                        Basics of Angular
-                    </Text>
-                    <Text color="hsl(212, 18%, 35%)" mt={4}>
-                        Introductory course for Angular and framework basics
-                    </Text>
-                </CardBody>
-            </Card>
-        </Col>
-    </Row>
+export const Image: Story<CardProps> = () => (
+    <Card>
+        <CardMedia
+            src="http://angular-material.fusetheme.com/assets/images/ui/angular-material/scenes/autocomplete.scene.png"
+            alt="Image Example"
+        ></CardMedia>
+        <CardSection>
+            <Text color="hsl(212, 56%, 16%)" size="lg">
+                Basics of Angular
+            </Text>
+            <Text color="hsl(212, 18%, 35%)" mb={2}>
+                Introductory course for Angular and framework basics
+            </Text>
+            <Button variant="outline" size="block">
+                Enroll
+            </Button>
+        </CardSection>
+    </Card>
 );
-asChromaticStory(ImageAndBody);
+asChromaticStory(Image);
 
-export const BodyAndActions: Story<CardProps> = (args) => (
-    <Row>
-        <Col lg={6} sm={24}>
-            <Card>
-                <CardBody>
-                    <Row align="space-between-center">
-                        <Badge text="Web" cssOverrides={cardStatus}></Badge>
-                        <Icon size="xsmall" color="rgb(22, 163, 74)">
-                            done
-                        </Icon>
-                    </Row>
+const actionButtonFav = css`
+    position: absolute;
+    top: 10px;
+    right: 0;
+`;
 
-                    <Text mt={16} size="lg">
-                        Basics of Angular
+const transformUppercase = css`
+    text-transform: uppercase;
+`;
+
+const agentSection = css`
+    background-color: ${grays[8]};
+`;
+
+const agentAvatar = css`
+    margin: 10px;
+`;
+
+const letterSpacing = css`
+    letter-spacing: 0.25px;
+`;
+
+export const Slides: Story<CardProps> = () => (
+    <Card>
+        <CardMedia
+            src={[
+                { src: house1Src, alt: 'Home 1' },
+                { src: house2Src, alt: 'Home 2' },
+                {
+                    src: 'https://images.pexels.com/photos/1571459/pexels-photo-1571459.jpeg?auto=compress&cs=tinysrgb&w=800',
+                    alt: 'Lounge',
+                },
+                {
+                    src: 'https://images.pexels.com/photos/342800/pexels-photo-342800.jpeg?auto=compress&cs=tinysrgb&w=800',
+                    alt: 'Bathroom',
+                },
+            ]}
+        />
+        <ActionButton variant="outlined" cssOverrides={actionButtonFav}>
+            hotel_class
+        </ActionButton>
+        <CardSection borderBottom>
+            <Text
+                size="xsm"
+                weight="bolder"
+                color={grays[1]}
+                cssOverrides={[transformUppercase, letterSpacing]}
+            >
+                Detached House . 3,426 SQFT
+            </Text>
+            <Text size="xxlg">$1,250,000</Text>
+            <Text size="sm" color={grays[3]}>
+                742 Evergreen Terrace
+            </Text>
+        </CardSection>
+        <CardSection borderBottom>
+            <Row>
+                <Col sm={12} hStack={1}>
+                    <Icon variant="outlined" color={grays[5]}>
+                        bed
+                    </Icon>
+                    <Text weight="bold">3</Text>
+                    <Text color={grays[3]}>bedrooms</Text>
+                </Col>
+                <Col sm={12} hStack={1}>
+                    <Icon variant="outlined" color={grays[5]}>
+                        bathtub
+                    </Icon>
+                    <Text weight="bold">2</Text>
+                    <Text color={grays[3]}>bathrooms</Text>
+                </Col>
+            </Row>
+        </CardSection>
+        <CardSection cssOverrides={agentSection}>
+            <Row align="start-center">
+                <Avatar
+                    src={avatarSrc}
+                    shape="circle"
+                    size={30}
+                    cssOverrides={agentAvatar}
+                />
+                <Row noGlutters direction="column">
+                    <Text size="sm" weight="bold">
+                        Tiffany Heffner
                     </Text>
-                    <Text mt={2} cssOverrides={cardDescription}>
-                        Introductory course for Angular and framework basics
+                    <Text size="xsm" color={grays[3]}>
+                        (555) 555-4321
                     </Text>
-
-                    <Divider width={12} />
-
-                    <Row direction="column">
-                        <Text icon={<Icon size="small">notifications</Icon>}>
-                            <span>30 minutes</span>
-                        </Text>
-                        <Text icon={<Icon size="small">school</Icon>}>
-                            <span>Completed twice</span>
-                        </Text>
-                    </Row>
-                </CardBody>
-                <CardActions>
-                    <Divider />
-                    <Row align="end-center" px={6} py={4}>
-                        <Button variant="outline" rightIcon="arrow_right_alt">
-                            Continue
-                        </Button>
-                    </Row>
-                </CardActions>
-            </Card>
-        </Col>
-    </Row>
+                </Row>
+            </Row>
+        </CardSection>
+        <Button
+            size="block"
+            iconRight="keyboard_arrow_right"
+            cssOverrides={transformUppercase}
+        >
+            <Text size="xsm" weight="bold">
+                Schedule Showing
+            </Text>
+        </Button>
+    </Card>
 );
-asChromaticStory(BodyAndActions);
+asChromaticStory(Slides);

@@ -7,7 +7,7 @@ interface StoryHelperProps {
 
 export const StoryHStack = ({ children }: StoryHelperProps) => (
     <Row>
-        <Col sm={24} md={16} lg={16} horizontalStack={2}>
+        <Col sm={24} md={16} lg={16} hStack={2}>
             {children}
         </Col>
     </Row>
@@ -15,7 +15,7 @@ export const StoryHStack = ({ children }: StoryHelperProps) => (
 
 export const StoryVStack = ({ children }: StoryHelperProps) => (
     <Row>
-        <Col verticalStack={2}>{children}</Col>
+        <Col vStack={2}>{children}</Col>
     </Row>
 );
 

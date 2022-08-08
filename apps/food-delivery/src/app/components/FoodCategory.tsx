@@ -1,4 +1,4 @@
-import { Card, CardBody, CardImage, Col, Text } from '@edene/components';
+import { Card, CardSection, CardMedia, Col, Text } from '@edene/components';
 import { css } from '@emotion/react';
 
 import { IFoodOffer } from '../context/restaurants';
@@ -25,14 +25,14 @@ export const FoodCategory = ({
                 `}
                 onClick={() => onSelect(category.slug)}
             >
-                <CardImage
+                <CardMedia
                     src={`/assets/${category.slug}.png`}
                     alt={`${category.name}`}
                     size="e"
-                ></CardImage>
-                <CardBody>
+                ></CardMedia>
+                <CardSection>
                     <Text size="lg" align="center">{`${category.name}`}</Text>
-                </CardBody>
+                </CardSection>
             </Card>
         </Col>
     );

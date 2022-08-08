@@ -22,7 +22,7 @@ const heroWrapper = css`
     height: inherit;
 `;
 
-const verticalStack = css`
+const vStack = css`
     > * {
         margin-right: 1rem;
     }
@@ -44,7 +44,7 @@ export function Index() {
                         Create beautiful user experiences in React with a focus
                         on spped, accesibility and consistency.
                     </Text>
-                    <Row noGlutters py={2} cssOverrides={verticalStack}>
+                    <Row noGlutters py={2} cssOverrides={vStack}>
                         <Link href="/overview/getting-started" passHref>
                             <Button>Get Started</Button>
                         </Link>

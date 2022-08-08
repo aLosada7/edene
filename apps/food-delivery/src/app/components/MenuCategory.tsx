@@ -57,7 +57,7 @@ export const MenuCategory = ({
                 <Icon color="#fff">restaurant</Icon>
             </Circle>
         </Col>
-        <Col md={20} lg={22} direction="column" verticalStack={4}>
+        <Col md={20} lg={22} direction="column" vStack={4}>
             <Title size="h4" mt={4} mb={4}>
                 {label}
             </Title>

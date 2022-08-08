@@ -9,8 +9,8 @@ import {
     input as inputE,
     errorInput,
     successInput,
-    leftIconInput,
-    leftIconInInput,
+    iconLeftInput,
+    iconLeftInInput,
 } from './styles';
 
 export interface InputProps
@@ -37,7 +37,7 @@ export interface InputProps
      * Only for radio buttons
      */
     checked?: boolean;
-    leftIcon?: string;
+    iconLeft?: string;
 }
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(
@@ -47,7 +47,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
             optional = false,
             error,
             success,
-            leftIcon,
+            iconLeft,
             cssOverrides,
             ...rest
         } = props;
@@ -58,9 +58,9 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
 
         return (
             <div>
-                {leftIcon && (
-                    <div css={leftIconInput}>
-                        <Icon>{leftIcon}</Icon>
+                {iconLeft && (
+                    <div css={iconLeftInput}>
+                        <Icon>{iconLeft}</Icon>
                     </div>
                 )}
                 <input
@@ -73,7 +73,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
                                 ? successInput
                                 : errorInput
                             : null,
-                        leftIcon ? leftIconInInput : null,
+                        iconLeft ? iconLeftInInput : null,
                         cssOverrides,
                     ]}
                     aria-required={!optional}

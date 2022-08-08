@@ -3,7 +3,7 @@ import { css } from '@emotion/react';
 import {
     Avatar,
     Card,
-    CardBody,
+    CardSection,
     CardHeader,
     Row,
     Col,
@@ -18,7 +18,7 @@ export const BestScorerComponent = () => (
         `}
     >
         <CardHeader>SCORING</CardHeader>
-        <CardBody>
+        <CardSection>
             <Row py={1}>
                 <Col lg={8} direction="column" align="center">
                     <Avatar shape="circle" />
@@ -35,6 +35,6 @@ export const BestScorerComponent = () => (
                     </Row>
                 </Col>
             </Row>
-        </CardBody>
+        </CardSection>
     </Card>
 );

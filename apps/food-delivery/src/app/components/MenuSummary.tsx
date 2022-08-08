@@ -1,4 +1,4 @@
-import { Card, CardBody, Text } from '@edene/components';
+import { Card, CardSection, Text } from '@edene/components';
 import { Fragment } from 'react';
 import { IFoodInfo } from '../context/restaurants';
 
@@ -10,7 +10,7 @@ export const MenuSummary = ({
     onClick: (food: IFoodInfo) => void;
 }) => (
     <Card onClick={() => onClick(food)}>
-        <CardBody>
+        <CardSection>
             <Text weight="bold">
                 <Fragment>
                     {food.name}
@@ -22,6 +22,6 @@ export const MenuSummary = ({
                 {food.description}
             </Text>
             <Text size="lg" mt={2}>{`${(food.price / 100).toFixed(2)} €`}</Text>
-        </CardBody>
+        </CardSection>
     </Card>
 );

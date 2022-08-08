@@ -1,13 +1,14 @@
 import { cloneElement, ReactElement } from 'react';
 
+import { Props, ButtonSize, ButtonVariant } from '@edene/foundations';
+
 import { btnGroup } from './styles';
-import { IButtonSize, IButtonBlock, IButtonVariant } from './Button';
-import { Props } from '@edene/foundations';
+import { IButtonBlock } from './Button';
 
 export interface ButtonGroupProps extends Props {
     component?: 'footer';
-    size?: IButtonSize | IButtonBlock;
-    variant?: IButtonVariant;
+    size?: ButtonSize | IButtonBlock;
+    variant?: ButtonVariant;
     children: ReactElement | ReactElement[];
 }
 

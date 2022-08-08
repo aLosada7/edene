@@ -8,7 +8,7 @@ import {
     TableRow,
     TableCell,
     Card,
-    CardBody,
+    CardSection,
 } from '@edene/components';
 
 import { players } from '../data/players';
@@ -22,7 +22,7 @@ export const TeamStandingsComponent = () => (
             margin: 1rem;
         `}
     >
-        <CardBody
+        <CardSection
             cssOverrides={css`
                 padding: 0;
                 height: 100%;
@@ -56,6 +56,6 @@ export const TeamStandingsComponent = () => (
                     ))}
                 </TableBody>
             </Table>
-        </CardBody>
+        </CardSection>
     </Card>
 );

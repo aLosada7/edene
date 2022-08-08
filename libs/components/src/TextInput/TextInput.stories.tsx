@@ -87,6 +87,6 @@ asChromaticStory(SuccessTextInput);
 
 export const WithLeftIcon = Template.bind({});
 WithLeftIcon.args = {
-    leftIcon: 'search',
+    iconLeft: 'search',
 };
 asChromaticStory(WithLeftIcon);

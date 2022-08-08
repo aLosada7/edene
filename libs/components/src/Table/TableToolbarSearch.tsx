@@ -30,7 +30,7 @@ export const TableToolbarSearch = ({
         >
             {isSearchOpen ? (
                 <TextInput
-                    leftIcon="search"
+                    iconLeft="search"
                     cssOverrides={tableToolbarSearchInput}
                 ></TextInput>
             ) : null}

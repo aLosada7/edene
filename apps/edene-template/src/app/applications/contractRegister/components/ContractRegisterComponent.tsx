@@ -10,7 +10,7 @@ import {
 } from '@edene/components';
 import { css } from '@emotion/react';
 
-const verticalStack = css`
+const vStack = css`
     > * {
         margin-right: 1rem;
     }
@@ -53,21 +53,21 @@ export const ContractRegisterComponent = () => {
 
             <Title mt={4}>Tenants</Title>
             <Person />
-            <Button variant="link" leftIcon="add">
+            <Button variant="link" iconLeft="add">
                 Add tenant
             </Button>
 
             <Title mt={4}>Landlords</Title>
             <Person />
-            <Button variant="link" leftIcon="add">
+            <Button variant="link" iconLeft="add">
                 Add landlord
             </Button>
 
             <Row align="space-between-center" py={2}>
-                <Button leftIcon="arrow_back" variant="link">
+                <Button iconLeft="arrow_back" variant="link">
                     Back
                 </Button>
-                <div css={verticalStack}>
+                <div css={vStack}>
                     <Button variant="outline">Cancel</Button>
                     <Button>Save</Button>
                 </div>

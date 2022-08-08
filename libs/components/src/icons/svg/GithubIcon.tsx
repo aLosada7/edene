@@ -1,5 +1,5 @@
+import { IconProps } from '../Icon';
 import { SvgIcon } from './SvgIcon';
-import type { IconProps } from '../types';
 
 export const GithubIcon = ({ size, color }: IconProps) => (
     <SvgIcon size={size} color={color}>

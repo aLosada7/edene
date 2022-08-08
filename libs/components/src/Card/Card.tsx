@@ -1,9 +1,10 @@
+import { Props } from '@edene/foundations';
 import { SerializedStyles } from '@emotion/react';
 import React from 'react';
 
 import { card } from './styles';
 
-export interface CardProps {
+export interface CardProps extends Props {
     /**
      * The destination url if we want the card to be acting as a link
      */
@@ -12,12 +13,11 @@ export interface CardProps {
     /** Called when close button clicked and when escape key is pressed */
     onClick?(): void;
     children?: React.ReactElement | React.ReactElement[];
-    cssOverrides?: SerializedStyles | SerializedStyles[];
 }
 
 export const Card = React.forwardRef(
     (
-        { href, role, onClick, children, cssOverrides, ...props }: CardProps,
+        { href, role, onClick, children, cssOverrides }: CardProps,
         ref: React.LegacyRef<HTMLElement> | undefined
     ) => {
         if (href)

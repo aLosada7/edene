@@ -43,22 +43,22 @@ asChromaticStory(Sizes);
 export const WithIcon = () => (
     <Fragment>
         <StoryHStack>
-            <Button leftIcon="home">Home</Button>
-            <Button rightIcon="arrow_forward">Call us</Button>
+            <Button iconLeft="home">Home</Button>
+            <Button iconRight="arrow_forward">Call us</Button>
         </StoryHStack>
         <StoryHStack>
-            <Button leftIcon="home" variant="outline">
+            <Button iconLeft="home" variant="outline">
                 Home
             </Button>
-            <Button rightIcon="arrow_forward" variant="outline">
+            <Button iconRight="arrow_forward" variant="outline">
                 Call us
             </Button>
         </StoryHStack>
         <StoryHStack>
-            <Button leftIcon="home" variant="link">
+            <Button iconLeft="home" variant="link">
                 Home
             </Button>
-            <Button rightIcon="arrow_forward" variant="link">
+            <Button iconRight="arrow_forward" variant="link">
                 Call us
             </Button>
         </StoryHStack>

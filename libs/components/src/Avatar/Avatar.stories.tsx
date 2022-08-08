@@ -6,6 +6,9 @@ import avatar from '../../assets/img/avatar.jpeg';
 export default {
     component: Avatar,
     title: 'Laboratory/Avatar',
+    args: {
+        size: 80,
+    },
 } as Meta;
 
 const Template: Story<AvatarProps> = (args) => <Avatar {...args} />;

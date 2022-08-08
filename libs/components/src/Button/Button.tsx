@@ -6,13 +6,14 @@ import {
     EdeneColor,
     useThemeContext,
     Props,
+    ButtonVariant,
+    ButtonSize,
+    IconSize,
 } from '@edene/foundations';
 
 import { Icon } from '../icons';
 import { btn, btnColor, buttonIconLeft, buttonIconRight } from './styles';
 
-export type IButtonSize = 'xsmall' | 'small' | 'medium' | 'large';
-export type IButtonVariant = 'filled' | 'outline' | 'link';
 export type IButtonBlock = 'block';
 
 export interface SharedButtonProps extends Props {
@@ -20,10 +21,11 @@ export interface SharedButtonProps extends Props {
     /** Button type attribute */
     type?: 'submit' | 'button' | 'reset';
     color?: EdeneColor;
-    variant?: IButtonVariant;
-    size?: IButtonSize | IButtonBlock;
-    leftIcon?: string;
-    rightIcon?: string;
+    variant?: ButtonVariant;
+    size?: ButtonSize | IButtonBlock;
+    iconLeft?: string;
+    iconRight?: string;
+    iconSize?: IconSize;
     disabled?: boolean;
     children?: JSX.Element | string;
 }
@@ -40,10 +42,11 @@ export const Button: ButtonComponent = forwardRef(
             component,
             type,
             color,
+            iconSize = 'small',
             variant = 'filled',
             size = 'medium',
-            leftIcon,
-            rightIcon,
+            iconLeft,
+            iconRight,
             disabled,
             children,
             cssOverrides,
@@ -60,9 +63,7 @@ export const Button: ButtonComponent = forwardRef(
                 type={type}
                 id={props.id}
                 css={[
-                    btn(
-                        isButtonBlock ? 'medium' : (size as IButtonSize)
-                    ),
+                    btn(isButtonBlock ? 'medium' : (size as ButtonSize)),
                     btnColor({ theme, color }, variant, isButtonBlock),
                     cssOverrides,
                 ]}
@@ -70,9 +71,13 @@ export const Button: ButtonComponent = forwardRef(
                 disabled={disabled}
                 {...rest}
             >
-                {leftIcon ? (
-                    <Icon size="small" cssOverrides={buttonIconLeft}>
-                        {leftIcon}
+                {iconLeft ? (
+                    <Icon
+                        size={iconSize}
+                        cssOverrides={buttonIconLeft(isButtonBlock)}
+                        color="inherit"
+                    >
+                        {iconLeft}
                     </Icon>
                 ) : null}
                 {typeof children === 'string'
@@ -80,9 +85,13 @@ export const Button: ButtonComponent = forwardRef(
                     : cloneElement(children as JSX.Element, {
                           color: 'inherit',
                       })}
-                {rightIcon ? (
-                    <Icon size="small" cssOverrides={buttonIconRight}>
-                        {rightIcon}
+                {iconRight ? (
+                    <Icon
+                        size={iconSize}
+                        cssOverrides={buttonIconRight(isButtonBlock)}
+                        color="inherit"
+                    >
+                        {iconRight}
                     </Icon>
                 ) : null}
             </Element>

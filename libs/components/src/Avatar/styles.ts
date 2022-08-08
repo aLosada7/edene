@@ -4,11 +4,15 @@ import { defaultTheme } from '@edene/foundations';
 
 import { AvatarShape, AvatarDotPosition } from './Avatar';
 
-export const avatar = (shape: AvatarShape, { theme = defaultTheme }) => css`
+export const avatar = (
+    shape: AvatarShape,
+    size: number,
+    { theme = defaultTheme }
+) => css`
     position: relative;
     max-width: 12rem;
-    width: 80px;
-    height: 80px;
+    width: ${size}px;
+    height: ${size}px;
     cursor: pointer;
     font-size: 6rem;
     background-color: ${theme.black};
