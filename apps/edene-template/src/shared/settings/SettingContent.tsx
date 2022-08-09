@@ -40,7 +40,7 @@ export const SettingContent = ({ open, onClose }: SettingContentProps) => {
                     cssOverrides={settingsContentHeaderContent}
                 >
                     <Row align="start-center" noGlutters>
-                        <Icon>settings</Icon>
+                        <Icon color={theme.white}>settings</Icon>
                         <Title>Settings</Title>
                     </Row>
                     <ActionButton onClick={onClose}>close</ActionButton>
