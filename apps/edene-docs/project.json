@@ -9,10 +9,7 @@
             "defaultConfiguration": "production",
             "options": {
                 "root": "apps/edene-docs",
-                "outputPath": "dist/apps/edene-docs",
-                "assets": [
-                    "apps/edene-docs/netlify.toml"
-                ]
+                "outputPath": "dist/apps/edene-docs"
             },
             "configurations": {
                 "development": {},
