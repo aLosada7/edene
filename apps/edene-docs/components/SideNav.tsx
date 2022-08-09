@@ -25,6 +25,7 @@ const COMPONENTS = [
     'Breadcrumb',
     'Button',
     'Card',
+    'Carousel',
     'Tabs',
     'Text',
     'Title',

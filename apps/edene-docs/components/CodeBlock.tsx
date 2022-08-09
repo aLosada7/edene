@@ -40,13 +40,15 @@ const preview = (componentWidth: boolean) => css`
     `}
 `;
 
-const centeredComponents = ['Accordion', 'Card'];
+const centeredComponents = ['Accordion', 'Card', 'Carousel'];
 
 const CodeBlock = ({ children: code, editable = false, className }: any) => {
     const language = className?.replace(/language-/, '');
     const isCenteredComponent = centeredComponents.some(
         (component) =>
-            code.includes(`<${component}>`) && code.includes(`</${component}>`)
+            (code.includes(`<${component}>`) &&
+                code.includes(`</${component}>`)) ||
+            code.includes(`<${component}`)
     );
 
     return (
