@@ -44,6 +44,7 @@ export const btn = (size: ButtonSize) => css`
     justify-content: center;
     outline: transparent solid 2px;
     outline-offset: 2px;
+    margin: 0;
     width: auto;
     line-height: 1.2;
     font-size: ${buttonSize[size].font};
