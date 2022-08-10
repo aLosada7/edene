@@ -30,6 +30,7 @@ const COMPONENTS = [
     'Text',
     'Title',
     'Grid',
+    'Select',
 ].sort((a, b) => a.localeCompare(b));
 
 const ANIMATIONS = ['FadeIn'].sort((a, b) => a.localeCompare(b));

@@ -13,6 +13,7 @@ import {
 
 import { Icon } from '../icons';
 import { btn, btnColor, buttonIconLeft, buttonIconRight } from './styles';
+import { SerializedStyles } from '@emotion/react';
 
 export type IButtonBlock = 'block';
 
@@ -27,6 +28,7 @@ export interface SharedButtonProps extends Props {
     iconRight?: string;
     iconSize?: IconSize;
     disabled?: boolean;
+    cssOverridesIconRightButton?: SerializedStyles | SerializedStyles[];
     children?: JSX.Element | string;
 }
 
@@ -50,6 +52,7 @@ export const Button: ButtonComponent = forwardRef(
             disabled,
             children,
             cssOverrides,
+            cssOverridesIconRightButton,
             ...rest
         } = props;
 
@@ -88,7 +91,10 @@ export const Button: ButtonComponent = forwardRef(
                 {iconRight ? (
                     <Icon
                         size={iconSize}
-                        cssOverrides={buttonIconRight(isButtonBlock)}
+                        cssOverrides={
+                            (buttonIconRight(isButtonBlock),
+                            cssOverridesIconRightButton)
+                        }
                         color="inherit"
                     >
                         {iconRight}

@@ -9,6 +9,7 @@ export default {
     component: Select,
     args: {
         label: 'Favorite framework',
+        defaultValue: 'Angular',
     },
 };
 
@@ -34,20 +35,20 @@ asPlayground(Playground);
 export const Default = Template.bind({});
 asChromaticStory(Default);
 
-// export const Controlled: Story<SelectProps> = (args: SelectProps) => {
-//     const [value] = useState('React');
-//     return (
-//         <Select {...args} value={value}>
-//             <Option value="React">
-//                 <span>React</span>
-//             </Option>
-//             <Option value="Angular">
-//                 <span>Angular</span>
-//             </Option>
-//             <Option value="Vue">
-//                 <span>Vue</span>
-//             </Option>
-//         </Select>
-//     );
-// };
-// asChromaticStory(Controlled);
+export const Controlled: Story<SelectProps> = (args: SelectProps) => {
+    const [value, setValue] = useState('React');
+    return (
+        <Select value={value} onChange={setValue} {...args}>
+            <Option value="React">
+                <span>React</span>
+            </Option>
+            <Option value="Angular">
+                <span>Angular</span>
+            </Option>
+            <Option value="Vue">
+                <span>Vue</span>
+            </Option>
+        </Select>
+    );
+};
+asChromaticStory(Controlled);
