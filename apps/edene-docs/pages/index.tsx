@@ -22,10 +22,8 @@ const heroWrapper = css`
     height: inherit;
 `;
 
-const vStack = css`
-    > * {
-        margin-right: 1rem;
-    }
+const githubLink = css`
+    margin-left: 1rem;
 `;
 
 export function Index() {
@@ -44,7 +42,7 @@ export function Index() {
                         Create beautiful user experiences in React with a focus
                         on spped, accesibility and consistency.
                     </Text>
-                    <Row noGlutters py={2} cssOverrides={vStack}>
+                    <Row noGlutters py={2}>
                         <Link href="/overview/getting-started" passHref>
                             <Button>Get Started</Button>
                         </Link>
@@ -52,6 +50,7 @@ export function Index() {
                             component="a"
                             href="https://github.com/aLosada7/edene"
                             color="dark"
+                            cssOverrides={githubLink}
                         >
                             <GithubIcon />
                         </Button>
