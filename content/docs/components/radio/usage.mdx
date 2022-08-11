@@ -1,0 +1,37 @@
+---
+title: 'Radio'
+scope: 'usage'
+source: 'https://github.com/aLosada7/edene/tree/master/libs/components/src/Radio'
+storybook: 'https://master--62ed74f612c78f7bbe13743e.chromatic.com/?path=/story/components-radio--default'
+---
+
+## Import
+
+```bash
+import { Radio, RadioGroup } from '@edene/components';
+```
+
+## Usage
+
+```tsx
+<RadioGroup defaultValue="2" inline>
+    <Radio value="1">First</Radio>
+    <Radio value="2">Second</Radio>
+    <Radio value="3">Third</Radio>
+</RadioGroup>
+```
+
+### Controlled select
+
+```tsx
+() => {
+    const [value, setValue] = React.useState('1');
+    return (
+        <RadioGroup onChange={setValue} value={value}>
+            <Radio value="1">First</Radio>
+            <Radio value="2">Second</Radio>
+            <Radio value="3">Third</Radio>
+        </RadioGroup>
+    );
+};
+```
