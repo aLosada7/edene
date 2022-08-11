@@ -1,4 +1,6 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+
+import { useSwipe } from '@edene/hooks';
 
 import { Image } from '../Image';
 import { carousel, carouselImage, dotList, dot } from './styles';
@@ -15,9 +17,27 @@ export interface CarouselProps {
 export const Carousel = (props: CarouselProps) => {
     const { src } = props;
     const [slide, setSlide] = useState(src[0]);
+    const ref = useRef<HTMLDivElement>(null);
+
+    const [scrollRef, swipe] = useSwipe(ref);
+
+    useEffect(() => {
+        if (!swipe) return;
+
+        const actualSlideIndex = src.findIndex((el) => el.src === slide.src);
+
+        if (swipe === 'right')
+            setSlide(src[(actualSlideIndex + 1) % src.length]);
+        if (swipe === 'left')
+            setSlide(
+                actualSlideIndex === 0
+                    ? src[src.length - 1]
+                    : src[(actualSlideIndex - 1) % src.length]
+            );
+    }, [swipe]);
 
     return (
-        <div css={carousel}>
+        <div ref={scrollRef} css={carousel}>
             <Image
                 src={slide.src}
                 alt={slide.alt}
