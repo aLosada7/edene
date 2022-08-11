@@ -20,7 +20,7 @@ export * from './MenuButton';
 export * from './Modal';
 export * from './NumberInput';
 export * from './Overlay';
-export * from './RadioGroup';
+export * from './Radio';
 export * from './Select';
 export * from './Table';
 export * from './Tabs';

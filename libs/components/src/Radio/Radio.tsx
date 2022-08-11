@@ -2,10 +2,10 @@ import { SerializedStyles } from '@emotion/react';
 
 import { generateSourceId } from '@edene/foundations';
 
-import { Input } from '../../Input';
-import { Label } from '../../Label';
-import { useRadioGroup } from '../useRadioGroup';
-import { radio, radioInput } from '../styles';
+import { Input } from '../Input';
+import { Label } from '../Label';
+import { useRadioGroup } from './useRadioGroup';
+import { radio, radioInput } from './styles';
 
 export interface RadioProps {
     id?: string;
