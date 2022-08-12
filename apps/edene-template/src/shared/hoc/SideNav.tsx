@@ -24,6 +24,7 @@ interface SideNavProps {
     onClose: () => void;
 }
 
+const DASHBOARDS = ['Education'];
 const APPLICATIONS = ['Game Summary', 'Flight Timeline', 'Contract Register'];
 
 export const SideNav = ({ sideNavWidth, ...props }: SideNavProps) => {
@@ -35,6 +36,20 @@ export const SideNav = ({ sideNavWidth, ...props }: SideNavProps) => {
             {...props}
         >
             <SideNavItems>
+                <SideNavPrincipal title="Dashboards">
+                    {DASHBOARDS.map((dashboard) => (
+                        <SideNavItem
+                            key={dashboard}
+                            component={NavLink}
+                            to={`dashboards/${dashboard
+                                .replace(' ', '-')
+                                .toLowerCase()}`}
+                            {...props}
+                        >
+                            {dashboard}
+                        </SideNavItem>
+                    ))}
+                </SideNavPrincipal>
                 <SideNavPrincipal title="Applications">
                     {APPLICATIONS.map((application) => (
                         <SideNavItem
