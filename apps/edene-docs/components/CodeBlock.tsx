@@ -41,7 +41,13 @@ const preview = (componentWidth: boolean) => css`
 `;
 
 // This a momentarily hack to center some components in the code block
-const centeredComponents = ['Accordion', 'Card', 'Carousel', 'Select'];
+const centeredComponents = [
+    'Accordion',
+    'Card',
+    'Carousel',
+    'Select',
+    'TextInput',
+];
 
 const CodeBlock = ({ children: code, editable = false, className }: any) => {
     const language = className?.replace(/language-/, '');

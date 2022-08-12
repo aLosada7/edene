@@ -32,6 +32,7 @@ const COMPONENTS = [
     'Grid',
     'Select',
     'Radio',
+    'TextInput',
 ].sort((a, b) => a.localeCompare(b));
 
 const ANIMATIONS = ['FadeIn'].sort((a, b) => a.localeCompare(b));
@@ -63,7 +64,9 @@ export const SideNav = ({ open, ...props }: SideNavProps) => {
                     {COMPONENTS.map((component) => (
                         <ActiveLink
                             key={component}
-                            href={`/components/${component.toLowerCase()}`}
+                            href={`/components/${component
+                                .charAt(0)
+                                .toLowerCase()}${component.slice(1)}`}
                             activeClassName="active"
                         >
                             <SideNavItem {...props}>{component}</SideNavItem>
@@ -74,7 +77,9 @@ export const SideNav = ({ open, ...props }: SideNavProps) => {
                     {ANIMATIONS.map((animation) => (
                         <ActiveLink
                             key={animation}
-                            href={`/animations/${animation.toLowerCase()}`}
+                            href={`/animations/${animation
+                                .charAt(0)
+                                .toLowerCase()}${animation.slice(1)}`}
                             activeClassName="active"
                         >
                             <SideNavItem {...props}>{animation}</SideNavItem>
