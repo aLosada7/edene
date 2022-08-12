@@ -60,7 +60,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
             <Fragment>
                 {iconLeft && (
                     <div css={iconLeftInput}>
-                        <Icon>{iconLeft}</Icon>
+                        <Icon color="#adb5bd">{iconLeft}</Icon>
                     </div>
                 )}
                 <input
@@ -73,7 +73,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
                                 ? successInput
                                 : errorInput
                             : null,
-                        iconLeft ? iconLeftInInput : null,
+                        iconLeft && iconLeftInInput,
                         cssOverrides,
                     ]}
                     aria-required={!optional}

@@ -17,18 +17,21 @@ export const iconSize = {
 
 // momentarily
 export const size = {
-    xsmall: 24,
-    small: 36,
-    medium: 44,
+    small: 24,
+    medium: 36,
+    large: 44,
 };
 
 export const height = {
-    ctaMedium: size.medium,
     ctaSmall: size.small,
-    ctaXsmall: size.xsmall,
+    ctaMedium: size.medium,
+    ctaLarge: size.large,
+    inputSmall: size.small,
     inputMedium: size.medium,
-    inputXsmall: size.xsmall,
-    iconMedium: iconSize.medium,
-    iconSmall: iconSize.small,
+    inputLarge: size.large,
     iconXsmall: iconSize.xsmall,
+    iconSmall: iconSize.small,
+    iconMedium: iconSize.medium,
+    iconLarge: iconSize.large,
+    iconBig: iconSize.big,
 };
