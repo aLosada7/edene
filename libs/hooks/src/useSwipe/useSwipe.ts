@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 
-// Only supports right and left & touch devices for now
+// Only supports right and left
 export const useSwipe = (ref: any) => {
     const [swipe, setSwipe] = useState<'right' | 'left' | null>(null);
-    const [touchStart, setTouchStart] = useState(null);
-    const [touchEnd, setTouchEnd] = useState(null);
+    const [touchStart, setTouchStart] = useState<number | null>(null);
+    const [touchEnd, setTouchEnd] = useState<number | null>(null);
 
     // the required distance between touchStart and touchEnd to be detected as a swipe
     const minSwipeDistance = 50;
@@ -13,13 +13,25 @@ export const useSwipe = (ref: any) => {
         const node = ref.current;
 
         if (node) {
-            node.addEventListener('touchstart', onTouchStart);
-            node.addEventListener('touchend', onTouchEnd);
+            if (isTouchDevice()) {
+                node.addEventListener('touchstart', handleTouchStart);
+                node.addEventListener('touchend', handleTouchEnd);
+            } else {
+                node.addEventListener('mousedown', handleMouseDown);
+                node.addEventListener('mouseup', handleMouseUp);
+            }
         }
 
         return () => {
-            node?.removeEventListener('touchstart', onTouchStart);
-            node.removeEventListener('touchend', onTouchEnd);
+            if (node) {
+                if (isTouchDevice()) {
+                    node.removeEventListener('touchstart', handleTouchStart);
+                    node.removeEventListener('touchend', handleTouchEnd);
+                } else {
+                    node.addEventListener('mousedown', handleMouseDown);
+                    node.addEventListener('mouseup', handleMouseUp);
+                }
+            }
         };
     }, [ref]);
 
@@ -34,15 +46,46 @@ export const useSwipe = (ref: any) => {
             setSwipe(isLeftSwipe ? 'left' : 'right');
     }, [touchStart, touchEnd]);
 
-    const onTouchStart = (e: any) => {
+    const startSwipe = () => {
         setSwipe(null);
-        setTouchStart(e.changedTouches[0].clientX);
         setTouchEnd(null);
     };
 
-    const onTouchEnd = (e: any) => {
+    const handleTouchStart = (e: TouchEvent) => {
+        startSwipe();
+        setTouchStart(e.changedTouches[0].clientX);
+    };
+
+    const handleTouchEnd = (e: TouchEvent) => {
         setTouchEnd(e.changedTouches[0].clientX);
+    };
+
+    const handleMouseDown = (event: MouseEvent) => {
+        event.preventDefault(); // disable the user from drop text
+        startSwipe();
+        const { x } = getDimensionsFromEvent(event);
+        setTouchStart(x);
+    };
+
+    const handleMouseUp = (event: MouseEvent) => {
+        const { x } = getDimensionsFromEvent(event);
+        setTouchEnd(x);
+    };
+
+    const getDimensionsFromEvent = (event: MouseEvent) => {
+        let x = event.clientX,
+            y = event.clientY;
+
+        if (ref.current) {
+            const { top, left } = ref.current.getBoundingClientRect();
+            x -= left;
+            y -= top;
+        }
+
+        return { x, y };
     };
 
     return [ref, swipe];
 };
+
+const isTouchDevice = () => 'ontouchstart' in window;
