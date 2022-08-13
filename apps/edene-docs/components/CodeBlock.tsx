@@ -3,6 +3,7 @@ import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 
 import * as edeneComponents from '@edene/components';
 import * as edeneAnimations from '@edene/animations';
+import * as edeneHooks from '@edene/hooks';
 import { grays } from '@edene/foundations';
 
 const codeBlock = css`
@@ -62,7 +63,13 @@ const CodeBlock = ({ children: code, editable = false, className }: any) => {
         <LiveProvider
             code={code}
             disabled={!editable}
-            scope={{ ...edeneComponents, ...edeneAnimations, grays, css }}
+            scope={{
+                ...edeneComponents,
+                ...edeneAnimations,
+                ...edeneHooks,
+                grays,
+                css,
+            }}
         >
             {language === 'tsx' && (
                 <div css={preview(isCenteredComponent)}>

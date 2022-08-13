@@ -4,6 +4,7 @@ import { grays } from '@edene/foundations';
 
 export const carousel = css`
     position: relative;
+    width: 100%;
 `;
 
 export const carouselImage = css`

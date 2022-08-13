@@ -37,6 +37,8 @@ const COMPONENTS = [
 
 const ANIMATIONS = ['FadeIn'].sort((a, b) => a.localeCompare(b));
 
+const HOOKS = ['useSwipe'].sort((a, b) => a.localeCompare(b));
+
 export const SideNav = ({ open, ...props }: SideNavProps) => {
     return (
         <EdeneSideNav
@@ -83,6 +85,19 @@ export const SideNav = ({ open, ...props }: SideNavProps) => {
                             activeClassName="active"
                         >
                             <SideNavItem {...props}>{animation}</SideNavItem>
+                        </ActiveLink>
+                    ))}
+                </SideNavPrincipal>
+                <SideNavPrincipal title="Hooks">
+                    {HOOKS.map((hook) => (
+                        <ActiveLink
+                            key={hook}
+                            href={`/hooks/${hook
+                                .charAt(0)
+                                .toLowerCase()}${hook.slice(1)}`}
+                            activeClassName="active"
+                        >
+                            <SideNavItem {...props}>{hook}</SideNavItem>
                         </ActiveLink>
                     ))}
                 </SideNavPrincipal>

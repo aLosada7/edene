@@ -1,0 +1,44 @@
+---
+title: 'Alert'
+scope: 'usage'
+source: 'https://github.com/aLosada7/edene/tree/master/libs/hooks/src/useSwipe'
+---
+
+## Import
+
+```bash
+import { useSwipe } from '@edene/hooks';
+```
+
+Only detects right and left swipe gestures (independently of the device)
+
+## Usage
+
+useSwipe can be useful to create a Carousel component.
+
+```tsx
+() => {
+    const [slide, setSlide] = React.useState(0);
+    const ref = React.useRef(null);
+    const [scrollRef, swipe] = useSwipe(ref);
+
+    React.useEffect(() => {
+        if (!swipe) return;
+
+        if (swipe === 'right') setSlide(slide + 1);
+        if (swipe === 'left') setSlide(slide - 1);
+    }, [swipe]);
+
+    return (
+        <div
+            ref={scrollRef}
+            style={{ textAlign: 'center', border: `1px solid ${grays[3]}` }}
+        >
+            <Text>Slide {slide}</Text>
+            <Text size="xsmall" color={grays[5]}>
+                Swipe left or right
+            </Text>
+        </div>
+    );
+};
+```
