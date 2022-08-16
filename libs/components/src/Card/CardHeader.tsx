@@ -1,7 +1,7 @@
 import { SerializedStyles } from '@emotion/react';
 import { ReactElement } from 'react';
 
-import { Text } from '../Text';
+import { Title } from '../Title';
 import { cardHeader } from './styles';
 
 export interface CardHeaderProps {
@@ -11,10 +11,8 @@ export interface CardHeaderProps {
 
 export const CardHeader = ({ children, ...props }: CardHeaderProps) => {
     return (
-        <div css={cardHeader}>
-            <Text size="xsm" {...props}>
-                {children}
-            </Text>
-        </div>
+        <Title cssOverrides={cardHeader} {...props}>
+            {children}
+        </Title>
     );
 };

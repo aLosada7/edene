@@ -24,6 +24,7 @@ export interface TextProps extends HTMLAttributes<HTMLDivElement>, Props {
     mt?: number;
     // in titles only soon
     mb?: number;
+    ml?: number;
     size?: ITextFontSize;
     weight?: FontWeight;
     color?: EdeneColor;
@@ -35,6 +36,7 @@ export interface TextProps extends HTMLAttributes<HTMLDivElement>, Props {
 export const Text = ({
     mt = 0,
     mb = 0,
+    ml = 0,
     size = 'md',
     weight,
     color,
@@ -50,7 +52,7 @@ export const Text = ({
     return (
         <div
             css={[
-                text(mt, mb, size, align, weight),
+                text(mt, mb, ml, size, align, weight),
                 textColorCss({ theme, color: textColor }),
                 icon ? flexText : null,
                 cssOverrides,

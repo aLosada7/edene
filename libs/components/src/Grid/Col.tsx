@@ -18,6 +18,7 @@ export interface ColumnProps extends Props {
     md?: ColSize | null;
     lg?: ColSize | null;
     xl?: ColSize | null;
+    borderRight?: boolean;
     vStack?: number;
     hStack?: number;
     align?: Align;

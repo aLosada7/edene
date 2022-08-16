@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { Props } from '@edene/foundations';
+import { Props, useThemeContext } from '@edene/foundations';
 
-import { card } from './styles';
+import { card, cardTheme } from './styles';
 
 export interface CardProps extends Props {
     /**
@@ -20,6 +20,8 @@ export const Card = React.forwardRef(
         { href, role, onClick, children, cssOverrides }: CardProps,
         ref: React.LegacyRef<HTMLElement> | undefined
     ) => {
+        const { theme } = useThemeContext();
+
         if (href)
             return (
                 <a href={href} css={[card, cssOverrides]}>
@@ -30,7 +32,7 @@ export const Card = React.forwardRef(
         return (
             <section
                 role={role}
-                css={[card, cssOverrides]}
+                css={[card, cardTheme({ theme }), cssOverrides]}
                 onClick={onClick}
                 ref={ref}
             >

@@ -7,6 +7,10 @@ export const alert = css`
     margin-bottom: 1rem;
     border: 1px solid transparent;
     border-radius: 0.25rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 `;
 
 export const alertTheme = ({

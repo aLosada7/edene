@@ -42,11 +42,12 @@ const BlogAllSection = (
             </Text>
             <Badge
                 color="gray"
-                text="Angular"
                 cssOverrides={css`
                     margin-top: 0.5rem;
                 `}
-            />
+            >
+                Angular
+            </Badge>
         </article>
     </Col>
 );
@@ -82,11 +83,12 @@ export const Blog = () => (
                             </Text>
                             <Badge
                                 color="gray"
-                                text="Angular"
                                 cssOverrides={css`
                                     margin-top: 0.5rem;
                                 `}
-                            />
+                            >
+                                Angular
+                            </Badge>
                         </article>
                     </Col>
                     <Col
@@ -137,11 +139,12 @@ export const Blog = () => (
                                     </Text>
                                     <Badge
                                         color="gray"
-                                        text="Angular"
                                         cssOverrides={css`
                                             margin-top: 0.5rem;
                                         `}
-                                    />
+                                    >
+                                        Angular
+                                    </Badge>
                                 </Col>
                             </Row>
                         </article>
@@ -185,11 +188,12 @@ export const Blog = () => (
                                     </Text>
                                     <Badge
                                         color="gray"
-                                        text="Angular"
                                         cssOverrides={css`
                                             margin-top: 0.5rem;
                                         `}
-                                    />
+                                    >
+                                        Angular
+                                    </Badge>
                                 </Col>
                             </Row>
                         </article>
@@ -213,7 +217,7 @@ export const Blog = () => (
                                 <SideNavPrincipal title="Blog categories">
                                     <SideNavItem
                                         href="javascript:void(0)"
-                                        badge={<Badge color="gray" text="3" />}
+                                        badge={<Badge color="gray">3</Badge>}
                                         cssOverrides={css`
                                             border-radius: 8px;
                                         `}

@@ -11,6 +11,7 @@ export const avatar = (
 ) => css`
     position: relative;
     max-width: 12rem;
+    min-width: ${size}px;
     width: ${size}px;
     height: ${size}px;
     cursor: pointer;

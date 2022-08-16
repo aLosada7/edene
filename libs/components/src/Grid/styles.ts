@@ -77,7 +77,7 @@ export const gridColumn = (
     ${(direction === 'column' || vStack !== 0) && `flex-direction: column;`}
 
     ${vStack !== 0 &&
-    `> *:not(:first-of-type) {
+    `> *:not(:first-child) {
         margin-top: calc(${vStack} * 0.25rem);`}
 
 ${hStack !== 0 && `> * { margin-right: calc(${hStack} * 0.25rem);}`}
@@ -120,10 +120,12 @@ export const gridColumnsAlign = (align: Align) => css`
         justify-content: center;
     `}
 
-${align === 'horizontal-end' &&
-    `
+    ${from.phablet} {
+        ${align === 'horizontal-end' &&
+        `
         justify-content: end;
     `}
+    }
 `;
 
 export const gridColumnSize = (
