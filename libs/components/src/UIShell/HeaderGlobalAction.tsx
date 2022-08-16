@@ -42,7 +42,7 @@ export const HeaderGlobalAction = ({
             ) : null}
             {cloneElement(children, { size: 'small' })}
             {badge ? (
-                <Badge text={badge.toString()} cssOverrides={headerIconBadge} />
+                <Badge cssOverrides={headerIconBadge}>badge.toString()</Badge>
             ) : null}
         </button>
     );

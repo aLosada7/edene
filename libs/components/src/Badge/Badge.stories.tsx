@@ -18,9 +18,9 @@ asPlayground(Playground);
 
 export const Default = () => (
     <StoryHStack>
-        <Badge color="gray" text="Gray" />
-        <Badge color="teal" text="Teal" />
-        <Badge color="pink" text="Pink" />
+        <Badge color="gray">Gray</Badge>
+        <Badge color="teal">Teal</Badge>
+        <Badge color="pink">Pink</Badge>
     </StoryHStack>
 );
 asChromaticStory(Default);

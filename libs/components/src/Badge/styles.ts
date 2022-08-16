@@ -12,6 +12,7 @@ export const badge = css`
     vertical-align: baseline;
     border-radius: 0.25rem;
     width: fit-content;
+    display: flex;
 `;
 
 export const badgeTheme = ({
