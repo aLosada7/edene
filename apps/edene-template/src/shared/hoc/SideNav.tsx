@@ -24,7 +24,7 @@ interface SideNavProps {
     onClose: () => void;
 }
 
-const DASHBOARDS = ['Education'];
+const DASHBOARDS = ['Education', 'Report'];
 const APPLICATIONS = ['Game Summary', 'Flight Timeline', 'Contract Register'];
 
 export const SideNav = ({ sideNavWidth, ...props }: SideNavProps) => {

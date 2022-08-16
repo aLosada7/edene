@@ -8,6 +8,9 @@ import { lazy } from 'react';
 
 import { EducationPage } from '../../app/dashboards/education/pages/EducationPage';
 import Layout from './Layout';
+const ReportPage = lazy(
+    () => import('../../app/dashboards/report/pages/ReportPage')
+);
 const AuthenticationSignInPage = lazy(
     () =>
         import(
@@ -41,6 +44,7 @@ export default () => {
                         path="/dashboards/education"
                         element={<EducationPage />}
                     />
+                    <Route path="/dashboards/report" element={<ReportPage />} />
 
                     <Route
                         path="/pages/signin/classic"
