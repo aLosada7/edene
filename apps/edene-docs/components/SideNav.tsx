@@ -37,7 +37,7 @@ const COMPONENTS = [
 
 const ANIMATIONS = ['FadeIn'].sort((a, b) => a.localeCompare(b));
 
-const HOOKS = ['useSwipe'].sort((a, b) => a.localeCompare(b));
+const HOOKS = ['useSwipe', 'useHover'].sort((a, b) => a.localeCompare(b));
 
 export const SideNav = ({ open, ...props }: SideNavProps) => {
     return (
