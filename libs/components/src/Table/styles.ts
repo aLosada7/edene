@@ -76,6 +76,10 @@ export const tr = css`
     color: ${grays[2]};
 `;
 
+export const tableHeader = css`
+    padding: 7px 10px;
+`;
+
 export const cellAlign = (align: string) => css`
     text-align: ${align};
 `;
@@ -86,7 +90,8 @@ export const tbody = css`
     background-color: ${grays[9]};
 `;
 
-export const cell = css`
+export const tableCell = css`
     ${textSans.xsmall({ fontWeight: 'light', lineHeight: 'loose' })}
     color: ${grays[1]};
+    padding: 7px 10px;
 `;

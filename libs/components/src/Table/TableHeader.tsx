@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { cellAlign } from './styles';
+import { tableHeader, cellAlign } from './styles';
 
 export interface TableHeaderProps {
     children?: ReactNode;
@@ -11,5 +11,5 @@ export const TableHeader = ({
     align = 'center',
     ...props
 }: TableHeaderProps) => {
-    return <th css={[cellAlign(align)]}>{children}</th>;
+    return <th css={[tableHeader, cellAlign(align)]}>{children}</th>;
 };

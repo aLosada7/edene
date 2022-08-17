@@ -30,13 +30,15 @@ export const TeamStandingsComponent = () => (
         >
             <Table>
                 <TableHead>
-                    <TableHeader>#</TableHeader>
-                    <TableHeader>Pos.</TableHeader>
-                    <TableHeader align="left">Name</TableHeader>
-                    <TableHeader align="right">Points</TableHeader>
-                    <TableHeader align="right">Assists</TableHeader>
-                    <TableHeader align="right">Rebounds</TableHeader>
-                    <TableHeader align="right">+/-</TableHeader>
+                    <TableRow>
+                        <TableHeader>#</TableHeader>
+                        <TableHeader>Pos.</TableHeader>
+                        <TableHeader align="left">Name</TableHeader>
+                        <TableHeader align="right">Points</TableHeader>
+                        <TableHeader align="right">Assists</TableHeader>
+                        <TableHeader align="right">Rebounds</TableHeader>
+                        <TableHeader align="right">+/-</TableHeader>
+                    </TableRow>
                 </TableHead>
                 <TableBody>
                     {players.map((player: Player, index) => (

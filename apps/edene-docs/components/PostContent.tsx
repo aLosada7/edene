@@ -7,6 +7,12 @@ import {
     ImageProps,
     TitleProps,
     TextProps,
+    Table,
+    TableBody,
+    TableHeader,
+    TableHead,
+    TableCell,
+    TableRow,
 } from '@edene/components';
 import * as edeneComponents from '@edene/components';
 import * as edeneAnimations from '@edene/animations';
@@ -32,7 +38,12 @@ const generalComponents = {
             {...props}
         />
     ),
-    table: (props: any) => <table style={{ width: '100%' }} {...props} />,
+    table: (props: any) => <Table {...props} />,
+    thead: (props: any) => <TableHead {...props} />,
+    tbody: (props: any) => <TableBody {...props} />,
+    tr: (props: any) => <TableRow {...props} />,
+    th: (props: any) => <TableHeader {...props} />,
+    td: (props: any) => <TableCell {...props} />,
 };
 
 const components = {
