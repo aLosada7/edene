@@ -33,6 +33,7 @@ const COMPONENTS = [
     'Select',
     'Radio',
     'TextInput',
+    'Checkbox',
 ].sort((a, b) => a.localeCompare(b));
 
 const ANIMATIONS = ['FadeIn'].sort((a, b) => a.localeCompare(b));
