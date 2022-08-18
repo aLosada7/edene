@@ -9,20 +9,20 @@ export const getParsedFileContentBySlug = (
     postsPath: string
 ): MarkdownDocument => {
     return {
-        ...getUsageContent(slug, postsPath),
+        ...getdocumentationContent(slug, postsPath),
         props: getPropsContent(slug, postsPath),
     };
 };
 
-export const getUsageContent = (slug: string, postsPath: string) => {
-    const postFilePath = join(postsPath, `${slug}/usage.mdx`);
+export const getdocumentationContent = (slug: string, postsPath: string) => {
+    const postFilePath = join(postsPath, `${slug}/documentation.mdx`);
     const fileContents = fs.readFileSync(postFilePath);
 
     const { data, content } = matter(fileContents);
 
     return {
         frontMatter: data,
-        usage: content,
+        documentation: content,
     };
 };
 

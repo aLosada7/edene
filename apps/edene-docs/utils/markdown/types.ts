@@ -7,13 +7,13 @@ export interface FrontMatter {
 export interface MarkdownDocument {
     frontMatter: FrontMatter;
     content?: string;
-    usage?: string;
+    documentation?: string;
     props?: string;
 }
 
 export interface MarkdownRenderingResult {
     frontMatter: FrontMatter;
     content?: MDXRemoteSerializeResult;
-    usage?: MDXRemoteSerializeResult;
+    documentation?: MDXRemoteSerializeResult;
     props?: MDXRemoteSerializeResult;
 }

@@ -20,8 +20,8 @@ interface ArticleProps extends ParsedUrlQuery {
 
 const POSTS_PATH = join(process.cwd(), 'content/docs/hooks');
 
-const Hooks = ({ slug, frontMatter, usage, props }: any) => {
-    const [selectedTab, setSelectedTab] = useState('usage');
+const Hooks = ({ slug, frontMatter, documentation, props }: any) => {
+    const [selectedTab, setSelectedTab] = useState('documentation');
 
     const router = useRouter();
 
@@ -44,7 +44,7 @@ const Hooks = ({ slug, frontMatter, usage, props }: any) => {
             <ComponentTabs
                 selectedTab={selectedTab}
                 onTabSelected={onTabSelected}
-                usage={usage}
+                documentation={documentation}
                 props={props}
             />
         </Container>
@@ -63,8 +63,8 @@ export const getStaticProps: GetStaticProps<MarkdownRenderingResult> = async ({
     );
 
     // generate HTML
-    const renderedUsageHTML = await renderMarkdown(
-        articleMarkdownContent.usage
+    const rendereddocumentationHTML = await renderMarkdown(
+        articleMarkdownContent.documentation
     );
     const renderedPropsHTML = await renderMarkdown(
         articleMarkdownContent.props
@@ -74,7 +74,7 @@ export const getStaticProps: GetStaticProps<MarkdownRenderingResult> = async ({
         props: {
             slug: params.slug,
             frontMatter: articleMarkdownContent.frontMatter,
-            usage: renderedUsageHTML,
+            documentation: rendereddocumentationHTML,
             props: renderedPropsHTML,
         },
     };
