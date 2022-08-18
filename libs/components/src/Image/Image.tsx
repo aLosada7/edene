@@ -21,10 +21,14 @@ export const Image = ({
     objectFit = 'cover',
     targetBlank = false,
     cssOverrides,
-    ...props
 }: ImageProps) => {
     const img = (
-        <img src={src} alt={alt} css={[image(size, objectFit), cssOverrides]} />
+        <img
+            loading="lazy"
+            src={src}
+            alt={alt}
+            css={[image(size, objectFit), cssOverrides]}
+        />
     );
 
     if (targetBlank) {
