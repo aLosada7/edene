@@ -22,8 +22,10 @@ export const ListItem = (props: ListItemProps) => {
 
     return (
         <li css={listItem(borderBottom)} {...rest}>
-            <Stack direction={direction}>{children}</Stack>
-            {actions && <div>{actions}</div>}
+            <div>
+                <Stack direction={direction}>{children}</Stack>
+                {actions && <div>{actions}</div>}
+            </div>
         </li>
     );
 };

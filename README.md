@@ -1,6 +1,8 @@
 # Edene
 
-Edene is a Design System which actually contains the foundations (_core_) and _three_ implementations written in Typescript.
+Edene aims to give you everything you need to create a Design System. It contains a list of completely customizable and reusable React components, animations and hooks. It has been written entirely in Typescript.
+
+It actually contains the foundations (_core_) and _three_ different implementations:
 
 -   Foundations: Includes all the necessary to be used as a Design System for your applications. It contains tokens, which represent the shared values that maintain consistency across our system
 -   Components: a list of reusable React components

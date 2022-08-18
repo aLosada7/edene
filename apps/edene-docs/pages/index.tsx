@@ -39,8 +39,7 @@ export function Index() {
                         </Title>
                     </FadeIn>
                     <Text size="xlg" color={theme.black}>
-                        Create beautiful user experiences in React with a focus
-                        on spped, accesibility and consistency.
+                        Everything you need to create a Design System
                     </Text>
                     <Row noGlutters py={2}>
                         <Link href="/overview/getting-started" passHref>

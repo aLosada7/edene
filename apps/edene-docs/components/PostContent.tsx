@@ -13,6 +13,8 @@ import {
     TableHead,
     TableCell,
     TableRow,
+    List,
+    ListItem,
 } from '@edene/components';
 import * as edeneComponents from '@edene/components';
 import * as edeneAnimations from '@edene/animations';
@@ -32,12 +34,8 @@ const generalComponents = {
         return <Image size="c" objectFit="contain" targetBlank {...props} />;
     },
     code: CodeBlock,
-    ul: (props: any) => (
-        <ul
-            style={{ marginLeft: '2rem', listStyle: 'disc !important' }}
-            {...props}
-        />
-    ),
+    ul: (props: any) => <List styleType="disclosure-close" {...props} />,
+    li: (props: any) => <ListItem {...props} />,
     table: (props: any) => <Table {...props} />,
     thead: (props: any) => <TableHead {...props} />,
     tbody: (props: any) => <TableBody {...props} />,
