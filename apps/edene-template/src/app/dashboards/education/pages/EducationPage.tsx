@@ -21,6 +21,10 @@ import {
 import { grays } from '@edene/foundations';
 
 import { EducationSummaryContainer } from '../containers/EducationSummaryContainer';
+import avatar1 from '../../../../assets/avatars/avatar1.jpeg';
+import avatar2 from '../../../../assets/avatars/avatar2.webp';
+import avatar3 from '../../../../assets/avatars/avatar3.jpeg';
+import avatar4 from '../../../../assets/avatars/avatar4.webp';
 
 const marginLeft = css`
     margin-left: 2px;
@@ -88,7 +92,7 @@ export const EducationPage = () => {
                                     </Button>
                                 }
                             >
-                                <Avatar size={40} />
+                                <Avatar size={40} src={avatar1} />
                                 <Stack direction="column">
                                     <Text>Darrell Steward</Text>
                                     <Text size="sm" color={grays[3]}>
@@ -105,7 +109,7 @@ export const EducationPage = () => {
                                     </Button>
                                 }
                             >
-                                <Avatar size={40} />
+                                <Avatar size={40} src={avatar2} />
                                 <Stack direction="column">
                                     <Text>Katheryn Murphy</Text>
                                     <Text size="sm" color={grays[3]}>
@@ -122,7 +126,7 @@ export const EducationPage = () => {
                                     </Button>
                                 }
                             >
-                                <Avatar size={40} />
+                                <Avatar size={40} src={avatar3} />
                                 <Stack direction="column">
                                     <Text>Jacob Jones</Text>
                                     <Text size="sm" color={grays[3]}>
@@ -138,7 +142,7 @@ export const EducationPage = () => {
                                     </Button>
                                 }
                             >
-                                <Avatar size={40} />
+                                <Avatar size={40} src={avatar4} />
                                 <Stack direction="column">
                                     <Text>Jenny Wilson</Text>
                                     <Text size="sm" color={grays[3]}>
