@@ -16,10 +16,11 @@ export const aside = (
     mobileWidth?: number | 'full',
     headerHeight?: number
 ) => css`
-    position: fixed;
+    ${(fixed || headerHeight) &&
+    `position: fixed;
     top: 0;
     bottom: 0;
-    left: 0;
+    left: 0;`}
 
     ${asideWidth(fixed, open, width, mobileWidth)}
     transition: transform ${transitions.short};
@@ -62,13 +63,14 @@ const asideWidth = (
 
     ${from.desktop} {
         width: ${width}px;
-        ${!fixed &&
-        `
-            transform: ${open ? 'translateX(0)' : `translateX(-${width}px)`};`}
     }
+
+    ${!fixed &&
+    `
+            transform: ${open ? 'translateX(0)' : `translateX(-${width}px)`};`}
 `;
 
-export const sidenav = ({ width, expanded }: any) => css`
+export const sidenav = ({ expanded }: any) => css`
     max-width: 100%;
     width: 100%;
 
@@ -99,7 +101,13 @@ export const sideNavWithIcon = css`
     align-items: center;
     justify-content: center;
 
-    margin-right: 1.5rem;
+    span {
+        margin-inline-end: 1rem;
+    }
+`;
+
+export const sideNavIcon = css`
+    margin-inline-end: 1rem;
 `;
 
 export const navItems = css`
@@ -281,6 +289,7 @@ export const navMenuSubLinkText = css`
     -ms-user-select: none;
     user-select: none;
     font-weight: 400;
+    margin-inline-start: 1rem;
 `;
 
 export const expandedBody = css`
@@ -306,7 +315,7 @@ export const collapsedBody = css`
     ${collapsedBodyStyles};
 `;
 
-export const sidenavHeader = (open: boolean, headerHeight: number) => css`
+export const sidenavHeader = (open: boolean) => css`
     ${!open && `display: none;`}
     ${open && `height: 100%;`}
 
@@ -316,7 +325,7 @@ export const sidenavHeader = (open: boolean, headerHeight: number) => css`
     }
 `;
 
-export const navOverlay = (open: boolean) => css`
+export const navOverlay = (overlay: boolean, headerHeight?: number) => css`
     position: fixed;
     top: 3rem;
     left: 0;
@@ -328,18 +337,10 @@ export const navOverlay = (open: boolean) => css`
     transition: opacity ${transitions.medium},
         background-color ${transitions.medium};
 
-    /* ${from.desktop} {
-        width: 0;
-        height: 0;
-        opacity: 0;
-    } */
-
-    // display only if sidenav is open
-    ${!open && `display: none`}
-`;
-
-export const sideNavBadge = css`
-    min-width: 25px;
+    // display only with certain conditions
+    ${from.desktop || !overlay} {
+        ${!headerHeight && `display: none;`}
+    }
 `;
 
 export const navigationLevel = (level: number) => css`

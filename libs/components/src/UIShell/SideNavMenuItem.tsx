@@ -1,5 +1,5 @@
 import { SerializedStyles } from '@emotion/react';
-import { cloneElement, LinkHTMLAttributes } from 'react';
+import { LinkHTMLAttributes } from 'react';
 
 import {
     PolymorphicComponentProps,
@@ -12,7 +12,6 @@ import {
     navItem,
     navMenuSubLink,
     navMenuSubLinkText,
-    sideNavBadge,
 } from './styles';
 
 export interface SharedSideNavMenuItemProps
@@ -60,7 +59,7 @@ export const SideNavMenuItem: SideNavMenuItemComponent = ((
                 >
                     {children}
                 </span>
-                {badge && cloneElement(badge, { cssOverrides: [sideNavBadge] })}
+                {badge}
             </Element>
         </li>
     );

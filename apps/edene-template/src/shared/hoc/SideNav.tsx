@@ -30,6 +30,8 @@ const APPLICATIONS = ['Game Summary', 'Flight Timeline', 'Contract Register'];
 export const SideNav = ({ sideNavWidth, ...props }: SideNavProps) => {
     return (
         <EdeneSideNav
+            fixed
+            overlay
             width={sideNavWidth}
             aria-label="Side navigation"
             cssOverridesAside={aside(props.open, sideNavWidth)}

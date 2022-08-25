@@ -1,4 +1,4 @@
-import React, { cloneElement, LinkHTMLAttributes } from 'react';
+import React, { LinkHTMLAttributes } from 'react';
 
 import {
     Props,
@@ -6,18 +6,13 @@ import {
     useThemeContext,
 } from '@edene/foundations';
 
-import {
-    navItem,
-    navLink,
-    sideNavBadge,
-    sideNavWithIcon,
-    navMenuLinkActive,
-} from './styles';
+import { navItem, navLink, sideNavWithIcon, navMenuLinkActive } from './styles';
+import { Icon } from '../icons';
 
 export interface SharedSideNavItemProps
     extends LinkHTMLAttributes<HTMLAnchorElement>,
         Props {
-    icon?: React.ReactElement;
+    icon?: string;
     badge?: React.ReactElement;
     hideIcon?: boolean;
     onClose?: () => void;
@@ -56,16 +51,20 @@ export const SideNavItem: SideNavItemComponent = ((
             <Element css={[navLink, navMenuLinkActive({ theme })]} {...rest}>
                 <div onClick={onClose}>
                     <span css={sideNavWithIcon}>
-                        {icon &&
-                            cloneElement(icon, {
-                                size: 'small',
-                                color: 'hsl(212, 20%, 68%)',
-                            })}
+                        {icon && (
+                            <Icon
+                                size="small"
+                                color="hsl(212, 20%, 68%)"
+                                cssOverrides={sideNavWithIcon}
+                            >
+                                {icon}
+                            </Icon>
+                        )}
                         {children}
                     </span>
                 </div>
 
-                {badge && cloneElement(badge, { cssOverrides: [sideNavBadge] })}
+                {badge}
             </Element>
         </li>
     );

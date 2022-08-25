@@ -22,7 +22,7 @@ export const Header = ({
 }: HeaderProps) => {
     return (
         <EdeneHeader
-            isFixed
+            fixed
             cssOverrides={header(sideNavWidth, isSideNavExpanded)}
             aria-label="Edene Template"
         >

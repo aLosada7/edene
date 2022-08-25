@@ -41,15 +41,13 @@ const ANIMATIONS = ['FadeIn'].sort((a, b) => a.localeCompare(b));
 
 const HOOKS = ['useSwipe', 'useHover'].sort((a, b) => a.localeCompare(b));
 
-export const SideNav = ({ open, ...props }: SideNavProps) => {
+export const SideNav = (props: SideNavProps) => {
     return (
         <EdeneSideNav
-            mobileWidth="full"
             headerHeight={48}
             aria-label="Side navigation"
             cssOverrides={sideNav}
-            onClose={props.onClose}
-            open={open}
+            {...props}
         >
             <SideNavItems>
                 <ActiveLink
