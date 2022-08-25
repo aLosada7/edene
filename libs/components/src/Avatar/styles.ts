@@ -25,7 +25,6 @@ export const avatar = (
 export const avatarImg = (shape: AvatarShape, outline?: boolean) => css`
     width: 100%;
     height: 100%;
-    object-fit: cover;
     position: absolute;
 
     ${avatarShape(shape)}

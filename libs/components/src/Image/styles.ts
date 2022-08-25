@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 
 import { ObjectFit } from './Image';
 
-export const image = (size: string, objectFit: ObjectFit) => css`
+export const image = (objectFit: ObjectFit, size?: string) => css`
     border: 0;
     max-width: 100%;
     height: auto;

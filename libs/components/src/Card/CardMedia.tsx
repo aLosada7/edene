@@ -14,6 +14,7 @@ export const CardMedia = (props: CardMediaProps) => {
 
     return (
         <Image
+            size="d"
             src={src}
             alt={alt || 'CardMedia Image'}
             cssOverrides={cardMedia}

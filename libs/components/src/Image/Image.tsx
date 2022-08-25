@@ -17,7 +17,7 @@ export interface ImageProps {
 export const Image = ({
     src,
     alt,
-    size = 'd',
+    size,
     objectFit = 'cover',
     targetBlank = false,
     cssOverrides,
@@ -27,7 +27,7 @@ export const Image = ({
             loading="lazy"
             src={src}
             alt={alt}
-            css={[image(size, objectFit), cssOverrides]}
+            css={[image(objectFit, size), cssOverrides]}
         />
     );
 

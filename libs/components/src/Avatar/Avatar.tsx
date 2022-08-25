@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 
 import { Props, useThemeContext } from '@edene/foundations';
 
+import { Image } from '../Image';
 import { avatar, avatarConnected, avatarImg, avatarInitials } from './styles';
 
 export type AvatarShape = 'circle' | 'square';
@@ -42,11 +43,11 @@ export function Avatar({
     return (
         <div css={[avatar(shape, size, { theme }), cssOverrides]}>
             {props.src ? (
-                <img
+                <Image
                     src={props.src as any}
-                    css={[avatarImg(shape, outline)]}
+                    cssOverrides={[avatarImg(shape, outline)]}
                     alt="Avatar"
-                ></img>
+                />
             ) : props.name ? (
                 <div css={[avatarImg('circle'), avatarInitials({ theme })]}>
                     <span>{initials}</span>
