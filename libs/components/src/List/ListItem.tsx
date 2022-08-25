@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 
 import { Stack } from '../Stack';
 import { StackDirection } from '../Stack/Stack';
-import { listItem } from './styles';
+import { listItem, listItemActions } from './styles';
 
 export interface ListItemProps {
     borderBottom?: boolean;
@@ -24,7 +24,7 @@ export const ListItem = (props: ListItemProps) => {
         <li css={listItem(borderBottom)} {...rest}>
             <div>
                 <Stack direction={direction}>{children}</Stack>
-                {actions && <div>{actions}</div>}
+                {actions && <div css={listItemActions}>{actions}</div>}
             </div>
         </li>
     );

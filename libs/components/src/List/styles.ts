@@ -17,8 +17,12 @@ export const listItem = (borderBottom: boolean) => css`
     ${borderBottom && `border-bottom: 1px solid ${grays[7]};`}
 
     div {
-        display: inline-flex;
+        display: flex;
         justify-content: space-between;
         margin-inline-start: 0.25rem;
     }
+`;
+
+export const listItemActions = css`
+    align-items: center;
 `;
