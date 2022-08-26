@@ -1,8 +1,8 @@
-import { BreakpointMap } from './types';
+import { Breakpoint, BreakpointMap } from './types';
 
 export * from './types';
 
-export const breakpoints = {
+export const breakpoints: Record<Breakpoint, number> = {
     mobile: 320,
     mobileMedium: 375,
     mobileLandscape: 480,
