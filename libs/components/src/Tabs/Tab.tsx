@@ -30,7 +30,7 @@ export const Tab: TabComponent = forwardRef(
         const { orientation, active, color, onTabChange } = useTabs();
         const { theme } = useThemeContext();
 
-        const isActiveTab = active === tabKey;
+        const activeTab = active === tabKey;
 
         const Element = component || Button;
 
@@ -43,8 +43,7 @@ export const Tab: TabComponent = forwardRef(
                 cssOverrides={
                     [
                         tab,
-                        isActiveTab &&
-                            tabSelected(orientation, { theme, color }),
+                        activeTab && tabSelected(orientation, { theme, color }),
                         hidden && tabHidden,
                         cssOverrides,
                     ] as SerializedStyles[]
