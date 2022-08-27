@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { PropsWithChildren, ReactNode } from 'react';
 
 import { Props } from '@edene/foundations';
 
@@ -9,7 +9,7 @@ type SelectHandler = (
     value: string
 ) => void;
 
-export interface OptionProps extends Props {
+export interface OptionProps extends Props, PropsWithChildren {
     value: string;
     onClick?: SelectHandler;
     children?: ReactNode;

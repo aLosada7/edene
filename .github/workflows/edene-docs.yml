@@ -1,0 +1,34 @@
+name: 'Edene Docs CI'
+
+on: [push, pull_request]
+
+jobs:
+    deploy:
+        name: 🚀 Publish to Netlify
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v2
+
+            # Cache node modules and next folder
+            - name: 📬 Caching
+              uses: actions/cache@v2
+              with:
+                  path: |
+                      **/node_modules
+                      ${{ github.workspace }}/.next/cache
+                  key: ${{ runner.os }}-modules-${{ hashFiles('**/package-lock.json') }}
+
+            - name: 🧰 Install dependencies
+              run: yarn
+
+            - name: 📦 Build project
+              run: npx nx run edene-docs:build --if-present
+
+            - name: 🚀 Deploy to Netlify
+              uses: netlify/actions/cli@master
+              env:
+                  NETLIFY_AUTH_TOKEN: ${{ secrets.EDENE_DOCS_NETLIFY_TOKEN }}
+                  NETLIFY_SITE_ID: ${{ secrets.EDENE_DOCS_NETLIFY_SITE_ID }}
+              with:
+                  args: deploy --dir=dist/apps/edene-docs/.next --prod

@@ -3,9 +3,6 @@ import { useEffect, useState } from 'react';
 export const useHover = (ref: any) => {
     const [hovering, setHover] = useState(false);
 
-    const handleMouseOver = () => setHover(true);
-    const handleMouseOut = () => setHover(false);
-
     useEffect(() => {
         const node = ref.current;
 
@@ -19,6 +16,9 @@ export const useHover = (ref: any) => {
             node?.removeEventListener('mouseout', handleMouseOut);
         };
     }, [ref]);
+
+    const handleMouseOver = () => setHover(true);
+    const handleMouseOut = () => setHover(false);
 
     return [ref, hovering];
 };

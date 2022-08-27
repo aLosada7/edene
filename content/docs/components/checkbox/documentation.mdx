@@ -1,0 +1,56 @@
+---
+title: 'Checkbox'
+scope: 'documentation'
+source: 'https://github.com/aLosada7/edene/tree/master/libs/components/src/Checkbox'
+---
+
+## Import
+
+```bash
+import { Checkbox, CheckBoxGroup } from '@edene/components';
+```
+
+## Usage
+
+```tsx
+<Checkbox label="I accept terms and conditions" />
+```
+
+### Controlled
+
+```tsx
+() => {
+    const [checked, setChecked] = React.useState(false);
+
+    return (
+        <Checkbox
+            label="I accept terms and conditions"
+            checked={checked}
+            onChange={(event) => setChecked(event.currentTarget.checked)}
+        />
+    );
+};
+```
+
+### Checkbox Group
+
+```tsx
+() => {
+    const [values, setValues] = React.useState([]);
+
+    return (
+        <>
+            <CheckboxGroup value={values} onChange={setValues}>
+                <Checkbox
+                    value="savePayInfo"
+                    label="Save information to pay faster next time"
+                />
+                <Checkbox
+                    value="saveBillingInfo"
+                    label="Save billing and shipping address are the same"
+                />
+            </CheckboxGroup>
+        </>
+    );
+};
+```

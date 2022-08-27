@@ -1,7 +1,7 @@
 import { SerializedStyles } from '@emotion/react';
 import { ButtonHTMLAttributes, cloneElement } from 'react';
 
-import { Props } from '@edene/foundations';
+import { Props, IconVariant } from '@edene/foundations';
 
 import { Icon } from '../icons';
 import { Button } from '../Button';
@@ -11,11 +11,13 @@ export interface ActionButtonProps
     extends ButtonHTMLAttributes<HTMLButtonElement>,
         Props {
     children: React.ReactElement | string;
+    variant?: IconVariant;
 }
 
 export const ActionButton = ({
     children,
     cssOverrides,
+    variant = 'filled',
     ...props
 }: ActionButtonProps) => {
     return (
@@ -25,11 +27,12 @@ export const ActionButton = ({
             {...props}
         >
             {typeof children === 'string' ? (
-                <Icon>{children as string}</Icon>
+                <Icon variant={variant}>{children as string}</Icon>
             ) : (
                 cloneElement(children as React.ReactElement, {
                     size: 'xsmall',
                     color: 'dark',
+                    variant,
                 })
             )}
         </Button>

@@ -11,7 +11,8 @@ export const title = (
     mt: number,
     mb: number,
     size: IFontSize,
-    text: ITextAlign
+    text: ITextAlign,
+    actions?: boolean
 ) => css`
     margin-top: calc(${mt} * 0.25rem);
     margin-bottom: calc(${mb} * 0.25rem);
@@ -21,6 +22,10 @@ export const title = (
     ${size === 'h5' && headline.xxxsmall({ fontWeight: 'bold' })}
 
     text-align: ${text};
+
+    ${actions &&
+    `display: flex;
+    justify-content: space-between;`}
 `;
 
 export const textColorCss = ({

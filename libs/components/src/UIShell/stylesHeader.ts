@@ -12,8 +12,8 @@ export const header = ({ theme = defaultTheme }) => css`
     background-color: ${theme.header.background};
 `;
 
-export const headerPosition = (isFixed: boolean) => css`
-    ${isFixed === true && `position: fixed;`}
+export const headerPosition = (fixed: boolean) => css`
+    ${fixed === true && `position: fixed;`}
 `;
 
 export const headerHeight = (height: number) =>

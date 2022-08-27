@@ -1,10 +1,8 @@
 import { css } from '@emotion/react';
 
-import { EdeneColor, getColor, defaultTheme, Theme } from '@edene/foundations';
+import { defaultTheme, getColor, ThemeOptions } from '@edene/foundations';
 
-export const badge = ({ theme = defaultTheme }, color?: EdeneColor) => css`
-    ${badgeColorStyles(theme, getColor({ theme, color }))};
-
+export const badge = css`
     font-size: 10px;
     font-weight: 600;
     line-height: 13px;
@@ -14,9 +12,13 @@ export const badge = ({ theme = defaultTheme }, color?: EdeneColor) => css`
     vertical-align: baseline;
     border-radius: 0.25rem;
     width: fit-content;
+    display: flex;
 `;
 
-const badgeColorStyles = (theme: Theme, color: string) => css`
-    background-color: ${color};
-    color: ${theme.black};
+export const badgeTheme = ({
+    theme = defaultTheme,
+    color,
+}: ThemeOptions) => css`
+    background-color: ${getColor({ theme, color })};
+    color: ${theme.white};
 `;

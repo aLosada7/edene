@@ -14,7 +14,7 @@ export const Settings = () => {
     return (
         <Fragment>
             <div css={settings(theme)} onClick={() => setOpen(true)}>
-                <Icon>settings</Icon>
+                <Icon color={theme.white}>settings</Icon>
             </div>
             {open && <div css={overlay} onClick={() => setOpen(false)}></div>}
             <SettingContent open={open} onClose={() => setOpen(false)} />

@@ -1,5 +1,5 @@
+import { IconProps } from '../Icon';
 import { SvgIcon } from './SvgIcon';
-import type { IconProps } from '../types';
 
 export const GithubIcon = ({ size, color }: IconProps) => (
     <SvgIcon size={size} color={color}>
@@ -7,8 +7,8 @@ export const GithubIcon = ({ size, color }: IconProps) => (
             width="inherit"
             fill="inherit"
             focusable="false"
-            viewBox="0 0 20 20"
-            aria-labelledby="cesta"
+            viewBox="0 0 16 16"
+            aria-labelledby="github"
             role="img"
             aria-hidden="false"
         >

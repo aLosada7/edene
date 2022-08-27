@@ -1,9 +1,10 @@
-import { SerializedStyles } from '@emotion/react';
 import React from 'react';
 
-import { card } from './styles';
+import { Props, useThemeContext } from '@edene/foundations';
 
-export interface CardProps {
+import { card, cardTheme } from './styles';
+
+export interface CardProps extends Props {
     /**
      * The destination url if we want the card to be acting as a link
      */
@@ -12,14 +13,15 @@ export interface CardProps {
     /** Called when close button clicked and when escape key is pressed */
     onClick?(): void;
     children?: React.ReactElement | React.ReactElement[];
-    cssOverrides?: SerializedStyles | SerializedStyles[];
 }
 
 export const Card = React.forwardRef(
     (
-        { href, role, onClick, children, cssOverrides, ...props }: CardProps,
+        { href, role, onClick, children, cssOverrides }: CardProps,
         ref: React.LegacyRef<HTMLElement> | undefined
     ) => {
+        const { theme } = useThemeContext();
+
         if (href)
             return (
                 <a href={href} css={[card, cssOverrides]}>
@@ -30,7 +32,7 @@ export const Card = React.forwardRef(
         return (
             <section
                 role={role}
-                css={[card, cssOverrides]}
+                css={[card, cardTheme({ theme }), cssOverrides]}
                 onClick={onClick}
                 ref={ref}
             >

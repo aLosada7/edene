@@ -1,6 +1,13 @@
 import { css } from '@emotion/react';
 
-import { Row, Col, Card, CardBody, Text, CardHeader } from '@edene/components';
+import {
+    Row,
+    Col,
+    Card,
+    CardSection,
+    Text,
+    CardHeader,
+} from '@edene/components';
 
 export const TeamStatsComponent = () => (
     <Card
@@ -10,7 +17,7 @@ export const TeamStatsComponent = () => (
         `}
     >
         <CardHeader>TEAM STATS</CardHeader>
-        <CardBody>
+        <CardSection>
             <Row py={1}>
                 <Col sm={12} md={8} direction="column">
                     <Text size="sm">PTS</Text>
@@ -37,6 +44,6 @@ export const TeamStatsComponent = () => (
                     <Text weight="bold">3</Text>
                 </Col>
             </Row>
-        </CardBody>
+        </CardSection>
     </Card>
 );

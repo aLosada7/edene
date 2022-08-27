@@ -31,10 +31,11 @@ module.exports = {
             },
         },
         '@storybook/addon-controls',
-        '@storybook/addon-viewport',
         'storybook-mobile',
         '@storybook/addon-actions',
         '@storybook/addon-measure',
+        '@storybook/addon-outline',
+        '@storybook/addon-viewport',
     ],
     webpackFinal: async (config) => {
         return merge(config, {

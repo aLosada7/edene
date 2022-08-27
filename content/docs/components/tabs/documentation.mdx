@@ -1,0 +1,100 @@
+---
+title: 'Tabs'
+scope: 'documentation'
+source: 'https://github.com/aLosada7/edene/tree/master/libs/components/src/Tabs'
+storybook: 'https://master--62ed74f612c78f7bbe13743e.chromatic.com/?path=/docs/components-tabs--playground'
+---
+
+## Import
+
+```bash
+import { Tabs, Tab } from '@edene/components';
+```
+
+## Usage
+
+A default tab.
+
+```tsx
+() => {
+    const [selected, setSelected] = React.useState('1');
+
+    return (
+        <Tabs active={selected} onTabChange={(tabKey) => setSelected(tabKey)}>
+            <Tab tabKey="1" label="Tab 1">
+                <Text>Content for first tab goes here.</Text>
+            </Tab>
+            <Tab tabKey="2" label="Tab 2">
+                <Text>Content for second tab goes here.</Text>
+            </Tab>
+        </Tabs>
+    );
+};
+```
+
+### Vertical
+
+Tabs aligned vertically
+
+```tsx
+() => {
+    const [selected, setSelected] = React.useState('1');
+
+    return (
+        <Tabs
+            orientation="vertical"
+            active={selected}
+            onTabChange={(tabKey) => setSelected(tabKey)}
+        >
+            <Tab tabKey="1" label="Tab 1">
+                <Text>Content for first tab goes here.</Text>
+            </Tab>
+            <Tab tabKey="2" label="Tab 2">
+                <Text>Content for second tab goes here.</Text>
+            </Tab>
+        </Tabs>
+    );
+};
+```
+
+### Disabled tab
+
+Tabs with a disabled tab
+
+```tsx
+() => {
+    const [selected, setSelected] = React.useState('2');
+
+    return (
+        <Tabs active={selected} onTabChange={(tabKey) => setSelected(tabKey)}>
+            <Tab tabKey="1" label="Tab 1" disabled>
+                <Text>Content for first tab goes here.</Text>
+            </Tab>
+            <Tab tabKey="2" label="Tab 2">
+                <Text>Content for second tab goes here.</Text>
+            </Tab>
+        </Tabs>
+    );
+};
+```
+
+### Hidden tab
+
+Tabs with a hidden tab
+
+```tsx
+() => {
+    const [selected, setSelected] = React.useState('2');
+
+    return (
+        <Tabs active={selected} onTabChange={(tabKey) => setSelected(tabKey)}>
+            <Tab tabKey="1" label="Tab 1" hidden>
+                <Text>Content for first tab goes here.</Text>
+            </Tab>
+            <Tab tabKey="2" label="Tab 2">
+                <Text>Content for second tab goes here.</Text>
+            </Tab>
+        </Tabs>
+    );
+};
+```

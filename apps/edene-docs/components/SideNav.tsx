@@ -21,25 +21,33 @@ interface SideNavProps {
 const COMPONENTS = [
     'Accordion',
     'Alert',
+    'Badge',
     'Breadcrumb',
     'Button',
+    'Card',
+    'Carousel',
     'Tabs',
     'Text',
     'Title',
     'Grid',
+    'Select',
+    'Radio',
+    'TextInput',
+    'Checkbox',
+    'Image',
 ].sort((a, b) => a.localeCompare(b));
 
 const ANIMATIONS = ['FadeIn'].sort((a, b) => a.localeCompare(b));
 
-export const SideNav = ({ open, ...props }: SideNavProps) => {
+const HOOKS = ['useSwipe', 'useHover'].sort((a, b) => a.localeCompare(b));
+
+export const SideNav = (props: SideNavProps) => {
     return (
         <EdeneSideNav
-            mobileWidth="full"
             headerHeight={48}
             aria-label="Side navigation"
             cssOverrides={sideNav}
-            onClose={props.onClose}
-            open={open}
+            {...props}
         >
             <SideNavItems>
                 <ActiveLink
@@ -58,7 +66,9 @@ export const SideNav = ({ open, ...props }: SideNavProps) => {
                     {COMPONENTS.map((component) => (
                         <ActiveLink
                             key={component}
-                            href={`/components/${component.toLowerCase()}`}
+                            href={`/components/${component
+                                .charAt(0)
+                                .toLowerCase()}${component.slice(1)}`}
                             activeClassName="active"
                         >
                             <SideNavItem {...props}>{component}</SideNavItem>
@@ -69,10 +79,25 @@ export const SideNav = ({ open, ...props }: SideNavProps) => {
                     {ANIMATIONS.map((animation) => (
                         <ActiveLink
                             key={animation}
-                            href={`/animations/${animation.toLowerCase()}`}
+                            href={`/animations/${animation
+                                .charAt(0)
+                                .toLowerCase()}${animation.slice(1)}`}
                             activeClassName="active"
                         >
                             <SideNavItem {...props}>{animation}</SideNavItem>
+                        </ActiveLink>
+                    ))}
+                </SideNavPrincipal>
+                <SideNavPrincipal title="Hooks">
+                    {HOOKS.map((hook) => (
+                        <ActiveLink
+                            key={hook}
+                            href={`/hooks/${hook
+                                .charAt(0)
+                                .toLowerCase()}${hook.slice(1)}`}
+                            activeClassName="active"
+                        >
+                            <SideNavItem {...props}>{hook}</SideNavItem>
                         </ActiveLink>
                     ))}
                 </SideNavPrincipal>

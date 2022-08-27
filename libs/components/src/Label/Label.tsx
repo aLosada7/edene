@@ -45,7 +45,7 @@ export const Label = ({
                 ''
             )}
             {children}
-            {text}
+            <span>{text}</span>
         </label>
     );
 };

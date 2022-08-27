@@ -1,0 +1,81 @@
+---
+title: 'Grid'
+scope: 'documentation'
+source: 'https://github.com/aLosada7/edene/tree/master/libs/components/src/Grid'
+storybook: 'https://master--62ed74f612c78f7bbe13743e.chromatic.com/?path=/story/components-grid--three-cols'
+---
+
+## Import
+
+```bash
+import { Container, Row, Col } from '@edene/components';
+```
+
+## Usage
+
+```tsx
+() => {
+    const col = css`
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+        background-color: rgba(86, 61, 124, 0.15);
+        border: 1px solid rgba(86, 61, 124, 0.2);
+    `;
+
+    return (
+        <Container>
+            <Row>
+                <Col cssOverrides={col} md={12}>
+                    One of two columns
+                </Col>
+                <Col cssOverrides={col} md={12}>
+                    One of two columns
+                </Col>
+            </Row>
+            <Row>
+                <Col cssOverrides={col} lg={8}>
+                    One of three columns
+                </Col>
+                <Col cssOverrides={col} lg={8}>
+                    One of three columns
+                </Col>
+                <Col cssOverrides={col} lg={8}>
+                    One of three columns
+                </Col>
+            </Row>
+        </Container>
+    );
+};
+```
+
+### Columns within a row
+
+```tsx
+() => {
+    const col = css`
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+        background-color: rgba(86, 61, 124, 0.15);
+        border: 1px solid rgba(86, 61, 124, 0.2);
+    `;
+
+    return (
+        <Container>
+            <Row>
+                <Col cssOverrides={col} lg={12}>
+                    One of two columns
+                </Col>
+                <Col cssOverrides={col} lg={12}>
+                    One of two columns
+                </Col>
+                <Col cssOverrides={col} lg={12}>
+                    One of two columns
+                </Col>
+                <Col cssOverrides={col} lg={12}>
+                    One of two columns
+                </Col>
+            </Row>
+        </Container>
+    );
+};
+```

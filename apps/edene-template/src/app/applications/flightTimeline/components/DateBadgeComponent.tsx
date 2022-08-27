@@ -15,5 +15,5 @@ const badge = (theme: Theme) => css`
 export const DateBadgeComponent = ({ date }: { date: string }) => {
     const { theme } = useThemeContext();
 
-    return <Badge text={date} cssOverrides={badge(theme)} />;
+    return <Badge cssOverrides={badge(theme)}>{date}</Badge>;
 };

@@ -5,7 +5,7 @@ import PostContent from './PostContent';
 export const ComponentTabs = ({
     selectedTab,
     onTabSelected,
-    usage,
+    documentation,
     props,
 }: any) => {
     return (
@@ -13,8 +13,8 @@ export const ComponentTabs = ({
             active={selectedTab}
             onTabChange={(tabKey) => onTabSelected(tabKey)}
         >
-            <Tab tabKey="usage" label="Usage">
-                <PostContent content={usage} />
+            <Tab tabKey="documentation" label="Documentation">
+                <PostContent content={documentation} />
             </Tab>
             <Tab tabKey="props" label="Props">
                 <PostContent content={props} />

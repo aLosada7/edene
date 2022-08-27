@@ -1,27 +1,31 @@
 import { SerializedStyles } from '@emotion/react';
+import { ReactNode } from 'react';
 
 import { useThemeContext, EdeneColor } from '@edene/foundations';
 
-import { badge } from './styles';
+import { badge, badgeTheme } from './styles';
 
 export type IBadgeVariant = 'filled' | 'outlined';
 
 export interface BadgeProps {
-    text: string;
+    children: ReactNode;
     color?: EdeneColor;
     cssOverrides?: SerializedStyles | SerializedStyles[];
 }
 
 export const Badge = (props: BadgeProps) => {
-    const { text, color, cssOverrides, ...rest } = {
+    const { children, color, cssOverrides, ...rest } = {
         ...props,
     };
 
     const { theme } = useThemeContext();
 
     return (
-        <span css={[badge(theme, color), cssOverrides]} {...rest}>
-            {text}
+        <span
+            css={[badge, badgeTheme({ theme, color }), cssOverrides]}
+            {...rest}
+        >
+            {children}
         </span>
     );
 };

@@ -34,7 +34,6 @@ export const tabList = (orientation: TabsOrientation) => css`
 
 export const tab = css`
     ${textSans.small({ fontWeight: 'regular' })};
-    padding: 0 1rem;
     display: flex;
     position: relative;
     cursor: pointer;

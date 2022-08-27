@@ -1,5 +1,5 @@
 import { SvgIcon } from './SvgIcon';
-import type { IconProps } from '../types';
+import type { IconProps } from '../Icon';
 
 export const StorybookIcon = ({ size, color }: IconProps) => (
     <SvgIcon size={size} color={color}>

@@ -3,7 +3,7 @@ import {
     Row,
     Col,
     Card,
-    CardBody,
+    CardSection,
     Title,
     Form,
     TextInput,
@@ -17,7 +17,7 @@ export const ContactForm = () => {
     return (
         <Container>
             <Card cssOverrides={contactCard}>
-                <CardBody>
+                <CardSection>
                     <Row>
                         <Col sm={24} lg={8}>
                             <Title size="h3" mt={4}>
@@ -59,7 +59,7 @@ export const ContactForm = () => {
                             </Form>
                         </Col>
                     </Row>
-                </CardBody>
+                </CardSection>
             </Card>
         </Container>
     );

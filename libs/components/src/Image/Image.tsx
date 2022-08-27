@@ -17,14 +17,18 @@ export interface ImageProps {
 export const Image = ({
     src,
     alt,
-    size = 'd',
+    size,
     objectFit = 'cover',
     targetBlank = false,
     cssOverrides,
-    ...props
 }: ImageProps) => {
     const img = (
-        <img src={src} alt={alt} css={[image(size, objectFit), cssOverrides]} />
+        <img
+            loading="lazy"
+            src={src}
+            alt={alt}
+            css={[image(objectFit, size), cssOverrides]}
+        />
     );
 
     if (targetBlank) {

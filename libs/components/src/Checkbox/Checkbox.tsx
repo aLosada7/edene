@@ -11,7 +11,8 @@ import { Label } from '../Label';
 
 export interface CheckboxProps extends FormInput {
     checked?: boolean;
-    // value?: (string | number)[];
+    value?: string;
+    onChange?: any;
     onClick?: any;
     /**
      * Appears as an inline error message.
@@ -34,9 +35,9 @@ export const Checkbox = ({
     ...props
 }: CheckboxProps) => {
     const textInputId = id || generateSourceId();
-    const group = useCheckboxGroup();
+    const { onChange, isGroup } = useCheckboxGroup();
 
-    const Wrapper = group.isGroup ? FormGroup : 'div';
+    const Wrapper = isGroup ? FormGroup : 'div';
 
     return (
         <Wrapper>
@@ -55,6 +56,8 @@ export const Checkbox = ({
                         type="checkbox"
                         cssOverrides={checkboxInput}
                         id={textInputId}
+                        onClick={onChange}
+                        onChange={props.onChange}
                         {...props}
                     ></Input>
                 </Label>

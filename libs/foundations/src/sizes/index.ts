@@ -10,25 +10,28 @@ export const buttonSize = {
 export const iconSize = {
     xsmall: 12,
     small: 16,
-    medium: 24,
-    large: 32,
-    big: 60,
+    medium: 20,
+    large: 28,
+    big: 48,
 };
 
 // momentarily
 export const size = {
-    xsmall: 24,
-    small: 36,
-    medium: 44,
+    small: 24,
+    medium: 36,
+    large: 44,
 };
 
 export const height = {
-    ctaMedium: size.medium,
     ctaSmall: size.small,
-    ctaXsmall: size.xsmall,
+    ctaMedium: size.medium,
+    ctaLarge: size.large,
+    inputSmall: size.small,
     inputMedium: size.medium,
-    inputXsmall: size.xsmall,
-    iconMedium: iconSize.medium,
-    iconSmall: iconSize.small,
+    inputLarge: size.large,
     iconXsmall: iconSize.xsmall,
+    iconSmall: iconSize.small,
+    iconMedium: iconSize.medium,
+    iconLarge: iconSize.large,
+    iconBig: iconSize.big,
 };

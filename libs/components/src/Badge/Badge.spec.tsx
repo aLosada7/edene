@@ -1,21 +1,22 @@
-import React from 'react';
-
 import { renderWithAct } from '@edene/utils';
 import { EdeneTheme } from '@edene/foundations';
 
 import { Badge, BadgeProps } from './Badge';
 
 const defaultProps: BadgeProps = {
-    text: 'test',
+    children: 7,
 };
 
 describe('Badge', () => {
     it('renders children', async () => {
-        const { queryAllByText } = await renderWithAct(
+        const { getAllByText } = await renderWithAct(
             <EdeneTheme>
                 <Badge {...defaultProps} />
             </EdeneTheme>
         );
-        expect(queryAllByText(defaultProps.text)).toHaveLength(1);
+        if (defaultProps.children)
+            expect(getAllByText(defaultProps.children.toString())).toHaveLength(
+                1
+            );
     });
 });

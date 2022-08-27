@@ -1,4 +1,4 @@
-import { forwardRef, InputHTMLAttributes } from 'react';
+import { forwardRef, Fragment, InputHTMLAttributes } from 'react';
 
 import { descriptionId, Props } from '@edene/foundations';
 
@@ -9,8 +9,8 @@ import {
     input as inputE,
     errorInput,
     successInput,
-    leftIconInput,
-    leftIconInInput,
+    iconLeftInput,
+    iconLeftInInput,
 } from './styles';
 
 export interface InputProps
@@ -37,7 +37,7 @@ export interface InputProps
      * Only for radio buttons
      */
     checked?: boolean;
-    leftIcon?: string;
+    iconLeft?: string;
 }
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(
@@ -47,7 +47,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
             optional = false,
             error,
             success,
-            leftIcon,
+            iconLeft,
             cssOverrides,
             ...rest
         } = props;
@@ -57,10 +57,10 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
             !error && success ? <InlineSuccess>{success}</InlineSuccess> : null;
 
         return (
-            <div>
-                {leftIcon && (
-                    <div css={leftIconInput}>
-                        <Icon>{leftIcon}</Icon>
+            <Fragment>
+                {iconLeft && (
+                    <div css={iconLeftInput}>
+                        <Icon color="#adb5bd">{iconLeft}</Icon>
                     </div>
                 )}
                 <input
@@ -73,7 +73,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
                                 ? successInput
                                 : errorInput
                             : null,
-                        leftIcon ? leftIconInInput : null,
+                        iconLeft && iconLeftInInput,
                         cssOverrides,
                     ]}
                     aria-required={!optional}
@@ -83,7 +83,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
                 />
                 {Error}
                 {Success}
-            </div>
+            </Fragment>
         );
     }
 );

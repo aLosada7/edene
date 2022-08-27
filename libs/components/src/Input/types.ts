@@ -1,7 +1,7 @@
 export interface FormInput {
     id?: string;
     /**
-     * Appears above the text input
+     * Input label, displayed before input
      */
     label?: string;
     /**

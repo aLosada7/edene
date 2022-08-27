@@ -24,35 +24,47 @@ interface SideNavProps {
     onClose: () => void;
 }
 
+const DASHBOARDS = ['Education', 'Report'];
+const APPLICATIONS = ['Game Summary', 'Flight Timeline', 'Contract Register'];
+
 export const SideNav = ({ sideNavWidth, ...props }: SideNavProps) => {
     return (
         <EdeneSideNav
+            fixed
+            overlay
             width={sideNavWidth}
             aria-label="Side navigation"
             cssOverridesAside={aside(props.open, sideNavWidth)}
             {...props}
         >
             <SideNavItems>
+                <SideNavPrincipal title="Dashboards">
+                    {DASHBOARDS.map((dashboard) => (
+                        <SideNavItem
+                            key={dashboard}
+                            component={NavLink}
+                            to={`dashboards/${dashboard
+                                .replace(' ', '-')
+                                .toLowerCase()}`}
+                            {...props}
+                        >
+                            {dashboard}
+                        </SideNavItem>
+                    ))}
+                </SideNavPrincipal>
                 <SideNavPrincipal title="Applications">
-                    <SideNavItem
-                        component={NavLink}
-                        to="applications/game-summary"
-                        {...props}
-                    >
-                        Game Summary
-                    </SideNavItem>
-                    <SideNavItem
-                        component={NavLink}
-                        to="applications/flight-timeline"
-                    >
-                        Flight Timeline
-                    </SideNavItem>
-                    <SideNavItem
-                        component={NavLink}
-                        to="applications/contract-register"
-                    >
-                        Contract Register
-                    </SideNavItem>
+                    {APPLICATIONS.map((application) => (
+                        <SideNavItem
+                            key={application}
+                            component={NavLink}
+                            to={`applications/${application
+                                .replace(' ', '-')
+                                .toLowerCase()}`}
+                            {...props}
+                        >
+                            {application}
+                        </SideNavItem>
+                    ))}
                 </SideNavPrincipal>
                 <SideNavPrincipal title="Pages">
                     <SideNavMenu title="Authentication">

@@ -100,8 +100,8 @@ export const grays = {
     9: colors.grays[9],
 };
 
-export const brandColor = '#37B9F1';
-export const brandHover = 'rgb(34, 139, 230)';
+export const brandColor = 'rgb(250, 82, 82)';
+export const brandHover = 'rgb(240, 62, 62)';
 
 export const white = '#FCFCFC';
 export const black = '#1C1E20';

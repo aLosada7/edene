@@ -1,0 +1,72 @@
+---
+title: 'Accordion'
+scope: 'documentation'
+source: 'https://github.com/aLosada7/edene/tree/master/libs/components/src/Accordion'
+storybook: 'https://master--62ed74f612c78f7bbe13743e.chromatic.com/?path=/docs/components-accordion--playground'
+---
+
+## Import
+
+```bash
+import { Accordion, AccordionRow } from '@edene/components';
+```
+
+## About
+
+-   **Show and hide** labels are shown by default when tablet size or bigger, but it can be changed manually
+-   **Ellipsis** is used to prevent the header from a broken layout
+-   **Aria-expanded** accesibility included
+
+## Usage
+
+A default accordion.
+
+```tsx
+<Accordion>
+    <AccordionRow label="Collecting from multiple newsagents">
+        Present your card to a newsagent each time you collect the paper. The
+        newsagent will scan your card and will be reimbursed for each
+        transaction automatically.
+    </AccordionRow>
+    <AccordionRow label="Delivery from your retailer">
+        Simply give your preferred store / retailer the barcode printed on your
+        subscription letter.
+    </AccordionRow>
+</Accordion>
+```
+
+### Without CTA Labels
+
+With CTA labels _Show_ and _Hide_ hidden.
+
+```tsx
+<Accordion hideToggleLabel>
+    <AccordionRow label="Collecting from multiple newsagents">
+        Present your card to a newsagent each time you collect the paper. The
+        newsagent will scan your card and will be reimbursed for each
+        transaction automatically.
+    </AccordionRow>
+    <AccordionRow label="Delivery from your retailer">
+        Simply give your preferred store / retailer the barcode printed on your
+        subscription letter.
+    </AccordionRow>
+</Accordion>
+```
+
+### Bordered
+
+Accordion bordered
+
+```tsx
+<Accordion variant="bordered">
+    <AccordionRow label="Collecting from multiple newsagents">
+        Present your card to a newsagent each time you collect the paper. The
+        newsagent will scan your card and will be reimbursed for each
+        transaction automatically.
+    </AccordionRow>
+    <AccordionRow label="Delivery from your retailer">
+        Simply give your preferred store / retailer the barcode printed on your
+        subscription letter.
+    </AccordionRow>
+</Accordion>
+```

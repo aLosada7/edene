@@ -20,7 +20,22 @@ const Template: Story<CheckboxProps> = (props: CheckboxProps) => (
 export const Playground = Template.bind({});
 asPlayground(Playground);
 
-export const OptionalCheckbox = Template.bind({});
+const ControlledTemplate: Story<CheckboxProps> = (props: CheckboxProps) => {
+    const [checked, setChecked] = useState<boolean>(false);
+
+    return (
+        <Checkbox
+            checked={checked}
+            onChange={(event: any) => setChecked(event.currentTarget.checked)}
+            {...props}
+        />
+    );
+};
+
+export const Controlled = ControlledTemplate.bind({});
+asChromaticStory(Controlled);
+
+export const OptionalCheckbox = ControlledTemplate.bind({});
 OptionalCheckbox.args = {
     optional: true,
 };
@@ -28,7 +43,7 @@ asChromaticStory(OptionalCheckbox);
 
 // *****************************************************************************
 
-export const ErrorCheckbox = Template.bind({});
+export const ErrorCheckbox = ControlledTemplate.bind({});
 ErrorCheckbox.args = {
     error: 'You must agree before submitting.',
 };
@@ -36,7 +51,7 @@ asChromaticStory(ErrorCheckbox);
 
 // *****************************************************************************
 
-export const SuccessCheckbox = Template.bind({});
+export const SuccessCheckbox = ControlledTemplate.bind({});
 SuccessCheckbox.args = {
     success: 'Thank you.',
 };
@@ -45,12 +60,18 @@ asChromaticStory(SuccessCheckbox);
 // *****************************************************************************
 
 export const Group = () => {
-    const [values, setValues] = useState([]);
+    const [values, setValues] = useState<string[]>([]);
 
     return (
         <CheckboxGroup value={values} onChange={setValues}>
-            <Checkbox label="Save information to pay faster next time" />
-            <Checkbox label="My billing and shipping address are the same" />
+            <Checkbox
+                value="savePayInfo"
+                label="Save information to pay faster next time"
+            />
+            <Checkbox
+                value="saveBillingInfo"
+                label="Save billing and shipping address are the same"
+            />
         </CheckboxGroup>
     );
 };

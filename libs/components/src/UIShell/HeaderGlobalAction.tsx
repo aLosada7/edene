@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, cloneElement } from 'react';
+import { ButtonHTMLAttributes } from 'react';
 
 import { useThemeContext } from '@edene/foundations';
 
@@ -9,6 +9,7 @@ import {
     headerIconBadge,
     headerGlobalActionAriaLabel,
 } from './stylesHeader';
+import { Icon } from '../icons';
 
 export interface HeaderGlobalActionProps
     extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -19,7 +20,7 @@ export interface HeaderGlobalActionProps
     showAriaLabel?: boolean;
     'aria-label': string;
     badge?: number;
-    children: React.ReactElement;
+    children: string;
 }
 
 export const HeaderGlobalAction = ({
@@ -40,9 +41,9 @@ export const HeaderGlobalAction = ({
             {showAriaLabel ? (
                 <div css={actionAssistiveText}>{props['aria-label']}</div>
             ) : null}
-            {cloneElement(children, { size: 'small' })}
+            {<Icon color={theme.theme.white}>{children}</Icon>}
             {badge ? (
-                <Badge text={badge.toString()} cssOverrides={headerIconBadge} />
+                <Badge cssOverrides={headerIconBadge}>{badge.toString()}</Badge>
             ) : null}
         </button>
     );

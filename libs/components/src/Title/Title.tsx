@@ -1,8 +1,9 @@
-import { cloneElement, ReactElement } from 'react';
+import { cloneElement, ReactElement, ReactNode } from 'react';
 
 import { EdeneColor, Props, useThemeContext } from '@edene/foundations';
 
 import { flexText, title, textColorCss } from './styles';
+import { Stack } from '../Stack';
 
 export type IFontSize = 'h3' | 'h4' | 'h5';
 export type ITextAlign = 'inherit' | 'left' | 'center' | 'right';
@@ -15,6 +16,7 @@ export interface TitleProps extends Props {
     color?: EdeneColor;
     align?: ITextAlign;
     icon?: ReactElement;
+    actions?: ReactNode;
     children: ReactElement | React.ReactNode | string;
 }
 
@@ -25,6 +27,7 @@ export const Title = ({
     color,
     align = 'inherit',
     icon,
+    actions,
     children,
     cssOverrides,
 }: TitleProps) => {
@@ -36,7 +39,7 @@ export const Title = ({
     return (
         <Element
             css={[
-                title(mt, mb, size, align),
+                title(mt, mb, size, align, !!actions),
                 textColorCss({ theme, color: textColor }),
                 icon ? flexText : null,
                 cssOverrides,
@@ -44,6 +47,7 @@ export const Title = ({
         >
             {icon ? cloneElement(icon, { color: 'inherit' }) : null}
             {children}
+            {actions && <Stack>{actions}</Stack>}
         </Element>
     );
 };

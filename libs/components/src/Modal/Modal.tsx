@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import { ReactElement, useEffect, useRef, Fragment } from 'react';
-import { Card, CardBody } from '../Card';
+import { Card, CardSection } from '../Card';
 import { cardOverrides, modal } from './styles';
 
 interface ModalProps {
@@ -60,13 +60,13 @@ const Modal = ({
                 aria-modal="true"
                 ref={modalRef}
             >
-                <CardBody
+                <CardSection
                     cssOverrides={css`
                         padding: 1.2rem 2rem;
                     `}
                 >
                     {children}
-                </CardBody>
+                </CardSection>
             </Card>
         </div>
     );

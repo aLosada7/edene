@@ -23,14 +23,44 @@ export default {
     title: 'Components/Table',
 };
 
-export const Basic: Story<DataTableProps> = (args) => (
-    <DataTable>
-        <TableContainer
-            title="DataTable"
-            description="Use the toolbar menu to add rows and headers"
-        >
-            <Table>
-                <TableHead>
+export const Default: Story<DataTableProps> = (args) => (
+    <Table>
+        <TableHead>
+            <TableRow>
+                <TableHeader key="name">Name</TableHeader>
+                <TableHeader key="protocol">Protocol</TableHeader>
+                <TableHeader key="port">Port</TableHeader>
+                <TableHeader key="rule" align="left">
+                    Rule
+                </TableHeader>
+                <TableHeader key="groups">Attached Groups</TableHeader>
+                <TableHeader key="status">Status</TableHeader>
+            </TableRow>
+        </TableHead>
+        <TableBody>
+            {rows.map((row) => (
+                <TableRow>
+                    <TableCell>{row.name}</TableCell>
+                    <TableCell>{row.protocol}</TableCell>
+                    <TableCell>{row.port}</TableCell>
+                    <TableCell align="left">{row.rule}</TableCell>
+                    <TableCell>{row.groups}</TableCell>
+                    <TableCell>{row.status}</TableCell>
+                </TableRow>
+            ))}
+        </TableBody>
+    </Table>
+);
+asChromaticStory(Default);
+
+export const WithContainer: Story<DataTableProps> = (args) => (
+    <TableContainer
+        title="DataTable"
+        description="Use the toolbar menu to add rows and headers"
+    >
+        <Table>
+            <TableHead>
+                <TableRow>
                     <TableHeader key="name">Name</TableHeader>
                     <TableHeader key="protocol">Protocol</TableHeader>
                     <TableHeader key="port">Port</TableHeader>
@@ -39,38 +69,38 @@ export const Basic: Story<DataTableProps> = (args) => (
                     </TableHeader>
                     <TableHeader key="groups">Attached Groups</TableHeader>
                     <TableHeader key="status">Status</TableHeader>
-                </TableHead>
-                <TableBody>
-                    {rows.map((row) => (
-                        <TableRow>
-                            <TableCell>{row.name}</TableCell>
-                            <TableCell>{row.protocol}</TableCell>
-                            <TableCell>{row.port}</TableCell>
-                            <TableCell align="left">{row.rule}</TableCell>
-                            <TableCell>{row.groups}</TableCell>
-                            <TableCell>{row.status}</TableCell>
-                        </TableRow>
-                    ))}
-                </TableBody>
-            </Table>
-        </TableContainer>
-    </DataTable>
+                </TableRow>
+            </TableHead>
+            <TableBody>
+                {rows.map((row) => (
+                    <TableRow>
+                        <TableCell>{row.name}</TableCell>
+                        <TableCell>{row.protocol}</TableCell>
+                        <TableCell>{row.port}</TableCell>
+                        <TableCell align="left">{row.rule}</TableCell>
+                        <TableCell>{row.groups}</TableCell>
+                        <TableCell>{row.status}</TableCell>
+                    </TableRow>
+                ))}
+            </TableBody>
+        </Table>
+    </TableContainer>
 );
-asChromaticStory(Basic);
+asChromaticStory(WithContainer);
 
 export const WithToolbar: Story<DataTableProps> = (args) => (
-    <DataTable>
-        <TableContainer
-            title="DataTable"
-            description="Use the toolbar menu to add rows and headers"
-        >
-            <TableToolbar>
-                <TableToolbarContent>
-                    <TableToolbarSearch onChange={action('onChange')} />
-                </TableToolbarContent>
-            </TableToolbar>
-            <Table>
-                <TableHead>
+    <TableContainer
+        title="DataTable"
+        description="Use the toolbar menu to add rows and headers"
+    >
+        <TableToolbar>
+            <TableToolbarContent>
+                <TableToolbarSearch onChange={action('onChange')} />
+            </TableToolbarContent>
+        </TableToolbar>
+        <Table>
+            <TableHead>
+                <TableRow>
                     <TableHeader key="name">Name</TableHeader>
                     <TableHeader key="protocol">Protocol</TableHeader>
                     <TableHeader key="port">Port</TableHeader>
@@ -79,22 +109,22 @@ export const WithToolbar: Story<DataTableProps> = (args) => (
                     </TableHeader>
                     <TableHeader key="groups">Attached Groups</TableHeader>
                     <TableHeader key="status">Status</TableHeader>
-                </TableHead>
-                <TableBody>
-                    {rows.map((row) => (
-                        <TableRow>
-                            <TableCell>{row.name}</TableCell>
-                            <TableCell>{row.protocol}</TableCell>
-                            <TableCell>{row.port}</TableCell>
-                            <TableCell align="left">{row.rule}</TableCell>
-                            <TableCell>{row.groups}</TableCell>
-                            <TableCell>{row.status}</TableCell>
-                        </TableRow>
-                    ))}
-                </TableBody>
-            </Table>
-        </TableContainer>
-    </DataTable>
+                </TableRow>
+            </TableHead>
+            <TableBody>
+                {rows.map((row) => (
+                    <TableRow>
+                        <TableCell>{row.name}</TableCell>
+                        <TableCell>{row.protocol}</TableCell>
+                        <TableCell>{row.port}</TableCell>
+                        <TableCell align="left">{row.rule}</TableCell>
+                        <TableCell>{row.groups}</TableCell>
+                        <TableCell>{row.status}</TableCell>
+                    </TableRow>
+                ))}
+            </TableBody>
+        </Table>
+    </TableContainer>
 );
 
 asChromaticStory(WithToolbar);

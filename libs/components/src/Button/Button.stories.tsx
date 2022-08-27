@@ -2,23 +2,15 @@ import { Meta } from '@storybook/react';
 import { Fragment, useRef } from 'react';
 
 import { Icon } from '../icons';
-import { Button, ButtonProps } from './Button';
+import { Button } from './Button';
 import ButtonGroup from './ButtonGroup';
-import type { Story } from '../lib/storybook-emotion-10-fixes';
 import { StoryHStack } from '../lib/general-story-components';
-import { asPlayground, asChromaticStory } from '../lib/story-intents';
+import { asChromaticStory } from '../lib/story-intents';
 
 export default {
     component: Button,
     title: 'Components/Button',
 } as Meta;
-
-const Template: Story<ButtonProps<'button'>> = (
-    args: ButtonProps<'button'>
-) => <Button {...args} />;
-
-export const Playground = Template.bind({});
-asPlayground(Playground);
 
 export const Filled = () => <Button>Button</Button>;
 asChromaticStory(Filled);
@@ -51,22 +43,22 @@ asChromaticStory(Sizes);
 export const WithIcon = () => (
     <Fragment>
         <StoryHStack>
-            <Button leftIcon="home">Home</Button>
-            <Button rightIcon="arrow_forward">Call us</Button>
+            <Button iconLeft="home">Home</Button>
+            <Button iconRight="arrow_forward">Call us</Button>
         </StoryHStack>
         <StoryHStack>
-            <Button leftIcon="home" variant="outline">
+            <Button iconLeft="home" variant="outline">
                 Home
             </Button>
-            <Button rightIcon="arrow_forward" variant="outline">
+            <Button iconRight="arrow_forward" variant="outline">
                 Call us
             </Button>
         </StoryHStack>
         <StoryHStack>
-            <Button leftIcon="home" variant="link">
+            <Button iconLeft="home" variant="link">
                 Home
             </Button>
-            <Button rightIcon="arrow_forward" variant="link">
+            <Button iconRight="arrow_forward" variant="link">
                 Call us
             </Button>
         </StoryHStack>

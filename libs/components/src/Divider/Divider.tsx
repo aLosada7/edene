@@ -12,7 +12,7 @@ export interface DividerProps extends Props {
 
 export const Divider = ({
     as,
-    mt = 4,
+    mt = 0,
     mb = 0,
     mh = 0,
     width,

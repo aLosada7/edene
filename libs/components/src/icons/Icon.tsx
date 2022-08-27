@@ -1,24 +1,39 @@
-import { css } from '@emotion/react';
+import {
+    IconSize,
+    Props,
+    EdeneColor,
+    IconVariant,
+    useThemeContext,
+} from '@edene/foundations';
 
-import { IconSize, iconSize } from '@edene/foundations';
-import { IconProps } from './types';
+import { icon, iconTheme } from './styles';
 
-const materialIcon = (size: IconSize) => css`
-    font-size: ${iconSize[size]};
-`;
+export interface IconProps extends Props {
+    size?: IconSize;
+    color?: EdeneColor;
+    /** For the new material icons */
+    children?: string;
+    /** For the new material icons */
+    variant?: IconVariant;
+}
 
-export const Icon = ({
-    children,
-    variant = 'filled',
-    cssOverrides,
-    size = 'medium',
-}: IconProps) => {
+export const Icon = (props: IconProps) => {
+    const { theme } = useThemeContext();
+
+    const {
+        children,
+        color = theme.black,
+        variant = 'filled',
+        cssOverrides,
+        size = 'medium',
+    } = props;
+
     return (
         <span
             className={`material-icons${
                 variant === 'outlined' ? '-outlined' : ''
             }`}
-            css={[materialIcon(size), cssOverrides]}
+            css={[icon(size), iconTheme({ theme, color }), cssOverrides]}
         >
             {children}
         </span>

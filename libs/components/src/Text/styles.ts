@@ -13,12 +13,14 @@ import { ITextFontSize, ITextAlign } from './Text';
 export const text = (
     mt: number,
     mb: number,
+    ml: number,
     size: ITextFontSize,
     text: ITextAlign,
     weight?: FontWeight
 ) => css`
     margin-top: calc(${mt} * 0.25rem);
     margin-bottom: calc(${mb} * 0.25rem);
+    margin-left: calc(${ml} * 0.25rem);
 
     // from bbc
     ${size === 'xxsm' && textSans.xxsmall({ fontWeight: 'light' })}

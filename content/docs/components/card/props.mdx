@@ -1,0 +1,30 @@
+---
+title: 'Card'
+scope: 'props'
+---
+
+## Card
+
+| Name    | Type     | Description                                        |
+| :------ | :------- | :------------------------------------------------- |
+| role    | string   | Card role                                          |
+| href    | string   | Href in case you want to redirect to another route |
+| onClick | function | Callback if card is clicked                        |
+
+## CardSection
+
+| Name         | Type      | Description                                                       |
+| :----------- | :-------- | :---------------------------------------------------------------- |
+| children     | ReactNode | Section content                                                   |
+| borderBottom | boolean   | Add a border to the bottom separating different parts of the card |
+| borderRight  | boolean   | Add a border to the right separating different parts of the card  |
+| flex         | number    | Extension of the section. Default is _100_.                       |
+
+## CardMedia
+
+Allows you to introduce images or carrousels as a card media
+
+| Name | Type                      | Description                                                                      |
+| :--- | :------------------------ | :------------------------------------------------------------------------------- |
+| src  | string \| CarouselMedia[] | Image src or carousel list of items (must include _src_ and _alt_ for each item) |
+| alt  | string                    | Alternative text for image                                                       |

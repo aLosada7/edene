@@ -1,0 +1,31 @@
+---
+title: 'useHover'
+scope: 'documentation'
+source: 'https://github.com/aLosada7/edene/tree/master/libs/hooks/src/useHover'
+---
+
+## Import
+
+```bash
+import { useHover } from '@edene/hooks';
+```
+
+Detects if an element is been hovered
+
+## Usage
+
+useHover can be useful to show a tooltip.
+
+```tsx
+() => {
+    const ref = React.useRef(null);
+    const [hoverRef, hovering] = useHover(ref);
+
+    return (
+        <div ref={hoverRef}>
+            <Text>Hover me!</Text>
+            {hovering && <Tooltip />}
+        </div>
+    );
+};
+```

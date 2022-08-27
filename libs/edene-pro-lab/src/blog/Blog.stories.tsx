@@ -22,6 +22,20 @@ export default {
     title: 'EdeneProLab/Blog',
 };
 
+const noPadding = css`
+    padding: 0;
+`;
+
+const noMargin = css`
+    margin: 0;
+`;
+
+const colorBlack = css`
+    span {
+        color: black;
+    }
+`;
+
 const BlogAllSection = (
     <Col
         md={12}
@@ -32,7 +46,7 @@ const BlogAllSection = (
         `}
     >
         <article>
-            <Image src={mountain} alt="Picture of a mountain" />
+            <Image size="d" src={mountain} alt="Picture of a mountain" />
             <Text size="xxsm" mt={2}>
                 01 Jan 2022
             </Text>
@@ -42,11 +56,12 @@ const BlogAllSection = (
             </Text>
             <Badge
                 color="gray"
-                text="Angular"
                 cssOverrides={css`
                     margin-top: 0.5rem;
                 `}
-            />
+            >
+                Angular
+            </Badge>
         </article>
     </Col>
 );
@@ -82,11 +97,12 @@ export const Blog = () => (
                             </Text>
                             <Badge
                                 color="gray"
-                                text="Angular"
                                 cssOverrides={css`
                                     margin-top: 0.5rem;
                                 `}
-                            />
+                            >
+                                Angular
+                            </Badge>
                         </article>
                     </Col>
                     <Col
@@ -137,11 +153,12 @@ export const Blog = () => (
                                     </Text>
                                     <Badge
                                         color="gray"
-                                        text="Angular"
                                         cssOverrides={css`
                                             margin-top: 0.5rem;
                                         `}
-                                    />
+                                    >
+                                        Angular
+                                    </Badge>
                                 </Col>
                             </Row>
                         </article>
@@ -185,11 +202,12 @@ export const Blog = () => (
                                     </Text>
                                     <Badge
                                         color="gray"
-                                        text="Angular"
                                         cssOverrides={css`
                                             margin-top: 0.5rem;
                                         `}
-                                    />
+                                    >
+                                        Angular
+                                    </Badge>
                                 </Col>
                             </Row>
                         </article>
@@ -203,17 +221,23 @@ export const Blog = () => (
                     All blog posts
                 </Title>
                 <Row>
-                    <Col md={8} lg={6}>
-                        <SideNav aria-label="Side navigation">
+                    <Col md={8} lg={6} cssOverrides={noPadding}>
+                        <SideNav
+                            aria-label="Side navigation"
+                            mobileWidth="full"
+                        >
                             <SideNavItems
                                 hideIcon
                                 activeColor="rgb(211, 219, 229)"
                                 hoverColor="transparent"
                             >
-                                <SideNavPrincipal title="Blog categories">
+                                <SideNavPrincipal
+                                    title="Blog categories"
+                                    cssOverrides={[noMargin, colorBlack]}
+                                >
                                     <SideNavItem
                                         href="javascript:void(0)"
-                                        badge={<Badge color="gray" text="3" />}
+                                        badge={<Badge color="gray">3</Badge>}
                                         cssOverrides={css`
                                             border-radius: 8px;
                                         `}

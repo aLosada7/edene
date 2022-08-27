@@ -5,7 +5,7 @@ import { HeaderMenuButton, Header, HeaderName } from '@edene/components';
 
 import { SideNav } from './SideNav';
 
-const headerHeight = 64;
+const headerHeight = 48;
 
 const main = () => css`
     margin-top: ${headerHeight}px;
@@ -24,7 +24,7 @@ export const Layout = ({ children }: { children: ReactNode }) => {
 
     return (
         <>
-            <Header isFixed aria-label="EDENE Library Name">
+            <Header fixed aria-label="EDENE Library Name">
                 <HeaderMenuButton
                     variant="light"
                     active={sideNavOpen}

@@ -39,7 +39,7 @@ export const AccountSettings = () => (
             </Title>
             <Divider />
             <Row>
-                <Col md={8} lg={8} verticalStack={2}>
+                <Col md={8} lg={8} vStack={2}>
                     <Title
                         size="h5"
                         mb={2}
@@ -75,7 +75,7 @@ export const AccountSettings = () => (
             </Row>
             <Divider />
             <Row>
-                <Col md={8} lg={8} verticalStack={2}>
+                <Col md={8} lg={8} vStack={2}>
                     <Title
                         size="h5"
                         mb={2}
@@ -109,7 +109,7 @@ export const AccountSettings = () => (
             </Row>
             <Row py={4}>
                 <Col md={8}></Col>
-                <Col md={16} horizontalStack={4}>
+                <Col md={16} hStack={4}>
                     <Button
                         variant="link"
                         color="dark"

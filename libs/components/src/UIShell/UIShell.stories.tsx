@@ -41,7 +41,7 @@ const sideNavHeader = css`
 
 export const FixedSideNav: Story<SideNavProps> = () => (
     <Fragment>
-        <SideNav isFixed width={256} aria-label="Side navigation">
+        <SideNav fixed width={256} aria-label="Side navigation">
             <SideNavItems>
                 <SideNavMenu title="L0 menu">
                     <SideNavMenuItem>L0 menu item</SideNavMenuItem>
@@ -61,7 +61,7 @@ export const FixedSideNav: Story<SideNavProps> = () => (
                 <SideNavItem>Link</SideNavItem>
                 <SideNavItem
                     aria-current="page"
-                    badge={<Badge color="gray" text="7" />}
+                    badge={<Badge color="gray">7</Badge>}
                 >
                     Link
                 </SideNavItem>
@@ -75,7 +75,7 @@ export const FixedSideNav: Story<SideNavProps> = () => (
 
 export const FixedSideNavWDivider: Story<SideNavProps> = () => (
     <Fragment>
-        <SideNav isFixed width={256} aria-label="Side navigation">
+        <SideNav fixed width={256} aria-label="Side navigation">
             <SideNavItems>
                 <SideNavMenu title="L0 menu">
                     <SideNavMenuItem>L0 menu item</SideNavMenuItem>
@@ -107,31 +107,27 @@ export const FixedSideNavWDivider: Story<SideNavProps> = () => (
 
 export const FixedSideNavWIcons: Story<SideNavProps> = () => (
     <Fragment>
-        <SideNav isFixed width={256} aria-label="Side navigation">
+        <SideNav fixed width={256} aria-label="Side navigation">
             <SideNavItems>
-                <SideNavMenu icon={<Icon>school</Icon>} title="L0 menu">
+                <SideNavMenu icon="school" title="L0 menu">
                     <SideNavMenuItem>L0 menu item</SideNavMenuItem>
                     <SideNavMenuItem>L0 menu item</SideNavMenuItem>
                     <SideNavMenuItem>L0 menu item</SideNavMenuItem>
                 </SideNavMenu>
-                <SideNavMenu
-                    icon={<Icon>school</Icon>}
-                    title="L0 menu"
-                    isActive={true}
-                >
+                <SideNavMenu icon="school" title="L0 menu" isActive={true}>
                     <SideNavMenuItem>L0 menu item</SideNavMenuItem>
                     <SideNavMenuItem aria-current="page">
                         L0 menu item
                     </SideNavMenuItem>
                     <SideNavMenuItem>L0 menu item</SideNavMenuItem>
                 </SideNavMenu>
-                <SideNavMenu icon={<Icon>school</Icon>} title="L0 menu">
+                <SideNavMenu icon="school" title="L0 menu">
                     <SideNavMenuItem>L0 menu item</SideNavMenuItem>
                     <SideNavMenuItem>L0 menu item</SideNavMenuItem>
                     <SideNavMenuItem>L0 menu item</SideNavMenuItem>
                 </SideNavMenu>
-                <SideNavItem icon={<Icon>school</Icon>}>Link</SideNavItem>
-                <SideNavItem icon={<Icon>school</Icon>}>Link</SideNavItem>
+                <SideNavItem icon="school">Link</SideNavItem>
+                <SideNavItem icon="school">Link</SideNavItem>
             </SideNavItems>
         </SideNav>
         <main css={main}>
@@ -141,7 +137,7 @@ export const FixedSideNavWIcons: Story<SideNavProps> = () => (
 );
 
 export const HeaderBase: Story<HeaderProps> = () => (
-    <Header isFixed aria-label="EDENE Library Name">
+    <Header fixed aria-label="EDENE Library Name">
         <HeaderName href="#" prefix="EDENE">
             [Library]
         </HeaderName>
@@ -149,39 +145,31 @@ export const HeaderBase: Story<HeaderProps> = () => (
 );
 
 export const HeaderBaseWActions: Story<HeaderProps> = () => (
-    <Header isFixed aria-label="EDENE Library Name">
+    <Header fixed aria-label="EDENE Library Name">
         <HeaderName href="#" prefix="EDENE">
             [Library]
         </HeaderName>
         <HeaderGlobalBar>
-            <HeaderGlobalAction aria-label="Search">
-                <Icon>search</Icon>
-            </HeaderGlobalAction>
+            <HeaderGlobalAction aria-label="Search">search</HeaderGlobalAction>
             <HeaderGlobalAction badge={7} aria-label="Notifications">
-                <Icon>notifications</Icon>
+                notifications
             </HeaderGlobalAction>
-            <HeaderGlobalAction aria-label="App">
-                <Icon>apps</Icon>
-            </HeaderGlobalAction>
+            <HeaderGlobalAction aria-label="App">apps</HeaderGlobalAction>
         </HeaderGlobalBar>
     </Header>
 );
 
 export const HeaderBaseWActionsAndPanel: Story<HeaderProps> = () => (
-    <Header isFixed aria-label="EDENE Library Name">
+    <Header fixed aria-label="EDENE Library Name">
         <HeaderName href="#" prefix="EDENE">
             [Library]
         </HeaderName>
         <HeaderGlobalBar>
-            <HeaderGlobalAction aria-label="Search">
-                <Icon>search</Icon>
-            </HeaderGlobalAction>
+            <HeaderGlobalAction aria-label="Search">search</HeaderGlobalAction>
             <HeaderGlobalAction aria-label="Notifications">
-                <Icon>notifications</Icon>
+                notifications
             </HeaderGlobalAction>
-            <HeaderGlobalAction aria-label="App">
-                <Icon>apps</Icon>
-            </HeaderGlobalAction>
+            <HeaderGlobalAction aria-label="App">apps</HeaderGlobalAction>
         </HeaderGlobalBar>
         <HeaderPanel aria-label="Header Panel" expanded></HeaderPanel>
     </Header>
@@ -195,7 +183,7 @@ export const HeaderBaseWSidenav: Story<HeaderProps> = () => {
     };
 
     return (
-        <Header isFixed aria-label="EDENE Library Name">
+        <Header fixed aria-label="EDENE Library Name">
             <HeaderMenuButton
                 variant="light"
                 active={isOpen}
@@ -207,7 +195,7 @@ export const HeaderBaseWSidenav: Story<HeaderProps> = () => {
                 [Library]
             </HeaderName>
             <SideNav
-                width={256}
+                headerHeight={48}
                 aria-label="Side navigation"
                 open={isOpen}
                 onClose={toggleMenu}
@@ -237,14 +225,12 @@ export const HeaderBaseWSidenav: Story<HeaderProps> = () => {
             </SideNav>
             <HeaderGlobalBar>
                 <HeaderGlobalAction aria-label="Search">
-                    <Icon>search</Icon>
+                    search
                 </HeaderGlobalAction>
                 <HeaderGlobalAction aria-label="Notifications">
-                    <Icon>notifications</Icon>
+                    notifications
                 </HeaderGlobalAction>
-                <HeaderGlobalAction aria-label="App">
-                    <Icon>apps</Icon>
-                </HeaderGlobalAction>
+                <HeaderGlobalAction aria-label="App">apps</HeaderGlobalAction>
             </HeaderGlobalBar>
         </Header>
     );

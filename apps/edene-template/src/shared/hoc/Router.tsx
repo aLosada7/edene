@@ -1,8 +1,16 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import {
+    BrowserRouter as Router,
+    Routes,
+    Route,
+    Navigate,
+} from 'react-router-dom';
 import { lazy } from 'react';
 
-import { Home } from '../../app/Home';
+import { EducationPage } from '../../app/dashboards/education/pages/EducationPage';
 import Layout from './Layout';
+const ReportPage = lazy(
+    () => import('../../app/dashboards/report/pages/ReportPage')
+);
 const AuthenticationSignInPage = lazy(
     () =>
         import(
@@ -28,7 +36,16 @@ export default () => {
         <Router>
             <Routes>
                 <Route path="/" element={<Layout />}>
-                    <Route index element={<Home />} />
+                    <Route
+                        path="/"
+                        element={<Navigate to="/dashboards/education" />}
+                    />
+                    <Route
+                        path="/dashboards/education"
+                        element={<EducationPage />}
+                    />
+                    <Route path="/dashboards/report" element={<ReportPage />} />
+
                     <Route
                         path="/pages/signin/classic"
                         element={<AuthenticationSignInPage />}

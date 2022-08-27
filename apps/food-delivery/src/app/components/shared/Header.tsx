@@ -37,7 +37,7 @@ export const Header = ({ name }: { name?: string }) => {
         dispatch({ type: 'REMOVE_PRODUCT', payload: { product } });
 
     return (
-        <EdeneHeader isFixed aria-label="Food Delivery">
+        <EdeneHeader fixed aria-label="Food Delivery">
             <HeaderName href="#">Food Delivery</HeaderName>
             <HeaderGlobalBar>
                 {name && (

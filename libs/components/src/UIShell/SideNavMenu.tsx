@@ -19,6 +19,7 @@ import {
     navMenuLink,
     navSubmenuIcon,
     navigationLevel,
+    sideNavIcon,
 } from './styles';
 
 export interface SideNavMenuProps
@@ -26,11 +27,7 @@ export interface SideNavMenuProps
         Props {
     title: string;
     isActive?: boolean;
-    /** Received from parent */
-    activeColor?: string | null;
-    /** Received from parent */
-    hoverColor?: string | null;
-    icon?: React.ReactElement;
+    icon?: string;
     navigationChildren?: number;
     children: React.ReactElement | React.ReactElement[];
 }
@@ -39,15 +36,12 @@ export const SideNavMenu = ({
     title,
     isActive = false,
     icon,
-    activeColor = null,
-    hoverColor = null,
     cssOverrides,
     children,
     /* from parent */
     navigationChildren = 0,
-    ...props
 }: SideNavMenuProps) => {
-    const theme = useThemeContext();
+    const { theme } = useThemeContext();
     const navigationLevelRef = useRef(navigationChildren + 1);
     const [expanded, setExpanded] = useState(false);
     const collapse = () => setExpanded(false);
@@ -58,18 +52,27 @@ export const SideNavMenu = ({
     };
 
     return (
-        <li css={[navItem(theme), isActive && navItemActive(expanded)]}>
+        <li
+            css={[
+                navItem({ theme }),
+                isActive && navItemActive(theme, expanded),
+            ]}
+        >
             <button
                 type="button"
                 aria-expanded={expanded}
                 onClick={handleClick}
                 css={[navMenuLink, cssOverrides]}
             >
-                {icon &&
-                    cloneElement(icon, {
-                        size: 'small',
-                        color: 'hsl(212, 20%, 68%)',
-                    })}
+                {icon && (
+                    <Icon
+                        size="small"
+                        color="hsl(212, 20%, 68%)"
+                        cssOverrides={sideNavIcon}
+                    >
+                        {icon}
+                    </Icon>
+                )}
                 <span css={[navigationLevel(navigationChildren)]}>{title}</span>
                 <div
                     css={[

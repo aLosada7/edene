@@ -20,7 +20,7 @@ const POSTS_PATH = join(process.cwd(), 'content/docs/overview');
 
 const Overview = ({ html }: any) => {
     return (
-        <Container>
+        <Container pv={8}>
             <PostContent content={html} />
         </Container>
     );

@@ -14,7 +14,7 @@ import {
     TableRow,
     TableCell,
     Card,
-    CardBody,
+    CardSection,
     Text,
     CardHeader,
     Avatar,
@@ -48,7 +48,7 @@ const TeamStats = () => (
         `}
     >
         <CardHeader>TEAM STATS</CardHeader>
-        <CardBody>
+        <CardSection>
             <Row py={1}>
                 <Col sm={12} md={8} direction="column">
                     <Text size="sm">PTS</Text>
@@ -75,7 +75,7 @@ const TeamStats = () => (
                     <Text weight="bold">3</Text>
                 </Col>
             </Row>
-        </CardBody>
+        </CardSection>
     </Card>
 );
 
@@ -87,7 +87,7 @@ const Scoring = () => (
         `}
     >
         <CardHeader>SCORING</CardHeader>
-        <CardBody>
+        <CardSection>
             <Row py={1}>
                 <Col lg={8} direction="column" align="center">
                     <Avatar shape="circle" />
@@ -104,7 +104,7 @@ const Scoring = () => (
                     </Row>
                 </Col>
             </Row>
-        </CardBody>
+        </CardSection>
     </Card>
 );
 
@@ -116,7 +116,7 @@ const GameStandings = () => (
             margin: 1rem;
         `}
     >
-        <CardBody
+        <CardSection
             cssOverrides={css`
                 padding: 0;
                 height: 100%;
@@ -156,7 +156,7 @@ const GameStandings = () => (
                     ))}
                 </TableBody>
             </Table>
-        </CardBody>
+        </CardSection>
     </Card>
 );
 

@@ -1,0 +1,149 @@
+---
+title: 'Card'
+scope: 'documentation'
+source: 'https://github.com/aLosada7/edene/tree/master/libs/components/src/Card'
+storybook: 'https://master--62ed74f612c78f7bbe13743e.chromatic.com/?path=/docs/components-accordion--playground'
+---
+
+## Import
+
+```bash
+import { Accordion, AccordionRow } from '@edene/components';
+```
+
+## Usage
+
+```tsx
+<Card>
+    <CardMedia
+        src="http://angular-material.fusetheme.com/assets/images/ui/angular-material/scenes/autocomplete.scene.png"
+        alt="Image Example"
+    ></CardMedia>
+    <CardSection>
+        <Text color="hsl(212, 56%, 16%)" size="lg">
+            Basics of Angular
+        </Text>
+        <Text color="hsl(212, 18%, 35%)">
+            Introductory course for Angular and framework basics
+        </Text>
+        <Button variant="outline" size="block">
+            Enroll
+        </Button>
+    </CardSection>
+</Card>
+```
+
+### Card with Carousel Media
+
+```tsx
+() => {
+    const actionButtonFav = css`
+        position: absolute;
+        top: 10px;
+        right: 0;
+    `;
+
+    const transformUppercase = css`
+        text-transform: uppercase;
+    `;
+
+    const agentSection = css`
+        background-color: #f1f3f5;
+    `;
+
+    const agentAvatar = css`
+        margin: 10px;
+    `;
+
+    const letterSpacing = css`
+        letter-spacing: 0.25px;
+    `;
+
+    return (
+        <Card>
+            <CardMedia
+                src={[
+                    {
+                        src: 'https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=800',
+                        alt: 'Exterior of house 1',
+                    },
+                    {
+                        src: 'https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?auto=compress&cs=tinysrgb&w=800',
+                        alt: 'Exterior of house 2',
+                    },
+                    {
+                        src: 'https://images.pexels.com/photos/1571459/pexels-photo-1571459.jpeg?auto=compress&cs=tinysrgb&w=800',
+                        alt: 'Lounge',
+                    },
+                    {
+                        src: 'https://images.pexels.com/photos/342800/pexels-photo-342800.jpeg?auto=compress&cs=tinysrgb&w=800',
+                        alt: 'Bathroom',
+                    },
+                ]}
+            />
+            <ActionButton variant="outlined" cssOverrides={actionButtonFav}>
+                hotel_class
+            </ActionButton>
+            <CardSection borderBottom>
+                <Text
+                    size="xsm"
+                    weight="bolder"
+                    color={grays[1]}
+                    cssOverrides={[transformUppercase, letterSpacing]}
+                >
+                    Detached House . 3,426 SQFT
+                </Text>
+                <Text size="xxlg">$1,250,000</Text>
+                <Text size="sm" color={grays[3]}>
+                    742 Evergreen Terrace
+                </Text>
+            </CardSection>
+            <CardSection borderBottom>
+                <Row>
+                    <Col sm={12} hStack={1}>
+                        <Icon variant="outlined" color={grays[5]}>
+                            bed
+                        </Icon>
+                        <Text weight="bold">3</Text>
+                        <Text color={grays[3]}>bedrooms</Text>
+                    </Col>
+                    <Col sm={12} hStack={1}>
+                        <Icon variant="outlined" color={grays[5]}>
+                            bathtub
+                        </Icon>
+                        <Text weight="bold">2</Text>
+                        <Text color={grays[3]}>bathrooms</Text>
+                    </Col>
+                </Row>
+            </CardSection>
+            <CardSection cssOverrides={agentSection}>
+                <Row align="start-center">
+                    <Avatar
+                        src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                        shape="circle"
+                        size={30}
+                        cssOverrides={agentAvatar}
+                    />
+                    <Row noGlutters direction="column">
+                        <Text size="sm" weight="bold">
+                            Tiffany Heffner
+                        </Text>
+                        <Text size="xsm" color={grays[3]}>
+                            (555) 555-4321
+                        </Text>
+                    </Row>
+                </Row>
+            </CardSection>
+            <Button
+                size="block"
+                iconRight="keyboard_arrow_right"
+                cssOverrides={transformUppercase}
+            >
+                <Text size="xsm" weight="bold">
+                    Schedule Showing
+                </Text>
+            </Button>
+        </Card>
+    );
+};
+```

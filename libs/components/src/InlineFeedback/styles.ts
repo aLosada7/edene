@@ -8,7 +8,7 @@ import { InlineFeedbackThemeDefault } from './theme';
 const inlineMessage = css`
     display: block;
     margin-top: 0.25rem;
-    ${textSans.xsmall({ lineHeight: 'regular' })};
+    ${textSans.small({ lineHeight: 'regular' })};
 `;
 
 export const inlineError = (

@@ -26,7 +26,7 @@ export const SideNavPrincipal = ({
 
     return (
         <Fragment>
-            <li css={[sideNavPrincipal(theme), cssOverrides]}>
+            <li css={[sideNavPrincipal({ theme }), cssOverrides]}>
                 <span>{title}</span>
             </li>
             {Children.map(children, (child) => {

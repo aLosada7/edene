@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 
-import { grays, textSans } from '@edene/foundations';
+import { grays, height, textSans } from '@edene/foundations';
 
 export const select = css`
     position: relative;
@@ -12,7 +12,6 @@ export const selectButton = css`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
     padding: 0;
     height: 100%;
     background: transparent;
@@ -25,10 +24,24 @@ export const selectButton = css`
     }
 `;
 
+export const selectButtonIconRight = css`
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 30px;
+    height: ${height.inputMedium}px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+`;
+
 export const selectItems = css`
     position: absolute;
-    padding: 0 0.5rem 0.5rem;
+    padding: 0;
     border: 1px solid ${grays[8]};
+    background-color: #fff;
     visibility: hidden;
     opacity: 0;
     transition: opacity 0.3s;
@@ -54,8 +67,11 @@ export const option = css`
     justify-content: flex-start;
     align-items: center;
     padding: 0 0.5rem;
+    margin: 0.25rem;
     border-radius: 0.5rem;
     cursor: pointer;
-    background-color: #fff;
-    width: 100%;
+
+    :hover {
+        background-color: ${grays[8]};
+    }
 `;

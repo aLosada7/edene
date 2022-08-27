@@ -1,18 +1,20 @@
 import { css } from '@emotion/react';
 
 import {
-    EdeneColor,
     getColor,
     getDarkenColor,
     disabled,
     buttonSize,
     defaultTheme,
     Theme,
+    ThemeOptions,
+    ButtonSize,
+    ButtonVariant,
 } from '@edene/foundations';
 
-import { IButtonSize, IButtonBlock, IButtonVariant } from './Button';
+import { IButtonBlock } from './Button';
 
-export const btnGroup = (size?: IButtonSize | IButtonBlock) => css`
+export const btnGroup = (size?: ButtonSize | IButtonBlock) => css`
     display: inline-flex;
 
     *:not(:first-of-type) {
@@ -22,14 +24,12 @@ export const btnGroup = (size?: IButtonSize | IButtonBlock) => css`
     ${size === 'block' && `width: 100%;`}
 `;
 
-export const btn = ({ theme = defaultTheme }, size: IButtonSize) => css`
+export const btn = (size: ButtonSize) => css`
     font-weight: 400;
     letter-spacing: 0.16px;
     min-width: 2.5rem;
-    height: 2.5rem;
     border-radius: 4px;
     cursor: pointer;
-    outline: none;
     text-align: left;
     text-decoration: none;
     border-width: 1px;
@@ -44,11 +44,11 @@ export const btn = ({ theme = defaultTheme }, size: IButtonSize) => css`
     justify-content: center;
     outline: transparent solid 2px;
     outline-offset: 2px;
+    margin: 0;
     width: auto;
     line-height: 1.2;
-
     font-size: ${buttonSize[size].font};
-    padding: 0 calc(${buttonSize[size].padding} * 0.25rem);
+    padding: 8px calc(${buttonSize[size].padding} * 0.25rem);
 
     &[disabled] {
         ${disabled}
@@ -56,10 +56,9 @@ export const btn = ({ theme = defaultTheme }, size: IButtonSize) => css`
 `;
 
 export const btnColor = (
-    { theme = defaultTheme },
-    variant: IButtonVariant,
-    isButtonBlock: boolean,
-    color?: EdeneColor
+    { theme = defaultTheme, color }: ThemeOptions,
+    variant: ButtonVariant,
+    isButtonBlock: boolean
 ) => css`
     ${buttonColorStyles(
         theme,
@@ -75,7 +74,7 @@ const buttonColorStyles = (
     theme: Theme,
     color: string,
     hoverColor: string,
-    variant: IButtonVariant
+    variant: ButtonVariant
 ) => css`
     background-color: ${color};
     border: 1px solid ${color};
@@ -119,19 +118,14 @@ const buttonIcon = css`
     flex-shrink: 0;
 `;
 
-export const buttonIconLeft = css`
+export const buttonIconLeft = (isButtonBlock: boolean) => css`
     ${buttonIcon}
 
-    margin-inline-end: 0.5rem;
+    margin-inline-end: ${isButtonBlock ? '.25' : '.5'}rem;
 `;
 
-export const buttonIconRight = css`
+export const buttonIconRight = (isButtonBlock: boolean) => css`
     ${buttonIcon}
 
-    position: absolute;
-    right: 1.5rem;
-
-    * {
-        margin: 0;
-    }
+    margin-inline-start: ${isButtonBlock ? '.25' : '.5'}rem;
 `;

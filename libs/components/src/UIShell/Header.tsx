@@ -10,7 +10,7 @@ export interface HeaderProps {
      * The height of the header
      * By default its value is 48px
      */
-    isFixed?: boolean;
+    fixed?: boolean;
     height?: number;
     'aria-label': string;
     children?: React.ReactElement | React.ReactElement[];
@@ -18,7 +18,7 @@ export interface HeaderProps {
 }
 
 export const Header = ({
-    isFixed = false,
+    fixed = false,
     height = 48,
     children,
     cssOverrides,
@@ -30,7 +30,7 @@ export const Header = ({
         <header
             css={[
                 header(theme),
-                headerPosition(isFixed),
+                headerPosition(fixed),
                 headerHeight(height),
                 cssOverrides,
             ]}
