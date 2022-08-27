@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 import { Story, Meta } from '@storybook/react';
 import { Fragment, useState } from 'react';
 
-import { Badge, Divider, Icon } from '@edene/components';
+import { Badge, Divider } from '@edene/components';
 
 import {
     SideNav,
@@ -59,10 +59,7 @@ export const FixedSideNav: Story<SideNavProps> = () => (
                     <SideNavMenuItem>L0 menu item</SideNavMenuItem>
                 </SideNavMenu>
                 <SideNavItem>Link</SideNavItem>
-                <SideNavItem
-                    aria-current="page"
-                    badge={<Badge color="gray">7</Badge>}
-                >
+                <SideNavItem active badge={<Badge color="gray">7</Badge>}>
                     Link
                 </SideNavItem>
             </SideNavItems>
@@ -82,11 +79,9 @@ export const FixedSideNavWDivider: Story<SideNavProps> = () => (
                     <SideNavMenuItem>L0 menu item</SideNavMenuItem>
                     <SideNavMenuItem>L0 menu item</SideNavMenuItem>
                 </SideNavMenu>
-                <SideNavMenu title="L0 menu" isActive>
+                <SideNavMenu title="L0 menu" active>
                     <SideNavMenuItem>L0 menu item</SideNavMenuItem>
-                    <SideNavMenuItem aria-current="page">
-                        L0 menu item
-                    </SideNavMenuItem>
+                    <SideNavMenuItem active>L0 menu item</SideNavMenuItem>
                     <SideNavMenuItem>L0 menu item</SideNavMenuItem>
                 </SideNavMenu>
                 <SideNavMenu title="L0 menu">
@@ -114,11 +109,9 @@ export const FixedSideNavWIcons: Story<SideNavProps> = () => (
                     <SideNavMenuItem>L0 menu item</SideNavMenuItem>
                     <SideNavMenuItem>L0 menu item</SideNavMenuItem>
                 </SideNavMenu>
-                <SideNavMenu icon="school" title="L0 menu" isActive={true}>
+                <SideNavMenu icon="school" title="L0 menu" active>
                     <SideNavMenuItem>L0 menu item</SideNavMenuItem>
-                    <SideNavMenuItem aria-current="page">
-                        L0 menu item
-                    </SideNavMenuItem>
+                    <SideNavMenuItem active>L0 menu item</SideNavMenuItem>
                     <SideNavMenuItem>L0 menu item</SideNavMenuItem>
                 </SideNavMenu>
                 <SideNavMenu icon="school" title="L0 menu">
@@ -207,11 +200,9 @@ export const HeaderBaseWSidenav: Story<HeaderProps> = () => {
                         <SideNavMenuItem>L0 menu item</SideNavMenuItem>
                         <SideNavMenuItem>L0 menu item</SideNavMenuItem>
                     </SideNavMenu>
-                    <SideNavMenu title="L0 menu" isActive={true}>
+                    <SideNavMenu title="L0 menu" active>
                         <SideNavMenuItem>L0 menu item</SideNavMenuItem>
-                        <SideNavMenuItem aria-current="page">
-                            L0 menu item
-                        </SideNavMenuItem>
+                        <SideNavMenuItem active>L0 menu item</SideNavMenuItem>
                         <SideNavMenuItem>L0 menu item</SideNavMenuItem>
                     </SideNavMenu>
                     <SideNavMenu title="L0 menu">

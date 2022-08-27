@@ -12,6 +12,7 @@ import {
     navItem,
     navMenuSubLink,
     navMenuSubLinkText,
+    navMenuLinkActive,
 } from './styles';
 
 export interface SharedSideNavMenuItemProps
@@ -19,6 +20,7 @@ export interface SharedSideNavMenuItemProps
         Props {
     badge?: React.ReactElement;
     navigationChildren?: number;
+    active?: boolean;
     cssOverrides?: SerializedStyles | SerializedStyles[];
     children: React.ReactNode;
 }
@@ -40,6 +42,7 @@ export const SideNavMenuItem: SideNavMenuItemComponent = ((
         cssOverrides,
         badge,
         navigationChildren = 0,
+        active = false,
         children,
         ...rest
     } = props;
@@ -49,8 +52,15 @@ export const SideNavMenuItem: SideNavMenuItemComponent = ((
     const Element = component || 'a';
 
     return (
-        <li css={navItem(theme)}>
-            <Element css={[navMenuSubLink({ theme }), cssOverrides]} {...rest}>
+        <li css={navItem(theme)} aria-current={active ? 'page' : undefined}>
+            <Element
+                css={[
+                    navMenuSubLink,
+                    active && navMenuLinkActive({ theme }),
+                    cssOverrides,
+                ]}
+                {...rest}
+            >
                 <span
                     css={[
                         navMenuSubLinkText,
