@@ -22,7 +22,7 @@ export const aside = (
     bottom: 0;
     left: 0;`}
 
-    ${asideWidth(fixed, open, width, mobileWidth)}
+    ${asideWidth(fixed, open, width, mobileWidth, headerHeight)}
     transition: transform ${transitions.short};
 
     background-color: #fff;
@@ -35,7 +35,8 @@ const asideWidth = (
     fixed: boolean,
     open: boolean,
     width: number,
-    mobileWidth?: number | 'full'
+    mobileWidth?: number | 'full',
+    headerHeight?: number
 ) => css`
     ${!mobileWidth && `width: ${width}px;`}
 
@@ -49,7 +50,7 @@ const asideWidth = (
     `
     width: 100%;
     ${
-        !fixed &&
+        headerHeight &&
         `
         transform: ${
             open
@@ -65,7 +66,7 @@ const asideWidth = (
         width: ${width}px;
     }
 
-    ${!fixed &&
+    ${headerHeight &&
     `
             transform: ${open ? 'translateX(0)' : `translateX(-${width}px)`};`}
 `;
