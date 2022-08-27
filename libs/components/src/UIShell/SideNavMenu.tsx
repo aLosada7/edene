@@ -26,7 +26,7 @@ export interface SideNavMenuProps
     extends Omit<HTMLAttributes<HTMLDivElement>, 'onClick'>,
         Props {
     title: string;
-    isActive?: boolean;
+    active?: boolean;
     icon?: string;
     navigationChildren?: number;
     children: React.ReactElement | React.ReactElement[];
@@ -34,7 +34,7 @@ export interface SideNavMenuProps
 
 export const SideNavMenu = ({
     title,
-    isActive = false,
+    active = false,
     icon,
     cssOverrides,
     children,
@@ -53,10 +53,8 @@ export const SideNavMenu = ({
 
     return (
         <li
-            css={[
-                navItem({ theme }),
-                isActive && navItemActive(theme, expanded),
-            ]}
+            css={[navItem({ theme }), active && navItemActive(theme, expanded)]}
+            aria-current={active ? 'page' : undefined}
         >
             <button
                 type="button"

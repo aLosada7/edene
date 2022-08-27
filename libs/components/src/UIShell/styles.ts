@@ -249,33 +249,28 @@ export const navLink = css`
 `;
 
 export const navMenuLinkActive = ({ theme = defaultTheme }) => css`
-    &[aria-current='page'],
-    &.active {
-        background-color: ${background.secondary};
+    background-color: ${background.secondary};
 
-        :before {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            width: 4px;
-            background-color: ${theme.color};
-            content: '';
-        }
+    :before {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 4px;
+        background-color: ${theme.color};
+        content: '';
+    }
 
-        span {
-            font-weight: 600;
-        }
+    span {
+        font-weight: 600;
     }
 `;
 
-export const navMenuSubLink = ({ theme = defaultTheme }) => css`
+export const navMenuSubLink = css`
     ${navLink}
 
     height: 2rem;
     min-height: 2rem;
-
-    ${navMenuLinkActive({ theme })}
 `;
 
 export const navMenuSubLinkText = css`
