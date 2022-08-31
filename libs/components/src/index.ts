@@ -12,6 +12,7 @@ export * from './Divider';
 export * from './Form';
 export * from './FormGroup';
 export * from './Grid';
+export * from './Group';
 export * from './Image';
 export * from './InlineFeedback';
 export * from './Input';

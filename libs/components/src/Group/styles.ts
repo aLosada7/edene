@@ -1,8 +1,7 @@
 import { css } from '@emotion/react';
 
-export const stack = css`
+export const group = css`
     display: flex;
     flex-wrap: wrap;
-    flex-direction: column;
-    gap: 0.25rem;
+    gap: 0.5rem;
 `;

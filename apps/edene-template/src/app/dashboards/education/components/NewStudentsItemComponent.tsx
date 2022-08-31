@@ -19,7 +19,7 @@ export const NewStudentsItemComponent = ({
         }
     >
         <Avatar size={40} src={avatar} />
-        <Stack direction="column">
+        <Stack>
             <Text>{name}</Text>
             <Text size="sm" color={grays[3]}>
                 {' '}
