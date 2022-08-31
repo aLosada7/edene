@@ -27,6 +27,7 @@ export const input = css`
     background-color: #fff;
     ${textSans.medium({ lineHeight: 'regular' })};
     padding: 1px 0.75rem;
+    box-sizing: border-box;
     border: 1px solid rgb(226, 232, 240);
     border-radius: 6px;
     outline: transparent solid 2px;
