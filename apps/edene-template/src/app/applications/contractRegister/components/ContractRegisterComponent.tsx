@@ -12,7 +12,7 @@ import { css } from '@emotion/react';
 
 const vStack = css`
     > * {
-        margin-right: 1rem;
+        margin-left: 1rem;
     }
 `;
 
