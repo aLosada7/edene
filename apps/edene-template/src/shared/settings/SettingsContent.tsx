@@ -21,14 +21,14 @@ import {
     settingsThemeOption,
 } from './styles';
 
-interface SettingContentProps {
+interface SettingsContentProps {
     open: boolean;
     onClose: () => void;
 }
 
 const themes: Partial<Theme>[] = [defaultTheme, tealTheme, blueTheme];
 
-export const SettingContent = ({ open, onClose }: SettingContentProps) => {
+export const SettingsContent = ({ open, onClose }: SettingsContentProps) => {
     const { theme, setTheme } = useThemeContext();
 
     return (

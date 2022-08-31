@@ -4,7 +4,7 @@ import { Icon } from '@edene/components';
 import { useThemeContext } from '@edene/foundations';
 
 import { overlay, settings } from './styles';
-import { SettingContent } from './SettingContent';
+import { SettingsContent } from './SettingsContent';
 
 export const Settings = () => {
     const [open, setOpen] = useState(false);
@@ -17,7 +17,7 @@ export const Settings = () => {
                 <Icon color={theme.white}>settings</Icon>
             </div>
             {open && <div css={overlay} onClick={() => setOpen(false)}></div>}
-            <SettingContent open={open} onClose={() => setOpen(false)} />
+            <SettingsContent open={open} onClose={() => setOpen(false)} />
         </Fragment>
     );
 };
