@@ -6,8 +6,12 @@ import { input } from '../Input/styles';
 import { FormInput } from '../Input/types';
 import { Label } from '../Label';
 import { FormGroup } from '../FormGroup';
+import { InputHTMLAttributes } from 'react';
 
-export interface TextareaProps extends Props, FormInput {
+export interface TextareaProps
+    extends InputHTMLAttributes<HTMLTextAreaElement>,
+        Props,
+        FormInput {
     cssLabelOverrides?: SerializedStyles | SerializedStyles[];
 }
 
@@ -16,6 +20,7 @@ export const Textarea = ({
     label: labelText,
     optional = false,
     cssLabelOverrides,
+    ...props
 }: TextareaProps) => {
     const inputId = id || generateSourceId();
 
@@ -30,7 +35,11 @@ export const Textarea = ({
     return (
         <FormGroup>
             {label}
-            <textarea css={[input, textarea]} id={inputId}></textarea>
+            <textarea
+                css={[input, textarea]}
+                id={inputId}
+                {...props}
+            ></textarea>
         </FormGroup>
     );
 };
