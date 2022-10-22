@@ -10,6 +10,7 @@ import {
     ThemeOptions,
     ButtonSize,
     ButtonVariant,
+    grays,
 } from '@edene/foundations';
 
 import { IButtonBlock } from './Button';
@@ -92,7 +93,7 @@ const buttonColorStyles = (
     border-color: ${color};
 
     :hover {
-        background-color: ${theme.white};
+        background-color: ${grays[6]};
         color: ${hoverColor};
         fill: ${hoverColor};
         border-color: ${hoverColor};

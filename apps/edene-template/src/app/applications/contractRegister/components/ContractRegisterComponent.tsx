@@ -7,14 +7,8 @@ import {
     Select,
     Option,
     Button,
+    Group,
 } from '@edene/components';
-import { css } from '@emotion/react';
-
-const vStack = css`
-    > * {
-        margin-right: 1rem;
-    }
-`;
 
 const Person = () => (
     <Row>
@@ -63,14 +57,14 @@ export const ContractRegisterComponent = () => {
                 Add landlord
             </Button>
 
-            <Row align="space-between-center" py={2}>
+            <Row align="space-between-center" noGlutters>
                 <Button iconLeft="arrow_back" variant="link">
                     Back
                 </Button>
-                <div css={vStack}>
+                <Group>
                     <Button variant="outline">Cancel</Button>
                     <Button>Save</Button>
-                </div>
+                </Group>
             </Row>
         </Form>
     );

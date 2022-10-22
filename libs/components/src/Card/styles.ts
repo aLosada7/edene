@@ -41,7 +41,7 @@ export const cardSection = (
 
     ${from.tablet &&
     `flex-basis: ${flex}%;
-            min-width: ${flex}%;`}
+    `}
 
     ${borderBottom && `border-bottom: 1px solid ${grays[7]};`}
     ${borderRight && `border-right: 1px solid ${grays[7]};`}
