@@ -20,6 +20,8 @@ export interface IconProps extends Props {
 export const Icon = (props: IconProps) => {
     const { theme } = useThemeContext();
 
+    console.log(props);
+
     const {
         children,
         color = theme.black,

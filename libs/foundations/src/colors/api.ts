@@ -13,7 +13,7 @@ export interface ThemeOptions {
 }
 
 export const getColor = ({ color, theme = defaultTheme }: ThemeOptions) => {
-    if (!color) return theme.color;
+    if (!color || color === 'primary') return theme.color;
 
     if (isOfComponentColors(color))
         return colorsPalette[color as ComponentColors].color;
