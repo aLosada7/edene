@@ -13,7 +13,7 @@ import {
 import { optionWrapper, onlyRadio } from './styles';
 
 export default {
-    title: 'Forms',
+    title: 'Components/Forms',
 } as Meta;
 
 const Template: Story<RadioGroupProps> = (props: RadioGroupProps) => {

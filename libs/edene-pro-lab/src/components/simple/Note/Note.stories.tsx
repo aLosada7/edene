@@ -1,8 +1,9 @@
 import { Story, Meta } from '@storybook/react';
+
 import NoteComponent from './index';
 
 export default {
-    title: 'EdeneProLab/Components',
+    title: 'Components/Simple',
     component: NoteComponent,
 } as Meta;
 

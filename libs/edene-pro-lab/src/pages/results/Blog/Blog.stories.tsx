@@ -20,9 +20,6 @@ import mountain from '../../../../assets/img/mountain.jpg';
 
 export default {
     title: 'Pages/Results',
-    parameters: {
-        layout: 'fullscreen',
-    },
 };
 
 const noPadding = css`
