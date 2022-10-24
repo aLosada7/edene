@@ -3,7 +3,7 @@ import { Rating as RatingComponent, RatingProps } from './Rating';
 
 export default {
     component: RatingComponent,
-    title: 'Components',
+    title: 'Components/Simple',
 } as Meta;
 
 const Template: Story<RatingProps> = (args: RatingProps) => (

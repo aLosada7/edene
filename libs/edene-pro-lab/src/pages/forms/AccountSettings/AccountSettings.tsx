@@ -17,24 +17,9 @@ import {
     Text,
 } from '@edene/components';
 
-import CountrySelector from '../../../components/CountrySelector/CountrySelector';
+import CountrySelector from '../../../components/simple/CountrySelector/CountrySelector';
 
-export default {
-    title: 'Pages/Forms',
-    component: Form,
-    decorators: [
-        (Story: any) => (
-            <section style={{ backgroundColor: 'hsl(210, 32%, 93%)' }}>
-                <Story />
-            </section>
-        ),
-    ],
-    parameters: {
-        layout: 'fullscreen',
-    },
-};
-
-export const AccountSettings = () => (
+const AccountSettings = () => (
     <Container pv={8}>
         <Form>
             <Title size="h4" mb={6}>
@@ -59,14 +44,14 @@ export const AccountSettings = () => (
                     </Text>
                 </Col>
                 <Col md={16} direction="column">
-                    <TextInput
-                        label="Name"
-                        cssLabelOverrides={css`
-                            padding-top: 1rem;
-                        `}
-                    />
-
-                    <TextInput label="Email" required />
+                    <Row py={4}>
+                        <Col md={12}>
+                            <TextInput label="Name" />
+                        </Col>
+                        <Col md={12}>
+                            <TextInput label="Email" />
+                        </Col>
+                    </Row>
 
                     <Select label="Genre">
                         <Option value="man">Man</Option>
@@ -128,3 +113,5 @@ export const AccountSettings = () => (
         </Form>
     </Container>
 );
+
+export default AccountSettings;

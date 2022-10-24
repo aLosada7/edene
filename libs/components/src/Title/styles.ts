@@ -4,6 +4,7 @@ import {
     headline,
     ThemeOptions,
     getColor,
+    FontWeight,
 } from '@edene/foundations';
 import { IFontSize, ITextAlign } from './Title';
 
@@ -11,15 +12,16 @@ export const title = (
     mt: number,
     mb: number,
     size: IFontSize,
+    fontWeight: FontWeight,
     text: ITextAlign,
     actions?: boolean
 ) => css`
     margin-top: calc(${mt} * 0.25rem);
     margin-bottom: calc(${mb} * 0.25rem);
 
-    ${size === 'h3' && headline.small({ fontWeight: 'bolder' })}
-    ${size === 'h4' && headline.xxsmall({ fontWeight: 'bold' })}
-    ${size === 'h5' && headline.xxxsmall({ fontWeight: 'bold' })}
+    ${size === 'h3' && headline.small({ fontWeight })}
+    ${size === 'h4' && headline.xxsmall({ fontWeight })}
+    ${size === 'h5' && headline.xxxsmall({ fontWeight })}
 
     text-align: ${text};
 

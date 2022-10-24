@@ -2,7 +2,7 @@ import { Story, Meta } from '@storybook/react';
 import { ContactForm } from './ContactForm';
 
 export default {
-    title: 'Forms',
+    title: 'Lab/Forms',
     component: ContactForm,
 } as Meta;
 
