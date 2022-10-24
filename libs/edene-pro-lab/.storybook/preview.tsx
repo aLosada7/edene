@@ -9,7 +9,7 @@ import './styles.scss';
 export const parameters = {
     viewport,
     backgrounds,
-    layout: 'fullscreen',
+    layout: 'centered',
     actions: { argTypesRegex: '^on[A-Z].*' },
 };
 

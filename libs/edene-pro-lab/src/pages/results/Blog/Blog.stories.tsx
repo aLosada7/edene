@@ -16,10 +16,13 @@ import {
 } from '@edene/components';
 import { until } from '@edene/foundations';
 
-import mountain from '../../assets/img/mountain.jpg';
+import mountain from '../../../../assets/img/mountain.jpg';
 
 export default {
-    title: 'EdeneProLab/Blog',
+    title: 'Pages/Results',
+    parameters: {
+        layout: 'fullscreen',
+    },
 };
 
 const noPadding = css`
