@@ -1,11 +1,13 @@
 import { Meta } from '@storybook/react';
-import { Fragment, useRef } from 'react';
+import { useRef } from 'react';
 
 import { Icon } from '../icons';
 import { Button } from './Button';
 import ButtonGroup from './ButtonGroup';
 import { StoryHStack } from '../lib/general-story-components';
 import { asChromaticStory } from '../lib/story-intents';
+import { Stack } from '../Stack';
+import { Group as GroupComponent } from '../Group';
 
 export default {
     component: Button,
@@ -22,69 +24,69 @@ export const Link = () => <Button variant="link">Button</Button>;
 asChromaticStory(Link);
 
 export const Variants = () => (
-    <StoryHStack>
+    <Stack>
         <Button>Button</Button>
         <Button variant="outline">Button</Button>
         <Button variant="link">Button</Button>
-    </StoryHStack>
+    </Stack>
 );
 asChromaticStory(Variants);
 
 export const Sizes = () => (
-    <StoryHStack>
+    <Stack>
         <Button size="xsmall">Button</Button>
         <Button size="small">Button</Button>
         <Button size="medium">Button</Button>
         <Button size="large">Button</Button>
-    </StoryHStack>
+    </Stack>
 );
 asChromaticStory(Sizes);
 
 export const WithIcon = () => (
-    <Fragment>
-        <StoryHStack>
+    <Stack>
+        <GroupComponent>
             <Button iconLeft="home">Home</Button>
             <Button iconRight="arrow_forward">Call us</Button>
-        </StoryHStack>
-        <StoryHStack>
+        </GroupComponent>
+        <GroupComponent>
             <Button iconLeft="home" variant="outline">
                 Home
             </Button>
             <Button iconRight="arrow_forward" variant="outline">
                 Call us
             </Button>
-        </StoryHStack>
-        <StoryHStack>
+        </GroupComponent>
+        <GroupComponent>
             <Button iconLeft="home" variant="link">
                 Home
             </Button>
             <Button iconRight="arrow_forward" variant="link">
                 Call us
             </Button>
-        </StoryHStack>
-    </Fragment>
+        </GroupComponent>
+    </Stack>
 );
 asChromaticStory(WithIcon);
 
 export const Disabled = () => (
-    <StoryHStack>
+    <Stack>
         <Button disabled>Button</Button>
         <Button variant="outline" disabled>
             Button
         </Button>
-    </StoryHStack>
+    </Stack>
 );
 asChromaticStory(Disabled);
 
 export const WithIconOnly = () => (
-    <StoryHStack>
+    <Stack>
         <Button>
             <Icon>home</Icon>
         </Button>
         <Button variant="outline">
             <Icon>home</Icon>
         </Button>
-    </StoryHStack>
+    </Stack>
 );
 asChromaticStory(WithIconOnly);
 

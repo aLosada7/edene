@@ -2,19 +2,20 @@ import { Col, Row } from '@edene/components';
 import { css } from '@emotion/react';
 
 interface StoryHelperProps {
+    cssOverrides?: any;
     children: React.ReactElement[];
 }
 
-export const StoryHStack = ({ children }: StoryHelperProps) => (
-    <Row>
+export const StoryHStack = ({ children, ...props }: StoryHelperProps) => (
+    <Row {...props}>
         <Col sm={24} md={16} lg={16} hStack={2}>
             {children}
         </Col>
     </Row>
 );
 
-export const StoryVStack = ({ children }: StoryHelperProps) => (
-    <Row>
+export const StoryVStack = ({ children, ...props }: StoryHelperProps) => (
+    <Row {...props}>
         <Col vStack={2}>{children}</Col>
     </Row>
 );

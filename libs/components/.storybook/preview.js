@@ -6,6 +6,7 @@ import { ThemeDecorator } from '@edene/foundations';
 import './styles.scss';
 
 export const parameters = {
+    layout: 'centered',
     viewport,
     backgrounds,
 };
