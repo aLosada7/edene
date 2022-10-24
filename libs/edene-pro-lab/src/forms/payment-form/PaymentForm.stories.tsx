@@ -13,7 +13,7 @@ import {
 import { optionWrapper, onlyRadio } from './styles';
 
 export default {
-    title: 'EdeneProLab/Forms',
+    title: 'Forms',
 } as Meta;
 
 const Template: Story<RadioGroupProps> = (props: RadioGroupProps) => {
@@ -23,12 +23,7 @@ const Template: Story<RadioGroupProps> = (props: RadioGroupProps) => {
             <Title size="h5" mt={4} mb={4}>
                 Secure Payment
             </Title>
-            <RadioGroup
-                kind="wrap"
-                onChange={setValue}
-                value={value}
-                {...props}
-            >
+            <RadioGroup onChange={setValue} value={value} {...props}>
                 <div css={optionWrapper}>
                     <Radio value="1">Credit or debit card</Radio>
                     <TextInput

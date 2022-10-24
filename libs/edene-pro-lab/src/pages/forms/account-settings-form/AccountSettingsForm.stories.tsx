@@ -17,10 +17,10 @@ import {
     Text,
 } from '@edene/components';
 
-import CountrySelector from '../../selector/country-selector/CountrySelector';
+import CountrySelector from '../../../components/CountrySelector/CountrySelector';
 
 export default {
-    title: 'EdeneProLab/Forms',
+    title: 'Pages/Forms',
     component: Form,
     decorators: [
         (Story: any) => (
@@ -29,6 +29,9 @@ export default {
             </section>
         ),
     ],
+    parameters: {
+        layout: 'fullscreen',
+    },
 };
 
 export const AccountSettings = () => (

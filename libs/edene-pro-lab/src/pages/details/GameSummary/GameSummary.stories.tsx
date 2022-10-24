@@ -25,7 +25,7 @@ import { rows } from './rows';
 import { theme } from './theme';
 
 export default {
-    title: 'EdeneProLab',
+    title: 'Pages/Details',
     decorators: [
         (Story: any) => (
             <EdeneTheme theme={theme}>
@@ -38,6 +38,9 @@ export default {
             </EdeneTheme>
         ),
     ],
+    parameters: {
+        layout: 'fullscreen',
+    },
 };
 
 const TeamStats = () => (
@@ -90,7 +93,7 @@ const Scoring = () => (
         <CardSection>
             <Row py={1}>
                 <Col lg={8} direction="column" align="center">
-                    <Avatar shape="circle" />
+                    <Avatar size={100} shape="circle" />
                 </Col>
                 <Col lg={16} direction="column">
                     <Row direction="column" px={2}>
