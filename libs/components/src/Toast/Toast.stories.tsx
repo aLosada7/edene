@@ -1,20 +1,20 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 import React from 'react';
+import { Story } from '@storybook/react';
 
 import Toast from './Toast';
 import { Button } from '../Button';
 import { ToastsProvider } from './ToastsProvider';
 import { useToasts } from './useToasts';
-import { StoryVStack } from '../lib/general-story-components';
-import type { Story } from '../lib/storybook-emotion-10-fixes';
 import ToastHeader from './ToastHeader';
 import ToastBody from './ToastBody';
+import { Stack } from '../Stack';
 
 export default {
     component: Toast,
-    title: 'Components/Toast',
+    title: 'Overlay/Toast',
     decorators: [
-        (Story: any) => (
+        (Story: Story) => (
             <ToastsProvider>
                 <Story />
             </ToastsProvider>
@@ -22,7 +22,7 @@ export default {
     ],
 };
 
-const Template: Story = () => {
+const Template = () => {
     const toasts = useToasts();
 
     const showToast = () => {
@@ -39,9 +39,9 @@ const Template: Story = () => {
 
 export const Default = Template.bind({});
 
-export const Variants: Story = () => {
+export const Variants = () => {
     return (
-        <StoryVStack>
+        <Stack>
             <Toast hideToast={() => {}}>
                 <ToastHeader
                     id="1"
@@ -64,6 +64,6 @@ export const Variants: Story = () => {
                 />
                 <ToastBody>Your mail has been succesfully sended.</ToastBody>
             </Toast>
-        </StoryVStack>
+        </Stack>
     );
 };

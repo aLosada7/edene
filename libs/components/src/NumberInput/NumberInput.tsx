@@ -4,25 +4,34 @@ import { SerializedStyles } from '@emotion/react';
 import { Props, generateSourceId } from '@edene/foundations';
 
 import { Icon } from '../icons';
-import { input, numberInputWrapper, subtractButton, sumButton } from './styles';
+import {
+    numberInputWrapper,
+    operationButton,
+    numberInputValue,
+} from './styles';
 import { Label } from '../Label';
-import { FormInput } from '../Input/types';
-import { Input } from '../Input';
 import { FormGroup } from '../FormGroup';
+import { Button } from '../Button';
 
 export interface NumberInputProps
     extends Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>,
-        FormInput,
         Props {
+    labelText?: string;
+
     min?: number;
+
     max?: number;
+
+    step: number;
+
     value?: number;
+
     /**
      * The contents of the text area. This is necessary when using the [controlled approach](https://reactjs.org/docs/forms.html#controlled-components) to form state management.
-     *
      * _Note: if you pass the `value` prop, you MUST also pass an `onChange` handler, or the field will be rendered as read-only._
      */
     onChange: (value: number) => void;
+
     cssLabelOverrides?: SerializedStyles | SerializedStyles[];
 }
 
@@ -30,8 +39,8 @@ export const NumberInput = forwardRef<HTMLInputElement, NumberInputProps>(
     (props: NumberInputProps, ref) => {
         const {
             id,
-            label: labelText,
-            optional = false,
+            labelText,
+            step,
             max,
             min,
             onChange,
@@ -51,9 +60,9 @@ export const NumberInput = forwardRef<HTMLInputElement, NumberInputProps>(
         }, [value]);
 
         const sum = () =>
-            setValue(!max || (max && value < max) ? value + 1 : value);
+            setValue(!max || (max && value < max) ? value + step : value);
         const subtract = () =>
-            setValue(!min || (min && value > min) ? value - 1 : value);
+            setValue(!min || (min && value > min) ? value - step : value);
 
         const label = labelText && (
             <Label
@@ -66,36 +75,30 @@ export const NumberInput = forwardRef<HTMLInputElement, NumberInputProps>(
         return (
             <FormGroup>
                 {label}
-                <div css={() => [numberInputWrapper()]}>
-                    <Input
-                        type="number"
-                        id={numberInputId}
-                        value={value}
-                        onChange={(event) =>
-                            setValue(Number(event.target.value))
-                        }
-                        css={[input, cssOverrides]}
-                        min={min}
-                        max={max}
-                        ref={ref}
-                        {...rest}
-                    />
-
-                    <button
-                        css={() => [subtractButton()]}
+                <div css={[numberInputWrapper, cssOverrides]}>
+                    <Button
+                        size="xsmall"
+                        variant="outline"
                         onClick={subtract}
+                        css={operationButton}
                         aria-label="substract"
+                        disabled={min ? value - step < min : false}
                     >
                         <Icon>remove</Icon>
-                    </button>
-
-                    <button
-                        css={() => [sumButton()]}
+                    </Button>
+                    <div ref={ref} css={numberInputValue}>
+                        {value}
+                    </div>
+                    <Button
+                        variant="outline"
+                        size="xsmall"
                         onClick={sum}
+                        css={operationButton}
                         aria-label="sum"
+                        disabled={max ? value + step > max : false}
                     >
                         <Icon>add</Icon>
-                    </button>
+                    </Button>
                 </div>
             </FormGroup>
         );

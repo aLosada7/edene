@@ -1,27 +1,26 @@
-import { Meta } from '@storybook/react';
 import { useRef } from 'react';
+import { Meta, Story } from '@storybook/react';
 
+import { Button, ButtonProps } from './index';
 import { Icon } from '../icons';
-import { Button } from './Button';
 import ButtonGroup from './ButtonGroup';
-import { StoryHStack } from '../lib/general-story-components';
-import { asChromaticStory } from '../lib/story-intents';
 import { Stack } from '../Stack';
-import { Group as GroupComponent } from '../Group';
 
 export default {
     component: Button,
     title: 'Components/Button',
 } as Meta;
 
-export const Filled = () => <Button>Button</Button>;
-asChromaticStory(Filled);
+export const Playground: Story<ButtonProps & { text: string }> = ({
+    text,
+    ...args
+}) => <Button {...args}>{text}</Button>;
+Playground.storyName = '🧶 Playground';
+Playground.args = {
+    text: 'Button',
+};
 
-export const Outline = () => <Button variant="outline">Button</Button>;
-asChromaticStory(Outline);
-
-export const Link = () => <Button variant="link">Button</Button>;
-asChromaticStory(Link);
+export const Filled = () => <Button>Default Button</Button>;
 
 export const Variants = () => (
     <Stack>
@@ -30,7 +29,6 @@ export const Variants = () => (
         <Button variant="link">Button</Button>
     </Stack>
 );
-asChromaticStory(Variants);
 
 export const Sizes = () => (
     <Stack>
@@ -40,78 +38,35 @@ export const Sizes = () => (
         <Button size="large">Button</Button>
     </Stack>
 );
-asChromaticStory(Sizes);
 
-export const WithIcon = () => (
-    <Stack>
-        <GroupComponent>
-            <Button iconLeft="home">Home</Button>
-            <Button iconRight="arrow_forward">Call us</Button>
-        </GroupComponent>
-        <GroupComponent>
-            <Button iconLeft="home" variant="outline">
-                Home
-            </Button>
-            <Button iconRight="arrow_forward" variant="outline">
-                Call us
-            </Button>
-        </GroupComponent>
-        <GroupComponent>
-            <Button iconLeft="home" variant="link">
-                Home
-            </Button>
-            <Button iconRight="arrow_forward" variant="link">
-                Call us
-            </Button>
-        </GroupComponent>
-    </Stack>
-);
-asChromaticStory(WithIcon);
+export const WithIconLeft = () => <Button iconLeft="home">Home</Button>;
 
-export const Disabled = () => (
-    <Stack>
-        <Button disabled>Button</Button>
-        <Button variant="outline" disabled>
-            Button
-        </Button>
-    </Stack>
+export const WithIconRight = () => (
+    <Button iconRight="arrow_forward">Call us</Button>
 );
-asChromaticStory(Disabled);
+
+export const WithDisabled = () => <Button disabled>Button</Button>;
 
 export const WithIconOnly = () => (
-    <Stack>
-        <Button>
-            <Icon>home</Icon>
-        </Button>
-        <Button variant="outline">
-            <Icon>home</Icon>
-        </Button>
-    </Stack>
+    <Button>
+        <Icon>home</Icon>
+    </Button>
 );
-asChromaticStory(WithIconOnly);
 
-export const Group = () => (
+export const WithGroup = () => (
     <ButtonGroup variant="outline">
         <Button color="success">Save</Button>
         <Button>Cancel</Button>
     </ButtonGroup>
 );
-asChromaticStory(ButtonGroup);
 
 export const WithRef = () => {
     const ref = useRef<HTMLButtonElement>(null);
     return <Button ref={ref}>Ref</Button>;
 };
-asChromaticStory(WithRef);
 
-export const AsPolymorphic = () => (
-    <ButtonGroup variant="outline">
-        <Button component="a" href="#">
-            Link
-        </Button>
-        {/* <Button component={Link} to="/hello">
-            hello
-        </Button> */}
-    </ButtonGroup>
+export const AsAnchor = () => (
+    <Button component="a" href="#">
+        Link
+    </Button>
 );
-asChromaticStory(AsPolymorphic);

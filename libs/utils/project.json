@@ -15,11 +15,13 @@
                 "external": ["react/jsx-runtime"],
                 "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
                 "compiler": "babel",
-                "assets": [{
-                    "glob": "libs/utils/README.md",
-                    "input": ".",
-                    "output": "."
-                }]
+                "assets": [
+                    {
+                        "glob": "libs/utils/README.md",
+                        "input": ".",
+                        "output": "."
+                    }
+                ]
             }
         },
         "lint": {

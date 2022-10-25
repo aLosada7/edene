@@ -1,7 +1,6 @@
+import { Story } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
-import type { Story } from '../lib/storybook-emotion-10-fixes';
-import { asChromaticStory } from '../lib/story-intents';
 import {
     DataTable,
     DataTableProps,
@@ -23,7 +22,7 @@ export default {
     title: 'Components/Table',
 };
 
-export const Default: Story<DataTableProps> = (args) => (
+export const Default = () => (
     <Table>
         <TableHead>
             <TableRow>
@@ -51,7 +50,6 @@ export const Default: Story<DataTableProps> = (args) => (
         </TableBody>
     </Table>
 );
-asChromaticStory(Default);
 
 export const WithContainer: Story<DataTableProps> = (args) => (
     <TableContainer
@@ -86,7 +84,6 @@ export const WithContainer: Story<DataTableProps> = (args) => (
         </Table>
     </TableContainer>
 );
-asChromaticStory(WithContainer);
 
 export const WithToolbar: Story<DataTableProps> = (args) => (
     <TableContainer
@@ -126,5 +123,3 @@ export const WithToolbar: Story<DataTableProps> = (args) => (
         </Table>
     </TableContainer>
 );
-
-asChromaticStory(WithToolbar);

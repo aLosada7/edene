@@ -9,31 +9,22 @@ import { useCheckboxGroup } from './useCheckboxGroup';
 import { Input } from '../Input';
 import { Label } from '../Label';
 
-export interface CheckboxProps extends FormInput {
+export interface CheckboxProps extends Omit<FormInput, 'label'> {
     checked?: boolean;
+
     value?: string;
+
     onChange?: any;
+
     onClick?: any;
-    /**
-     * Appears as an inline error message.
-     */
-    error?: string;
-    /**
-     * Appears as an inline success message.
-     * This prop should not have a value set at the same time as the error prop. In the event that both are set, errors take precedence.
-     */
-    success?: string;
+
     label: string;
+
     cssLabelOverrides?: SerializedStyles | SerializedStyles;
 }
 
-export const Checkbox = ({
-    id,
-    optional = false,
-    label,
-    cssLabelOverrides,
-    ...props
-}: CheckboxProps) => {
+export const Checkbox = (props: CheckboxProps) => {
+    const { id, label, cssLabelOverrides, ...rest } = props;
     const textInputId = id || generateSourceId();
     const { onChange, isGroup } = useCheckboxGroup();
 
@@ -49,7 +40,6 @@ export const Checkbox = ({
                             : checkboxLabel
                     }
                     text={label}
-                    optional={optional}
                     htmlFor={textInputId}
                 >
                     <Input
@@ -58,7 +48,7 @@ export const Checkbox = ({
                         id={textInputId}
                         onClick={onChange}
                         onChange={props.onChange}
-                        {...props}
+                        {...rest}
                     ></Input>
                 </Label>
             </div>

@@ -1,13 +1,12 @@
-import { Meta } from '@storybook/react';
+import { Meta, Story } from '@storybook/react';
 import { css } from '@emotion/react';
 
-import { asChromaticStory } from '../lib/story-intents';
-import type { Story } from '../lib/storybook-emotion-10-fixes';
+import { grays } from '@edene/foundations';
+
 import { Card, CardSection, CardMedia, CardProps } from '.';
 import { Text } from '../Text';
 import { ActionButton } from '../ActionButton';
 import { Button } from '../Button';
-import { grays } from '@edene/foundations';
 import { Col, Row } from '../Grid';
 import { Icon } from '../icons';
 import { Avatar } from '../Avatar';
@@ -20,14 +19,20 @@ export default {
     title: 'Components/Card',
     decorators: [
         (Story: Story) => (
-            <div style={{ maxWidth: '540px' }}>
+            <div style={{ maxWidth: '450px' }}>
                 <Story />
             </div>
         ),
     ],
 } as Meta;
 
-export const Image: Story<CardProps> = () => (
+export const Default: Story<CardProps> = () => (
+    <Card>
+        <CardSection>Default card</CardSection>
+    </Card>
+);
+
+export const WithImage: Story<CardProps> = () => (
     <Card>
         <CardMedia
             src="http://angular-material.fusetheme.com/assets/images/ui/angular-material/scenes/autocomplete.scene.png"
@@ -46,7 +51,6 @@ export const Image: Story<CardProps> = () => (
         </CardSection>
     </Card>
 );
-asChromaticStory(Image);
 
 const actionButtonFav = css`
     position: absolute;
@@ -70,7 +74,7 @@ const letterSpacing = css`
     letter-spacing: 0.25px;
 `;
 
-export const Slides: Story<CardProps> = () => (
+export const WithSlides: Story<CardProps> = () => (
     <Card>
         <CardMedia
             src={[
@@ -150,4 +154,3 @@ export const Slides: Story<CardProps> = () => (
         </Button>
     </Card>
 );
-asChromaticStory(Slides);

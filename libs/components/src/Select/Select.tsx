@@ -35,19 +35,20 @@ export interface SelectProps extends Props, FormInput {
     children: ReactElement | ReactElement[];
 }
 
-export const Select = ({
-    id,
-    label: labelText,
-    optional = false,
-    value,
-    defaultValue,
-    onChange,
-    children,
-    cssOverrides,
-}: SelectProps) => {
+export const Select = (props: SelectProps) => {
     const [showOptions, setShowOptions] = useState(false);
     const [selectValue, setSelectValue] = useState('');
     const selectValueRef = useRef<HTMLDivElement | null>(null);
+
+    const {
+        id,
+        label: labelText,
+        value,
+        defaultValue,
+        onChange,
+        children,
+        cssOverrides,
+    } = props;
 
     const inputId = id || generateSourceId();
 
@@ -67,9 +68,7 @@ export const Select = ({
         setShowOptions(false);
     };
 
-    const label = labelText ? (
-        <Label text={labelText} optional={optional}></Label>
-    ) : null;
+    const label = labelText ? <Label text={labelText} /> : null;
 
     return (
         <FormGroup>

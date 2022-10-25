@@ -1,26 +1,22 @@
 import { useState } from 'react';
-import { Textarea, TextareaProps } from '.';
-import { asChromaticStory, asPlayground } from '../lib/story-intents';
-import type { Story } from '../lib/storybook-emotion-10-fixes';
+import { Story } from '@storybook/react';
+
+import { Textarea, TextareaProps } from './index';
 
 export default {
-    title: 'Components/Textarea',
+    title: 'Forms/Textarea',
     component: Textarea,
+    args: {
+        label: 'Talk us about you',
+    },
 };
 
-const Template: Story = () => <Textarea label="Select"></Textarea>;
+export const Playground: Story<TextareaProps> = (args: TextareaProps) => (
+    <Textarea {...args}></Textarea>
+);
+Playground.storyName = '🧶 Playground';
 
-// *****************************************************************************
-
-export const Playground = Template.bind({});
-asPlayground(Playground);
-
-// *****************************************************************************
-
-export const Default = Template.bind({});
-asChromaticStory(Default);
-
-// *****************************************************************************
+export const Default: Story = () => <Textarea />;
 
 export const ControlledTemplate: Story<TextareaProps> = (
     args: TextareaProps

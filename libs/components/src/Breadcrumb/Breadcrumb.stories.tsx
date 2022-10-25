@@ -1,7 +1,6 @@
-import { Breadcrumb, BreadcrumbProps } from './Breadcrumb';
-import { asPlayground, asChromaticStory } from '../lib/story-intents';
-import type { Story } from '../lib/storybook-emotion-10-fixes';
-import { BreadcrumbItem } from './BreadcrumbItem';
+import { Story } from '@storybook/react';
+
+import { Breadcrumb, BreadcrumbProps, BreadcrumbItem } from './index';
 
 export default {
     title: 'Components/Breadcrumb',
@@ -9,23 +8,24 @@ export default {
     subcomponents: { BreadcrumbItem },
 };
 
-const Template: Story<BreadcrumbProps> = (args: BreadcrumbProps) => (
+export const Playground: Story<
+    BreadcrumbProps & { staticText: string; activeText: string }
+> = ({ staticText, activeText, ...args }) => (
     <Breadcrumb {...args}>
+        <BreadcrumbItem href="/#">{staticText}</BreadcrumbItem>
+        <BreadcrumbItem active>{activeText}</BreadcrumbItem>
+    </Breadcrumb>
+);
+Playground.storyName = '🧶 Playground';
+Playground.args = {
+    staticText: 'Home',
+    activeText: 'Services',
+};
+
+export const Default: Story<BreadcrumbProps> = () => (
+    <Breadcrumb>
         <BreadcrumbItem href="/#">Breadcrumb 1</BreadcrumbItem>
         <BreadcrumbItem href="/#">Breadcrumb 2</BreadcrumbItem>
         <BreadcrumbItem active>Breadcrumb 3</BreadcrumbItem>
     </Breadcrumb>
 );
-
-// *****************************************************************************
-
-export const Playground = Template.bind({});
-Playground.args = {
-    text: 'Email',
-};
-asPlayground(Playground);
-
-// *****************************************************************************
-
-export const DefaultBreadcrumb = Template.bind({});
-asChromaticStory(DefaultBreadcrumb);

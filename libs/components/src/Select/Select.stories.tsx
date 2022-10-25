@@ -1,54 +1,53 @@
 import { useState } from 'react';
+import { Story } from '@storybook/react';
 
-import { Select, SelectProps, Option } from '.';
-import { asPlayground, asChromaticStory } from '../lib/story-intents';
-import type { Story } from '../lib/storybook-emotion-10-fixes';
+import { Select, SelectProps, Option } from './index';
 
 export default {
-    title: 'Components/Select',
+    title: 'Forms/Select',
     component: Select,
     args: {
         label: 'Favorite framework',
-        defaultValue: 'Angular',
     },
 };
 
-const Template: Story<SelectProps> = (args: SelectProps) => (
+export const Playground: Story<
+    SelectProps & { option1: string; option2: string }
+> = ({ option1, option2, ...args }) => (
     <Select {...args}>
-        <Option value="React">
-            <span>React</span>
-        </Option>
-        <Option value="Angular">
-            <span>Angular</span>
-        </Option>
-        <Option value="Vue">
-            <span>Vue</span>
-        </Option>
+        <Option value={option1}>{option1}</Option>
+        <Option value={option2}>{option2}</Option>
     </Select>
 );
+Playground.storyName = '🧶 Playground';
+Playground.args = {
+    option1: 'React',
+    option2: 'Angular',
+};
 
-// *****************************************************************************
-
-export const Playground = Template.bind({});
-asPlayground(Playground);
-
-export const Default = Template.bind({});
-asChromaticStory(Default);
-
-export const Controlled: Story<SelectProps> = (args: SelectProps) => {
-    const [value, setValue] = useState('React');
+export const Default: Story<SelectProps> = (args: SelectProps) => {
     return (
-        <Select value={value} onChange={setValue} {...args}>
-            <Option value="React">
-                <span>React</span>
-            </Option>
-            <Option value="Angular">
-                <span>Angular</span>
-            </Option>
-            <Option value="Vue">
-                <span>Vue</span>
-            </Option>
+        <Select {...args}>
+            <Option value="React">React</Option>
+            <Option value="Angular">Angular</Option>
+            <Option value="Vue">Vue</Option>
         </Select>
     );
 };
-asChromaticStory(Controlled);
+
+export const WithDefaultValue = Default.bind({});
+WithDefaultValue.args = {
+    defaultValue: 'Vue',
+};
+
+export const Controlled: Story<SelectProps> = (args: SelectProps) => {
+    const [value, setValue] = useState('React');
+
+    return (
+        <Select value={value} {...args} onChange={(value) => setValue(value)}>
+            <Option value="React">React</Option>
+            <Option value="Angular">Angular</Option>
+            <Option value="Vue">Vue</Option>
+        </Select>
+    );
+};

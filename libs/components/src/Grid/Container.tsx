@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { ReactNode } from 'react';
 
 import { Props } from '@edene/foundations';
 
@@ -25,11 +25,14 @@ export type EdeneScale =
 export interface ContainerProps extends Props {
     /** Each unit is multipled by 0.25 rem */
     pv?: EdeneScale;
+
     /** Each unit is multipled by 0.25 rem */
     ph?: EdeneScale;
+
     /** Each unit is multipled by 0.25 rem */
     mt?: EdeneScale;
-    children?: ReactElement | ReactElement[];
+
+    children?: ReactNode;
 }
 
 export const Container = ({

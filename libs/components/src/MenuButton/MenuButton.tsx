@@ -7,7 +7,9 @@ export interface MenuButtonProps
     extends ButtonHTMLAttributes<HTMLButtonElement>,
         Props {
     alwaysVisible?: boolean;
+
     active?: boolean;
+
     variant?: 'light' | 'dark';
 }
 

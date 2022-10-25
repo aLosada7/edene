@@ -10,17 +10,18 @@ import { icon, iconTheme } from './styles';
 
 export interface IconProps extends Props {
     size?: IconSize;
+
     color?: EdeneColor;
-    /** For the new material icons */
-    children?: string;
+
     /** For the new material icons */
     variant?: IconVariant;
+
+    /** For the new material icons */
+    children?: string;
 }
 
 export const Icon = (props: IconProps) => {
     const { theme } = useThemeContext();
-
-    console.log(props);
 
     const {
         children,

@@ -1,26 +1,38 @@
+import { Story } from '@storybook/react';
+
 import { Badge, BadgeProps } from './Badge';
-import { asPlayground, asChromaticStory } from '../lib/story-intents';
-import type { Story } from '../lib/storybook-emotion-10-fixes';
-import { StoryHStack } from '../lib/general-story-components';
+import { Button } from '../Button';
+import { Fragment } from 'react';
+import { Group } from '../Group';
 
 export default {
     title: 'Components/Badge',
     component: Badge,
-    args: {
-        text: 'Success',
-    },
 };
 
-const Template: Story<BadgeProps> = (args) => <Badge {...args} />;
+export const Playground: Story<BadgeProps & { text: string }> = ({
+    text,
+    ...args
+}) => <Badge {...args}>{text}</Badge>;
+Playground.storyName = '🧶 Playground';
+Playground.args = {
+    text: '5',
+};
 
-export const Playground = Template.bind({});
-asPlayground(Playground);
+export const Default: Story<BadgeProps> = () => <Badge>1</Badge>;
 
-export const Default = () => (
-    <StoryHStack>
-        <Badge color="gray">Gray</Badge>
-        <Badge color="teal">Teal</Badge>
-        <Badge color="pink">Pink</Badge>
-    </StoryHStack>
+export const BadgeInsideAButton = () => (
+    <Button color="success">
+        <Fragment>
+            Badge Inside A Button <Badge>1</Badge>
+        </Fragment>
+    </Button>
 );
-asChromaticStory(Default);
+
+export const WithColor = () => (
+    <Group>
+        <Badge color="gray">1</Badge>
+        <Badge color="teal">99+</Badge>
+        <Badge color="pink">999+</Badge>
+    </Group>
+);

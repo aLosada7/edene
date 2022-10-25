@@ -3,7 +3,6 @@
     "projects": {
         "animations": "libs/animations",
         "components": "libs/components",
-        "edene-docs": "apps/edene-docs",
         "edene-pro-lab": "libs/edene-pro-lab",
         "edene-template": "apps/edene-template",
         "food-delivery": "apps/food-delivery",

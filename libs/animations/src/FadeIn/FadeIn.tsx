@@ -4,6 +4,7 @@ import { fadeIn } from './styles';
 
 export interface FadeInProps {
     delay?: string;
+
     children: ReactNode;
 }
 

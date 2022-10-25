@@ -1,9 +1,9 @@
-import { asChromaticStory } from '../lib/story-intents';
-import type { Story } from '../lib/storybook-emotion-10-fixes';
+import { Story } from '@storybook/react';
+
 import { FadeIn } from './FadeIn';
 
 export default {
-    title: 'Animations/FadeIn',
+    title: 'Animations',
     component: FadeIn,
 };
 
@@ -31,4 +31,3 @@ export const Default: Story = () => {
     );
 };
 Default.storyName = 'FadeIn';
-asChromaticStory(Default);

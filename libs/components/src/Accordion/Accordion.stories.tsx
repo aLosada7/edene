@@ -1,14 +1,36 @@
-import type { Story } from '../lib/storybook-emotion-10-fixes';
-import { asChromaticStory, asPlayground } from '../lib/story-intents';
-import { Accordion, AccordionProps } from './Accordion';
-import { AccordionRow } from './AccordionRow';
+import { Story } from '@storybook/react';
+
+import { Accordion, AccordionProps, AccordionRow } from './index';
 
 export default {
     title: 'Components/Accordion',
     component: Accordion,
 };
 
-const Template: Story<AccordionProps> = (args: AccordionProps) => (
+export const Playground: Story<
+    AccordionProps & {
+        row1Label: string;
+        row1Body: string;
+        row2Label: string;
+        row2Body: string;
+    }
+> = ({ row1Label, row1Body, row2Label, row2Body, ...args }) => (
+    <div style={{ width: '50vw' }}>
+        <Accordion {...args}>
+            <AccordionRow label={row1Label}>{row1Body}</AccordionRow>
+            <AccordionRow label={row2Label}>{row2Body}</AccordionRow>
+        </Accordion>
+    </div>
+);
+Playground.storyName = '🧶 Playground';
+Playground.args = {
+    row1Label: 'Accordion Header 1',
+    row1Body: 'Accordion body 1',
+    row2Label: 'Accordion Header 2',
+    row2Body: 'Accordion body 2',
+};
+
+export const Default: Story<AccordionProps> = (args: AccordionProps) => (
     <Accordion {...args}>
         <AccordionRow label="Collecting from multiple newsagents">
             Present your card to a newsagent each time you collect the paper.
@@ -22,28 +44,12 @@ const Template: Story<AccordionProps> = (args: AccordionProps) => (
     </Accordion>
 );
 
-// *****************************************************************************
-
-export const Playground = Template.bind({});
-asPlayground(Playground);
-
-// *****************************************************************************
-
-export const Default = Template.bind({});
-asChromaticStory(Default);
-
-// *****************************************************************************
-
-export const WithoutCTALabels = Template.bind({});
+export const WithoutCTALabels = Default.bind({});
 WithoutCTALabels.args = {
     hideToggleLabel: true,
 };
-asChromaticStory(WithoutCTALabels);
 
-// *****************************************************************************
-
-export const Bordered = Template.bind({});
+export const Bordered = Default.bind({});
 Bordered.args = {
     variant: 'bordered',
 };
-asChromaticStory(Bordered);

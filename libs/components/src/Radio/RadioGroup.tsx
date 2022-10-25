@@ -1,11 +1,13 @@
-import { Row } from '../Grid';
-import { createContext, ReactElement, useState } from 'react';
+import { createContext, ReactNode, useState } from 'react';
 
+import { Row } from '../Grid';
 import { radioGroup } from './styles';
 
 export interface RadioGroupContext {
     defaultValue?: string;
+
     value?: string;
+
     onChange?(nextValue: string): void;
 }
 
@@ -23,16 +25,13 @@ export interface RadioGroupProps {
 
     /** Controlled input onChange handler */
     onChange?: (value: string) => void;
-    children: ReactElement[];
+
+    children: ReactNode;
 }
 
-export const RadioGroup = ({
-    inline,
-    value,
-    defaultValue,
-    onChange,
-    children,
-}: RadioGroupProps) => {
+export const RadioGroup = (props: RadioGroupProps) => {
+    const { inline, value, defaultValue, onChange, children } = props;
+
     const [radioValue, setRadioValue] = useState(value || defaultValue);
 
     const handleOnChange = (radioValue: string) => {

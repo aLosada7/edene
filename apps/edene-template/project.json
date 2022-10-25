@@ -25,10 +25,12 @@
             },
             "configurations": {
                 "production": {
-                    "fileReplacements": [{
-                        "replace": "apps/edene-template/src/environments/environment.ts",
-                        "with": "apps/edene-template/src/environments/environment.prod.ts"
-                    }],
+                    "fileReplacements": [
+                        {
+                            "replace": "apps/edene-template/src/environments/environment.ts",
+                            "with": "apps/edene-template/src/environments/environment.prod.ts"
+                        }
+                    ],
                     "optimization": true,
                     "outputHashing": "all",
                     "sourceMap": false,

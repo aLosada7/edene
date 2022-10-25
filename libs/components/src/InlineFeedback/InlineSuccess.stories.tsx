@@ -1,22 +1,22 @@
 import { Story } from '@storybook/react';
 
-import { InlineError } from './index';
+import { InlineSuccess } from './index';
 import type { InlineFeedbackProps } from './types';
 
 export default {
-    title: 'Forms/InlineError',
-    component: InlineError,
+    title: 'Forms/InlineSuccess',
+    component: InlineSuccess,
 };
 
 export const Playground: Story<InlineFeedbackProps & { text: string }> = ({
     text,
     ...args
-}) => <InlineError {...args}>{text}</InlineError>;
+}) => <InlineSuccess {...args}>{text}</InlineSuccess>;
 Playground.storyName = '🧶 Playground';
 Playground.args = {
-    text: 'Mail already registered',
+    text: 'Looks great!',
 };
 
 export const Default: Story<InlineFeedbackProps> = () => (
-    <InlineError>Mail already registered</InlineError>
+    <InlineSuccess>Looks great!</InlineSuccess>
 );
