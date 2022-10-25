@@ -1,7 +1,6 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "jsx": "preserve",
     "jsxImportSource": "@emotion/react",
     "allowJs": true,
     "esModuleInterop": true,
@@ -16,7 +15,7 @@
       "jest",
       "node"
     ],
-    "target": "es5"
+    "jsx": "preserve"
   },
   "include": [
     "**/*.ts",

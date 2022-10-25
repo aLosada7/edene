@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react';
+import { useState } from 'react';
 
 import { Icon } from '@edene/components';
 import { useThemeContext } from '@edene/foundations';
@@ -12,12 +12,12 @@ export const Settings = () => {
     const { theme } = useThemeContext();
 
     return (
-        <Fragment>
+        <>
             <div css={settings(theme)} onClick={() => setOpen(true)}>
                 <Icon color={theme.white}>settings</Icon>
             </div>
             {open && <div css={overlay} onClick={() => setOpen(false)}></div>}
             <SettingsContent open={open} onClose={() => setOpen(false)} />
-        </Fragment>
+        </>
     );
 };
