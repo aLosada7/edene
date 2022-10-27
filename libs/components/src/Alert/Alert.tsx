@@ -7,25 +7,24 @@ import { Text } from '../Text';
 import { alert, alertTheme } from './styles';
 
 export interface AlertProps extends Props {
-    color?: 'success' | 'danger';
+    type?: 'success' | 'danger';
+
     actions?: ReactNode;
+
     children: ReactNode;
 }
 
-export const Alert = ({
-    color,
-    actions,
-    children,
-    cssOverrides,
-}: AlertProps) => {
+export const Alert = (props: AlertProps) => {
     const { theme } = useThemeContext();
+
+    const { type, actions, children, cssOverrides } = props;
 
     return (
         <div
             css={
                 [
                     alert,
-                    alertTheme({ theme, color }),
+                    alertTheme({ theme, color: type }),
                     cssOverrides,
                 ] as SerializedStyles[]
             }

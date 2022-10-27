@@ -17,7 +17,7 @@ import { SerializedStyles } from '@emotion/react';
 
 export type IButtonBlock = 'block';
 
-export interface SharedButtonProps extends Props {
+export interface ButtonProps extends Props {
     id?: string;
     /** Button type attribute */
     type?: 'submit' | 'button' | 'reset';
@@ -32,14 +32,14 @@ export interface SharedButtonProps extends Props {
     children?: JSX.Element | string;
 }
 
-export type ButtonProps<C> = PolymorphicComponentProps<C, SharedButtonProps>;
+export type PButtonProps<C> = PolymorphicComponentProps<C, ButtonProps>;
 
 type ButtonComponent = <C = 'button'>(
-    props: ButtonProps<C>
+    props: PButtonProps<C>
 ) => React.ReactElement;
 
 export const Button: ButtonComponent = forwardRef(
-    (props: ButtonProps<'button'>, ref: PolymorphicRef<'button'>) => {
+    (props: PButtonProps<'button'>, ref: PolymorphicRef<'button'>) => {
         const {
             component,
             type,

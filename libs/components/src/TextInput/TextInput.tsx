@@ -1,22 +1,11 @@
 import { forwardRef, InputHTMLAttributes } from 'react';
 import { SerializedStyles } from '@emotion/react';
 
-import { width10, width30, width4, widthFluid } from './styles';
 import { Label } from '../Label';
 import { Props, generateSourceId } from '@edene/foundations';
 import { Input } from '../Input';
 import { FormInput } from '../Input/types';
 import { FormGroup } from '../FormGroup';
-
-export type Width = 30 | 10 | 4;
-
-const widths: {
-    [key in Width]: SerializedStyles;
-} = {
-    30: width30,
-    10: width10,
-    4: width4,
-};
 
 export interface TextInputProps
     extends Omit<InputHTMLAttributes<HTMLInputElement>, 'value'>,
@@ -28,12 +17,9 @@ export interface TextInputProps
      * _Note: if you pass the `value` prop, you MUST also pass an `onChange` handler, or the field will be rendered as read-only_
      */
     value?: string;
-    /**
-     * Determines the width of a fixed-length field, based on the specified character length of the user input. If unspecified,
-     * the width will default to 100% of the field's container.
-     */
-    width?: Width;
+
     iconLeft?: string;
+
     cssLabelOverrides?: SerializedStyles | SerializedStyles[];
 }
 
@@ -42,8 +28,6 @@ export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
         const {
             id,
             label: labelText,
-            optional = false,
-            width,
             onChange,
             cssOverrides,
             cssLabelOverrides,
@@ -56,7 +40,6 @@ export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
             <Label
                 htmlFor={textInputId}
                 text={labelText}
-                optional={optional}
                 cssOverrides={cssLabelOverrides}
             />
         );
@@ -68,9 +51,8 @@ export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
                     type="text"
                     ref={ref}
                     id={textInputId}
-                    optional={optional}
                     onChange={onChange}
-                    css={[width ? widths[width] : widthFluid, cssOverrides]}
+                    css={[cssOverrides]}
                     {...rest}
                 />
             </FormGroup>

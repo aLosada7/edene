@@ -5,9 +5,9 @@ import Modal from './Modal';
 import { Button } from '../Button';
 import { ModalsProvider } from './ModalsProvider';
 import { useModals } from './useModals';
-import { StoryHStack } from '../lib/general-story-components';
 import ModalHeader from './ModalHeader';
 import ModalBody from './ModalBody';
+import { Group } from '../Group';
 
 // Estilos
 // Tecla esc
@@ -15,7 +15,7 @@ import ModalBody from './ModalBody';
 
 export default {
     component: Modal,
-    title: 'Components/Modal',
+    title: 'Overlay/Modal',
     decorators: [
         (Story: any) => (
             <ModalsProvider>
@@ -64,14 +64,14 @@ const ModalsProviderTemplate: Story = () => {
             id: newModalId,
             title: `Modal ${newModalId}`,
             children: (
-                <StoryHStack>
+                <Group>
                     <Button onClick={() => openModal(newModalId)}>
                         Launch another modal
                     </Button>
                     <Button onClick={() => closeModal(newModalId)}>
                         Close modal
                     </Button>
-                </StoryHStack>
+                </Group>
             ),
         });
     };

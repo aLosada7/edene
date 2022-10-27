@@ -1,35 +1,57 @@
 import React from 'react';
-import { RadioGroup, RadioGroupProps, Radio } from '.';
-import { asChromaticStory } from '../lib/story-intents';
-import type { Story } from '../lib/storybook-emotion-10-fixes';
+import { Story } from '@storybook/react';
+
+import { RadioGroup, RadioGroupProps, Radio } from './index';
 
 export default {
-    title: 'Components/Radio',
-    args: {
-        defaultValue: '2',
-    },
+    title: 'Forms/RadioGroup',
+    component: RadioGroup,
+    subcomponents: [Radio],
 };
 
-const Template: Story<RadioGroupProps> = (args: RadioGroupProps) => {
+export const Playground: Story<
+    RadioGroupProps & { value1: string; value2: string; value3: string }
+> = ({ value1, value2, value3, ...args }) => {
     return (
         <RadioGroup {...args}>
-            <Radio value="1">First</Radio>
-            <Radio value="2">Second</Radio>
-            <Radio value="3">Third</Radio>
+            <Radio value={value1}>{value1}</Radio>
+            <Radio value={value2}>{value2}</Radio>
+            <Radio value={value3}>{value3}</Radio>
         </RadioGroup>
     );
 };
-
-export const Default = Template.bind({});
-asChromaticStory(Default);
-
-export const Inline = Template.bind({});
-Inline.args = {
-    inline: true,
+Playground.storyName = '🧶 Playground';
+Playground.args = {
+    value1: 'React',
+    value2: 'Angular',
+    value3: 'Vue',
 };
-asChromaticStory(Inline);
 
-const ControlledTemplate: Story<RadioGroupProps> = (args: RadioGroupProps) => {
+export const Default = () => (
+    <RadioGroup>
+        <Radio value="1">First</Radio>
+        <Radio value="2">Second</Radio>
+        <Radio value="3">Third</Radio>
+    </RadioGroup>
+);
+
+export const WithDefaultValue = () => (
+    <RadioGroup defaultValue="3">
+        <Radio value="1">First</Radio>
+        <Radio value="2">Second</Radio>
+        <Radio value="3">Third</Radio>
+    </RadioGroup>
+);
+
+export const WithInline = () => (
+    <RadioGroup inline>
+        <Radio value="1">First</Radio>
+        <Radio value="2">Second</Radio>
+        <Radio value="3">Third</Radio>
+    </RadioGroup>
+);
+
+export const Controlled: Story<RadioGroupProps> = (args: RadioGroupProps) => {
     const [value, setValue] = React.useState('1');
     return (
         <RadioGroup onChange={setValue} value={value} {...args}>
@@ -39,6 +61,3 @@ const ControlledTemplate: Story<RadioGroupProps> = (args: RadioGroupProps) => {
         </RadioGroup>
     );
 };
-
-export const Controlled = ControlledTemplate.bind({});
-asChromaticStory(Controlled);

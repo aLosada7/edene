@@ -15,8 +15,6 @@
         "@emotion/react": "11.9.0",
         "@emotion/server": "11.4.0",
         "@emotion/styled": "11.8.1",
-        "@mdx-js/loader": "2.1.2",
-        "@mdx-js/react": "2.1.2",
         "@netlify-builder/deploy": "5.0.0",
         "@next/mdx": "12.2.0",
         "@nrwl/next": "14.2.4",

@@ -1,18 +1,16 @@
-import { Divider, DividerProps } from './Divider';
-import { asPlayground, asChromaticStory } from '../lib/story-intents';
-import type { Story } from '../lib/storybook-emotion-10-fixes';
+import { Story } from '@storybook/react';
+
+import { Divider, DividerProps } from './index';
 
 export default {
     title: 'Components/Divider',
     component: Divider,
 };
 
-const Template: Story<DividerProps> = (args) => <Divider {...args} />;
+export const Playground: Story<DividerProps> = (args) => <Divider {...args} />;
+Playground.storyName = '🧶 Playground';
+Playground.args = {
+    width: '100px',
+};
 
-export const Playground = Template.bind({});
-asPlayground(Playground);
-
-// *****************************************************************************
-
-export const Default = () => <Divider />;
-asChromaticStory(Default);
+export const Default = () => <Divider width="300px" />;

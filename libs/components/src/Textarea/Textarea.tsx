@@ -15,31 +15,19 @@ export interface TextareaProps
     cssLabelOverrides?: SerializedStyles | SerializedStyles[];
 }
 
-export const Textarea = ({
-    id,
-    label: labelText,
-    optional = false,
-    cssLabelOverrides,
-    ...props
-}: TextareaProps) => {
+export const Textarea = (props: TextareaProps) => {
+    const { id, label: labelText, cssLabelOverrides, ...rest } = props;
+
     const inputId = id || generateSourceId();
 
     const label = labelText ? (
-        <Label
-            text={labelText}
-            optional={optional}
-            cssOverrides={cssLabelOverrides}
-        ></Label>
+        <Label text={labelText} cssOverrides={cssLabelOverrides}></Label>
     ) : null;
 
     return (
         <FormGroup>
             {label}
-            <textarea
-                css={[input, textarea]}
-                id={inputId}
-                {...props}
-            ></textarea>
+            <textarea id={inputId} css={[input, textarea]} {...rest}></textarea>
         </FormGroup>
     );
 };

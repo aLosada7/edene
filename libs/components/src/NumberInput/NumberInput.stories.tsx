@@ -1,36 +1,40 @@
-import { action } from '@storybook/addon-actions';
+import { useState } from 'react';
+import { Story } from '@storybook/react';
 
-import { NumberInput, NumberInputProps } from './NumberInput';
-import { asPlayground, asChromaticStory } from '../lib/story-intents';
-import type { Story } from '../lib/storybook-emotion-10-fixes';
+import { NumberInput, NumberInputProps } from './index';
 
 export default {
-    title: 'Components/NumberInput',
+    title: 'Forms/NumberInput',
     component: NumberInput,
     args: {
-        label: 'Quantity',
+        labelText: 'Quantity',
+        step: 10,
     },
 };
 
-const Template: Story<NumberInputProps> = (args: NumberInputProps) => (
-    <NumberInput {...args} onChange={action('onChange')} />
+export const Playground: Story<NumberInputProps> = (args: NumberInputProps) => (
+    <NumberInput {...args} />
+);
+Playground.storyName = '🧶 Playground';
+
+export const Default: Story<NumberInputProps> = (args: NumberInputProps) => (
+    <NumberInput {...args} />
 );
 
-// *****************************************************************************
+export const Controlled: Story<NumberInputProps> = (args: NumberInputProps) => {
+    const [value, setValue] = useState(5);
 
-export const Playground = Template.bind({});
-asPlayground(Playground);
+    return (
+        <NumberInput
+            value={value}
+            {...args}
+            onChange={(value) => setValue(value)}
+        />
+    );
+};
 
-// *****************************************************************************
-
-export const DefaultNumberInput = Template.bind({});
-asChromaticStory(DefaultNumberInput);
-
-// *****************************************************************************
-
-export const MaxAndMinNumberInput = Template.bind({});
-MaxAndMinNumberInput.args = {
+export const WithMinAndMax = Controlled.bind({});
+WithMinAndMax.args = {
     min: 50,
     max: 100,
 };
-asChromaticStory(MaxAndMinNumberInput);

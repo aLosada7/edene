@@ -6,9 +6,23 @@ import { ThemeDecorator } from '@edene/foundations';
 import './styles.scss';
 
 export const parameters = {
-    layout: 'centered',
-    viewport,
     backgrounds,
+    layout: 'centered',
+    options: {
+        storySort: {
+            order: [
+                'Getting Started',
+                'Typography',
+                'Layout',
+                'Components',
+                'Forms',
+                'Overlay',
+                'UI Shell',
+                'Laboratory',
+            ],
+        },
+    },
+    viewport,
 };
 
 addDecorator(ThemeDecorator);

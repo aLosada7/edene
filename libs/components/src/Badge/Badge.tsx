@@ -1,16 +1,14 @@
-import { SerializedStyles } from '@emotion/react';
 import { ReactNode } from 'react';
 
-import { useThemeContext, EdeneColor } from '@edene/foundations';
+import { useThemeContext, EdeneColor, Props } from '@edene/foundations';
 
 import { badge, badgeTheme } from './styles';
 
 export type IBadgeVariant = 'filled' | 'outlined';
 
-export interface BadgeProps {
-    children: ReactNode;
+export interface BadgeProps extends Props {
     color?: EdeneColor;
-    cssOverrides?: SerializedStyles | SerializedStyles[];
+    children: ReactNode;
 }
 
 export const Badge = (props: BadgeProps) => {

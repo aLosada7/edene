@@ -17,40 +17,30 @@ export interface InputProps
     extends InputHTMLAttributes<HTMLInputElement>,
         Props {
     id: string;
+
     /** The input type */
     type: string;
-    /**
-     * Adds the word "Optional" after the label. Non-optional fields are rendered with the `required` attribute.
-     */
-    optional?: boolean;
-    /**
-     * Appears as an inline error message.
-     */
+    /** Adds the word "Optional" after the label. Non-optional fields are rendered with the `required` attribute. */
+    // optional?: boolean;
 
+    /** Appears as an inline error message. */
     error?: string;
+
     /**
      * Appears as an inline success message.
      * This prop should not have a value set at the same time as the error prop. In the event that both are set, errors take precedence.
      */
     success?: string;
-    /**
-     * Only for radio buttons
-     */
+
+    /** Only for radio buttons */
     checked?: boolean;
+
     iconLeft?: string;
 }
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(
     (props: InputProps, ref) => {
-        const {
-            id,
-            optional = false,
-            error,
-            success,
-            iconLeft,
-            cssOverrides,
-            ...rest
-        } = props;
+        const { id, error, success, iconLeft, cssOverrides, ...rest } = props;
 
         const Error = error ? <InlineError>{error}</InlineError> : null;
         const Success =
@@ -76,7 +66,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
                         iconLeft && iconLeftInInput,
                         cssOverrides,
                     ]}
-                    aria-required={!optional}
+                    // aria-required={!optional}
                     aria-invalid={!!error}
                     aria-describedby={error || success ? descriptionId(id) : ''}
                     {...rest}

@@ -1,27 +1,39 @@
-import { css } from '@emotion/react';
+import { Story } from '@storybook/react';
 
-import { Alert as AlertComponent } from './Alert';
-import { asChromaticStory } from '../lib/story-intents';
-import { StoryVStack } from '../lib/general-story-components';
+import { Icon } from '../icons';
+import { Stack } from '../Stack';
+import { Alert, AlertProps } from './index';
 
 export default {
-    title: 'Components',
-    component: AlertComponent,
+    title: 'Components/Alert',
+    component: Alert,
+    parameters: {
+        layout: 'padded',
+    },
 };
 
-const Template = () => (
-    <StoryVStack
-        cssOverrides={css`
-            width: 100vw;
-        `}
-    >
-        <AlertComponent>This is a default alert</AlertComponent>
-        <AlertComponent color="success">This is a success alert</AlertComponent>
-        <AlertComponent color="danger">This is a danger alert</AlertComponent>
-    </StoryVStack>
+export const Playground: Story<
+    AlertProps & {
+        content: string;
+    }
+> = ({ content, ...args }) => <Alert {...args}>{content}</Alert>;
+Playground.storyName = '🧶 Playground';
+Playground.args = {
+    content: 'An important alert',
+};
+
+export const Default = () => <Alert>This is a default alert</Alert>;
+
+export const Types = () => (
+    <Stack>
+        <Alert>This is a default alert</Alert>
+        <Alert type="success">This is a success alert</Alert>
+        <Alert type="danger">This is a danger alert</Alert>
+    </Stack>
 );
 
-// *****************************************************************************
-
-export const Alert = Template.bind({});
-asChromaticStory(Alert);
+export const WithActions = () => (
+    <Alert actions={<Icon variant="outlined">add_box</Icon>}>
+        Now add any course to your library
+    </Alert>
+);

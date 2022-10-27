@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { ReactNode } from 'react';
 
 import { Props } from '@edene/foundations';
 
@@ -20,7 +20,7 @@ export interface RowProps extends Props {
     /** Vertical padding */
     py?: number;
     noGlutters?: boolean;
-    children?: ReactElement | ReactElement[];
+    children?: ReactNode;
 }
 
 export const Row = ({

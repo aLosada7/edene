@@ -1,9 +1,7 @@
 import { action } from '@storybook/addon-actions';
+import { Story } from '@storybook/react';
 
-import { asChromaticStory } from '../lib/story-intents';
-import type { Story } from '../lib/storybook-emotion-10-fixes';
-
-import { MenuButton, MenuButtonProps } from './MenuButton';
+import { MenuButton, MenuButtonProps } from './index';
 
 export default {
     title: 'Components/MenuButton',
@@ -17,4 +15,3 @@ const Template: Story<MenuButtonProps> = () => (
 );
 
 export const Default = Template.bind({});
-asChromaticStory(Default);

@@ -1,13 +1,13 @@
 import { css } from '@emotion/react';
 import { visuallyHidden as _visuallyHidden } from '@edene/foundations';
 import { LabelProps } from './Label';
-import { labelText, optionalText } from './styles';
+import { labelText } from './styles';
 
 const visuallyHidden = css`
     ${_visuallyHidden}
 `;
 
-export const Text = ({ text, optional, hideLabel }: LabelProps) => (
+export const Text = ({ text, hideLabel }: LabelProps) => (
     <div
         css={(theme: any) => [
             labelText(theme.label && theme),
@@ -15,12 +15,12 @@ export const Text = ({ text, optional, hideLabel }: LabelProps) => (
         ]}
     >
         {text}{' '}
-        {optional ? (
+        {/* {optional ? (
             <span css={(theme: any) => optionalText(theme.label && theme)}>
                 Optional
             </span>
         ) : (
             ''
-        )}
+        )} */}
     </div>
 );

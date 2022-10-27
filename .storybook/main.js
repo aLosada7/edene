@@ -19,17 +19,10 @@ function getPackageDir(filepath) {
 }
 
 module.exports = {
-    stories: [],
+    stories: ['../../../docs/*.stories.mdx'],
     addons: [
         '@storybook/addon-a11y',
-        {
-            name: '@storybook/addon-docs',
-            options: {
-                sourceLoaderOptions: {
-                    injectStoryParameters: false,
-                },
-            },
-        },
+        '@storybook/addon-docs',
         '@storybook/addon-controls',
         'storybook-mobile',
         '@storybook/addon-actions',

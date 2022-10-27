@@ -1,46 +1,29 @@
-import { Label, LabelProps } from './Label';
-import { asPlayground, asChromaticStory } from '../lib/story-intents';
-import type { Story } from '../lib/storybook-emotion-10-fixes';
+import { Story } from '@storybook/react';
+
+import { Label, LabelProps } from './index';
 
 export default {
     title: 'Components/Label',
     component: Label,
     args: {
         text: 'Email',
-        optional: false,
-        hideLabel: false,
     },
 };
 
-const Template: Story<LabelProps> = (args: LabelProps) => <Label {...args} />;
+export const Playground: Story<LabelProps> = (args: LabelProps) => (
+    <Label {...args} />
+);
 
-// *****************************************************************************
+export const Default: Story<LabelProps> = (args: LabelProps) => (
+    <Label {...args} />
+);
 
-export const Playground = Template.bind({});
-Playground.args = {
-    text: 'Email',
-};
-asPlayground(Playground);
-
-// *****************************************************************************
-
-export const Default = Template.bind({});
-asChromaticStory(Default);
-
-// *****************************************************************************
-
-export const WithSupportingText = Template.bind({});
+export const WithSupportingText = Default.bind({});
 WithSupportingText.args = {
-    supporting: 'alex@example.com',
+    supportingText: '(f.e. alex@example.com)',
 };
-asChromaticStory(WithSupportingText);
 
-// *****************************************************************************
-
-export const WithOptional = Template.bind({});
-WithOptional.args = {
-    optional: true,
+export const WithHideLabel = Default.bind({});
+WithHideLabel.args = {
+    hideLabel: true,
 };
-asChromaticStory(WithOptional);
-
-// *****************************************************************************

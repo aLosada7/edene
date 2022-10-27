@@ -1,23 +1,28 @@
-import { Input, InputProps } from './Input';
-import type { Story } from '../lib/storybook-emotion-10-fixes';
-import { asChromaticStory, asPlayground } from '../lib/story-intents';
+import { Story } from '@storybook/react';
+
+import { Input, InputProps } from './index';
 
 export default {
-    title: 'Components/Input',
+    title: 'Forms/Input',
     component: Input,
-    args: {
-        optional: false,
-        error: undefined,
-        success: undefined,
-    },
+    args: { id: 'input-id', type: 'text' },
 };
 
-const Template: Story<InputProps> = (args: InputProps) => {
+const Playground: Story<InputProps> = (args: InputProps) => {
     return <Input {...args} />;
 };
+Playground.storyName = '🧶 Playground';
 
-export const Playground = Template.bind({});
-asPlayground(Playground);
+export const Default: Story<InputProps> = (args: InputProps) => (
+    <Input {...args} />
+);
 
-export const Basic = Template.bind({});
-asChromaticStory(Basic);
+export const WithSuccess = Default.bind({});
+WithSuccess.args = {
+    success: 'Looks good!',
+};
+
+export const WithError = Default.bind({});
+WithError.args = {
+    error: 'Mail already registered',
+};
