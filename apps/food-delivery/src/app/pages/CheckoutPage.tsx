@@ -70,8 +70,8 @@ export const CheckoutPage = () => {
 
             <ButtonGroup size="block">
                 <Button
+                    variant="outlined"
                     color="dark"
-                    variant="outline"
                     onClick={() => navigate(-1)}
                 >
                     Back

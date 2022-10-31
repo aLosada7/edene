@@ -32,7 +32,7 @@ export const NewStudentsContainer = () => (
             />
         </List>
         <CardSection>
-            <Button size="block" variant="outline">
+            <Button size="block" variant="outlined">
                 View all new students
             </Button>
         </CardSection>

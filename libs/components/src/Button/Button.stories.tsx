@@ -20,30 +20,39 @@ Playground.args = {
     text: 'Button',
 };
 
-export const Filled = () => <Button>Default Button</Button>;
+export const Filled = () => <Button>Default</Button>;
 
 export const Variants = () => (
     <Stack>
-        <Button>Button</Button>
-        <Button variant="outline">Button</Button>
-        <Button variant="link">Button</Button>
+        <Button>Filled</Button>
+        <Button variant="outlined">Outlined</Button>
+        <Button variant="link">Link</Button>
     </Stack>
 );
 
 export const Sizes = () => (
     <Stack>
-        <Button size="xsmall">Button</Button>
-        <Button size="small">Button</Button>
-        <Button size="medium">Button</Button>
-        <Button size="large">Button</Button>
+        <Button size="xsmall">Xsmall</Button>
+        <Button size="small">Small</Button>
+        <Button size="medium">Medium</Button>
+        <Button size="large">Large</Button>
+        <Button size="block">Block</Button>
     </Stack>
 );
 
-export const WithIconLeft = () => <Button iconLeft="home">Home</Button>;
+export const WithIconLeft = () => (
+    <Button icon="home" iconSide="left">
+        Home
+    </Button>
+);
 
 export const WithIconRight = () => (
-    <Button iconRight="arrow_forward">Call us</Button>
+    <Button icon="arrow_forward" iconSide="right">
+        Call us
+    </Button>
 );
+
+export const WithLoading = () => <Button loading>With Loading</Button>;
 
 export const WithDisabled = () => <Button disabled>Button</Button>;
 
@@ -54,7 +63,7 @@ export const WithIconOnly = () => (
 );
 
 export const WithGroup = () => (
-    <ButtonGroup variant="outline">
+    <ButtonGroup variant="outlined">
         <Button color="success">Save</Button>
         <Button>Cancel</Button>
     </ButtonGroup>

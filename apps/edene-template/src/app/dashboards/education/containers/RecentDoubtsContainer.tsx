@@ -16,7 +16,7 @@ export const RecentDoubtsContainer = () => (
         </List>
 
         <CardSection>
-            <Button size="block" variant="outline">
+            <Button size="block" variant="outlined">
                 View all doubts
             </Button>
         </CardSection>

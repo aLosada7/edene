@@ -1,4 +1,5 @@
 import { cloneElement, forwardRef } from 'react';
+import { SerializedStyles } from '@emotion/react';
 
 import {
     PolymorphicComponentProps,
@@ -9,11 +10,18 @@ import {
     ButtonVariant,
     ButtonSize,
     IconSize,
+    IconVariant,
 } from '@edene/foundations';
 
 import { Icon } from '../icons';
-import { btn, btnColor, buttonIconLeft, buttonIconRight } from './styles';
-import { SerializedStyles } from '@emotion/react';
+import {
+    btn,
+    btnColor,
+    buttonIconLeft,
+    buttonIconRight,
+    buttonLoading,
+} from './styles';
+import Box from '../../assets/box.gif';
 
 export type IButtonBlock = 'block';
 
@@ -24,8 +32,12 @@ export interface ButtonProps extends Props {
     color?: EdeneColor;
     variant?: ButtonVariant;
     size?: ButtonSize | IButtonBlock;
-    iconLeft?: string;
-    iconRight?: string;
+
+    icon?: string;
+    iconSide?: 'left' | 'right';
+    iconVariant?: IconVariant;
+    loading?: boolean;
+
     iconSize?: IconSize;
     disabled?: boolean;
     cssOverridesIconRightButton?: SerializedStyles | SerializedStyles[];
@@ -47,8 +59,10 @@ export const Button: ButtonComponent = forwardRef(
             iconSize = 'small',
             variant = 'filled',
             size = 'medium',
-            iconLeft,
-            iconRight,
+            icon,
+            iconSide = 'left',
+            iconVariant = 'filled',
+            loading,
             disabled,
             children,
             cssOverrides,
@@ -74,30 +88,40 @@ export const Button: ButtonComponent = forwardRef(
                 disabled={disabled}
                 {...rest}
             >
-                {iconLeft ? (
+                {icon && iconSide === 'left' ? (
                     <Icon
+                        variant={iconVariant}
                         size={iconSize}
                         cssOverrides={buttonIconLeft(isButtonBlock)}
                         color="inherit"
                     >
-                        {iconLeft}
+                        {icon}
                     </Icon>
                 ) : null}
-                {typeof children === 'string'
-                    ? children
-                    : cloneElement(children as JSX.Element, {
-                          color: 'inherit',
-                      })}
-                {iconRight ? (
+                {typeof children === 'string' ? (
+                    loading ? (
+                        <div css={buttonLoading}>{children}</div>
+                    ) : (
+                        children
+                    )
+                ) : (
+                    cloneElement(children as JSX.Element, {
+                        color: 'inherit',
+                    })
+                )}
+                {icon && iconSide === 'right' ? (
                     <Icon
+                        variant={iconVariant}
                         size={iconSize}
                         cssOverrides={
-                            (buttonIconRight(isButtonBlock),
-                            cssOverridesIconRightButton)
+                            [
+                                buttonIconRight(isButtonBlock),
+                                cssOverridesIconRightButton,
+                            ] as SerializedStyles[]
                         }
                         color="inherit"
                     >
-                        {iconRight}
+                        {icon}
                     </Icon>
                 ) : null}
             </Element>

@@ -145,7 +145,8 @@ export const WithSlides: Story<CardProps> = () => (
         </CardSection>
         <Button
             size="block"
-            iconRight="keyboard_arrow_right"
+            icon="keyboard_arrow_right"
+            iconSide="right"
             cssOverrides={transformUppercase}
         >
             <Text size="xsm" weight="bold">

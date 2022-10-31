@@ -85,7 +85,7 @@ const buttonColorStyles = (
         background-color: ${hoverColor};
     }
 
-    ${variant === 'outline' &&
+    ${variant === 'outlined' &&
     `
     background-color: transparent;
     color: ${color};
@@ -129,4 +129,34 @@ export const buttonIconRight = (isButtonBlock: boolean) => css`
     ${buttonIcon}
 
     margin-inline-start: ${isButtonBlock ? '.25' : '.5'}rem;
+`;
+
+export const buttonLoading = css`
+    color: transparent;
+
+    :after {
+        content: '';
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        border: 4px solid transparent;
+        border-top-color: #ffffff;
+        border-radius: 50%;
+        animation: button-loading-spinner 1s ease infinite;
+    }
+
+    @keyframes button-loading-spinner {
+        from {
+            transform: rotate(0turn);
+        }
+
+        to {
+            transform: rotate(1turn);
+        }
+    }
 `;

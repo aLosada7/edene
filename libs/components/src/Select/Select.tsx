@@ -76,8 +76,9 @@ export const Select = (props: SelectProps) => {
             <div css={[input, select, cssOverrides]} id={inputId}>
                 <Button
                     component="div"
+                    icon="unfold_more"
+                    iconSide="right"
                     cssOverrides={selectButton}
-                    iconRight="unfold_more"
                     cssOverridesIconRightButton={selectButtonIconRight}
                     onClick={(e: any) => {
                         e.preventDefault();
