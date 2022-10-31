@@ -1,13 +1,13 @@
 import { SerializedStyles } from '@emotion/react';
 import { ReactNode } from 'react';
 
-import { useThemeContext, Props } from '@edene/foundations';
+import { useThemeContext, Props, ComponentColors } from '@edene/foundations';
 
 import { Text } from '../Text';
-import { alert, alertTheme } from './styles';
+import { alert, alertActions, alertTheme } from './styles';
 
 export interface AlertProps extends Props {
-    type?: 'success' | 'danger';
+    type?: 'brand' | ComponentColors;
 
     actions?: ReactNode;
 
@@ -15,9 +15,9 @@ export interface AlertProps extends Props {
 }
 
 export const Alert = (props: AlertProps) => {
-    const { theme } = useThemeContext();
+    const { type = 'brand', actions, children, cssOverrides } = props;
 
-    const { type, actions, children, cssOverrides } = props;
+    const { theme } = useThemeContext();
 
     return (
         <div
@@ -31,7 +31,7 @@ export const Alert = (props: AlertProps) => {
             role="alert"
         >
             <Text>{children}</Text>
-            {actions && <div>{actions}</div>}
+            {actions && <div css={alertActions}>{actions}</div>}
         </div>
     );
 };
