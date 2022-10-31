@@ -1,5 +1,6 @@
 export interface Theme {
     name: string;
+    lightColor?: string;
     color: string;
     hover: string;
     white?: string;

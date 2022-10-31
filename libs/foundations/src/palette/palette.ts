@@ -175,34 +175,45 @@ export const altFill = {
 
 export const colorsPalette = {
     success: {
-        dark: '#155724',
+        light: '#E1F9F5',
         color: 'rgb(48, 144, 142)',
+        dark: '#155724',
         hover: 'rgb(44, 122, 123)',
-        light: '#d4edda',
+    },
+    info: {
+        light: '#EBF6FA',
+        color: '#2A789A',
+        dark: '#155724',
+        hover: 'rgb(44, 122, 123)',
     },
     danger: {
-        dark: '#721c24',
-        color: '#DC3545',
-        hover: '#C82333',
         light: '#f8d7da',
+        color: '#DC3545',
+        dark: '#721c24',
+        hover: '#C82333',
+    },
+    gray: {
+        light: '#F2F2F2',
+        color: '#6F6F6F',
+        hover: 'rgb(226, 232, 240)',
     },
     dark: {
+        light: '#f8d7da',
         color: '#100F10',
         hover: '#485963',
     },
     teal: {
+        light: '#f8d7da',
         color: 'rgb(48, 144, 142)',
         hover: 'rgb(44, 122, 123)',
     },
-    gray: {
-        color: 'rgb(211, 219, 229);',
-        hover: 'rgb(226, 232, 240)',
-    },
     pink: {
+        light: '#f8d7da',
         color: 'rgb(227, 227, 232)',
         hover: 'transparent',
     },
     transparent: {
+        light: '#f8d7da',
         color: 'transparent',
         hover: 'transparent',
     },

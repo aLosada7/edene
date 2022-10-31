@@ -1,5 +1,6 @@
 // Icon
+export const ICON_VARIANTS = ['filled', 'outlined'];
 export type IconVariant = 'filled' | 'outlined';
 
 // Button
-export type ButtonVariant = 'filled' | 'outline' | 'link';
+export type ButtonVariant = 'filled' | 'outlined' | 'link';

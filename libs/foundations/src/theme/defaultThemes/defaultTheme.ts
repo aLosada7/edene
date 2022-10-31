@@ -11,6 +11,7 @@ import { Theme } from '../types';
 
 export const defaultTheme: Theme = {
     name: 'default',
+    lightColor: '#F8D7DA',
     color: brandColor,
     hover: brandHover,
     white,

@@ -1,7 +1,7 @@
 export type ScaleUnit = 'rem' | 'px';
 export type Category = 'titlepiece' | 'headline' | 'body' | 'textSans';
-export type LineHeight = 'tight' | 'regular' | 'loose';
-export type FontWeight = 'light' | 'regular' | 'bold' | 'bolder';
+export type LineHeight = 'tight' | 'regular' | 'loose'; // [1.15, 1.35, 1.5]
+export type FontWeight = 'light' | 'regular' | 'bold' | 'bolder'; // [300, 400, 700, 900]
 export type FontStyle = 'normal' | 'italic';
 export type FontWeightDefinition = { hasItalic: boolean };
 export type Option<A> = A | null;
@@ -37,13 +37,13 @@ export interface BodySizes extends TypographySizes {
     medium: number;
 }
 export interface TextSansSizes extends TypographySizes {
-    xxsmall: number;
-    xsmall: number;
-    small: number;
-    medium: number;
-    large: number;
-    xlarge: number;
-    xxlarge: number;
+    xxsmall: number; // 10px
+    xsmall: number; // 12px
+    small: number; // 14px
+    medium: number; // 15px
+    large: number; // 16px
+    xlarge: number; // 18px
+    xxlarge: number; // 20px
 }
 
 export type Fs = (category: Category) => (
