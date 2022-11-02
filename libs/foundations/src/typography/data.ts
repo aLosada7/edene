@@ -24,7 +24,7 @@ const fonts = {
 
 const lineHeights = [1.15, 1.35, 1.5];
 
-const fontWeights = [400, 500, 600, 700];
+const fontWeights = [300, 400, 700, 900];
 
 const titlepieceSizes: TitlepieceSizes = {
     small: fontSizes[8], //42px
@@ -48,13 +48,13 @@ const bodySizes: BodySizes = {
 };
 
 const textSansSizes: TextSansSizes = {
-    xxsmall: fontSizes[0], //10px
-    xsmall: fontSizes[1], //12px
-    small: fontSizes[2], //14px
-    medium: fontSizes[3], //15px
-    large: fontSizes[4], //16px
-    xlarge: fontSizes[5], //18px
-    xxlarge: fontSizes[6], //20px
+    xxsmall: fontSizes[0], // 10px
+    xsmall: fontSizes[1], // 12px
+    small: fontSizes[2], // 14px
+    medium: fontSizes[3], // 15px
+    large: fontSizes[4], // 16px
+    xlarge: fontSizes[5], // 18px
+    xxlarge: fontSizes[6], // 20px
 };
 
 const fontSizeMapping: {

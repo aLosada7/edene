@@ -77,8 +77,8 @@ export const NumberInput = forwardRef<HTMLInputElement, NumberInputProps>(
                 {label}
                 <div css={[numberInputWrapper, cssOverrides]}>
                     <Button
+                        variant="outlined"
                         size="xsmall"
-                        variant="outline"
                         onClick={subtract}
                         css={operationButton}
                         aria-label="substract"
@@ -90,7 +90,7 @@ export const NumberInput = forwardRef<HTMLInputElement, NumberInputProps>(
                         {value}
                     </div>
                     <Button
-                        variant="outline"
+                        variant="outlined"
                         size="xsmall"
                         onClick={sum}
                         css={operationButton}

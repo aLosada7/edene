@@ -13,7 +13,7 @@ export const NewStudentsItemComponent = ({
     <ListItem
         borderBottom
         actions={
-            <Button variant="outline" size="xsmall">
+            <Button variant="outlined" size="xsmall">
                 View
             </Button>
         }

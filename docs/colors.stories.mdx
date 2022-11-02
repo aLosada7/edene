@@ -1,0 +1,93 @@
+import { Meta } from '@storybook/addon-docs';
+import { css } from '@emotion/react';
+
+import { colorsPalette } from '@edene/foundations';
+import { Group, Tag, Button, Stack } from '@edene/components';
+
+<Meta title="Tokens/Colors" />
+
+<p>The default button uses color as background, and hover when hovering</p>
+<p>
+    Tag uses light color as background color and color as color. Other
+    components with a similar behaviour are: Alert
+</p>
+
+<Stack>
+    <Group>
+        <div
+            style={{
+                width: '100px',
+            }}
+        >
+            Light
+        </div>
+        <div
+            style={{
+                width: '100px',
+            }}
+        >
+            Color
+        </div>
+        <div
+            style={{
+                width: '100px',
+            }}
+        >
+            Hover
+        </div>
+        <div
+            style={{
+                width: '100px',
+            }}
+        >
+            Example Button
+        </div>
+        <div>Example Tag</div>
+    </Group>
+    {/* TODO: Do the same with all colors from palette when defined*/}
+    <Group>
+        <div
+            style={{
+                width: '100px',
+                height: '100px',
+                backgroundColor: colorsPalette.success.light,
+            }}
+        ></div>
+        <div
+            style={{
+                width: '100px',
+                height: '100px',
+                backgroundColor: colorsPalette.success.color,
+            }}
+        ></div>
+        <div
+            style={{
+                width: '100px',
+                height: '100px',
+                backgroundColor: colorsPalette.success.hover,
+            }}
+        ></div>
+        <Button
+            color="success"
+            cssOverrides={css`
+                height: fit-content;
+                margin: auto 0;
+            `}
+        >
+            Button
+        </Button>
+        <Tag
+            type="success"
+            cssOverrides={css`
+                height: fit-content;
+                margin: auto 0;
+            `}
+        >
+            Tag
+        </Tag>
+    </Group>
+</Stack>
+
+<p>
+    We are actually working to introduce more colors. It will be soon available
+</p>

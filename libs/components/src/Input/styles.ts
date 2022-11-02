@@ -60,5 +60,5 @@ export const iconLeftInput = css`
 `;
 
 export const iconLeftInInput = css`
-    padding-left: ${height.inputMedium}px; // The same as the input
+    padding-left: ${height.inputMedium}px; // start writing (same as input)
 `;

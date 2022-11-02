@@ -11,7 +11,7 @@ export const RecentDoubtsItemComponent = ({
     <ListItem
         direction="column"
         actions={
-            <Button variant="outline" size="xsmall">
+            <Button variant="outlined" size="xsmall">
                 Open
             </Button>
         }

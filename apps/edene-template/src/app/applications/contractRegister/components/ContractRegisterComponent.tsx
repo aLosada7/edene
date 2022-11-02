@@ -47,22 +47,22 @@ export const ContractRegisterComponent = () => {
 
             <Title mt={4}>Tenants</Title>
             <Person />
-            <Button variant="link" iconLeft="add">
+            <Button variant="link" icon="add">
                 Add tenant
             </Button>
 
             <Title mt={4}>Landlords</Title>
             <Person />
-            <Button variant="link" iconLeft="add">
+            <Button variant="link" icon="add">
                 Add landlord
             </Button>
 
             <Row align="space-between-center" noGlutters>
-                <Button iconLeft="arrow_back" variant="link">
+                <Button icon="arrow_back" variant="link">
                     Back
                 </Button>
                 <Group>
-                    <Button variant="outline">Cancel</Button>
+                    <Button variant="outlined">Cancel</Button>
                     <Button>Save</Button>
                 </Group>
             </Row>

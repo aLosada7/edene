@@ -48,7 +48,7 @@ export const ClassroomSectionComponent = ({
         </Text>
 
         <Button size="small">{mainAction}</Button>
-        <Button size="small" variant="outline" cssOverrides={marginLeft}>
+        <Button size="small" variant="outlined" cssOverrides={marginLeft}>
             {secondaryAction}
         </Button>
     </CardSection>

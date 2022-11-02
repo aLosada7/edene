@@ -9,13 +9,13 @@ const ReportPage = () => {
                 actions={
                     <>
                         <Button
-                            variant="outline"
+                            variant="outlined"
                             size="small"
-                            iconLeft="cloud_download"
+                            icon="cloud_download"
                         >
                             Import
                         </Button>
-                        <Button size="small" iconLeft="add">
+                        <Button size="small" icon="add">
                             Add
                         </Button>
                     </>
