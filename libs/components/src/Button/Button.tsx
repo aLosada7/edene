@@ -21,7 +21,6 @@ import {
     buttonIconRight,
     buttonLoading,
 } from './styles';
-import Box from '../../assets/box.gif';
 
 export type IButtonBlock = 'block';
 
