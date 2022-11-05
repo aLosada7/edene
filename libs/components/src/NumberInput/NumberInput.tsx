@@ -30,7 +30,7 @@ export interface NumberInputProps
      * The contents of the text area. This is necessary when using the [controlled approach](https://reactjs.org/docs/forms.html#controlled-components) to form state management.
      * _Note: if you pass the `value` prop, you MUST also pass an `onChange` handler, or the field will be rendered as read-only._
      */
-    onChange: (value: number) => void;
+    onChange?: (value: number) => void;
 
     cssLabelOverrides?: SerializedStyles | SerializedStyles[];
 }
@@ -56,7 +56,7 @@ export const NumberInput = forwardRef<HTMLInputElement, NumberInputProps>(
         );
 
         useEffect(() => {
-            onChange(value);
+            if (onChange) onChange(value);
         }, [value]);
 
         const sum = () =>
