@@ -4,37 +4,49 @@ import { Props } from '@edene/foundations';
 
 import { gridRow } from './styles';
 
-export type IRowAlign =
-    | ''
-    | 'start-center'
-    | 'end-center'
-    | 'space-between-center';
-export type IRowDirection = 'row' | 'column';
+export type RowAlign = `${'start' | 'end' | 'space-between'}-${
+    | 'start'
+    | 'center'
+    | 'end'}`;
+export type RowDirection = 'row' | 'column';
 
 export interface RowProps extends Props {
     /** Row contents aligment */
-    align?: IRowAlign;
-    direction?: IRowDirection;
+    align?: RowAlign;
+
+    direction?: RowDirection;
+
     /** Horizontal padding */
     px?: number;
+
     /** Vertical padding */
     py?: number;
+
     noGlutters?: boolean;
+
+    gap?: number;
+
     children?: ReactNode;
 }
 
-export const Row = ({
-    align = '',
-    direction = 'row',
-    px = 0,
-    py = 0,
-    noGlutters = false,
-    children,
-    cssOverrides,
-}: RowProps) => {
+export const Row = (props: RowProps) => {
+    const {
+        align = 'start-start',
+        direction = 'row',
+        px = 0,
+        py = 0,
+        noGlutters = false,
+        gap,
+        children,
+        cssOverrides,
+    } = props;
+
     return (
         <div
-            css={[gridRow(align, direction, px, py, noGlutters), cssOverrides]}
+            css={[
+                gridRow(align, direction, px, py, noGlutters, gap),
+                cssOverrides,
+            ]}
         >
             {children}
         </div>
