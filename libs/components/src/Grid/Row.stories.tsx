@@ -8,7 +8,7 @@ import { Row, RowProps } from './index';
 import { Col } from './Col';
 
 export default {
-    title: 'Layout/FlexRow',
+    title: 'Layout/Row',
     component: Row,
 };
 
@@ -40,6 +40,7 @@ export const Playground: Story<RowProps> = (args: RowProps) => {
     );
 };
 Playground.storyName = '🧶 Playground';
+Playground.args = { direction: 'row', align: 'start-start' };
 
 export const WithThreeCols = () => (
     <Row>

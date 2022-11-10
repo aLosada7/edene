@@ -3,7 +3,7 @@ import { Fragment } from 'react';
 import { Container } from './Container';
 
 export default {
-    title: 'Layout/Flex',
+    title: 'Layout/Container',
     component: Container,
     parameters: {
         layout: 'fullscreen',

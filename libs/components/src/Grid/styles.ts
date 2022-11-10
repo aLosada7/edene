@@ -35,14 +35,21 @@ export const gridContainer = (
     }
 `;
 
-export const gridRow = (
-    align: RowAlign,
-    direction: RowDirection,
-    paddingHorizontal: number,
-    paddingVertical: number,
-    noGlutters?: boolean,
-    gap?: number
-) => css`
+export const gridRow = ({
+    align,
+    direction,
+    px: paddingHorizontal,
+    py: paddingVertical,
+    noGlutters,
+    gap,
+}: {
+    direction: RowDirection;
+    align?: RowAlign;
+    px: number;
+    py: number;
+    noGlutters?: boolean;
+    gap?: number;
+}) => css`
     display: flex;
     flex-wrap: wrap;
 
@@ -54,16 +61,21 @@ export const gridRow = (
 
     ${direction === 'column' && `flex-direction: column;`}
 
-    justify-content: ${align.split('-').length === 2
-        ? align.split('-')[0]
-        : align.split('-').slice(0, -1).join('-')};
+    ${align &&
+    `justify-content: ${
+        align.split('-').length === 2
+            ? align.split('-')[0]
+            : align.split('-').slice(0, -1).join('-')
+    };
+        align-items: ${
+            align.split('-').length === 2
+                ? align.split('-')[1]
+                : align.split('-').slice(-1)
+        };`}
 
-    align-items: ${align.split('-').length === 2
-            ? align.split('-')[1]
-            : align.split('-').slice(-1)}
-        ${align === 'space-between-center' &&
-        `justify-content: space-between; align-items: center;`}
-        ${noGlutters && `margin: 0`} ${gap && `gap: calc(${gap} * 0.25rem)}`};
+    ${noGlutters && `margin: 0`};
+
+    ${gap && `gap: calc(${gap} * 0.25rem)}`};
 `;
 
 export const gridColumn = (

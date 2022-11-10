@@ -31,8 +31,8 @@ export interface RowProps extends Props {
 
 export const Row = (props: RowProps) => {
     const {
-        align = 'start-start',
         direction = 'row',
+        align,
         px = 0,
         py = 0,
         noGlutters = false,
@@ -44,7 +44,7 @@ export const Row = (props: RowProps) => {
     return (
         <div
             css={[
-                gridRow(align, direction, px, py, noGlutters, gap),
+                gridRow({ direction, px, py, noGlutters, align, gap }),
                 cssOverrides,
             ]}
         >
