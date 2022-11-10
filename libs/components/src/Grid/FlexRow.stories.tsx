@@ -1,7 +1,10 @@
 import { Fragment } from 'react';
 import { css } from '@emotion/react';
+import { Story } from '@storybook/react';
 
-import { Row } from './Row';
+import { grays } from '@edene/foundations';
+
+import { Row, RowProps } from './index';
 import { Col } from './Col';
 
 export default {
@@ -15,6 +18,28 @@ const col = css`
     background-color: rgba(86, 61, 124, 0.15);
     border: 1px solid rgba(86, 61, 124, 0.2);
 `;
+
+export const Playground: Story<RowProps> = (args: RowProps) => {
+    return (
+        <Row
+            {...args}
+            cssOverrides={css`
+                width: 50vw;
+                height: 30vw;
+                border: 4px solid ${grays[4]};
+                gap: 1rem;
+            `}
+        >
+            <div css={{ padding: '1rem', backgroundColor: grays[5] }}>
+                Element 1
+            </div>
+            <div css={{ padding: '1rem', backgroundColor: grays[5] }}>
+                Element 2
+            </div>
+        </Row>
+    );
+};
+Playground.storyName = '🧶 Playground';
 
 export const WithThreeCols = () => (
     <Row>

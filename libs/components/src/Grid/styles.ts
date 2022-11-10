@@ -4,7 +4,7 @@ import { from } from '@edene/foundations';
 
 import { EdeneScale } from './Container';
 import { IColumnDirection, ColSize, Align } from './Col';
-import { IRowAlign, IRowDirection } from './Row';
+import { RowAlign, RowDirection } from './Row';
 
 export const gridContainer = (
     marginTop: EdeneScale,
@@ -36,11 +36,12 @@ export const gridContainer = (
 `;
 
 export const gridRow = (
-    align: IRowAlign,
-    direction: IRowDirection,
+    align: RowAlign,
+    direction: RowDirection,
     paddingHorizontal: number,
     paddingVertical: number,
-    noGlutters: boolean
+    noGlutters?: boolean,
+    gap?: number
 ) => css`
     display: flex;
     flex-wrap: wrap;
@@ -53,15 +54,16 @@ export const gridRow = (
 
     ${direction === 'column' && `flex-direction: column;`}
 
-    ${align === 'start-center' &&
-    `justify-content: start; align-items: center;`}
+    justify-content: ${align.split('-').length === 2
+        ? align.split('-')[0]
+        : align.split('-').slice(0, -1).join('-')};
 
-    ${align === 'end-center' && `justify-content: end; align-items: center;`}
-
-    ${align === 'space-between-center' &&
-    `justify-content: space-between; align-items: center;`}
-
-    ${noGlutters && `margin: 0`}
+    align-items: ${align.split('-').length === 2
+            ? align.split('-')[1]
+            : align.split('-').slice(-1)}
+        ${align === 'space-between-center' &&
+        `justify-content: space-between; align-items: center;`}
+        ${noGlutters && `margin: 0`} ${gap && `gap: calc(${gap} * 0.25rem)}`};
 `;
 
 export const gridColumn = (
