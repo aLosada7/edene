@@ -1,6 +1,6 @@
 name: 'Edene CI'
 
-on: pull_request
+on: push
 
 jobs:
     components-chromatic:
@@ -21,6 +21,7 @@ jobs:
               with:
                   projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
                   storybookBuildDir: 'dist/storybook/components'
+                  autoAcceptChanges: true
     components-test:
         name: ✅ Test components
         runs-on: ubuntu-latest
