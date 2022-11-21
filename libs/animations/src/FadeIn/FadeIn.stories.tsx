@@ -3,7 +3,7 @@ import { Story } from '@storybook/react';
 import { FadeIn } from './FadeIn';
 
 export default {
-    title: 'Animations',
+    title: 'FadeIn',
     component: FadeIn,
 };
 

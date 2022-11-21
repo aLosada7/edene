@@ -1,0 +1,23 @@
+name: 'Edene Animations CI'
+
+on: push
+
+jobs:
+    components-chromatic:
+        name: 🚀 Publish to Chromatic
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v1
+
+            - name: 🧰 Install dependencies
+              run: yarn
+
+            - name: 📦 Build components storybook
+              run: npx nx run animations:build-storybook
+
+            - name: Publish to Chromatic
+              uses: chromaui/action@v1
+              with:
+                  projectToken: ${{ secrets.ANIMATIONS_CHROMATIC_PROJECT_TOKEN }}
+                  storybookBuildDir: 'dist/storybook/animations'
