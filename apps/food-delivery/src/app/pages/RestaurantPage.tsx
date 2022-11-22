@@ -101,12 +101,9 @@ export const RestaurantPage = () => {
                                     `}
                                 >
                                     <Text size="md">
-                                        <Fragment>
-                                            {(
-                                                foodSelected.options || []
-                                            ).includes('vegetarian') &&
-                                                `🌱 Vegetarian`}
-                                        </Fragment>
+                                        {(foodSelected.options || []).includes(
+                                            'vegetarian'
+                                        ) && `🌱 Vegetarian`}
                                     </Text>
 
                                     <Text>{foodSelected.description}</Text>
@@ -118,6 +115,7 @@ export const RestaurantPage = () => {
 
                                     <NumberInput
                                         min={1}
+                                        step={1}
                                         value={quantity}
                                         onChange={setQuantity}
                                     />

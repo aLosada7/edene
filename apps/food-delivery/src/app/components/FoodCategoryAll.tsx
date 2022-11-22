@@ -21,11 +21,7 @@ export const FoodCategoryAll = ({
                 `}
                 onClick={() => onSelect('all')}
             >
-                <CardMedia
-                    src={`/assets/food.png`}
-                    alt="All"
-                    size="e"
-                ></CardMedia>
+                <CardMedia src={`/assets/food.png`} alt="All"></CardMedia>
                 <CardSection>
                     <Text size="lg" align="center">
                         All

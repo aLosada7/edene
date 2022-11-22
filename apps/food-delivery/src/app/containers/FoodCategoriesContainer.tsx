@@ -1,4 +1,4 @@
-import { Row, Text } from '@edene/components';
+import { Row, Text, Textarea } from '@edene/components';
 import { Fragment } from 'react';
 
 import { FoodCategory } from '../components/FoodCategory';
@@ -28,7 +28,7 @@ export const FoodCategoriesContainer = ({
             </Text>
             <Row>
                 <FoodCategoryAll onSelect={onSelect} />
-                <Fragment>{foodCategories}</Fragment>
+                {foodCategories}
             </Row>
         </Fragment>
     );
