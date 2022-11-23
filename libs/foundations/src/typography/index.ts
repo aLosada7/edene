@@ -1,9 +1,9 @@
-import { headline as headlineAsObj, textSans as textSansAsObj } from './api';
+import { heading as headlineAsObj, text as textSansAsObj } from './api';
 
 import {
     FontScaleArgs,
     FontScaleFunctionStr,
-    HeadlineSizes,
+    HeadingSizes,
     TextSansSizes,
 } from './types';
 
@@ -13,16 +13,16 @@ type TypographyApi<Sizes> = {
     [key in keyof Sizes]: FontScaleFunctionStr;
 };
 
-const headline = Object.fromEntries(
+const heading = Object.fromEntries(
     Object.entries(headlineAsObj).map(([key, func]) => {
         return [
             key,
             (options?: FontScaleArgs) => objectStylesToString(func(options)),
         ];
     })
-) as TypographyApi<HeadlineSizes>;
+) as TypographyApi<HeadingSizes>;
 
-const textSans = Object.fromEntries(
+const text = Object.fromEntries(
     Object.entries(textSansAsObj).map(([key, func]) => {
         return [
             key,
@@ -31,5 +31,5 @@ const textSans = Object.fromEntries(
     })
 ) as TypographyApi<TextSansSizes>;
 
-export { headline, textSans };
+export { heading, text };
 export * from './types';

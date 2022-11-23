@@ -2,7 +2,7 @@ import { ButtonHTMLAttributes } from 'react';
 
 import { useThemeContext } from '@edene/foundations';
 
-import { Badge } from '..//Badge';
+import { Badge } from '../components/Badge';
 import {
     headerGlobalAction,
     actionAssistiveText,

@@ -1,1 +1,1 @@
-export { default } from './TitleWithIconAndBadge';
+export { default } from './HeadingWithIconAndBadge';

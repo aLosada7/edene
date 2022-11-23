@@ -23,11 +23,10 @@
         "noUnusedLocals": true,
         "strict": true,
         "paths": {
-            "@edene/animations": ["libs/animations/src/index.ts"],
             "@edene/components": ["libs/components/src/index.ts"],
             "@edene/foundations": ["libs/foundations/src/index.ts"],
-            "@edene/hooks": ["libs/hooks/src/index.ts"],
-            "@edene/utils": ["libs/utils/src/index.ts"]
+            "@hooks": ["libs/hooks/src/index.ts"],
+            "@utils": ["libs/utils/src/index.ts"]
         }
     },
     "exclude": ["node_modules", "tmp"]

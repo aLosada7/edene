@@ -16,6 +16,10 @@ export interface IconProps extends Props {
     /** For the new material icons */
     variant?: IconVariant;
 
+    mr?: number;
+
+    ml?: number;
+
     /** For the new material icons */
     children?: string;
 }
@@ -29,6 +33,8 @@ export const Icon = (props: IconProps) => {
         variant = 'filled',
         cssOverrides,
         size = 'medium',
+        ml = 0,
+        mr = 0,
     } = props;
 
     return (
@@ -36,7 +42,11 @@ export const Icon = (props: IconProps) => {
             className={`material-icons${
                 variant === 'outlined' ? '-outlined' : ''
             }`}
-            css={[icon(size), iconTheme({ theme, color }), cssOverrides]}
+            css={[
+                icon(size, ml, mr),
+                iconTheme({ theme, color }),
+                cssOverrides,
+            ]}
         >
             {children}
         </span>

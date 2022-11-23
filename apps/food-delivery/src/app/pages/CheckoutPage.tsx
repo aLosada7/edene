@@ -7,7 +7,7 @@ import {
     Checkbox,
     Container,
     Text,
-    Title,
+    Heading,
 } from '@edene/components';
 
 import { Cart } from '../components/Cart';
@@ -57,7 +57,7 @@ export const CheckoutPage = () => {
 
     return (
         <Container ph={48}>
-            <Title size="h3">Checkout</Title>
+            <Heading size="h3">Checkout</Heading>
 
             {cart}
 

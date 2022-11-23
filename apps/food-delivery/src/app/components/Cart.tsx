@@ -21,7 +21,7 @@ export const Cart = ({
                     <Text size="xsm">
                         {(cartProduct.product.price / 100).toFixed(2) + ' €'}
                     </Text>
-                    <Text size="lg">{cartProduct.product.name}</Text>
+                    <Text>{cartProduct.product.name}</Text>
                     <Text size="sm">
                         <Fragment>Qty: {cartProduct.quantity}</Fragment>
                     </Text>

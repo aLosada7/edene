@@ -1,10 +1,10 @@
 import { css } from '@emotion/react';
 
 import { Badge } from '@edene/components';
-import { textSans, Theme, useThemeContext } from '@edene/foundations';
+import { text, Theme, useThemeContext } from '@edene/foundations';
 
 const badge = (theme: Theme) => css`
-    ${textSans.small({ fontWeight: 'regular' })};
+    ${text.small({ fontWeight: 'regular' })};
 
     background-color: ${theme.color};
     color: ${theme.white};

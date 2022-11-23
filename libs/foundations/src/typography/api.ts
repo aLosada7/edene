@@ -1,38 +1,36 @@
 import { fs } from './fs';
 import type {
     FontScaleArgs,
-    HeadlineSizes,
+    HeadingSizes,
     FontScaleFunction,
     TextSansSizes,
 } from './types';
 
-type HeadlineFunctions = {
-    [key in keyof HeadlineSizes]: FontScaleFunction;
+type HeadingFunctions = {
+    [key in keyof HeadingSizes]: FontScaleFunction;
 };
 
 const headlineDefaults: any = {
     lineHeight: 'tight',
-    fontWeight: 'medium',
+    fontWeight: 'regular',
     fontStyle: null,
     unit: 'rem',
 };
-const headlineFs = fs('headline');
+const headlineFs = fs('heading');
 
-export const headline: HeadlineFunctions = {
-    xxxsmall: (options?: FontScaleArgs) =>
-        headlineFs('xxxsmall', Object.assign({}, headlineDefaults, options)),
-    xxsmall: (options?: FontScaleArgs) =>
-        headlineFs('xxsmall', Object.assign({}, headlineDefaults, options)),
-    xsmall: (options?: FontScaleArgs) =>
-        headlineFs('xsmall', Object.assign({}, headlineDefaults, options)),
-    small: (options?: FontScaleArgs) =>
-        headlineFs('small', Object.assign({}, headlineDefaults, options)),
-    medium: (options?: FontScaleArgs) =>
-        headlineFs('medium', Object.assign({}, headlineDefaults, options)),
-    large: (options?: FontScaleArgs) =>
-        headlineFs('large', Object.assign({}, headlineDefaults, options)),
-    xlarge: (options?: FontScaleArgs) =>
-        headlineFs('xlarge', Object.assign({}, headlineDefaults, options)),
+export const heading: HeadingFunctions = {
+    h1: (options?: FontScaleArgs) =>
+        headlineFs('h1', Object.assign({}, headlineDefaults, options)),
+    h2: (options?: FontScaleArgs) =>
+        headlineFs('h2', Object.assign({}, headlineDefaults, options)),
+    h3: (options?: FontScaleArgs) =>
+        headlineFs('h3', Object.assign({}, headlineDefaults, options)),
+    h4: (options?: FontScaleArgs) =>
+        headlineFs('h4', Object.assign({}, headlineDefaults, options)),
+    h5: (options?: FontScaleArgs) =>
+        headlineFs('h5', Object.assign({}, headlineDefaults, options)),
+    h6: (options?: FontScaleArgs) =>
+        headlineFs('h6', Object.assign({}, headlineDefaults, options)),
 };
 
 type TextSansFunctions = {
@@ -45,23 +43,15 @@ const textSansDefaults: any = {
     fontStyle: null,
     unit: 'rem',
 };
-const textSansFs = fs('textSans');
+const textSansFs = fs('text');
 
-export const textSans: TextSansFunctions = {
+export const text: TextSansFunctions = {
     xxsmall: (options?: FontScaleArgs) =>
         textSansFs('xxsmall', Object.assign({}, textSansDefaults, options)),
     xsmall: (options?: FontScaleArgs) =>
         textSansFs('xsmall', Object.assign({}, textSansDefaults, options)),
     small: (options?: FontScaleArgs) =>
         textSansFs('small', Object.assign({}, textSansDefaults, options)),
-    medium: (options?: FontScaleArgs) =>
-        textSansFs('medium', Object.assign({}, textSansDefaults, options)),
-    large: (options?: FontScaleArgs) =>
-        textSansFs('large', Object.assign({}, textSansDefaults, options)),
-    xlarge: (options?: FontScaleArgs) =>
-        textSansFs('xlarge', Object.assign({}, textSansDefaults, options)),
-    xxlarge: (options?: FontScaleArgs) =>
-        textSansFs('xxlarge', Object.assign({}, textSansDefaults, options)),
-    xxxlarge: (options?: FontScaleArgs) =>
-        textSansFs('xxxlarge', Object.assign({}, textSansDefaults, options)),
+    regular: (options?: FontScaleArgs) =>
+        textSansFs('regular', Object.assign({}, textSansDefaults, options)),
 };

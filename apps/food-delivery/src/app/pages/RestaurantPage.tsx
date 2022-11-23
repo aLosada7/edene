@@ -10,7 +10,7 @@ import {
     Modal,
     Button,
     NumberInput,
-    Title,
+    Heading,
     ModalBody,
     ModalHeader,
 } from '@edene/components';
@@ -52,11 +52,11 @@ export const RestaurantPage = () => {
                         margin-bottom: 1.5rem;
                     `}
                 >
-                    <Title size="h3">{restaurant.name}</Title>
+                    <Heading size="h3">{restaurant.name}</Heading>
                     <RestaurantRating stars={restaurant.rating} />
                 </Col>
                 <Col lg={18} direction="column">
-                    <Title size="h3">Menu</Title>
+                    <Heading size="h3">Menu</Heading>
 
                     {/* Starters */}
                     {restaurant.food.starters && (

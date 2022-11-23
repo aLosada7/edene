@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
 
 import { Card, CardSection, Container, Text, Icon } from '@edene/components';
-import { textSans, Theme, useThemeContext } from '@edene/foundations';
+import { text, Theme, useThemeContext } from '@edene/foundations';
 
 import { DateBadgeComponent } from '../components/DateBadgeComponent';
 import { TimelineComponent } from '../components/TimelineComponent';
@@ -37,7 +37,7 @@ const icon = css`
 `;
 
 const dateInfo = (theme: Theme) => css`
-    ${textSans.small({ fontWeight: 'regular' })};
+    ${text.small({ fontWeight: 'regular' })};
     color: ${theme.grays[3]};
 `;
 
@@ -47,8 +47,8 @@ const note = (theme: Theme) => css`
     box-shadow: none;
 `;
 
-const noteTitle = css`
-    ${textSans.medium({ fontWeight: 'bold' })};
+const noteHeading = css`
+    ${text.regular({ fontWeight: 'bold' })};
 `;
 
 export const FlightTimelineContainer = () => {
@@ -72,7 +72,7 @@ export const FlightTimelineContainer = () => {
                             </Text>
                             <Card cssOverrides={note(theme)}>
                                 <CardSection>
-                                    <Text cssOverrides={noteTitle}>
+                                    <Text cssOverrides={noteHeading}>
                                         Thank you for traveling with EDENE
                                         Flights.
                                     </Text>

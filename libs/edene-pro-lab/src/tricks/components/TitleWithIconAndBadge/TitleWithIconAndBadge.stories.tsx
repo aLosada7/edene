@@ -1,11 +1,11 @@
 import { Story, Meta } from '@storybook/react';
-import TitleWithIconAndBadgeComponent from './index';
+import HeadingWithIconAndBadgeComponent from './index';
 
 export default {
     title: 'Tricks/Components',
-    component: TitleWithIconAndBadgeComponent,
+    component: HeadingWithIconAndBadgeComponent,
 } as Meta;
 
-const Template: Story = () => <TitleWithIconAndBadgeComponent />;
+const Template: Story = () => <HeadingWithIconAndBadgeComponent />;
 
-export const TitleWithIconAndBadge = Template.bind({});
+export const HeadingWithIconAndBadge = Template.bind({});

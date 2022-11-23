@@ -3,7 +3,7 @@ import {
     CardSection,
     Col,
     Row,
-    Title,
+    Heading,
     Text,
     Avatar,
 } from '@edene/components';
@@ -25,7 +25,7 @@ export const EducationSummaryContainer = () => {
                     <Col md={16} direction="row">
                         <Avatar size={54} name="Edene Tuition Center"></Avatar>
                         <Row noGlutters px={4}>
-                            <Title mb={1}>Edene Tuition Center</Title>
+                            <Heading mb={1}>Edene Tuition Center</Heading>
                             <Row noGlutters>
                                 <Text weight="bold" color={grays[2]}>
                                     400 students

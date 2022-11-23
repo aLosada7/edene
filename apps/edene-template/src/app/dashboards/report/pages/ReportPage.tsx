@@ -1,10 +1,10 @@
-import { Button, Container, Title, Text } from '@edene/components';
+import { Button, Container, Heading, Text } from '@edene/components';
 import { grays } from '@edene/foundations';
 
 const ReportPage = () => {
     return (
         <Container pv={4}>
-            <Title
+            <Heading
                 size="h3"
                 actions={
                     <>
@@ -22,8 +22,8 @@ const ReportPage = () => {
                 }
             >
                 Welcome back, Frenkie
-            </Title>
-            <Text size="lg" color={grays[3]}>
+            </Heading>
+            <Text color={grays[3]}>
                 Track, manage and forecast your customers and orders
             </Text>
         </Container>

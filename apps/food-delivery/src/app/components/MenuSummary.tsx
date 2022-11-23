@@ -21,7 +21,7 @@ export const MenuSummary = ({
             <Text size="sm" mt={2}>
                 {food.description}
             </Text>
-            <Text size="lg" mt={2}>{`${(food.price / 100).toFixed(2)} €`}</Text>
+            <Text mt={2}>{`${(food.price / 100).toFixed(2)} €`}</Text>
         </CardSection>
     </Card>
 );

@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 
 import {
     Container,
-    Title,
+    Heading,
     RadioGroup,
     RadioGroupProps,
     Radio,
@@ -20,9 +20,9 @@ const Template: Story<RadioGroupProps> = (props: RadioGroupProps) => {
     const [value, setValue] = useState('1');
     return (
         <Container>
-            <Title size="h5" mt={4} mb={4}>
+            <Heading size="h5" mt={4} mb={4}>
                 Secure Payment
-            </Title>
+            </Heading>
             <RadioGroup onChange={setValue} value={value} {...props}>
                 <div css={optionWrapper}>
                     <Radio value="1">Credit or debit card</Radio>

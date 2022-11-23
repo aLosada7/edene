@@ -13,6 +13,7 @@ import {
 
 import { IRestaurant } from '../context/restaurants';
 import { RestaurantRating } from './RestaurantRating';
+import { grays } from '@edene/foundations';
 
 export const RestaurantSummary = ({
     restaurant,
@@ -34,24 +35,27 @@ export const RestaurantSummary = ({
                         />
                     </Col>
                     <Col md={8} direction="column">
-                        <Text size="md" weight="bold" mt={2}>
+                        <Text size="md" weight="bold" color={grays[0]} mt={2}>
                             {restaurant.name}
                         </Text>
-                        <Text size="sm">{restaurant.kind}</Text>
+                        <Text size="sm" color={grays[0]}>
+                            {restaurant.kind}
+                        </Text>
                         <RestaurantRating stars={restaurant.rating} />
                     </Col>
                     <Col md={12} direction="column">
                         <Text
                             size="xsm"
-                            icon={<Icon>confirmation_number</Icon>}
+                            color={grays[0]}
                             mt={4}
+                            icon={<Icon mr={2}>confirmation_number</Icon>}
                         >
                             Entrega desde 1.90€ sin pedido mínimo
                         </Text>
                         <Text
                             size="xsm"
                             color="success"
-                            icon={<Icon>schedule</Icon>}
+                            icon={<Icon mr={2}>schedule</Icon>}
                         >
                             25 - 30 min.
                         </Text>

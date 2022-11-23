@@ -4,7 +4,7 @@ import {
     Col,
     Card,
     CardSection,
-    Title,
+    Heading,
     Form,
     TextInput,
     Textarea,
@@ -20,19 +20,19 @@ export const ContactForm = () => {
                 <CardSection>
                     <Row>
                         <Col sm={24} lg={8}>
-                            <Title size="h3" mt={4}>
+                            <Heading size="h3" mt={4}>
                                 Column 1
-                            </Title>
+                            </Heading>
                         </Col>
                         <Col sm={24} lg={16} direction="column" align="center">
                             <Row>
                                 <Col sm={24} lg={24} direction="column">
-                                    <Title size="h3" mt={4}>
+                                    <Heading size="h3" mt={4}>
                                         Let's talk
-                                    </Title>
-                                    <Title size="h3">
+                                    </Heading>
+                                    <Heading size="h3">
                                         Give me some information.
-                                    </Title>
+                                    </Heading>
                                 </Col>
                             </Row>
                             <Form>

@@ -2,6 +2,7 @@
     "$schema": "../../node_modules/nx/schemas/project-schema.json",
     "sourceRoot": "libs/components/src",
     "projectType": "library",
+    "tags": [],
     "targets": {
         "build": {
             "executor": "@nrwl/web:rollup",
@@ -11,8 +12,9 @@
                 "tsConfig": "libs/components/tsconfig.lib.json",
                 "project": "libs/components/package.json",
                 "entryFile": "libs/components/src/index.ts",
-                "external": ["react/jsx-runtime"],
+                "external": ["@emotion/react/jsx-runtime"],
                 "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+                "compiler": "babel",
                 "assets": [
                     {
                         "glob": "libs/components/README.md",
@@ -26,7 +28,7 @@
             "executor": "@nrwl/linter:eslint",
             "outputs": ["{options.outputFile}"],
             "options": {
-                "lintFilePatterns": ["libs/components/**/*.ts"]
+                "lintFilePatterns": ["libs/components/**/*.{ts,tsx,js,jsx}"]
             }
         },
         "test": {
@@ -68,6 +70,5 @@
                 }
             }
         }
-    },
-    "tags": []
+    }
 }

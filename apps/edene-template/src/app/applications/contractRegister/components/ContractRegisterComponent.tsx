@@ -1,7 +1,7 @@
 import {
     Form,
     TextInput,
-    Title,
+    Heading,
     Row,
     Col,
     Select,
@@ -34,7 +34,7 @@ const Person = () => (
 export const ContractRegisterComponent = () => {
     return (
         <Form>
-            <Title mt={4}>Address</Title>
+            <Heading mt={4}>Address</Heading>
             <TextInput label="Full Address" />
             <Row>
                 <Col md={12}>
@@ -45,13 +45,13 @@ export const ContractRegisterComponent = () => {
                 </Col>
             </Row>
 
-            <Title mt={4}>Tenants</Title>
+            <Heading mt={4}>Tenants</Heading>
             <Person />
             <Button variant="link" icon="add">
                 Add tenant
             </Button>
 
-            <Title mt={4}>Landlords</Title>
+            <Heading mt={4}>Landlords</Heading>
             <Person />
             <Button variant="link" icon="add">
                 Add landlord

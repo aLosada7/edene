@@ -1,22 +1,21 @@
 import type {
-    BodySizes,
     Category,
     FontWeight,
     FontWeightDefinition,
-    HeadlineSizes,
+    HeadingSizes,
     LineHeight,
     TextSansSizes,
-    TitlepieceSizes,
     TypographySizes,
 } from './types';
 
-const fontSizes = [10, 12, 14, 15, 16, 18, 20, 24, 30, 36, 42, 50];
+const fontSizes = [10, 12, 14, 16, 18, 20, 24, 32];
 
 const fonts = {
-    titlepiece: 'GT Guardian Titlepiece, Georgia, serif',
+    titlepiece: 'GT Guardian Headingpiece, Georgia, serif',
     headlineSerif: 'Merriweather, Arial, sans-serif',
     bodySerif:
         'GuardianTextEgyptian, Guardian Text Egyptian Web, Georgia, serif',
+
     bodySans: 'Lato, Arial, sans-serif',
     // 'Lato', Arial, sans-serif;
     // 'Guardian Text Sans Web, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif',
@@ -24,53 +23,34 @@ const fonts = {
 
 const lineHeights = [1.15, 1.35, 1.5];
 
-const fontWeights = [300, 400, 700, 900];
+const fontWeights = [400, 600];
 
-const titlepieceSizes: TitlepieceSizes = {
-    small: fontSizes[8], //42px
-    medium: fontSizes[9], //50px
-    large: fontSizes[10], //70px
-};
-
-const headlineSizes: HeadlineSizes = {
-    xxxsmall: fontSizes[5], //18px
-    xxsmall: fontSizes[6], //20px
-    xsmall: fontSizes[7], //24px
-    small: fontSizes[8], //28px
-    medium: fontSizes[9], //34px
-    large: fontSizes[10], //42px
-    xlarge: fontSizes[11], //50px
-};
-
-const bodySizes: BodySizes = {
-    small: fontSizes[2], //15px
-    medium: fontSizes[3], //17px
+const headlineSizes: HeadingSizes = {
+    h1: fontSizes[7], //32px
+    h2: fontSizes[6], //24px
+    h3: fontSizes[5], //20px
+    h4: fontSizes[4], //18px
+    h5: fontSizes[3], //16px
+    h6: fontSizes[2], //14px
 };
 
 const textSansSizes: TextSansSizes = {
-    xxsmall: fontSizes[0], // 10px
-    xsmall: fontSizes[1], // 12px
+    regular: fontSizes[3], // 16px
     small: fontSizes[2], // 14px
-    medium: fontSizes[3], // 15px
-    large: fontSizes[4], // 16px
-    xlarge: fontSizes[5], // 18px
-    xxlarge: fontSizes[6], // 20px
+    xsmall: fontSizes[1], // 12px
+    xxsmall: fontSizes[0], // 10px
 };
 
 const fontSizeMapping: {
     [cat in Category]: TypographySizes;
 } = {
-    titlepiece: titlepieceSizes,
-    headline: headlineSizes,
-    body: bodySizes,
-    textSans: textSansSizes,
+    heading: headlineSizes,
+    text: textSansSizes,
 };
 
 const fontMapping: { [cat in Category]: string } = {
-    titlepiece: fonts.titlepiece,
-    headline: fonts.headlineSerif,
-    body: fonts.bodySerif,
-    textSans: fonts.bodySans,
+    heading: fonts.headlineSerif,
+    text: fonts.bodySans,
 };
 
 const lineHeightMapping: { [lineHight in LineHeight]: number } = {
@@ -80,10 +60,8 @@ const lineHeightMapping: { [lineHight in LineHeight]: number } = {
 };
 
 const fontWeightMapping: { [fontWeight in FontWeight]: number } = {
-    light: fontWeights[0],
-    regular: fontWeights[1],
-    bold: fontWeights[2],
-    bolder: fontWeights[3],
+    regular: fontWeights[0], // 400
+    bold: fontWeights[1], // 600
 };
 
 const availableFonts: {
@@ -91,49 +69,25 @@ const availableFonts: {
         [fontWeight in FontWeight]?: FontWeightDefinition;
     };
 } = {
-    titlepiece: {
-        bold: {
-            hasItalic: false,
-        },
-    },
-    headline: {
-        light: {
-            hasItalic: true,
-        },
+    heading: {
         regular: {
-            hasItalic: true,
+            hasItalic: false,
         },
         bold: {
             hasItalic: false,
         },
     },
-    body: {
+    text: {
         regular: {
-            hasItalic: true,
-        },
-        bold: {
-            hasItalic: true,
-        },
-    },
-    textSans: {
-        light: {
-            hasItalic: true,
-        },
-        regular: {
-            hasItalic: true,
+            hasItalic: false,
         },
         bold: {
             hasItalic: false,
-        },
-        bolder: {
-            hasItalic: true,
         },
     },
 };
 
-Object.freeze(titlepieceSizes);
 Object.freeze(headlineSizes);
-Object.freeze(bodySizes);
 Object.freeze(textSansSizes);
 Object.freeze(fontMapping);
 Object.freeze(fontSizeMapping);
@@ -142,9 +96,7 @@ Object.freeze(lineHeightMapping);
 Object.freeze(availableFonts);
 
 export {
-    titlepieceSizes,
     headlineSizes,
-    bodySizes,
     textSansSizes,
     fontMapping,
     fontSizeMapping,

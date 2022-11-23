@@ -30,7 +30,7 @@ export const FoodCategory = ({
                     alt={`${category.name}`}
                 ></CardMedia>
                 <CardSection>
-                    <Text size="lg" align="center">{`${category.name}`}</Text>
+                    <Text align="center">{`${category.name}`}</Text>
                 </CardSection>
             </Card>
         </Col>
