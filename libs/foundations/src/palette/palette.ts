@@ -112,6 +112,10 @@ export const success = colors.greens[1];
 
 export const focus = colors.blues[13];
 
+export const supporting = grays[4];
+
+// TODO: clean palette
+
 export const background = {
     primary: '#161616',
     secondary: '#e5e5e5',
@@ -124,21 +128,21 @@ export const altBackground = {
     toolbar: '#ffffff',
 };
 
-export const text = {
-    primary: grays[0],
-    supporting: grays[4],
-    success: success,
-    error: error,
-    ctaPrimary: grays[9],
-    anchorSecondary: grays[7],
-    userInput: grays[7],
-    inputLabel: grays[7],
-    inputError: grays[7],
-    inputLabelSupporting: grays[4],
-    groupLabel: grays[7],
-    groupLabelSupporting: grays[4],
-    toolbar: '#f4f4f4',
-};
+// export const text = {
+//     primary: grays[0],
+//     supporting: grays[4],
+//     success: success,
+//     error: error,
+//     ctaPrimary: grays[9],
+//     anchorSecondary: grays[7],
+//     userInput: grays[7],
+//     inputLabel: grays[7],
+//     inputError: grays[7],
+//     inputLabelSupporting: grays[4],
+//     groupLabel: grays[7],
+//     groupLabelSupporting: grays[4],
+//     toolbar: '#f4f4f4',
+// };
 
 export const altText = {
     primary: grays[7],

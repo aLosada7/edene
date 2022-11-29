@@ -2,7 +2,7 @@ import {
     ActionButton,
     Container,
     Row,
-    Title,
+    Heading,
     Text,
     Icon,
 } from '@edene/components';
@@ -41,7 +41,7 @@ export const SettingsContent = ({ open, onClose }: SettingsContentProps) => {
                 >
                     <Row align="start-center" noGlutters>
                         <Icon color={theme.white}>settings</Icon>
-                        <Title>Settings</Title>
+                        <Heading>Settings</Heading>
                     </Row>
                     <ActionButton onClick={onClose}>close</ActionButton>
                 </Row>

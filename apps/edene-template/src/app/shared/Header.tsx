@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 
-import { Title } from '@edene/components';
+import { Heading } from '@edene/components';
 
 export interface HeaderProps {
     title: string;
@@ -14,7 +14,7 @@ const header = css`
 export const Header = ({ title }: HeaderProps) => {
     return (
         <header css={header}>
-            <Title size="h4">{title}</Title>
+            <Heading size="h4">{title}</Heading>
         </header>
     );
 };

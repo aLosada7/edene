@@ -1,13 +1,8 @@
 # Edene
 
-Edene aims to give you everything you need to create and build top class products. It contains completely customizable and reusable React components, animations or hooks written entirely in Typescript.
+Edene aims to give you everything you need to create and build top class products. It contains completely customizable and reusable React components, animations and hooks. It has been entirely written in Typescript.
 
-It actually contains the foundations (_core_) and _three_ different implementations:
-
--   Foundations: Includes all the necessary to be used as a Design System for your applications. It contains tokens, which represent the shared values that maintain consistency across our system
--   Components: a list of reusable React components
--   Animations: a list of animations to use along with the React components
--   Hooks: a list of hooks which will help _components_ and your applications
+Edene also includes the **foundations**, a serie of guidelines and tokens, which give programmers all the necessary to create efficient and eye catching user interfaces, following design principles, and with a focus on user experience.
 
 Edene is not only a component library, goes far beyond that.
 
@@ -28,10 +23,10 @@ $ yarn add react @emotion/react @emotion/styled
 We publish the library with components written in [React](https://reactjs.org/) and [Emotion](https://emotion.sh/). You can use your favourite package manager.
 
 ```shell
-$ yarn add @edene/foundations @edene/components @edene/hooks
+$ yarn add @edene/foundations @edene/components
 ```
 
-_Foundations & hooks libraries have to be installed along components at this point. If you want to use the animations libraries, you can also add it to your dependencies (@edene/animations)._
+_Foundations library have to be installed along components at this point_
 
 Then use to import the Accordion:
 

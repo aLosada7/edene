@@ -3,7 +3,7 @@ import { addDecorator } from '@storybook/react';
 import { viewport } from './preview/viewport';
 import { backgrounds } from './preview/backgrounds';
 import { ThemeDecorator } from '@edene/foundations';
-import './styles.scss';
+import './preview/styles.scss';
 
 export const parameters = {
     backgrounds,
@@ -17,8 +17,9 @@ export const parameters = {
                 'Layout',
                 'Components',
                 'Forms',
-                'Overlay',
                 'UI Shell',
+                'Animations',
+                'Hooks',
                 'Laboratory',
             ],
         },

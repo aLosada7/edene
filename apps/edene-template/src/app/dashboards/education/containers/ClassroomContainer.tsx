@@ -1,11 +1,11 @@
-import { Row, Title, Card } from '@edene/components';
+import { Row, Heading, Card } from '@edene/components';
 import { ClassroomSectionComponent } from '../components/ClassroomSectionComponent';
 
 export const ClassroomContainer = () => (
     <Row noGlutters>
-        <Title size="h4" mb={2}>
+        <Heading size="h4" mb={2}>
             Classroom
-        </Title>
+        </Heading>
         <Card>
             <ClassroomSectionComponent
                 borderRight

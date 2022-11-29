@@ -1,10 +1,10 @@
 import { css } from '@emotion/react';
 
-import { Icon, Title, Badge, Group } from '@edene/components';
+import { Icon, Heading, Badge, Group } from '@edene/components';
 
-const TitleWithIconAndBadge = () => (
+const HeadingWithIconAndBadge = () => (
     <Group>
-        <Title
+        <Heading
             size="h3"
             weight="light"
             icon={
@@ -21,7 +21,7 @@ const TitleWithIconAndBadge = () => (
             }
         >
             GALZO2R4I5ZK
-        </Title>
+        </Heading>
         <Badge
             cssOverrides={css`
                 height: fit-content;
@@ -35,4 +35,4 @@ const TitleWithIconAndBadge = () => (
     </Group>
 );
 
-export default TitleWithIconAndBadge;
+export default HeadingWithIconAndBadge;

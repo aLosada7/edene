@@ -10,7 +10,6 @@ import {
     HeaderPanel,
     Container,
     Button,
-    Icon,
 } from '@edene/components';
 
 import useCartContext from '../../context/cart/useCartContext';
@@ -50,7 +49,7 @@ export const Header = ({ name }: { name?: string }) => {
                     badge={products.length}
                     onClick={toggleRightPanel}
                 >
-                    <Icon>shopping_cart</Icon>
+                    shopping_cart
                 </HeaderGlobalAction>
             </HeaderGlobalBar>
             <HeaderPanel

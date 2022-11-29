@@ -4,7 +4,7 @@ import {
     background,
     focusHalo,
     transitions,
-    textSans,
+    text,
     from,
 } from '@edene/foundations';
 import { css } from '@emotion/react';
@@ -196,7 +196,7 @@ export const sideNavPrincipal = ({ theme = defaultTheme }) => css`
     margin-top: 1.5rem;
 
     span {
-        ${textSans.xxsmall({ fontWeight: 'bold' })};
+        ${text.xxsmall({ fontWeight: 'bold' })};
         color: ${theme.color};
         text-transform: uppercase;
     }

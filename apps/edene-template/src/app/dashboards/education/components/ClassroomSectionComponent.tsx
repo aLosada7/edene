@@ -4,7 +4,7 @@ import {
     Badge,
     CardSection,
     Icon,
-    Title,
+    Heading,
     Text,
     Button,
 } from '@edene/components';
@@ -40,9 +40,9 @@ export const ClassroomSectionComponent = ({
                 {icon}
             </Icon>
         </Badge>
-        <Title mt={4} mb={2}>
+        <Heading mt={4} mb={2}>
             {title}
-        </Title>
+        </Heading>
         <Text size="sm" color={grays[3]} mb={2}>
             {description}
         </Text>

@@ -1,11 +1,11 @@
 import {
     grays,
-    text,
     white,
     black,
     brandColor,
     brandHover,
     colors,
+    supporting,
 } from '../../palette';
 import { Theme } from '../types';
 
@@ -20,8 +20,8 @@ export const defaultTheme: Theme = {
     colors,
     label: {
         text: grays[1],
-        optionalText: text.supporting,
-        supportingText: text.supporting,
+        optionalText: supporting,
+        supportingText: supporting,
     },
     header: {
         background: '#161616',

@@ -4,7 +4,7 @@ import { useState } from 'react';
 import {
     Tab,
     Tabs,
-    Title,
+    Heading,
     Row,
     Col,
     Table,
@@ -30,9 +30,9 @@ export default {
         (Story: any) => (
             <EdeneTheme theme={theme}>
                 <section style={{ backgroundColor: grays[7] }}>
-                    <Title size="h3" mb={2}>
+                    <Heading size="h3" mb={2}>
                         Game Summary
-                    </Title>
+                    </Heading>
                     <Story />
                 </section>
             </EdeneTheme>

@@ -1,4 +1,4 @@
-import { MenuButton } from '../MenuButton';
+import { MenuButton } from '../components/MenuButton';
 import { headerMenuButton } from './stylesHeader';
 
 export interface HeaderMenuButtonProps {

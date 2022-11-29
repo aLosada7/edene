@@ -1,10 +1,12 @@
 import { Meta } from '@storybook/addon-docs';
 import { css } from '@emotion/react';
 
-import { colorsPalette } from '@edene/foundations';
-import { Group, Tag, Button, Stack } from '@edene/components';
+import { colorsPalette, grays } from '@edene/foundations';
+import { Group, Tag, Button, Stack, Text, Heading } from '@edene/components';
 
 <Meta title="Tokens/Colors" />
+
+# Colors
 
 <p>The default button uses color as background, and hover when hovering</p>
 <p>
@@ -88,6 +90,23 @@ import { Group, Tag, Button, Stack } from '@edene/components';
     </Group>
 </Stack>
 
-<p>
-    We are actually working to introduce more colors. It will be soon available
-</p>
+<br />
+
+## Grays
+
+<Stack>
+    {Object.keys(grays).map((key) => (
+        <Group key={key}>
+            {key}
+            <div
+                style={{
+                    border: `1px solid ${grays[0]}`,
+                    width: '20px',
+                    height: 'inherit',
+                    backgroundColor: grays[key],
+                }}
+            />
+            <Text color={grays[key]}>Text</Text>
+        </Group>
+    ))}
+</Stack>

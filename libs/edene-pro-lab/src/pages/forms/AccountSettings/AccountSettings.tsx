@@ -13,7 +13,7 @@ import {
     Option,
     Textarea,
     Checkbox,
-    Title,
+    Heading,
     Text,
 } from '@edene/components';
 
@@ -22,13 +22,13 @@ import CountrySelector from '../../../components/simple/CountrySelector/CountryS
 const AccountSettings = () => (
     <Container pv={8}>
         <Form>
-            <Title size="h4" mb={6}>
+            <Heading size="h4" mb={6}>
                 Account Settings
-            </Title>
+            </Heading>
             <Divider />
             <Row>
                 <Col md={8} lg={8} vStack={2}>
-                    <Title
+                    <Heading
                         size="h5"
                         mb={2}
                         cssOverrides={css`
@@ -36,7 +36,7 @@ const AccountSettings = () => (
                         `}
                     >
                         Basics
-                    </Title>
+                    </Heading>
                     <Text size="sm">
                         Having an up-to-date email address attached to your
                         account is a great step toward improved account
@@ -64,7 +64,7 @@ const AccountSettings = () => (
             <Divider />
             <Row>
                 <Col md={8} lg={8} vStack={2}>
-                    <Title
+                    <Heading
                         size="h5"
                         mb={2}
                         cssOverrides={css`
@@ -72,7 +72,7 @@ const AccountSettings = () => (
                         `}
                     >
                         Profile
-                    </Title>
+                    </Heading>
                     <Text size="sm">
                         This information will be shown publicy so be careful
                         what information you provide.

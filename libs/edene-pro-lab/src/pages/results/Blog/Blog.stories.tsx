@@ -7,7 +7,7 @@ import {
     Row,
     Image,
     Text,
-    Title,
+    Heading,
     Badge,
     SideNav,
     SideNavItems,
@@ -50,7 +50,7 @@ const BlogAllSection = (
             <Text size="xxsm" mt={2}>
                 01 Jan 2022
             </Text>
-            <Title>My 2021 Annual Review</Title>
+            <Heading>My 2021 Annual Review</Heading>
             <Text size="sm" mt={2}>
                 Allows to obtain more information about different options.
             </Text>
@@ -70,9 +70,9 @@ export const Blog = () => (
     <>
         <section className="page-section py-section">
             <Container ph={12}>
-                <Title size="h4" mb={4}>
+                <Heading size="h2" mb={4}>
                     Featured blog posts
-                </Title>
+                </Heading>
                 <Row>
                     <Col
                         lg={12}
@@ -90,7 +90,7 @@ export const Blog = () => (
                             <Text size="xxsm" mt={2}>
                                 01 Jan 2022
                             </Text>
-                            <Title size="h3">My 2021 Annual Review</Title>
+                            <Heading size="h3">My 2021 Annual Review</Heading>
                             <Text size="sm" mt={2}>
                                 Allows to obtain more information about
                                 different options.
@@ -146,7 +146,9 @@ export const Blog = () => (
                                     `}
                                 >
                                     <Text size="xxsm">01 Jan 2022</Text>
-                                    <Title>My 2021 Annual Review</Title>
+                                    <Heading size="h3">
+                                        My 2021 Annual Review
+                                    </Heading>
                                     <Text size="sm" mt={2}>
                                         Allows to obtain more information about
                                         different options.
@@ -195,7 +197,9 @@ export const Blog = () => (
                                     `}
                                 >
                                     <Text size="xxsm">01 Jan 2022</Text>
-                                    <Title>My 2021 Annual Review</Title>
+                                    <Heading size="h3">
+                                        My 2021 Annual Review
+                                    </Heading>
                                     <Text size="sm" mt={2}>
                                         Allows to obtain more information about
                                         different options.
@@ -217,9 +221,9 @@ export const Blog = () => (
         </section>
         <section className="page-section py-section">
             <Container pv={8} ph={12}>
-                <Title size="h4" mb={4}>
+                <Heading size="h2" mb={4}>
                     All blog posts
-                </Title>
+                </Heading>
                 <Row>
                     <Col md={8} lg={6} cssOverrides={noPadding}>
                         <SideNav

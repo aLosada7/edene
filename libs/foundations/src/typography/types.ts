@@ -1,8 +1,9 @@
 export type ScaleUnit = 'rem' | 'px';
-export type Category = 'titlepiece' | 'headline' | 'body' | 'textSans';
+export type Category = 'heading' | 'text';
 export type LineHeight = 'tight' | 'regular' | 'loose'; // [1.15, 1.35, 1.5]
-export type FontWeight = 'light' | 'regular' | 'bold' | 'bolder'; // [300, 400, 700, 900]
+export type FontWeight = 'regular' | 'bold'; // [400, 600]
 export type FontStyle = 'normal' | 'italic';
+export type TextAlign = 'inherit' | 'left' | 'center' | 'right';
 export type FontWeightDefinition = { hasItalic: boolean };
 export type Option<A> = A | null;
 
@@ -17,20 +18,19 @@ export type TypographySizes = {
     [key in string]: number;
 };
 
-export interface TitlepieceSizes extends TypographySizes {
+export interface HeadingpieceSizes extends TypographySizes {
     small: number;
     medium: number;
     large: number;
 }
 
-export interface HeadlineSizes extends TypographySizes {
-    xxxsmall: number;
-    xxsmall: number;
-    xsmall: number;
-    small: number;
-    medium: number;
-    large: number;
-    xlarge: number;
+export interface HeadingSizes extends TypographySizes {
+    h1: number;
+    h2: number;
+    h3: number;
+    h4: number;
+    h5: number;
+    h6: number;
 }
 export interface BodySizes extends TypographySizes {
     small: number;
@@ -40,10 +40,7 @@ export interface TextSansSizes extends TypographySizes {
     xxsmall: number; // 10px
     xsmall: number; // 12px
     small: number; // 14px
-    medium: number; // 15px
-    large: number; // 16px
-    xlarge: number; // 18px
-    xxlarge: number; // 20px
+    regular: number; // 16px
 }
 
 export type Fs = (category: Category) => (
