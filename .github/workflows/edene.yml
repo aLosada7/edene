@@ -1,6 +1,6 @@
 name: 'Edene CI'
 
-on: push
+on: pull_request
 
 jobs:
     components-chromatic:
@@ -34,3 +34,15 @@ jobs:
 
             - name: ✅ Run tests
               run: npx nx run components:test
+    components-build:
+        name: 🧩 Check build
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v2
+
+            - name: 🧰 Install dependencies
+              run: yarn
+
+            - name: ✅ Run tests
+              run: npx nx run components:build
