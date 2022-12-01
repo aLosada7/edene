@@ -30,12 +30,4 @@ module.exports = {
 
         return config;
     },
-    refs: {
-        'animations-chromatic-storybook': {
-            // The title of your Storybook
-            title: 'Animations Storybook',
-            // The url provided by Chromatic when it was published
-            url: 'https://637bcd1ad95f806dc64a7354-avkjpqqopa.chromatic.com',
-        },
-    },
 };
