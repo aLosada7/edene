@@ -25,8 +25,7 @@
         "paths": {
             "@edene/components": ["libs/components/src/index.ts"],
             "@edene/foundations": ["libs/foundations/src/index.ts"],
-            "@hooks": ["libs/hooks/src/index.ts"],
-            "@utils": ["libs/utils/src/index.ts"]
+            "@utils/*": ["libs/utils/src/*"]
         }
     },
     "exclude": ["node_modules", "tmp"]

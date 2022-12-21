@@ -1,22 +1,19 @@
-import { renderWithAct } from '@utils';
-import { EdeneTheme } from '@edene/foundations';
+import { render, screen } from '@testing-library/react';
+import { axe } from 'jest-axe';
 
-import { Badge, BadgeProps } from './Badge';
+import { Badge } from './Badge';
 
-const defaultProps: BadgeProps = {
-    children: 7,
-};
+const content = 7;
 
 describe('Badge', () => {
-    it('renders children', async () => {
-        const { getAllByText } = await renderWithAct(
-            <EdeneTheme>
-                <Badge {...defaultProps} />
-            </EdeneTheme>
-        );
-        if (defaultProps.children)
-            expect(getAllByText(defaultProps.children.toString())).toHaveLength(
-                1
-            );
+    it('should render children content', async () => {
+        render(<Badge>{content}</Badge>);
+        expect(await screen.getByText(content)).toBeVisible();
+    });
+
+    it('should not have basic accesibility issues', async () => {
+        const { container } = render(<Badge>{content}</Badge>);
+        const results = await axe(container);
+        expect(results).toHaveNoViolations();
     });
 });
