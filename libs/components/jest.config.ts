@@ -6,5 +6,6 @@ export default {
         '^.+\\.[tj]sx?$': 'babel-jest',
     },
     moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
+    setupFilesAfterEnv: ['<rootDir>/src/setupTests.ts'],
     coverageDirectory: '../../coverage/libs/components',
 };
