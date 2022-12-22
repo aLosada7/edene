@@ -2,7 +2,7 @@ import React, { forwardRef } from 'react';
 import { SerializedStyles } from '@emotion/react';
 
 import {
-    useThemeContext,
+    useTheme,
     PolymorphicComponentProps,
     PolymorphicRef,
     Props,
@@ -28,7 +28,7 @@ export const Tab: TabComponent = forwardRef(
             props;
 
         const { orientation, active, color, onTabChange } = useTabs();
-        const { theme } = useThemeContext();
+        const { theme } = useTheme();
 
         const activeTab = active === tabKey;
 

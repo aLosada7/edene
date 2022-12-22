@@ -1,4 +1,4 @@
-import { useThemeContext } from '@edene/foundations';
+import { useTheme } from '@edene/foundations';
 
 import { headerName } from './stylesHeader';
 
@@ -14,7 +14,7 @@ export const HeaderName = ({
     prefix,
     ...props
 }: HeaderNameProps) => {
-    const theme = useThemeContext();
+    const theme = useTheme();
     return (
         <a css={headerName(theme)} href={href}>
             <span translate="no">

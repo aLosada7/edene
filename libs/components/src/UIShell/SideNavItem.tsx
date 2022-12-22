@@ -1,10 +1,6 @@
 import React, { LinkHTMLAttributes } from 'react';
 
-import {
-    Props,
-    PolymorphicComponentProps,
-    useThemeContext,
-} from '@edene/foundations';
+import { Props, PolymorphicComponentProps, useTheme } from '@edene/foundations';
 
 import { navItem, navLink, sideNavWithIcon, navMenuLinkActive } from './styles';
 import { Icon } from '../icons';
@@ -44,7 +40,7 @@ export const SideNavItem: SideNavItemComponent = ((
         ...rest
     } = props;
 
-    const { theme } = useThemeContext();
+    const { theme } = useTheme();
 
     const Element = component || 'a';
 

@@ -1,10 +1,10 @@
 import { defaultTheme } from './defaultThemes/defaultTheme';
-import { EdeneTheme } from './themeProvider';
+import ThemeProvider from './ThemeProvider/ThemeProvider';
 
 const theme = { ...defaultTheme };
 
 const ThemeDecorator = (storyFn: () => any) => {
-    return <EdeneTheme theme={theme}>{storyFn()}</EdeneTheme>;
+    return <ThemeProvider theme={theme}>{storyFn()}</ThemeProvider>;
 };
 
 export default ThemeDecorator;

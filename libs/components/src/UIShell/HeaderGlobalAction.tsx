@@ -1,6 +1,6 @@
 import { ButtonHTMLAttributes } from 'react';
 
-import { useThemeContext } from '@edene/foundations';
+import { useTheme } from '@edene/foundations';
 
 import { Badge } from '../components/Badge';
 import {
@@ -29,7 +29,7 @@ export const HeaderGlobalAction = ({
     children,
     ...props
 }: HeaderGlobalActionProps) => {
-    const theme = useThemeContext();
+    const theme = useTheme();
     return (
         <button
             css={[

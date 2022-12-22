@@ -1,7 +1,7 @@
 import { Fragment, useState } from 'react';
 
 import { Icon } from '@edene/components';
-import { useThemeContext } from '@edene/foundations';
+import { useTheme } from '@edene/foundations';
 
 import { overlay, settings } from './styles';
 import { SettingsContent } from './SettingsContent';
@@ -9,7 +9,7 @@ import { SettingsContent } from './SettingsContent';
 export const Settings = () => {
     const [open, setOpen] = useState(false);
 
-    const { theme } = useThemeContext();
+    const { theme } = useTheme();
 
     return (
         <Fragment>

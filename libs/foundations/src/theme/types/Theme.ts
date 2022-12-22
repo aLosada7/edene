@@ -1,5 +1,5 @@
 export interface Theme {
-    name: string;
+    title: string;
     lightColor?: string;
     color: string;
     hover: string;
@@ -11,5 +11,5 @@ export interface Theme {
     label?: any;
     sideNav?: any;
     text: string;
-    title: any;
+    headings: any;
 }

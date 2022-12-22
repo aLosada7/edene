@@ -19,7 +19,7 @@ import {
     CardHeader,
     Avatar,
 } from '@edene/components';
-import { EdeneTheme, grays } from '@edene/foundations';
+import { ThemeProvider, grays } from '@edene/foundations';
 
 import { rows } from './rows';
 import { theme } from './theme';
@@ -28,14 +28,14 @@ export default {
     title: 'Pages/Details',
     decorators: [
         (Story: any) => (
-            <EdeneTheme theme={theme}>
+            <ThemeProvider theme={theme}>
                 <section style={{ backgroundColor: grays[7] }}>
                     <Heading size="h3" mb={2}>
                         Game Summary
                     </Heading>
                     <Story />
                 </section>
-            </EdeneTheme>
+            </ThemeProvider>
         ),
     ],
     parameters: {

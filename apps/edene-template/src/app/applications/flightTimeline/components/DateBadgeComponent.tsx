@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
 
 import { Badge } from '@edene/components';
-import { text, Theme, useThemeContext } from '@edene/foundations';
+import { text, Theme, useTheme } from '@edene/foundations';
 
 const badge = (theme: Theme) => css`
     ${text.small({ fontWeight: 'regular' })};
@@ -13,7 +13,7 @@ const badge = (theme: Theme) => css`
 `;
 
 export const DateBadgeComponent = ({ date }: { date: string }) => {
-    const { theme } = useThemeContext();
+    const { theme } = useTheme();
 
     return <Badge cssOverrides={badge(theme)}>{date}</Badge>;
 };

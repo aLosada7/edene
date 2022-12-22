@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
 import {
     visuallyHidden as _visuallyHidden,
-    useThemeContext,
+    useTheme,
 } from '@edene/foundations';
 import { ReactNode } from 'react';
 import { supportingText } from './styles';
@@ -17,7 +17,7 @@ export const SupportingText = ({
     hideLabel?: boolean;
     children: ReactNode;
 }) => {
-    const theme = useThemeContext();
+    const theme = useTheme();
 
     return (
         <p css={[supportingText(theme), hideLabel ? visuallyHidden : '']}>

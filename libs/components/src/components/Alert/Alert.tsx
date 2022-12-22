@@ -1,7 +1,7 @@
 import { SerializedStyles } from '@emotion/react';
 import { ReactNode } from 'react';
 
-import { useThemeContext, Props, ComponentColors } from '@edene/foundations';
+import { useTheme, Props, ComponentColors } from '@edene/foundations';
 
 import { Text } from '../../typography/Text';
 import { alert, alertActions, alertTheme } from './styles';
@@ -17,7 +17,7 @@ export interface AlertProps extends Props {
 export const Alert = (props: AlertProps) => {
     const { type = 'brand', actions, children, cssOverrides } = props;
 
-    const { theme } = useThemeContext();
+    const { theme } = useTheme();
 
     return (
         <div

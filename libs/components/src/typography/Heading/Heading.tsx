@@ -5,7 +5,7 @@ import {
     FontWeight,
     TextAlign,
     Props,
-    useThemeContext,
+    useTheme,
 } from '@edene/foundations';
 
 import { flexText, headingCss, headingColorCss } from './styles';
@@ -38,7 +38,7 @@ export const Heading = ({
     children,
     cssOverrides,
 }: HeadingProps) => {
-    const { theme } = useThemeContext();
+    const { theme } = useTheme();
 
     const textColor = color || 'inherit';
     const Element = size || 'div';

@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
 
 import { Card, CardSection, Container, Text, Icon } from '@edene/components';
-import { text, Theme, useThemeContext } from '@edene/foundations';
+import { text, Theme, useTheme } from '@edene/foundations';
 
 import { DateBadgeComponent } from '../components/DateBadgeComponent';
 import { TimelineComponent } from '../components/TimelineComponent';
@@ -52,7 +52,8 @@ const noteHeading = css`
 `;
 
 export const FlightTimelineContainer = () => {
-    const { theme } = useThemeContext();
+    const { theme } = useTheme();
+
     return (
         <Container>
             <ol css={list}>

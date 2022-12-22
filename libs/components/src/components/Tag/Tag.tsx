@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 
 import {
-    useThemeContext,
+    useTheme,
     Props,
     ComponentColors,
     IconVariant,
@@ -32,7 +32,7 @@ export const Tag = (props: TagProps) => {
         ...props,
     };
 
-    const { theme } = useThemeContext();
+    const { theme } = useTheme();
 
     return (
         <span
