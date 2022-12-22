@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-import { useThemeContext, EdeneColor, Props } from '@edene/foundations';
+import { useTheme, EdeneColor, Props } from '@edene/foundations';
 
 import { badge, badgeTheme } from './styles';
 
@@ -16,7 +16,7 @@ export const Badge = (props: BadgeProps) => {
         ...props,
     };
 
-    const { theme } = useThemeContext();
+    const { theme } = useTheme();
 
     return (
         <span

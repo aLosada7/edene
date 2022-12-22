@@ -1,7 +1,7 @@
 import { SerializedStyles } from '@emotion/react';
 import { Children, cloneElement } from 'react';
 
-import { useThemeContext } from '@edene/foundations';
+import { useTheme } from '@edene/foundations';
 
 import { header, headerPosition, headerHeight } from './stylesHeader';
 
@@ -24,7 +24,7 @@ export const Header = ({
     cssOverrides,
     ...props
 }: HeaderProps) => {
-    const theme = useThemeContext();
+    const theme = useTheme();
 
     return (
         <header

@@ -9,7 +9,7 @@ import {
 import {
     defaultTheme,
     Theme,
-    useThemeContext,
+    useTheme,
     tealTheme,
     blueTheme,
 } from '@edene/foundations';
@@ -29,7 +29,7 @@ interface SettingsContentProps {
 const themes: Partial<Theme>[] = [defaultTheme, tealTheme, blueTheme];
 
 export const SettingsContent = ({ open, onClose }: SettingsContentProps) => {
-    const { theme, setTheme } = useThemeContext();
+    const { theme, setTheme } = useTheme();
 
     return (
         <div css={settingsContent(open)}>
@@ -51,7 +51,7 @@ export const SettingsContent = ({ open, onClose }: SettingsContentProps) => {
                 <Row>
                     {themes.map((themeOption: Partial<Theme>) => (
                         <div
-                            key={themeOption.name}
+                            key={themeOption.title}
                             style={{
                                 borderColor:
                                     theme.color === themeOption.color
@@ -66,7 +66,7 @@ export const SettingsContent = ({ open, onClose }: SettingsContentProps) => {
                                     backgroundColor: themeOption.color,
                                 }}
                             />
-                            <Text>{themeOption.name as string}</Text>
+                            <Text>{themeOption.title as string}</Text>
                         </div>
                     ))}
                 </Row>

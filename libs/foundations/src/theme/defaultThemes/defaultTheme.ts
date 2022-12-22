@@ -10,7 +10,7 @@ import {
 import { Theme } from '../types';
 
 export const defaultTheme: Theme = {
-    name: 'default',
+    title: 'default',
     lightColor: '#F8D7DA',
     color: brandColor,
     hover: brandHover,
@@ -36,7 +36,7 @@ export const defaultTheme: Theme = {
         hover: '#e5e5e5',
     },
     text: grays[1],
-    title: {
+    headings: {
         h4: 'hsl(202, 57%, 15%)',
         h5: 'hsl(201, 23%, 34%)',
     },

@@ -5,7 +5,7 @@ import {
     PolymorphicComponentProps,
     PolymorphicRef,
     EdeneColor,
-    useThemeContext,
+    useTheme,
     Props,
     ButtonVariant,
     ButtonSize,
@@ -69,7 +69,7 @@ export const Button: ButtonComponent = forwardRef(
             ...rest
         } = props;
 
-        const { theme } = useThemeContext();
+        const { theme } = useTheme();
 
         const isButtonBlock = size === 'block';
         const Element = component || 'button';

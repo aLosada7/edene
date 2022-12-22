@@ -15,13 +15,11 @@
                 "external": ["@emotion/react/jsx-runtime"],
                 "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
                 "compiler": "babel",
-                "assets": [
-                    {
-                        "glob": "libs/components/README.md",
-                        "input": ".",
-                        "output": "."
-                    }
-                ]
+                "assets": [{
+                    "glob": "libs/components/README.md",
+                    "input": ".",
+                    "output": "."
+                }]
             }
         },
         "lint": {
@@ -36,7 +34,8 @@
             "outputs": ["coverage/libs/components"],
             "options": {
                 "jestConfig": "libs/components/jest.config.ts",
-                "passWithNoTests": true
+                "passWithNoTests": true,
+                "codeCoverage": true
             }
         },
         "storybook": {

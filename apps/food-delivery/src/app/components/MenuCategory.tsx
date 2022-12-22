@@ -1,13 +1,13 @@
 import { css } from '@emotion/react';
 
 import { Row, Col, Heading, Icon } from '@edene/components';
-import { from, useThemeContext } from '@edene/foundations';
+import { from, useTheme } from '@edene/foundations';
 
 import { IFoodInfo } from '../context/restaurants';
 import { MenuSummary } from './MenuSummary';
 
 const Circle = ({ children }: { children: React.ReactElement }) => {
-    const { theme } = useThemeContext();
+    const { theme } = useTheme();
 
     return (
         <div

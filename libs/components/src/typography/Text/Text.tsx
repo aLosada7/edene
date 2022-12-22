@@ -2,7 +2,7 @@ import { cloneElement, HTMLAttributes, ReactElement, ReactNode } from 'react';
 
 import {
     EdeneColor,
-    useThemeContext,
+    useTheme,
     FontWeight,
     TextAlign,
     Props,
@@ -44,7 +44,7 @@ export const Text = ({
     children,
     cssOverrides,
 }: TextProps) => {
-    const { theme } = useThemeContext();
+    const { theme } = useTheme();
 
     // TODO: take it on account when introducing dark mode support
     const textColor = color || 'inherit';

@@ -15,13 +15,11 @@
                 "external": ["react/jsx-runtime"],
                 "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
                 "compiler": "babel",
-                "assets": [
-                    {
-                        "glob": "libs/foundations/README.md",
-                        "input": ".",
-                        "output": "."
-                    }
-                ]
+                "assets": [{
+                    "glob": "libs/foundations/README.md",
+                    "input": ".",
+                    "output": "."
+                }]
             }
         },
         "lint": {
@@ -36,7 +34,8 @@
             "outputs": ["coverage/libs/foundations"],
             "options": {
                 "jestConfig": "libs/foundations/jest.config.ts",
-                "passWithNoTests": true
+                "passWithNoTests": true,
+                "codeCoverage": true
             }
         }
     }

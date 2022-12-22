@@ -1,12 +1,5 @@
-import useThemeContext from './useThemeContext';
-import ThemeDecorator from './themeDecorator';
-
-export * from './themeContext';
-export * from './themeProvider';
-export { useThemeContext };
-
 export * from './defaultThemes';
-
+export * from './ThemeProvider';
 export * from './types';
 
-export { ThemeDecorator };
+export { default as ThemeDecorator } from './themeDecorator';

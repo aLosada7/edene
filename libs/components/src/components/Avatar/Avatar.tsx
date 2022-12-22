@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-import { Props, useThemeContext } from '@edene/foundations';
+import { Props, useTheme } from '@edene/foundations';
 
 import { Image } from '../Image';
 import { avatar, avatarConnected, avatarImg, avatarInitials } from './styles';
@@ -38,7 +38,7 @@ export function Avatar({
             );
     }, [props.name]);
 
-    const { theme } = useThemeContext();
+    const { theme } = useTheme();
 
     return (
         <div css={[avatar(shape, size, { theme }), cssOverrides]}>

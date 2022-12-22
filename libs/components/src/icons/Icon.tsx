@@ -3,7 +3,7 @@ import {
     Props,
     EdeneColor,
     IconVariant,
-    useThemeContext,
+    useTheme,
 } from '@edene/foundations';
 
 import { icon, iconTheme } from './styles';
@@ -25,7 +25,7 @@ export interface IconProps extends Props {
 }
 
 export const Icon = (props: IconProps) => {
-    const { theme } = useThemeContext();
+    const { theme } = useTheme();
 
     const {
         children,

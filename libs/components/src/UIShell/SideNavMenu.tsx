@@ -7,7 +7,7 @@ import {
 } from 'react';
 
 import { Icon } from '../icons';
-import { useThemeContext, Props } from '@edene/foundations';
+import { useTheme, Props } from '@edene/foundations';
 
 import {
     chevronIconDown,
@@ -41,7 +41,7 @@ export const SideNavMenu = ({
     /* from parent */
     navigationChildren = 0,
 }: SideNavMenuProps) => {
-    const { theme } = useThemeContext();
+    const { theme } = useTheme();
     const navigationLevelRef = useRef(navigationChildren + 1);
     const [expanded, setExpanded] = useState(false);
     const collapse = () => setExpanded(false);

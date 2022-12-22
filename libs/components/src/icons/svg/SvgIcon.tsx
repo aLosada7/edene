@@ -2,7 +2,7 @@ import { cloneElement } from 'react';
 import {
     getColor,
     EdeneColor,
-    useThemeContext,
+    useTheme,
     iconSize,
     IconSize,
 } from '@edene/foundations';
@@ -16,7 +16,7 @@ export const SvgIcon = ({
     color?: EdeneColor;
     children: React.ReactElement;
 }) => {
-    const { theme } = useThemeContext();
+    const { theme } = useTheme();
     const iconColor = color || theme.black;
 
     return (

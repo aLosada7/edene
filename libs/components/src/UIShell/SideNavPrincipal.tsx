@@ -1,6 +1,6 @@
 import { Children, cloneElement, Fragment, ReactElement } from 'react';
 
-import { useThemeContext, Props } from '@edene/foundations';
+import { useTheme, Props } from '@edene/foundations';
 
 import { sideNavPrincipal } from './styles';
 
@@ -22,7 +22,7 @@ export const SideNavPrincipal = ({
     children,
     cssOverrides,
 }: SideNavPrincipalProps) => {
-    const { theme } = useThemeContext();
+    const { theme } = useTheme();
 
     return (
         <Fragment>

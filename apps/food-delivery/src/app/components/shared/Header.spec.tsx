@@ -1,4 +1,4 @@
-import { EdeneTheme } from '@edene/foundations';
+import { ThemeProvider } from '@edene/foundations';
 import { faker } from '@faker-js/faker';
 import { render, screen } from '@testing-library/react';
 
@@ -14,9 +14,9 @@ describe('Header component tests', () => {
     it('it renders the given name in the header', () => {
         const name = faker.name.firstName();
         render(
-            <EdeneTheme>
+            <ThemeProvider>
                 <Header name={name} />
-            </EdeneTheme>
+            </ThemeProvider>
         );
         expect(screen.getByText(`${name}`)).toBeInTheDocument();
         expect(

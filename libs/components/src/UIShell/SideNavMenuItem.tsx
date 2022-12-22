@@ -1,11 +1,7 @@
 import { SerializedStyles } from '@emotion/react';
 import { LinkHTMLAttributes } from 'react';
 
-import {
-    PolymorphicComponentProps,
-    useThemeContext,
-    Props,
-} from '@edene/foundations';
+import { PolymorphicComponentProps, useTheme, Props } from '@edene/foundations';
 
 import {
     navigationLevel,
@@ -47,12 +43,12 @@ export const SideNavMenuItem: SideNavMenuItemComponent = ((
         ...rest
     } = props;
 
-    const { theme } = useThemeContext();
+    const { theme } = useTheme();
 
     const Element = component || 'a';
 
     return (
-        <li css={navItem(theme)} aria-current={active ? 'page' : undefined}>
+        <li css={navItem({ theme })} aria-current={active ? 'page' : undefined}>
             <Element
                 css={[
                     navMenuSubLink,

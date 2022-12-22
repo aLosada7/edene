@@ -1,6 +1,6 @@
 import { LabelHTMLAttributes, Fragment } from 'react';
 
-import { useThemeContext, Props } from '@edene/foundations';
+import { useTheme, Props } from '@edene/foundations';
 
 import { label, labelText } from './styles';
 import { SupportingText } from './SupportingText';
@@ -28,7 +28,7 @@ export const Label = (props: LabelProps) => {
         ...rest
     } = props;
 
-    const theme = useThemeContext();
+    const theme = useTheme();
 
     return (
         <label css={() => [label, labelText(theme), cssOverrides]} {...rest}>
