@@ -1,4 +1,5 @@
 import { css } from '@emotion/react';
+import { defaultTheme } from '@edene/foundations';
 
 export const card = css`
     position: relative;
@@ -8,7 +9,7 @@ export const card = css`
     box-shadow: 0 50px 100px rgba(0, 0, 0, 0.08);
 `;
 
-export const header = css`
+export const header = (theme = defaultTheme) => css`
     padding: 32px 20px 32px 32px;
     display: flex;
     justify-content: space-between;
@@ -19,7 +20,7 @@ export const header = css`
     }
 
     button.active {
-        background: #13ae94;
+        background: ${theme.color};
         color: #f9f9f9;
         border-radius: 3px;
         padding: 8px 12px;

@@ -1,9 +1,10 @@
 import { Button, Heading } from '@edene/components';
+import { Theme, defaultTheme } from '@edene/foundations';
 import { useState } from 'react';
 import ApexChart from 'react-apexcharts';
+
 import { card, chart, header } from './styles';
 
-const colorPrimary = '#13ae94';
 const colorDefault = '#e1e4f2';
 
 const defaultOptions = {
@@ -28,31 +29,33 @@ const defaultOptions = {
     },
 };
 
-const options = {
-    ...defaultOptions,
-    colors: [colorPrimary, colorDefault],
-    grid: {
-        borderColor: 'rgba(255, 255, 255, 0.08)',
-        padding: { left: -10, right: 0, top: -16, bottom: -8 },
-        xaxis: { lines: { show: false } },
-        yaxis: { lines: { show: false } },
-    },
-    yaxis: { labels: { show: false } },
-    xaxis: {
-        labels: {
-            show: false,
+const options = (theme = defaultTheme) => {
+    return {
+        ...defaultOptions,
+        colors: [theme.color, colorDefault],
+        grid: {
+            borderColor: 'rgba(255, 255, 255, 0.08)',
+            padding: { left: -10, right: 0, top: -16, bottom: -8 },
+            xaxis: { lines: { show: false } },
+            yaxis: { lines: { show: false } },
         },
-        axisBorder: {
-            show: false,
+        yaxis: { labels: { show: false } },
+        xaxis: {
+            labels: {
+                show: false,
+            },
+            axisBorder: {
+                show: false,
+            },
+            axisTicks: {
+                show: false,
+            },
+            crosshairs: {
+                show: false,
+            },
+            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
         },
-        axisTicks: {
-            show: false,
-        },
-        crosshairs: {
-            show: false,
-        },
-        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-    },
+    };
 };
 
 const daily = [{ data: [35, 55, 41, 74, 30, 58] }];
@@ -84,13 +87,13 @@ const ToggleButtons = ({ setSeries, setActiveButton, activeButton }: any) => {
     );
 };
 
-const Chart = () => {
+const Chart = ({ theme }: { theme?: Theme }) => {
     const [series, setSeries] = useState(daily);
     const [activeButton, setActiveButton] = useState('Daily');
 
     return (
         <div css={card}>
-            <header css={header}>
+            <header css={header(theme)}>
                 <Heading size="h3" color={colorDefault}>
                     Revenue
                 </Heading>
@@ -102,7 +105,7 @@ const Chart = () => {
             </header>
             <div css={chart}>
                 <ApexChart
-                    options={options}
+                    options={options(theme)}
                     series={series}
                     type="area"
                     width="100%"
