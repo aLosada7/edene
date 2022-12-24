@@ -14,8 +14,7 @@ export const headingCss = (
     mb: number,
     size: IFontSize,
     fontWeight: FontWeight,
-    align: TextAlign,
-    actions?: boolean
+    align: TextAlign
 ) => css`
     margin-top: calc(${mt} * 0.25rem);
     margin-bottom: calc(${mb} * 0.25rem);
@@ -28,10 +27,6 @@ export const headingCss = (
     ${size === 'h6' && heading.h6({ fontWeight })}
 
     text-align: ${align};
-
-    ${actions &&
-    `display: flex;
-    justify-content: space-between;`}
 `;
 
 export const headingColorCss = ({

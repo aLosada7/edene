@@ -6,7 +6,6 @@ const HeadingWithIconAndBadge = () => (
     <Group>
         <Heading
             size="h3"
-            weight="light"
             icon={
                 <Icon
                     variant="outlined"
