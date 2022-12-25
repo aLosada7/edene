@@ -24,9 +24,8 @@ export const cardTheme = ({ theme = defaultTheme }) => css`
 `;
 
 export const cardHeader = css`
-    min-height: 1rem;
-    padding: 0.75rem 1.5rem;
-    letter-spacing: 0.5px;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
 `;
 
 export const cardSection = (

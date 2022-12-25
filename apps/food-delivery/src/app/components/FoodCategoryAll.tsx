@@ -10,12 +10,12 @@ export const FoodCategoryAll = ({
         <Col
             md={6}
             align="center"
-            cssOverrides={css`
+            css={css`
                 margin-bottom: 1.5rem;
             `}
         >
             <Card
-                cssOverrides={css`
+                css={css`
                     width: 200px;
                     margin: auto;
                 `}

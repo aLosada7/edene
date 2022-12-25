@@ -1,10 +1,8 @@
 import { inlineError } from './styles';
-import type { InlineFeedbackProps } from './types';
+import { InlineFeedbackProps } from './types';
 
 export const InlineError = (props: InlineFeedbackProps) => {
-    const { children, cssOverrides, ...rest } = {
-        ...props,
-    };
+    const { children, css: cssOverrides, ...rest } = props;
 
     return (
         <div

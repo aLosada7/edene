@@ -22,9 +22,9 @@ export const Default = () => <Text>Hello World</Text>;
 export const Sizes = () => (
     <Stack>
         <Text>Size regular</Text>
-        <Text size="xsm">Size xsm</Text>
-        <Text size="sm">Size sm</Text>
-        <Text size="xxsm">Size xxsm</Text>
+        <Text size="small">Size small</Text>
+        <Text size="xsmall">Size xsmall</Text>
+        <Text size="xxsmall">Size xxsmall</Text>
     </Stack>
 );
 

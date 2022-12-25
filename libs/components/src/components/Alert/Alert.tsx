@@ -1,3 +1,4 @@
+/** @jsxImportSource @emotion/react */
 import { SerializedStyles } from '@emotion/react';
 import { ReactNode } from 'react';
 
@@ -5,6 +6,7 @@ import { useTheme, Props, ComponentColors } from '@edene/foundations';
 
 import { Text } from '../../typography/Text';
 import { alert, alertActions, alertTheme } from './styles';
+import { Box } from '@edene/components';
 
 export interface AlertProps extends Props {
     type?: 'brand' | ComponentColors;
@@ -15,12 +17,18 @@ export interface AlertProps extends Props {
 }
 
 export const Alert = (props: AlertProps) => {
-    const { type = 'brand', actions, children, cssOverrides } = props;
-
+    const {
+        type = 'brand',
+        actions,
+        children,
+        css: cssOverrides,
+        ...rest
+    } = props;
     const { theme } = useTheme();
 
     return (
-        <div
+        <Box
+            role="alert"
             css={
                 [
                     alert,
@@ -28,10 +36,10 @@ export const Alert = (props: AlertProps) => {
                     cssOverrides,
                 ] as SerializedStyles[]
             }
-            role="alert"
+            {...rest}
         >
             <Text>{children}</Text>
             {actions && <div css={alertActions}>{actions}</div>}
-        </div>
+        </Box>
     );
 };

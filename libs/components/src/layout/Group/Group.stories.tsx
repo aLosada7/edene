@@ -1,7 +1,8 @@
 import { Story } from '@storybook/react';
+import { layoutElement } from '@utils/storybook';
 
 import { Group } from './index';
-import { Button } from '../../components/Button';
+import { Box } from '../Box';
 
 export default {
     title: 'Layout/Group',
@@ -15,24 +16,24 @@ export const Playground: Story<{
     item4: string;
 }> = ({ item1, item2, item3, item4 }) => (
     <Group>
-        <span>{item1}</span>
-        <span>{item2}</span>
-        <span>{item3}</span>
-        <span>{item4}</span>
+        <Box css={layoutElement}>{item1}</Box>
+        <Box css={layoutElement}>{item2}</Box>
+        <Box css={layoutElement}>{item3}</Box>
+        <Box css={layoutElement}>{item4}</Box>
     </Group>
 );
 Playground.storyName = '🧶 Playground';
 Playground.args = {
-    item1: '1',
-    item2: '2',
-    item3: '3',
-    item4: '4',
+    item1: 'Item 1',
+    item2: 'Item 2',
+    item3: 'Item 3',
+    item4: 'Item 4',
 };
 
 export const Default: Story = () => (
     <Group>
-        <Button>1</Button>
-        <Button>2</Button>
-        <Button>3</Button>
+        <Box css={layoutElement}>Item 1</Box>
+        <Box css={layoutElement}>Item 2</Box>
+        <Box css={layoutElement}>Item 3</Box>
     </Group>
 );

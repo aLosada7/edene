@@ -24,17 +24,20 @@ export interface HeadingProps extends Props {
     children: ReactElement | React.ReactNode | string;
 }
 
-export const Heading = ({
-    mt = 0,
-    mb = 0,
-    size = 'h1',
-    weight = 'regular',
-    color,
-    align = 'inherit',
-    icon,
-    children,
-    cssOverrides,
-}: HeadingProps) => {
+export const Heading = (props: HeadingProps) => {
+    const {
+        mt = 0,
+        mb = 0,
+        size = 'h1',
+        weight = 'regular',
+        color,
+        align = 'inherit',
+        icon,
+        children,
+        css: cssOverrides,
+        ...rest
+    } = props;
+
     const { theme } = useTheme();
 
     const textColor = color || 'inherit';
@@ -48,6 +51,7 @@ export const Heading = ({
                 icon ? flexText : null,
                 cssOverrides,
             ]}
+            {...rest}
         >
             {icon ? cloneElement(icon) : null}
             {children}

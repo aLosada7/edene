@@ -1,5 +1,6 @@
-import { Fragment } from 'react';
+import { layoutElement } from '@utils/storybook';
 
+import { Box } from '../Box';
 import { Container } from './Container';
 
 export default {
@@ -10,6 +11,12 @@ export default {
     },
 };
 
-export const Default = () => <Container>Content</Container>;
+const StoryComponent = () => <Box css={layoutElement}>Content</Box>;
 
-export const WithoutContainer = () => <Fragment>Content</Fragment>;
+export const Default = () => (
+    <Container>
+        <StoryComponent />
+    </Container>
+);
+
+export const WithoutContainer = () => <StoryComponent />;

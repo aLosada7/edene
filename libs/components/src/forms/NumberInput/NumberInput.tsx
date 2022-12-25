@@ -32,7 +32,7 @@ export interface NumberInputProps
      */
     onChange?: (value: number) => void;
 
-    cssLabelOverrides?: SerializedStyles | SerializedStyles[];
+    cssLabel?: SerializedStyles | SerializedStyles[];
 }
 
 export const NumberInput = forwardRef<HTMLInputElement, NumberInputProps>(
@@ -44,8 +44,8 @@ export const NumberInput = forwardRef<HTMLInputElement, NumberInputProps>(
             max,
             min,
             onChange,
-            cssOverrides,
-            cssLabelOverrides,
+            css: cssOverrides,
+            cssLabel,
             ...rest
         } = props;
 
@@ -68,14 +68,14 @@ export const NumberInput = forwardRef<HTMLInputElement, NumberInputProps>(
             <Label
                 htmlFor={numberInputId}
                 text={labelText}
-                cssOverrides={cssLabelOverrides}
+                css={cssLabel}
             ></Label>
         );
 
         return (
             <FormGroup>
                 {label}
-                <div css={[numberInputWrapper, cssOverrides]}>
+                <div css={[numberInputWrapper, cssOverrides]} {...rest}>
                     <Button
                         variant="outlined"
                         size="xsmall"

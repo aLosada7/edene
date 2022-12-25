@@ -33,12 +33,12 @@ const Template: Story<RadioGroupProps> = (props: RadioGroupProps) => {
                     <TextInput placeholder="Card holder name" />
                 </div>
                 <div css={optionWrapper}>
-                    <Radio value="2" cssLabelOverrides={onlyRadio}>
+                    <Radio value="2" cssLabel={onlyRadio}>
                         $17/month with Affirt
                     </Radio>
                 </div>
                 <div css={optionWrapper}>
-                    <Radio value="3" cssLabelOverrides={onlyRadio}>
+                    <Radio value="3" cssLabel={onlyRadio}>
                         Solana Pay
                     </Radio>
                 </div>

@@ -1,10 +1,19 @@
 import { ReactElement } from 'react';
-import { thead } from './styles';
+import { Props } from '@edene/foundations';
 
-export interface TableHeadProps {
+import { thead } from './styles';
+import { TableRow } from './TableRow';
+
+export interface TableHeadProps extends Props {
     children?: ReactElement | ReactElement[];
 }
 
-export const TableHead = ({ children }: TableHeadProps) => {
-    return <thead css={thead}>{children}</thead>;
+export const TableHead = (props: TableHeadProps) => {
+    const { children, css: cssOverrides, ...rest } = props;
+
+    return (
+        <thead css={[thead, cssOverrides]} {...rest}>
+            <TableRow headerRow>{children}</TableRow>
+        </thead>
+    );
 };

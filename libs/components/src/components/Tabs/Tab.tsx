@@ -24,8 +24,14 @@ type TabComponent = <C = 'button'>(props: TabProps<C>) => React.ReactElement;
 
 export const Tab: TabComponent = forwardRef(
     (props: TabProps<'button'>, ref: PolymorphicRef<'button'>) => {
-        const { component, hidden, label, tabKey, cssOverrides, ...rest } =
-            props;
+        const {
+            component,
+            hidden,
+            label,
+            tabKey,
+            css: cssOverrides,
+            ...rest
+        } = props;
 
         const { orientation, active, color, onTabChange } = useTabs();
         const { theme } = useTheme();
@@ -40,7 +46,7 @@ export const Tab: TabComponent = forwardRef(
                 color="dark"
                 ref={ref}
                 onClick={() => onTabChange(tabKey)}
-                cssOverrides={
+                css={
                     [
                         tab,
                         activeTab && tabSelected(orientation, { theme, color }),

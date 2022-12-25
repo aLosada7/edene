@@ -26,19 +26,21 @@ export interface ColumnProps extends Props {
     children?: ReactNode;
 }
 
-export const Col = ({
-    sm = 24,
-    md = null,
-    lg = null,
-    xl = null,
-    vStack = 0,
-    hStack = 0,
-    align = '',
-    direction = 'row',
-    cssOverrides,
-    children,
-    ...props
-}: ColumnProps) => {
+export const Col = (props: ColumnProps) => {
+    const {
+        sm = 24,
+        md = null,
+        lg = null,
+        xl = null,
+        vStack = 0,
+        hStack = 0,
+        align = '',
+        direction = 'row',
+        css: cssOverrides,
+        children,
+        ...rest
+    } = props;
+
     return (
         <div
             css={[
@@ -46,6 +48,7 @@ export const Col = ({
                 gridColumn(direction, align, vStack, hStack),
                 cssOverrides,
             ]}
+            {...rest}
         >
             {children}
         </div>

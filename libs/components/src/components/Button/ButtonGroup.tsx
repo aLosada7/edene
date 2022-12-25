@@ -12,14 +12,15 @@ export interface ButtonGroupProps extends Props {
     children: ReactElement | ReactElement[];
 }
 
-export function ButtonGroup({
-    component,
-    children,
-    size,
-    variant,
-    cssOverrides,
-    ...props
-}: ButtonGroupProps) {
+export function ButtonGroup(props: ButtonGroupProps) {
+    const {
+        component,
+        children,
+        size,
+        variant,
+        css: cssOverrides,
+        ...rest
+    } = props;
     const elementArgs = {
         ...(size ? { size } : {}),
         ...(variant ? { variant } : {}),
@@ -28,7 +29,7 @@ export function ButtonGroup({
     const Element = component || 'div';
 
     return (
-        <Element css={[btnGroup(size), cssOverrides]} role="group" {...props}>
+        <Element css={[btnGroup(size), cssOverrides]} role="group" {...rest}>
             {(Array.isArray(children) ? children : [children]).map((child) =>
                 cloneElement(child, elementArgs)
             )}

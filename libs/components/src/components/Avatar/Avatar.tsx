@@ -18,16 +18,18 @@ export interface AvatarProps extends Props {
     dotPosition?: AvatarDotPosition;
 }
 
-export function Avatar({
-    size,
-    shape = 'circle',
-    dotPosition = 'top',
-    connected,
-    outline,
-    cssOverrides,
-    ...props
-}: AvatarProps) {
+export function Avatar(props: AvatarProps) {
+    const {
+        size,
+        shape = 'circle',
+        dotPosition = 'top',
+        connected,
+        outline,
+        css: cssOverrides,
+        ...rest
+    } = props;
     const [initials, setInitials] = useState<string | undefined>();
+
     useEffect(() => {
         if (props.name)
             setInitials(
@@ -41,11 +43,11 @@ export function Avatar({
     const { theme } = useTheme();
 
     return (
-        <div css={[avatar(shape, size, { theme }), cssOverrides]}>
+        <div css={[avatar(shape, size, { theme }), cssOverrides]} {...rest}>
             {props.src ? (
                 <Image
                     src={props.src as any}
-                    cssOverrides={[avatarImg(shape, outline)]}
+                    css={[avatarImg(shape, outline)]}
                     alt="Avatar"
                 />
             ) : props.name ? (

@@ -38,7 +38,8 @@ export const Row = (props: RowProps) => {
         noGlutters = false,
         gap,
         children,
-        cssOverrides,
+        css: cssOverrides,
+        ...rest
     } = props;
 
     return (
@@ -47,6 +48,7 @@ export const Row = (props: RowProps) => {
                 gridRow({ direction, px, py, noGlutters, align, gap }),
                 cssOverrides,
             ]}
+            {...rest}
         >
             {children}
         </div>

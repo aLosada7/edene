@@ -11,11 +11,11 @@ import Layout from './Layout';
 const ReportPage = lazy(
     () => import('../../app/dashboards/report/pages/ReportPage')
 );
-const AuthenticationSignInPage = lazy(
-    () =>
-        import(
-            '../../app/pages/authentication/signIn/pages/AuthenticationSignInPage'
-        )
+const UnlockSessionPage = lazy(
+    () => import('../../app/pages/authentication/unlockSession/UnlockSession')
+);
+const SignInPage = lazy(
+    () => import('../../app/pages/authentication/signIn/SignIn')
 );
 const ScoreboardPage = lazy(
     () => import('../../app/applications/scoreboard/pages/ScoreboardPage')
@@ -29,6 +29,9 @@ const ContractRegisterPage = lazy(
         import(
             '../../app/applications/contractRegister/pages/ContractRegisterPage'
         )
+);
+const MusicProductsPage = lazy(
+    () => import('../../app/applications/MusicProducts/MusicProducts')
 );
 
 export default () => {
@@ -46,9 +49,10 @@ export default () => {
                     />
                     <Route path="/dashboards/report" element={<ReportPage />} />
 
+                    <Route path="/pages/signIn" element={<SignInPage />} />
                     <Route
-                        path="/pages/signin/classic"
-                        element={<AuthenticationSignInPage />}
+                        path="/pages/unlockSession"
+                        element={<UnlockSessionPage />}
                     />
 
                     <Route
@@ -62,6 +66,10 @@ export default () => {
                     <Route
                         path="/applications/contract-register"
                         element={<ContractRegisterPage />}
+                    />
+                    <Route
+                        path="/applications/music-products"
+                        element={<MusicProductsPage />}
                     />
                 </Route>
             </Routes>

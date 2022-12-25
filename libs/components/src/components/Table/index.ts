@@ -30,3 +30,5 @@ export type { TableRowProps } from './TableRow';
 
 export { TableCell } from './TableCell';
 export type { TableCellProps } from './TableCell';
+
+export { default as TableProvider, useTable } from './TableProvider';

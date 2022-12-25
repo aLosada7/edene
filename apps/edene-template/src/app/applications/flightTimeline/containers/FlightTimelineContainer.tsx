@@ -68,12 +68,10 @@ export const FlightTimelineContainer = () => {
                         </div>
                         <div>
                             <Text>The flight has landed at 3:50 PM</Text>
-                            <Text cssOverrides={dateInfo(theme)}>
-                                Jul 05, 3:52 PM
-                            </Text>
-                            <Card cssOverrides={note(theme)}>
+                            <Text css={dateInfo(theme)}>Jul 05, 3:52 PM</Text>
+                            <Card css={note(theme)}>
                                 <CardSection>
-                                    <Text cssOverrides={noteHeading}>
+                                    <Text css={noteHeading}>
                                         Thank you for traveling with EDENE
                                         Flights.
                                     </Text>
@@ -97,9 +95,7 @@ export const FlightTimelineContainer = () => {
                         </div>
                         <div>
                             <Text>The flight has taken off at 1:50 PM</Text>
-                            <Text cssOverrides={dateInfo(theme)}>
-                                Jul 05, 1:52 PM
-                            </Text>
+                            <Text css={dateInfo(theme)}>Jul 05, 1:52 PM</Text>
                         </div>
                     </div>
                 </li>
@@ -113,9 +109,7 @@ export const FlightTimelineContainer = () => {
                             <Text>
                                 Last call for the passangers of flight DN-7243
                             </Text>
-                            <Text cssOverrides={dateInfo(theme)}>
-                                Jul 05, 1:41 PM
-                            </Text>
+                            <Text css={dateInfo(theme)}>Jul 05, 1:41 PM</Text>
                         </div>
                     </div>
                 </li>
@@ -128,9 +122,7 @@ export const FlightTimelineContainer = () => {
                             <Text>
                                 Boarding is now allowed for all passangers
                             </Text>
-                            <Text cssOverrides={dateInfo(theme)}>
-                                Jul 05, 11: 59 AM
-                            </Text>
+                            <Text css={dateInfo(theme)}>Jul 05, 11: 59 AM</Text>
                         </div>
                     </div>
                 </li>
@@ -146,9 +138,7 @@ export const FlightTimelineContainer = () => {
                         </div>
                         <div>
                             <Text>Early check-in is opened for everyone</Text>
-                            <Text cssOverrides={dateInfo(theme)}>
-                                Jul 04, 1:50 PM
-                            </Text>
+                            <Text css={dateInfo(theme)}>Jul 04, 1:50 PM</Text>
                         </div>
                     </div>
                 </li>
@@ -161,9 +151,7 @@ export const FlightTimelineContainer = () => {
                             <Text>
                                 Early check in is opened for Premium passengers
                             </Text>
-                            <Text cssOverrides={dateInfo(theme)}>
-                                Jul 04, 1:50 AM
-                            </Text>
+                            <Text css={dateInfo(theme)}>Jul 04, 1:50 AM</Text>
                         </div>
                     </div>
                 </li>
@@ -181,9 +169,7 @@ export const FlightTimelineContainer = () => {
                                 The flight time has been reescheduled to Jul 05,
                                 1:50
                             </Text>
-                            <Text cssOverrides={dateInfo(theme)}>
-                                Jun 20, 8:24 AM
-                            </Text>
+                            <Text css={dateInfo(theme)}>Jun 20, 8:24 AM</Text>
                         </div>
                     </div>
                 </li>

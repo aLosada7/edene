@@ -23,7 +23,7 @@ export const Label = (props: LabelProps) => {
         text,
         supportingText,
         hideLabel = false,
-        cssOverrides,
+        css: cssOverrides,
         children,
         ...rest
     } = props;

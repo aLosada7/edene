@@ -14,13 +14,11 @@
                 "entryFile": "libs/edene-pro-lab/src/index.ts",
                 "external": ["react/jsx-runtime"],
                 "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
-                "assets": [
-                    {
-                        "glob": "libs/edene-pro-lab/README.md",
-                        "input": ".",
-                        "output": "."
-                    }
-                ]
+                "assets": [{
+                    "glob": "libs/edene-pro-lab/README.md",
+                    "input": ".",
+                    "output": "."
+                }]
             }
         },
         "lint": {
@@ -42,7 +40,7 @@
             "executor": "@nrwl/storybook:storybook",
             "options": {
                 "uiFramework": "@storybook/react",
-                "port": 4400,
+                "port": 4401,
                 "config": {
                     "configFolder": "libs/edene-pro-lab/.storybook"
                 }

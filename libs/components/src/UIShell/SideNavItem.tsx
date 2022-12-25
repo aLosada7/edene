@@ -10,7 +10,6 @@ export interface SharedSideNavItemProps
         Props {
     icon?: string;
     badge?: React.ReactElement;
-    hideIcon?: boolean;
     onClose?: () => void;
     active?: boolean;
     children: React.ReactNode;
@@ -32,8 +31,7 @@ export const SideNavItem: SideNavItemComponent = ((
         component,
         icon,
         badge,
-        hideIcon = false,
-        cssOverrides,
+        css: cssOverrides,
         onClose,
         active = false,
         children,
@@ -59,7 +57,7 @@ export const SideNavItem: SideNavItemComponent = ((
                             <Icon
                                 size="small"
                                 color="hsl(212, 20%, 68%)"
-                                cssOverrides={sideNavWithIcon}
+                                css={sideNavWithIcon}
                             >
                                 {icon}
                             </Icon>

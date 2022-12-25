@@ -14,7 +14,7 @@ import {
     TableToolbarContent,
     TableToolbarSearch,
 } from '.';
-import { Table } from './Table';
+import { Table, TableProps } from '.';
 import { rows } from './shared';
 
 export default {
@@ -22,23 +22,21 @@ export default {
     title: 'Components/Table',
 };
 
-export const Default = () => (
-    <Table>
+export const Default = (args: Pick<TableProps, 'selection'>) => (
+    <Table {...args}>
         <TableHead>
-            <TableRow>
-                <TableHeader key="name">Name</TableHeader>
-                <TableHeader key="protocol">Protocol</TableHeader>
-                <TableHeader key="port">Port</TableHeader>
-                <TableHeader key="rule" align="left">
-                    Rule
-                </TableHeader>
-                <TableHeader key="groups">Attached Groups</TableHeader>
-                <TableHeader key="status">Status</TableHeader>
-            </TableRow>
+            <TableHeader key="name">Name</TableHeader>
+            <TableHeader key="protocol">Protocol</TableHeader>
+            <TableHeader key="port">Port</TableHeader>
+            <TableHeader key="rule" align="left">
+                Rule
+            </TableHeader>
+            <TableHeader key="groups">Attached Groups</TableHeader>
+            <TableHeader key="status">Status</TableHeader>
         </TableHead>
         <TableBody>
             {rows.map((row) => (
-                <TableRow>
+                <TableRow key={row.id}>
                     <TableCell>{row.name}</TableCell>
                     <TableCell>{row.protocol}</TableCell>
                     <TableCell>{row.port}</TableCell>

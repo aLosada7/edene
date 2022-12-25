@@ -10,14 +10,7 @@ import {
 
 import { flexText, textCss, textColorCss } from './styles';
 
-export type ITextFontSize =
-    | 'xxsm'
-    | 'xsm'
-    | 'sm'
-    | 'md'
-    | 'lg'
-    | 'xlg'
-    | 'xxlg';
+export type ITextFontSize = 'xxsmall' | 'xsmall' | 'small' | 'regular';
 
 export interface TextProps extends HTMLAttributes<HTMLDivElement>, Props {
     mt?: number;
@@ -32,18 +25,20 @@ export interface TextProps extends HTMLAttributes<HTMLDivElement>, Props {
     children: ReactNode | string;
 }
 
-export const Text = ({
-    mt = 0,
-    mb = 0,
-    ml = 0,
-    size = 'md',
-    weight = 'regular',
-    color,
-    align = 'inherit',
-    icon,
-    children,
-    cssOverrides,
-}: TextProps) => {
+export const Text = (props: TextProps) => {
+    const {
+        mt = 0,
+        mb = 0,
+        ml = 0,
+        size = 'regular',
+        weight = 'regular',
+        color,
+        align = 'inherit',
+        icon,
+        children,
+        css: cssOverrides,
+        ...rest
+    } = props;
     const { theme } = useTheme();
 
     // TODO: take it on account when introducing dark mode support
@@ -57,6 +52,7 @@ export const Text = ({
                 icon ? flexText : null,
                 cssOverrides,
             ]}
+            {...rest}
         >
             {icon
                 ? cloneElement(icon, { color: icon.props.color || 'inherit' })

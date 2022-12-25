@@ -16,14 +16,14 @@ import { Player } from '../types/Player';
 
 export const TeamStandingsComponent = () => (
     <Card
-        cssOverrides={css`
+        css={css`
             width: 100%;
             width: -webkit-fill-available;
             margin: 1rem;
         `}
     >
         <CardSection
-            cssOverrides={css`
+            css={css`
                 padding: 0;
                 height: 100%;
             `}

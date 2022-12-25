@@ -24,10 +24,10 @@ export const textCss = (
     margin-left: calc(${ml} * 0.25rem);
 
     // from bbc
-    ${size === 'xxsm' && text.xxsmall({ fontWeight: 'regular' })}
-    ${size === 'xsm' && text.xsmall({ fontWeight: 'regular' })}
-    ${size === 'sm' && text.small({ fontWeight: 'regular' })}
-    ${size === 'md' && text.regular({ fontWeight: 'regular' })}
+    ${size === 'xxsmall' && text.xxsmall({ fontWeight: 'regular' })}
+    ${size === 'xsmall' && text.xsmall({ fontWeight: 'regular' })}
+    ${size === 'small' && text.small({ fontWeight: 'regular' })}
+    ${size === 'regular' && text.regular({ fontWeight: 'regular' })}
 
     ${weight && `font-weight: ${weight};`}
 

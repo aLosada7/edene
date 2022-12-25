@@ -9,7 +9,11 @@ export interface BreadcrumbProps extends Props {
 }
 
 export const Breadcrumb = (props: BreadcrumbProps) => {
-    const { children, cssOverrides, ...rest } = {
+    const {
+        children,
+        css: cssOverrides,
+        ...rest
+    } = {
         ...props,
     };
 

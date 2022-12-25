@@ -10,15 +10,11 @@ export interface TableContainerProps extends Props {
     children: ReactElement | ReactElement[];
 }
 
-export const TableContainer = ({
-    title,
-    description,
-    cssOverrides,
-    children,
-    ...props
-}: TableContainerProps) => {
+export const TableContainer = (props: TableContainerProps) => {
+    const { title, description, css: cssOverrides, children, ...rest } = props;
+
     return (
-        <div {...props}>
+        <div {...rest}>
             <div css={tableContainerHeader}>
                 <h4>{title}</h4>
                 <p>{description}</p>

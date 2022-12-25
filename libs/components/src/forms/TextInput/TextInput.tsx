@@ -20,7 +20,7 @@ export interface TextInputProps
 
     iconLeft?: string;
 
-    cssLabelOverrides?: SerializedStyles | SerializedStyles[];
+    cssLabel?: SerializedStyles | SerializedStyles[];
 }
 
 export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
@@ -29,19 +29,15 @@ export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
             id,
             label: labelText,
             onChange,
-            cssOverrides,
-            cssLabelOverrides,
+            css: cssOverrides,
+            cssLabel,
             ...rest
         } = props;
 
         const textInputId = id || generateSourceId();
 
         const label = labelText && (
-            <Label
-                htmlFor={textInputId}
-                text={labelText}
-                cssOverrides={cssLabelOverrides}
-            />
+            <Label htmlFor={textInputId} text={labelText} css={cssLabel} />
         );
 
         return (
@@ -49,10 +45,9 @@ export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
                 {label}
                 <Input
                     type="text"
-                    ref={ref}
                     id={textInputId}
+                    ref={ref}
                     onChange={onChange}
-                    css={[cssOverrides]}
                     {...rest}
                 />
             </FormGroup>

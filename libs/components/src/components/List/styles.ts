@@ -13,7 +13,7 @@ export const list = (styleType: ListStyleType) => css`
 `;
 
 export const listItem = (borderBottom: boolean) => css`
-    padding: 12px 24px;
+    padding: 0.5rem;
     ${borderBottom && `border-bottom: 1px solid ${grays[7]};`}
 
     div {

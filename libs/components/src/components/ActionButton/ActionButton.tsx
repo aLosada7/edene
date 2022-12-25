@@ -14,17 +14,14 @@ export interface ActionButtonProps
     variant?: IconVariant;
 }
 
-export const ActionButton = ({
-    children,
-    cssOverrides,
-    variant = 'filled',
-    ...props
-}: ActionButtonProps) => {
+export const ActionButton = (props: ActionButtonProps) => {
+    const { children, variant = 'filled', css: cssOverrides, ...rest } = props;
+
     return (
         <Button
             color="transparent"
-            cssOverrides={[actionButton, cssOverrides] as SerializedStyles[]}
-            {...props}
+            css={[actionButton, cssOverrides] as SerializedStyles[]}
+            {...rest}
         >
             {typeof children === 'string' ? (
                 <Icon variant={variant}>{children as string}</Icon>

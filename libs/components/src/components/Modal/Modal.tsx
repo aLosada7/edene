@@ -1,10 +1,11 @@
 import { ReactElement, useEffect, useRef, Fragment } from 'react';
-import { css } from '@emotion/react';
+import { css, SerializedStyles } from '@emotion/react';
+import { Props } from '@edene/foundations';
 
 import { Card, CardSection } from '../Card';
 import { cardOverrides, modal } from './styles';
 
-interface ModalProps {
+interface ModalProps extends Props {
     id?: string;
     /* Disables onClock trigger for escape key press */
     closeOnEscape?: boolean;
@@ -17,14 +18,17 @@ interface ModalProps {
     children: ReactElement[];
 }
 
-const Modal = ({
-    id,
-    closeOnEscape = true,
-    trapFocus = false,
-    show,
-    onClose,
-    children,
-}: ModalProps) => {
+const Modal = (props: ModalProps) => {
+    const {
+        id,
+        closeOnEscape = true,
+        trapFocus = false,
+        show,
+        onClose,
+        children,
+        css: cssOverrides,
+        ...rest
+    } = props;
     const idRef = useRef<string>('');
     const modalRef = useRef<HTMLElement | null>(null);
 
@@ -54,15 +58,15 @@ const Modal = ({
     if (!show) return <Fragment></Fragment>;
 
     return (
-        <div css={modal} onClick={handleClick}>
+        <div css={[modal, cssOverrides]} onClick={handleClick} {...rest}>
             <Card
                 role="dialog"
-                cssOverrides={cardOverrides}
+                css={[cardOverrides, cssOverrides] as SerializedStyles[]}
                 aria-modal="true"
                 ref={modalRef}
             >
                 <CardSection
-                    cssOverrides={css`
+                    css={css`
                         padding: 1.2rem 2rem;
                     `}
                 >

@@ -23,7 +23,7 @@ export const Header = ({
     return (
         <EdeneHeader
             fixed
-            cssOverrides={header(sideNavWidth, isSideNavExpanded)}
+            css={header(sideNavWidth, isSideNavExpanded)}
             aria-label="Edene Template"
         >
             <HeaderMenuButton

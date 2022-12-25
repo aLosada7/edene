@@ -43,10 +43,7 @@ export const RadioGroup = (props: RadioGroupProps) => {
         <RadioGroupContext.Provider
             value={{ value: radioValue, onChange: handleOnChange }}
         >
-            <Row
-                direction={inline ? 'row' : 'column'}
-                cssOverrides={radioGroup(inline)}
-            >
+            <Row direction={inline ? 'row' : 'column'} css={radioGroup(inline)}>
                 {children}
             </Row>
         </RadioGroupContext.Provider>

@@ -12,22 +12,32 @@ export interface TextareaProps
     extends InputHTMLAttributes<HTMLTextAreaElement>,
         Props,
         FormInput {
-    cssLabelOverrides?: SerializedStyles | SerializedStyles[];
+    cssLabel?: SerializedStyles | SerializedStyles[];
 }
 
 export const Textarea = (props: TextareaProps) => {
-    const { id, label: labelText, cssLabelOverrides, ...rest } = props;
+    const {
+        id,
+        label: labelText,
+        css: cssOverrides,
+        cssLabel,
+        ...rest
+    } = props;
 
     const inputId = id || generateSourceId();
 
     const label = labelText ? (
-        <Label text={labelText} cssOverrides={cssLabelOverrides}></Label>
+        <Label text={labelText} css={cssLabel}></Label>
     ) : null;
 
     return (
         <FormGroup>
             {label}
-            <textarea id={inputId} css={[input, textarea]} {...rest}></textarea>
+            <textarea
+                id={inputId}
+                css={[input, textarea, cssOverrides]}
+                {...rest}
+            ></textarea>
         </FormGroup>
     );
 };

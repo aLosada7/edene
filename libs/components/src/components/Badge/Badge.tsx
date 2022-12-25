@@ -12,7 +12,12 @@ export interface BadgeProps extends Props {
 }
 
 export const Badge = (props: BadgeProps) => {
-    const { children, color, cssOverrides, ...rest } = {
+    const {
+        children,
+        color,
+        css: cssOverrides,
+        ...rest
+    } = {
         ...props,
     };
 

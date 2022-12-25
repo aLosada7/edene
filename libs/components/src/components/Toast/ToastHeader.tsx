@@ -2,14 +2,16 @@ import { Icon } from '../../icons';
 import { ActionButton } from '../ActionButton';
 import { Heading } from '../../typography/Heading';
 import { toastHeader, toastHeading } from './styles';
+import { Props } from '@edene/foundations';
 
-interface ToastHeaderProps {
+export interface ToastHeaderProps extends Props {
     id: string;
     title?: string;
     onClose(id: string): void;
 }
 
-const ToastHeader = ({ id, title, onClose, ...props }: ToastHeaderProps) => {
+const ToastHeader = (props: ToastHeaderProps) => {
+    const { id, title, onClose, css: cssOverrides, ...rest } = props;
     const closeToast = () => onClose(id);
 
     return (
@@ -17,9 +19,9 @@ const ToastHeader = ({ id, title, onClose, ...props }: ToastHeaderProps) => {
             css={toastHeader}
             aria-label="Close"
             data-dismiss="toast"
-            {...props}
+            {...rest}
         >
-            <Heading cssOverrides={toastHeading}>{title}</Heading>
+            <Heading css={toastHeading}>{title}</Heading>
             <ActionButton onClick={closeToast}>
                 <Icon>close</Icon>
             </ActionButton>
@@ -28,5 +30,3 @@ const ToastHeader = ({ id, title, onClose, ...props }: ToastHeaderProps) => {
 };
 
 export default ToastHeader;
-
-export type { ToastHeaderProps };

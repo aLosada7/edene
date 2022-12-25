@@ -11,7 +11,7 @@ import {
 
 export const TeamStatsComponent = () => (
     <Card
-        cssOverrides={css`
+        css={css`
             margin: 1rem;
             text-align: left;
         `}
@@ -20,27 +20,27 @@ export const TeamStatsComponent = () => (
         <CardSection>
             <Row py={1}>
                 <Col sm={12} md={8} direction="column">
-                    <Text size="sm">PTS</Text>
+                    <Text size="small">PTS</Text>
                     <Text weight="bold">55</Text>
                 </Col>
                 <Col sm={12} md={8} direction="column">
-                    <Text size="sm">AST</Text>
+                    <Text size="small">AST</Text>
                     <Text weight="bold">12</Text>
                 </Col>
                 <Col sm={12} md={8} direction="column">
-                    <Text size="sm">REB</Text>
+                    <Text size="small">REB</Text>
                     <Text weight="bold">22</Text>
                 </Col>
                 <Col sm={12} md={8} direction="column">
-                    <Text size="sm">% T3</Text>
+                    <Text size="small">% T3</Text>
                     <Text weight="bold">55%</Text>
                 </Col>
                 <Col sm={12} md={8} direction="column">
-                    <Text size="sm">STL</Text>
+                    <Text size="small">STL</Text>
                     <Text weight="bold">5</Text>
                 </Col>
                 <Col sm={12} md={8} direction="column">
-                    <Text size="sm">BLK</Text>
+                    <Text size="small">BLK</Text>
                     <Text weight="bold">3</Text>
                 </Col>
             </Row>

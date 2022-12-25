@@ -43,12 +43,12 @@ export const ClassroomSectionComponent = ({
         <Heading mt={4} mb={2}>
             {title}
         </Heading>
-        <Text size="sm" color={grays[3]} mb={2}>
+        <Text size="small" color={grays[3]} mb={2}>
             {description}
         </Text>
 
         <Button size="small">{mainAction}</Button>
-        <Button size="small" variant="outlined" cssOverrides={marginLeft}>
+        <Button size="small" variant="outlined" css={marginLeft}>
             {secondaryAction}
         </Button>
     </CardSection>

@@ -45,15 +45,16 @@ export interface AccordionRowProps
     variant?: 'borderless' | 'bordered';
 }
 
-export const AccordionRow = ({
-    children,
-    label,
-    hideToggleLabel = false,
-    variant = 'borderless',
-    onClick = () => undefined,
-    cssOverrides,
-    ...props
-}: AccordionRowProps) => {
+export const AccordionRow = (props: AccordionRowProps) => {
+    const {
+        children,
+        label,
+        hideToggleLabel = false,
+        variant = 'borderless',
+        onClick = () => undefined,
+        css: cssOverrides,
+        ...rest
+    } = props;
     const [expanded, setExpanded] = useState(false);
     const collapse = () => setExpanded(false);
     const expand = () => setExpanded(true);
@@ -64,7 +65,7 @@ export const AccordionRow = ({
     }
 
     return (
-        <li css={[accordionRow(variant), cssOverrides]} {...props}>
+        <li css={[accordionRow(variant), cssOverrides]} {...rest}>
             <button
                 type="button"
                 aria-expanded={expanded}

@@ -19,14 +19,16 @@ export const checkboxLabel = css`
     }
 `;
 
-export const checkboxInput = css`
-    width: 1rem;
-    position: absolute;
-    margin-top: 0.3rem;
-    margin-left: -24px;
+export const checkboxInput = (label: boolean) => css`
     height: auto;
-    position: absolute;
     top: 0;
+
+    ${label &&
+    `
+        width: 1rem;
+        margin-left: -24px;
+        margin-top: 0.3rem;
+        position: absolute;`}
 
     &:focus {
         outline: none;

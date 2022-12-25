@@ -1,11 +1,11 @@
-import { SerializedStyles } from '@emotion/react';
+import { Props } from '@edene/foundations';
 
 import { image } from './styles';
 
 export type ObjectFit = 'cover' | 'contain';
 export type ImageSize = 'c' | 'd' | 'e';
 
-export interface ImageProps {
+export interface ImageProps extends Props {
     src: string;
 
     alt: string;
@@ -16,29 +16,30 @@ export interface ImageProps {
     objectFit?: ObjectFit;
 
     targetBlank?: boolean;
-
-    cssOverrides?: SerializedStyles | SerializedStyles[];
 }
 
-export const Image = ({
-    src,
-    alt,
-    size,
-    objectFit = 'cover',
-    targetBlank = false,
-    cssOverrides,
-}: ImageProps) => {
+export const Image = (props: ImageProps) => {
+    const {
+        src,
+        alt,
+        size,
+        objectFit = 'cover',
+        targetBlank = false,
+        css: cssOverrides,
+        ...rest
+    } = props;
     const img = (
         <img
             loading="lazy"
             src={src}
             alt={alt}
             css={[image(objectFit, size), cssOverrides]}
+            {...rest}
         />
     );
 
     if (targetBlank) {
-        <a target="_blank" href={src}>
+        <a target="_blank" rel="noreferrer" href={src} {...rest}>
             {img}
         </a>;
     }

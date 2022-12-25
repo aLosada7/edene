@@ -48,7 +48,7 @@ export const RestaurantPage = () => {
                 <Col
                     direction="column"
                     lg={6}
-                    cssOverrides={css`
+                    css={css`
                         margin-bottom: 1.5rem;
                     `}
                 >
@@ -96,11 +96,11 @@ export const RestaurantPage = () => {
                         <ModalBody>
                             {foodSelected && foodSelected.price ? (
                                 <Container
-                                    cssOverrides={css`
+                                    css={css`
                                         text-align: center;
                                     `}
                                 >
-                                    <Text size="md">
+                                    <Text size="regular">
                                         {(foodSelected.options || []).includes(
                                             'vegetarian'
                                         ) && `🌱 Vegetarian`}
@@ -108,7 +108,7 @@ export const RestaurantPage = () => {
 
                                     <Text>{foodSelected.description}</Text>
 
-                                    <Text size="xsm">
+                                    <Text size="xsmall">
                                         {(foodSelected.price / 100).toFixed(2) +
                                             ' €'}
                                     </Text>

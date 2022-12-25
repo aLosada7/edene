@@ -45,7 +45,7 @@ export default {
 
 const TeamStats = () => (
     <Card
-        cssOverrides={css`
+        css={css`
             margin: 1rem;
             text-align: left;
         `}
@@ -54,27 +54,27 @@ const TeamStats = () => (
         <CardSection>
             <Row py={1}>
                 <Col sm={12} md={8} direction="column">
-                    <Text size="sm">PTS</Text>
+                    <Text size="small">PTS</Text>
                     <Text weight="bold">55</Text>
                 </Col>
                 <Col sm={12} md={8} direction="column">
-                    <Text size="sm">AST</Text>
+                    <Text size="small">AST</Text>
                     <Text weight="bold">12</Text>
                 </Col>
                 <Col sm={12} md={8} direction="column">
-                    <Text size="sm">REB</Text>
+                    <Text size="small">REB</Text>
                     <Text weight="bold">22</Text>
                 </Col>
                 <Col sm={12} md={8} direction="column">
-                    <Text size="sm">% T3</Text>
+                    <Text size="small">% T3</Text>
                     <Text weight="bold">55%</Text>
                 </Col>
                 <Col sm={12} md={8} direction="column">
-                    <Text size="sm">STL</Text>
+                    <Text size="small">STL</Text>
                     <Text weight="bold">5</Text>
                 </Col>
                 <Col sm={12} md={8} direction="column">
-                    <Text size="sm">BLK</Text>
+                    <Text size="small">BLK</Text>
                     <Text weight="bold">3</Text>
                 </Col>
             </Row>
@@ -84,7 +84,7 @@ const TeamStats = () => (
 
 const Scoring = () => (
     <Card
-        cssOverrides={css`
+        css={css`
             margin: 1rem;
             text-align: left;
         `}
@@ -98,10 +98,10 @@ const Scoring = () => (
                 <Col lg={16} direction="column">
                     <Row direction="column" px={2}>
                         <Text weight="bold">Danial Berry</Text>
-                        <Text size="xsm" weight="bold">
+                        <Text size="xsmall" weight="bold">
                             Jason Chapman, Jake Sullivan
                         </Text>
-                        <Text size="xsm" weight="bold">
+                        <Text size="xsmall" weight="bold">
                             11:20 / 1st
                         </Text>
                     </Row>
@@ -113,14 +113,14 @@ const Scoring = () => (
 
 const GameStandings = () => (
     <Card
-        cssOverrides={css`
+        css={css`
             width: 100%;
             width: -webkit-fill-available;
             margin: 1rem;
         `}
     >
         <CardSection
-            cssOverrides={css`
+            css={css`
                 padding: 0;
                 height: 100%;
             `}
