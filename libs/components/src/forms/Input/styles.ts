@@ -24,7 +24,7 @@ export const input = css`
     padding: 0;
     font-size: 1rem;
     line-height: 1.5;
-    background-color: #fff;
+    background-color: transparent;
     ${text.regular({ lineHeight: 'regular' })};
     padding: 1px 0.75rem;
     box-sizing: border-box;

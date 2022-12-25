@@ -2,7 +2,7 @@
 
 Edene aims to give you everything you need to create and build top class products. It contains completely customizable and reusable React components, animations and hooks. It has been entirely written in Typescript.
 
-Edene also includes the **foundations**, a serie of guidelines and tokens, which give programmers all the necessary to create efficient and eye catching user interfaces, following design principles, and with a focus on user experience.
+Edene also comes with another library called **foundations**, a serie of guidelines and tokens, which give programmers all the necessary to create efficient and eye catching user interfaces, following design principles, and with a focus on user experience.
 
 Edene is not only a component library, goes far beyond that.
 
@@ -28,7 +28,9 @@ $ yarn add @edene/foundations @edene/components
 
 _Foundations library have to be installed along components at this point_
 
-Then use to import the Accordion:
+Then, wrap your application with ThemeProvider, which comes from _@edene/foudations_. You can also override the theme through a parameter. See more on Theme docs.
+
+Finally, import any of the components in your application and use it:
 
 ```typescript
 import { Accordion, AccordionRow } from '@edene/components';

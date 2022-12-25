@@ -52,7 +52,9 @@ Or optionally to your SCSS.
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined');
 ```
 
-Then use to import the Accordion:
+Then, wrap your application with ThemeProvider, which comes from _@edene/foudations_. You can also override the theme through a parameter. See more on Theme docs.
+
+Finally, import any of the components in your application and use it:
 
 ```typescript
 import { Accordion, AccordionRow } from '@edene/components';

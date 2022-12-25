@@ -6,7 +6,6 @@ import {
     SideNavItem,
     SideNavItems,
     SideNavMenu,
-    SideNavMenuItem,
     SideNavPrincipal,
 } from '@edene/components';
 import { transitions } from '@edene/foundations';
@@ -68,15 +67,20 @@ export const SideNav = ({ sideNavWidth, ...props }: SideNavProps) => {
                 </SideNavPrincipal>
                 <SideNavPrincipal title="Pages">
                     <SideNavMenu title="Authentication">
-                        <SideNavMenu title="Sign In">
-                            <SideNavMenuItem
-                                component={NavLink}
-                                to="/pages/signin/classic"
-                                {...props}
-                            >
-                                Basic
-                            </SideNavMenuItem>
-                        </SideNavMenu>
+                        <SideNavItem
+                            component={NavLink}
+                            to="/pages/signIn"
+                            {...props}
+                        >
+                            Sign In
+                        </SideNavItem>
+                        <SideNavItem
+                            component={NavLink}
+                            to="/pages/unlockSession"
+                            {...props}
+                        >
+                            Unlock session
+                        </SideNavItem>
                     </SideNavMenu>
                 </SideNavPrincipal>
             </SideNavItems>

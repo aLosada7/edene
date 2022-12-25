@@ -38,6 +38,7 @@ export * from './hooks/useSwipe';
 
 export * from './icons';
 
+export * from './layout/Box';
 export * from './layout/Grid';
 export * from './layout/Group';
 export * from './layout/Stack';

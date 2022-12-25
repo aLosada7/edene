@@ -50,7 +50,9 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
             <Fragment>
                 {iconLeft && (
                     <div css={iconLeftInput}>
-                        <Icon color="#adb5bd">{iconLeft}</Icon>
+                        <Icon color="#adb5bd" variant="outlined">
+                            {iconLeft}
+                        </Icon>
                     </div>
                 )}
                 <input
