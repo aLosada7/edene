@@ -12,7 +12,7 @@ import {
 
 export const BestScorerComponent = () => (
     <Card
-        cssOverrides={css`
+        css={css`
             margin: 1rem;
             text-align: left;
         `}
@@ -26,10 +26,10 @@ export const BestScorerComponent = () => (
                 <Col lg={16} direction="column">
                     <Row direction="column" px={2}>
                         <Text weight="bold">Danial Berry</Text>
-                        <Text size="xsm" weight="bold">
+                        <Text size="xsmall" weight="bold">
                             Jason Chapman, Jake Sullivan
                         </Text>
-                        <Text size="xsm" weight="bold">
+                        <Text size="xsmall" weight="bold">
                             11:20 / 1st
                         </Text>
                     </Row>

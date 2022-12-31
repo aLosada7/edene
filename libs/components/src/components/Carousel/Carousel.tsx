@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { Props } from '@edene/foundations';
 
 import { useSwipe } from '../../hooks/useSwipe';
 import { Image } from '../Image';
@@ -10,13 +11,13 @@ export interface CarouselMedia {
     alt: string;
 }
 
-export interface CarouselProps {
+export interface CarouselProps extends Props {
     src: CarouselMedia[];
     imageSize?: ImageSize;
 }
 
 export const Carousel = (props: CarouselProps) => {
-    const { src, imageSize = 'c' } = props;
+    const { src, imageSize = 'c', css: cssOverrides, ...rest } = props;
     const [slide, setSlide] = useState(src[0]);
     const ref = useRef<HTMLDivElement>(null);
 
@@ -38,12 +39,12 @@ export const Carousel = (props: CarouselProps) => {
     }, [swipe]);
 
     return (
-        <div ref={scrollRef} css={carousel}>
+        <div ref={scrollRef} css={[carousel, cssOverrides]} {...rest}>
             <Image
                 src={slide.src}
                 alt={slide.alt}
                 size={imageSize}
-                cssOverrides={carouselImage}
+                css={carouselImage}
             />
             <div css={dotList}>
                 {src.map((sl) => (

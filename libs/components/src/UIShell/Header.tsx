@@ -1,11 +1,9 @@
-import { SerializedStyles } from '@emotion/react';
 import { Children, cloneElement } from 'react';
-
-import { useTheme } from '@edene/foundations';
+import { Props, useTheme } from '@edene/foundations';
 
 import { header, headerPosition, headerHeight } from './stylesHeader';
 
-export interface HeaderProps {
+export interface HeaderProps extends Props {
     /**
      * The height of the header
      * By default its value is 48px
@@ -14,28 +12,28 @@ export interface HeaderProps {
     height?: number;
     'aria-label': string;
     children?: React.ReactElement | React.ReactElement[];
-    cssOverrides?: SerializedStyles | SerializedStyles[];
 }
 
-export const Header = ({
-    fixed = false,
-    height = 48,
-    children,
-    cssOverrides,
-    ...props
-}: HeaderProps) => {
+export const Header = (props: HeaderProps) => {
+    const {
+        fixed = false,
+        height = 48,
+        children,
+        css: cssOverrides,
+        ...rest
+    } = props;
     const theme = useTheme();
 
     return (
         <header
+            role="banner"
             css={[
                 header(theme),
                 headerPosition(fixed),
                 headerHeight(height),
                 cssOverrides,
             ]}
-            role="banner"
-            aria-label={props['aria-label']}
+            {...rest}
         >
             {children &&
                 Children.map(children, (child) => {

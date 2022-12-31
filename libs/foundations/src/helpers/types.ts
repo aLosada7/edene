@@ -7,5 +7,5 @@ export interface Props {
     /**
      * Override component styles by passing in the result of [emotion's `css` function/prop](https://emotion.sh/docs/introduction).
      */
-    cssOverrides?: SerializedStyles | SerializedStyles[];
+    css?: SerializedStyles | SerializedStyles[];
 }

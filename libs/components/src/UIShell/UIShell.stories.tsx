@@ -52,7 +52,7 @@ export const Default: Story<HeaderProps> = () => {
                 aria-label="Side navigation"
                 open={isOpen}
                 onClose={toggleMenu}
-                cssOverrides={sideNavHeader}
+                css={sideNavHeader}
             >
                 <SideNavItems>
                     <SideNavMenu title="L0 menu">

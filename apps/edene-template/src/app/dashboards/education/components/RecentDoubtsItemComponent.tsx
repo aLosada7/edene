@@ -16,8 +16,8 @@ export const RecentDoubtsItemComponent = ({
             </Button>
         }
     >
-        <Text size="sm">{title}</Text>
-        <Text size="xsm" color={grays[3]}>
+        <Text size="small">{title}</Text>
+        <Text size="xsmall" color={grays[3]}>
             Asked by {askedBy}
         </Text>
     </ListItem>

@@ -27,6 +27,7 @@ export const headers = {
 
 export const rows = [
     {
+        id: '1',
         name: 'name',
         protocol: 'protocol',
         port: 'port',
@@ -35,6 +36,7 @@ export const rows = [
         status: 'status',
     },
     {
+        id: '2',
         name: 'name',
         protocol: 'protocol',
         port: 'port',
@@ -43,6 +45,7 @@ export const rows = [
         status: 'status',
     },
     {
+        id: '3',
         name: 'name',
         protocol: 'protocol',
         port: 'port',
@@ -51,6 +54,7 @@ export const rows = [
         status: 'status',
     },
     {
+        id: '4',
         name: 'name',
         protocol: 'protocol',
         port: 'port',

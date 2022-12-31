@@ -51,7 +51,6 @@ const viewportEntries = Object.entries(breakpoints).map(([name, width]) => {
             styles: {
                 width: `${width}px`,
                 height: '100%',
-                padding: '0',
             },
             type: viewportMeta[name].type,
         },

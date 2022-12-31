@@ -37,7 +37,7 @@ export const EducationSummaryContainer = () => {
                         </Row>
                     </Col>
                     <Col md={8} align="horizontal-end">
-                        <Text size="xsm" cssOverrides={totalEarnings}>
+                        <Text size="xsmall" css={totalEarnings}>
                             $12.2k Total Earnings
                         </Text>
                     </Col>

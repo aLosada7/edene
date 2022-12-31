@@ -13,35 +13,23 @@ export interface RadioProps {
     value?: string;
     children: string;
     cssOverrides?: SerializedStyles;
-    cssLabelOverrides?: SerializedStyles;
+    cssLabel?: SerializedStyles;
 }
 
-export const Radio = ({
-    id,
-    children,
-    cssOverrides,
-    cssLabelOverrides,
-    ...props
-}: RadioProps) => {
+export const Radio = (props: RadioProps) => {
+    const { id, children, cssOverrides, cssLabel, ...rest } = props;
     const radioId = id || generateSourceId();
     const group = useRadioGroup();
 
     return (
-        <Label
-            cssOverrides={
-                cssLabelOverrides ? [radio, cssLabelOverrides] : radio
-            }
-            text={children}
-        >
+        <Label css={cssLabel ? [radio, cssLabel] : radio} text={children}>
             <Input
-                cssOverrides={
-                    cssOverrides ? [radioInput, cssOverrides] : radioInput
-                }
+                css={[radioInput, cssOverrides] as SerializedStyles[]}
                 type="radio"
                 id={radioId}
                 checked={group.value === props.value}
                 onChange={group.onChange}
-                {...props}
+                {...rest}
             />
         </Label>
     );

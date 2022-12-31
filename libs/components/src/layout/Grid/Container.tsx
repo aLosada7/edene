@@ -35,14 +35,19 @@ export interface ContainerProps extends Props {
     children?: ReactNode;
 }
 
-export const Container = ({
-    pv = 0,
-    ph = 0,
-    mt = 0,
-    children,
-    cssOverrides,
-}: ContainerProps) => {
+export const Container = (props: ContainerProps) => {
+    const {
+        pv = 0,
+        ph = 0,
+        mt = 0,
+        children,
+        css: cssOverrides,
+        ...rest
+    } = props;
+
     return (
-        <div css={[gridContainer(mt, pv, ph), cssOverrides]}>{children}</div>
+        <div css={[gridContainer(mt, pv, ph), cssOverrides]} {...rest}>
+            {children}
+        </div>
     );
 };

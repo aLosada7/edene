@@ -13,5 +13,5 @@ export const useCheckboxGroup = () => {
         [onChangeProp]
     );
 
-    return { onChange, value, isGroup: true };
+    return { onChange, value, isGroup: false };
 };

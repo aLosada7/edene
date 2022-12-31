@@ -11,16 +11,20 @@ export interface CardSectionProps extends Props {
     children?: ReactNode;
 }
 
-export const CardSection = ({
-    borderRight = false,
-    borderBottom = false,
-    flex = 100,
-    children,
-    cssOverrides,
-}: CardSectionProps) => {
+export const CardSection = (props: CardSectionProps) => {
+    const {
+        borderRight = false,
+        borderBottom = false,
+        flex = 100,
+        children,
+        css: cssOverrides,
+        ...rest
+    } = props;
+
     return (
         <section
             css={[cardSection(flex, borderBottom, borderRight), cssOverrides]}
+            {...rest}
         >
             {children}
         </section>

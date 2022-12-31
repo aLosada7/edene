@@ -1,9 +1,10 @@
-import { SerializedStyles } from '@emotion/react';
 import { Fragment } from 'react';
+import { SerializedStyles } from '@emotion/react';
+import { Props } from '@edene/foundations';
 
 import { sidenav, sidenavHeader, navOverlay, aside } from './styles';
 
-export interface SideNavProps {
+export interface SideNavProps extends Props {
     /** Means navbar is fixed. Unit measured in px **/
     fixed?: boolean;
     width?: number;
@@ -16,23 +17,24 @@ export interface SideNavProps {
     /** Introduces an overlay to sidenav with sizes smaller than desktop */
     overlay?: boolean;
     children: JSX.Element;
-    cssOverrides?: SerializedStyles | SerializedStyles[];
-    cssOverridesAside?: SerializedStyles | SerializedStyles[];
+    cssAside?: SerializedStyles | SerializedStyles[];
 }
 
-export const SideNav = ({
-    fixed = false,
-    width = 256,
-    mobileWidth,
-    open = false,
-    headerHeight,
-    onClose,
-    overlay = false,
-    children,
-    cssOverrides,
-    cssOverridesAside,
-    ...props
-}: SideNavProps) => {
+export const SideNav = (props: SideNavProps) => {
+    const {
+        fixed = false,
+        width = 256,
+        mobileWidth,
+        open = false,
+        headerHeight,
+        onClose,
+        overlay = false,
+        children,
+        css: cssOverrides,
+        cssAside,
+        ...rest
+    } = props;
+
     return (
         <Fragment>
             {open && (
@@ -44,7 +46,7 @@ export const SideNav = ({
             <aside
                 css={[
                     aside(fixed, open, width, mobileWidth, headerHeight),
-                    cssOverridesAside,
+                    cssAside,
                 ]}
             >
                 <nav
@@ -56,7 +58,7 @@ export const SideNav = ({
                         headerHeight ? sidenavHeader(open) : null,
                         cssOverrides,
                     ]}
-                    aria-label={props['aria-label']}
+                    {...rest}
                 >
                     {children}
                 </nav>

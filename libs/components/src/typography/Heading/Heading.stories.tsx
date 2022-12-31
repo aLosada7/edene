@@ -32,7 +32,7 @@ export const Sizes = () => (
 
 export const Weights = () => (
     <Stack>
-        <Heading>Light regular</Heading>
         <Heading weight="bold">Light bold</Heading>
+        <Heading>Light regular</Heading>
     </Stack>
 );

@@ -1,6 +1,5 @@
 import { ButtonHTMLAttributes } from 'react';
-
-import { useTheme } from '@edene/foundations';
+import { Props, useTheme } from '@edene/foundations';
 
 import { Badge } from '../components/Badge';
 import {
@@ -12,7 +11,8 @@ import {
 import { Icon } from '../icons';
 
 export interface HeaderGlobalActionProps
-    extends ButtonHTMLAttributes<HTMLButtonElement> {
+    extends ButtonHTMLAttributes<HTMLButtonElement>,
+        Props {
     /**
      * An assistive text to show aria-label value.
      * By default its value is true:
@@ -23,27 +23,31 @@ export interface HeaderGlobalActionProps
     children: string;
 }
 
-export const HeaderGlobalAction = ({
-    showAriaLabel = true,
-    badge,
-    children,
-    ...props
-}: HeaderGlobalActionProps) => {
+export const HeaderGlobalAction = (props: HeaderGlobalActionProps) => {
+    const {
+        showAriaLabel = true,
+        badge,
+        children,
+        css: cssOverrides,
+        ...rest
+    } = props;
     const theme = useTheme();
+
     return (
         <button
             css={[
                 headerGlobalAction(theme),
                 showAriaLabel ? headerGlobalActionAriaLabel : null,
+                cssOverrides,
             ]}
-            {...props}
+            {...rest}
         >
             {showAriaLabel ? (
                 <div css={actionAssistiveText}>{props['aria-label']}</div>
             ) : null}
             {<Icon color={theme.theme.white}>{children}</Icon>}
             {badge ? (
-                <Badge cssOverrides={headerIconBadge}>{badge.toString()}</Badge>
+                <Badge css={headerIconBadge}>{badge.toString()}</Badge>
             ) : null}
         </button>
     );

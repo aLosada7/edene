@@ -1,5 +1,4 @@
 import { HTMLAttributes } from 'react';
-
 import { Props } from '@edene/foundations';
 
 import { breadcrumbItem, breadcrumbItemLink } from './styles';
@@ -18,7 +17,7 @@ export const BreadcrumbItem = (props: BreadcrumbItemProps) => {
         href,
         active = false,
         children,
-        cssOverrides,
+        css: cssOverrides,
         ...rest
     } = {
         ...props,

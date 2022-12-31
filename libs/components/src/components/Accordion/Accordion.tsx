@@ -23,9 +23,10 @@ export const Accordion = (props: AccordionProps) => {
         children,
         hideToggleLabel = false,
         variant = 'borderless',
-        cssOverrides,
+        css: cssOverrides,
         ...rest
     } = props;
+
     return (
         <ul css={[accordion(variant), cssOverrides]} {...rest}>
             {Children.map(children, (child) => {

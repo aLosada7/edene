@@ -17,6 +17,7 @@ export interface CheckboxGroupProps {
 
     /* Called when value changes */
     onChange?: (value: string[]) => void;
+
     children: ReactNode;
 }
 

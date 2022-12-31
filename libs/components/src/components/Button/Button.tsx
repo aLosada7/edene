@@ -64,7 +64,7 @@ export const Button: ButtonComponent = forwardRef(
             loading,
             disabled,
             children,
-            cssOverrides,
+            css: cssOverrides,
             cssOverridesIconRightButton,
             ...rest
         } = props;
@@ -91,7 +91,7 @@ export const Button: ButtonComponent = forwardRef(
                     <Icon
                         variant={iconVariant}
                         size={iconSize}
-                        cssOverrides={buttonIconLeft(isButtonBlock)}
+                        css={buttonIconLeft(isButtonBlock)}
                         color="inherit"
                     >
                         {icon}
@@ -112,7 +112,7 @@ export const Button: ButtonComponent = forwardRef(
                     <Icon
                         variant={iconVariant}
                         size={iconSize}
-                        cssOverrides={
+                        css={
                             [
                                 buttonIconRight(isButtonBlock),
                                 cssOverridesIconRightButton,

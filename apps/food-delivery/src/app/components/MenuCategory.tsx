@@ -39,14 +39,14 @@ export const MenuCategory = ({
 }) => (
     <Row
         py={3}
-        cssOverrides={css`
+        css={css`
             position: relative;
         `}
     >
         <Col
             md={4}
             lg={2}
-            cssOverrides={css`
+            css={css`
                 display: none;
                 ${from.phablet} {
                     display: block;

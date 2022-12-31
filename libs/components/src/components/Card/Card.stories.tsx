@@ -1,7 +1,7 @@
 import { Meta, Story } from '@storybook/react';
 import { css } from '@emotion/react';
 
-import { grays } from '@edene/foundations';
+import { grays, transformUppercase } from '@edene/foundations';
 
 import { Card, CardSection, CardMedia, CardProps } from './index';
 import { Text } from '../../typography/Text';
@@ -57,10 +57,6 @@ const actionButtonFav = css`
     right: 0;
 `;
 
-const transformUppercase = css`
-    text-transform: uppercase;
-`;
-
 const agentSection = css`
     background-color: ${grays[8]};
 `;
@@ -95,22 +91,22 @@ export const WithSlides: Story<CardProps> = () => (
             ]}
             imageSize="d"
         />
-        <ActionButton variant="outlined" cssOverrides={actionButtonFav}>
+        <ActionButton variant="outlined" css={actionButtonFav}>
             hotel_class
         </ActionButton>
         <CardSection borderBottom>
             <Text
-                size="xsm"
+                size="xsmall"
                 weight="bold"
                 color={grays[1]}
-                cssOverrides={[transformUppercase, letterSpacing]}
+                css={[transformUppercase, letterSpacing]}
             >
                 Detached House . 3,426 SQFT
             </Text>
             <Heading size="h3" weight="bold" mt={2}>
                 $1,250,000
             </Heading>
-            <Text size="sm" color={grays[3]}>
+            <Text size="small" color={grays[3]}>
                 742 Evergreen Terrace
             </Text>
         </CardSection>
@@ -146,17 +142,17 @@ export const WithSlides: Story<CardProps> = () => (
                 </Col>
             </Row>
         </CardSection>
-        <CardSection cssOverrides={agentSection}>
+        <CardSection css={agentSection}>
             <Row align="start-center">
                 <Avatar
                     src={avatarSrc}
                     shape="circle"
                     size={30}
-                    cssOverrides={agentAvatar}
+                    css={agentAvatar}
                 />
                 <Row noGlutters direction="column">
                     <Text weight="bold">Tiffany Heffner</Text>
-                    <Text size="xsm" color={grays[3]}>
+                    <Text size="xsmall" color={grays[3]}>
                         (555) 555-4321
                     </Text>
                 </Row>
@@ -166,9 +162,9 @@ export const WithSlides: Story<CardProps> = () => (
             size="block"
             icon="keyboard_arrow_right"
             iconSide="right"
-            cssOverrides={[transformUppercase, noTopBorderRadius]}
+            css={[transformUppercase, noTopBorderRadius]}
         >
-            <Text size="xsm" weight="bold">
+            <Text size="xsmall" weight="bold">
                 Schedule Showing
             </Text>
         </Button>

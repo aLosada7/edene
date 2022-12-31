@@ -9,7 +9,7 @@ const Note = () => (
 
         <div>
             <Text>The client called and said their fence fell over</Text>
-            <Text size="xsm" color={grays[2]}>
+            <Text size="xsmall" color={grays[2]}>
                 System · April 04, 2018 7:13am
             </Text>
         </div>

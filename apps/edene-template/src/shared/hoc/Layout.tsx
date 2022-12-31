@@ -17,14 +17,14 @@ const main = (isSideNavExpanded: boolean) => css`
     }
     margin-top: ${headerHeight}px;
 
-    min-height: 100vh;
+    min-height: calc(100vh - 48px);
 
     background-color: hsl(210, 32%, 93%);
     will-change: margin-left;
 `;
 
 export default () => {
-    const [sideNavOpen, setSideNavOpen] = useState(window.innerWidth > 980);
+    const [sideNavOpen, setSideNavOpen] = useState(false);
 
     const toggleSideNav = () => setSideNavOpen(!sideNavOpen);
 

@@ -41,22 +41,22 @@ const BlogAllSection = (
         md={12}
         lg={8}
         direction="column"
-        cssOverrides={css`
+        css={css`
             margin-bottom: 1.5rem;
         `}
     >
         <article>
             <Image size="d" src={mountain} alt="Picture of a mountain" />
-            <Text size="xxsm" mt={2}>
+            <Text size="xxsmall" mt={2}>
                 01 Jan 2022
             </Text>
             <Heading>My 2021 Annual Review</Heading>
-            <Text size="sm" mt={2}>
+            <Text size="small" mt={2}>
                 Allows to obtain more information about different options.
             </Text>
             <Badge
                 color="gray"
-                cssOverrides={css`
+                css={css`
                     margin-top: 0.5rem;
                 `}
             >
@@ -77,7 +77,7 @@ export const Blog = () => (
                     <Col
                         lg={12}
                         direction="column"
-                        cssOverrides={css`
+                        css={css`
                             margin-bottom: 1.5rem;
                         `}
                     >
@@ -87,17 +87,17 @@ export const Blog = () => (
                                 size="d"
                                 alt="Picture of a mountain"
                             />
-                            <Text size="xxsm" mt={2}>
+                            <Text size="xxsmall" mt={2}>
                                 01 Jan 2022
                             </Text>
                             <Heading size="h3">My 2021 Annual Review</Heading>
-                            <Text size="sm" mt={2}>
+                            <Text size="small" mt={2}>
                                 Allows to obtain more information about
                                 different options.
                             </Text>
                             <Badge
                                 color="gray"
-                                cssOverrides={css`
+                                css={css`
                                     margin-top: 0.5rem;
                                 `}
                             >
@@ -108,13 +108,13 @@ export const Blog = () => (
                     <Col
                         lg={12}
                         direction="column"
-                        cssOverrides={css`
+                        css={css`
                             margin-bottom: 1.5rem;
                         `}
                     >
                         <article>
                             <Row
-                                cssOverrides={css`
+                                css={css`
                                     ${until.desktop} {
                                         margin: 0;
                                     }
@@ -122,7 +122,7 @@ export const Blog = () => (
                             >
                                 <Col
                                     md={12}
-                                    cssOverrides={css`
+                                    css={css`
                                         padding: 0;
                                     `}
                                 >
@@ -130,7 +130,7 @@ export const Blog = () => (
                                         src={mountain}
                                         alt="Picture of a mountain"
                                         size="e"
-                                        cssOverrides={css`
+                                        css={css`
                                             margin-bottom: 0.5rem;
                                         `}
                                     />
@@ -138,24 +138,24 @@ export const Blog = () => (
                                 <Col
                                     md={12}
                                     direction="column"
-                                    cssOverrides={css`
+                                    css={css`
                                         ${until.phablet} {
                                             padding: 0;
                                         }
                                         margin-bottom: 1.5rem;
                                     `}
                                 >
-                                    <Text size="xxsm">01 Jan 2022</Text>
+                                    <Text size="xxsmall">01 Jan 2022</Text>
                                     <Heading size="h3">
                                         My 2021 Annual Review
                                     </Heading>
-                                    <Text size="sm" mt={2}>
+                                    <Text size="small" mt={2}>
                                         Allows to obtain more information about
                                         different options.
                                     </Text>
                                     <Badge
                                         color="gray"
-                                        cssOverrides={css`
+                                        css={css`
                                             margin-top: 0.5rem;
                                         `}
                                     >
@@ -166,7 +166,7 @@ export const Blog = () => (
                         </article>
                         <article>
                             <Row
-                                cssOverrides={css`
+                                css={css`
                                     ${until.desktop} {
                                         margin: 0;
                                     }
@@ -174,7 +174,7 @@ export const Blog = () => (
                             >
                                 <Col
                                     md={12}
-                                    cssOverrides={css`
+                                    css={css`
                                         padding: 0;
                                     `}
                                 >
@@ -182,7 +182,7 @@ export const Blog = () => (
                                         src={mountain}
                                         alt="Picture of a mountain"
                                         size="e"
-                                        cssOverrides={css`
+                                        css={css`
                                             margin-bottom: 0.5rem;
                                         `}
                                     />
@@ -190,23 +190,23 @@ export const Blog = () => (
                                 <Col
                                     md={12}
                                     direction="column"
-                                    cssOverrides={css`
+                                    css={css`
                                         ${until.phablet} {
                                             padding: 0;
                                         }
                                     `}
                                 >
-                                    <Text size="xxsm">01 Jan 2022</Text>
+                                    <Text size="xxsmall">01 Jan 2022</Text>
                                     <Heading size="h3">
                                         My 2021 Annual Review
                                     </Heading>
-                                    <Text size="sm" mt={2}>
+                                    <Text size="small" mt={2}>
                                         Allows to obtain more information about
                                         different options.
                                     </Text>
                                     <Badge
                                         color="gray"
-                                        cssOverrides={css`
+                                        css={css`
                                             margin-top: 0.5rem;
                                         `}
                                     >
@@ -225,7 +225,7 @@ export const Blog = () => (
                     All blog posts
                 </Heading>
                 <Row>
-                    <Col md={8} lg={6} cssOverrides={noPadding}>
+                    <Col md={8} lg={6} css={noPadding}>
                         <SideNav
                             aria-label="Side navigation"
                             mobileWidth="full"
@@ -237,12 +237,12 @@ export const Blog = () => (
                             >
                                 <SideNavPrincipal
                                     title="Blog categories"
-                                    cssOverrides={[noMargin, colorBlack]}
+                                    css={[noMargin, colorBlack]}
                                 >
                                     <SideNavItem
                                         href="javascript:void(0)"
                                         badge={<Badge color="gray">3</Badge>}
-                                        cssOverrides={css`
+                                        css={css`
                                             border-radius: 8px;
                                         `}
                                     >
@@ -250,7 +250,7 @@ export const Blog = () => (
                                     </SideNavItem>
                                     <SideNavItem
                                         href="javascript:void(0)"
-                                        cssOverrides={css`
+                                        css={css`
                                             border-radius: 8px;
                                             margin-bottom: 0.7rem;
                                         `}

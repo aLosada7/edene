@@ -1,0 +1,22 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Overriding styles" />
+
+# Overriding styles
+
+You can override the styles with your own emotion snippet of code or using any of the defined style values.
+
+To do it, you have to use the prop css in your Edene components.
+
+```tsx
+import Button from '@edene/components';
+import transformUppercase from '@edene/foundations';
+
+const App = () => <Button css={[transformUppercase]}>Button</Button>;
+```
+
+## Included styles
+
+The _foundations_ library includes the following util styles:
+
+-   transformUppercase

@@ -36,7 +36,7 @@ export const SideNavMenu = ({
     title,
     active = false,
     icon,
-    cssOverrides,
+    css: cssOverrides,
     children,
     /* from parent */
     navigationChildren = 0,
@@ -66,7 +66,7 @@ export const SideNavMenu = ({
                     <Icon
                         size="small"
                         color="hsl(212, 20%, 68%)"
-                        cssOverrides={sideNavIcon}
+                        css={sideNavIcon}
                     >
                         {icon}
                     </Icon>

@@ -1,17 +1,25 @@
-import { SerializedStyles } from '@emotion/react';
 import { ReactElement } from 'react';
+import { SerializedStyles } from '@emotion/react';
+import { Props } from '@edene/foundations';
 
 import { Heading } from '../../typography/Heading';
 import { cardHeader } from './styles';
 
-export interface CardHeaderProps {
+export interface CardHeaderProps extends Props {
     children: ReactElement | string;
-    cssOverrides?: SerializedStyles | SerializedStyles[];
 }
 
-export const CardHeader = ({ children, ...props }: CardHeaderProps) => {
+export const CardHeader = (props: CardHeaderProps) => {
+    const { children, css: cssOverrides, ...rest } = props;
+
     return (
-        <Heading cssOverrides={cardHeader} {...props}>
+        <Heading
+            size="h2"
+            mt={4}
+            mb={4}
+            css={[cardHeader, cssOverrides] as SerializedStyles[]}
+            {...rest}
+        >
             {children}
         </Heading>
     );

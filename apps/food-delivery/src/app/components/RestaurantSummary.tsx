@@ -29,23 +29,28 @@ export const RestaurantSummary = ({
                             size="e"
                             src={`/assets/${restaurant.slug}.png`}
                             alt={restaurant.name}
-                            cssOverrides={css`
+                            css={css`
                                 object-fit: contain;
                             `}
                         />
                     </Col>
                     <Col md={8} direction="column">
-                        <Text size="md" weight="bold" color={grays[0]} mt={2}>
+                        <Text
+                            size="regular"
+                            weight="bold"
+                            color={grays[0]}
+                            mt={2}
+                        >
                             {restaurant.name}
                         </Text>
-                        <Text size="sm" color={grays[0]}>
+                        <Text size="small" color={grays[0]}>
                             {restaurant.kind}
                         </Text>
                         <RestaurantRating stars={restaurant.rating} />
                     </Col>
                     <Col md={12} direction="column">
                         <Text
-                            size="xsm"
+                            size="xsmall"
                             color={grays[0]}
                             mt={4}
                             icon={<Icon mr={2}>confirmation_number</Icon>}
@@ -53,7 +58,7 @@ export const RestaurantSummary = ({
                             Entrega desde 1.90€ sin pedido mínimo
                         </Text>
                         <Text
-                            size="xsm"
+                            size="xsmall"
                             color="success"
                             icon={<Icon mr={2}>schedule</Icon>}
                         >

@@ -17,7 +17,14 @@ export interface CardProps extends Props {
 
 export const Card = React.forwardRef(
     (
-        { href, role, onClick, children, cssOverrides }: CardProps,
+        {
+            href,
+            role,
+            onClick,
+            children,
+            css: cssOverrides,
+            ...rest
+        }: CardProps,
         ref: React.LegacyRef<HTMLElement> | undefined
     ) => {
         const { theme } = useTheme();
@@ -32,9 +39,10 @@ export const Card = React.forwardRef(
         return (
             <section
                 role={role}
+                ref={ref}
                 css={[card, cardTheme({ theme }), cssOverrides]}
                 onClick={onClick}
-                ref={ref}
+                {...rest}
             >
                 {children}
             </section>

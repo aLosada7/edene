@@ -1,5 +1,4 @@
 import { forwardRef, Fragment, InputHTMLAttributes } from 'react';
-
 import { descriptionId, Props } from '@edene/foundations';
 
 import { Icon } from '../../icons';
@@ -40,7 +39,14 @@ export interface InputProps
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(
     (props: InputProps, ref) => {
-        const { id, error, success, iconLeft, cssOverrides, ...rest } = props;
+        const {
+            id,
+            error,
+            success,
+            iconLeft,
+            css: cssOverrides,
+            ...rest
+        } = props;
 
         const Error = error ? <InlineError>{error}</InlineError> : null;
         const Success =
@@ -50,7 +56,9 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
             <Fragment>
                 {iconLeft && (
                     <div css={iconLeftInput}>
-                        <Icon color="#adb5bd">{iconLeft}</Icon>
+                        <Icon color="#adb5bd" variant="outlined">
+                            {iconLeft}
+                        </Icon>
                     </div>
                 )}
                 <input

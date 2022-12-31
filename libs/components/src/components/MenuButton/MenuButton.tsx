@@ -13,15 +13,17 @@ export interface MenuButtonProps
     variant?: 'light' | 'dark';
 }
 
-export const MenuButton = ({
-    alwaysVisible = false,
-    active = false,
-    variant = 'dark',
-    cssOverrides,
-    ...props
-}: MenuButtonProps) => {
+export const MenuButton = (props: MenuButtonProps) => {
+    const {
+        alwaysVisible = false,
+        active = false,
+        variant = 'dark',
+        css: cssOverrides,
+        ...rest
+    } = props;
+
     return (
-        <button css={[menu, cssOverrides]} {...props}>
+        <button css={[menu, cssOverrides]} {...rest}>
             <div
                 css={[menuLine(variant), active && !alwaysVisible && menuOpen]}
             ></div>

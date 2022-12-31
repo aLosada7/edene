@@ -18,11 +18,11 @@ export const Cart = ({
         {products.map((cartProduct) => (
             <Row key={cartProduct.product.id}>
                 <Col sm={18} direction="column">
-                    <Text size="xsm">
+                    <Text size="xsmall">
                         {(cartProduct.product.price / 100).toFixed(2) + ' €'}
                     </Text>
                     <Text>{cartProduct.product.name}</Text>
-                    <Text size="sm">
+                    <Text size="small">
                         <Fragment>Qty: {cartProduct.quantity}</Fragment>
                     </Text>
                 </Col>

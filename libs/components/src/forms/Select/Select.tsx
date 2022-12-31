@@ -47,7 +47,7 @@ export const Select = (props: SelectProps) => {
         defaultValue,
         onChange,
         children,
-        cssOverrides,
+        css: cssOverrides,
     } = props;
 
     const inputId = id || generateSourceId();
@@ -78,7 +78,7 @@ export const Select = (props: SelectProps) => {
                     component="div"
                     icon="unfold_more"
                     iconSide="right"
-                    cssOverrides={selectButton}
+                    css={selectButton}
                     cssOverridesIconRightButton={selectButtonIconRight}
                     onClick={(e: any) => {
                         e.preventDefault();

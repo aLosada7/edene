@@ -31,7 +31,7 @@ export const Icon = (props: IconProps) => {
         children,
         color = theme.black,
         variant = 'filled',
-        cssOverrides,
+        css: cssOverrides,
         size = 'medium',
         ml = 0,
         mr = 0,

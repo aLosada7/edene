@@ -37,7 +37,7 @@ const AccountSettings = () => (
                     >
                         Basics
                     </Heading>
-                    <Text size="sm">
+                    <Text size="small">
                         Having an up-to-date email address attached to your
                         account is a great step toward improved account
                         security.
@@ -73,7 +73,7 @@ const AccountSettings = () => (
                     >
                         Profile
                     </Heading>
-                    <Text size="sm">
+                    <Text size="small">
                         This information will be shown publicy so be careful
                         what information you provide.
                     </Text>

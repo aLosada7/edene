@@ -33,11 +33,11 @@ export const SettingsContent = ({ open, onClose }: SettingsContentProps) => {
 
     return (
         <div css={settingsContent(open)}>
-            <Container cssOverrides={settingsContentHeader(theme)}>
+            <Container css={settingsContentHeader(theme)}>
                 <Row
                     align="space-between-center"
                     noGlutters
-                    cssOverrides={settingsContentHeaderContent}
+                    css={settingsContentHeaderContent}
                 >
                     <Row align="start-center" noGlutters>
                         <Icon color={theme.white}>settings</Icon>

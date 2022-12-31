@@ -5,6 +5,12 @@ import { tooltip } from './styles';
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface TooltipProps extends Props {}
 
-export const Tooltip = ({ cssOverrides }: TooltipProps) => {
-    return <div css={[tooltip, cssOverrides]}>Tooltip</div>;
+export const Tooltip = (props: TooltipProps) => {
+    const { css: cssOverrides, ...rest } = props;
+
+    return (
+        <div css={[tooltip, cssOverrides]} {...rest}>
+            Tooltip
+        </div>
+    );
 };

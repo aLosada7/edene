@@ -1,4 +1,12 @@
-import { Avatar, Button, ListItem, Stack, Text } from '@edene/components';
+import {
+    Avatar,
+    Box,
+    Button,
+    ListItem,
+    Row,
+    Stack,
+    Text,
+} from '@edene/components';
 import { grays } from '@edene/foundations';
 
 export const NewStudentsItemComponent = ({
@@ -18,13 +26,16 @@ export const NewStudentsItemComponent = ({
             </Button>
         }
     >
-        <Avatar size={40} src={avatar} />
-        <Stack>
-            <Text>{name}</Text>
-            <Text size="sm" color={grays[3]}>
-                {' '}
-                Joined {register}
-            </Text>
-        </Stack>
+        <Row>
+            <Box>
+                <Avatar size={40} src={avatar} />
+                <Stack>
+                    <Text>{name}</Text>
+                    <Text size="small" color={grays[3]}>
+                        Joined {register}
+                    </Text>
+                </Stack>
+            </Box>
+        </Row>
     </ListItem>
 );

@@ -18,7 +18,7 @@ export const Divider = (props: DividerProps) => {
         mt = 0,
         mb = 0,
         mh = 0,
-        cssOverrides,
+        css: cssOverrides,
         ...rest
     } = {
         ...props,
