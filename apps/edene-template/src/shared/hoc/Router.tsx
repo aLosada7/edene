@@ -33,6 +33,23 @@ const ContractRegisterPage = lazy(
 const MusicProductsPage = lazy(
     () => import('../../app/applications/MusicProducts/MusicProducts')
 );
+const ThemeParksPage = lazy(() => import('../../app/applications/ThemeParks'));
+
+const routes = [
+    {
+        path: 'applications',
+        name: 'Applications',
+        children: [
+            {
+                name: 'Theme Parks',
+                path: 'theme-parks',
+                element: <ThemeParksPage />,
+            },
+        ],
+    },
+];
+
+console.log(routes);
 
 export default () => {
     return (
@@ -71,6 +88,12 @@ export default () => {
                         path="/applications/music-products"
                         element={<MusicProductsPage />}
                     />
+                    {routes[0].children.map((route) => (
+                        <Route
+                            path={`${routes[0].path}/${route.path}`}
+                            element={route.element}
+                        />
+                    ))}
                 </Route>
             </Routes>
         </Router>

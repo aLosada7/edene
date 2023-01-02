@@ -29,6 +29,7 @@ const APPLICATIONS = [
     'Flight Timeline',
     'Contract Register',
     'Music Products',
+    'Theme Parks',
 ];
 
 export const SideNav = ({ sideNavWidth, ...props }: SideNavProps) => {
