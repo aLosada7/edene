@@ -1,6 +1,6 @@
-See full docs in [Storybook](https://main--62ed74f612c78f7bbe13743e.chromatic.com)
-
 # Edene
+
+[![Storybook](https://cdn.jsdelivr.net/gh/storybooks/brand@master/badge/badge-storybook.svg)](https://main--62ed74f612c78f7bbe13743e.chromatic.com)
 
 Edene aims to give you everything you need to create and build top class products. It contains completely customizable and reusable React components, animations and hooks. It has been entirely written in Typescript.
 
