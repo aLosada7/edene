@@ -8,7 +8,17 @@ Edene also comes with another library called **foundations**, a serie of guideli
 
 Edene is not only a component library, goes far beyond that.
 
-## Installation
+## Documentation index
+
+Please familiarise yourself with our:
+
+-   [Changelog](https://main--62ed74f612c78f7bbe13743e.chromatic.com/?path=/story/changelog--page)
+-   [Contributing Guidelines](https://main--62ed74f612c78f7bbe13743e.chromatic.com/?path=/story/contributing-guidelines--page)
+-   [Overriding Styles](https://main--62ed74f612c78f7bbe13743e.chromatic.com/?path=/story/overriding-styles--page)
+-   [Theme](https://main--62ed74f612c78f7bbe13743e.chromatic.com/?path=/story/theme--page)
+-   [Tokens - Colors](https://main--62ed74f612c78f7bbe13743e.chromatic.com/?path=/story/colors--page)
+
+## Getting started
 
 We recommend installing the following packages first:
 

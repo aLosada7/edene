@@ -1,0 +1,26 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Contributing guidelines" />
+
+# Contribute
+
+Everyone is invited to contribute.
+
+We highly recommend you to clone the repository in your machine.
+
+```bash
+git clone git@github.com:aLosada7/edene.git
+```
+
+You can use Dev containers to use a shared development environment. If you use VSCode, install `Dev Containers` extension and reopen the project in a container.
+
+For each issue a new _branch_ has to be added to the repository (rebasing master branch).
+
+Remember:
+
+-   Each component should have a playground (whenever is possible) and it has to allow playing with as many properties as possible.
+-   There is one default story, and different stories to simulate the behaviour of each property.
+    -   If the property is a boolean or text value, the story name has to be _With\*_ being \* the property name. For example: WithIcon.
+    -   If there are different values, the story name should be _\*_ with the first letter in uppercase. For example: Types.
+-   Before adding broken API modifications (tokens, types, ...), an issue with analyzing the change must first be approved.
+-   Pull Requests have to be approved by one of the repository owners (because this is a small community). A pipeline with automatic tests will be triggered and there will be run extra checks in Chromatic.
