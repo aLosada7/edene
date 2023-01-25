@@ -9,15 +9,14 @@ import {
 } from '@edene/foundations';
 
 import { flexText, textCss, textColorCss } from './styles';
-
-export type ITextFontSize = 'xxsmall' | 'xsmall' | 'small' | 'regular';
+import { TextSize } from './types';
 
 export interface TextProps extends HTMLAttributes<HTMLDivElement>, Props {
     mt?: number;
     // in titles only soon
     mb?: number;
     ml?: number;
-    size?: ITextFontSize;
+    size?: TextSize;
     weight?: FontWeight;
     color?: EdeneColor;
     align?: TextAlign;

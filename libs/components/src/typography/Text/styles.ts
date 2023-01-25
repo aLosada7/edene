@@ -1,4 +1,4 @@
-import { css } from '@emotion/react';
+import { css, SerializedStyles } from '@emotion/react';
 
 import {
     defaultTheme,
@@ -9,13 +9,33 @@ import {
     TextAlign,
 } from '@edene/foundations';
 
-import { ITextFontSize } from './Text';
+import { TextSize } from './types';
+
+const textSizeXXSmall = css`
+    ${text.xxsmall({ fontWeight: 'regular' })}
+`;
+const textSizeXSmall = css`
+    ${text.xsmall({ fontWeight: 'regular' })}
+`;
+const textSizeSmall = css`
+    ${text.small({ fontWeight: 'regular' })}
+`;
+const textSizeRegular = css`
+    ${text.regular({ fontWeight: 'regular' })}
+`;
+
+const sizes: { [key in TextSize]: SerializedStyles } = {
+    xxsmall: textSizeXXSmall,
+    xsmall: textSizeXSmall,
+    small: textSizeSmall,
+    regular: textSizeRegular,
+};
 
 export const textCss = (
     mt: number,
     mb: number,
     ml: number,
-    size: ITextFontSize,
+    size: TextSize,
     align: TextAlign,
     weight?: FontWeight
 ) => css`
@@ -24,10 +44,7 @@ export const textCss = (
     margin-left: calc(${ml} * 0.25rem);
 
     // from bbc
-    ${size === 'xxsmall' && text.xxsmall({ fontWeight: 'regular' })}
-    ${size === 'xsmall' && text.xsmall({ fontWeight: 'regular' })}
-    ${size === 'small' && text.small({ fontWeight: 'regular' })}
-    ${size === 'regular' && text.regular({ fontWeight: 'regular' })}
+    ${sizes[size]}
 
     ${weight && `font-weight: ${weight};`}
 
