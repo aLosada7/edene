@@ -8,6 +8,7 @@ import {
     Text,
     CardHeader,
 } from '@edene/components';
+import { grays } from '@edene/foundations';
 
 export const TeamStatsComponent = () => (
     <Card
@@ -20,27 +21,39 @@ export const TeamStatsComponent = () => (
         <CardSection>
             <Row py={1}>
                 <Col sm={12} md={8} direction="column">
-                    <Text size="small">PTS</Text>
+                    <Text size="xsmall" color={grays[3]}>
+                        PTS
+                    </Text>
                     <Text weight="bold">55</Text>
                 </Col>
                 <Col sm={12} md={8} direction="column">
-                    <Text size="small">AST</Text>
+                    <Text size="xsmall" color={grays[3]}>
+                        AST
+                    </Text>
                     <Text weight="bold">12</Text>
                 </Col>
                 <Col sm={12} md={8} direction="column">
-                    <Text size="small">REB</Text>
+                    <Text size="xsmall" color={grays[3]}>
+                        REB
+                    </Text>
                     <Text weight="bold">22</Text>
                 </Col>
                 <Col sm={12} md={8} direction="column">
-                    <Text size="small">% T3</Text>
+                    <Text size="xsmall" color={grays[3]}>
+                        % T3
+                    </Text>
                     <Text weight="bold">55%</Text>
                 </Col>
                 <Col sm={12} md={8} direction="column">
-                    <Text size="small">STL</Text>
+                    <Text size="small" color={grays[3]}>
+                        STL
+                    </Text>
                     <Text weight="bold">5</Text>
                 </Col>
                 <Col sm={12} md={8} direction="column">
-                    <Text size="small">BLK</Text>
+                    <Text size="small" color={grays[3]}>
+                        BLK
+                    </Text>
                     <Text weight="bold">3</Text>
                 </Col>
             </Row>

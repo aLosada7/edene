@@ -6,6 +6,7 @@ import {
     Heading,
     Text,
     Avatar,
+    Box,
 } from '@edene/components';
 import { grays } from '@edene/foundations';
 import { css } from '@emotion/react';
@@ -37,9 +38,9 @@ export const EducationSummaryContainer = () => {
                         </Row>
                     </Col>
                     <Col md={8} align="horizontal-end">
-                        <Text size="xsmall" css={totalEarnings}>
-                            $12.2k Total Earnings
-                        </Text>
+                        <Box css={totalEarnings}>
+                            <Text size="xsmall">$12.2k Total Earnings</Text>
+                        </Box>
                     </Col>
                 </Row>
             </CardSection>
