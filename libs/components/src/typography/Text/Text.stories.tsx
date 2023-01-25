@@ -1,3 +1,4 @@
+import { defaultTheme } from '@edene/foundations';
 import { Story } from '@storybook/react';
 
 import { Stack } from '../../layout/Stack';
@@ -14,6 +15,7 @@ export const Playground: Story<TextProps & { text: string }> = ({
 }) => <Text {...args}>{text}</Text>;
 Playground.storyName = '🧶 Playground';
 Playground.args = {
+    ...defaultTheme.text,
     text: 'Hello World',
 };
 

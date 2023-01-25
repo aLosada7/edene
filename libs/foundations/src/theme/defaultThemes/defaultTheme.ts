@@ -9,7 +9,7 @@ import {
 } from '../../palette';
 import { Theme } from '../types';
 
-export const defaultTheme: Theme = {
+export const defaultTheme: Required<Theme> = {
     title: 'default',
     lightColor: '#F8D7DA',
     color: brandColor,
@@ -35,9 +35,10 @@ export const defaultTheme: Theme = {
         active: 'transparent',
         hover: '#e5e5e5',
     },
-    text: grays[1],
-    headings: {
-        h4: 'hsl(202, 57%, 15%)',
-        h5: 'hsl(201, 23%, 34%)',
+    text: {
+        color: grays[1],
+    },
+    heading: {
+        color: grays[1],
     },
 };
