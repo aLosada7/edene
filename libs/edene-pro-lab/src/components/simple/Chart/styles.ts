@@ -1,5 +1,5 @@
 import { css } from '@emotion/react';
-import { defaultTheme } from '@edene/foundations';
+import { Theme } from '@edene/foundations';
 
 export const card = css`
     position: relative;
@@ -9,7 +9,7 @@ export const card = css`
     box-shadow: 0 50px 100px rgba(0, 0, 0, 0.08);
 `;
 
-export const header = (theme = defaultTheme) => css`
+export const header = (theme: Theme) => css`
     padding: 32px 20px 32px 32px;
     display: flex;
     justify-content: space-between;

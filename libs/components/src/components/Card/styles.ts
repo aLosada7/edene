@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 
-import { defaultTheme, from, grays } from '@edene/foundations';
+import { from, grays, Theme } from '@edene/foundations';
 
 export const card = css`
     display: block !important;
@@ -19,7 +19,7 @@ export const card = css`
     }
 `;
 
-export const cardTheme = ({ theme = defaultTheme }) => css`
+export const cardTheme = ({ theme }: { theme: Theme }) => css`
     background-color: ${theme.grays[9]};
 `;
 
