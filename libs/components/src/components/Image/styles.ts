@@ -1,8 +1,14 @@
 import { css } from '@emotion/react';
 
-import { ObjectFit } from './Image';
+import { ImageObjectFit, ImageSize } from './types';
 
-export const image = (objectFit: ObjectFit, size?: string) => css`
+const sizes: { [key in ImageSize]: number } = {
+    c: 304,
+    d: 194,
+    e: 124,
+};
+
+export const image = (objectFit: ImageObjectFit, size?: ImageSize) => css`
     border: 0;
     max-width: 100%;
     height: auto;
@@ -11,7 +17,5 @@ export const image = (objectFit: ObjectFit, size?: string) => css`
     width: 100%;
     object-fit: ${objectFit};
 
-    ${size === 'c' && `height: 304px !important;`}
-    ${size === 'd' && `height: 194px !important;`}
-    ${size === 'e' && `height: 124px !important;`}
+    ${size && `height: ${sizes[size]}px !important;`}
 `;

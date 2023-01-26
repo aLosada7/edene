@@ -1,35 +1,19 @@
-import { Props } from '@edene/foundations';
-
 import { image } from './styles';
+import { ImgComponent, PImageProps } from './types';
 
-export type ObjectFit = 'cover' | 'contain';
-export type ImageSize = 'c' | 'd' | 'e';
-
-export interface ImageProps extends Props {
-    src: string;
-
-    alt: string;
-
-    /** Johannes sizes */
-    size?: ImageSize;
-
-    objectFit?: ObjectFit;
-
-    targetBlank?: boolean;
-}
-
-export const Image = (props: ImageProps) => {
+export const Image: ImgComponent = ((props: PImageProps<'img'>) => {
     const {
+        component: Element = 'img',
         src,
         alt,
         size,
         objectFit = 'cover',
-        targetBlank = false,
         css: cssOverrides,
         ...rest
     } = props;
+
     const img = (
-        <img
+        <Element
             loading="lazy"
             src={src}
             alt={alt}
@@ -38,10 +22,5 @@ export const Image = (props: ImageProps) => {
         />
     );
 
-    if (targetBlank) {
-        <a target="_blank" rel="noreferrer" href={src} {...rest}>
-            {img}
-        </a>;
-    }
     return img;
-};
+}) as ImgComponent;

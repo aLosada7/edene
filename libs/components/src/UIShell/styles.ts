@@ -192,13 +192,12 @@ export const navItem = ({ theme = defaultTheme }: ThemeOptions) => css`
     background-color: ${theme.sideNav.background};
 `;
 
-export const sideNavPrincipal = ({ theme }: { theme: Theme }) => css`
+export const sideNavPrincipal = css`
     padding-left: 1rem;
     margin-top: 1.5rem;
 
     span {
         ${text.xxsmall({ fontWeight: 'bold' })};
-        color: ${theme.color};
         text-transform: uppercase;
     }
 `;
