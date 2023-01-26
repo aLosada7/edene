@@ -2,8 +2,6 @@ import { css } from '@emotion/react';
 import {
     defaultTheme,
     heading,
-    ThemeOptions,
-    getColor,
     FontWeight,
     TextAlign,
 } from '@edene/foundations';
@@ -29,12 +27,12 @@ export const headingCss = (
     text-align: ${align};
 `;
 
-export const headingColorCss = ({
-    color,
-    theme = defaultTheme,
-}: ThemeOptions) => css`
-    color: ${getColor({ theme, color })};
-    fill: ${getColor({ theme, color })};
+export const headingColor = (
+    themeColor = defaultTheme.heading.color,
+    color?: string
+) => css`
+    color: ${color || themeColor};
+    fill: ${color || themeColor};
 `;
 
 export const flexText = css`

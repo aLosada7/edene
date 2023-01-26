@@ -9,6 +9,7 @@ import {
     Image,
     Text,
     Icon,
+    Box,
 } from '@edene/components';
 
 import { IRestaurant } from '../context/restaurants';
@@ -35,15 +36,12 @@ export const RestaurantSummary = ({
                         />
                     </Col>
                     <Col md={8} direction="column">
-                        <Text
-                            size="regular"
-                            weight="bold"
-                            color={grays[0]}
-                            mt={2}
-                        >
-                            {restaurant.name}
-                        </Text>
-                        <Text size="small" color={grays[0]}>
+                        <Box>
+                            <Text size="regular" weight="bold" color={grays[0]}>
+                                {restaurant.name}
+                            </Text>
+                        </Box>
+                        <Text size="small" color={grays[2]}>
                             {restaurant.kind}
                         </Text>
                         <RestaurantRating stars={restaurant.rating} />

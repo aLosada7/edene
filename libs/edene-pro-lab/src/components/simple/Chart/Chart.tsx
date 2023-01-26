@@ -1,5 +1,5 @@
 import { Button, Heading } from '@edene/components';
-import { Theme, defaultTheme } from '@edene/foundations';
+import { Theme } from '@edene/foundations';
 import { useState } from 'react';
 import ApexChart from 'react-apexcharts';
 
@@ -29,7 +29,7 @@ const defaultOptions = {
     },
 };
 
-const options = (theme = defaultTheme) => {
+const options = (theme: Theme) => {
     return {
         ...defaultOptions,
         colors: [theme.color, colorDefault],
@@ -87,7 +87,7 @@ const ToggleButtons = ({ setSeries, setActiveButton, activeButton }: any) => {
     );
 };
 
-const Chart = ({ theme }: { theme?: Theme }) => {
+const Chart = ({ theme }: { theme: Theme }) => {
     const [series, setSeries] = useState(daily);
     const [activeButton, setActiveButton] = useState('Daily');
 

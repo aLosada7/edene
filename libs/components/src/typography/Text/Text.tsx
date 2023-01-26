@@ -1,25 +1,27 @@
 import { cloneElement, HTMLAttributes, ReactElement, ReactNode } from 'react';
 
 import {
-    EdeneColor,
     useTheme,
     FontWeight,
     TextAlign,
     Props,
+    TextTheme,
 } from '@edene/foundations';
 
-import { flexText, textCss, textColorCss } from './styles';
+import { flexText, textCss, textColor } from './styles';
 
 export type ITextFontSize = 'xxsmall' | 'xsmall' | 'small' | 'regular';
 
-export interface TextProps extends HTMLAttributes<HTMLDivElement>, Props {
+export interface TextProps
+    extends HTMLAttributes<HTMLDivElement>,
+        TextTheme,
+        Props {
     mt?: number;
     // in titles only soon
     mb?: number;
     ml?: number;
     size?: ITextFontSize;
     weight?: FontWeight;
-    color?: EdeneColor;
     align?: TextAlign;
     icon?: ReactElement;
     children: ReactNode | string;
@@ -32,23 +34,20 @@ export const Text = (props: TextProps) => {
         ml = 0,
         size = 'regular',
         weight = 'regular',
-        color,
         align = 'inherit',
         icon,
+        color,
         children,
         css: cssOverrides,
         ...rest
     } = props;
     const { theme } = useTheme();
 
-    // TODO: take it on account when introducing dark mode support
-    const textColor = color || 'inherit';
-
     return (
         <div
             css={[
                 textCss(mt, mb, ml, size, align, weight),
-                textColorCss({ theme, color: textColor }),
+                textColor(theme?.text?.color, color),
                 icon ? flexText : null,
                 cssOverrides,
             ]}

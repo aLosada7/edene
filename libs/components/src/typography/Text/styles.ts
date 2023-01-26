@@ -1,13 +1,6 @@
 import { css } from '@emotion/react';
 
-import {
-    defaultTheme,
-    text,
-    ThemeOptions,
-    getColor,
-    FontWeight,
-    TextAlign,
-} from '@edene/foundations';
+import { defaultTheme, text, FontWeight, TextAlign } from '@edene/foundations';
 
 import { ITextFontSize } from './Text';
 
@@ -34,12 +27,12 @@ export const textCss = (
     text-align: ${align};
 `;
 
-export const textColorCss = ({
-    color,
-    theme = defaultTheme,
-}: ThemeOptions) => css`
-    color: ${getColor({ theme, color })};
-    fill: ${getColor({ theme, color })};
+export const textColor = (
+    themeColor = defaultTheme.text.color,
+    color?: string
+) => css`
+    color: ${color || themeColor};
+    fill: ${color || themeColor};
 `;
 
 export const flexText = css`

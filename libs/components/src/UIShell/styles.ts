@@ -192,7 +192,7 @@ export const navItem = ({ theme = defaultTheme }: ThemeOptions) => css`
     background-color: ${theme.sideNav.background};
 `;
 
-export const sideNavPrincipal = ({ theme = defaultTheme }) => css`
+export const sideNavPrincipal = ({ theme }: { theme: Theme }) => css`
     padding-left: 1rem;
     margin-top: 1.5rem;
 
@@ -249,7 +249,7 @@ export const navLink = css`
     }
 `;
 
-export const navMenuLinkActive = ({ theme = defaultTheme }) => css`
+export const navMenuLinkActive = ({ theme }: { theme: Theme }) => css`
     background-color: ${background.secondary};
 
     :before {

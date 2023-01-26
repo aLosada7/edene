@@ -10,6 +10,16 @@ export interface Theme {
     header?: any;
     label?: any;
     sideNav?: any;
-    text: string;
-    headings: any;
+    // text: string;
+
+    text?: TextTheme;
+    heading?: HeadingTheme;
+}
+
+export interface TextTheme {
+    color?: string;
+}
+
+export interface HeadingTheme {
+    color?: string;
 }

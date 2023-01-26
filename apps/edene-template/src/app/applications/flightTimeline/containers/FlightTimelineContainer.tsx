@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
 
 import { Card, CardSection, Container, Text, Icon } from '@edene/components';
-import { text, Theme, useTheme } from '@edene/foundations';
+import { grays, Theme, useTheme } from '@edene/foundations';
 
 import { DateBadgeComponent } from '../components/DateBadgeComponent';
 import { TimelineComponent } from '../components/TimelineComponent';
@@ -36,19 +36,10 @@ const icon = css`
     justify-content: center;
 `;
 
-const dateInfo = (theme: Theme) => css`
-    ${text.small({ fontWeight: 'regular' })};
-    color: ${theme.grays[3]};
-`;
-
 const note = (theme: Theme) => css`
     margin-top: 1rem;
     background-color: ${theme.grays[6]};
     box-shadow: none;
-`;
-
-const noteHeading = css`
-    ${text.regular({ fontWeight: 'bold' })};
 `;
 
 export const FlightTimelineContainer = () => {
@@ -68,10 +59,12 @@ export const FlightTimelineContainer = () => {
                         </div>
                         <div>
                             <Text>The flight has landed at 3:50 PM</Text>
-                            <Text css={dateInfo(theme)}>Jul 05, 3:52 PM</Text>
+                            <Text size="small" color={grays[3]}>
+                                Jul 05, 3:52 PM
+                            </Text>
                             <Card css={note(theme)}>
                                 <CardSection>
-                                    <Text css={noteHeading}>
+                                    <Text weight="bold">
                                         Thank you for traveling with EDENE
                                         Flights.
                                     </Text>
@@ -95,7 +88,9 @@ export const FlightTimelineContainer = () => {
                         </div>
                         <div>
                             <Text>The flight has taken off at 1:50 PM</Text>
-                            <Text css={dateInfo(theme)}>Jul 05, 1:52 PM</Text>
+                            <Text size="small" color={grays[3]}>
+                                Jul 05, 1:52 PM
+                            </Text>
                         </div>
                     </div>
                 </li>
@@ -109,7 +104,9 @@ export const FlightTimelineContainer = () => {
                             <Text>
                                 Last call for the passangers of flight DN-7243
                             </Text>
-                            <Text css={dateInfo(theme)}>Jul 05, 1:41 PM</Text>
+                            <Text size="small" color={grays[3]}>
+                                Jul 05, 1:41 PM
+                            </Text>
                         </div>
                     </div>
                 </li>
@@ -122,7 +119,9 @@ export const FlightTimelineContainer = () => {
                             <Text>
                                 Boarding is now allowed for all passangers
                             </Text>
-                            <Text css={dateInfo(theme)}>Jul 05, 11: 59 AM</Text>
+                            <Text size="small" color={grays[3]}>
+                                Jul 05, 11: 59 AM
+                            </Text>
                         </div>
                     </div>
                 </li>
@@ -138,7 +137,9 @@ export const FlightTimelineContainer = () => {
                         </div>
                         <div>
                             <Text>Early check-in is opened for everyone</Text>
-                            <Text css={dateInfo(theme)}>Jul 04, 1:50 PM</Text>
+                            <Text size="small" color={grays[3]}>
+                                Jul 04, 1:50 PM
+                            </Text>
                         </div>
                     </div>
                 </li>
@@ -151,7 +152,9 @@ export const FlightTimelineContainer = () => {
                             <Text>
                                 Early check in is opened for Premium passengers
                             </Text>
-                            <Text css={dateInfo(theme)}>Jul 04, 1:50 AM</Text>
+                            <Text size="small" color={grays[3]}>
+                                Jul 04, 1:50 AM
+                            </Text>
                         </div>
                     </div>
                 </li>
@@ -169,7 +172,9 @@ export const FlightTimelineContainer = () => {
                                 The flight time has been reescheduled to Jul 05,
                                 1:50
                             </Text>
-                            <Text css={dateInfo(theme)}>Jun 20, 8:24 AM</Text>
+                            <Text size="small" color={grays[3]}>
+                                Jun 20, 8:24 AM
+                            </Text>
                         </div>
                     </div>
                 </li>

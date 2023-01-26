@@ -1,13 +1,13 @@
 import { css } from '@emotion/react';
 
-import { defaultTheme } from '@edene/foundations';
+import { Theme } from '@edene/foundations';
 
 import { AvatarShape, AvatarDotPosition } from './Avatar';
 
 export const avatar = (
     shape: AvatarShape,
     size: number,
-    { theme = defaultTheme }
+    { theme }: { theme: Theme }
 ) => css`
     position: relative;
     max-width: 12rem;
@@ -72,7 +72,7 @@ export const avatarConnected = (
     }
 `;
 
-export const avatarInitials = ({ theme = defaultTheme }) => css`
+export const avatarInitials = ({ theme }: { theme: Theme }) => css`
     background-color: ${theme.black};
     color: ${theme.white};
     font-size: 2rem;

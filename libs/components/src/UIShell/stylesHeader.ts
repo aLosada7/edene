@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
-import { defaultTheme, from, shadows } from '@edene/foundations';
+import { Theme, from, shadows } from '@edene/foundations';
 
-export const header = ({ theme = defaultTheme }) => css`
+export const header = ({ theme }: { theme: Theme }) => css`
     z-index: 50;
     top: 0;
     right: 0;
@@ -21,7 +21,7 @@ export const headerHeight = (height: number) =>
         height: ${height}px;
     `;
 
-export const headerName = ({ theme = defaultTheme }) => css`
+export const headerName = ({ theme }: { theme: Theme }) => css`
     font-size: 0.875rem;
     font-weight: 400;
     line-height: 1.28572;
@@ -52,7 +52,7 @@ export const headerGlobalBar = css`
     justify-content: flex-end;
 `;
 
-export const headerGlobalAction = ({ theme = defaultTheme }) => css`
+export const headerGlobalAction = ({ theme }: { theme: Theme }) => css`
     padding: 0;
     border: 0;
     -webkit-appearance: none;
