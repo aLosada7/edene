@@ -24,7 +24,7 @@
         "paths": {
             "@edene/components": ["libs/components/src/index.ts"],
             "@edene/foundations": ["libs/foundations/src/index.ts"],
-            "@edene/pro-labs": ["libs/edene-pro-lab/src/index.ts"],
+            "@edene/pro-labs": ["libs/pro-labs/src/index.ts"],
             "@utils/*": ["libs/utils/src/*"]
         }
     },

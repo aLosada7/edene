@@ -1,6 +1,6 @@
 {
     "$schema": "../../node_modules/nx/schemas/project-schema.json",
-    "sourceRoot": "libs/edene-pro-lab/src",
+    "sourceRoot": "libs/pro-labs/src",
     "projectType": "library",
     "tags": [],
     "targets": {
@@ -8,14 +8,14 @@
             "executor": "@nrwl/web:rollup",
             "outputs": ["{options.outputPath}"],
             "options": {
-                "outputPath": "dist/libs/edene-pro-lab",
-                "tsConfig": "libs/edene-pro-lab/tsconfig.lib.json",
-                "project": "libs/edene-pro-lab/package.json",
-                "entryFile": "libs/edene-pro-lab/src/index.ts",
+                "outputPath": "dist/libs/pro-labs",
+                "tsConfig": "libs/pro-labs/tsconfig.lib.json",
+                "project": "libs/pro-labs/package.json",
+                "entryFile": "libs/pro-labs/src/index.ts",
                 "external": ["react/jsx-runtime"],
                 "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
                 "assets": [{
-                    "glob": "libs/edene-pro-lab/README.md",
+                    "glob": "libs/pro-labs/README.md",
                     "input": ".",
                     "output": "."
                 }]
@@ -25,14 +25,14 @@
             "executor": "@nrwl/linter:eslint",
             "outputs": ["{options.outputFile}"],
             "options": {
-                "lintFilePatterns": ["libs/edene-pro-lab/**/*.{ts,tsx,js,jsx}"]
+                "lintFilePatterns": ["libs/pro-labs/**/*.{ts,tsx,js,jsx}"]
             }
         },
         "test": {
             "executor": "@nrwl/jest:jest",
-            "outputs": ["coverage/libs/edene-pro-lab"],
+            "outputs": ["coverage/libs/pro-labs"],
             "options": {
-                "jestConfig": "libs/edene-pro-lab/jest.config.ts",
+                "jestConfig": "libs/pro-labs/jest.config.ts",
                 "passWithNoTests": true
             }
         },
@@ -42,7 +42,7 @@
                 "uiFramework": "@storybook/react",
                 "port": 4401,
                 "config": {
-                    "configFolder": "libs/edene-pro-lab/.storybook"
+                    "configFolder": "libs/pro-labs/.storybook"
                 }
             },
             "configurations": {
@@ -56,9 +56,9 @@
             "outputs": ["{options.outputPath}"],
             "options": {
                 "uiFramework": "@storybook/react",
-                "outputPath": "dist/storybook/edene-pro-lab",
+                "outputPath": "dist/storybook/pro-labs",
                 "config": {
-                    "configFolder": "libs/edene-pro-lab/.storybook"
+                    "configFolder": "libs/pro-labs/.storybook"
                 }
             },
             "configurations": {
@@ -71,8 +71,8 @@
             "executor": "@nrwl/workspace:run-commands",
             "options": {
                 "commands": [
-                    "nx run edene-pro-lab:build-storybook",
-                    "npx chromatic --project-token=41d3c7df1e28 -d=dist/storybook/edene-pro-lab --auto-accept-changes"
+                    "nx run pro-labs:build-storybook",
+                    "npx chromatic --project-token=41d3c7df1e28 -d=dist/storybook/pro-labs --auto-accept-changes"
                 ],
                 "parallel": false
             }

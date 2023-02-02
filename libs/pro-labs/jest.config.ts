@@ -1,10 +1,10 @@
 /* eslint-disable */
 export default {
-    displayName: 'edene-pro-lab',
+    displayName: 'pro-labs',
     preset: '../../jest.preset.js',
     transform: {
         '^.+\\.[tj]sx?$': 'babel-jest',
     },
     moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
-    coverageDirectory: '../../coverage/libs/edene-pro-lab',
+    coverageDirectory: '../../coverage/libs/pro-labs',
 };
