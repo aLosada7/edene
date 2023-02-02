@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 
-import { BoxProps } from './index';
+import { BoxProps } from './types';
 
 export const box = (props: Omit<BoxProps, 'children'>) => css`
     ${props.mv &&
@@ -10,6 +10,6 @@ export const box = (props: Omit<BoxProps, 'children'>) => css`
 
     ${props.mt && `margin-top: calc(${props.mt} * 0.25rem)`};
     ${props.mr && `margin-right: calc(${props.mr} * 0.25rem)`};
-    ${props.mt && `margin-bottom: calc(${props.mb} * 0.25rem)`};
+    ${props.mb && `margin-bottom: calc(${props.mb} * 0.25rem)`};
     ${props.mt && `margin-left: calc(${props.ml} * 0.25rem)`};
 `;

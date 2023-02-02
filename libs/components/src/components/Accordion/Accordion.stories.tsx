@@ -1,4 +1,3 @@
-import { transformUppercase } from '@edene/foundations';
 import { Story } from '@storybook/react';
 
 import { Accordion, AccordionProps, AccordionRow } from './index';

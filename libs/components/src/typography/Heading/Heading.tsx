@@ -27,7 +27,7 @@ export const Heading = (props: HeadingProps) => {
     const {
         mt = 0,
         mb = 0,
-        size = 'h1',
+        size: Element = 'h1',
         weight = 'regular',
         color,
         align = 'inherit',
@@ -36,14 +36,12 @@ export const Heading = (props: HeadingProps) => {
         css: cssOverrides,
         ...rest
     } = props;
-
     const { theme } = useTheme();
-    const Element = size || 'div';
 
     return (
         <Element
             css={[
-                headingCss(mt, mb, size, weight, align),
+                headingCss(mt, mb, Element, weight, align),
                 headingColor(theme?.heading?.color, color),
                 icon ? flexText : null,
                 cssOverrides,

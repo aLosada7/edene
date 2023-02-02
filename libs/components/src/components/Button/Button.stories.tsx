@@ -74,8 +74,8 @@ export const WithRef = () => {
     return <Button ref={ref}>Ref</Button>;
 };
 
-export const AsAnchor = () => (
-    <Button component="a" href="#">
+export const PolymorphicComponent = () => (
+    <Button component="a" href="#" variant="outlined">
         Link
     </Button>
 );

@@ -29,6 +29,15 @@ module.exports = {
         '@storybook/addon-measure',
         '@storybook/addon-outline',
         '@storybook/addon-viewport',
+        {
+            name: 'storybook-addon-next',
+            options: {
+                nextConfigPath: path.resolve(
+                    __dirname,
+                    'config/next.config.js'
+                ),
+            },
+        },
     ],
     webpackFinal: async (config) => {
         return merge(config, {
