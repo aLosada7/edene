@@ -1,0 +1,81 @@
+{
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "libs/pro-labs/src",
+    "projectType": "library",
+    "tags": [],
+    "targets": {
+        "build": {
+            "executor": "@nrwl/web:rollup",
+            "outputs": ["{options.outputPath}"],
+            "options": {
+                "outputPath": "dist/libs/pro-labs",
+                "tsConfig": "libs/pro-labs/tsconfig.lib.json",
+                "project": "libs/pro-labs/package.json",
+                "entryFile": "libs/pro-labs/src/index.ts",
+                "external": ["react/jsx-runtime"],
+                "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+                "assets": [{
+                    "glob": "libs/pro-labs/README.md",
+                    "input": ".",
+                    "output": "."
+                }]
+            }
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "outputs": ["{options.outputFile}"],
+            "options": {
+                "lintFilePatterns": ["libs/pro-labs/**/*.{ts,tsx,js,jsx}"]
+            }
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "outputs": ["coverage/libs/pro-labs"],
+            "options": {
+                "jestConfig": "libs/pro-labs/jest.config.ts",
+                "passWithNoTests": true
+            }
+        },
+        "storybook": {
+            "executor": "@nrwl/storybook:storybook",
+            "options": {
+                "uiFramework": "@storybook/react",
+                "port": 4401,
+                "config": {
+                    "configFolder": "libs/pro-labs/.storybook"
+                }
+            },
+            "configurations": {
+                "ci": {
+                    "quiet": true
+                }
+            }
+        },
+        "build-storybook": {
+            "executor": "@nrwl/storybook:build",
+            "outputs": ["{options.outputPath}"],
+            "options": {
+                "uiFramework": "@storybook/react",
+                "outputPath": "dist/storybook/pro-labs",
+                "config": {
+                    "configFolder": "libs/pro-labs/.storybook"
+                }
+            },
+            "configurations": {
+                "ci": {
+                    "quiet": true
+                }
+            }
+        },
+        "chromatic": {
+            "executor": "@nrwl/workspace:run-commands",
+            "options": {
+                "commands": [
+                    "nx run pro-labs:build-storybook",
+                    "npx chromatic --project-token=41d3c7df1e28 -d=dist/storybook/pro-labs --auto-accept-changes"
+                ],
+                "parallel": false
+            }
+        }
+    }
+}

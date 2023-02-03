@@ -2,8 +2,8 @@
     "version": 2,
     "projects": {
         "components": "libs/components",
-        "edene-pro-lab": "libs/edene-pro-lab",
-        "edene-template": "apps/edene-template",
+        "pro-labs": "libs/pro-labs",
+        "template": "apps/template",
         "food-delivery": "apps/food-delivery",
         "foundations": "libs/foundations",
         "utils": "libs/utils"

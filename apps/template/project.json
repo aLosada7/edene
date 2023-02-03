@@ -1,0 +1,81 @@
+{
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "apps/template/src",
+    "projectType": "application",
+    "targets": {
+        "build": {
+            "executor": "@nrwl/web:webpack",
+            "outputs": ["{options.outputPath}"],
+            "defaultConfiguration": "production",
+            "options": {
+                "outputPath": "dist/apps/template",
+                "index": "apps/template/src/index.html",
+                "baseHref": "/",
+                "main": "apps/template/src/main.tsx",
+                "polyfills": "apps/template/src/polyfills.ts",
+                "tsConfig": "apps/template/tsconfig.app.json",
+                "assets": [
+                    "apps/template/src/favicon.ico",
+                    "apps/template/src/assets",
+                    "apps/template/src/netlify.toml"
+                ],
+                "styles": [],
+                "scripts": [],
+                "webpackConfig": "@nrwl/react/plugins/webpack"
+            },
+            "configurations": {
+                "production": {
+                    "fileReplacements": [{
+                        "replace": "apps/template/src/environments/environment.ts",
+                        "with": "apps/template/src/environments/environment.prod.ts"
+                    }],
+                    "optimization": true,
+                    "outputHashing": "all",
+                    "sourceMap": false,
+                    "namedChunks": false,
+                    "extractLicenses": true,
+                    "vendorChunk": false
+                },
+                "development": {
+                    "extractLicenses": false,
+                    "optimization": false,
+                    "sourceMap": true,
+                    "vendorChunk": true
+                }
+            }
+        },
+        "serve": {
+            "executor": "@nrwl/web:dev-server",
+            "options": {
+                "buildTarget": "template:build",
+                "hmr": true,
+                "port": 4201
+            },
+            "configurations": {
+                "production": {
+                    "buildTarget": "template:build:production",
+                    "hmr": false
+                },
+                "development": {
+                    "buildTarget": "template:build:development"
+                }
+            },
+            "defaultConfiguration": "development"
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "outputs": ["{options.outputFile}"],
+            "options": {
+                "lintFilePatterns": ["apps/template/**/*.{ts,tsx,js,jsx}"]
+            }
+        },
+        "deploy": {
+            "executor": "@netlify-builder/deploy:deploy",
+            "options": {
+                "outputPath": "dist/apps/template",
+                "siteId": "cb556dad-569b-4128-8b6b-2de4a7ffc11e"
+            }
+        }
+    },
+    "tags": []
+}
