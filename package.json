@@ -7,8 +7,7 @@
     "scripts": {
         "start": "nx serve",
         "build": "nx build",
-        "test": "nx test",
-        "build:edene-template": "nx build edene-template"
+        "test": "nx test"
     },
     "private": true,
     "dependencies": {
