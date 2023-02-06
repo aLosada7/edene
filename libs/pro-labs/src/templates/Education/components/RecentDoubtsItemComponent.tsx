@@ -1,4 +1,4 @@
-import { Button, ListItem, Text } from '@edene/components';
+import { Box, Button, ListItem, Row, Text } from '@edene/components';
 import { grays } from '@edene/foundations';
 
 export const RecentDoubtsItemComponent = ({
@@ -8,17 +8,17 @@ export const RecentDoubtsItemComponent = ({
     title: string;
     askedBy: string;
 }) => (
-    <ListItem
-        direction="column"
-        actions={
+    <ListItem direction="column">
+        <Row align="space-between-center" noGlutters>
+            <Box>
+                <Text size="small">{title}</Text>
+                <Text size="xsmall" color={grays[3]}>
+                    Asked by {askedBy}
+                </Text>
+            </Box>
             <Button variant="outlined" size="xsmall">
                 Open
             </Button>
-        }
-    >
-        <Text size="small">{title}</Text>
-        <Text size="xsmall" color={grays[3]}>
-            Asked by {askedBy}
-        </Text>
+        </Row>
     </ListItem>
 );

@@ -1,17 +1,15 @@
-import { ReactNode } from 'react';
 import { list } from './styles';
-
-export type ListStyleType = 'none' | 'disc' | 'disclosure-close';
-
-export interface ListProps {
-    styleType?: ListStyleType;
-    children: ReactNode;
-}
+import { ListProps } from './types';
 
 export const List = (props: ListProps) => {
-    const { styleType = 'none', children, ...rest } = props;
+    const {
+        styleType = 'none',
+        withSeparation = false,
+        children,
+        ...rest
+    } = props;
     return (
-        <ul css={list(styleType)} {...rest}>
+        <ul css={list(styleType, withSeparation)} {...rest}>
             {children}
         </ul>
     );

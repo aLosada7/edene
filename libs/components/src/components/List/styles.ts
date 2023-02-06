@@ -1,26 +1,22 @@
 import { css } from '@emotion/react';
-
 import { grays } from '@edene/foundations';
 
-import { ListStyleType } from './List';
+import { ListStyleType } from './types';
 
-export const list = (styleType: ListStyleType) => css`
+export const list = (styleType: ListStyleType, withSeparation: boolean) => css`
     list-style-position: inside;
     list-style-type: ${styleType};
     margin: 0;
     padding-left: 0;
     width: 100%;
+
+    ${withSeparation &&
+    `> *:not(:last-child) { border-bottom: 1px solid ${grays[7]};}`}
 `;
 
 export const listItem = (borderBottom: boolean) => css`
-    padding: 0.5rem;
+    padding: 0.5rem 1rem;
     ${borderBottom && `border-bottom: 1px solid ${grays[7]};`}
-
-    div {
-        display: flex;
-        justify-content: space-between;
-        margin-inline-start: 0.25rem;
-    }
 `;
 
 export const listItemActions = css`
