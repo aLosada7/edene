@@ -1,15 +1,7 @@
-import { ReactNode } from 'react';
-
 import { Group } from '../../layout/Group';
 import { Stack } from '../../layout/Stack';
 import { listItem, listItemActions } from './styles';
-
-export interface ListItemProps {
-    borderBottom?: boolean;
-    actions?: ReactNode;
-    direction?: 'row' | 'column';
-    children: ReactNode;
-}
+import { ListItemProps } from './types';
 
 export const ListItem = (props: ListItemProps) => {
     const {

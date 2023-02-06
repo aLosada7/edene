@@ -4,7 +4,7 @@ import { RecentDoubtsItemComponent } from '../components/RecentDoubtsItemCompone
 export const RecentDoubtsContainer = () => (
     <Card>
         <CardHeader>Recent Doubts</CardHeader>
-        <List>
+        <List withSeparation>
             <RecentDoubtsItemComponent
                 title="How does electromagnetism work?"
                 askedBy="Jenny Wilson"

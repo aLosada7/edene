@@ -9,7 +9,7 @@ import { NewStudentsItemComponent } from '../components/NewStudentsItemComponent
 export const NewStudentsContainer = () => (
     <Card>
         <CardHeader>New Students</CardHeader>
-        <List>
+        <List withSeparation>
             <NewStudentsItemComponent
                 avatar={avatar1}
                 name="Darrell Steward"
