@@ -35,3 +35,21 @@ export const height = {
     iconLarge: iconSize.large,
     iconBig: iconSize.big,
 };
+
+export type Scale =
+    | 0
+    | 1
+    | 2
+    | 3
+    | 4
+    | 6
+    | 8
+    | 10
+    | 12
+    | 24
+    | 32
+    | 48
+    | 64
+    | 128
+    | 160
+    | 192;

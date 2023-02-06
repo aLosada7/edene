@@ -1,15 +1,13 @@
 import { css } from '@emotion/react';
+import { from, Scale } from '@edene/foundations';
 
-import { from } from '@edene/foundations';
-
-import { EdeneScale } from './Container';
 import { IColumnDirection, ColSize, Align } from './Col';
 import { RowAlign, RowDirection } from './Row';
 
 export const gridContainer = (
-    marginTop: EdeneScale,
-    verticalPadding: EdeneScale,
-    horizontalPadding: EdeneScale
+    marginTop: Scale,
+    verticalPadding: Scale,
+    horizontalPadding: Scale
 ) => css`
     max-width: 1224px;
     margin-left: auto;

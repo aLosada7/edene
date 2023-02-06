@@ -1,36 +1,18 @@
 import { ReactNode } from 'react';
 
-import { Props } from '@edene/foundations';
+import { Props, Scale } from '@edene/foundations';
 
 import { gridContainer } from './styles';
 
-export type EdeneScale =
-    | 0
-    | 1
-    | 2
-    | 3
-    | 4
-    | 6
-    | 8
-    | 10
-    | 12
-    | 24
-    | 32
-    | 48
-    | 64
-    | 128
-    | 160
-    | 192;
-
 export interface ContainerProps extends Props {
     /** Each unit is multipled by 0.25 rem */
-    pv?: EdeneScale;
+    pv?: Scale;
 
     /** Each unit is multipled by 0.25 rem */
-    ph?: EdeneScale;
+    ph?: Scale;
 
     /** Each unit is multipled by 0.25 rem */
-    mt?: EdeneScale;
+    mt?: Scale;
 
     children?: ReactNode;
 }
