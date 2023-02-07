@@ -93,7 +93,7 @@ const buttonColorStyles = (
     border-color: ${color};
 
     :hover {
-        background-color: ${grays[6]};
+        background-color: ${grays[9]};
         color: ${hoverColor};
         fill: ${hoverColor};
         border-color: ${hoverColor};
