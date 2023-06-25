@@ -23,12 +23,12 @@ export const Accordion = (props: AccordionProps) => {
         children,
         hideToggleLabel = false,
         variant = 'borderless',
-        css: cssOverrides,
+        css,
         ...rest
     } = props;
 
     return (
-        <ul css={[accordion(variant), cssOverrides]} {...rest}>
+        <ul css={[accordion(variant), css]} {...rest}>
             {Children.map(children, (child) => {
                 return cloneElement(child, { hideToggleLabel, variant });
             })}

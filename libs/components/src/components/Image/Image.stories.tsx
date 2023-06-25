@@ -38,7 +38,7 @@ export const Default = () => (
 
 export const PolymorphicComponent = () => (
     <Image
-        component={NextImage}
+        as={NextImage}
         src="http://angular-material.fusetheme.com/assets/images/ui/angular-material/scenes/autocomplete.scene.png"
         alt="Image"
         layout="fill"

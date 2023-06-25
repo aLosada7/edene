@@ -2,15 +2,12 @@ import { inlineError } from './styles';
 import { InlineFeedbackProps } from './types';
 
 export const InlineError = (props: InlineFeedbackProps) => {
-    const { children, css: cssOverrides, ...rest } = props;
+    const { children, css, ...rest } = props;
 
     return (
         <div
             role="alert"
-            css={(theme: any) => [
-                inlineError(theme.InlineFeedback),
-                cssOverrides,
-            ]}
+            css={(theme: any) => [inlineError(theme.InlineFeedback), css]}
             {...rest}
         >
             {children}

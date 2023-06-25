@@ -8,15 +8,10 @@ import {
 import { IFontSize } from './Heading';
 
 export const headingCss = (
-    mt: number,
-    mb: number,
     size: IFontSize,
     fontWeight: FontWeight,
     align: TextAlign
 ) => css`
-    margin-top: calc(${mt} * 0.25rem);
-    margin-bottom: calc(${mb} * 0.25rem);
-
     ${size === 'h1' && heading.h1({ fontWeight })}
     ${size === 'h2' && heading.h2({ fontWeight })}
     ${size === 'h3' && heading.h3({ fontWeight })}
@@ -25,6 +20,7 @@ export const headingCss = (
     ${size === 'h6' && heading.h6({ fontWeight })}
 
     text-align: ${align};
+    margin: 0;
 `;
 
 export const headingColor = (

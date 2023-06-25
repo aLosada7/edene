@@ -11,10 +11,10 @@ export interface TableContainerProps extends Props {
 }
 
 export const TableContainer = (props: TableContainerProps) => {
-    const { title, description, css: cssOverrides, children, ...rest } = props;
+    const { title, description, css, children, ...rest } = props;
 
     return (
-        <div {...rest}>
+        <div css={css} {...rest}>
             <div css={tableContainerHeader}>
                 <h4>{title}</h4>
                 <p>{description}</p>

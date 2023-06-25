@@ -1,21 +1,18 @@
-import { cloneElement, ReactElement } from 'react';
+import { ReactElement } from 'react';
 
 import {
     FontWeight,
     TextAlign,
     Props,
     useTheme,
-    HeadingTheme,
+    Color,
 } from '@edene/foundations';
 
 import { flexText, headingCss, headingColor } from './styles';
 
 export type IFontSize = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 
-export interface HeadingProps extends HeadingTheme, Props {
-    mt?: number;
-    // in titles only soon
-    mb?: number;
+export interface HeadingProps extends Color, Props {
     size?: IFontSize;
     weight?: FontWeight;
     align?: TextAlign;
@@ -23,32 +20,29 @@ export interface HeadingProps extends HeadingTheme, Props {
     children: ReactElement | React.ReactNode | string;
 }
 
-export const Heading = (props: HeadingProps) => {
-    const {
-        mt = 0,
-        mb = 0,
-        size: Element = 'h1',
-        weight = 'regular',
-        color,
-        align = 'inherit',
-        icon,
-        children,
-        css: cssOverrides,
-        ...rest
-    } = props;
+export const Heading = ({
+    size: Element = 'h1',
+    weight = 'regular',
+    color,
+    align = 'inherit',
+    icon,
+    children,
+    css,
+    ...props
+}: HeadingProps) => {
     const { theme } = useTheme();
 
     return (
         <Element
             css={[
-                headingCss(mt, mb, Element, weight, align),
-                headingColor(theme?.heading?.color, color),
+                headingCss(Element, weight, align),
+                headingColor(theme.heading.color, color),
                 icon ? flexText : null,
-                cssOverrides,
+                css,
             ]}
-            {...rest}
+            {...props}
         >
-            {icon ? cloneElement(icon) : null}
+            {icon}
             {children}
         </Element>
     );

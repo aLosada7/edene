@@ -3,21 +3,21 @@ import { ImgComponent, PImageProps } from './types';
 
 export const Image: ImgComponent = ((props: PImageProps<'img'>) => {
     const {
-        component: Element = 'img',
+        as: Component = 'img',
         src,
         alt,
         size,
         objectFit = 'cover',
-        css: cssOverrides,
+        css,
         ...rest
     } = props;
 
     const img = (
-        <Element
+        <Component
             loading="lazy"
             src={src}
             alt={alt}
-            css={[image(objectFit, size), cssOverrides]}
+            css={[image(objectFit, size), css]}
             {...rest}
         />
     );

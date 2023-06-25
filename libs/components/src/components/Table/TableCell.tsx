@@ -8,12 +8,13 @@ export interface TableCellProps extends Props {
     children?: ReactNode;
 }
 
-export const TableCell = (props: TableCellProps) => {
-    const { align = 'left', children, css: cssOverrides, ...rest } = props;
-
-    return (
-        <th css={[tableCell, cellAlign(align), cssOverrides]} {...rest}>
-            {children}
-        </th>
-    );
-};
+export const TableCell = ({
+    align = 'left',
+    children,
+    css,
+    ...props
+}: TableCellProps) => (
+    <th css={[tableCell, cellAlign(align), css]} {...props}>
+        {children}
+    </th>
+);

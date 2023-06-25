@@ -1,4 +1,3 @@
-import { css } from '@emotion/react';
 import { action } from '@storybook/addon-actions';
 
 import {
@@ -15,28 +14,22 @@ import {
     Checkbox,
     Heading,
     Text,
+    Box,
 } from '@edene/components';
-
-import CountrySelector from '../../../components/simple/CountrySelector/CountrySelector';
+import CountrySelector from '../../components/simple/CountrySelector/CountrySelector';
 
 const AccountSettings = () => (
-    <Container pv={8}>
+    <Container>
         <Form>
-            <Heading size="h4" mb={6}>
-                Account Settings
-            </Heading>
+            <Box mb={6}>
+                <Heading size="h4">Account Settings</Heading>
+            </Box>
             <Divider />
             <Row>
-                <Col md={8} lg={8} vStack={2}>
-                    <Heading
-                        size="h5"
-                        mb={2}
-                        cssOverrides={css`
-                            padding-top: 1rem;
-                        `}
-                    >
-                        Basics
-                    </Heading>
+                <Col md={8} lg={8} direction="column" gap={4}>
+                    <Box pt={4}>
+                        <Heading size="h5">Basics</Heading>
+                    </Box>
                     <Text size="small">
                         Having an up-to-date email address attached to your
                         account is a great step toward improved account
@@ -63,23 +56,17 @@ const AccountSettings = () => (
             </Row>
             <Divider />
             <Row>
-                <Col md={8} lg={8} vStack={2}>
-                    <Heading
-                        size="h5"
-                        mb={2}
-                        cssOverrides={css`
-                            padding-top: 1rem;
-                        `}
-                    >
-                        Profile
-                    </Heading>
+                <Col md={8} lg={8} direction="column" gap={4}>
+                    <Box pt={4}>
+                        <Heading size="h5">Profile</Heading>
+                    </Box>
                     <Text size="small">
                         This information will be shown publicy so be careful
                         what information you provide.
                     </Text>
                 </Col>
                 <Col md={16} direction="column">
-                    <Row py={4}>
+                    <Row py={2}>
                         <Col md={12}>
                             <TextInput label="First Name" required />
                         </Col>
@@ -95,20 +82,17 @@ const AccountSettings = () => (
                     <Checkbox label="I accept the conditions."></Checkbox>
                 </Col>
             </Row>
-            <Row py={4}>
-                <Col md={8}></Col>
-                <Col md={16} hStack={4}>
-                    <Button
-                        variant="link"
-                        color="dark"
-                        onClick={action('onCancel')}
-                    >
-                        Cancel
-                    </Button>
-                    <Button color="success" onClick={action('onSubmit')}>
-                        Save
-                    </Button>
-                </Col>
+            <Row align="end-center" py={4} gap={4}>
+                <Button
+                    variant="outlined"
+                    color="dark"
+                    onClick={action('onCancel')}
+                >
+                    Cancel
+                </Button>
+                <Button color="success" onClick={action('onSubmit')}>
+                    Save
+                </Button>
             </Row>
         </Form>
     </Container>

@@ -1,6 +1,5 @@
 import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
-
 import { text } from '@edene/foundations';
 
 import { InlineFeedbackThemeDefault } from './theme';

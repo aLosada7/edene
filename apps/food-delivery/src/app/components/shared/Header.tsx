@@ -52,12 +52,7 @@ export const Header = ({ name }: { name?: string }) => {
                     shopping_cart
                 </HeaderGlobalAction>
             </HeaderGlobalBar>
-            <HeaderPanel
-                aria-label="Header Panel"
-                expanded={expanded}
-                backgroundColor="#eee"
-                textColor="#000"
-            >
+            <HeaderPanel expanded={expanded} aria-label="Header Panel">
                 <Container>
                     <Cart
                         products={products}

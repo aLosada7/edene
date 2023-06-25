@@ -2,7 +2,7 @@ import { Story, Meta } from '@storybook/react';
 import AccountSettingsForm from './index';
 
 export default {
-    title: 'Pages/Forms',
+    title: 'Templates',
     component: AccountSettingsForm,
 } as Meta;
 

@@ -1,15 +1,18 @@
 import { css } from '@emotion/react';
 import { Theme, from, shadows } from '@edene/foundations';
 
-export const header = ({ theme }: { theme: Theme }) => css`
+export const header = (theme: Theme) => css`
     z-index: 50;
     top: 0;
     right: 0;
     left: 0;
     display: flex;
     align-items: center;
-    border-bottom: 1 px solid ${theme.header.background};
-    background-color: ${theme.header.background};
+    border-bottom: 1 px solid ${theme.header.backgroundColor};
+`;
+
+export const headerTheme = (theme: Theme) => css`
+    background-color: ${theme.header.backgroundColor};
 `;
 
 export const headerPosition = (fixed: boolean) => css`
@@ -42,7 +45,6 @@ export const headerName = ({ theme }: { theme: Theme }) => css`
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    color: ${theme.header.text};
 `;
 
 export const headerGlobalBar = css`
@@ -52,7 +54,7 @@ export const headerGlobalBar = css`
     justify-content: flex-end;
 `;
 
-export const headerGlobalAction = ({ theme }: { theme: Theme }) => css`
+export const headerGlobalAction = css`
     padding: 0;
     border: 0;
     -webkit-appearance: none;
@@ -70,10 +72,6 @@ export const headerGlobalAction = ({ theme }: { theme: Theme }) => css`
         div {
             //transform: translateX(-100px);
         }
-    }
-
-    svg {
-        fill: ${theme.header.headerGlobalAction.fill};
     }
 `;
 
@@ -137,7 +135,7 @@ export const actionAssistiveText = css`
     pointer-events: none;
 `;
 
-export const headerPanel = (backgroundColor: string, textColor: string) => css`
+export const headerPanel = css`
     position: fixed;
     z-index: 8000;
     top: 3rem;
@@ -147,8 +145,6 @@ export const headerPanel = (backgroundColor: string, textColor: string) => css`
     width: 0;
     border: none;
     height: fit-content;
-    background-color: ${backgroundColor};
-    color: ${textColor};
     padding: 1rem 0;
     display: flex;
     align-items: center;

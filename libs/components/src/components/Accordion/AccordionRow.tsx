@@ -52,7 +52,7 @@ export const AccordionRow = (props: AccordionRowProps) => {
         hideToggleLabel = false,
         variant = 'borderless',
         onClick = () => undefined,
-        css: cssOverrides,
+        css,
         ...rest
     } = props;
     const [expanded, setExpanded] = useState(false);
@@ -65,7 +65,7 @@ export const AccordionRow = (props: AccordionRowProps) => {
     }
 
     return (
-        <li css={[accordionRow(variant), cssOverrides]} {...rest}>
+        <li css={[accordionRow(variant), css]} {...rest}>
             <button
                 type="button"
                 aria-expanded={expanded}

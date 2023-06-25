@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 
-import { Container, Heading } from '@edene/components';
+import { Box, Container, Heading } from '@edene/components';
 
 import { RestaurantSummary } from '../components/RestaurantSummary';
 import {
@@ -21,9 +21,11 @@ export const RestaurantListContainer = ({ foodKind }: { foodKind: string }) => {
 
     return (
         <Fragment>
-            <Heading size="h2" mb={6}>
-                <span>{selectedFoodName} Restaurants</span>
-            </Heading>
+            <Box mb={6}>
+                <Heading size="h2">
+                    <span>{selectedFoodName} Restaurants</span>
+                </Heading>
+            </Box>
             <Container ph={48}>
                 {selectedFoodRestaurants.map((restaurant: IRestaurant) => (
                     <RestaurantSummary restaurant={restaurant} />

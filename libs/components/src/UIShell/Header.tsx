@@ -1,7 +1,12 @@
 import { Children, cloneElement } from 'react';
 import { Props, useTheme } from '@edene/foundations';
 
-import { header, headerPosition, headerHeight } from './stylesHeader';
+import {
+    header,
+    headerTheme,
+    headerPosition,
+    headerHeight,
+} from './stylesHeader';
 
 export interface HeaderProps extends Props {
     /**
@@ -14,26 +19,26 @@ export interface HeaderProps extends Props {
     children?: React.ReactElement | React.ReactElement[];
 }
 
-export const Header = (props: HeaderProps) => {
-    const {
-        fixed = false,
-        height = 48,
-        children,
-        css: cssOverrides,
-        ...rest
-    } = props;
-    const theme = useTheme();
+export const Header = ({
+    fixed = false,
+    height = 48,
+    children,
+    css,
+    ...props
+}: HeaderProps) => {
+    const { theme } = useTheme();
 
     return (
         <header
             role="banner"
             css={[
                 header(theme),
+                headerTheme(theme),
                 headerPosition(fixed),
                 headerHeight(height),
-                cssOverrides,
+                css,
             ]}
-            {...rest}
+            {...props}
         >
             {children &&
                 Children.map(children, (child) => {

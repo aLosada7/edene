@@ -26,7 +26,7 @@ export const Tag = (props: TagProps) => {
         icon,
         iconVariant = 'filled',
         children,
-        css: cssOverrides,
+        css,
         ...rest
     } = {
         ...props,
@@ -35,10 +35,7 @@ export const Tag = (props: TagProps) => {
     const { theme } = useTheme();
 
     return (
-        <span
-            css={[tag, tagTheme({ theme, color: type }), cssOverrides]}
-            {...rest}
-        >
+        <span css={[tag, tagTheme({ theme, color: type }), css]} {...rest}>
             {icon && (
                 <Icon
                     variant={iconVariant}

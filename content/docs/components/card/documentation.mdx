@@ -79,7 +79,7 @@ import { Accordion, AccordionRow } from '@edene/components';
                     },
                 ]}
             />
-            <ActionButton variant="outlined" cssOverrides={actionButtonFav}>
+            <ActionButton variant="outlined" css={actionButtonFav}>
                 hotel_class
             </ActionButton>
             <CardSection borderBottom>
@@ -87,7 +87,7 @@ import { Accordion, AccordionRow } from '@edene/components';
                     size="xsmall"
                     weight="bold"
                     color={grays[1]}
-                    cssOverrides={[transformUppercase, letterSpacing]}
+                    css={[transformUppercase, letterSpacing]}
                 >
                     Detached House . 3,426 SQFT
                 </Text>
@@ -114,13 +114,13 @@ import { Accordion, AccordionRow } from '@edene/components';
                     </Col>
                 </Row>
             </CardSection>
-            <CardSection cssOverrides={agentSection}>
+            <CardSection css={agentSection}>
                 <Row align="start-center">
                     <Avatar
                         src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                         shape="circle"
                         size={30}
-                        cssOverrides={agentAvatar}
+                        css={agentAvatar}
                     />
                     <Row noGlutters direction="column">
                         <Text size="small" weight="bold">
@@ -136,7 +136,7 @@ import { Accordion, AccordionRow } from '@edene/components';
                 size="block"
                 icon="keyboard_arrow_right"
                 iconSide="right"
-                cssOverrides={transformUppercase}
+                css={transformUppercase}
             >
                 <Text size="xsmall" weight="bold">
                     Schedule Showing

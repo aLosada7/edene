@@ -1,9 +1,9 @@
 import { ReactElement, useEffect, useRef, Fragment } from 'react';
-import { css, SerializedStyles } from '@emotion/react';
+import { SerializedStyles } from '@emotion/react';
 import { Props } from '@edene/foundations';
 
 import { Card, CardSection } from '../Card';
-import { cardOverrides, modal } from './styles';
+import { cardOverrides, cardPadding, modal } from './styles';
 
 interface ModalProps extends Props {
     id?: string;
@@ -26,7 +26,7 @@ const Modal = (props: ModalProps) => {
         show,
         onClose,
         children,
-        css: cssOverrides,
+        css,
         ...rest
     } = props;
     const idRef = useRef<string>('');
@@ -58,20 +58,14 @@ const Modal = (props: ModalProps) => {
     if (!show) return <Fragment></Fragment>;
 
     return (
-        <div css={[modal, cssOverrides]} onClick={handleClick} {...rest}>
+        <div css={[modal, css]} onClick={handleClick} {...rest}>
             <Card
                 role="dialog"
-                css={[cardOverrides, cssOverrides] as SerializedStyles[]}
+                css={[cardOverrides, css] as SerializedStyles[]}
                 aria-modal="true"
                 ref={modalRef}
             >
-                <CardSection
-                    css={css`
-                        padding: 1.2rem 2rem;
-                    `}
-                >
-                    {children}
-                </CardSection>
+                <CardSection css={cardPadding}>{children}</CardSection>
             </Card>
         </div>
     );

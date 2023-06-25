@@ -1,10 +1,9 @@
 import { ReactNode } from 'react';
-
 import { Props } from '@edene/foundations';
 
 import { gridRow } from './styles';
 
-export type RowAlign = `${'start' | 'end' | 'space-between'}-${
+export type RowAlign = `${'start' | 'end' | 'space-around' | 'space-between'}-${
     | 'start'
     | 'center'
     | 'end'}`;
@@ -29,28 +28,21 @@ export interface RowProps extends Props {
     children?: ReactNode;
 }
 
-export const Row = (props: RowProps) => {
-    const {
-        direction = 'row',
-        align,
-        px = 0,
-        py = 0,
-        noGlutters = false,
-        gap,
-        children,
-        css: cssOverrides,
-        ...rest
-    } = props;
-
-    return (
-        <div
-            css={[
-                gridRow({ direction, px, py, noGlutters, align, gap }),
-                cssOverrides,
-            ]}
-            {...rest}
-        >
-            {children}
-        </div>
-    );
-};
+export const Row = ({
+    direction = 'row',
+    align,
+    px = 0,
+    py = 0,
+    noGlutters = false,
+    gap,
+    children,
+    css,
+    ...props
+}: RowProps) => (
+    <div
+        css={[gridRow({ direction, px, py, noGlutters, align, gap }), css]}
+        {...props}
+    >
+        {children}
+    </div>
+);

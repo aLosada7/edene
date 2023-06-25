@@ -1,47 +1,31 @@
-import React, { forwardRef } from 'react';
+import { forwardRef } from 'react';
 import { SerializedStyles } from '@emotion/react';
 
-import {
-    useTheme,
-    PolymorphicComponentProps,
-    PolymorphicRef,
-    Props,
-} from '@edene/foundations';
+import { useTheme, PolymorphicRef, Props } from '@edene/foundations';
 
 import { Button } from '../Button';
 import { tab, tabSelected, tabHidden } from './styles';
 import { useTabs } from './useTabs';
 
-export interface SharedTabProps extends Props {
+export interface TabProps extends Props {
     id?: string;
     label: string;
     tabKey: string;
+    hidden?: boolean;
 }
 
-export type TabProps<C> = PolymorphicComponentProps<C, SharedTabProps>;
-
-type TabComponent = <C = 'button'>(props: TabProps<C>) => React.ReactElement;
-
-export const Tab: TabComponent = forwardRef(
-    (props: TabProps<'button'>, ref: PolymorphicRef<'button'>) => {
-        const {
-            component,
-            hidden,
-            label,
-            tabKey,
-            css: cssOverrides,
-            ...rest
-        } = props;
-
+export const Tab = forwardRef(
+    (
+        { hidden = false, label, tabKey, css, ...props }: TabProps,
+        ref: PolymorphicRef<'button'>
+    ) => {
         const { orientation, active, color, onTabChange } = useTabs();
         const { theme } = useTheme();
 
         const activeTab = active === tabKey;
 
-        const Element = component || Button;
-
         return (
-            <Element
+            <Button
                 variant="link"
                 color="dark"
                 ref={ref}
@@ -51,13 +35,13 @@ export const Tab: TabComponent = forwardRef(
                         tab,
                         activeTab && tabSelected(orientation, { theme, color }),
                         hidden && tabHidden,
-                        cssOverrides,
+                        css,
                     ] as SerializedStyles[]
                 }
-                {...rest}
+                {...props}
             >
                 {label}
-            </Element>
+            </Button>
         );
     }
 ) as any;

@@ -44,7 +44,7 @@ export const NumberInput = forwardRef<HTMLInputElement, NumberInputProps>(
             max,
             min,
             onChange,
-            css: cssOverrides,
+            css,
             cssLabel,
             ...rest
         } = props;
@@ -75,7 +75,7 @@ export const NumberInput = forwardRef<HTMLInputElement, NumberInputProps>(
         return (
             <FormGroup>
                 {label}
-                <div css={[numberInputWrapper, cssOverrides]} {...rest}>
+                <div css={[numberInputWrapper, css]} {...rest}>
                     <Button
                         variant="outlined"
                         size="xsmall"

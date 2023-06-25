@@ -15,19 +15,16 @@ export interface HeaderMenuButtonProps extends Props {
     variant: 'light' | 'dark';
 }
 
-export const HeaderMenuButton = (props: HeaderMenuButtonProps) => {
-    const { alwaysVisible = false, css: cssOverrides, ...rest } = props;
-
+export const HeaderMenuButton = ({
+    alwaysVisible = false,
+    css,
+    ...props
+}: HeaderMenuButtonProps) => {
     return (
         <MenuButton
             alwaysVisible={alwaysVisible}
-            css={
-                [
-                    headerMenuButton(alwaysVisible),
-                    cssOverrides,
-                ] as SerializedStyles[]
-            }
-            {...rest}
+            css={[headerMenuButton(alwaysVisible), css] as SerializedStyles[]}
+            {...props}
         />
     );
 };

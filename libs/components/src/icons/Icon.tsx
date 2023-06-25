@@ -31,7 +31,7 @@ export const Icon = (props: IconProps) => {
         children,
         color = theme.black,
         variant = 'filled',
-        css: cssOverrides,
+        css,
         size = 'medium',
         ml = 0,
         mr = 0,
@@ -42,11 +42,7 @@ export const Icon = (props: IconProps) => {
             className={`material-icons${
                 variant === 'outlined' ? '-outlined' : ''
             }`}
-            css={[
-                icon(size, ml, mr),
-                iconTheme({ theme, color }),
-                cssOverrides,
-            ]}
+            css={[icon(size, ml, mr), iconTheme({ theme, color }), css]}
         >
             {children}
         </span>

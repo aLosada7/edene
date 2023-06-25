@@ -12,10 +12,10 @@ export interface TableHeaderProps extends Props {
 }
 
 export const TableHeader = (props: TableHeaderProps) => {
-    const { align = 'left', children, css: cssOverrides, ...rest } = props;
+    const { align = 'left', children, css, ...rest } = props;
 
     return (
-        <th css={[tableHeader, cellAlign(align), cssOverrides]} {...rest}>
+        <th css={[tableHeader, cellAlign(align), css]} {...rest}>
             {children}
         </th>
     );

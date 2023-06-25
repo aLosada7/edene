@@ -1,7 +1,6 @@
-import { SerializedStyles } from '@emotion/react';
-import { LinkHTMLAttributes } from 'react';
+import { FC, LinkHTMLAttributes } from 'react';
 
-import { PolymorphicComponentProps, useTheme, Props } from '@edene/foundations';
+import { useTheme, Props } from '@edene/foundations';
 
 import {
     navigationLevel,
@@ -11,51 +10,34 @@ import {
     navMenuLinkActive,
 } from './styles';
 
-export interface SharedSideNavMenuItemProps
+export interface SideNavMenuItemProps
     extends LinkHTMLAttributes<HTMLAnchorElement>,
         Props {
     badge?: React.ReactElement;
     navigationChildren?: number;
     active?: boolean;
-    cssOverrides?: SerializedStyles | SerializedStyles[];
     children: React.ReactNode;
 }
 
-export type SideNavMenuItemProps<C> = PolymorphicComponentProps<
-    C,
-    SharedSideNavMenuItemProps
->;
-
-type SideNavMenuItemComponent = <C = 'a'>(
-    props: SideNavMenuItemProps<C>
-) => React.ReactElement;
-
-export const SideNavMenuItem: SideNavMenuItemComponent = ((
-    props: SideNavMenuItemProps<'a'>
-) => {
-    const {
-        component,
-        cssOverrides,
-        badge,
-        navigationChildren = 0,
-        active = false,
-        children,
-        ...rest
-    } = props;
-
+export const SideNavMenuItem: FC<SideNavMenuItemProps> = ({
+    css,
+    badge,
+    navigationChildren = 0,
+    active = false,
+    children,
+    ...props
+}) => {
     const { theme } = useTheme();
-
-    const Element = component || 'a';
 
     return (
         <li css={navItem({ theme })} aria-current={active ? 'page' : undefined}>
-            <Element
+            <a
                 css={[
                     navMenuSubLink,
                     active && navMenuLinkActive({ theme }),
-                    cssOverrides,
+                    css,
                 ]}
-                {...rest}
+                {...props}
             >
                 <span
                     css={[
@@ -66,7 +48,7 @@ export const SideNavMenuItem: SideNavMenuItemComponent = ((
                     {children}
                 </span>
                 {badge}
-            </Element>
+            </a>
         </li>
     );
-}) as any;
+};

@@ -8,9 +8,7 @@ export const select = css`
 `;
 
 export const selectButton = css`
-    position: relative;
     display: flex;
-    justify-content: space-between;
     align-items: center;
     padding: 0;
     height: 100%;
@@ -18,6 +16,8 @@ export const selectButton = css`
     border: none;
     color: black;
     padding: 0 0.5rem;
+    position: absolute;
+    right: 0;
 
     :hover {
         background-color: transparent;

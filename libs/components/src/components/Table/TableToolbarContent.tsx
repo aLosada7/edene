@@ -10,13 +10,10 @@ export interface TableToolbarContentProps extends Props {
 }
 
 export const TableToolbarContent = (props: TableToolbarContentProps) => {
-    const { css: cssOverrides, children, ...rest } = props;
+    const { css, children, ...rest } = props;
 
     return (
-        <Box
-            css={[tableToolbarContent, cssOverrides] as SerializedStyles[]}
-            {...rest}
-        >
+        <Box css={[tableToolbarContent, css] as SerializedStyles[]} {...rest}>
             {children}
         </Box>
     );

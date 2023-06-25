@@ -20,51 +20,43 @@ export interface SideNavProps extends Props {
     cssAside?: SerializedStyles | SerializedStyles[];
 }
 
-export const SideNav = (props: SideNavProps) => {
-    const {
-        fixed = false,
-        width = 256,
-        mobileWidth,
-        open = false,
-        headerHeight,
-        onClose,
-        overlay = false,
-        children,
-        css: cssOverrides,
-        cssAside,
-        ...rest
-    } = props;
-
-    return (
-        <Fragment>
-            {open && (
-                <div
-                    css={navOverlay(overlay, headerHeight)}
-                    onClick={onClose}
-                />
-            )}
-            <aside
+export const SideNav = ({
+    fixed = false,
+    width = 256,
+    mobileWidth,
+    open = false,
+    headerHeight,
+    onClose,
+    overlay = false,
+    children,
+    css,
+    cssAside,
+    ...props
+}: SideNavProps) => (
+    <Fragment>
+        {open && (
+            <div css={navOverlay(overlay, headerHeight)} onClick={onClose} />
+        )}
+        <aside
+            css={[
+                aside(fixed, open, width, mobileWidth, headerHeight),
+                cssAside,
+            ]}
+        >
+            <nav
                 css={[
-                    aside(fixed, open, width, mobileWidth, headerHeight),
-                    cssAside,
+                    sidenav({
+                        width,
+                        open,
+                    }),
+                    headerHeight ? sidenavHeader(open) : null,
+                    css,
                 ]}
             >
-                <nav
-                    css={[
-                        sidenav({
-                            width,
-                            open,
-                        }),
-                        headerHeight ? sidenavHeader(open) : null,
-                        cssOverrides,
-                    ]}
-                    {...rest}
-                >
-                    {children}
-                </nav>
-            </aside>
-        </Fragment>
-    );
-};
+                {children}
+            </nav>
+        </aside>
+    </Fragment>
+);
 
 export default SideNav;

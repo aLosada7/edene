@@ -24,21 +24,15 @@ export interface HeaderGlobalActionProps
 }
 
 export const HeaderGlobalAction = (props: HeaderGlobalActionProps) => {
-    const {
-        showAriaLabel = true,
-        badge,
-        children,
-        css: cssOverrides,
-        ...rest
-    } = props;
+    const { showAriaLabel = true, badge, children, css, ...rest } = props;
     const theme = useTheme();
 
     return (
         <button
             css={[
-                headerGlobalAction(theme),
+                headerGlobalAction,
                 showAriaLabel ? headerGlobalActionAriaLabel : null,
-                cssOverrides,
+                css,
             ]}
             {...rest}
         >

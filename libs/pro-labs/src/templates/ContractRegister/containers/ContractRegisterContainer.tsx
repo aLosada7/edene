@@ -4,7 +4,7 @@ import { ContractRegisterComponent } from '../components/ContractRegisterCompone
 
 export const ContractRegisterContainer = () => {
     return (
-        <Container mt={4}>
+        <Container>
             <ContractRegisterComponent />
         </Container>
     );

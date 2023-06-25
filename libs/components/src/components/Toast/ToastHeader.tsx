@@ -11,12 +11,12 @@ export interface ToastHeaderProps extends Props {
 }
 
 const ToastHeader = (props: ToastHeaderProps) => {
-    const { id, title, onClose, css: cssOverrides, ...rest } = props;
+    const { id, title, onClose, css, ...rest } = props;
     const closeToast = () => onClose(id);
 
     return (
         <div
-            css={toastHeader}
+            css={[toastHeader, css]}
             aria-label="Close"
             data-dismiss="toast"
             {...rest}

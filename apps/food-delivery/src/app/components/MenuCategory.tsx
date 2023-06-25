@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 
-import { Row, Col, Heading, Icon } from '@edene/components';
+import { Row, Col, Heading, Icon, Box } from '@edene/components';
 import { from, useTheme } from '@edene/foundations';
 
 import { IFoodInfo } from '../context/restaurants';
@@ -58,9 +58,9 @@ export const MenuCategory = ({
             </Circle>
         </Col>
         <Col md={20} lg={22} direction="column" vStack={4}>
-            <Heading size="h4" mt={4} mb={4}>
-                {label}
-            </Heading>
+            <Box my={4}>
+                <Heading size="h4">{label}</Heading>
+            </Box>
             {(category || []).map((food: IFoodInfo, index: number) => (
                 <MenuSummary
                     key={index}

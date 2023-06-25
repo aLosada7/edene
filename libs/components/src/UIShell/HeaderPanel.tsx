@@ -1,29 +1,31 @@
-import { Fragment, ReactElement } from 'react';
+import { ReactNode } from 'react';
 
-import { headerPanel, headerPanelExpanded } from './stylesHeader';
+import { headerPanel, headerTheme, headerPanelExpanded } from './stylesHeader';
+import { Props, useTheme } from '@edene/foundations';
 
-export interface HeaderPanelProps {
-    children?: ReactElement | ReactElement[];
-    backgroundColor?: string;
-    textColor?: string;
+export interface HeaderPanelProps extends Props {
+    children?: ReactNode;
     'aria-label': string;
     expanded?: boolean;
 }
 
 export const HeaderPanel = ({
-    children = <Fragment></Fragment>,
-    backgroundColor = '#000',
-    textColor = '#c6c6c6',
+    children,
     expanded = false,
+    css,
     ...props
 }: HeaderPanelProps) => {
+    const { theme } = useTheme();
+
     return (
         <div
             css={[
-                headerPanel(backgroundColor, textColor),
+                headerPanel,
+                headerTheme(theme),
                 expanded ? headerPanelExpanded : null,
+                css,
             ]}
-            aria-label={props['aria-label']}
+            {...props}
         >
             {children}
         </div>

@@ -10,11 +10,9 @@ export interface StackProps extends Props {
     children: ReactNode;
 }
 
-export const Stack = (props: StackProps) => {
-    const { gap = 1, children, css: cssOverrides, ...rest } = props;
-
+export const Stack = ({ gap = 1, children, css, ...props }: StackProps) => {
     return (
-        <Box css={[stack(gap), cssOverrides] as SerializedStyles[]} {...rest}>
+        <Box css={[stack(gap), css] as SerializedStyles[]} {...props}>
             {children}
         </Box>
     );

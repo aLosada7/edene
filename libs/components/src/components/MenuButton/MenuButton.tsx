@@ -18,12 +18,12 @@ export const MenuButton = (props: MenuButtonProps) => {
         alwaysVisible = false,
         active = false,
         variant = 'dark',
-        css: cssOverrides,
+        css,
         ...rest
     } = props;
 
     return (
-        <button css={[menu, cssOverrides]} {...rest}>
+        <button css={[menu, css]} {...rest}>
             <div
                 css={[menuLine(variant), active && !alwaysVisible && menuOpen]}
             ></div>

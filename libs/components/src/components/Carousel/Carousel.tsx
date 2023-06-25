@@ -17,7 +17,7 @@ export interface CarouselProps extends Props {
 }
 
 export const Carousel = (props: CarouselProps) => {
-    const { src, imageSize = 'c', css: cssOverrides, ...rest } = props;
+    const { src, imageSize = 'c', css, ...rest } = props;
     const [slide, setSlide] = useState(src[0]);
     const ref = useRef<HTMLDivElement>(null);
 
@@ -39,7 +39,7 @@ export const Carousel = (props: CarouselProps) => {
     }, [swipe]);
 
     return (
-        <div ref={scrollRef} css={[carousel, cssOverrides]} {...rest}>
+        <div ref={scrollRef} css={[carousel, css]} {...rest}>
             <Image
                 src={slide.src}
                 alt={slide.alt}

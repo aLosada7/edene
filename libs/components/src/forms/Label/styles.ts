@@ -4,7 +4,6 @@ import { Theme, text } from '@edene/foundations';
 
 export const label = css`
     display: inline-block;
-    margin-bottom: 0.5rem;
 `;
 
 export const labelText = ({ theme }: { theme: Theme }) => css`

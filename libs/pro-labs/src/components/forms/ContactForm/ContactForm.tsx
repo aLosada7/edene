@@ -16,7 +16,7 @@ import { contactCard } from './styles';
 export const ContactForm = () => {
     return (
         <Container>
-            <Card cssOverrides={contactCard}>
+            <Card css={contactCard}>
                 <CardSection>
                     <Row>
                         <Col sm={24} lg={8}>

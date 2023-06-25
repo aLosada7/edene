@@ -13,7 +13,7 @@ type InheritedProps<C extends React.ElementType, Props = {}> = ExtendedProps<
 
 type ComponentProp<C extends React.ElementType> = {
     /** Tag or component that should be used as root element */
-    component?: C;
+    as?: C;
 };
 
 export type PolymorphicRef<C> = C extends React.ElementType
@@ -25,4 +25,4 @@ export type PolymorphicComponentProps<
     Props = {}
 > = C extends React.ElementType
     ? InheritedProps<C, Props & ComponentProp<C>> & { ref?: PolymorphicRef<C> }
-    : Props & { component: React.ElementType };
+    : Props & { as: React.ElementType };

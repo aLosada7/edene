@@ -18,20 +18,18 @@ export interface LabelProps
     hideLabel?: boolean;
 }
 
-export const Label = (props: LabelProps) => {
-    const {
-        text,
-        supportingText,
-        hideLabel = false,
-        css: cssOverrides,
-        children,
-        ...rest
-    } = props;
-
+export const Label = ({
+    text,
+    supportingText,
+    hideLabel = false,
+    css,
+    children,
+    ...props
+}: LabelProps) => {
     const theme = useTheme();
 
     return (
-        <label css={() => [label, labelText(theme), cssOverrides]} {...rest}>
+        <label css={() => [label, labelText(theme), css]} {...props}>
             {supportingText ? (
                 <SupportingText hideLabel={hideLabel}>
                     {supportingText}

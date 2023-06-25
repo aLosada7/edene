@@ -12,22 +12,14 @@ export interface BadgeProps extends Props {
 }
 
 export const Badge = (props: BadgeProps) => {
-    const {
-        children,
-        color,
-        css: cssOverrides,
-        ...rest
-    } = {
+    const { children, color, css, ...rest } = {
         ...props,
     };
 
     const { theme } = useTheme();
 
     return (
-        <span
-            css={[badge, badgeTheme({ theme, color }), cssOverrides]}
-            {...rest}
-        >
+        <span css={[badge, badgeTheme({ theme, color }), css]} {...rest}>
             {children}
         </span>
     );

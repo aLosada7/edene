@@ -1,14 +1,10 @@
 import { css } from '@emotion/react';
-import { from, Scale } from '@edene/foundations';
+import { from } from '@edene/foundations';
 
 import { IColumnDirection, ColSize, Align } from './Col';
 import { RowAlign, RowDirection } from './Row';
 
-export const gridContainer = (
-    marginTop: Scale,
-    verticalPadding: Scale,
-    horizontalPadding: Scale
-) => css`
+export const gridContainer = css`
     max-width: 1224px;
     margin-left: auto;
     margin-right: auto;
@@ -16,16 +12,12 @@ export const gridContainer = (
     padding-left: 6vw;
     padding-right: 6vw;
 
-    ${verticalPadding !== 0 &&
-    `padding-top: calc(${verticalPadding} * 0.25rem); padding-bottom: calc(${verticalPadding} * 0.25rem);`}
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 
     ${from.desktop} {
         padding-left: 3vw;
         padding-right: 3vw;
-
-        ${horizontalPadding !== 0 &&
-        `padding-right: calc(${horizontalPadding} * 0.25rem); padding-left: calc(${horizontalPadding} * 0.25rem);`}
-        margin-top: calc(${marginTop} * 0.25rem);
     }
 
     > *:not(:first-of-type) {
@@ -144,7 +136,8 @@ export const gridColumnSize = (
     sm: ColSize,
     md: ColSize | null,
     lg: ColSize | null,
-    xl: ColSize | null
+    xl: ColSize | null,
+    gap?: number
 ) => css`
     box-sizing: border-box;
     flex: 0 0 auto;
@@ -169,4 +162,6 @@ export const gridColumnSize = (
         `flex-basis: ${flexWidth[xl]};
             min-width: ${flexWidth[xl]};`}
     }
+
+    ${gap && `gap: calc(${gap} * 0.25rem)`}
 `;
