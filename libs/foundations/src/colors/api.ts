@@ -1,6 +1,6 @@
 import { colorsPalette } from '../palette';
 import { defaultTheme } from '../theme';
-import { Theme } from '../theme/types';
+import { Theme } from '../theme/types/Theme';
 import { ComponentColors, EdeneColor } from './types';
 
 export const COMPONENT_COLORS = ['success', 'info', 'danger', 'gray'];

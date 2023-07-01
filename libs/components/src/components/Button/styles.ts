@@ -5,8 +5,6 @@ import {
     getDarkenColor,
     disabled,
     buttonSize,
-    defaultTheme,
-    Theme,
     ThemeOptions,
     ButtonSize,
     ButtonVariant,
@@ -57,7 +55,7 @@ export const btn = (size: ButtonSize) => css`
 `;
 
 export const btnColor = (
-    { theme = defaultTheme, color }: ThemeOptions,
+    { theme, color }: ThemeOptions,
     variant: ButtonVariant,
     isButtonBlock: boolean
 ) => css`
@@ -72,7 +70,7 @@ export const btnColor = (
 `;
 
 const buttonColorStyles = (
-    theme: Theme,
+    theme: any,
     color: string,
     hoverColor: string,
     variant: ButtonVariant

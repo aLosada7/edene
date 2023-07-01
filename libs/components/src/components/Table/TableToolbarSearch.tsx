@@ -16,8 +16,10 @@ export interface TableToolbarSearchProps
     extends Omit<InputHTMLAttributes<HTMLInputElement>, 'value'>,
         Props {}
 
-export const TableToolbarSearch = (props: TableToolbarSearchProps) => {
-    const { css: cssOverrides, ...rest } = props;
+export const TableToolbarSearch = ({
+    css,
+    ...props
+}: TableToolbarSearchProps) => {
     const [isSearchOpen, setSearchOpen] = useState(false);
 
     return (
@@ -25,9 +27,9 @@ export const TableToolbarSearch = (props: TableToolbarSearchProps) => {
             css={[
                 tableToolbarSearch,
                 isSearchOpen ? tableToolbarSearchOpen : null,
-                cssOverrides,
+                css,
             ]}
-            {...rest}
+            {...props}
         >
             {isSearchOpen ? (
                 <TextInput
@@ -46,7 +48,7 @@ export const TableToolbarSearch = (props: TableToolbarSearchProps) => {
             ) : null}
 
             {/* <Select
-                            cssOverrides={tableToolbarSearchInput}
+                            css={tableToolbarSearchInput}
                             value="all"
                         >
                             <Option value="all">

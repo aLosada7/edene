@@ -8,12 +8,8 @@ export interface TableHeadProps extends Props {
     children?: ReactElement | ReactElement[];
 }
 
-export const TableHead = (props: TableHeadProps) => {
-    const { children, css: cssOverrides, ...rest } = props;
-
-    return (
-        <thead css={[thead, cssOverrides]} {...rest}>
-            <TableRow headerRow>{children}</TableRow>
-        </thead>
-    );
-};
+export const TableHead = ({ children, css, ...props }: TableHeadProps) => (
+    <thead css={[thead, css]} {...props}>
+        <TableRow headerRow>{children}</TableRow>
+    </thead>
+);

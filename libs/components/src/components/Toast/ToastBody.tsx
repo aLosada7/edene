@@ -9,10 +9,10 @@ interface ToastBodyProps extends Props {
 }
 
 const ToastBody = (props: ToastBodyProps) => {
-    const { children, css: cssOverrides, ...rest } = props;
+    const { children, css, ...rest } = props;
 
     return (
-        <Text css={[toastBody, cssOverrides] as SerializedStyles[]} {...rest}>
+        <Text css={[toastBody, css] as SerializedStyles[]} {...rest}>
             {children}
         </Text>
     );

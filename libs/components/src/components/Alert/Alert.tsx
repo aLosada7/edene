@@ -17,13 +17,7 @@ export interface AlertProps extends Props {
 }
 
 export const Alert = (props: AlertProps) => {
-    const {
-        type = 'brand',
-        actions,
-        children,
-        css: cssOverrides,
-        ...rest
-    } = props;
+    const { type = 'brand', actions, children, css, ...rest } = props;
     const { theme } = useTheme();
 
     return (
@@ -33,7 +27,7 @@ export const Alert = (props: AlertProps) => {
                 [
                     alert,
                     alertTheme({ theme, color: type }),
-                    cssOverrides,
+                    css,
                 ] as SerializedStyles[]
             }
             {...rest}

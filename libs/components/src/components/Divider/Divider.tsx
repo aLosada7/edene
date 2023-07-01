@@ -18,7 +18,7 @@ export const Divider = (props: DividerProps) => {
         mt = 0,
         mb = 0,
         mh = 0,
-        css: cssOverrides,
+        css,
         ...rest
     } = {
         ...props,
@@ -29,7 +29,7 @@ export const Divider = (props: DividerProps) => {
     return (
         <Element
             role="separator"
-            css={[divider(width, mt, mb, mh), cssOverrides]}
+            css={[divider(width, mt, mb, mh), css]}
             {...rest}
         ></Element>
     );

@@ -3,7 +3,7 @@ import { CountrySelector as CountrySelectorComponent } from './CountrySelector';
 
 export default {
     component: CountrySelectorComponent,
-    title: 'Components/Simple',
+    title: 'Components/Forms',
     parameters: {
         layout: 'fullscreen',
     },

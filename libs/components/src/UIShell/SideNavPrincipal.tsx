@@ -14,21 +14,19 @@ export interface SideNavPrincipalProps extends Props {
     hoverColor?: string | null;
     children: ReactElement | ReactElement[];
 }
-export const SideNavPrincipal = (props: SideNavPrincipalProps) => {
-    const {
-        title,
-        hideIcon = false,
-        activeColor = null,
-        hoverColor = null,
-        children,
-        css: cssOverrides,
-        ...rest
-    } = props;
-
+export const SideNavPrincipal = ({
+    title,
+    hideIcon = false,
+    activeColor = null,
+    hoverColor = null,
+    children,
+    css,
+    ...props
+}: SideNavPrincipalProps) => {
     return (
         <Fragment>
             {title && (
-                <li css={[sideNavPrincipal, cssOverrides]} {...rest}>
+                <li css={[sideNavPrincipal, css]} {...props}>
                     <span>{title}</span>
                 </li>
             )}

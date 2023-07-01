@@ -1,11 +1,11 @@
-import React, { LinkHTMLAttributes } from 'react';
+import React, { FC, LinkHTMLAttributes } from 'react';
 
-import { Props, PolymorphicComponentProps, useTheme } from '@edene/foundations';
+import { Props, useTheme } from '@edene/foundations';
 
 import { navItem, navLink, sideNavWithIcon, navMenuLinkActive } from './styles';
 import { Icon } from '../icons';
 
-export interface SharedSideNavItemProps
+export interface SideNavItemProps
     extends LinkHTMLAttributes<HTMLAnchorElement>,
         Props {
     icon?: string;
@@ -15,41 +15,25 @@ export interface SharedSideNavItemProps
     children: React.ReactNode;
 }
 
-export type SideNavItemProps<C> = PolymorphicComponentProps<
-    C,
-    SharedSideNavItemProps
->;
-
-type SideNavItemComponent = <C = 'a'>(
-    props: SideNavItemProps<C>
-) => React.ReactElement;
-
-export const SideNavItem: SideNavItemComponent = ((
-    props: SideNavItemProps<'a'>
-) => {
-    const {
-        component,
-        icon,
-        badge,
-        css: cssOverrides,
-        onClose,
-        active = false,
-        children,
-        ...rest
-    } = props;
-
+export const SideNavItem: FC<SideNavItemProps> = ({
+    icon,
+    badge,
+    css,
+    onClose,
+    active = false,
+    children,
+    ...props
+}) => {
     const { theme } = useTheme();
-
-    const Element = component || 'a';
 
     return (
         <li
-            css={[navItem({ theme }), cssOverrides]}
+            css={[navItem({ theme }), css]}
             aria-current={active ? 'page' : undefined}
         >
-            <Element
+            <a
                 css={[navLink, active && navMenuLinkActive({ theme })]}
-                {...rest}
+                {...props}
             >
                 <div onClick={onClose}>
                     <span css={sideNavWithIcon}>
@@ -67,7 +51,7 @@ export const SideNavItem: SideNavItemComponent = ((
                 </div>
 
                 {badge}
-            </Element>
+            </a>
         </li>
     );
-}) as any;
+};

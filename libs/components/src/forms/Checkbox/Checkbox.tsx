@@ -22,8 +22,13 @@ export interface CheckboxProps extends Omit<FormInput, 'label'>, Props {
     cssLabel?: SerializedStyles | SerializedStyles;
 }
 
-export const Checkbox = (props: CheckboxProps) => {
-    const { id, label, css: cssOverrides, cssLabel, ...rest } = props;
+export const Checkbox = ({
+    id,
+    label,
+    css,
+    cssLabel,
+    ...props
+}: CheckboxProps) => {
     const textInputId = id || generateSourceId();
     const { onChange, isGroup } = useCheckboxGroup();
 
@@ -32,11 +37,11 @@ export const Checkbox = (props: CheckboxProps) => {
     const InputComponent = (
         <Input
             type="checkbox"
-            css={[checkboxInput(!!label), cssOverrides] as SerializedStyles[]}
+            css={[checkboxInput(!!label), css] as SerializedStyles[]}
             id={textInputId}
             onClick={onChange}
             onChange={props.onChange}
-            {...rest}
+            {...props}
         ></Input>
     );
 

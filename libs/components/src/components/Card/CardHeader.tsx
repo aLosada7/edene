@@ -1,26 +1,23 @@
-import { ReactElement } from 'react';
+import { ReactNode } from 'react';
 import { SerializedStyles } from '@emotion/react';
 import { Props } from '@edene/foundations';
 
 import { Heading } from '../../typography/Heading';
 import { cardHeader } from './styles';
+import { Box } from '../../layout/Box';
 
 export interface CardHeaderProps extends Props {
-    children: ReactElement | string;
+    children: ReactNode;
 }
 
-export const CardHeader = (props: CardHeaderProps) => {
-    const { children, css: cssOverrides, ...rest } = props;
-
-    return (
+export const CardHeader = ({ children, css, ...rest }: CardHeaderProps) => (
+    <Box py={2}>
         <Heading
-            size="h2"
-            mt={4}
-            mb={4}
-            css={[cardHeader, cssOverrides] as SerializedStyles[]}
+            size="h3"
+            css={[cardHeader, css] as SerializedStyles[]}
             {...rest}
         >
             {children}
         </Heading>
-    );
-};
+    </Box>
+);

@@ -5,7 +5,7 @@ import {
     FontWeight,
     TextAlign,
     Props,
-    TextTheme,
+    Color,
 } from '@edene/foundations';
 
 import { flexText, textCss, textColor } from './styles';
@@ -14,7 +14,7 @@ export type ITextFontSize = 'xxsmall' | 'xsmall' | 'small' | 'regular';
 
 export interface TextProps
     extends HTMLAttributes<HTMLDivElement>,
-        TextTheme,
+        Color,
         Props {
     mt?: number;
     // in titles only soon
@@ -38,7 +38,7 @@ export const Text = (props: TextProps) => {
         icon,
         color,
         children,
-        css: cssOverrides,
+        css,
         ...rest
     } = props;
     const { theme } = useTheme();
@@ -49,7 +49,7 @@ export const Text = (props: TextProps) => {
                 textCss(mt, mb, ml, size, align, weight),
                 textColor(theme?.text?.color, color),
                 icon ? flexText : null,
-                cssOverrides,
+                css,
             ]}
             {...rest}
         >

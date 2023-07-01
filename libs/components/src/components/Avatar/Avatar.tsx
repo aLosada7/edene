@@ -25,7 +25,7 @@ export function Avatar(props: AvatarProps) {
         dotPosition = 'top',
         connected,
         outline,
-        css: cssOverrides,
+        css,
         ...rest
     } = props;
     const [initials, setInitials] = useState<string | undefined>();
@@ -43,7 +43,7 @@ export function Avatar(props: AvatarProps) {
     const { theme } = useTheme();
 
     return (
-        <div css={[avatar(shape, size, { theme }), cssOverrides]} {...rest}>
+        <div css={[avatar(shape, size, { theme }), css]} {...rest}>
             {props.src ? (
                 <Image
                     src={props.src as any}

@@ -17,13 +17,13 @@ export const CardSection = (props: CardSectionProps) => {
         borderBottom = false,
         flex = 100,
         children,
-        css: cssOverrides,
+        css,
         ...rest
     } = props;
 
     return (
         <section
-            css={[cardSection(flex, borderBottom, borderRight), cssOverrides]}
+            css={[cardSection(flex, borderBottom, borderRight), css]}
             {...rest}
         >
             {children}

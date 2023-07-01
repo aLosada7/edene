@@ -6,10 +6,10 @@ import { tooltip } from './styles';
 export interface TooltipProps extends Props {}
 
 export const Tooltip = (props: TooltipProps) => {
-    const { css: cssOverrides, ...rest } = props;
+    const { css, ...rest } = props;
 
     return (
-        <div css={[tooltip, cssOverrides]} {...rest}>
+        <div css={[tooltip, css]} {...rest}>
             Tooltip
         </div>
     );

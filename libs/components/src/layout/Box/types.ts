@@ -20,6 +20,6 @@ export interface BoxProps extends Props {
 }
 
 export type PBoxProps<C> = PolymorphicComponentProps<C, BoxProps>;
-export type BoxComponent = <C = 'img'>(
+export type BoxComponent = <C = 'div'>(
     props: PBoxProps<C>
 ) => React.ReactElement;

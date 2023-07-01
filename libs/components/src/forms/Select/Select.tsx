@@ -9,13 +9,7 @@ import {
 
 import { Props, generateSourceId } from '@edene/foundations';
 
-import {
-    select,
-    selectButton,
-    selectButtonIconRight,
-    selectItems,
-    showItems,
-} from './styles';
+import { select, selectButton, selectItems, showItems } from './styles';
 import { input } from '../Input/styles';
 import { FormInput } from '../Input/types';
 import { Button } from '../../components/Button';
@@ -47,7 +41,7 @@ export const Select = (props: SelectProps) => {
         defaultValue,
         onChange,
         children,
-        css: cssOverrides,
+        css,
     } = props;
 
     const inputId = id || generateSourceId();
@@ -73,13 +67,12 @@ export const Select = (props: SelectProps) => {
     return (
         <FormGroup>
             {label}
-            <div css={[input, select, cssOverrides]} id={inputId}>
+            <div css={[input, select, css]} id={inputId}>
                 <Button
-                    component="div"
+                    as="div"
                     icon="unfold_more"
                     iconSide="right"
                     css={selectButton}
-                    cssOverridesIconRightButton={selectButtonIconRight}
                     onClick={(e: any) => {
                         e.preventDefault();
                         setShowOptions(!showOptions);

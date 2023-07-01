@@ -7,9 +7,9 @@ import {
     colors,
     supporting,
 } from '../../palette';
-import { Theme } from '../types';
+import { Theme } from '../ThemeProvider';
 
-export const defaultTheme: Required<Theme> = {
+export const defaultTheme: Theme = {
     title: 'default',
     lightColor: '#F8D7DA',
     color: brandColor,
@@ -24,11 +24,7 @@ export const defaultTheme: Required<Theme> = {
         supportingText: supporting,
     },
     header: {
-        background: '#161616',
-        text: '#f4f4f4',
-        headerGlobalAction: {
-            fill: '#ffffff',
-        },
+        backgroundColor: '#161616',
     },
     sideNav: {
         background: 'transparent',

@@ -39,14 +39,7 @@ export interface InputProps
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(
     (props: InputProps, ref) => {
-        const {
-            id,
-            error,
-            success,
-            iconLeft,
-            css: cssOverrides,
-            ...rest
-        } = props;
+        const { id, error, success, iconLeft, css, ...rest } = props;
 
         const Error = error ? <InlineError>{error}</InlineError> : null;
         const Success =
@@ -72,7 +65,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
                                 : errorInput
                             : null,
                         iconLeft && iconLeftInInput,
-                        cssOverrides,
+                        css,
                     ]}
                     // aria-required={!optional}
                     aria-invalid={!!error}

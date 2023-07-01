@@ -16,13 +16,7 @@ export interface TextareaProps
 }
 
 export const Textarea = (props: TextareaProps) => {
-    const {
-        id,
-        label: labelText,
-        css: cssOverrides,
-        cssLabel,
-        ...rest
-    } = props;
+    const { id, label: labelText, css, cssLabel, ...rest } = props;
 
     const inputId = id || generateSourceId();
 
@@ -35,7 +29,7 @@ export const Textarea = (props: TextareaProps) => {
             {label}
             <textarea
                 id={inputId}
-                css={[input, textarea, cssOverrides]}
+                css={[input, textarea, css]}
                 {...rest}
             ></textarea>
         </FormGroup>

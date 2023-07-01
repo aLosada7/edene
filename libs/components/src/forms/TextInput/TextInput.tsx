@@ -24,16 +24,17 @@ export interface TextInputProps
 }
 
 export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
-    (props: TextInputProps, ref) => {
-        const {
+    (
+        {
             id,
             label: labelText,
             onChange,
-            css: cssOverrides,
+            css,
             cssLabel,
-            ...rest
-        } = props;
-
+            ...props
+        }: TextInputProps,
+        ref
+    ) => {
         const textInputId = id || generateSourceId();
 
         const label = labelText && (
@@ -48,7 +49,8 @@ export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
                     id={textInputId}
                     ref={ref}
                     onChange={onChange}
-                    {...rest}
+                    css={css}
+                    {...props}
                 />
             </FormGroup>
         );

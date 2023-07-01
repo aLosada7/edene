@@ -36,7 +36,7 @@ export const SideNavMenu = ({
     title,
     active = false,
     icon,
-    css: cssOverrides,
+    css,
     children,
     /* from parent */
     navigationChildren = 0,
@@ -60,7 +60,7 @@ export const SideNavMenu = ({
                 type="button"
                 aria-expanded={expanded}
                 onClick={handleClick}
-                css={[navMenuLink, cssOverrides]}
+                css={[navMenuLink, css]}
             >
                 {icon && (
                     <Icon

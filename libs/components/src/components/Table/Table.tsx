@@ -14,24 +14,22 @@ export interface TableProps
     children: ReactNode;
 }
 
-export const Table = (props: TableProps) => {
-    const {
-        selection,
-        selectedRows,
-        rows = [],
-        children,
-        css: cssOverrides,
-        ...rest
-    } = props;
-
+export const Table = ({
+    selection,
+    selectedRows = [],
+    rows = [],
+    children,
+    css,
+    ...rest
+}: TableProps) => {
     return (
         <TableProvider
             selection={selection}
             rows={rows}
-            selectedRows={selectedRows || []}
+            selectedRows={selectedRows}
         >
             <div css={tableContent}>
-                <table css={[table, cssOverrides]} {...rest}>
+                <table css={[table, css]} {...rest}>
                     {children}
                 </table>
             </div>

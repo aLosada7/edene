@@ -17,14 +17,14 @@ export const BreadcrumbItem = (props: BreadcrumbItemProps) => {
         href,
         active = false,
         children,
-        css: cssOverrides,
+        css,
         ...rest
     } = {
         ...props,
     };
 
     return (
-        <li css={[breadcrumbItem({ active }), cssOverrides]} {...rest}>
+        <li css={[breadcrumbItem({ active }), css]} {...rest}>
             {!active && href ? (
                 <a css={breadcrumbItemLink} href={href}>
                     {children}

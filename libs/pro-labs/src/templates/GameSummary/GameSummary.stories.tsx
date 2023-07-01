@@ -18,23 +18,25 @@ import {
     Text,
     CardHeader,
     Avatar,
+    Box,
+    Container,
 } from '@edene/components';
-import { ThemeProvider, grays } from '@edene/foundations';
+import { ThemeProvider } from '@edene/foundations';
 
 import { rows } from './rows';
 import { theme } from './theme';
 
 export default {
-    title: 'Pages/Details',
+    title: 'Templates',
     decorators: [
         (Story: any) => (
             <ThemeProvider theme={theme}>
-                <section style={{ backgroundColor: grays[7] }}>
-                    <Heading size="h3" mb={2}>
-                        Game Summary
-                    </Heading>
+                <Container>
+                    <Box mb={2}>
+                        <Heading size="h3">Game Summary</Heading>
+                    </Box>
                     <Story />
-                </section>
+                </Container>
             </ThemeProvider>
         ),
     ],
@@ -91,21 +93,17 @@ const Scoring = () => (
     >
         <CardHeader>SCORING</CardHeader>
         <CardSection>
-            <Row py={1}>
-                <Col lg={8} direction="column" align="center">
-                    <Avatar size={100} shape="circle" />
-                </Col>
-                <Col lg={16} direction="column">
-                    <Row direction="column" px={2}>
-                        <Text weight="bold">Danial Berry</Text>
-                        <Text size="xsmall" weight="bold">
-                            Jason Chapman, Jake Sullivan
-                        </Text>
-                        <Text size="xsmall" weight="bold">
-                            11:20 / 1st
-                        </Text>
-                    </Row>
-                </Col>
+            <Row align="space-around-center" py={1}>
+                <Avatar size={100} shape="circle" />
+                <Row direction="column" px={2}>
+                    <Text weight="bold">Danial Berry</Text>
+                    <Text size="xsmall" weight="bold">
+                        Jason Chapman, Jake Sullivan
+                    </Text>
+                    <Text size="xsmall" weight="bold">
+                        11:20 / 1st
+                    </Text>
+                </Row>
             </Row>
         </CardSection>
     </Card>

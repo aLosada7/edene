@@ -31,6 +31,10 @@ export const cardOverrides = css`
     }
 `;
 
+export const cardPadding = css`
+    padding: 1.2rem 2rem;
+`;
+
 export const modalHeader = css`
     display: flex;
     align-items: center;

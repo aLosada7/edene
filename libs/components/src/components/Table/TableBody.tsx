@@ -13,10 +13,10 @@ export interface TableBodyProps extends Props {
 }
 
 export const TableBody = (props: TableBodyProps) => {
-    const { children, css: cssOverrides, ...rest } = props;
+    const { children, css, ...rest } = props;
 
     return (
-        <tbody css={tbody} aria-live="polite" {...rest}>
+        <tbody css={[tbody, css]} aria-live="polite" {...rest}>
             {children}
         </tbody>
     );

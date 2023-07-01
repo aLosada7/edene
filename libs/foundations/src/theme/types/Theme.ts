@@ -7,19 +7,19 @@ export interface Theme {
     black?: string;
     grays: Record<string, string>;
     colors?: Record<string, unknown>;
-    header?: any;
+    header?: BackgroundColor;
     label?: any;
     sideNav?: any;
     // text: string;
 
-    text?: TextTheme;
-    heading?: HeadingTheme;
+    text?: Color;
+    heading?: Color;
 }
 
-export interface TextTheme {
+export interface Color {
     color?: string;
 }
 
-export interface HeadingTheme {
-    color?: string;
+export interface BackgroundColor {
+    backgroundColor?: string;
 }

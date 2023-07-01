@@ -49,7 +49,7 @@ const AuthenticationSignIn = () => {
                             Login
                         </Button>
                         <Box my={2}>
-                            <Button component="a" href="#" variant="link">
+                            <Button as="a" href="#" variant="link">
                                 Forgot your passcode?
                             </Button>
                         </Box>

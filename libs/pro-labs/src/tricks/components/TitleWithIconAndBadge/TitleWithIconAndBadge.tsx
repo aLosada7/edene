@@ -11,7 +11,7 @@ const HeadingWithIconAndBadge = () => (
                     variant="outlined"
                     color="primary"
                     size="large"
-                    cssOverrides={css`
+                    css={css`
                         margin-right: 6px;
                     `}
                 >
@@ -22,7 +22,7 @@ const HeadingWithIconAndBadge = () => (
             GALZO2R4I5ZK
         </Heading>
         <Badge
-            cssOverrides={css`
+            css={css`
                 height: fit-content;
                 margin-top: auto;
                 margin-bottom: auto;

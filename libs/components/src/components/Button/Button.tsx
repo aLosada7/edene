@@ -1,5 +1,4 @@
-import { cloneElement, forwardRef } from 'react';
-import { SerializedStyles } from '@emotion/react';
+import { ReactNode, cloneElement, forwardRef } from 'react';
 
 import {
     PolymorphicComponentProps,
@@ -21,6 +20,7 @@ import {
     buttonIconRight,
     buttonLoading,
 } from './styles';
+import { Box } from '../../layout/Box';
 
 export type IButtonBlock = 'block';
 
@@ -39,8 +39,7 @@ export interface ButtonProps extends Props {
 
     iconSize?: IconSize;
     disabled?: boolean;
-    cssOverridesIconRightButton?: SerializedStyles | SerializedStyles[];
-    children?: JSX.Element | string;
+    children?: ReactNode;
 }
 
 export type PButtonProps<C> = PolymorphicComponentProps<C, ButtonProps>;
@@ -52,7 +51,7 @@ type ButtonComponent = <C = 'button'>(
 export const Button: ButtonComponent = forwardRef(
     (props: PButtonProps<'button'>, ref: PolymorphicRef<'button'>) => {
         const {
-            component,
+            as: Component = 'button',
             type,
             color,
             iconSize = 'small',
@@ -64,38 +63,38 @@ export const Button: ButtonComponent = forwardRef(
             loading,
             disabled,
             children,
-            css: cssOverrides,
-            cssOverridesIconRightButton,
+            css,
             ...rest
         } = props;
 
         const { theme } = useTheme();
 
         const isButtonBlock = size === 'block';
-        const Element = component || 'button';
 
         return (
-            <Element
+            <Component
                 type={type}
                 id={props.id}
                 css={[
                     btn(isButtonBlock ? 'medium' : (size as ButtonSize)),
                     btnColor({ theme, color }, variant, isButtonBlock),
-                    cssOverrides,
+                    css,
                 ]}
                 ref={ref}
                 disabled={disabled}
                 {...rest}
             >
                 {icon && iconSide === 'left' ? (
-                    <Icon
-                        variant={iconVariant}
-                        size={iconSize}
-                        css={buttonIconLeft(isButtonBlock)}
-                        color="inherit"
-                    >
-                        {icon}
-                    </Icon>
+                    <Box mr={2}>
+                        <Icon
+                            variant={iconVariant}
+                            size={iconSize}
+                            css={buttonIconLeft(isButtonBlock)}
+                            color="inherit"
+                        >
+                            {icon}
+                        </Icon>
+                    </Box>
                 ) : null}
                 {typeof children === 'string' ? (
                     loading ? (
@@ -112,18 +111,13 @@ export const Button: ButtonComponent = forwardRef(
                     <Icon
                         variant={iconVariant}
                         size={iconSize}
-                        css={
-                            [
-                                buttonIconRight(isButtonBlock),
-                                cssOverridesIconRightButton,
-                            ] as SerializedStyles[]
-                        }
+                        css={buttonIconRight(isButtonBlock)}
                         color="inherit"
                     >
                         {icon}
                     </Icon>
                 ) : null}
-            </Element>
+            </Component>
         );
     }
 ) as any;

@@ -84,7 +84,7 @@ export const Sidebar = () => {
                 <header css={sidebarHeader}>
                     <MenuButton
                         type="button"
-                        cssOverrides={sidebarBurguer}
+                        css={sidebarBurguer}
                         onClick={toggleSidebar}
                     ></MenuButton>
                     Edene

@@ -16,14 +16,13 @@ export interface TableRowProps extends Props {
     children: ReactNode | ReactNode[];
 }
 
-export const TableRow = (props: TableRowProps) => {
-    const {
-        id,
-        headerRow = false,
-        children,
-        css: cssOverrides,
-        ...rest
-    } = props;
+export const TableRow = ({
+    id,
+    headerRow = false,
+    children,
+    css,
+    ...props
+}: TableRowProps) => {
     const { selection, allChecked, onToggle, onToggleAll, isChecked } =
         useTable();
 
@@ -34,7 +33,7 @@ export const TableRow = (props: TableRowProps) => {
     }: {
         id?: string;
         checked: boolean;
-        onChange: (e: any) => void;
+        onChange: (e: Event) => void;
     }) => <Checkbox id={id} checked={checked} onChange={onChange} />;
 
     const Selection = headerRow ? (
@@ -52,7 +51,7 @@ export const TableRow = (props: TableRowProps) => {
     );
 
     return (
-        <tr css={[tr, cssOverrides]} {...rest}>
+        <tr css={[tr, css]} {...props}>
             {selection && Selection}
             {children}
         </tr>

@@ -1,4 +1,3 @@
-import React from 'react';
 import { css } from '@emotion/react';
 import NextImage from 'next/image';
 import Link from 'next/link';
@@ -11,19 +10,14 @@ import {
     Text,
     Heading,
     Badge,
-    SideNav,
-    SideNavItems,
-    SideNavPrincipal,
-    SideNavItem,
     Box,
-    Stack,
     Group,
 } from '@edene/components';
 
 import mountain from '../../../../assets/img/mountain.jpg';
 
 export default {
-    title: 'Pages/Results',
+    title: 'Templates',
 };
 
 const FEATURE_MAIN_POST = {
@@ -76,7 +70,7 @@ const Tags = ({ tags }: any) => {
 
 const FeaturedPost = ({ blog }: any) => (
     <Link href={{ pathname: `/blog/${blog.slug}` }}>
-        <Box component="article" mb={4}>
+        <Box as="article" mb={4}>
             <Box
                 mb={2}
                 css={css`
@@ -85,16 +79,14 @@ const FeaturedPost = ({ blog }: any) => (
                 `}
             >
                 <Image
-                    component={NextImage}
+                    as={NextImage}
                     layout="fill"
                     src={mountain}
                     alt={blog.slug}
                 />
             </Box>
             <Text size="xsmall">{blog.date}</Text>
-            <Heading size="h3" mb={1}>
-                {blog.headline}
-            </Heading>
+            <Heading size="h3">{blog.headline}</Heading>
             <Text size="small">{blog.description}</Text>
             <Tags tags={blog.tags} />
         </Box>
@@ -103,7 +95,7 @@ const FeaturedPost = ({ blog }: any) => (
 
 const AdditionalFeaturedPost = ({ blog }: any) => (
     <Link href={{ pathname: `/blog/${blog.slug}` }}>
-        <Box component="article" mb={4}>
+        <Box as="article" mb={4}>
             <Row>
                 <Col md={12}>
                     <Box
@@ -115,7 +107,7 @@ const AdditionalFeaturedPost = ({ blog }: any) => (
                         `}
                     >
                         <Image
-                            component={NextImage}
+                            as={NextImage}
                             layout="fill"
                             src={mountain}
                             alt={blog.slug}
@@ -124,9 +116,7 @@ const AdditionalFeaturedPost = ({ blog }: any) => (
                 </Col>
                 <Col md={12} direction="column">
                     <Text size="xsmall">{blog.date}</Text>
-                    <Heading size="h3" mb={1}>
-                        {blog.headline}
-                    </Heading>
+                    <Heading size="h3">{blog.headline}</Heading>
                     <Text size="small">{blog.description}</Text>
                     <Tags tags={blog.tags} />
                 </Col>
@@ -137,7 +127,7 @@ const AdditionalFeaturedPost = ({ blog }: any) => (
 
 const Post = ({ blog }: any) => (
     <Link href={{ pathname: `/blog/${blog.slug}` }}>
-        <Box component="article" mb={4}>
+        <Box as="article" mb={4}>
             <Box
                 mb={2}
                 css={css`
@@ -146,16 +136,14 @@ const Post = ({ blog }: any) => (
                 `}
             >
                 <Image
-                    component={NextImage}
+                    as={NextImage}
                     layout="fill"
                     src={mountain}
                     alt="Picture of a mountain"
                 />
             </Box>
             <Text size="xsmall">{blog.date}</Text>
-            <Heading size="h3" mb={1}>
-                {blog.headline}
-            </Heading>
+            <Heading size="h3">{blog.headline}</Heading>
             <Text size="small">{blog.description}</Text>
             <Tags tags={blog.tags} />
         </Box>
@@ -164,43 +152,35 @@ const Post = ({ blog }: any) => (
 
 export const Blog = () => (
     <>
-        <section className="page-section py-section featured-blog-posts-section">
-            <Container ph={12}>
-                <Heading size="h2" mb={4}>
-                    Featured blog posts
-                </Heading>
-                <Row>
-                    <Col lg={12}>
-                        <FeaturedPost blog={FEATURE_MAIN_POST} />
+        <Container>
+            <Box pb={2}>
+                <Heading size="h2">Featured blog posts</Heading>
+            </Box>
+            <Row>
+                <Col lg={12}>
+                    <FeaturedPost blog={FEATURE_MAIN_POST} />
+                </Col>
+                <Col lg={12} direction="column">
+                    <AdditionalFeaturedPost blog={FEATURE_ADDITIONAL_BLOG_1} />
+                    <AdditionalFeaturedPost blog={FEATURE_ADDITIONAL_BLOG_2} />
+                </Col>
+            </Row>
+        </Container>
+        <Container>
+            <Box pb={2}>
+                <Heading size="h2">All blog posts</Heading>
+            </Box>
+            <Row>
+                {[
+                    FEATURE_MAIN_POST,
+                    FEATURE_ADDITIONAL_BLOG_1,
+                    FEATURE_ADDITIONAL_BLOG_2,
+                ].map((blog) => (
+                    <Col md={12} lg={8} direction="column" key={blog.slug}>
+                        <Post blog={blog} />
                     </Col>
-                    <Col lg={12} direction="column">
-                        <AdditionalFeaturedPost
-                            blog={FEATURE_ADDITIONAL_BLOG_1}
-                        />
-                        <AdditionalFeaturedPost
-                            blog={FEATURE_ADDITIONAL_BLOG_2}
-                        />
-                    </Col>
-                </Row>
-            </Container>
-        </section>
-        <section className="page-section py-section">
-            <Container pv={8} ph={12}>
-                <Heading size="h2" mb={4}>
-                    All blog posts
-                </Heading>
-                <Row>
-                    {[
-                        FEATURE_MAIN_POST,
-                        FEATURE_ADDITIONAL_BLOG_1,
-                        FEATURE_ADDITIONAL_BLOG_2,
-                    ].map((blog) => (
-                        <Col md={12} lg={8} direction="column" key={blog.slug}>
-                            <Post blog={blog} />
-                        </Col>
-                    ))}
-                </Row>
-            </Container>
-        </section>
+                ))}
+            </Row>
+        </Container>
     </>
 );

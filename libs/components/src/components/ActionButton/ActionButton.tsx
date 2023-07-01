@@ -15,12 +15,12 @@ export interface ActionButtonProps
 }
 
 export const ActionButton = (props: ActionButtonProps) => {
-    const { children, variant = 'filled', css: cssOverrides, ...rest } = props;
+    const { children, variant = 'filled', css, ...rest } = props;
 
     return (
         <Button
             color="transparent"
-            css={[actionButton, cssOverrides] as SerializedStyles[]}
+            css={[actionButton, css] as SerializedStyles[]}
             {...rest}
         >
             {typeof children === 'string' ? (

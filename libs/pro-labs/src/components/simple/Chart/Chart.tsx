@@ -1,5 +1,5 @@
 import { Button, Heading } from '@edene/components';
-import { Theme } from '@edene/foundations';
+import { Theme, useTheme } from '@edene/foundations';
 import { useState } from 'react';
 import ApexChart from 'react-apexcharts';
 
@@ -87,9 +87,10 @@ const ToggleButtons = ({ setSeries, setActiveButton, activeButton }: any) => {
     );
 };
 
-const Chart = ({ theme }: { theme: Theme }) => {
+const Chart = () => {
     const [series, setSeries] = useState(daily);
     const [activeButton, setActiveButton] = useState('Daily');
+    const { theme } = useTheme();
 
     return (
         <div css={card}>

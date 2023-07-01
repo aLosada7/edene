@@ -11,25 +11,22 @@ export interface CardMediaProps extends Props {
     imageSize?: ImageSize;
 }
 
-export const CardMedia = (props: CardMediaProps) => {
-    const { src, alt, imageSize, css: cssOverrides, ...rest } = props;
-
+export const CardMedia = ({
+    src,
+    alt,
+    imageSize,
+    css,
+    ...rest
+}: CardMediaProps) => {
     if (Array.isArray(src))
-        return (
-            <Carousel
-                src={src}
-                imageSize={imageSize}
-                css={cssOverrides}
-                {...rest}
-            />
-        );
+        return <Carousel src={src} imageSize={imageSize} css={css} {...rest} />;
 
     return (
         <Image
             size="d"
             src={src}
             alt={alt || 'CardMedia Image'}
-            css={[cardMedia, cssOverrides] as SerializedStyles[]}
+            css={[cardMedia, css] as SerializedStyles[]}
             {...rest}
         />
     );

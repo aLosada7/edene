@@ -8,6 +8,9 @@ import {
     Option,
     Button,
     Group,
+    Box,
+    Container,
+    Stack,
 } from '@edene/components';
 
 const Person = () => (
@@ -34,37 +37,51 @@ const Person = () => (
 export const ContractRegisterComponent = () => {
     return (
         <Form>
-            <Heading mt={4}>Address</Heading>
-            <TextInput label="Full Address" />
-            <Row>
-                <Col md={12}>
-                    <TextInput label="Province" />
-                </Col>
-                <Col md={12}>
-                    <TextInput label="Zip" />
-                </Col>
-            </Row>
+            <Row direction="column" gap={3}>
+                <Box>
+                    <Box pb={2}>
+                        <Heading size="h3">Address</Heading>
+                    </Box>
+                    <TextInput label="Full Address" />
+                    <Row>
+                        <Col md={12}>
+                            <TextInput label="Province" />
+                        </Col>
+                        <Col md={12}>
+                            <TextInput label="Zip" />
+                        </Col>
+                    </Row>
+                </Box>
 
-            <Heading mt={4}>Tenants</Heading>
-            <Person />
-            <Button variant="link" icon="add">
-                Add tenant
-            </Button>
+                <Box>
+                    <Box pb={2}>
+                        <Heading size="h3">Tenants</Heading>
+                    </Box>
+                    <Person />
+                    <Button size="small" icon="add">
+                        Add tenant
+                    </Button>
+                </Box>
 
-            <Heading mt={4}>Landlords</Heading>
-            <Person />
-            <Button variant="link" icon="add">
-                Add landlord
-            </Button>
+                <Box>
+                    <Box pb={2}>
+                        <Heading size="h3">Landlords</Heading>
+                    </Box>
+                    <Person />
+                    <Button size="small" icon="add">
+                        Add landlord
+                    </Button>
+                </Box>
 
-            <Row align="space-between-center" noGlutters>
-                <Button icon="arrow_back" variant="link">
-                    Back
-                </Button>
-                <Group>
-                    <Button variant="outlined">Cancel</Button>
-                    <Button>Save</Button>
-                </Group>
+                <Row align="space-between-center" noGlutters>
+                    <Button variant="link" icon="arrow_back">
+                        Back
+                    </Button>
+                    <Group>
+                        <Button variant="outlined">Cancel</Button>
+                        <Button>Save</Button>
+                    </Group>
+                </Row>
             </Row>
         </Form>
     );

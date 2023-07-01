@@ -1,4 +1,4 @@
-import { Row, Heading } from '@edene/components';
+import { Row, Heading, Box } from '@edene/components';
 import { Fragment } from 'react';
 
 import { FoodCategory } from '../components/FoodCategory';
@@ -12,24 +12,20 @@ export const FoodCategoriesContainer = ({
     onSelect,
 }: {
     onSelect: (kind: string) => void;
-}) => {
-    const foodCategories = foodRestaurants.map((category: IFoodOffer) => (
-        <FoodCategory
-            key={category.slug}
-            category={category}
-            onSelect={onSelect}
-        />
-    ));
-
-    return (
-        <Fragment>
-            <Heading size="h2" mb={6}>
-                Food Categories
-            </Heading>
-            <Row>
-                <FoodCategoryAll onSelect={onSelect} />
-                {foodCategories}
-            </Row>
-        </Fragment>
-    );
-};
+}) => (
+    <Fragment>
+        <Box mb={6}>
+            <Heading size="h2">Food Categories</Heading>
+        </Box>
+        <Row>
+            <FoodCategoryAll onSelect={onSelect} />
+            {foodRestaurants.map((category: IFoodOffer) => (
+                <FoodCategory
+                    key={category.slug}
+                    category={category}
+                    onSelect={onSelect}
+                />
+            ))}
+        </Row>
+    </Fragment>
+);

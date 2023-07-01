@@ -3,7 +3,7 @@ import { Story, Meta } from '@storybook/react';
 import NoteComponent from './index';
 
 export default {
-    title: 'Components/Simple',
+    title: 'Components',
     component: NoteComponent,
 } as Meta;
 
