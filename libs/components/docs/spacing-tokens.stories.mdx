@@ -1,0 +1,36 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Tokens/Spacing" />
+
+# Spacing
+
+For spacing size values Edene does not use different names.
+
+Instead, components accept a **numeric value**, which will be always multiply by **4**.
+
+Moreover, the **default value** is by default **0**, for all the components which accept spacing
+
+**Example**
+
+If we want to give a Box margin bottom of .5rem (or 8px). Then: `<Box mb={2}>content</Box>`
+
+## List of components which accept _spacing_ values
+
+-   Box
+
+## List of _spacing props_ these components accept (ordered by specificity)
+
+-   m (margin)
+-   mx (margin-left & margin-right)
+-   my (margin-top & margin-bottom)
+-   ml (margin-left)
+-   mr (margin-right)
+-   mt (margin-top)
+-   mb (margin-bottom)
+-   p (padding)
+-   px (padding-left & padding-right)
+-   py (padding-top & padding-bottom)
+-   pl (padding-left)
+-   pr (padding-right)
+-   pt (padding-top)
+-   pb (padding-bottom)

@@ -3,10 +3,12 @@ import { Props } from '@edene/foundations';
 
 import { gridRow } from './styles';
 
-export type RowAlign = `${'start' | 'end' | 'space-around' | 'space-between'}-${
+export type RowAlign = `${
     | 'start'
     | 'center'
-    | 'end'}`;
+    | 'end'
+    | 'space-around'
+    | 'space-between'}-${'start' | 'center' | 'end'}`;
 export type RowDirection = 'row' | 'column';
 
 export interface RowProps extends Props {

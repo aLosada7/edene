@@ -1,16 +1,5 @@
-import { ReactNode, cloneElement, forwardRef } from 'react';
-
-import {
-    PolymorphicComponentProps,
-    PolymorphicRef,
-    EdeneColor,
-    useTheme,
-    Props,
-    ButtonVariant,
-    ButtonSize,
-    IconSize,
-    IconVariant,
-} from '@edene/foundations';
+import { cloneElement, forwardRef } from 'react';
+import { PolymorphicRef, useTheme } from '@edene/foundations';
 
 import { Icon } from '../../icons';
 import {
@@ -21,32 +10,7 @@ import {
     buttonLoading,
 } from './styles';
 import { Box } from '../../layout/Box';
-
-export type IButtonBlock = 'block';
-
-export interface ButtonProps extends Props {
-    id?: string;
-    /** Button type attribute */
-    type?: 'submit' | 'button' | 'reset';
-    color?: EdeneColor;
-    variant?: ButtonVariant;
-    size?: ButtonSize | IButtonBlock;
-
-    icon?: string;
-    iconSide?: 'left' | 'right';
-    iconVariant?: IconVariant;
-    loading?: boolean;
-
-    iconSize?: IconSize;
-    disabled?: boolean;
-    children?: ReactNode;
-}
-
-export type PButtonProps<C> = PolymorphicComponentProps<C, ButtonProps>;
-
-type ButtonComponent = <C = 'button'>(
-    props: PButtonProps<C>
-) => React.ReactElement;
+import { ButtonComponent, PButtonProps } from './types';
 
 export const Button: ButtonComponent = forwardRef(
     (props: PButtonProps<'button'>, ref: PolymorphicRef<'button'>) => {
@@ -76,7 +40,7 @@ export const Button: ButtonComponent = forwardRef(
                 type={type}
                 id={props.id}
                 css={[
-                    btn(isButtonBlock ? 'medium' : (size as ButtonSize)),
+                    btn(isButtonBlock ? 'medium' : size),
                     btnColor({ theme, color }, variant, isButtonBlock),
                     css,
                 ]}
@@ -85,7 +49,7 @@ export const Button: ButtonComponent = forwardRef(
                 {...rest}
             >
                 {icon && iconSide === 'left' ? (
-                    <Box mr={2}>
+                    <Box pr={2}>
                         <Icon
                             variant={iconVariant}
                             size={iconSize}
@@ -108,14 +72,16 @@ export const Button: ButtonComponent = forwardRef(
                     })
                 )}
                 {icon && iconSide === 'right' ? (
-                    <Icon
-                        variant={iconVariant}
-                        size={iconSize}
-                        css={buttonIconRight(isButtonBlock)}
-                        color="inherit"
-                    >
-                        {icon}
-                    </Icon>
+                    <Box pl={2}>
+                        <Icon
+                            variant={iconVariant}
+                            size={iconSize}
+                            css={buttonIconRight(isButtonBlock)}
+                            color="inherit"
+                        >
+                            {icon}
+                        </Icon>
+                    </Box>
                 ) : null}
             </Component>
         );

@@ -26,7 +26,9 @@ export const EducationSummaryContainer = () => {
                     <Col md={16} direction="row">
                         <Avatar size={54} name="Edene Tuition Center"></Avatar>
                         <Row noGlutters px={4}>
-                            <Heading mb={1}>Edene Tuition Center</Heading>
+                            <Box mb={1}>
+                                <Heading>Edene Tuition Center</Heading>
+                            </Box>
                             <Row noGlutters>
                                 <Text weight="bold" color={grays[2]}>
                                     400 students

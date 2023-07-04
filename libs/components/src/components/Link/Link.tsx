@@ -1,5 +1,5 @@
-import { PolymorphicComponentProps, Props } from '@edene/foundations';
 import { ReactNode } from 'react';
+import { PolymorphicComponentProps, Props } from '@edene/foundations';
 
 export interface LinkProps extends Props {
     children: ReactNode;

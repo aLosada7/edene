@@ -1,21 +1,29 @@
-import React, { FC, LinkHTMLAttributes } from 'react';
+import { ReactElement, ReactNode } from 'react';
 
-import { Props, useTheme } from '@edene/foundations';
+import { Props, PolymorphicComponentProps, useTheme } from '@edene/foundations';
 
 import { navItem, navLink, sideNavWithIcon, navMenuLinkActive } from './styles';
 import { Icon } from '../icons';
 
-export interface SideNavItemProps
-    extends LinkHTMLAttributes<HTMLAnchorElement>,
-        Props {
+export interface SharedSideNavItemProps extends Props {
     icon?: string;
-    badge?: React.ReactElement;
+    badge?: ReactElement;
     onClose?: () => void;
     active?: boolean;
-    children: React.ReactNode;
+    children: ReactNode;
 }
 
-export const SideNavItem: FC<SideNavItemProps> = ({
+export type SideNavItemProps<C> = PolymorphicComponentProps<
+    C,
+    SharedSideNavItemProps
+>;
+
+type SideNavItemComponent = <C = 'a'>(
+    props: SideNavItemProps<C>
+) => ReactElement;
+
+export const SideNavItem: SideNavItemComponent = (({
+    as: Element = 'a',
     icon,
     badge,
     css,
@@ -23,7 +31,7 @@ export const SideNavItem: FC<SideNavItemProps> = ({
     active = false,
     children,
     ...props
-}) => {
+}: SideNavItemProps<'a'>) => {
     const { theme } = useTheme();
 
     return (
@@ -31,7 +39,7 @@ export const SideNavItem: FC<SideNavItemProps> = ({
             css={[navItem({ theme }), css]}
             aria-current={active ? 'page' : undefined}
         >
-            <a
+            <Element
                 css={[navLink, active && navMenuLinkActive({ theme })]}
                 {...props}
             >
@@ -51,7 +59,7 @@ export const SideNavItem: FC<SideNavItemProps> = ({
                 </div>
 
                 {badge}
-            </a>
+            </Element>
         </li>
     );
-};
+}) as any;

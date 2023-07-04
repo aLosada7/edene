@@ -20,14 +20,18 @@ const AuthenticationSignIn = () => {
                     alt="Profile image"
                     css={profileImage}
                 />
-                <Box>
-                    <Heading size="h2" mb={1} color={grays[9]}>
-                        Login
-                    </Heading>
-                    <Heading size="h5" color={grays[3]} mb={8}>
-                        Welcome Back!
-                    </Heading>
-                </Box>
+                <>
+                    <Box mb={1}>
+                        <Heading size="h2" color={grays[9]}>
+                            Login
+                        </Heading>
+                    </Box>
+                    <Box mb={8}>
+                        <Heading size="h5" color={grays[3]}>
+                            Welcome Back!
+                        </Heading>
+                    </Box>
+                </>
 
                 <Form>
                     <Stack gap={3}>
@@ -49,7 +53,7 @@ const AuthenticationSignIn = () => {
                             Login
                         </Button>
                         <Box my={2}>
-                            <Button as="a" href="#" variant="link">
+                            <Button as="a" href="#" variant="text">
                                 Forgot your passcode?
                             </Button>
                         </Box>

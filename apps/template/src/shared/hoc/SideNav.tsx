@@ -46,7 +46,7 @@ export const SideNav = ({ sideNavWidth, ...props }: SideNavProps) => {
                     {DASHBOARDS.map((dashboard) => (
                         <SideNavItem
                             key={dashboard}
-                            component={NavLink}
+                            as={NavLink}
                             to={`dashboards/${dashboard
                                 .replace(' ', '-')
                                 .toLowerCase()}`}
@@ -60,7 +60,7 @@ export const SideNav = ({ sideNavWidth, ...props }: SideNavProps) => {
                     {APPLICATIONS.map((application) => (
                         <SideNavItem
                             key={application}
-                            component={NavLink}
+                            as={NavLink}
                             to={`applications/${application
                                 .replace(' ', '-')
                                 .toLowerCase()}`}
@@ -72,15 +72,11 @@ export const SideNav = ({ sideNavWidth, ...props }: SideNavProps) => {
                 </SideNavPrincipal>
                 <SideNavPrincipal title="Pages">
                     <SideNavMenu title="Authentication">
-                        <SideNavItem
-                            component={NavLink}
-                            to="/pages/signIn"
-                            {...props}
-                        >
+                        <SideNavItem as={NavLink} to="/pages/signIn" {...props}>
                             Sign In
                         </SideNavItem>
                         <SideNavItem
-                            component={NavLink}
+                            as={NavLink}
                             to="/pages/unlockSession"
                             {...props}
                         >

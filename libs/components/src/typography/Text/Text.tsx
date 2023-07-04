@@ -8,7 +8,7 @@ import {
     Color,
 } from '@edene/foundations';
 
-import { flexText, textCss, textColor } from './styles';
+import { flexText, textCss, textTheme } from './styles';
 
 export type ITextFontSize = 'xxsmall' | 'xsmall' | 'small' | 'regular';
 
@@ -47,7 +47,7 @@ export const Text = (props: TextProps) => {
         <div
             css={[
                 textCss(mt, mb, ml, size, align, weight),
-                textColor(theme?.text?.color, color),
+                textTheme({ theme, color }),
                 icon ? flexText : null,
                 css,
             ]}

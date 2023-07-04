@@ -1,27 +1,10 @@
 import { Meta } from '@storybook/addon-docs';
 
-<Meta title="Theme" />
+<Meta title="Developer Guide/Theme" />
 
 # Theme
 
-## Default themes and wrap your application
-
-The theme props are defined by Theme type
-
-By default, the theme is based in pink colors. Any of the props of the default theme can be overwritten passing its new value to the theme prop.
-
-```tsx
-
-import { Theme, ThemeProvider } from '@edene/foundations';
-
-const theme: Partial<Theme> = {
-    white: #000;
-}
-
-export const App = () (
-    <ThemeProvider theme={theme}></Theme>
-)
-```
+By default, the theme is based in pink colors.
 
 There are _two_ more themes exported within the library, which can completely override the default theme.
 
@@ -36,11 +19,26 @@ export const App = () (
 )
 ```
 
+Besides, you can create your own themes. Any of the props of the default theme can be overwritten passing a new value to the theme prop.
+
+```tsx
+
+import { Theme, ThemeProvider } from '@edene/foundations';
+
+const theme: Partial<Theme> = {
+    white: #000;
+}
+
+export const App = () (
+    <ThemeProvider theme={theme}></Theme>
+)
+```
+
 ## Hook
 
 To make use of the provider values in the entire application you can use the _useTheme_ hook.
 
-This hook return the theme value and a method to change the theme value.
+This hook return the theme value and a method to programatically change the theme value.
 
 ```tsx
 const { theme, setTheme } = useTheme();

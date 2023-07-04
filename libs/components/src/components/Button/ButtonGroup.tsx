@@ -1,32 +1,26 @@
-import { cloneElement, ReactElement } from 'react';
-
-import { Props, ButtonSize, ButtonVariant } from '@edene/foundations';
+import { cloneElement } from 'react';
 
 import { btnGroup } from './styles';
-import { IButtonBlock } from './Button';
+import { ButtonGroupProps } from '.';
 
-export interface ButtonGroupProps extends Props {
-    component?: 'footer';
-    size?: ButtonSize | IButtonBlock;
-    variant?: ButtonVariant;
-    children: ReactElement | ReactElement[];
-}
-
-export function ButtonGroup(props: ButtonGroupProps) {
-    const { component, children, size, variant, css, ...rest } = props;
+export function ButtonGroup({
+    children,
+    size,
+    variant,
+    css,
+    ...props
+}: ButtonGroupProps) {
     const elementArgs = {
         ...(size ? { size } : {}),
         ...(variant ? { variant } : {}),
     };
 
-    const Element = component || 'div';
-
     return (
-        <Element css={[btnGroup(size), css]} role="group" {...rest}>
+        <div role="group" css={[btnGroup(size), css]} {...props}>
             {(Array.isArray(children) ? children : [children]).map((child) =>
                 cloneElement(child, elementArgs)
             )}
-        </Element>
+        </div>
     );
 }
 

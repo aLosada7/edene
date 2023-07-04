@@ -5,15 +5,12 @@ import {
     getDarkenColor,
     disabled,
     buttonSize,
-    ThemeOptions,
-    ButtonSize,
-    ButtonVariant,
+    ThemeColor,
     grays,
 } from '@edene/foundations';
+import { ButtonBlock, ButtonSize, ButtonVariant } from './types';
 
-import { IButtonBlock } from './Button';
-
-export const btnGroup = (size?: ButtonSize | IButtonBlock) => css`
+export const btnGroup = (size?: ButtonSize | ButtonBlock) => css`
     display: inline-flex;
 
     *:not(:first-of-type) {
@@ -55,7 +52,7 @@ export const btn = (size: ButtonSize) => css`
 `;
 
 export const btnColor = (
-    { theme, color }: ThemeOptions,
+    { theme, color }: ThemeColor,
     variant: ButtonVariant,
     isButtonBlock: boolean
 ) => css`
@@ -98,7 +95,7 @@ const buttonColorStyles = (
     }
     `}
 
-    ${variant === 'link' &&
+    ${variant === 'text' &&
     `
     background-color: transparent;
     color: ${color};

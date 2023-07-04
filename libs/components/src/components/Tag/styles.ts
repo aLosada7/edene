@@ -5,7 +5,7 @@ import {
     getColor,
     getLightenColor,
     text,
-    ThemeOptions,
+    ThemeColor,
 } from '@edene/foundations';
 
 export const tag = css`
@@ -22,18 +22,18 @@ export const tagIcon = css`
     margin-right: 4px;
 `;
 
-const tagColors = ({ theme = defaultTheme, color }: ThemeOptions) => css`
+const tagColors = ({ theme = defaultTheme, color }: ThemeColor) => css`
     background-color: ${getLightenColor({ theme, color })};
     color: ${getColor({ theme, color })};
 `;
 
-export const tagTheme = ({ theme = defaultTheme, color }: ThemeOptions) => css`
+export const tagTheme = ({ theme = defaultTheme, color }: ThemeColor) => css`
     ${tagColors({ theme, color })}
 `;
 
 export const tagIconTheme = ({
     theme = defaultTheme,
     color,
-}: ThemeOptions) => css`
+}: ThemeColor) => css`
     ${tagColors({ theme, color })}
 `;

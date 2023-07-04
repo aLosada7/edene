@@ -1,11 +1,5 @@
 import { css } from '@emotion/react';
-import {
-    ThemeOptions,
-    defaultTheme,
-    getColor,
-    text,
-    getLightenColor,
-} from '@edene/foundations';
+import { ThemeColor, defaultTheme, getColor, text } from '@edene/foundations';
 
 export const alert = css`
     ${text.small({ lineHeight: 'loose' })}
@@ -21,12 +15,8 @@ export const alert = css`
     align-items: center;
 `;
 
-export const alertTheme = ({
-    color,
-    theme = defaultTheme,
-}: ThemeOptions) => css`
-    background-color: ${getLightenColor({ theme, color })};
-    color: ${getColor({ theme, color })};
+export const alertTheme = ({ color, theme = defaultTheme }: ThemeColor) => css`
+    background-color: ${getColor({ theme, color })};
 `;
 
 export const alertActions = css`

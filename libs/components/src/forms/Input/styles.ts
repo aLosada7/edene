@@ -1,5 +1,5 @@
 import { css } from '@emotion/react';
-import { border, focusHalo, height, text } from '@edene/foundations';
+import { border, focusHalo, grays, height, text } from '@edene/foundations';
 
 export const inputWrapper = css`
     position: absolute;
@@ -28,7 +28,7 @@ export const input = css`
     ${text.regular({ lineHeight: 'regular' })};
     padding: 1px 0.75rem;
     box-sizing: border-box;
-    border: 1px solid rgb(226, 232, 240);
+    border: 1px solid ${grays[5]};
     border-radius: 6px;
     outline: transparent solid 2px;
     ${inputPlaceHolderColor};

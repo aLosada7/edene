@@ -1,14 +1,16 @@
 import { css } from '@emotion/react';
 import {
-    defaultTheme,
     heading,
     FontWeight,
     TextAlign,
+    getColor,
+    ThemeColor,
+    defaultTheme,
 } from '@edene/foundations';
-import { IFontSize } from './Heading';
+import { HeadingSize } from './types';
 
 export const headingCss = (
-    size: IFontSize,
+    size: HeadingSize,
     fontWeight: FontWeight,
     align: TextAlign
 ) => css`
@@ -23,12 +25,16 @@ export const headingCss = (
     margin: 0;
 `;
 
-export const headingColor = (
-    themeColor = defaultTheme.heading.color,
-    color?: string
-) => css`
-    color: ${color || themeColor};
-    fill: ${color || themeColor};
+export const headingTheme = ({
+    theme = defaultTheme,
+    color,
+}: ThemeColor) => css`
+    color: ${getColor({ theme, color, themeValue: theme?.text?.color })};
+    fill: ${getColor({ theme, color, themeValue: theme?.text?.color })};
+
+    span {
+        color: ${getColor({ theme, color, themeValue: theme?.text?.color })};
+    }
 `;
 
 export const flexText = css`

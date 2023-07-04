@@ -14,9 +14,6 @@ Please familiarise yourself with our:
 
 -   [Changelog](https://main--62ed74f612c78f7bbe13743e.chromatic.com/?path=/story/changelog--page)
 -   [Contributing Guidelines](https://main--62ed74f612c78f7bbe13743e.chromatic.com/?path=/story/contributing-guidelines--page)
--   [Overriding Styles](https://main--62ed74f612c78f7bbe13743e.chromatic.com/?path=/story/overriding-styles--page)
--   [Theme](https://main--62ed74f612c78f7bbe13743e.chromatic.com/?path=/story/theme--page)
--   [Tokens - Colors](https://main--62ed74f612c78f7bbe13743e.chromatic.com/?path=/story/colors--page)
 
 ## Getting started
 
@@ -64,12 +61,18 @@ Or optionally to your SCSS.
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined');
 ```
 
+## Developer Guide
+
+-   [Overriding Styles](https://main--62ed74f612c78f7bbe13743e.chromatic.com/?path=/story/developer-guide-overriding-styles--page)
+-   [Theme](https://main--62ed74f612c78f7bbe13743e.chromatic.com/?path=/story/developer-guide-theme--page)
+-   [Colors](https://main--62ed74f612c78f7bbe13743e.chromatic.com/?path=/story/developer-guide--page)
+
 ## Use it anywhere
 
 Following is a project application working in different modern environments
 
-| Environment           |      App name       |                                                                           Github repository |
-| --------------------- | :-----------------: | ------------------------------------------------------------------------------------------: |
-| create-react-app (Js) |      Todo-list      |                                [Todo-list on Github](https://github.com/aLosada7/todo-list) |
-| Next.js               | My personal webpage |               [My personal webpage on Github](https://github.com/aLosada7/personal-webpage) |
-| React app (Nx)        |    food-delivery    | [Food-delivery on Github](https://github.com/aLosada7/edene/tree/master/apps/food-delivery) |
+| Environment           |      App name       |                                                                           Github repository |                                           Notes                                           |
+| --------------------- | :-----------------: | ------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------: |
+| create-react-app (Js) |      Todo-list      |                                [Todo-list on Github](https://github.com/aLosada7/todo-list) |                                                                                           |
+| Next.js               | My personal webpage |               [My personal webpage on Github](https://github.com/aLosada7/personal-webpage) | Next.js v13+ components using Edene need to add _'use client'_ at the begging of the file |
+| React app (Nx)        |    food-delivery    | [Food-delivery on Github](https://github.com/aLosada7/edene/tree/master/apps/food-delivery) |                                                                                           |

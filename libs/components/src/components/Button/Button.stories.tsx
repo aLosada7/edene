@@ -5,6 +5,8 @@ import { Button, ButtonProps } from './index';
 import { Icon } from '../../icons';
 import ButtonGroup from './ButtonGroup';
 import { Stack } from '../../layout/Stack';
+import { Box } from '../../layout/Box';
+import { Row } from '../../layout/Grid';
 
 export default {
     component: Button,
@@ -20,24 +22,31 @@ Playground.args = {
     text: 'Button',
 };
 
-export const Filled = () => <Button>Default</Button>;
+export const Default = () => <Button>Default</Button>;
 
 export const Variants = () => (
     <Stack>
         <Button>Filled</Button>
         <Button variant="outlined">Outlined</Button>
-        <Button variant="link">Link</Button>
+        <Button variant="text">Text</Button>
     </Stack>
 );
 
 export const Sizes = () => (
-    <Stack>
-        <Button size="xsmall">Xsmall</Button>
-        <Button size="small">Small</Button>
-        <Button size="medium">Medium</Button>
-        <Button size="large">Large</Button>
-        <Button size="block">Block</Button>
-    </Stack>
+    <Row direction="column" align="center-center">
+        <Box width="150px">
+            <Stack>
+                <Button size="xsmall">Xsmall</Button>
+                <Button size="small">Small</Button>
+                <Button size="medium">Medium</Button>
+                <Button size="large">Large</Button>
+            </Stack>
+        </Box>
+        <br />
+        <Box width="400px">
+            <Button size="block">Block</Button>
+        </Box>
+    </Row>
 );
 
 export const WithIconLeft = () => (
@@ -75,7 +84,7 @@ export const WithRef = () => {
 };
 
 export const PolymorphicComponent = () => (
-    <Button component="a" href="#" variant="outlined">
+    <Button as="a" href="#" variant="outlined">
         Link
     </Button>
 );

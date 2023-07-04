@@ -7,6 +7,7 @@ import {
     Heading,
     Text,
     Button,
+    Box,
 } from '@edene/components';
 import { grays } from '@edene/foundations';
 
@@ -40,9 +41,9 @@ export const ClassroomSectionComponent = ({
                 {icon}
             </Icon>
         </Badge>
-        <Heading mt={4} mb={2}>
-            {title}
-        </Heading>
+        <Box mt={4} mb={2}>
+            <Heading>{title}</Heading>
+        </Box>
         <Text size="small" color={grays[3]} mb={2}>
             {description}
         </Text>

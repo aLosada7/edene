@@ -11,7 +11,7 @@ import {
 import { headers, results } from './mocks';
 
 const MusicProducts = () => (
-    <Container pv={6}>
+    <Container>
         <Table selection rows={results}>
             <TableHead>
                 {headers.map((header) => (
