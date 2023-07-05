@@ -26,7 +26,7 @@ export const Tab = forwardRef(
 
         return (
             <Button
-                variant="link"
+                variant="text"
                 color="dark"
                 ref={ref}
                 onClick={() => onTabChange(tabKey)}

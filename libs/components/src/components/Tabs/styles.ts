@@ -3,7 +3,7 @@ import { css } from '@emotion/react';
 import {
     grays,
     defaultTheme,
-    ThemeOptions,
+    ThemeColor,
     getColor,
     text,
 } from '@edene/foundations';
@@ -41,7 +41,7 @@ export const tab = css`
 
 export const tabSelected = (
     orientation: 'horizontal' | 'vertical',
-    { color, theme = defaultTheme }: ThemeOptions
+    { color, theme = defaultTheme }: ThemeColor
 ) => css`
     color: ${getColor({ theme, color })};
 

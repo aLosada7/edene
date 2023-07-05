@@ -5,7 +5,7 @@ import {
     getColor,
     IconSize,
     iconSize,
-    ThemeOptions,
+    ThemeColor,
 } from '@edene/foundations';
 
 export const icon = (size: IconSize, ml: number, mr: number) => css`
@@ -16,6 +16,6 @@ export const icon = (size: IconSize, ml: number, mr: number) => css`
     margin-right: calc(${mr} * 0.25rem);
 `;
 
-export const iconTheme = ({ color, theme = defaultTheme }: ThemeOptions) => css`
+export const iconTheme = ({ color, theme = defaultTheme }: ThemeColor) => css`
     color: ${getColor({ theme, color })};
 `;

@@ -16,7 +16,7 @@ const isOfComponentColors = (color: string) => {
     ].includes(color);
 };
 
-export interface ThemeOptions {
+export interface ThemeColor {
     theme: Theme;
     color?: EdeneColor;
 }
@@ -24,7 +24,7 @@ export interface ThemeOptions {
 export const getLightenColor = ({
     color,
     theme = defaultTheme,
-}: ThemeOptions) => {
+}: ThemeColor) => {
     if (!color || color === 'brand') return theme.lightColor;
 
     if (isOfComponentColors(color))
@@ -33,8 +33,13 @@ export const getLightenColor = ({
     return color;
 };
 
-export const getColor = ({ color, theme = defaultTheme }: ThemeOptions) => {
-    if (!color || color === 'primary' || color === 'brand') return theme.color;
+export const getColor = ({
+    color,
+    theme = defaultTheme,
+    themeValue,
+}: ThemeColor & { themeValue?: string }) => {
+    if (!color || color === 'primary' || color === 'brand')
+        return themeValue || theme.color;
 
     if (isOfComponentColors(color))
         return colorsPalette[color as ComponentColors].color;
@@ -42,10 +47,7 @@ export const getColor = ({ color, theme = defaultTheme }: ThemeOptions) => {
     return color;
 };
 
-export const getDarkenColor = ({
-    color,
-    theme = defaultTheme,
-}: ThemeOptions) => {
+export const getDarkenColor = ({ color, theme = defaultTheme }: ThemeColor) => {
     if (!color || color === 'brand') return theme.hover;
 
     if (isOfComponentColors(color))

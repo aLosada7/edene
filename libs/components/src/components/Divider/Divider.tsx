@@ -1,36 +1,35 @@
-import { Props } from '@edene/foundations';
+import { EdeneColor, Props, useTheme } from '@edene/foundations';
 
-import { divider } from './styles';
+import { divider, dividerThemeColor } from './styles';
 
 export interface DividerProps extends Props {
-    /** Polymorphic */
-    as?: 'li';
     width?: string;
     mt?: number;
     mb?: number;
     mh?: number;
+    color?: EdeneColor;
 }
 
-export const Divider = (props: DividerProps) => {
-    const {
-        as,
-        width = '100%',
-        mt = 0,
-        mb = 0,
-        mh = 0,
-        css,
-        ...rest
-    } = {
-        ...props,
-    };
-
-    const Element = as || 'div';
+export const Divider = ({
+    width = '100%',
+    mt = 0,
+    mb = 0,
+    mh = 0,
+    color,
+    css,
+    ...props
+}: DividerProps) => {
+    const { theme } = useTheme();
 
     return (
-        <Element
+        <div
             role="separator"
-            css={[divider(width, mt, mb, mh), css]}
-            {...rest}
-        ></Element>
+            css={[
+                divider(width, mt, mb, mh),
+                dividerThemeColor({ theme, color }),
+                css,
+            ]}
+            {...props}
+        ></div>
     );
 };

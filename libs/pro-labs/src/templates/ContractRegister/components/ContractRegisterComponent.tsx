@@ -9,8 +9,6 @@ import {
     Button,
     Group,
     Box,
-    Container,
-    Stack,
 } from '@edene/components';
 
 const Person = () => (
@@ -58,7 +56,7 @@ export const ContractRegisterComponent = () => {
                         <Heading size="h3">Tenants</Heading>
                     </Box>
                     <Person />
-                    <Button size="small" icon="add">
+                    <Button size="small" icon="add" iconSide="right">
                         Add tenant
                     </Button>
                 </Box>
@@ -68,13 +66,13 @@ export const ContractRegisterComponent = () => {
                         <Heading size="h3">Landlords</Heading>
                     </Box>
                     <Person />
-                    <Button size="small" icon="add">
+                    <Button size="small" icon="add" iconSide="right">
                         Add landlord
                     </Button>
                 </Box>
 
                 <Row align="space-between-center" noGlutters>
-                    <Button variant="link" icon="arrow_back">
+                    <Button variant="text" icon="arrow_back">
                         Back
                     </Button>
                     <Group>

@@ -6,7 +6,7 @@ import {
     transitions,
     text,
     from,
-    ThemeOptions,
+    ThemeColor,
 } from '@edene/foundations';
 import { css } from '@emotion/react';
 
@@ -184,7 +184,7 @@ export const chevronIconUp = css`
     }
 `;
 
-export const navItem = ({ theme = defaultTheme }: ThemeOptions) => css`
+export const navItem = ({ theme = defaultTheme }: ThemeColor) => css`
     overflow: hidden;
     width: auto;
     height: auto;

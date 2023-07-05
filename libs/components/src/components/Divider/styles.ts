@@ -1,3 +1,4 @@
+import { ThemeColor, getColor } from '@edene/foundations';
 import { css } from '@emotion/react';
 
 export const divider = (
@@ -10,5 +11,8 @@ export const divider = (
     height: 1px;
 
     margin: calc(${mt} * 0.25rem) calc(${mh} * 0.25rem) calc(${mb} * 0.25rem);
-    background-color: #e0e0e0;
+`;
+
+export const dividerThemeColor = ({ theme, color }: ThemeColor) => css`
+    background-color: ${getColor({ theme, color })};
 `;

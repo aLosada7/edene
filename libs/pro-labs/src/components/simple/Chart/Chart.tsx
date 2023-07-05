@@ -75,7 +75,7 @@ const ToggleButtons = ({ setSeries, setActiveButton, activeButton }: any) => {
             {buttons.map((button) => (
                 <Button
                     key={button}
-                    variant="link"
+                    variant="text"
                     color={colorDefault}
                     className={button === activeButton ? 'active' : ''}
                     onClick={() => handleClick(button)}

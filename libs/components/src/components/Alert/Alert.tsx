@@ -6,13 +6,11 @@ import { useTheme, Props, ComponentColors } from '@edene/foundations';
 
 import { Text } from '../../typography/Text';
 import { alert, alertActions, alertTheme } from './styles';
-import { Box } from '@edene/components';
+import { Box } from '../../layout/Box';
 
 export interface AlertProps extends Props {
     type?: 'brand' | ComponentColors;
-
     actions?: ReactNode;
-
     children: ReactNode;
 }
 
@@ -32,7 +30,7 @@ export const Alert = (props: AlertProps) => {
             }
             {...rest}
         >
-            <Text>{children}</Text>
+            <Text color={theme.white}>{children}</Text>
             {actions && <div css={alertActions}>{actions}</div>}
         </Box>
     );

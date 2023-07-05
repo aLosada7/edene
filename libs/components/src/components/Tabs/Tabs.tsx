@@ -2,13 +2,14 @@ import { EdeneColor, Props } from '@edene/foundations';
 
 import { tabList, tabs, tabPanel } from './styles';
 import { TabsProvider } from './useTabs';
+import { ReactNode } from 'react';
 
 export interface TabsProps extends Props {
     active: string;
     color?: EdeneColor;
     orientation?: 'horizontal' | 'vertical';
     onTabChange: (tabKey: string) => void;
-    children: React.ReactElement | React.ReactElement[];
+    children: ReactNode;
 }
 
 const defaultProps: Required<Pick<TabsProps, 'orientation'>> = {

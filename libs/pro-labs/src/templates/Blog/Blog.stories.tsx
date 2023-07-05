@@ -1,6 +1,8 @@
+import React from 'react';
 import { css } from '@emotion/react';
 import NextImage from 'next/image';
-import Link from 'next/link';
+import NextLink from 'next/link';
+import { Link } from '@edene/components';
 
 import {
     Container,
@@ -14,7 +16,7 @@ import {
     Group,
 } from '@edene/components';
 
-import mountain from '../../../../assets/img/mountain.jpg';
+import mountain from '../../../assets/img/mountain.jpg';
 
 export default {
     title: 'Templates',
@@ -52,7 +54,7 @@ const Tags = ({ tags }: any) => {
     return (
         <Group>
             {(tags || []).map((tag: string) => (
-                <Box mt={2}>
+                <Box key={tag} mt={2}>
                     <Badge
                         key={tag}
                         color="gray"
@@ -69,8 +71,14 @@ const Tags = ({ tags }: any) => {
 };
 
 const FeaturedPost = ({ blog }: any) => (
-    <Link href={{ pathname: `/blog/${blog.slug}` }}>
-        <Box as="article" mb={4}>
+    <Link as={NextLink} href={{ pathname: `/blog/${blog.slug}` }}>
+        <Box
+            as="article"
+            mb={4}
+            css={css`
+                cursor: pointer;
+            `}
+        >
             <Box
                 mb={2}
                 css={css`
@@ -94,8 +102,14 @@ const FeaturedPost = ({ blog }: any) => (
 );
 
 const AdditionalFeaturedPost = ({ blog }: any) => (
-    <Link href={{ pathname: `/blog/${blog.slug}` }}>
-        <Box as="article" mb={4}>
+    <Link as={NextLink} href={{ pathname: `/blog/${blog.slug}` }}>
+        <Box
+            as="article"
+            mb={4}
+            css={css`
+                cursor: pointer;
+            `}
+        >
             <Row>
                 <Col md={12}>
                     <Box
@@ -126,8 +140,14 @@ const AdditionalFeaturedPost = ({ blog }: any) => (
 );
 
 const Post = ({ blog }: any) => (
-    <Link href={{ pathname: `/blog/${blog.slug}` }}>
-        <Box as="article" mb={4}>
+    <Link as={NextLink} href={{ pathname: `/blog/${blog.slug}` }}>
+        <Box
+            as="article"
+            mb={4}
+            css={css`
+                cursor: pointer;
+            `}
+        >
             <Box
                 mb={2}
                 css={css`

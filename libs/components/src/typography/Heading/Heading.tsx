@@ -1,24 +1,7 @@
-import { ReactElement } from 'react';
+import { useTheme } from '@edene/foundations';
 
-import {
-    FontWeight,
-    TextAlign,
-    Props,
-    useTheme,
-    Color,
-} from '@edene/foundations';
-
-import { flexText, headingCss, headingColor } from './styles';
-
-export type IFontSize = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
-
-export interface HeadingProps extends Color, Props {
-    size?: IFontSize;
-    weight?: FontWeight;
-    align?: TextAlign;
-    icon?: ReactElement;
-    children: ReactElement | React.ReactNode | string;
-}
+import { flexText, headingCss, headingTheme } from './styles';
+import { HeadingProps } from './types';
 
 export const Heading = ({
     size: Element = 'h1',
@@ -36,7 +19,7 @@ export const Heading = ({
         <Element
             css={[
                 headingCss(Element, weight, align),
-                headingColor(theme.heading.color, color),
+                headingTheme({ theme, color }),
                 icon ? flexText : null,
                 css,
             ]}

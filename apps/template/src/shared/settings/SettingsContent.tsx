@@ -5,6 +5,7 @@ import {
     Heading,
     Text,
     Icon,
+    Box,
 } from '@edene/components';
 import {
     defaultTheme,
@@ -12,6 +13,7 @@ import {
     useTheme,
     tealTheme,
     blueTheme,
+    grays,
 } from '@edene/foundations';
 
 import {
@@ -33,21 +35,26 @@ export const SettingsContent = ({ open, onClose }: SettingsContentProps) => {
 
     return (
         <div css={settingsContent(open)}>
-            <Container css={settingsContentHeader(theme)}>
+            <Box px={4} py={2} css={settingsContentHeader(theme)}>
                 <Row
                     align="space-between-center"
                     noGlutters
                     css={settingsContentHeaderContent}
                 >
                     <Row align="start-center" noGlutters>
-                        <Icon color={theme.white}>settings</Icon>
-                        <Heading>Settings</Heading>
+                        <Heading
+                            size="h3"
+                            color={grays[9]}
+                            icon={<Icon mr={1}>settings</Icon>}
+                        >
+                            Settings
+                        </Heading>
                     </Row>
                     <ActionButton onClick={onClose}>close</ActionButton>
                 </Row>
-            </Container>
+            </Box>
 
-            <Container mt={4}>
+            <Container>
                 <Row>
                     {themes.map((themeOption: Partial<Theme>) => (
                         <div
