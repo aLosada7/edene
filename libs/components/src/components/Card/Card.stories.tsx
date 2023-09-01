@@ -11,8 +11,6 @@ import { Col, Row } from '../../layout/Grid';
 import { Icon } from '../../icons';
 import { Avatar } from '../Avatar';
 import avatarSrc from '../../../assets/img/avatar.jpeg';
-import house1Src from '../../../assets/img/house1.jpg';
-import house2Src from '../../../assets/img/house2.jpg';
 import { Heading } from '../../typography/Heading';
 
 export default {
@@ -78,8 +76,6 @@ export const WithSlides: Story<CardProps> = () => (
     <Card>
         <CardMedia
             src={[
-                { src: house1Src, alt: 'Home 1' },
-                { src: house2Src, alt: 'Home 2' },
                 {
                     src: 'https://images.pexels.com/photos/1571459/pexels-photo-1571459.jpeg?auto=compress&cs=tinysrgb&w=800',
                     alt: 'Lounge',
@@ -103,7 +99,7 @@ export const WithSlides: Story<CardProps> = () => (
             >
                 Detached House . 3,426 SQFT
             </Text>
-            <Heading size="h3" weight="bold" mt={2}>
+            <Heading size="h3" weight="bold">
                 $1,250,000
             </Heading>
             <Text size="small" color={grays[3]}>
@@ -112,33 +108,19 @@ export const WithSlides: Story<CardProps> = () => (
         </CardSection>
         <CardSection borderBottom>
             <Row>
-                <Col sm={12} hStack={1}>
-                    <Text
-                        icon={
-                            <Icon variant="outlined" color={grays[3]} mr={2}>
-                                bed
-                            </Icon>
-                        }
-                    >
-                        3
-                        <Text color={grays[3]} ml={2}>
-                            bedrooms
-                        </Text>
-                    </Text>
+                <Col align="vertical-center" sm={12} gap={1}>
+                    <Icon variant="outlined" color={grays[3]}>
+                        bed
+                    </Icon>
+                    <Text>3</Text>
+                    <Text color={grays[3]}>bedrooms</Text>
                 </Col>
-                <Col sm={12} hStack={1}>
-                    <Text
-                        icon={
-                            <Icon variant="outlined" color={grays[3]} mr={2}>
-                                bathtub
-                            </Icon>
-                        }
-                    >
-                        2
-                        <Text color={grays[3]} ml={2}>
-                            bedrooms
-                        </Text>
-                    </Text>
+                <Col align="vertical-center" sm={12} gap={1}>
+                    <Icon variant="outlined" color={grays[3]}>
+                        bathtub
+                    </Icon>
+                    <Text>2</Text>
+                    <Text color={grays[3]}>bedrooms</Text>
                 </Col>
             </Row>
         </CardSection>

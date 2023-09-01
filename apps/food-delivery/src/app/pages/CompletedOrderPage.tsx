@@ -5,7 +5,7 @@ export const CompletedOrderPage = () => {
     const navigate = useNavigate();
 
     return (
-        <Container ph={48}>
+        <Container>
             <Box mb={2}>
                 <Heading size="h3">Order Completed</Heading>
             </Box>

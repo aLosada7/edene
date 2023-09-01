@@ -48,7 +48,6 @@ export default {
 const TeamStats = () => (
     <Card
         css={css`
-            margin: 1rem;
             text-align: left;
         `}
     >
@@ -87,7 +86,6 @@ const TeamStats = () => (
 const Scoring = () => (
     <Card
         css={css`
-            margin: 1rem;
             text-align: left;
         `}
     >
@@ -110,13 +108,7 @@ const Scoring = () => (
 );
 
 const GameStandings = () => (
-    <Card
-        css={css`
-            width: 100%;
-            width: -webkit-fill-available;
-            margin: 1rem;
-        `}
-    >
+    <Card>
         <CardSection
             css={css`
                 padding: 0;
@@ -162,8 +154,8 @@ const GameStandings = () => (
 );
 
 const TeamSummary = () => (
-    <Row>
-        <Col md={8} direction="column">
+    <Row noGlutters>
+        <Col md={8} direction="column" gap={4}>
             <TeamStats />
             <Scoring />
         </Col>

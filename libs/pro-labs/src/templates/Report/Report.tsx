@@ -11,7 +11,7 @@ import LineChart from '../../components/simple/Chart';
 
 const Report = () => (
     <Container>
-        <Row align="space-between-center" noGlutters>
+        <Row align="space-between-center" noGlutters gap={6}>
             <Heading size="h3">Welcome back, Frenkie</Heading>
             <Group>
                 <Button variant="outlined" size="small" icon="cloud_download">

@@ -8,7 +8,7 @@ import { RecentDoubtsContainer } from './containers/RecentDoubtsContainer';
 const EducationPage = () => (
     <Container>
         <Row>
-            <Col md={16} vStack={4}>
+            <Col direction="column" md={16} gap={4}>
                 <EducationSummaryContainer />
 
                 <Alert actions={<Button size="xsmall">Add</Button>}>
@@ -17,7 +17,7 @@ const EducationPage = () => (
 
                 <ClassroomContainer />
             </Col>
-            <Col md={8} direction="column" vStack={2}>
+            <Col md={8} direction="column" gap={8}>
                 <NewStudentsContainer />
                 <RecentDoubtsContainer />
             </Col>
