@@ -29,9 +29,6 @@ export interface TextProps
 
 export const Text = (props: TextProps) => {
     const {
-        mt = 0,
-        mb = 0,
-        ml = 0,
         size = 'regular',
         weight = 'regular',
         align = 'inherit',
@@ -46,7 +43,7 @@ export const Text = (props: TextProps) => {
     return (
         <div
             css={[
-                textCss(mt, mb, ml, size, align, weight),
+                textCss(size, align, weight),
                 textTheme({ theme, color }),
                 icon ? flexText : null,
                 css,

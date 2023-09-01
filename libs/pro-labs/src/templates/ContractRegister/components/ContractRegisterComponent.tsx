@@ -35,7 +35,7 @@ const Person = () => (
 export const ContractRegisterComponent = () => {
     return (
         <Form>
-            <Row direction="column" gap={3}>
+            <Row direction="column" gap={3} noGlutters>
                 <Box>
                     <Box pb={2}>
                         <Heading size="h3">Address</Heading>

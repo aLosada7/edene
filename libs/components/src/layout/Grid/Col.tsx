@@ -19,10 +19,6 @@ export interface ColumnProps extends Props {
     lg?: ColSize | null;
     xl?: ColSize | null;
     borderRight?: boolean;
-    // @deprecated
-    vStack?: number;
-    // @deprecated
-    hStack?: number;
     align?: Align;
     direction?: IColumnDirection;
     gap?: number;
@@ -35,8 +31,6 @@ export const Col = (props: ColumnProps) => {
         md = null,
         lg = null,
         xl = null,
-        vStack = 0,
-        hStack = 0,
         align = '',
         direction = 'row',
         css,
@@ -49,7 +43,7 @@ export const Col = (props: ColumnProps) => {
         <div
             css={[
                 gridColumnSize(sm, md, lg, xl, gap),
-                gridColumn(direction, align, vStack, hStack),
+                gridColumn(direction, align),
                 css,
             ]}
             {...rest}

@@ -68,24 +68,11 @@ export const gridRow = ({
     ${gap && `gap: calc(${gap} * 0.25rem)}`};
 `;
 
-export const gridColumn = (
-    direction: IColumnDirection,
-    align: Align,
-    vStack: number,
-    hStack: number
-) => css`
-    // For debugging purposes
-    /* border: 1px solid red; */
-    padding: 0 1rem;
+export const gridColumn = (direction: IColumnDirection, align: Align) => css`
+    display: flex;
+    padding: 1rem;
 
-    ${(direction === 'column' || vStack !== 0) && `flex-direction: column;`}
-
-    ${vStack !== 0 &&
-    `> *:not(:first-child) {
-        margin-top: calc(${vStack} * 0.25rem);`}
-
-${hStack !== 0 && `> * { margin-right: calc(${hStack} * 0.25rem);}`}
-
+    ${direction === 'column' && `flex-direction: column;`}
 
     ${gridColumnsAlign(align)}
 `;

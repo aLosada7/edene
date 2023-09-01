@@ -56,7 +56,7 @@ export const CheckoutPage = () => {
         );
 
     return (
-        <Container ph={48}>
+        <Container>
             <Heading size="h3">Checkout</Heading>
 
             {cart}

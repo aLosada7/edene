@@ -26,7 +26,7 @@ export const RestaurantListContainer = ({ foodKind }: { foodKind: string }) => {
                     <span>{selectedFoodName} Restaurants</span>
                 </Heading>
             </Box>
-            <Container ph={48}>
+            <Container>
                 {selectedFoodRestaurants.map((restaurant: IRestaurant) => (
                     <RestaurantSummary restaurant={restaurant} />
                 ))}

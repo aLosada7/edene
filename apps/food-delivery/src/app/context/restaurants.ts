@@ -42,6 +42,12 @@ export const restaurants: IFoodOffer[] = [
                             description: 'Ensalada mixta anarkoli',
                             price: 395,
                         },
+                        {
+                            id: 'starters2',
+                            name: 'Nachitos',
+                            description: 'Nachos con guacamole y sorpresa',
+                            price: 110,
+                        },
                     ],
                     desserts: [
                         {
