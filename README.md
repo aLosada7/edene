@@ -4,42 +4,34 @@
 
 Edene aims to give you everything you need to create and build top class products. It contains completely customizable and reusable React components, animations and hooks. It has been entirely written in Typescript.
 
-Edene also comes with another library called **foundations**, a serie of guidelines and tokens, which give programmers all the necessary to create efficient and eye catching user interfaces, following design principles, and with a focus on user experience.
+Edene also comes with another library called **foundations**, a serie of guidelines and tokens, which give programmers all the necessary to create efficient and eye catching user interfaces, following design principles, and with a focus on user experience. It's a dependency, so you don't need to worry about installing it
 
-Edene is not only a component library, goes far beyond that.
+Edene is not just a component library, it goes far beyond that.
 
 ## Documentation index
 
 Please familiarise yourself with our:
 
--   [Changelog](https://main--62ed74f612c78f7bbe13743e.chromatic.com/?path=/story/changelog--page)
 -   [Contributing Guidelines](https://main--62ed74f612c78f7bbe13743e.chromatic.com/?path=/story/contributing-guidelines--page)
+-   [Changelog](https://main--62ed74f612c78f7bbe13743e.chromatic.com/?path=/story/changelog--page)
 
 ## Getting started
 
-We recommend installing the following packages first:
-
--   `react`
--   `@emotion/react`
--   `@emotion/styled`
+We recommend usig edene with react applications
 
 ```shell
-$ yarn add react @emotion/react @emotion/styled
+$ yarn add @edene/components
 ```
+
+Edene also uses Emotion:
 
 > See [Using Emotion](https://guardian.github.io/source/?path=/docs/docs-04-using-emotion--page) for guidance on how to configure Babel to use Emotion's css prop.
 
 We publish the library with components written in [React](https://reactjs.org/) and [Emotion](https://emotion.sh/). You can use your favourite package manager.
 
-```shell
-$ yarn add @edene/foundations @edene/components
-```
+Then, wrap your application with ThemeProvider, which comes from _@edene/foudations_. You can also override the theme using the _theme_ prop. See more on [Theme](https://main--62ed74f612c78f7bbe13743e.chromatic.com/?path=/story/developer-guide-theme--page) docs.
 
-_Foundations library have to be installed along components at this point_
-
-Then, wrap your application with ThemeProvider, which comes from _@edene/foudations_. You can also override the theme through a parameter. See more on Theme docs.
-
-Finally, import any of the components in your application and use it:
+Finally, to use a components in your application, you just have to import and use it:
 
 ```typescript
 import { Accordion, AccordionRow } from '@edene/components';
