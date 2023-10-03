@@ -7,16 +7,12 @@ export const imageObjectFitValues = ['cover', 'contain'] as const;
 export type ImageObjectFit = typeof imageObjectFitValues[number];
 
 export interface ImageProps extends Props {
-    /** image source */
     src: string;
-
-    /** alternative text */
     alt: string;
-
     /** Johannes sizes */
     size?: ImageSize;
-
     objectFit?: ImageObjectFit;
+    loading?: 'eager' | 'lazy';
 }
 
 export type PImageProps<C> = PolymorphicComponentProps<C, ImageProps>;
