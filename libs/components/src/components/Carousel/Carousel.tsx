@@ -18,7 +18,7 @@ export interface CarouselProps extends Props {
 
 export const Carousel = (props: CarouselProps) => {
     const { src, imageSize = 'c', css, ...rest } = props;
-    const [slide, setSlide] = useState(src[0]);
+    const [slide, setSlide] = useState(0);
     const ref = useRef<HTMLDivElement>(null);
 
     const [scrollRef, swipe] = useSwipe(ref);
@@ -26,32 +26,35 @@ export const Carousel = (props: CarouselProps) => {
     useEffect(() => {
         if (!swipe) return;
 
-        const actualSlideIndex = src.findIndex((el) => el.src === slide.src);
+        const actualSlideIndex = src.findIndex(
+            (el) => el.src === src[slide].src
+        );
 
-        if (swipe === 'right')
-            setSlide(src[(actualSlideIndex + 1) % src.length]);
+        if (swipe === 'right') setSlide((actualSlideIndex + 1) % src.length);
         if (swipe === 'left')
             setSlide(
                 actualSlideIndex === 0
-                    ? src[src.length - 1]
-                    : src[(actualSlideIndex - 1) % src.length]
+                    ? src.length - 1
+                    : (actualSlideIndex - 1) % src.length
             );
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [swipe]);
 
     return (
         <div ref={scrollRef} css={[carousel, css]} {...rest}>
             <Image
-                src={slide.src}
-                alt={slide.alt}
+                src={src[slide].src}
+                alt={src[slide].alt}
+                loading={slide === 0 ? 'eager' : 'lazy'}
                 size={imageSize}
                 css={carouselImage}
             />
             <div css={dotList}>
-                {src.map((sl) => (
+                {src.map((sl, index) => (
                     <span
                         key={sl.src}
-                        css={dot(sl.src === slide.src)}
-                        onClick={() => setSlide(sl)}
+                        css={dot(sl.src === src[slide].src)}
+                        onClick={() => setSlide(index)}
                     ></span>
                 ))}
             </div>
