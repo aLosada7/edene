@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 
-import { Row, Col, Heading, Icon, Box, Stack } from '@edene/components';
+import { Row, Col, Heading, Icon, Box } from '@edene/components';
 import { from, useTheme } from '@edene/foundations';
 
 import { IFoodInfo } from '../context/restaurants';
@@ -29,12 +29,12 @@ const Circle = ({ children }: { children: React.ReactElement }) => {
 };
 
 export const MenuCategory = ({
-    label,
-    category,
+    title,
+    list = [],
     onClick,
 }: {
-    label: string;
-    category: IFoodInfo[];
+    title: string;
+    list: IFoodInfo[];
     onClick: (food: IFoodInfo) => void;
 }) => (
     <Row
@@ -59,17 +59,17 @@ export const MenuCategory = ({
         </Col>
         <Col md={20} lg={22} direction="column">
             <Box my={4}>
-                <Heading size="h4">{label}</Heading>
+                <Heading size="h4">{title}</Heading>
             </Box>
-            <Stack gap={2}>
-                {(category || []).map((food: IFoodInfo, index: number) => (
+            <Row gap={2}>
+                {list.map((food: IFoodInfo, index: number) => (
                     <MenuSummary
                         key={index}
                         food={food}
                         onClick={() => onClick(food)}
                     />
                 ))}
-            </Stack>
+            </Row>
         </Col>
     </Row>
 );

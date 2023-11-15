@@ -75,10 +75,10 @@ export const ContractRegisterComponent = () => {
                     <Button variant="text" icon="arrow_back">
                         Back
                     </Button>
-                    <Group>
+                    <Row gap={1}>
                         <Button variant="outlined">Cancel</Button>
                         <Button>Save</Button>
-                    </Group>
+                    </Row>
                 </Row>
             </Row>
         </Form>

@@ -7,7 +7,7 @@ import { ModalsProvider } from './ModalsProvider';
 import { useModals } from './useModals';
 import ModalHeader from './ModalHeader';
 import ModalBody from './ModalBody';
-import { Group } from '../../layout/Group';
+import { Row } from '../../layout/Grid';
 
 // Estilos
 // Tecla esc
@@ -64,14 +64,14 @@ const ModalsProviderTemplate: Story = () => {
             id: newModalId,
             title: `Modal ${newModalId}`,
             children: (
-                <Group>
+                <Row gap={2}>
                     <Button onClick={() => openModal(newModalId)}>
                         Launch another modal
                     </Button>
                     <Button onClick={() => closeModal(newModalId)}>
                         Close modal
                     </Button>
-                </Group>
+                </Row>
             ),
         });
     };

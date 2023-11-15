@@ -2,10 +2,10 @@ import {
     Button,
     Heading,
     Image,
-    Stack,
     Box,
     TextInput,
     Form,
+    Row,
 } from '@edene/components';
 import { grays } from '@edene/foundations';
 
@@ -34,7 +34,7 @@ const AuthenticationSignIn = () => {
                 </>
 
                 <Form>
-                    <Stack gap={3}>
+                    <Row direction="column" gap={3}>
                         <Box>
                             <TextInput
                                 type="email"
@@ -57,7 +57,7 @@ const AuthenticationSignIn = () => {
                                 Forgot your passcode?
                             </Button>
                         </Box>
-                    </Stack>
+                    </Row>
                 </Form>
             </Box>
         </Box>

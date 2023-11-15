@@ -7,7 +7,7 @@ import { ToastsProvider } from './ToastsProvider';
 import { useToasts } from './useToasts';
 import ToastHeader from './ToastHeader';
 import ToastBody from './ToastBody';
-import { Stack } from '../../layout/Stack';
+import { Row } from '../../layout/Grid';
 
 export default {
     component: Toast,
@@ -40,7 +40,7 @@ export const Default = Template.bind({});
 
 export const Variants = () => {
     return (
-        <Stack>
+        <Row direction="column" gap={4}>
             <Toast hideToast={() => {}}>
                 <ToastHeader
                     id="1"
@@ -63,6 +63,6 @@ export const Variants = () => {
                 />
                 <ToastBody>Your mail has been succesfully sended.</ToastBody>
             </Toast>
-        </Stack>
+        </Row>
     );
 };

@@ -1,25 +1,12 @@
-import { Group } from '../../layout/Group';
-import { Stack } from '../../layout/Stack';
-import { listItem, listItemActions } from './styles';
+import { listItem } from './styles';
 import { ListItemProps } from './types';
 
 export const ListItem = (props: ListItemProps) => {
-    const {
-        borderBottom = false,
-        actions,
-        children,
-        direction,
-        ...rest
-    } = props;
-
-    const Element = direction === 'row' ? Group : Stack;
+    const { children, ...rest } = props;
 
     return (
-        <li css={listItem(borderBottom)} {...rest}>
-            <div>
-                <Element>{children}</Element>
-                {actions && <div css={listItemActions}>{actions}</div>}
-            </div>
+        <li css={listItem} {...rest}>
+            {children}
         </li>
     );
 };

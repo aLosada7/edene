@@ -1,8 +1,8 @@
 import { defaultTheme } from '@edene/foundations';
 import { Story } from '@storybook/react';
 
-import { Stack } from '../../layout/Stack';
 import { Heading, HeadingProps } from './index';
+import { Row } from '../../layout/Grid';
 
 export default {
     title: 'Typography/Heading',
@@ -22,19 +22,19 @@ Playground.args = {
 export const Default = () => <Heading>Hello World</Heading>;
 
 export const Sizes = () => (
-    <Stack>
+    <Row direction="column" gap={4}>
         <Heading>Size h1</Heading>
         <Heading size="h2">Size h2</Heading>
         <Heading size="h3">Size h3</Heading>
         <Heading size="h4">Size h4</Heading>
         <Heading size="h5">Size h5</Heading>
         <Heading size="h6">Size h6</Heading>
-    </Stack>
+    </Row>
 );
 
 export const Weights = () => (
-    <Stack>
+    <Row direction="column" gap={4}>
         <Heading weight="bold">Light bold</Heading>
         <Heading>Light regular</Heading>
-    </Stack>
+    </Row>
 );
