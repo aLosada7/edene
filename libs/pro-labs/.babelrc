@@ -9,5 +9,7 @@
         ],
         "@emotion/babel-preset-css-prop"
     ],
-    "plugins": []
+    "plugins": [
+        ["@babel/plugin-transform-react-jsx", { "runtime": "automatic" }]
+    ]
 }

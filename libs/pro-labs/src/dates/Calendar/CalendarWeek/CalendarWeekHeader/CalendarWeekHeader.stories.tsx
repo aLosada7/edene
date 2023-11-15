@@ -1,10 +1,10 @@
-import { Story } from '@storybook/react';
+import { Meta, Story } from '@storybook/react';
 
 import CalendarWeekHeader, { DAY_FORMAT } from './CalendarWeekHeader';
 import { CalendarWeekHeaderProps } from './types';
 
-export default {
-    title: 'Calendar/Week Header',
+const meta: Meta<CalendarWeekHeaderProps> = {
+    title: 'Dates/Calendar/Week/Header',
     component: CalendarWeekHeader,
     argTypes: {
         weekStartsOn: {
@@ -25,6 +25,7 @@ export default {
         },
     },
 };
+export default meta;
 
 export const Playground: Story<CalendarWeekHeaderProps> = (args) => (
     <CalendarWeekHeader {...args} />
@@ -32,4 +33,5 @@ export const Playground: Story<CalendarWeekHeaderProps> = (args) => (
 Playground.storyName = '🧶 Playground';
 Playground.args = {
     weekStartsOn: 0,
+    dayFormat: 'S',
 };
