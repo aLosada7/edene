@@ -50,4 +50,9 @@ module.exports = {
             },
         });
     },
+    typescript: {
+        reactDocgenTypescriptOptions: {
+            tsconfigPath: './tsconfig.base.json',
+        },
+    },
 };

@@ -19,7 +19,6 @@ import {
 import {
     settingsContent,
     settingsContentHeader,
-    settingsContentHeaderContent,
     settingsThemeOption,
 } from './styles';
 
@@ -35,18 +34,11 @@ export const SettingsContent = ({ open, onClose }: SettingsContentProps) => {
 
     return (
         <div css={settingsContent(open)}>
-            <Box px={4} py={2} css={settingsContentHeader(theme)}>
-                <Row
-                    align="space-between-center"
-                    noGlutters
-                    css={settingsContentHeaderContent}
-                >
-                    <Row align="start-center" noGlutters>
-                        <Heading
-                            size="h3"
-                            color={grays[9]}
-                            icon={<Icon mr={1}>settings</Icon>}
-                        >
+            <Box p={4} css={settingsContentHeader(theme)}>
+                <Row align="space-between-center" noGlutters>
+                    <Row align="start-center" noGlutters gap={2}>
+                        <Icon color={grays[9]}>settings</Icon>
+                        <Heading size="h3" color={grays[9]}>
                             Settings
                         </Heading>
                     </Row>

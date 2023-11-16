@@ -7,7 +7,6 @@ import {
     Select,
     Option,
     Button,
-    Group,
     Box,
 } from '@edene/components';
 

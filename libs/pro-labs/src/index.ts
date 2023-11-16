@@ -5,4 +5,4 @@ export { default as Education } from './templates/Education';
 export { default as FlightTimeline } from './templates/FlightTimeline';
 export { default as MusicProducts } from './templates/MusicProducts';
 export { default as Report } from './templates/Report';
-export { GameSummary } from './templates/GameSummary/GameSummary.stories';
+export { default as Scoreboard } from './templates/Scoreboard';

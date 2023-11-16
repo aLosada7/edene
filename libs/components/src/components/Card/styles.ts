@@ -18,6 +18,8 @@ export const card = css`
         display: flex !important;
         flex-wrap: wrap;
     }
+
+    padding: 1rem;
 `;
 
 export const cardTheme = ({ theme }: { theme: Theme }) => css`

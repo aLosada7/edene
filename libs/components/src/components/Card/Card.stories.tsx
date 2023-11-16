@@ -11,7 +11,6 @@ import { Col, Row } from '../../layout/Grid';
 import { Icon } from '../../icons';
 import { Avatar } from '../Avatar';
 import avatarSrc from '../../../assets/img/avatar.jpeg';
-import { Heading } from '../../typography/Heading';
 
 export default {
     component: Card,
@@ -99,9 +98,7 @@ export const WithSlides: Story<CardProps> = () => (
             >
                 Detached House . 3,426 SQFT
             </Text>
-            <Heading size="h3" weight="bold">
-                $1,250,000
-            </Heading>
+            <Text weight="bold">$1,250,000</Text>
             <Text size="small" color={grays[3]}>
                 742 Evergreen Terrace
             </Text>
