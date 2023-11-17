@@ -29,11 +29,11 @@ export const EducationSummaryContainer = () => {
                             <Box mb={1}>
                                 <Heading>Edene Tuition Center</Heading>
                             </Box>
-                            <Row noGlutters>
+                            <Row noGlutters gap={1}>
                                 <Text weight="bold" color={grays[2]}>
                                     400 students
                                 </Text>
-                                <Text color="success" ml={1}>
+                                <Text color="success">
                                     www.edenetuitioncenter.com
                                 </Text>
                             </Row>
@@ -47,12 +47,12 @@ export const EducationSummaryContainer = () => {
                 </Row>
             </CardSection>
             <CardSection flex={50} borderRight>
-                <Text align="center">
+                <Text textAlign="center">
                     <b>$2.4k</b> Earned this month
                 </Text>
             </CardSection>
             <CardSection flex={50}>
-                <Text color="success" align="center">
+                <Text color="success" textAlign="center">
                     <b>+25%</b> more than last month
                 </Text>
             </CardSection>

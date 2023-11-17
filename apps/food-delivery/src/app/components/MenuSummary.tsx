@@ -18,10 +18,8 @@ export const MenuSummary = ({
                     {(food.options || []).includes('vegetarian') && `🌱`}
                 </Fragment>
             </Text>
-            <Text size="small" mt={2}>
-                {food.description}
-            </Text>
-            <Text mt={2}>{`${(food.price / 100).toFixed(2)} €`}</Text>
+            <Text size="small">{food.description}</Text>
+            <Text>{`${(food.price / 100).toFixed(2)} €`}</Text>
         </CardSection>
     </Card>
 );

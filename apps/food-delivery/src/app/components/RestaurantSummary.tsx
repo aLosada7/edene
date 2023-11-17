@@ -47,21 +47,18 @@ export const RestaurantSummary = ({
                         <RestaurantRating stars={restaurant.rating} />
                     </Col>
                     <Col md={12} direction="column">
-                        <Text
-                            size="xsmall"
-                            color={grays[0]}
-                            mt={4}
-                            icon={<Icon mr={2}>confirmation_number</Icon>}
-                        >
-                            Entrega desde 1.90€ sin pedido mínimo
-                        </Text>
-                        <Text
-                            size="xsmall"
-                            color="success"
-                            icon={<Icon mr={2}>schedule</Icon>}
-                        >
-                            25 - 30 min.
-                        </Text>
+                        <Row gap={1}>
+                            <Icon mr={2}>confirmation_number</Icon>
+                            <Text size="xsmall" color={grays[0]}>
+                                Entrega desde 1.90€ sin pedido mínimo
+                            </Text>
+                        </Row>
+                        <Row gap={1}>
+                            <Icon mr={2}>schedule</Icon>
+                            <Text size="xsmall" color="success">
+                                25 - 30 min.
+                            </Text>
+                        </Row>
                     </Col>
                 </Row>
             </CardSection>

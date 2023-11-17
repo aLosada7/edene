@@ -1,58 +1,27 @@
-import { cloneElement, HTMLAttributes, ReactElement, ReactNode } from 'react';
+import { FC } from 'react';
+import { useTheme } from '@edene/foundations';
 
-import {
-    useTheme,
-    FontWeight,
-    TextAlign,
-    Props,
-    Color,
-} from '@edene/foundations';
+import { textCss, textTheme } from './styles';
+import { TextProps } from './types';
 
-import { flexText, textCss, textTheme } from './styles';
-
-export type ITextFontSize = 'xxsmall' | 'xsmall' | 'small' | 'regular';
-
-export interface TextProps
-    extends HTMLAttributes<HTMLDivElement>,
-        Color,
-        Props {
-    mt?: number;
-    // in titles only soon
-    mb?: number;
-    ml?: number;
-    size?: ITextFontSize;
-    weight?: FontWeight;
-    align?: TextAlign;
-    icon?: ReactElement;
-    children: ReactNode | string;
-}
-
-export const Text = (props: TextProps) => {
-    const {
-        size = 'regular',
-        weight = 'regular',
-        align = 'inherit',
-        icon,
-        color,
-        children,
-        css,
-        ...rest
-    } = props;
+export const Text: FC<TextProps> = ({
+    size = 'regular',
+    weight = 'regular',
+    textAlign = 'inherit',
+    color,
+    children,
+    css,
+}) => {
     const { theme } = useTheme();
 
     return (
         <div
             css={[
-                textCss(size, align, weight),
+                textCss(size, textAlign, weight),
                 textTheme({ theme, color }),
-                icon ? flexText : null,
                 css,
             ]}
-            {...rest}
         >
-            {icon
-                ? cloneElement(icon, { color: icon.props.color || 'inherit' })
-                : null}
             {children}
         </div>
     );

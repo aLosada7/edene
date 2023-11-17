@@ -9,11 +9,11 @@ import {
     defaultTheme,
 } from '@edene/foundations';
 
-import { ITextFontSize } from './Text';
+import { TextSize } from './types';
 
 export const textCss = (
-    size: ITextFontSize,
-    align: TextAlign,
+    size: TextSize,
+    textAlign: TextAlign,
     weight?: FontWeight
 ) => css`
     ${size === 'xxsmall' && text.xxsmall({ fontWeight: 'regular' })}
@@ -23,15 +23,10 @@ export const textCss = (
 
     ${weight && `font-weight: ${weight};`}
 
-    text-align: ${align};
+    text-align: ${textAlign};
 `;
 
 export const textTheme = ({ theme = defaultTheme, color }: ThemeColor) => css`
     color: ${getColor({ theme, color, themeValue: theme?.text?.color })};
     fill: ${getColor({ theme, color, themeValue: theme?.text?.color })};
-`;
-
-export const flexText = css`
-    display: flex;
-    align-items: center;
 `;
