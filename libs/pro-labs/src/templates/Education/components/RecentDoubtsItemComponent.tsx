@@ -8,7 +8,7 @@ export const RecentDoubtsItemComponent = ({
     title: string;
     askedBy: string;
 }) => (
-    <ListItem direction="column">
+    <ListItem>
         <Row align="space-between-center" noGlutters>
             <Box>
                 <Text size="small">{title}</Text>

@@ -3,7 +3,7 @@ import { Story } from '@storybook/react';
 
 import { Badge, BadgeProps } from './Badge';
 import { Button } from '../Button';
-import { Group } from '../../layout/Group';
+import { Row } from '../../layout/Grid';
 
 export default {
     title: 'Components/Badge',
@@ -30,9 +30,9 @@ export const BadgeInsideAButton = () => (
 );
 
 export const WithColor = () => (
-    <Group>
+    <Row gap={4}>
         <Badge color="gray">1</Badge>
         <Badge color="teal">99+</Badge>
         <Badge color="pink">999+</Badge>
-    </Group>
+    </Row>
 );

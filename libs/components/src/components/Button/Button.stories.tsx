@@ -4,7 +4,6 @@ import { Meta, Story } from '@storybook/react';
 import { Button, ButtonProps } from './index';
 import { Icon } from '../../icons';
 import ButtonGroup from './ButtonGroup';
-import { Stack } from '../../layout/Stack';
 import { Box } from '../../layout/Box';
 import { Row } from '../../layout/Grid';
 
@@ -25,24 +24,21 @@ Playground.args = {
 export const Default = () => <Button>Default</Button>;
 
 export const Variants = () => (
-    <Stack>
+    <Row direction="column" gap={4}>
         <Button>Filled</Button>
         <Button variant="outlined">Outlined</Button>
         <Button variant="text">Text</Button>
-    </Stack>
+    </Row>
 );
 
 export const Sizes = () => (
-    <Row direction="column" align="center-center">
-        <Box width="150px">
-            <Stack>
-                <Button size="xsmall">Xsmall</Button>
-                <Button size="small">Small</Button>
-                <Button size="medium">Medium</Button>
-                <Button size="large">Large</Button>
-            </Stack>
-        </Box>
-        <br />
+    <Row direction="column" align="center-center" gap={4}>
+        <Row direction="column" gap={4}>
+            <Button size="xsmall">Xsmall</Button>
+            <Button size="small">Small</Button>
+            <Button size="medium">Medium</Button>
+            <Button size="large">Large</Button>
+        </Row>
         <Box width="400px">
             <Button size="block">Block</Button>
         </Box>

@@ -3,7 +3,7 @@ import { Story } from '@storybook/react';
 import { COMPONENT_COLORS, ICON_VARIANTS } from '@edene/foundations';
 
 import { Tag, TagProps } from './index';
-import { Group } from '../../layout/Group';
+import { Row } from '../../layout/Grid';
 
 export default {
     title: 'Components/Tag',
@@ -35,13 +35,13 @@ Playground.args = {
 export const Default: Story<TagProps> = () => <Tag type="brand">Default</Tag>;
 
 export const Types = () => (
-    <Group>
+    <Row gap={4}>
         <Tag type="brand">Brand</Tag>
         <Tag type="success">Success</Tag>
         <Tag type="info">Info</Tag>
         <Tag type="danger">Danger</Tag>
         <Tag type="gray">Gray</Tag>
-    </Group>
+    </Row>
 );
 
 export const WithIcon: Story<TagProps> = () => (

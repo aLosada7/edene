@@ -14,9 +14,8 @@ export const list = (styleType: ListStyleType, withSeparation: boolean) => css`
     `> *:not(:last-child) { border-bottom: 1px solid ${grays[7]};}`}
 `;
 
-export const listItem = (borderBottom: boolean) => css`
+export const listItem = css`
     padding: 0.5rem 1rem;
-    ${borderBottom && `border-bottom: 1px solid ${grays[7]};`}
 `;
 
 export const listItemActions = css`

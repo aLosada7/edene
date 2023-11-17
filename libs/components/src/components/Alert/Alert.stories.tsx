@@ -3,8 +3,8 @@ import { Story } from '@storybook/react';
 import { COMPONENT_COLORS } from '@edene/foundations';
 
 import { Icon } from '../../icons';
-import { Stack } from '../../layout/Stack';
 import { Alert, AlertProps } from './index';
+import { Row } from '../../layout/Grid';
 
 export default {
     title: 'Components/Alert',
@@ -34,12 +34,12 @@ Playground.args = {
 export const Default = () => <Alert>This is a default alert</Alert>;
 
 export const Types = () => (
-    <Stack>
+    <Row direction="column" gap={4}>
         <Alert>This is a default alert</Alert>
         <Alert type="success">This is a success alert</Alert>
         <Alert type="info">This is a danger alert</Alert>
         <Alert type="danger">This is a danger alert</Alert>
-    </Stack>
+    </Row>
 );
 
 export const WithActions = () => (

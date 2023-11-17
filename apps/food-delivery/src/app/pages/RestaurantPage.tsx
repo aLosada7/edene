@@ -61,8 +61,8 @@ export const RestaurantPage = () => {
                     {/* Starters */}
                     {restaurant.food.starters && (
                         <MenuCategory
-                            category={restaurant.food.starters}
-                            label="Starters"
+                            list={restaurant.food.starters}
+                            title="Starters"
                             onClick={(food) => setFoodSelected(food)}
                         />
                     )}
@@ -70,8 +70,8 @@ export const RestaurantPage = () => {
                     {/* Bagettes */}
                     {restaurant.food.baguettes && (
                         <MenuCategory
-                            category={restaurant.food.baguettes}
-                            label="Desserts"
+                            list={restaurant.food.baguettes}
+                            title="Desserts"
                             onClick={(food) => setFoodSelected(food)}
                         />
                     )}
@@ -79,8 +79,8 @@ export const RestaurantPage = () => {
                     {/* Desserts */}
                     {restaurant.food.desserts && (
                         <MenuCategory
-                            category={restaurant.food.desserts}
-                            label="Desserts"
+                            list={restaurant.food.desserts}
+                            title="Desserts"
                             onClick={(food) => setFoodSelected(food)}
                         />
                     )}

@@ -1,9 +1,9 @@
 import { css } from '@emotion/react';
 
-import { Icon, Heading, Badge, Group } from '@edene/components';
+import { Icon, Heading, Badge, Row } from '@edene/components';
 
 const HeadingWithIconAndBadge = () => (
-    <Group>
+    <Row gap={1}>
         <Heading
             size="h3"
             icon={
@@ -31,7 +31,7 @@ const HeadingWithIconAndBadge = () => (
         >
             ACTIVE
         </Badge>
-    </Group>
+    </Row>
 );
 
 export default HeadingWithIconAndBadge;

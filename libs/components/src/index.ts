@@ -41,8 +41,6 @@ export * from './icons';
 
 export * from './layout/Box';
 export * from './layout/Grid';
-export * from './layout/Group';
-export * from './layout/Stack';
 
 export * from './typography/Text';
 export * from './typography/Heading';

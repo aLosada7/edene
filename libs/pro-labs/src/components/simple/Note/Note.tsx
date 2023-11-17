@@ -1,8 +1,8 @@
-import { Icon, Text, Group } from '@edene/components';
+import { Icon, Text, Group, Row } from '@edene/components';
 import { grays } from '@edene/foundations';
 
 const Note = () => (
-    <Group>
+    <Row gap={4}>
         <Icon variant="outlined" size="large">
             note_alt
         </Icon>
@@ -13,7 +13,7 @@ const Note = () => (
                 System · April 04, 2018 7:13am
             </Text>
         </div>
-    </Group>
+    </Row>
 );
 
 export default Note;

@@ -13,7 +13,6 @@ import {
     Heading,
     Badge,
     Box,
-    Group,
 } from '@edene/components';
 
 import mountain from '../../../assets/img/mountain.jpg';
@@ -50,10 +49,10 @@ const FEATURE_ADDITIONAL_BLOG_2 = {
     date: 'September 22th 2022',
 };
 
-const Tags = ({ tags }: any) => {
+const Tags = ({ tags = [] }: any) => {
     return (
-        <Group>
-            {(tags || []).map((tag: string) => (
+        <Row gap={1}>
+            {tags.map((tag: string) => (
                 <Box key={tag} mt={2}>
                     <Badge
                         key={tag}
@@ -66,7 +65,7 @@ const Tags = ({ tags }: any) => {
                     </Badge>
                 </Box>
             ))}
-        </Group>
+        </Row>
     );
 };
 

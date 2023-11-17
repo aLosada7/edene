@@ -1,8 +1,8 @@
 import { defaultTheme } from '@edene/foundations';
 import { Story } from '@storybook/react';
 
-import { Stack } from '../../layout/Stack';
 import { Text, TextProps } from './index';
+import { Row } from '../../layout/Grid';
 
 export default {
     title: 'Typography/Text',
@@ -22,17 +22,17 @@ Playground.args = {
 export const Default = () => <Text>Hello World</Text>;
 
 export const Sizes = () => (
-    <Stack>
+    <Row direction="column" gap={4}>
         <Text>Size regular</Text>
         <Text size="small">Size small</Text>
         <Text size="xsmall">Size xsmall</Text>
         <Text size="xxsmall">Size xxsmall</Text>
-    </Stack>
+    </Row>
 );
 
 export const Weights = () => (
-    <Stack>
+    <Row direction="column" gap={4}>
         <Text weight="bold">Light bold</Text>
         <Text>Light regular</Text>
-    </Stack>
+    </Row>
 );
