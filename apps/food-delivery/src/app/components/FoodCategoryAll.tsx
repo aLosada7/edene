@@ -18,6 +18,7 @@ export const FoodCategoryAll = ({
                 css={css`
                     width: 200px;
                     margin: auto;
+                    padding: 0;
                 `}
                 onClick={() => onSelect('all')}
             >

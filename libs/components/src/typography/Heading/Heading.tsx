@@ -1,31 +1,27 @@
 import { useTheme } from '@edene/foundations';
 
-import { flexText, headingCss, headingTheme } from './styles';
+import { headingCss, headingTheme } from './styles';
 import { HeadingProps } from './types';
+import { FC } from 'react';
 
-export const Heading = ({
+export const Heading: FC<HeadingProps> = ({
     size: Element = 'h1',
     weight = 'regular',
+    textAlign = 'inherit',
     color,
-    align = 'inherit',
-    icon,
     children,
     css,
-    ...props
-}: HeadingProps) => {
+}) => {
     const { theme } = useTheme();
 
     return (
         <Element
             css={[
-                headingCss(Element, weight, align),
+                headingCss(Element, weight, textAlign),
                 headingTheme({ theme, color }),
-                icon ? flexText : null,
                 css,
             ]}
-            {...props}
         >
-            {icon}
             {children}
         </Element>
     );

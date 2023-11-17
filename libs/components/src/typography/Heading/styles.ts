@@ -12,7 +12,7 @@ import { HeadingSize } from './types';
 export const headingCss = (
     size: HeadingSize,
     fontWeight: FontWeight,
-    align: TextAlign
+    textAlign: TextAlign
 ) => css`
     ${size === 'h1' && heading.h1({ fontWeight })}
     ${size === 'h2' && heading.h2({ fontWeight })}
@@ -21,8 +21,7 @@ export const headingCss = (
     ${size === 'h5' && heading.h5({ fontWeight })}
     ${size === 'h6' && heading.h6({ fontWeight })}
 
-    text-align: ${align};
-    margin: 0;
+    text-align: ${textAlign};
 `;
 
 export const headingTheme = ({
@@ -35,9 +34,4 @@ export const headingTheme = ({
     span {
         color: ${getColor({ theme, color, themeValue: theme?.text?.color })};
     }
-`;
-
-export const flexText = css`
-    display: flex;
-    align-items: center;
 `;

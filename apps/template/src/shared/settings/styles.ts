@@ -44,10 +44,6 @@ export const settingsContentHeader = (theme: Theme) => css`
     color: ${theme.white};
 `;
 
-export const settingsContentHeaderContent = css`
-    height: 5rem;
-`;
-
 export const overlay = css`
     position: fixed;
     top: 0;

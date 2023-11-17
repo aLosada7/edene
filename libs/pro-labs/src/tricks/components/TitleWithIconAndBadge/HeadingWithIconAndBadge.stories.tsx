@@ -1,5 +1,5 @@
 import { Story, Meta } from '@storybook/react';
-import HeadingWithIconAndBadgeComponent from './TitleWithIconAndBadge';
+import HeadingWithIconAndBadgeComponent from './HeadingWithIconAndBadge';
 
 export default {
     title: 'Tricks/Components',

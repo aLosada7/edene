@@ -45,13 +45,7 @@ export const RestaurantPage = () => {
     return (
         <Container>
             <Row>
-                <Col
-                    direction="column"
-                    lg={6}
-                    css={css`
-                        margin-bottom: 1.5rem;
-                    `}
-                >
+                <Col direction="column" lg={6}>
                     <Heading size="h3">{restaurant.name}</Heading>
                     <RestaurantRating stars={restaurant.rating} />
                 </Col>

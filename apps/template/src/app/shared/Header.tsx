@@ -1,6 +1,7 @@
 import { css } from '@emotion/react';
 
 import { Heading } from '@edene/components';
+import { FC } from 'react';
 
 export interface HeaderProps {
     title: string;
@@ -11,7 +12,7 @@ const header = css`
     background-color: #fff;
 `;
 
-export const Header = ({ title }: HeaderProps) => {
+export const Header: FC<HeaderProps> = ({ title }) => {
     return (
         <header css={header}>
             <Heading size="h4">{title}</Heading>

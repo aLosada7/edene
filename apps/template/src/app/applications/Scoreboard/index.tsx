@@ -1,10 +1,10 @@
 import { Header } from '../../shared/Header';
-import { GameSummary } from '@edene/pro-labs';
+import { Scoreboard as ScoreBoardPage } from '@edene/pro-labs';
 
 const Scoreboard = () => (
     <>
         <Header title="Scoreboard" />
-        <GameSummary />
+        <ScoreBoardPage />
     </>
 );
 

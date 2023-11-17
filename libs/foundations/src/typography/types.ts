@@ -25,12 +25,12 @@ export interface HeadingpieceSizes extends TypographySizes {
 }
 
 export interface HeadingSizes extends TypographySizes {
-    h1: number;
-    h2: number;
-    h3: number;
-    h4: number;
-    h5: number;
-    h6: number;
+    h1: number; // 32px
+    h2: number; // 24px
+    h3: number; // 20px
+    h4: number; // 18px
+    h5: number; // 16px
+    h6: number; // 14px
 }
 export interface BodySizes extends TypographySizes {
     small: number;

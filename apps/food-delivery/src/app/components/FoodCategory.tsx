@@ -22,6 +22,7 @@ export const FoodCategory = ({
                 css={css`
                     width: 200px;
                     margin: auto;
+                    padding: 0;
                 `}
                 onClick={() => onSelect(category.slug)}
             >

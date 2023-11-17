@@ -1,5 +1,6 @@
 export const rows = [
     {
+        id: 1,
         '#': 71,
         position: 'PG',
         name: 'W. Tran',
@@ -9,6 +10,7 @@ export const rows = [
         '+/-': 4,
     },
     {
+        id: 2,
         '#': 15,
         position: 'SG',
         name: 'M. Hoffman',
@@ -18,6 +20,7 @@ export const rows = [
         '+/-': 4,
     },
     {
+        id: 3,
         '#': 10,
         position: 'SG',
         name: 'T. Valdez',
@@ -27,6 +30,7 @@ export const rows = [
         '+/-': 4,
     },
     {
+        id: 4,
         '#': 2,
         position: 'PF',
         name: 'H. Austin',
@@ -36,6 +40,7 @@ export const rows = [
         '+/-': 8,
     },
     {
+        id: 5,
         '#': 35,
         position: 'SF',
         name: 'D. Berry',
@@ -45,6 +50,7 @@ export const rows = [
         '+/-': 8,
     },
     {
+        id: 6,
         '#': 13,
         position: 'C',
         name: 'J. Butler',
@@ -54,6 +60,7 @@ export const rows = [
         '+/-': 8,
     },
     {
+        id: 1,
         '#': 19,
         position: 'C',
         name: 'J. Chapman',

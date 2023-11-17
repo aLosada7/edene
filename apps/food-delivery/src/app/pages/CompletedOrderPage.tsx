@@ -1,14 +1,12 @@
 import { useNavigate } from 'react-router-dom';
-import { Button, Container, Heading, Alert, Box } from '@edene/components';
+import { Button, Container, Heading, Alert } from '@edene/components';
 
 export const CompletedOrderPage = () => {
     const navigate = useNavigate();
 
     return (
         <Container>
-            <Box mb={2}>
-                <Heading size="h3">Order Completed</Heading>
-            </Box>
+            <Heading size="h3">Order Completed</Heading>
 
             <Alert>We have received your order.</Alert>
 
