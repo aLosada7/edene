@@ -7,10 +7,11 @@ import {
     ThemeColor,
     defaultTheme,
 } from '@edene/foundations';
-import { HeadingSize } from './types';
+
+import { HeadingType } from './types';
 
 export const headingCss = (
-    size: HeadingSize,
+    size: HeadingType,
     fontWeight: FontWeight,
     textAlign: TextAlign
 ) => css`

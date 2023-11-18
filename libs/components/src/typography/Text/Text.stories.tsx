@@ -15,7 +15,7 @@ export const Playground = Template.bind({});
 Playground.storyName = '🧶 Playground';
 Playground.args = {
     text: 'Hello World',
-    size: 'regular',
+    type: 'regular',
     weight: 'regular',
     textAlign: 'inherit',
     color: 'primary',
@@ -28,16 +28,18 @@ Default.args = {
 
 export const Sizes = () => (
     <>
-        <Text>Size regular</Text>
-        <Text size="small">Size small</Text>
-        <Text size="xsmall">Size xsmall</Text>
-        <Text size="xxsmall">Size xxsmall</Text>
+        <Text type="regular">Size regular</Text>
+        <Text type="small">Size small</Text>
+        <Text type="xsmall">Size xsmall</Text>
+        <Text type="xxsmall">Size xxsmall</Text>
     </>
 );
 
 export const Weights = () => (
     <>
-        <Text weight="bold">Light bold</Text>
-        <Text>Light regular</Text>
+        <Text type="regular" weight="bold">
+            Light bold
+        </Text>
+        <Text type="regular">Light regular</Text>
     </>
 );

@@ -3,9 +3,9 @@ import { Props } from '@edene/foundations';
 
 import { TypographyProps } from '../types';
 
-export type TextSize = 'xxsmall' | 'xsmall' | 'small' | 'regular';
+export type TextType = 'xxsmall' | 'xsmall' | 'small' | 'regular';
 
 export interface TextProps extends TypographyProps, Props {
-    size?: TextSize;
+    type: TextType;
     children: ReactNode;
 }

@@ -24,7 +24,9 @@ export const FoodCategoryAll = ({
             >
                 <CardMedia src={`/assets/food.png`} alt="All"></CardMedia>
                 <CardSection>
-                    <Text textAlign="center">All</Text>
+                    <Text type="regular" textAlign="center">
+                        All
+                    </Text>
                 </CardSection>
             </Card>
         </Col>

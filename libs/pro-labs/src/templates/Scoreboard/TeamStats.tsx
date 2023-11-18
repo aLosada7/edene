@@ -18,28 +18,40 @@ const TeamStats = () => (
         <CardSection>
             <Row py={1}>
                 <Col sm={12} md={8} direction="column">
-                    <Text size="small">PTS</Text>
-                    <Text weight="bold">55</Text>
+                    <Text type="small">PTS</Text>
+                    <Text type="regular" weight="bold">
+                        55
+                    </Text>
                 </Col>
                 <Col sm={12} md={8} direction="column">
-                    <Text size="small">AST</Text>
-                    <Text weight="bold">12</Text>
+                    <Text type="small">AST</Text>
+                    <Text type="regular" weight="bold">
+                        12
+                    </Text>
                 </Col>
                 <Col sm={12} md={8} direction="column">
-                    <Text size="small">REB</Text>
-                    <Text weight="bold">22</Text>
+                    <Text type="small">REB</Text>
+                    <Text type="regular" weight="bold">
+                        22
+                    </Text>
                 </Col>
                 <Col sm={12} md={8} direction="column">
-                    <Text size="small">% T3</Text>
-                    <Text weight="bold">55%</Text>
+                    <Text type="small">% T3</Text>
+                    <Text type="regular" weight="bold">
+                        55%
+                    </Text>
                 </Col>
                 <Col sm={12} md={8} direction="column">
-                    <Text size="small">STL</Text>
-                    <Text weight="bold">5</Text>
+                    <Text type="small">STL</Text>
+                    <Text type="regular" weight="bold">
+                        5
+                    </Text>
                 </Col>
                 <Col sm={12} md={8} direction="column">
-                    <Text size="small">BLK</Text>
-                    <Text weight="bold">3</Text>
+                    <Text type="small">BLK</Text>
+                    <Text type="regular" weight="bold">
+                        3
+                    </Text>
                 </Col>
             </Row>
         </CardSection>

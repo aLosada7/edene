@@ -37,8 +37,10 @@ export const WithImage: Story<CardProps> = () => (
             alt="Image Example"
         ></CardMedia>
         <CardSection>
-            <Text color="hsl(212, 56%, 16%)">Basics of Angular</Text>
-            <Text color="hsl(212, 18%, 35%)" mb={2}>
+            <Text type="regular" color="hsl(212, 56%, 16%)">
+                Basics of Angular
+            </Text>
+            <Text type="regular" color="hsl(212, 18%, 35%)">
                 Introductory course for Angular and framework basics
             </Text>
             <Button variant="outlined" size="block">
@@ -91,15 +93,17 @@ export const WithSlides: Story<CardProps> = () => (
         </ActionButton>
         <CardSection borderBottom>
             <Text
-                size="xsmall"
+                type="xsmall"
                 weight="bold"
                 color={grays[1]}
                 css={[transformUppercase, letterSpacing]}
             >
                 Detached House . 3,426 SQFT
             </Text>
-            <Text weight="bold">$1,250,000</Text>
-            <Text size="small" color={grays[3]}>
+            <Text type="regular" weight="bold">
+                $1,250,000
+            </Text>
+            <Text type="small" color={grays[3]}>
                 742 Evergreen Terrace
             </Text>
         </CardSection>
@@ -109,15 +113,19 @@ export const WithSlides: Story<CardProps> = () => (
                     <Icon variant="outlined" color={grays[3]}>
                         bed
                     </Icon>
-                    <Text>3</Text>
-                    <Text color={grays[3]}>bedrooms</Text>
+                    <Text type="regular">3</Text>
+                    <Text type="regular" color={grays[3]}>
+                        bedrooms
+                    </Text>
                 </Col>
                 <Col align="vertical-center" sm={12} gap={1}>
                     <Icon variant="outlined" color={grays[3]}>
                         bathtub
                     </Icon>
-                    <Text>2</Text>
-                    <Text color={grays[3]}>bedrooms</Text>
+                    <Text type="regular">2</Text>
+                    <Text type="regular" color={grays[3]}>
+                        bedrooms
+                    </Text>
                 </Col>
             </Row>
         </CardSection>
@@ -131,7 +139,7 @@ export const WithSlides: Story<CardProps> = () => (
                 />
                 <Row noGlutters direction="column">
                     <Text weight="bold">Tiffany Heffner</Text>
-                    <Text size="xsmall" color={grays[3]}>
+                    <Text type="xsmall" color={grays[3]}>
                         (555) 555-4321
                     </Text>
                 </Row>
@@ -143,7 +151,7 @@ export const WithSlides: Story<CardProps> = () => (
             iconSide="right"
             css={[transformUppercase, noTopBorderRadius]}
         >
-            <Text size="xsmall" weight="bold">
+            <Text type="xsmall" weight="bold">
                 Schedule Showing
             </Text>
         </Button>

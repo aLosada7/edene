@@ -5,7 +5,7 @@ import { axe } from 'jest-axe';
 describe('Text', () => {
     it('should render correctly', async () => {
         const text = 'Text';
-        const { container } = render(<Text>{text}</Text>);
+        const { container } = render(<Text type="regular">{text}</Text>);
 
         expect(screen.getByText(text)).toBeVisible();
 

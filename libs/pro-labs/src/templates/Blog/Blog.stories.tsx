@@ -92,9 +92,9 @@ const FeaturedPost = ({ blog }: any) => (
                     alt={blog.slug}
                 />
             </Box>
-            <Text size="xsmall">{blog.date}</Text>
-            <Heading size="h3">{blog.headline}</Heading>
-            <Text size="small">{blog.description}</Text>
+            <Text type="xsmall">{blog.date}</Text>
+            <Heading type="h3">{blog.headline}</Heading>
+            <Text type="small">{blog.description}</Text>
             <Tags tags={blog.tags} />
         </Box>
     </Link>
@@ -128,9 +128,9 @@ const AdditionalFeaturedPost = ({ blog }: any) => (
                     </Box>
                 </Col>
                 <Col md={12} direction="column">
-                    <Text size="xsmall">{blog.date}</Text>
-                    <Heading size="h3">{blog.headline}</Heading>
-                    <Text size="small">{blog.description}</Text>
+                    <Text type="xsmall">{blog.date}</Text>
+                    <Heading type="h3">{blog.headline}</Heading>
+                    <Text type="small">{blog.description}</Text>
                     <Tags tags={blog.tags} />
                 </Col>
             </Row>
@@ -161,9 +161,9 @@ const Post = ({ blog }: any) => (
                     alt="Picture of a mountain"
                 />
             </Box>
-            <Text size="xsmall">{blog.date}</Text>
-            <Heading size="h3">{blog.headline}</Heading>
-            <Text size="small">{blog.description}</Text>
+            <Text type="xsmall">{blog.date}</Text>
+            <Heading type="h3">{blog.headline}</Heading>
+            <Text type="small">{blog.description}</Text>
             <Tags tags={blog.tags} />
         </Box>
     </Link>
@@ -173,7 +173,7 @@ export const Blog = () => (
     <>
         <Container>
             <Box pb={2}>
-                <Heading size="h2">Featured blog posts</Heading>
+                <Heading type="h2">Featured blog posts</Heading>
             </Box>
             <Row>
                 <Col lg={12}>
@@ -187,7 +187,7 @@ export const Blog = () => (
         </Container>
         <Container>
             <Box pb={2}>
-                <Heading size="h2">All blog posts</Heading>
+                <Heading type="h2">All blog posts</Heading>
             </Box>
             <Row>
                 {[

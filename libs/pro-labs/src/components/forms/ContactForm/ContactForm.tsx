@@ -20,23 +20,19 @@ export const ContactForm = () => {
                 <CardSection>
                     <Row>
                         <Col sm={24} lg={8}>
-                            <Heading size="h3" mt={4}>
-                                Column 1
-                            </Heading>
+                            <Heading type="h1">Column 1</Heading>
                         </Col>
                         <Col sm={24} lg={16} direction="column" align="center">
                             <Row>
                                 <Col sm={24} lg={24} direction="column">
-                                    <Heading size="h3" mt={4}>
-                                        Let's talk
-                                    </Heading>
-                                    <Heading size="h3">
+                                    <Heading type="h3">Let's talk</Heading>
+                                    <Heading type="h3">
                                         Give me some information.
                                     </Heading>
                                 </Col>
                             </Row>
                             <Form>
-                                <Container pv={0} mt={4}>
+                                <Container>
                                     <Row>
                                         <Col md={12}>
                                             <TextInput label="Name" />

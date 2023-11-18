@@ -15,7 +15,7 @@ export const Default = () => {
 
     return (
         <div ref={hoverRef}>
-            <Text>Hover me!</Text>
+            <Text type="regular">Hover me!</Text>
             {hovering && <Tooltip />}
         </div>
     );

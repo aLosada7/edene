@@ -15,7 +15,7 @@ const PaymentForm = () => {
     return (
         <Container>
             <Box py={4}>
-                <Heading size="h5">Secure Payment</Heading>
+                <Heading type="h5">Secure Payment</Heading>
             </Box>
             <RadioGroup onChange={setValue} value={value}>
                 <div css={optionWrapper}>

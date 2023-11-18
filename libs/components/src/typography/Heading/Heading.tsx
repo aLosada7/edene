@@ -5,7 +5,7 @@ import { HeadingProps } from './types';
 import { FC } from 'react';
 
 export const Heading: FC<HeadingProps> = ({
-    size: Element = 'h1',
+    type: Element = 'h1',
     weight = 'regular',
     textAlign = 'inherit',
     color,

@@ -22,12 +22,12 @@ const AuthenticationSignIn = () => {
                 />
                 <>
                     <Box mb={1}>
-                        <Heading size="h2" color={grays[9]}>
+                        <Heading type="h2" color={grays[9]}>
                             Login
                         </Heading>
                     </Box>
                     <Box mb={8}>
-                        <Heading size="h5" color={grays[3]}>
+                        <Heading type="h5" color={grays[3]}>
                             Welcome Back!
                         </Heading>
                     </Box>

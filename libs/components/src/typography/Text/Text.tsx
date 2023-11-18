@@ -5,7 +5,7 @@ import { textCss, textTheme } from './styles';
 import { TextProps } from './types';
 
 export const Text: FC<TextProps> = ({
-    size = 'regular',
+    type,
     weight = 'regular',
     textAlign = 'inherit',
     color,
@@ -17,7 +17,7 @@ export const Text: FC<TextProps> = ({
     return (
         <div
             css={[
-                textCss(size, textAlign, weight),
+                textCss(type, textAlign, weight),
                 textTheme({ theme, color }),
                 css,
             ]}

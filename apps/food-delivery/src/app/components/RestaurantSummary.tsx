@@ -37,11 +37,11 @@ export const RestaurantSummary = ({
                     </Col>
                     <Col md={8} direction="column">
                         <Box>
-                            <Text size="regular" weight="bold" color={grays[0]}>
+                            <Text type="regular" weight="bold" color={grays[0]}>
                                 {restaurant.name}
                             </Text>
                         </Box>
-                        <Text size="small" color={grays[2]}>
+                        <Text type="small" color={grays[2]}>
                             {restaurant.kind}
                         </Text>
                         <RestaurantRating stars={restaurant.rating} />
@@ -49,13 +49,13 @@ export const RestaurantSummary = ({
                     <Col md={12} direction="column">
                         <Row gap={1}>
                             <Icon mr={2}>confirmation_number</Icon>
-                            <Text size="xsmall" color={grays[0]}>
+                            <Text type="xsmall" color={grays[0]}>
                                 Entrega desde 1.90€ sin pedido mínimo
                             </Text>
                         </Row>
                         <Row gap={1}>
                             <Icon mr={2}>schedule</Icon>
-                            <Text size="xsmall" color="success">
+                            <Text type="xsmall" color="success">
                                 25 - 30 min.
                             </Text>
                         </Row>

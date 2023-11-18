@@ -13,7 +13,7 @@ export interface CardHeaderProps extends Props {
 export const CardHeader = ({ children, css, ...rest }: CardHeaderProps) => (
     <Box py={2}>
         <Heading
-            size="h3"
+            type="h3"
             css={[cardHeader, css] as SerializedStyles[]}
             {...rest}
         >

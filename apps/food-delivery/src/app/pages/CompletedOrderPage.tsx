@@ -6,7 +6,7 @@ export const CompletedOrderPage = () => {
 
     return (
         <Container>
-            <Heading size="h3">Order Completed</Heading>
+            <Heading type="h3">Order Completed</Heading>
 
             <Alert>We have received your order.</Alert>
 

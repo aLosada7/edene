@@ -95,7 +95,7 @@ const Chart = () => {
     return (
         <div css={card}>
             <header css={header(theme)}>
-                <Heading size="h3" color={colorDefault}>
+                <Heading type="h3" color={colorDefault}>
                     Revenue
                 </Heading>
                 <ToggleButtons

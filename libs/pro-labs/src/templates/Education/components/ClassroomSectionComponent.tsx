@@ -37,8 +37,8 @@ export const ClassroomSectionComponent = ({
                     {icon}
                 </Icon>
             </Badge>
-            <Heading>{title}</Heading>
-            <Text size="small" color={grays[3]}>
+            <Heading type="h1">{title}</Heading>
+            <Text type="small" color={grays[3]}>
                 {description}
             </Text>
             <ButtonGroup>

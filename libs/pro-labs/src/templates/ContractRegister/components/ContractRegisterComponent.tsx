@@ -37,7 +37,7 @@ export const ContractRegisterComponent = () => {
             <Row direction="column" gap={3} noGlutters>
                 <Box>
                     <Box pb={2}>
-                        <Heading size="h3">Address</Heading>
+                        <Heading type="h3">Address</Heading>
                     </Box>
                     <TextInput label="Full Address" />
                     <Row>
@@ -52,7 +52,7 @@ export const ContractRegisterComponent = () => {
 
                 <Box>
                     <Box pb={2}>
-                        <Heading size="h3">Tenants</Heading>
+                        <Heading type="h3">Tenants</Heading>
                     </Box>
                     <Person />
                     <Button size="small" icon="add" iconSide="right">
@@ -62,7 +62,7 @@ export const ContractRegisterComponent = () => {
 
                 <Box>
                     <Box pb={2}>
-                        <Heading size="h3">Landlords</Heading>
+                        <Heading type="h3">Landlords</Heading>
                     </Box>
                     <Person />
                     <Button size="small" icon="add" iconSide="right">

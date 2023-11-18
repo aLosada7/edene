@@ -38,7 +38,7 @@ export const SettingsContent = ({ open, onClose }: SettingsContentProps) => {
                 <Row align="space-between-center" noGlutters>
                     <Row align="start-center" noGlutters gap={2}>
                         <Icon color={grays[9]}>settings</Icon>
-                        <Heading size="h3" color={grays[9]}>
+                        <Heading type="h3" color={grays[9]}>
                             Settings
                         </Heading>
                     </Row>
@@ -65,7 +65,9 @@ export const SettingsContent = ({ open, onClose }: SettingsContentProps) => {
                                     backgroundColor: themeOption.color,
                                 }}
                             />
-                            <Text>{themeOption.title as string}</Text>
+                            <Text type="regular">
+                                {themeOption.title as string}
+                            </Text>
                         </div>
                     ))}
                 </Row>

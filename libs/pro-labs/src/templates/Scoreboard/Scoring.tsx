@@ -19,11 +19,13 @@ const Scoring = () => (
             <Row align="space-around-center" py={1}>
                 <Avatar size={100} shape="circle" />
                 <Row direction="column" px={2}>
-                    <Text weight="bold">Danial Berry</Text>
-                    <Text size="xsmall" weight="bold">
+                    <Text type="regular" weight="bold">
+                        Danial Berry
+                    </Text>
+                    <Text type="xsmall" weight="bold">
                         Jason Chapman, Jake Sullivan
                     </Text>
-                    <Text size="xsmall" weight="bold">
+                    <Text type="xsmall" weight="bold">
                         11:20 / 1st
                     </Text>
                 </Row>

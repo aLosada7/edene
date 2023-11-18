@@ -46,11 +46,11 @@ export const RestaurantPage = () => {
         <Container>
             <Row>
                 <Col direction="column" lg={6}>
-                    <Heading size="h3">{restaurant.name}</Heading>
+                    <Heading type="h3">{restaurant.name}</Heading>
                     <RestaurantRating stars={restaurant.rating} />
                 </Col>
                 <Col lg={18} direction="column">
-                    <Heading size="h3">Menu</Heading>
+                    <Heading type="h3">Menu</Heading>
 
                     {/* Starters */}
                     {restaurant.food.starters && (
@@ -94,15 +94,17 @@ export const RestaurantPage = () => {
                                         text-align: center;
                                     `}
                                 >
-                                    <Text size="regular">
+                                    <Text type="regular">
                                         {(foodSelected.options || []).includes(
                                             'vegetarian'
                                         ) && `🌱 Vegetarian`}
                                     </Text>
 
-                                    <Text>{foodSelected.description}</Text>
+                                    <Text type="regular">
+                                        {foodSelected.description}
+                                    </Text>
 
-                                    <Text size="xsmall">
+                                    <Text type="xsmall">
                                         {(foodSelected.price / 100).toFixed(2) +
                                             ' €'}
                                     </Text>
