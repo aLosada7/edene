@@ -3,9 +3,9 @@ import { Props } from '@edene/foundations';
 
 import { TypographyProps } from '../types';
 
-export type HeadingType = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+export type TextType = 'xxsmall' | 'xsmall' | 'small' | 'regular';
 
-export interface HeadingProps extends TypographyProps, Props {
-    type: HeadingType;
+export interface TextProps extends TypographyProps, Props {
+    type: TextType;
     children: ReactNode;
 }

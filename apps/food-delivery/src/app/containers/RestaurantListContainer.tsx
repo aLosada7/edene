@@ -21,7 +21,7 @@ export const RestaurantListContainer = ({ foodKind }: { foodKind: string }) => {
 
     return (
         <Fragment>
-            <Heading size="h2">
+            <Heading type="h2">
                 <span>{selectedFoodName} Restaurants</span>
             </Heading>
             <Container>

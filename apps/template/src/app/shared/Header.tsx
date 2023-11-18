@@ -15,7 +15,7 @@ const header = css`
 export const Header: FC<HeaderProps> = ({ title }) => {
     return (
         <header css={header}>
-            <Heading size="h4">{title}</Heading>
+            <Heading type="h4">{title}</Heading>
         </header>
     );
 };

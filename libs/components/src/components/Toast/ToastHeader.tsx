@@ -21,7 +21,9 @@ const ToastHeader = (props: ToastHeaderProps) => {
             data-dismiss="toast"
             {...rest}
         >
-            <Heading css={toastHeading}>{title}</Heading>
+            <Heading type="h1" css={toastHeading}>
+                {title}
+            </Heading>
             <ActionButton onClick={closeToast}>
                 <Icon>close</Icon>
             </ActionButton>

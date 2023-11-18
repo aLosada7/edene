@@ -12,7 +12,11 @@ const ToastBody = (props: ToastBodyProps) => {
     const { children, css, ...rest } = props;
 
     return (
-        <Text css={[toastBody, css] as SerializedStyles[]} {...rest}>
+        <Text
+            type="regular"
+            css={[toastBody, css] as SerializedStyles[]}
+            {...rest}
+        >
             {children}
         </Text>
     );

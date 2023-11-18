@@ -12,7 +12,7 @@ export const Swipe = () => {
             ref={scrollRef}
             style={{ border: '1px solid #212529', textAlign: 'center' }}
         >
-            <Text>
+            <Text type="regular">
                 {swipe ? `You swiped ${swipe} ` : 'It is time to swipe'}
             </Text>
         </div>

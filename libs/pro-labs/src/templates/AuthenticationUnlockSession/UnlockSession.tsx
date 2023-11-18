@@ -20,12 +20,12 @@ const AuthenticationUnlockSession = () => {
                     css={profileImage}
                 />
                 <Box mb={2}>
-                    <Heading size="h3" color={grays[4]}>
+                    <Heading type="h3" color={grays[4]}>
                         Welcome Back!
                     </Heading>
                 </Box>
                 <Box mb={8}>
-                    <Heading size="h2" weight="bold">
+                    <Heading type="h2" weight="bold">
                         Virat Kohli
                     </Heading>
                 </Box>

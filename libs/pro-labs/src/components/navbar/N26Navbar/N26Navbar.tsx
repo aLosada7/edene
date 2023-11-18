@@ -16,7 +16,7 @@ const N26Navbar = () => (
             padding: '16px',
         }}
     >
-        <Heading>C11</Heading>
+        <Heading type="h1">C11</Heading>
         <div
             style={{
                 display: 'flex',

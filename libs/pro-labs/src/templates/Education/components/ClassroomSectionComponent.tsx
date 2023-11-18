@@ -1,5 +1,3 @@
-import { css } from '@emotion/react';
-
 import {
     Badge,
     CardSection,
@@ -7,13 +5,10 @@ import {
     Heading,
     Text,
     Button,
-    Box,
+    Row,
+    ButtonGroup,
 } from '@edene/components';
 import { grays } from '@edene/foundations';
-
-const marginLeft = css`
-    margin-left: 2px;
-`;
 
 export const ClassroomSectionComponent = ({
     icon,
@@ -36,21 +31,22 @@ export const ClassroomSectionComponent = ({
     secondaryAction: string;
 }) => (
     <CardSection flex={50} {...props}>
-        <Badge color={iconColor}>
-            <Icon size="large" color={badgeColor}>
-                {icon}
-            </Icon>
-        </Badge>
-        <Box mt={4} mb={2}>
-            <Heading>{title}</Heading>
-        </Box>
-        <Text size="small" color={grays[3]} mb={2}>
-            {description}
-        </Text>
-
-        <Button size="small">{mainAction}</Button>
-        <Button size="small" variant="outlined" css={marginLeft}>
-            {secondaryAction}
-        </Button>
+        <Row direction="column" gap={2} noGlutters>
+            <Badge color={iconColor}>
+                <Icon size="large" color={badgeColor}>
+                    {icon}
+                </Icon>
+            </Badge>
+            <Heading type="h1">{title}</Heading>
+            <Text type="small" color={grays[3]}>
+                {description}
+            </Text>
+            <ButtonGroup>
+                <Button size="small">{mainAction}</Button>
+                <Button size="small" variant="outlined">
+                    {secondaryAction}
+                </Button>
+            </ButtonGroup>
+        </Row>
     </CardSection>
 );

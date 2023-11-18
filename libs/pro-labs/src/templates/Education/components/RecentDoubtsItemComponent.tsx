@@ -11,8 +11,8 @@ export const RecentDoubtsItemComponent = ({
     <ListItem>
         <Row align="space-between-center" noGlutters>
             <Box>
-                <Text size="small">{title}</Text>
-                <Text size="xsmall" color={grays[3]}>
+                <Text type="small">{title}</Text>
+                <Text type="xsmall" color={grays[3]}>
                     Asked by {askedBy}
                 </Text>
             </Box>

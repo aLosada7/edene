@@ -1,38 +1,45 @@
-import { defaultTheme } from '@edene/foundations';
 import { Story } from '@storybook/react';
 
 import { Text, TextProps } from './index';
-import { Row } from '../../layout/Grid';
 
 export default {
     title: 'Typography/Text',
     component: Text,
 };
 
-export const Playground: Story<TextProps & { text: string }> = ({
-    text,
-    ...args
-}) => <Text {...args}>{text}</Text>;
+const Template: Story<TextProps & { text: string }> = ({ text, ...args }) => (
+    <Text {...args}>{text}</Text>
+);
+
+export const Playground = Template.bind({});
 Playground.storyName = '🧶 Playground';
 Playground.args = {
-    ...defaultTheme.text,
+    text: 'Hello World',
+    type: 'regular',
+    weight: 'regular',
+    textAlign: 'inherit',
+    color: 'primary',
+};
+
+export const Default = Template.bind({});
+Default.args = {
     text: 'Hello World',
 };
 
-export const Default = () => <Text>Hello World</Text>;
-
 export const Sizes = () => (
-    <Row direction="column" gap={4}>
-        <Text>Size regular</Text>
-        <Text size="small">Size small</Text>
-        <Text size="xsmall">Size xsmall</Text>
-        <Text size="xxsmall">Size xxsmall</Text>
-    </Row>
+    <>
+        <Text type="regular">Size regular</Text>
+        <Text type="small">Size small</Text>
+        <Text type="xsmall">Size xsmall</Text>
+        <Text type="xxsmall">Size xxsmall</Text>
+    </>
 );
 
 export const Weights = () => (
-    <Row direction="column" gap={4}>
-        <Text weight="bold">Light bold</Text>
-        <Text>Light regular</Text>
-    </Row>
+    <>
+        <Text type="regular" weight="bold">
+            Light bold
+        </Text>
+        <Text type="regular">Light regular</Text>
+    </>
 );

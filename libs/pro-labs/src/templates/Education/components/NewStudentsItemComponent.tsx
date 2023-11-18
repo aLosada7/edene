@@ -15,8 +15,8 @@ export const NewStudentsItemComponent = ({
             <Row noGlutters>
                 <Avatar size={40} src={avatar} />
                 <Box ml={2}>
-                    <Text>{name}</Text>
-                    <Text size="small" color={grays[3]}>
+                    <Text type="regular">{name}</Text>
+                    <Text type="small" color={grays[3]}>
                         Joined {register}
                     </Text>
                 </Box>

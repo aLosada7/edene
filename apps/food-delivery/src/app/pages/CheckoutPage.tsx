@@ -52,12 +52,12 @@ export const CheckoutPage = () => {
                 onRemoveCartProduct={handleRemoveCartProduct}
             />
         ) : (
-            <Text>Your cart is empty</Text>
+            <Text type="regular">Your cart is empty</Text>
         );
 
     return (
         <Container>
-            <Heading size="h3">Checkout</Heading>
+            <Heading type="h3">Checkout</Heading>
 
             {cart}
 

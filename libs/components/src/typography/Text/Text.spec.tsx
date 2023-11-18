@@ -1,11 +1,11 @@
-import { Heading } from './index';
+import { Text } from './index';
 import { render, screen } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
-describe('Heading', () => {
+describe('Text', () => {
     it('should render correctly', async () => {
-        const text = 'Heading';
-        const { container } = render(<Heading type="h1">{text}</Heading>);
+        const text = 'Text';
+        const { container } = render(<Text type="regular">{text}</Text>);
 
         expect(screen.getByText(text)).toBeVisible();
 

@@ -4,7 +4,7 @@ import { ClassroomSectionComponent } from '../components/ClassroomSectionCompone
 export const ClassroomContainer = () => (
     <Row noGlutters>
         <Box mb={2}>
-            <Heading size="h4">Classroom</Heading>
+            <Heading type="h4">Classroom</Heading>
         </Box>
         <Card>
             <ClassroomSectionComponent

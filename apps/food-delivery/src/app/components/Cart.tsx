@@ -18,11 +18,11 @@ export const Cart = ({
         {products.map((cartProduct) => (
             <Row key={cartProduct.product.id}>
                 <Col sm={18} direction="column">
-                    <Text size="xsmall">
+                    <Text type="xsmall">
                         {(cartProduct.product.price / 100).toFixed(2) + ' €'}
                     </Text>
-                    <Text>{cartProduct.product.name}</Text>
-                    <Text size="small">
+                    <Text type="regular">{cartProduct.product.name}</Text>
+                    <Text type="small">
                         <Fragment>Qty: {cartProduct.quantity}</Fragment>
                     </Text>
                 </Col>
@@ -36,7 +36,7 @@ export const Cart = ({
             </Row>
         ))}
         <div>
-            <Text>
+            <Text type="regular">
                 <Fragment>
                     Subtotal:{' '}
                     {(

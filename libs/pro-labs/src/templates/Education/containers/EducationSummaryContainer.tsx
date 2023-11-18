@@ -27,13 +27,19 @@ export const EducationSummaryContainer = () => {
                         <Avatar size={54} name="Edene Tuition Center"></Avatar>
                         <Row noGlutters px={4}>
                             <Box mb={1}>
-                                <Heading>Edene Tuition Center</Heading>
+                                <Heading type="h1">
+                                    Edene Tuition Center
+                                </Heading>
                             </Box>
-                            <Row noGlutters>
-                                <Text weight="bold" color={grays[2]}>
+                            <Row noGlutters gap={1}>
+                                <Text
+                                    type="regular"
+                                    weight="bold"
+                                    color={grays[2]}
+                                >
                                     400 students
                                 </Text>
-                                <Text color="success" ml={1}>
+                                <Text type="regular" color="success">
                                     www.edenetuitioncenter.com
                                 </Text>
                             </Row>
@@ -41,18 +47,18 @@ export const EducationSummaryContainer = () => {
                     </Col>
                     <Col md={8} align="horizontal-end">
                         <Box css={totalEarnings}>
-                            <Text size="xsmall">$12.2k Total Earnings</Text>
+                            <Text type="xsmall">$12.2k Total Earnings</Text>
                         </Box>
                     </Col>
                 </Row>
             </CardSection>
             <CardSection flex={50} borderRight>
-                <Text align="center">
+                <Text type="regular" textAlign="center">
                     <b>$2.4k</b> Earned this month
                 </Text>
             </CardSection>
             <CardSection flex={50}>
-                <Text color="success" align="center">
+                <Text type="regular" color="success" textAlign="center">
                     <b>+25%</b> more than last month
                 </Text>
             </CardSection>

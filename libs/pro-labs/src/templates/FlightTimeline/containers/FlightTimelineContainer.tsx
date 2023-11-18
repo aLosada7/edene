@@ -58,18 +58,20 @@ export const FlightTimelineContainer = () => {
                             <Icon>flight_land</Icon>
                         </div>
                         <div>
-                            <Text>The flight has landed at 3:50 PM</Text>
-                            <Text size="small" color={grays[3]}>
+                            <Text type="regular">
+                                The flight has landed at 3:50 PM
+                            </Text>
+                            <Text type="small" color={grays[3]}>
                                 Jul 05, 3:52 PM
                             </Text>
                             <Card css={note(theme)}>
                                 <CardSection>
-                                    <Text weight="bold">
+                                    <Text type="regular" weight="bold">
                                         Thank you for traveling with EDENE
                                         Flights.
                                     </Text>
                                     <br />
-                                    <Text>
+                                    <Text type="regular">
                                         Thank you for choosing us as your
                                         trusted airline. We hope you have
                                         enjoyed travelling with{' '}
@@ -87,8 +89,10 @@ export const FlightTimelineContainer = () => {
                             <Icon>flight_takeoff</Icon>
                         </div>
                         <div>
-                            <Text>The flight has taken off at 1:50 PM</Text>
-                            <Text size="small" color={grays[3]}>
+                            <Text type="regular">
+                                The flight has taken off at 1:50 PM
+                            </Text>
+                            <Text type="small" color={grays[3]}>
                                 Jul 05, 1:52 PM
                             </Text>
                         </div>
@@ -101,10 +105,10 @@ export const FlightTimelineContainer = () => {
                             <Icon>flight</Icon>
                         </div>
                         <div>
-                            <Text>
+                            <Text type="regular">
                                 Last call for the passangers of flight DN-7243
                             </Text>
-                            <Text size="small" color={grays[3]}>
+                            <Text type="small" color={grays[3]}>
                                 Jul 05, 1:41 PM
                             </Text>
                         </div>
@@ -116,10 +120,10 @@ export const FlightTimelineContainer = () => {
                             <Icon>airplane_ticket</Icon>
                         </div>
                         <div>
-                            <Text>
+                            <Text type="regular">
                                 Boarding is now allowed for all passangers
                             </Text>
-                            <Text size="small" color={grays[3]}>
+                            <Text type="small" color={grays[3]}>
                                 Jul 05, 11: 59 AM
                             </Text>
                         </div>
@@ -136,8 +140,10 @@ export const FlightTimelineContainer = () => {
                             <Icon>luggage</Icon>
                         </div>
                         <div>
-                            <Text>Early check-in is opened for everyone</Text>
-                            <Text size="small" color={grays[3]}>
+                            <Text type="regular">
+                                Early check-in is opened for everyone
+                            </Text>
+                            <Text type="small" color={grays[3]}>
                                 Jul 04, 1:50 PM
                             </Text>
                         </div>
@@ -149,10 +155,10 @@ export const FlightTimelineContainer = () => {
                             <Icon>flight_class</Icon>
                         </div>
                         <div>
-                            <Text>
+                            <Text type="regular">
                                 Early check in is opened for Premium passengers
                             </Text>
-                            <Text size="small" color={grays[3]}>
+                            <Text type="small" color={grays[3]}>
                                 Jul 04, 1:50 AM
                             </Text>
                         </div>
@@ -168,11 +174,11 @@ export const FlightTimelineContainer = () => {
                             <Icon>schedule</Icon>
                         </div>
                         <div>
-                            <Text>
+                            <Text type="regular">
                                 The flight time has been reescheduled to Jul 05,
                                 1:50
                             </Text>
-                            <Text size="small" color={grays[3]}>
+                            <Text type="small" color={grays[3]}>
                                 Jun 20, 8:24 AM
                             </Text>
                         </div>

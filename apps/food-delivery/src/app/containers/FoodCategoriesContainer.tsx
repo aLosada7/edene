@@ -14,7 +14,7 @@ export const FoodCategoriesContainer = ({
     onSelect: (kind: string) => void;
 }) => (
     <Fragment>
-        <Heading size="h2">Food Categories</Heading>
+        <Heading type="h2">Food Categories</Heading>
         <Row>
             <FoodCategoryAll onSelect={onSelect} />
             {foodRestaurants.map((category: IFoodOffer) => (

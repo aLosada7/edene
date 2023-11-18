@@ -34,12 +34,12 @@ Playground.args = {
     tab1: {
         tabKey: '1',
         label: 'Tab 1',
-        content: <Text>Content for first tab goes here.</Text>,
+        content: <Text type="regular">Content for first tab goes here.</Text>,
     },
     tab2: {
         tabKey: '2',
         label: 'Tab 2',
-        content: <Text>Content for second tab goes here.</Text>,
+        content: <Text type="regular">Content for second tab goes here.</Text>,
     },
 };
 
@@ -55,10 +55,10 @@ export const Default: Story<TabsProps> = (
             {...args}
         >
             <Tab tabKey="1" label="Tab 1">
-                <Text>Content for first tab goes here.</Text>
+                <Text type="regular">Content for first tab goes here.</Text>
             </Tab>
             <Tab tabKey="2" label="Tab 2">
-                <Text>Content for second tab goes here.</Text>
+                <Text type="regular">Content for second tab goes here.</Text>
             </Tab>
         </Tabs>
     );
@@ -75,10 +75,10 @@ export const WithTabDisabled: Story = () => {
     return (
         <Tabs active={selected} onTabChange={(key) => setSelected(key)}>
             <Tab tabKey="1" label="Disabled tab" disabled>
-                <Text>Content for first tab goes here.</Text>
+                <Text type="regular">Content for first tab goes here.</Text>
             </Tab>
             <Tab tabKey="2" label="Tab 2">
-                <Text>Content for second tab goes here.</Text>
+                <Text type="regular">Content for second tab goes here.</Text>
             </Tab>
         </Tabs>
     );
@@ -90,10 +90,10 @@ export const WithTabHidden: Story = () => {
     return (
         <Tabs active={selected} onTabChange={(key) => setSelected(key)}>
             <Tab tabKey="1" label="Hidden tab" hidden>
-                <Text>Content for first tab goes here.</Text>
+                <Text type="regular">Content for first tab goes here.</Text>
             </Tab>
             <Tab tabKey="2" label="Tab 2">
-                <Text>Content for second tab goes here.</Text>
+                <Text type="regular">Content for second tab goes here.</Text>
             </Tab>
         </Tabs>
     );

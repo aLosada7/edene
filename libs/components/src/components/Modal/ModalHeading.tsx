@@ -7,7 +7,7 @@ interface ModalHeadingProps {
 }
 
 const ModalHeading = ({ children }: ModalHeadingProps) => (
-    <Heading size="h4">{children}</Heading>
+    <Heading type="h4">{children}</Heading>
 );
 
 export default ModalHeading;

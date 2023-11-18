@@ -31,7 +31,10 @@ export const FoodCategory = ({
                     alt={`${category.name}`}
                 ></CardMedia>
                 <CardSection>
-                    <Text align="center">{`${category.name}`}</Text>
+                    <Text
+                        type="regular"
+                        textAlign="center"
+                    >{`${category.name}`}</Text>
                 </CardSection>
             </Card>
         </Col>

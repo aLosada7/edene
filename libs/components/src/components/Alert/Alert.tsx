@@ -30,7 +30,9 @@ export const Alert = (props: AlertProps) => {
             }
             {...rest}
         >
-            <Text color={theme.white}>{children}</Text>
+            <Text type="regular" color={theme.white}>
+                {children}
+            </Text>
             {actions && <div css={alertActions}>{actions}</div>}
         </Box>
     );

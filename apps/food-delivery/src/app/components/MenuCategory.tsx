@@ -58,7 +58,7 @@ export const MenuCategory = ({
             </Circle>
         </Col>
         <Col md={20} lg={22} direction="column">
-            <Heading size="h4">{title}</Heading>
+            <Heading type="h4">{title}</Heading>
             <Row gap={2}>
                 {list.map((food: IFoodInfo, index: number) => (
                     <MenuSummary
