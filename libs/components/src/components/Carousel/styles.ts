@@ -1,6 +1,5 @@
-import { css } from '@emotion/react';
-
 import { grays } from '@edene/foundations';
+import { css } from '@emotion/react';
 
 export const carousel = css`
     position: relative;

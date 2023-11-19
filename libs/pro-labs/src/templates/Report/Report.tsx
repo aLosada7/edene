@@ -1,5 +1,6 @@
 import { Button, Container, Heading, Row, Text } from '@edene/components';
 import { grays } from '@edene/foundations';
+
 import LineChart from '../../components/simple/Chart';
 
 const Report = () => (

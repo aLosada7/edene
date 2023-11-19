@@ -1,6 +1,7 @@
-import { Text } from './index';
 import { render, screen } from '@testing-library/react';
 import { axe } from 'jest-axe';
+
+import { Text } from './index';
 
 describe('Text', () => {
     it('should render correctly', async () => {

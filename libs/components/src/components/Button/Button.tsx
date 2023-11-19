@@ -2,6 +2,7 @@ import { cloneElement, forwardRef } from 'react';
 import { PolymorphicRef, useTheme } from '@edene/foundations';
 
 import { Icon } from '../../icons';
+import { Box } from '../../layout/Box';
 import {
     btn,
     btnColor,
@@ -9,7 +10,6 @@ import {
     buttonIconRight,
     buttonLoading,
 } from './styles';
-import { Box } from '../../layout/Box';
 import { ButtonComponent, PButtonProps } from './types';
 
 export const Button: ButtonComponent = forwardRef(

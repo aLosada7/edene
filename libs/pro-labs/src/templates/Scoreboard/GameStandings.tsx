@@ -9,6 +9,7 @@ import {
     TableRow,
 } from '@edene/components';
 import { css } from '@emotion/react';
+
 import { rows } from './rows';
 
 const GameStandings = () => (

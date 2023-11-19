@@ -1,7 +1,7 @@
 import React from 'react';
 import { Story } from '@storybook/react';
 
-import { RadioGroup, RadioGroupProps, Radio } from './index';
+import { Radio,RadioGroup, RadioGroupProps } from './index';
 
 export default {
     title: 'Forms/RadioGroup',

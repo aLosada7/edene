@@ -1,6 +1,4 @@
 import { NavLink } from 'react-router-dom';
-import { css } from '@emotion/react';
-
 import {
     SideNav as EdeneSideNav,
     SideNavItem,
@@ -9,6 +7,7 @@ import {
     SideNavPrincipal,
 } from '@edene/components';
 import { transitions } from '@edene/foundations';
+import { css } from '@emotion/react';
 
 const aside = (open: boolean, width: number) => css`
     background-color: #fff;

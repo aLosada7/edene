@@ -2,13 +2,13 @@ import { ButtonHTMLAttributes } from 'react';
 import { Props, useTheme } from '@edene/foundations';
 
 import { Badge } from '../components/Badge';
-import {
-    headerGlobalAction,
-    actionAssistiveText,
-    headerIconBadge,
-    headerGlobalActionAriaLabel,
-} from './stylesHeader';
 import { Icon } from '../icons';
+import {
+    actionAssistiveText,
+    headerGlobalAction,
+    headerGlobalActionAriaLabel,
+    headerIconBadge,
+} from './stylesHeader';
 
 export interface HeaderGlobalActionProps
     extends ButtonHTMLAttributes<HTMLButtonElement>,

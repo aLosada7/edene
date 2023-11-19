@@ -1,6 +1,5 @@
-import { css } from '@emotion/react';
-
 import { grays, text } from '@edene/foundations';
+import { css } from '@emotion/react';
 
 // TableContainer
 export const tableContainerHeader = css`

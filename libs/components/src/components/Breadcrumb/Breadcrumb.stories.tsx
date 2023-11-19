@@ -1,6 +1,6 @@
 import { Story } from '@storybook/react';
 
-import { Breadcrumb, BreadcrumbProps, BreadcrumbItem } from './index';
+import { Breadcrumb, BreadcrumbItem,BreadcrumbProps } from './index';
 
 export default {
     title: 'Components/Breadcrumb',

@@ -1,10 +1,11 @@
 import {
-    render,
-    waitFor,
-    screen,
-    renderHook,
     act,
+    render,
+    renderHook,
+    screen,
+    waitFor,
 } from '@testing-library/react';
+
 import { defaultTheme, tealTheme } from '../defaultThemes';
 import ThemeProvider, { useTheme } from './ThemeProvider';
 

@@ -1,7 +1,7 @@
-import { Container, Row, Col, Alert, Button } from '@edene/components';
+import { Alert, Button,Col, Container, Row } from '@edene/components';
 
-import { EducationSummaryContainer } from './containers/EducationSummaryContainer';
 import { ClassroomContainer } from './containers/ClassroomContainer';
+import { EducationSummaryContainer } from './containers/EducationSummaryContainer';
 import { NewStudentsContainer } from './containers/NewStudentsContainer';
 import { RecentDoubtsContainer } from './containers/RecentDoubtsContainer';
 

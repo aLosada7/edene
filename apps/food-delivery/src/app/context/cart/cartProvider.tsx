@@ -1,9 +1,9 @@
 import { memo, ReactNode, useReducer } from 'react';
-import CartContext from './cartContext';
 
+import CartContext from './cartContext';
 import {
-    reducer as cartReducer,
     initialState as cartInitialState,
+    reducer as cartReducer,
 } from './cartReducer';
 
 // Study the possibility of exporting the actions list

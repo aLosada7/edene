@@ -1,10 +1,10 @@
 import { ReactNode } from 'react';
-import { SerializedStyles } from '@emotion/react';
 import { Props } from '@edene/foundations';
+import { SerializedStyles } from '@emotion/react';
 
+import { Box } from '../../layout/Box';
 import { Heading } from '../../typography/Heading';
 import { cardHeader } from './styles';
-import { Box } from '../../layout/Box';
 
 export interface CardHeaderProps extends Props {
     children: ReactNode;

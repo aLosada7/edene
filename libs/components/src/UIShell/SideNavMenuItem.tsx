@@ -1,13 +1,12 @@
 import { FC, LinkHTMLAttributes } from 'react';
-
-import { useTheme, Props } from '@edene/foundations';
+import { Props,useTheme } from '@edene/foundations';
 
 import {
     navigationLevel,
     navItem,
+    navMenuLinkActive,
     navMenuSubLink,
     navMenuSubLinkText,
-    navMenuLinkActive,
 } from './styles';
 
 export interface SideNavMenuItemProps

@@ -1,7 +1,15 @@
 {
     "root": true,
     "ignorePatterns": ["**/*"],
-    "plugins": ["@nrwl/nx"],
+    "plugins": ["@nrwl/nx", "simple-import-sort"],
+    "rules": {
+        "simple-import-sort/imports": [
+            "error",
+            {
+                "groups": [["^react", "^@?\\w"], ["."]]
+            }
+        ]
+    },
     "overrides": [
         {
             "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],

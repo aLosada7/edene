@@ -1,8 +1,7 @@
+import { Theme } from '@edene/foundations';
 import { css } from '@emotion/react';
 
-import { Theme } from '@edene/foundations';
-
-import { AvatarShape, AvatarDotPosition } from './Avatar';
+import { AvatarDotPosition,AvatarShape } from './Avatar';
 
 export const avatar = (
     shape: AvatarShape,

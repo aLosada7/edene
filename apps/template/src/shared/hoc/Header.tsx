@@ -1,7 +1,6 @@
-import { css } from '@emotion/react';
-
 import { Header as EdeneHeader, HeaderMenuButton } from '@edene/components';
 import { from } from '@edene/foundations';
+import { css } from '@emotion/react';
 
 const header = (sideNavWidth: number, isSideNavExpanded: boolean) => css`
     ${isSideNavExpanded && from.desktop} {

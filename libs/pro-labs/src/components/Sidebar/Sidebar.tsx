@@ -1,7 +1,6 @@
 import { useState } from 'react';
-import { css } from '@emotion/react';
-
 import { Icon, MenuButton } from '@edene/components';
+import { css } from '@emotion/react';
 
 const sidebar = (open: boolean) => css`
     position: absolute;

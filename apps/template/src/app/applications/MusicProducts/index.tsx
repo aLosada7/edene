@@ -1,5 +1,6 @@
-import { Header } from '../../shared/Header';
 import { MusicProducts as MusicProductsPage } from '@edene/pro-labs';
+
+import { Header } from '../../shared/Header';
 
 const MusicProducts = () => (
     <>

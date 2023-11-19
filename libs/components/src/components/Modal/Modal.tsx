@@ -1,6 +1,6 @@
-import { ReactElement, useEffect, useRef, Fragment } from 'react';
-import { SerializedStyles } from '@emotion/react';
+import { Fragment,ReactElement, useEffect, useRef } from 'react';
 import { Props } from '@edene/foundations';
+import { SerializedStyles } from '@emotion/react';
 
 import { Card, CardSection } from '../Card';
 import { cardOverrides, cardPadding, modal } from './styles';

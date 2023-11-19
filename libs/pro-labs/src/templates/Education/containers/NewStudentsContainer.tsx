@@ -1,4 +1,4 @@
-import { Card, CardSection, Button, CardHeader, List } from '@edene/components';
+import { Button, Card, CardHeader, CardSection, List } from '@edene/components';
 
 import avatar1 from '../assets/avatars/avatar1.jpeg';
 import avatar2 from '../assets/avatars/avatar2.webp';

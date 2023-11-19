@@ -1,12 +1,12 @@
+import { InputHTMLAttributes } from 'react';
+import { generateSourceId,Props } from '@edene/foundations';
 import { SerializedStyles } from '@emotion/react';
 
-import { Props, generateSourceId } from '@edene/foundations';
-import { textarea } from './styles';
+import { FormGroup } from '../FormGroup';
 import { input } from '../Input/styles';
 import { FormInput } from '../Input/types';
 import { Label } from '../Label';
-import { FormGroup } from '../FormGroup';
-import { InputHTMLAttributes } from 'react';
+import { textarea } from './styles';
 
 export interface TextareaProps
     extends InputHTMLAttributes<HTMLTextAreaElement>,

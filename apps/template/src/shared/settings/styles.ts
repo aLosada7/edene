@@ -1,6 +1,5 @@
+import { Theme,transitions } from '@edene/foundations';
 import { css } from '@emotion/react';
-
-import { transitions, Theme } from '@edene/foundations';
 
 export const settings = (theme: Theme) => css`
     position: fixed;

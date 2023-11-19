@@ -1,15 +1,15 @@
 import {
+    Box,
     Button,
+    Form,
     Heading,
     Image,
-    Box,
-    TextInput,
-    Form,
     Row,
+    TextInput,
 } from '@edene/components';
 import { grays } from '@edene/foundations';
 
-import { login, profileImage, wrapper, colorWhite } from './styles';
+import { colorWhite,login, profileImage, wrapper } from './styles';
 
 const AuthenticationSignIn = () => {
     return (

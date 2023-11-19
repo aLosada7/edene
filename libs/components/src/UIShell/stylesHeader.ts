@@ -1,5 +1,5 @@
+import { from, shadows,Theme } from '@edene/foundations';
 import { css } from '@emotion/react';
-import { Theme, from, shadows } from '@edene/foundations';
 
 export const header = (theme: Theme) => css`
     z-index: 50;

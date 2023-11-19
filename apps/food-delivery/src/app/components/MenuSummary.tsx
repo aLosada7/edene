@@ -1,5 +1,6 @@
-import { Card, CardSection, Text } from '@edene/components';
 import { Fragment } from 'react';
+import { Card, CardSection, Text } from '@edene/components';
+
 import { IFoodInfo } from '../context/restaurants';
 
 export const MenuSummary = ({

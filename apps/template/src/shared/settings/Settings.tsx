@@ -1,10 +1,9 @@
 import { Fragment, useState } from 'react';
-
 import { Icon } from '@edene/components';
 import { useTheme } from '@edene/foundations';
 
-import { overlay, settings } from './styles';
 import { SettingsContent } from './SettingsContent';
+import { overlay, settings } from './styles';
 
 export const Settings = () => {
     const [open, setOpen] = useState(false);

@@ -1,5 +1,5 @@
-import { css } from '@emotion/react';
 import { AppNavigator, AppNavigatorItem } from '@edene/components';
+import { css } from '@emotion/react';
 
 const menu = [
     { icon: 'home', title: 'Inicio' },

@@ -1,5 +1,6 @@
-import { css } from '@emotion/react';
 import { visuallyHidden as _visuallyHidden } from '@edene/foundations';
+import { css } from '@emotion/react';
+
 import { LabelProps } from './Label';
 import { labelText } from './styles';
 

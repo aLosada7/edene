@@ -1,5 +1,4 @@
 import { Children, cloneElement, ReactElement } from 'react';
-
 import { Props } from '@edene/foundations';
 
 import { accordion } from './styles';

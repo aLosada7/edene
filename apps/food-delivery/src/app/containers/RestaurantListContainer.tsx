@@ -1,5 +1,4 @@
 import { Fragment } from 'react';
-
 import { Container, Heading } from '@edene/components';
 
 import { RestaurantSummary } from '../components/RestaurantSummary';

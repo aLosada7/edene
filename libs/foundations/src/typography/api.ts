@@ -1,8 +1,8 @@
 import { fs } from './fs';
 import type {
     FontScaleArgs,
-    HeadingSizes,
     FontScaleFunction,
+    HeadingSizes,
     TextSansSizes,
 } from './types';
 

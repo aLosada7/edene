@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
-
-import { headerPanel, headerTheme, headerPanelExpanded } from './stylesHeader';
 import { Props, useTheme } from '@edene/foundations';
+
+import { headerPanel, headerPanelExpanded,headerTheme } from './stylesHeader';
 
 export interface HeaderPanelProps extends Props {
     children?: ReactNode;

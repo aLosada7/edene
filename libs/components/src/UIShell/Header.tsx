@@ -3,9 +3,9 @@ import { Props, useTheme } from '@edene/foundations';
 
 import {
     header,
-    headerTheme,
-    headerPosition,
     headerHeight,
+    headerPosition,
+    headerTheme,
 } from './stylesHeader';
 
 export interface HeaderProps extends Props {

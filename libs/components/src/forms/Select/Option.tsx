@@ -1,5 +1,4 @@
 import { PropsWithChildren, ReactNode } from 'react';
-
 import { Props } from '@edene/foundations';
 
 import { option } from './styles';

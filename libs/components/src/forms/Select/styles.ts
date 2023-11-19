@@ -1,6 +1,5 @@
-import { css } from '@emotion/react';
-
 import { grays, height, text } from '@edene/foundations';
+import { css } from '@emotion/react';
 
 export const select = css`
     position: relative;

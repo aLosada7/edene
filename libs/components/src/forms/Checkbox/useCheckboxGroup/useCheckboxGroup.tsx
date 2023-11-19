@@ -1,5 +1,6 @@
 import React from 'react';
 import { useContext } from 'react';
+
 import { CheckboxGroupContext } from '../CheckboxGroup';
 
 export const useCheckboxGroup = () => {

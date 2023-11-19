@@ -1,12 +1,12 @@
 import { Fragment } from 'react';
+import { grays } from '@edene/foundations';
 import { css } from '@emotion/react';
 import { Story } from '@storybook/react';
-import { grays } from '@edene/foundations';
 import { layoutElement } from '@utils/storybook';
 
-import { Row, RowProps } from './index';
-import { Col } from './Col';
 import { Box } from '../Box';
+import { Col } from './Col';
+import { Row, RowProps } from './index';
 
 export default {
     title: 'Layout/Row',

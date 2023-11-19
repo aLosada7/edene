@@ -1,13 +1,13 @@
 import { Fragment, useState } from 'react';
 import { Meta, Story } from '@storybook/react';
 
-import Modal from './Modal';
+import { Row } from '../../layout/Grid';
 import { Button } from '../Button';
+import Modal from './Modal';
+import ModalBody from './ModalBody';
+import ModalHeader from './ModalHeader';
 import { ModalsProvider } from './ModalsProvider';
 import { useModals } from './useModals';
-import ModalHeader from './ModalHeader';
-import ModalBody from './ModalBody';
-import { Row } from '../../layout/Grid';
 
 // Estilos
 // Tecla esc

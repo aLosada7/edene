@@ -1,9 +1,8 @@
 import { ReactElement, ReactNode } from 'react';
+import { PolymorphicComponentProps, Props, useTheme } from '@edene/foundations';
 
-import { Props, PolymorphicComponentProps, useTheme } from '@edene/foundations';
-
-import { navItem, navLink, sideNavWithIcon, navMenuLinkActive } from './styles';
 import { Icon } from '../icons';
+import { navItem, navLink, navMenuLinkActive,sideNavWithIcon } from './styles';
 
 export interface SharedSideNavItemProps extends Props {
     icon?: string;

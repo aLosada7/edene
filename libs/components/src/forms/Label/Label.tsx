@@ -1,6 +1,5 @@
-import { LabelHTMLAttributes, Fragment } from 'react';
-
-import { useTheme, Props } from '@edene/foundations';
+import { Fragment,LabelHTMLAttributes } from 'react';
+import { Props,useTheme } from '@edene/foundations';
 
 import { label, labelText } from './styles';
 import { SupportingText } from './SupportingText';

@@ -1,5 +1,6 @@
-import { Header } from '../../shared/Header';
 import { Scoreboard as ScoreBoardPage } from '@edene/pro-labs';
+
+import { Header } from '../../shared/Header';
 
 const Scoreboard = () => (
     <>

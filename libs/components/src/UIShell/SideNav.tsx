@@ -1,8 +1,8 @@
 import { Fragment } from 'react';
-import { SerializedStyles } from '@emotion/react';
 import { Props } from '@edene/foundations';
+import { SerializedStyles } from '@emotion/react';
 
-import { sidenav, sidenavHeader, navOverlay, aside } from './styles';
+import { aside,navOverlay, sidenav, sidenavHeader } from './styles';
 
 export interface SideNavProps extends Props {
     /** Means navbar is fixed. Unit measured in px **/

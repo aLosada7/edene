@@ -1,14 +1,14 @@
 import {
-    Container,
-    Row,
-    Col,
+    Button,
     Card,
     CardSection,
-    Heading,
+    Col,
+    Container,
     Form,
-    TextInput,
+    Heading,
+    Row,
     Textarea,
-    Button,
+    TextInput,
 } from '@edene/components';
 
 import { contactCard } from './styles';

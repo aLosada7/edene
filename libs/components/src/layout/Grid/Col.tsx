@@ -1,8 +1,7 @@
 import { ReactNode } from 'react';
-
 import { Props } from '@edene/foundations';
 
-import { gridColumnSize, gridColumn } from './styles';
+import { gridColumn,gridColumnSize } from './styles';
 
 export type ColSize = 0 | 2 | 3 | 4 | 6 | 8 | 12 | 16 | 18 | 20 | 21 | 22 | 24;
 export type Align =

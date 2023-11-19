@@ -1,6 +1,7 @@
-import { Heading } from './index';
 import { render, screen } from '@testing-library/react';
 import { axe } from 'jest-axe';
+
+import { Heading } from './index';
 
 describe('Heading', () => {
     it('should render correctly', async () => {

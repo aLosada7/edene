@@ -1,13 +1,13 @@
 import {
-    Form,
-    TextInput,
-    Heading,
-    Row,
-    Col,
-    Select,
-    Option,
-    Button,
     Box,
+    Button,
+    Col,
+    Form,
+    Heading,
+    Option,
+    Row,
+    Select,
+    TextInput,
 } from '@edene/components';
 
 const Person = () => (

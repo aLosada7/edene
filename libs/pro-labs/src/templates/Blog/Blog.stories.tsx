@@ -1,19 +1,18 @@
 import React from 'react';
+import { Link } from '@edene/components';
+import {
+    Badge,
+    Box,
+    Col,
+    Container,
+    Heading,
+    Image,
+    Row,
+    Text,
+} from '@edene/components';
 import { css } from '@emotion/react';
 import NextImage from 'next/image';
 import NextLink from 'next/link';
-import { Link } from '@edene/components';
-
-import {
-    Container,
-    Col,
-    Row,
-    Image,
-    Text,
-    Heading,
-    Badge,
-    Box,
-} from '@edene/components';
 
 import mountain from '../../../assets/img/mountain.jpg';
 

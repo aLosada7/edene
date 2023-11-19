@@ -1,5 +1,5 @@
-import { css } from '@emotion/react';
 import { border, focusHalo, grays, height, text } from '@edene/foundations';
+import { css } from '@emotion/react';
 
 export const inputWrapper = css`
     position: absolute;

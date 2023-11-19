@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import { Props } from '@edene/foundations';
 
-import { tableHeader, cellAlign } from './styles';
+import { cellAlign,tableHeader } from './styles';
 
 export type TableHeaderAlign = 'left' | 'center' | 'right';
 

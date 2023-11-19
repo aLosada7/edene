@@ -1,5 +1,6 @@
-import { Header } from '../../../shared/Header';
 import { AuthenticationUnlockSession } from '@edene/pro-labs';
+
+import { Header } from '../../../shared/Header';
 
 const UnlockSession = () => (
     <>

@@ -1,4 +1,4 @@
-import { breakpoints, Breakpoint } from '@edene/foundations';
+import { Breakpoint,breakpoints } from '@edene/foundations';
 
 type ViewportMeta = {
     [key in Breakpoint]: {

@@ -1,11 +1,10 @@
-import { addDecorator } from '@storybook/react';
 import { ThemeDecorator } from '@edene/foundations';
-
-import { viewport } from './preview/viewport';
-import { backgrounds } from './preview/backgrounds';
-import './preview/styles.scss';
-
+import { addDecorator } from '@storybook/react';
 import * as nextImage from 'next/image';
+
+import './preview/styles.scss';
+import { backgrounds } from './preview/backgrounds';
+import { viewport } from './preview/viewport';
 
 // eslint-disable-next-line no-import-assign
 Object.defineProperty(nextImage, 'default', {

@@ -1,6 +1,5 @@
-import { css } from '@emotion/react';
-
 import { from, shadows } from '@edene/foundations';
+import { css } from '@emotion/react';
 
 export const modal = css`
     position: fixed;

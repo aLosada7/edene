@@ -1,9 +1,9 @@
 import { Fragment } from 'react';
 import { Story } from '@storybook/react';
 
-import { Badge, BadgeProps } from './Badge';
-import { Button } from '../Button';
 import { Row } from '../../layout/Grid';
+import { Button } from '../Button';
+import { Badge, BadgeProps } from './Badge';
 
 export default {
     title: 'Components/Badge',

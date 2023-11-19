@@ -1,6 +1,5 @@
 import { ReactNode } from 'react';
-
-import { useTheme, EdeneColor, Props } from '@edene/foundations';
+import { EdeneColor, Props,useTheme } from '@edene/foundations';
 
 import { badge, badgeTheme } from './styles';
 

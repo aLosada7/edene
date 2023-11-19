@@ -1,7 +1,6 @@
-import { css } from '@emotion/react';
-
-import { Heading } from '@edene/components';
 import { FC } from 'react';
+import { Heading } from '@edene/components';
+import { css } from '@emotion/react';
 
 export interface HeaderProps {
     title: string;

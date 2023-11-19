@@ -1,7 +1,7 @@
+import { error, info, success, text } from '@edene/foundations';
 import { css } from '@emotion/react';
 
 import { IToastVariant } from './types';
-import { info, error, success, text } from '@edene/foundations';
 
 export const toastContainer = css`
     position: fixed;

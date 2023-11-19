@@ -1,11 +1,11 @@
 import {
-    grays,
-    white,
     black,
     brandColor,
     brandHover,
     colors,
+    grays,
     supporting,
+    white,
 } from '../../palette';
 import { Theme } from '../ThemeProvider';
 

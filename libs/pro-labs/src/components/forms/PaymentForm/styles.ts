@@ -1,5 +1,5 @@
-import { css } from '@emotion/react';
 import { focusHalo } from '@edene/foundations';
+import { css } from '@emotion/react';
 
 export const optionWrapper = css`
     border: 1px solid rgba(0, 0, 0, 0.12);

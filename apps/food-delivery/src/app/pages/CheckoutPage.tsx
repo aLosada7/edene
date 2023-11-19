@@ -1,13 +1,12 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
 import {
     Button,
     ButtonGroup,
     Checkbox,
     Container,
-    Text,
     Heading,
+    Text,
 } from '@edene/components';
 
 import { Cart } from '../components/Cart';

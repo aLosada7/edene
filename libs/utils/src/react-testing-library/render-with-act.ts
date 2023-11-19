@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, act, RenderResult } from '@testing-library/react';
+import { act, render, RenderResult } from '@testing-library/react';
 
 export const renderWithAct = async (element: React.ReactElement) => {
     let result: unknown;

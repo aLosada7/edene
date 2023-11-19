@@ -1,12 +1,12 @@
 import {
-    Theme,
-    defaultTheme,
     background,
+    defaultTheme,
     focusHalo,
-    transitions,
-    text,
     from,
+    text,
+    Theme,
     ThemeColor,
+    transitions,
 } from '@edene/foundations';
 import { css } from '@emotion/react';
 

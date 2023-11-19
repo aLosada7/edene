@@ -1,5 +1,6 @@
-import { Header } from '../../shared/Header';
 import { ContractRegister as ContractRegisterPage } from '@edene/pro-labs';
+
+import { Header } from '../../shared/Header';
 
 const ContractRegister = () => (
     <>

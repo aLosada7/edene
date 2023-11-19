@@ -1,7 +1,6 @@
+import { HTMLAttributes,useState } from 'react';
+import { Props,visuallyHidden as _visuallyHidden } from '@edene/foundations';
 import { css } from '@emotion/react';
-import { useState, HTMLAttributes } from 'react';
-
-import { visuallyHidden as _visuallyHidden, Props } from '@edene/foundations';
 
 import { Icon } from '../../icons';
 import {

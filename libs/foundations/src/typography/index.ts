@@ -1,13 +1,11 @@
 import { heading as headlineAsObj, text as textSansAsObj } from './api';
-
+import { objectStylesToString } from './object-styles-to-string';
 import {
     FontScaleArgs,
     FontScaleFunctionStr,
     HeadingSizes,
     TextSansSizes,
 } from './types';
-
-import { objectStylesToString } from './object-styles-to-string';
 
 type TypographyApi<Sizes> = {
     [key in keyof Sizes]: FontScaleFunctionStr;

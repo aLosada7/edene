@@ -3,9 +3,9 @@ import { Props } from '@edene/foundations';
 
 import { Checkbox } from '../../forms/Checkbox';
 import { tr } from './styles';
+import { TableCell } from './TableCell';
 import { TableHeader } from './TableHeader';
 import { useTable } from './TableProvider';
-import { TableCell } from './TableCell';
 
 export interface TableRowProps extends Props {
     /** unique identifier for the rows*/

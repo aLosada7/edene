@@ -1,16 +1,15 @@
-import { css } from '@emotion/react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
 import {
-    Header as EdeneHeader,
-    HeaderName,
-    HeaderGlobalBar,
-    HeaderGlobalAction,
-    HeaderPanel,
-    Container,
     Button,
+    Container,
+    Header as EdeneHeader,
+    HeaderGlobalAction,
+    HeaderGlobalBar,
+    HeaderName,
+    HeaderPanel,
 } from '@edene/components';
+import { css } from '@emotion/react';
 
 import useCartContext from '../../context/cart/useCartContext';
 import { IFoodInfo } from '../../context/restaurants';

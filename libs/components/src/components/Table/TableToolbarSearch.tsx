@@ -1,10 +1,9 @@
 import { InputHTMLAttributes, useState } from 'react';
-
 import { Props } from '@edene/foundations';
 
+import { TextInput } from '../../forms/TextInput';
 import { Icon } from '../../icons';
 import { Button } from '../Button';
-import { TextInput } from '../../forms/TextInput';
 import {
     tableToolbarSearch,
     tableToolbarSearchButton,

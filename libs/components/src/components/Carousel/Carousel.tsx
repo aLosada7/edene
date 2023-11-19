@@ -4,7 +4,7 @@ import { Props } from '@edene/foundations';
 import { useSwipe } from '../../hooks/useSwipe';
 import { Image } from '../Image';
 import { ImageSize } from '../Image';
-import { carousel, carouselImage, dotList, dot } from './styles';
+import { carousel, carouselImage, dot,dotList } from './styles';
 
 export interface CarouselMedia {
     src: string;

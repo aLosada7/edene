@@ -1,8 +1,8 @@
 import {
-    IconSize,
-    Props,
     EdeneColor,
+    IconSize,
     IconVariant,
+    Props,
     useTheme,
 } from '@edene/foundations';
 

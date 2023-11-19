@@ -1,8 +1,8 @@
-import { act, renderHook, waitFor } from '@testing-library/react';
 import { ReactNode } from 'react';
+import { act, renderHook, waitFor } from '@testing-library/react';
 
-import { useTable } from './TableProvider';
 import { Table } from './Table';
+import { useTable } from './TableProvider';
 
 const ALBUM_1_ID = '12141424';
 const ALBUM_1 = {

@@ -1,9 +1,8 @@
+import { COMPONENT_COLORS, ICON_VARIANTS } from '@edene/foundations';
 import { Story } from '@storybook/react';
 
-import { COMPONENT_COLORS, ICON_VARIANTS } from '@edene/foundations';
-
-import { Tag, TagProps } from './index';
 import { Row } from '../../layout/Grid';
+import { Tag, TagProps } from './index';
 
 export default {
     title: 'Components/Tag',

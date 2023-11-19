@@ -1,5 +1,6 @@
-import { Story, Meta } from '@storybook/react';
+import { Meta,Story } from '@storybook/react';
 import LinkNext from 'next/link';
+
 import Link, { LinkProps } from './Link';
 
 export default {

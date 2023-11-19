@@ -1,4 +1,4 @@
-import { Avatar, Button, ListItem, Row, Box, Text } from '@edene/components';
+import { Avatar, Box, Button, ListItem, Row, Text } from '@edene/components';
 import { grays } from '@edene/foundations';
 
 export const NewStudentsItemComponent = ({

@@ -1,6 +1,5 @@
-import { css } from '@emotion/react';
-
 import { focusHalo } from '@edene/foundations';
+import { css } from '@emotion/react';
 
 export const radioGroup = (inline?: boolean) => css`
     margin: 0;

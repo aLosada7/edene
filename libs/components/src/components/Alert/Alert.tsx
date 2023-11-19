@@ -1,12 +1,11 @@
 /** @jsxImportSource @emotion/react */
-import { SerializedStyles } from '@emotion/react';
 import { ReactNode } from 'react';
+import { ComponentColors,Props, useTheme } from '@edene/foundations';
+import { SerializedStyles } from '@emotion/react';
 
-import { useTheme, Props, ComponentColors } from '@edene/foundations';
-
+import { Box } from '../../layout/Box';
 import { Text } from '../../typography/Text';
 import { alert, alertActions, alertTheme } from './styles';
-import { Box } from '../../layout/Box';
 
 export interface AlertProps extends Props {
     type?: 'brand' | ComponentColors;

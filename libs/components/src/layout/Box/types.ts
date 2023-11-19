@@ -1,5 +1,5 @@
-import { PolymorphicComponentProps, Props, Scale } from '@edene/foundations';
 import { ReactNode } from 'react';
+import { PolymorphicComponentProps, Props, Scale } from '@edene/foundations';
 
 export interface BoxProps extends Props {
     m?: Scale;

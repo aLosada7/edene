@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { Button, Container, Heading, Alert } from '@edene/components';
+import { Alert,Button, Container, Heading } from '@edene/components';
 
 export const CompletedOrderPage = () => {
     const navigate = useNavigate();

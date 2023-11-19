@@ -1,6 +1,5 @@
 import { Fragment } from 'react';
-
-import { Row, Col, Text, ActionButton, Icon } from '@edene/components';
+import { ActionButton, Col, Icon,Row, Text } from '@edene/components';
 
 import { IFoodInfo } from '../context/restaurants';
 

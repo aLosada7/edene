@@ -1,19 +1,18 @@
-import { css } from '@emotion/react';
 import { Fragment, useState } from 'react';
 import { useParams } from 'react-router-dom';
-
 import {
-    Container,
-    Row,
-    Col,
-    Text,
-    Modal,
     Button,
-    NumberInput,
+    Col,
+    Container,
     Heading,
+    Modal,
     ModalBody,
     ModalHeader,
+    NumberInput,
+    Row,
+    Text,
 } from '@edene/components';
+import { css } from '@emotion/react';
 
 import { MenuCategory } from '../components/MenuCategory';
 import { RestaurantRating } from '../components/RestaurantRating';

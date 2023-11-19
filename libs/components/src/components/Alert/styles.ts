@@ -1,5 +1,5 @@
+import { defaultTheme, getColor, text,ThemeColor } from '@edene/foundations';
 import { css } from '@emotion/react';
-import { ThemeColor, defaultTheme, getColor, text } from '@edene/foundations';
 
 export const alert = css`
     ${text.small({ lineHeight: 'loose' })}

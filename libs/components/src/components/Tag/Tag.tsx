@@ -1,14 +1,13 @@
 import { ReactNode } from 'react';
-
 import {
-    useTheme,
-    Props,
     ComponentColors,
     IconVariant,
+    Props,
+    useTheme,
 } from '@edene/foundations';
 
-import { tag, tagTheme, tagIcon, tagIconTheme } from './styles';
 import { Icon } from '../../icons';
+import { tag, tagIcon, tagIconTheme,tagTheme } from './styles';
 
 export interface TagProps extends Props {
     type?: 'brand' | ComponentColors;

@@ -1,6 +1,5 @@
+import { text,Theme } from '@edene/foundations';
 import { css } from '@emotion/react';
-
-import { Theme, text } from '@edene/foundations';
 
 export const label = css`
     display: inline-block;

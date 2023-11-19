@@ -1,16 +1,15 @@
-import { css } from '@emotion/react';
-
 import {
     background,
-    grays,
     focusHalo,
-    visuallyHidden,
-    transitions,
     from,
-    until,
+    grays,
     shadows,
     text,
+    transitions,
+    until,
+    visuallyHidden,
 } from '@edene/foundations';
+import { css } from '@emotion/react';
 
 export const accordion = (variant: string) => css`
     padding: 0;

@@ -1,13 +1,12 @@
-import { css } from '@emotion/react';
-
 import {
-    text,
-    FontWeight,
-    TextAlign,
-    getColor,
-    ThemeColor,
     defaultTheme,
+    FontWeight,
+    getColor,
+    text,
+    TextAlign,
+    ThemeColor,
 } from '@edene/foundations';
+import { css } from '@emotion/react';
 
 import { TextType } from './types';
 

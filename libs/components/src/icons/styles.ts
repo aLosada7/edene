@@ -1,5 +1,3 @@
-import { css } from '@emotion/react';
-
 import {
     defaultTheme,
     getColor,
@@ -7,6 +5,7 @@ import {
     iconSize,
     ThemeColor,
 } from '@edene/foundations';
+import { css } from '@emotion/react';
 
 export const icon = (size: IconSize, ml: number, mr: number) => css`
     display: flex;

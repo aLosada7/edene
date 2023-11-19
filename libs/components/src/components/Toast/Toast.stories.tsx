@@ -1,13 +1,13 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 import { Story } from '@storybook/react';
 
-import Toast from './Toast';
+import { Row } from '../../layout/Grid';
 import { Button } from '../Button';
+import Toast from './Toast';
+import ToastBody from './ToastBody';
+import ToastHeader from './ToastHeader';
 import { ToastsProvider } from './ToastsProvider';
 import { useToasts } from './useToasts';
-import ToastHeader from './ToastHeader';
-import ToastBody from './ToastBody';
-import { Row } from '../../layout/Grid';
 
 export default {
     component: Toast,

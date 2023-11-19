@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Story } from '@storybook/react';
 
 import { Text } from '../../typography/Text';
-import { Tabs, Tab, TabsProps } from './index';
+import { Tab, Tabs, TabsProps } from './index';
 
 export default {
     title: 'Components/Tabs',

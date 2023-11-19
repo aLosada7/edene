@@ -2,19 +2,18 @@ import {
     Children,
     cloneElement,
     ReactElement,
+    useEffect,
     useRef,
     useState,
-    useEffect,
 } from 'react';
+import { generateSourceId,Props } from '@edene/foundations';
 
-import { Props, generateSourceId } from '@edene/foundations';
-
-import { select, selectButton, selectItems, showItems } from './styles';
+import { Button } from '../../components/Button';
+import { FormGroup } from '../FormGroup';
 import { input } from '../Input/styles';
 import { FormInput } from '../Input/types';
-import { Button } from '../../components/Button';
 import { Label } from '../Label';
-import { FormGroup } from '../FormGroup';
+import { select, selectButton, selectItems, showItems } from './styles';
 
 export interface SelectProps extends Props, FormInput {
     /** Controlled input selectValue */

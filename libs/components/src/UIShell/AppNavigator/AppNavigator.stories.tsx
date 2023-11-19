@@ -1,8 +1,8 @@
-import { Story, Meta } from '@storybook/react';
-
-import AppNavigatorItem from './AppNavigatorItem';
-import AppNavigator, { AppNavigatorProps } from './AppNavigator';
 import { css } from '@emotion/react';
+import { Meta,Story } from '@storybook/react';
+
+import AppNavigator, { AppNavigatorProps } from './AppNavigator';
+import AppNavigatorItem from './AppNavigatorItem';
 
 const menu = [
     { icon: 'home', title: 'Inicio' },

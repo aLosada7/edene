@@ -1,7 +1,7 @@
 import { cloneElement } from 'react';
 
-import { btnGroup } from './styles';
 import { ButtonGroupProps } from '.';
+import { btnGroup } from './styles';
 
 export function ButtonGroup({
     children,

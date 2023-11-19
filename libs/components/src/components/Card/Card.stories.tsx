@@ -1,16 +1,15 @@
-import { Meta, Story } from '@storybook/react';
-import { css } from '@emotion/react';
-
 import { grays, transformUppercase } from '@edene/foundations';
+import { css } from '@emotion/react';
+import { Meta, Story } from '@storybook/react';
 
-import { Card, CardSection, CardMedia, CardProps } from './index';
+import avatarSrc from '../../../assets/img/avatar.jpeg';
+import { Icon } from '../../icons';
+import { Col, Row } from '../../layout/Grid';
 import { Text } from '../../typography/Text';
 import { ActionButton } from '../ActionButton';
-import { Button } from '../Button';
-import { Col, Row } from '../../layout/Grid';
-import { Icon } from '../../icons';
 import { Avatar } from '../Avatar';
-import avatarSrc from '../../../assets/img/avatar.jpeg';
+import { Button } from '../Button';
+import { Card, CardMedia, CardProps,CardSection } from './index';
 
 export default {
     component: Card,

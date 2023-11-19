@@ -1,11 +1,11 @@
 import { createContext, useReducer } from 'react';
 
-import Toast from './Toast';
-import ToastHeader from './ToastHeader';
-import ToastBody from './ToastBody';
 import { toastsReducer } from './reducer';
-import { ToastSettings, ToastState } from './types';
 import { toastContainer } from './styles';
+import Toast from './Toast';
+import ToastBody from './ToastBody';
+import ToastHeader from './ToastHeader';
+import { ToastSettings, ToastState } from './types';
 
 export interface ToastsContextProps {
     toasts: ToastState[];

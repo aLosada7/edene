@@ -1,12 +1,12 @@
-import { SerializedStyles } from '@emotion/react';
 import { generateSourceId, Props } from '@edene/foundations';
+import { SerializedStyles } from '@emotion/react';
 
 import { FormGroup } from '../FormGroup';
+import { Input } from '../Input';
 import { FormInput } from '../Input/types';
+import { Label } from '../Label';
 import { checkboxInput, checkboxLabel } from './styles';
 import { useCheckboxGroup } from './useCheckboxGroup';
-import { Input } from '../Input';
-import { Label } from '../Label';
 
 export interface CheckboxProps extends Omit<FormInput, 'label'>, Props {
     checked?: boolean;

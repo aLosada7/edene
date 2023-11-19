@@ -1,12 +1,12 @@
 import {
+    Avatar,
+    Box,
     Card,
     CardSection,
     Col,
-    Row,
     Heading,
+    Row,
     Text,
-    Avatar,
-    Box,
 } from '@edene/components';
 import { grays } from '@edene/foundations';
 import { css } from '@emotion/react';

@@ -1,8 +1,8 @@
+import { ReactNode } from 'react';
 import { EdeneColor, Props } from '@edene/foundations';
 
-import { tabList, tabs, tabPanel } from './styles';
+import { tabList, tabPanel,tabs } from './styles';
 import { TabsProvider } from './useTabs';
-import { ReactNode } from 'react';
 
 export interface TabsProps extends Props {
     active: string;

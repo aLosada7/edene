@@ -5,20 +5,19 @@ import {
     useRef,
     useState,
 } from 'react';
+import { Props,useTheme } from '@edene/foundations';
 
 import { Icon } from '../icons';
-import { useTheme, Props } from '@edene/foundations';
-
 import {
     chevronIconDown,
     chevronIconUp,
     collapsedBody,
     expandedBody,
+    navigationLevel,
     navItem,
     navItemActive,
     navMenuLink,
     navSubmenuIcon,
-    navigationLevel,
     sideNavIcon,
 } from './styles';
 

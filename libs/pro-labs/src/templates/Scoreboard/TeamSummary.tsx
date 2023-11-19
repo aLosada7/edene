@@ -1,7 +1,8 @@
 import { Col, Row } from '@edene/components';
-import TeamStats from './TeamStats';
-import Scoring from './Scoring';
+
 import GameStandings from './GameStandings';
+import Scoring from './Scoring';
+import TeamStats from './TeamStats';
 
 const TeamSummary = () => (
     <Row noGlutters>

@@ -1,20 +1,19 @@
-import { css } from '@emotion/react';
 import { NavLink } from 'react-router-dom';
-
 import {
+    Box,
     Card,
     CardSection,
     Col,
-    Row,
-    Image,
-    Text,
     Icon,
-    Box,
+    Image,
+    Row,
+    Text,
 } from '@edene/components';
+import { grays } from '@edene/foundations';
+import { css } from '@emotion/react';
 
 import { IRestaurant } from '../context/restaurants';
 import { RestaurantRating } from './RestaurantRating';
-import { grays } from '@edene/foundations';
 
 export const RestaurantSummary = ({
     restaurant,

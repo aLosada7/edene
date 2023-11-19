@@ -1,4 +1,4 @@
-import { ThemeColor, getColor } from '@edene/foundations';
+import { getColor,ThemeColor } from '@edene/foundations';
 import { css } from '@emotion/react';
 
 export const divider = (

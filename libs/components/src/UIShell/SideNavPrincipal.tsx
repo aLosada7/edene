@@ -1,5 +1,4 @@
 import { Children, cloneElement, Fragment, ReactElement } from 'react';
-
 import { Props } from '@edene/foundations';
 
 import { sideNavPrincipal } from './styles';

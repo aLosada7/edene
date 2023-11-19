@@ -1,4 +1,5 @@
 import { FC, ReactNode } from 'react';
+
 import { appNavigator } from './styles';
 
 export interface AppNavigatorProps {

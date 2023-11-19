@@ -1,21 +1,21 @@
+import {
+    Box,
+    Button,
+    Checkbox,
+    Col,
+    Container,
+    Divider,
+    Form,
+    Heading,
+    Option,
+    Row,
+    Select,
+    Text,
+    Textarea,
+    TextInput,
+} from '@edene/components';
 import { action } from '@storybook/addon-actions';
 
-import {
-    TextInput,
-    Container,
-    Col,
-    Divider,
-    Row,
-    Button,
-    Form,
-    Select,
-    Option,
-    Textarea,
-    Checkbox,
-    Heading,
-    Text,
-    Box,
-} from '@edene/components';
 import CountrySelector from '../../components/simple/CountrySelector/CountrySelector';
 
 const AccountSettings = () => (

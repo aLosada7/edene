@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Story } from '@storybook/react';
 
-import { Select, SelectProps, Option } from './index';
+import { Option,Select, SelectProps } from './index';
 
 export default {
     title: 'Forms/Select',

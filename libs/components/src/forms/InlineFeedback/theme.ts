@@ -1,4 +1,4 @@
-import { success, error } from '@edene/foundations';
+import { error,success } from '@edene/foundations';
 
 export const InlineFeedbackThemeDefault = {
     InlineFeedback: {

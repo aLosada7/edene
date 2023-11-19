@@ -1,5 +1,6 @@
-import { Header } from '../../shared/Header';
 import { Report as ReportPage } from '@edene/pro-labs';
+
+import { Header } from '../../shared/Header';
 
 const Report = () => (
     <>

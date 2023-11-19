@@ -1,5 +1,5 @@
-import { Row, Heading } from '@edene/components';
 import { Fragment } from 'react';
+import { Heading,Row } from '@edene/components';
 
 import { FoodCategory } from '../components/FoodCategory';
 import { FoodCategoryAll } from '../components/FoodCategoryAll';

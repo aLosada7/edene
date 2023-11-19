@@ -1,10 +1,10 @@
 import { cloneElement } from 'react';
 import {
-    getColor,
     EdeneColor,
-    useTheme,
-    iconSize,
+    getColor,
     IconSize,
+    iconSize,
+    useTheme,
 } from '@edene/foundations';
 
 export const SvgIcon = ({

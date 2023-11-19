@@ -1,14 +1,14 @@
 import {
-    Heading,
-    TextInput,
-    Button,
-    Image,
     Box,
+    Button,
+    Heading,
+    Image,
     Link,
+    TextInput,
 } from '@edene/components';
 import { grays } from '@edene/foundations';
 
-import { login, loginForm, wrapper, profileImage } from './styles';
+import { login, loginForm, profileImage,wrapper } from './styles';
 
 const AuthenticationUnlockSession = () => {
     return (

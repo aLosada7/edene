@@ -1,6 +1,5 @@
+import { Badge, Heading, Icon, Row } from '@edene/components';
 import { css } from '@emotion/react';
-
-import { Icon, Heading, Badge, Row } from '@edene/components';
 
 const HeadingWithIconAndBadge = () => (
     <Row align="center-center" gap={1}>

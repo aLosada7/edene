@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { Props, useTheme } from '@edene/foundations';
 
 import { card, cardTheme } from './styles';

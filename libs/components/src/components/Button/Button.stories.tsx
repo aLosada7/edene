@@ -1,11 +1,11 @@
 import { useRef } from 'react';
 import { Meta, Story } from '@storybook/react';
 
-import { Button, ButtonProps } from './index';
 import { Icon } from '../../icons';
-import ButtonGroup from './ButtonGroup';
 import { Box } from '../../layout/Box';
 import { Row } from '../../layout/Grid';
+import ButtonGroup from './ButtonGroup';
+import { Button, ButtonProps } from './index';
 
 export default {
     component: Button,

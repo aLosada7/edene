@@ -1,7 +1,7 @@
 import { Props } from '@edene/foundations';
 import { SerializedStyles } from '@emotion/react';
-import { MenuButton } from '../components/MenuButton';
 
+import { MenuButton } from '../components/MenuButton';
 import { headerMenuButton } from './stylesHeader';
 
 export interface HeaderMenuButtonProps extends Props {

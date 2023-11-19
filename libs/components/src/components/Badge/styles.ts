@@ -1,6 +1,5 @@
-import { css } from '@emotion/react';
-
 import { defaultTheme, getColor, ThemeColor } from '@edene/foundations';
+import { css } from '@emotion/react';
 
 export const badge = css`
     font-size: 10px;

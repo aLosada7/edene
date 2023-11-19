@@ -1,12 +1,12 @@
-import { Story, Meta } from '@storybook/react';
+import { Meta,Story } from '@storybook/react';
 
 import {
     Header,
-    HeaderProps,
-    HeaderName,
-    HeaderGlobalBar,
     HeaderGlobalAction,
+    HeaderGlobalBar,
+    HeaderName,
     HeaderPanel,
+    HeaderProps,
 } from '.';
 
 export default {

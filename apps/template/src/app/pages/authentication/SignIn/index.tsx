@@ -1,5 +1,6 @@
-import { Header } from '../../../shared/Header';
 import { AuthenticationSignIn } from '@edene/pro-labs';
+
+import { Header } from '../../../shared/Header';
 
 const SignIn = () => (
     <>

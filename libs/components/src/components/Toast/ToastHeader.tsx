@@ -1,8 +1,9 @@
-import { Icon } from '../../icons';
-import { ActionButton } from '../ActionButton';
-import { Heading } from '../../typography/Heading';
-import { toastHeader, toastHeading } from './styles';
 import { Props } from '@edene/foundations';
+
+import { Icon } from '../../icons';
+import { Heading } from '../../typography/Heading';
+import { ActionButton } from '../ActionButton';
+import { toastHeader, toastHeading } from './styles';
 
 export interface ToastHeaderProps extends Props {
     id: string;

@@ -1,6 +1,5 @@
-import { css } from '@emotion/react';
-
 import { text, transitions } from '@edene/foundations';
+import { css } from '@emotion/react';
 
 export const breadcrumb = css`
     list-style-type: none;

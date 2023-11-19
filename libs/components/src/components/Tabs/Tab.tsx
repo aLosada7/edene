@@ -1,10 +1,9 @@
 import { forwardRef } from 'react';
+import { PolymorphicRef, Props,useTheme } from '@edene/foundations';
 import { SerializedStyles } from '@emotion/react';
 
-import { useTheme, PolymorphicRef, Props } from '@edene/foundations';
-
 import { Button } from '../Button';
-import { tab, tabSelected, tabHidden } from './styles';
+import { tab, tabHidden,tabSelected } from './styles';
 import { useTabs } from './useTabs';
 
 export interface TabProps extends Props {

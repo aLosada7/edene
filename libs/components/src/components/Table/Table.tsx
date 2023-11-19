@@ -1,5 +1,4 @@
 import { ReactNode, TableHTMLAttributes } from 'react';
-
 import { Props } from '@edene/foundations';
 
 import { table, tableContent } from './styles';

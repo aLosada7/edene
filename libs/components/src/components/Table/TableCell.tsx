@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import { Props } from '@edene/foundations';
 
-import { tableCell, cellAlign } from './styles';
+import { cellAlign,tableCell } from './styles';
 
 export interface TableCellProps extends Props {
     align?: 'left' | 'center' | 'right';

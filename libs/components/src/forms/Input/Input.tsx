@@ -5,11 +5,11 @@ import { Icon } from '../../icons';
 import { InlineError } from '../InlineFeedback/InlineError';
 import { InlineSuccess } from '../InlineFeedback/InlineSuccess';
 import {
-    input as inputE,
     errorInput,
-    successInput,
-    iconLeftInput,
     iconLeftInInput,
+    iconLeftInput,
+    input as inputE,
+    successInput,
 } from './styles';
 
 export interface InputProps

@@ -1,16 +1,16 @@
-import { Story } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
+import { Story } from '@storybook/react';
 
 import {
     DataTable,
     DataTableProps,
     TableBody,
-    TableHead,
+    TableCell,
     TableContainer,
-    TableToolbar,
+    TableHead,
     TableHeader,
     TableRow,
-    TableCell,
+    TableToolbar,
     TableToolbarContent,
     TableToolbarSearch,
 } from '.';

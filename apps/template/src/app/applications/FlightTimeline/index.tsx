@@ -1,5 +1,6 @@
-import { Header } from '../../shared/Header';
 import { FlightTimeline as FlightTimelinePage } from '@edene/pro-labs';
+
+import { Header } from '../../shared/Header';
 
 const FlightTimeline = () => (
     <>

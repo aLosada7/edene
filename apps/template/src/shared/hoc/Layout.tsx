@@ -1,12 +1,11 @@
 import { Suspense, useState } from 'react';
 import { Outlet } from 'react-router-dom';
+import { from } from '@edene/foundations';
 import { css } from '@emotion/react';
 
-import { from } from '@edene/foundations';
-
-import { SideNav } from './SideNav';
-import { Header } from './Header';
 import { Settings } from '../settings/Settings';
+import { Header } from './Header';
+import { SideNav } from './SideNav';
 
 const headerHeight = 48; // default
 const sideNavWidth = 256;

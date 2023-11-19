@@ -1,4 +1,5 @@
-import { Row, Heading, Card, Box } from '@edene/components';
+import { Box,Card, Heading, Row } from '@edene/components';
+
 import { ClassroomSectionComponent } from '../components/ClassroomSectionComponent';
 
 export const ClassroomContainer = () => (

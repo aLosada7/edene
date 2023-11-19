@@ -1,4 +1,4 @@
-import { Card, CardSection, CardMedia, Col, Text } from '@edene/components';
+import { Card, CardMedia, CardSection, Col, Text } from '@edene/components';
 import { css } from '@emotion/react';
 
 import { IFoodOffer } from '../context/restaurants';

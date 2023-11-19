@@ -1,9 +1,9 @@
 import { ReactElement } from 'react';
 import { Props } from '@edene/foundations';
-
-import { tableToolbarContent } from './styles';
 import { SerializedStyles } from '@emotion/react';
+
 import { Box } from '../../layout/Box';
+import { tableToolbarContent } from './styles';
 
 export interface TableToolbarContentProps extends Props {
     children: ReactElement | ReactElement[];

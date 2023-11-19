@@ -1,5 +1,4 @@
 import { ReactElement } from 'react';
-
 import { Props } from '@edene/foundations';
 
 export interface DataTableProps extends Props {

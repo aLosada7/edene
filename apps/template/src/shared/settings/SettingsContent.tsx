@@ -1,19 +1,19 @@
 import {
     ActionButton,
-    Container,
-    Row,
-    Heading,
-    Text,
-    Icon,
     Box,
+    Container,
+    Heading,
+    Icon,
+    Row,
+    Text,
 } from '@edene/components';
 import {
+    blueTheme,
     defaultTheme,
+    grays,
+    tealTheme,
     Theme,
     useTheme,
-    tealTheme,
-    blueTheme,
-    grays,
 } from '@edene/foundations';
 
 import {

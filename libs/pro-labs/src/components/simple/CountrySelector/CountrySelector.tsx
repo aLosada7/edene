@@ -1,4 +1,4 @@
-import { Select, Option } from '@edene/components';
+import { Option,Select } from '@edene/components';
 import { css } from '@emotion/react';
 
 const getFlagEmoji = (countryCode: any) => {

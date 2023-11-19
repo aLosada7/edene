@@ -1,8 +1,8 @@
 import { Props } from '@edene/foundations';
-
-import { toastBody } from './styles';
-import { Text } from '../../typography/Text';
 import { SerializedStyles } from '@emotion/react';
+
+import { Text } from '../../typography/Text';
+import { toastBody } from './styles';
 
 interface ToastBodyProps extends Props {
     children: string;

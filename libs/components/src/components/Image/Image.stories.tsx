@@ -1,8 +1,8 @@
-import NextImage from 'next/image';
 import { Meta, Story } from '@storybook/react';
+import NextImage from 'next/image';
 
 import { Image } from './Image';
-import { ImageProps, imageSizeValues, imageObjectFitValues } from './types';
+import { imageObjectFitValues,ImageProps, imageSizeValues } from './types';
 
 export default {
     component: Image,

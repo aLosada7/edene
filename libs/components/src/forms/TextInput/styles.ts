@@ -1,6 +1,5 @@
-import { css } from '@emotion/react';
-
 import { text } from '@edene/foundations';
+import { css } from '@emotion/react';
 
 export const inlineMessage = css`
     svg {

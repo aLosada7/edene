@@ -1,10 +1,9 @@
+import { COMPONENT_COLORS } from '@edene/foundations';
 import { Story } from '@storybook/react';
 
-import { COMPONENT_COLORS } from '@edene/foundations';
-
 import { Icon } from '../../icons';
-import { Alert, AlertProps } from './index';
 import { Row } from '../../layout/Grid';
+import { Alert, AlertProps } from './index';
 
 export default {
     title: 'Components/Alert',

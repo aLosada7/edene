@@ -1,5 +1,4 @@
 import { ReactNode } from 'react';
-
 import { Props } from '@edene/foundations';
 
 import { breadcrumb } from './styles';

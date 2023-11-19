@@ -1,5 +1,6 @@
-import { Header } from '../../shared/Header';
 import { Education as EducationPage } from '@edene/pro-labs';
+
+import { Header } from '../../shared/Header';
 
 const Education = () => (
     <>

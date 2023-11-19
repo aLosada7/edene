@@ -1,17 +1,16 @@
 import { forwardRef, InputHTMLAttributes, useEffect, useState } from 'react';
+import { generateSourceId,Props } from '@edene/foundations';
 import { SerializedStyles } from '@emotion/react';
 
-import { Props, generateSourceId } from '@edene/foundations';
-
+import { Button } from '../../components/Button';
 import { Icon } from '../../icons';
+import { FormGroup } from '../FormGroup';
+import { Label } from '../Label';
 import {
+    numberInputValue,
     numberInputWrapper,
     operationButton,
-    numberInputValue,
 } from './styles';
-import { Label } from '../Label';
-import { FormGroup } from '../FormGroup';
-import { Button } from '../../components/Button';
 
 export interface NumberInputProps
     extends Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>,

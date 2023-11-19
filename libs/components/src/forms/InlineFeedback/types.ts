@@ -1,5 +1,4 @@
 import type { HTMLAttributes, ReactNode } from 'react';
-
 import { Props } from '@edene/foundations';
 
 export interface InlineFeedbackProps

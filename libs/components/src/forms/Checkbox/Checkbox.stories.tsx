@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Story } from '@storybook/react';
 
-import { CheckboxGroup, Checkbox, CheckboxProps } from './index';
+import { Checkbox, CheckboxGroup, CheckboxProps } from './index';
 
 export default {
     title: 'Forms/Checkbox',

@@ -1,4 +1,4 @@
-import { Icon, Text, Group, Row } from '@edene/components';
+import { Group, Icon, Row,Text } from '@edene/components';
 import { grays } from '@edene/foundations';
 
 const Note = () => (

@@ -1,14 +1,13 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
+import { BrowserRouter as Router, Route,Routes } from 'react-router-dom';
 import { ThemeProvider } from '@edene/foundations';
 
 import { Layout } from './components/shared/Layout';
-import { theme } from './theme';
 import { CartProvider } from './context/cart/cartProvider';
-import { HomePage } from './pages/HomePage';
-import { RestaurantPage } from './pages/RestaurantPage';
 import { CheckoutPage } from './pages/CheckoutPage';
 import { CompletedOrderPage } from './pages/CompletedOrderPage';
+import { HomePage } from './pages/HomePage';
+import { RestaurantPage } from './pages/RestaurantPage';
+import { theme } from './theme';
 
 export function App() {
     return (

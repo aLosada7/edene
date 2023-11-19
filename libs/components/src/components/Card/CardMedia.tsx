@@ -1,5 +1,5 @@
-import { SerializedStyles } from '@emotion/react';
 import { Props } from '@edene/foundations';
+import { SerializedStyles } from '@emotion/react';
 
 import { Carousel, CarouselMedia } from '../Carousel';
 import { Image, ImageSize } from '../Image';

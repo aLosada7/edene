@@ -1,4 +1,5 @@
-import { Card, CardSection, Button, CardHeader, List } from '@edene/components';
+import { Button, Card, CardHeader, CardSection, List } from '@edene/components';
+
 import { RecentDoubtsItemComponent } from '../components/RecentDoubtsItemComponent';
 
 export const RecentDoubtsContainer = () => (

@@ -1,8 +1,8 @@
+import { FC } from 'react';
 import { useTheme } from '@edene/foundations';
 
 import { headingCss, headingTheme } from './styles';
 import { HeadingProps } from './types';
-import { FC } from 'react';
 
 export const Heading: FC<HeadingProps> = ({
     type: Element = 'h1',

@@ -1,12 +1,11 @@
-import { css } from '@emotion/react';
-
 import {
-    grays,
     defaultTheme,
-    ThemeColor,
     getColor,
+    grays,
     text,
+    ThemeColor,
 } from '@edene/foundations';
+import { css } from '@emotion/react';
 
 import { TabsOrientation } from './useTabs';
 

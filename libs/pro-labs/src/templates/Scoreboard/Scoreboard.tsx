@@ -1,5 +1,6 @@
-import { Tab, Tabs } from '@edene/components';
 import { useState } from 'react';
+import { Tab, Tabs } from '@edene/components';
+
 import TeamSummary from './TeamSummary';
 
 const Scoreboard = () => {

@@ -1,6 +1,6 @@
+import { FC, useEffect, useState } from 'react';
 import { Icon } from '@edene/components';
 import { css } from '@emotion/react';
-import { FC, useEffect, useState } from 'react';
 
 const pagination = css`
     display: flex;

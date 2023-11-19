@@ -1,10 +1,10 @@
+import { lazy } from 'react';
 import {
     BrowserRouter as Router,
-    Routes,
-    Route,
     Navigate,
+    Route,
+    Routes,
 } from 'react-router-dom';
-import { lazy } from 'react';
 
 import EducationPage from '../../app/dashboards/Education';
 import Layout from './Layout';

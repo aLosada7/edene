@@ -1,13 +1,13 @@
 import { useState } from 'react';
-
 import {
+    Box,
     Container,
     Heading,
-    RadioGroup,
     Radio,
+    RadioGroup,
     TextInput,
-    Box,
 } from '@edene/components';
+
 import { optionWrapper } from './styles';
 
 const PaymentForm = () => {

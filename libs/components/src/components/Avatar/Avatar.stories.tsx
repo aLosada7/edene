@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/react';
+import { Meta,Story } from '@storybook/react';
 
 import avatar from '../../../assets/img/avatar.jpeg';
 import { Avatar, AvatarProps } from './Avatar';

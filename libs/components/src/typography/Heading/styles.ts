@@ -1,12 +1,12 @@
-import { css } from '@emotion/react';
 import {
-    heading,
-    FontWeight,
-    TextAlign,
-    getColor,
-    ThemeColor,
     defaultTheme,
+    FontWeight,
+    getColor,
+    heading,
+    TextAlign,
+    ThemeColor,
 } from '@edene/foundations';
+import { css } from '@emotion/react';
 
 import { HeadingType } from './types';
 
