@@ -8,6 +8,7 @@ import {
 
 import EducationPage from '../../app/dashboards/Education';
 import Layout from './Layout';
+
 const ReportPage = lazy(() => import('../../app/dashboards/Report'));
 const UnlockSessionPage = lazy(
     () => import('../../app/pages/authentication/UnlockSession')

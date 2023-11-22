@@ -1,14 +1,15 @@
 {
     "root": true,
     "ignorePatterns": ["**/*"],
-    "plugins": ["@nrwl/nx", "simple-import-sort"],
+    "plugins": ["@nrwl/nx", "simple-import-sort", "eslint-plugin-import"],
     "rules": {
         "simple-import-sort/imports": [
             "error",
             {
                 "groups": [["^react", "^@?\\w"], ["."]]
             }
-        ]
+        ],
+        "import/newline-after-import": "error"
     },
     "overrides": [
         {
