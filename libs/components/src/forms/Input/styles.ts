@@ -39,11 +39,11 @@ export const input = css`
 `;
 
 export const successInput = css`
-    border: 2px solid ${border.success};
+    box-shadow: ${border.success} 0 0 0 1px inset;
 `;
 
 export const errorInput = css`
-    border: 2px solid ${border.error};
+    box-shadow: ${border.error} 0 0 0 1px inset;
 `;
 
 export const iconLeftInput = css`
