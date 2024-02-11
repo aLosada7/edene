@@ -1,5 +1,5 @@
-import { ButtonHTMLAttributes, cloneElement } from 'react';
-import { IconVariant,Props } from '@edene/foundations';
+import { ButtonHTMLAttributes, cloneElement, ReactNode } from 'react';
+import { IconVariant, Props } from '@edene/foundations';
 import { SerializedStyles } from '@emotion/react';
 
 import { Icon } from '../../icons';
@@ -9,7 +9,7 @@ import { actionButton } from './styles';
 export interface ActionButtonProps
     extends ButtonHTMLAttributes<HTMLButtonElement>,
         Props {
-    children: React.ReactElement | string;
+    children: ReactNode;
     variant?: IconVariant;
 }
 
