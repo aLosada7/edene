@@ -1,4 +1,4 @@
-import { from, shadows,Theme } from '@edene/foundations';
+import { from, shadows, Theme } from '@edene/foundations';
 import { css } from '@emotion/react';
 
 export const header = (theme: Theme) => css`
@@ -73,6 +73,22 @@ export const headerGlobalAction = css`
             //transform: translateX(-100px);
         }
     }
+`;
+
+export const headerGlobalItem = css`
+    padding: 0;
+    border: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: none;
+    cursor: pointer;
+    width: 100%;
+    width: 3rem;
+    border: 0.0625rem solid transparent;
+    transition: background-color 110ms, border-color 110ms;
+    position: relative;
+    color: white;
 `;
 
 export const headerGlobalActionAriaLabel = css`

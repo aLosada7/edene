@@ -19,6 +19,8 @@ export { HeaderGlobalBar } from './HeaderGlobalBar';
 export type { HeaderGlobalBarProps } from './HeaderGlobalBar';
 export { HeaderGlobalAction } from './HeaderGlobalAction';
 export type { HeaderGlobalActionProps } from './HeaderGlobalAction';
+export { HeaderGlobalItem } from './HeaderGlobalItem';
+export type { HeaderGlobalItemProps } from './HeaderGlobalItem';
 export { HeaderPanel } from './HeaderPanel';
 export type { HeaderPanelProps } from './HeaderPanel';
 export { HeaderMenuButton } from './HeaderMenuButton';
