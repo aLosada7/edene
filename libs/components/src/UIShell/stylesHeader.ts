@@ -1,17 +1,17 @@
 import { from, shadows, Theme } from '@edene/foundations';
 import { css } from '@emotion/react';
 
-export const header = (theme: Theme) => css`
+export const header = css`
     z-index: 50;
     top: 0;
     right: 0;
     left: 0;
     display: flex;
     align-items: center;
-    border-bottom: 1 px solid ${theme.header.backgroundColor};
 `;
 
 export const headerTheme = (theme: Theme) => css`
+    border-bottom: 1 px solid ${theme.header.backgroundColor};
     background-color: ${theme.header.backgroundColor};
 `;
 

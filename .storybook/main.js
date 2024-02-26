@@ -22,13 +22,8 @@ module.exports = {
     stories: [],
     addons: [
         '@storybook/addon-a11y',
-        '@storybook/addon-docs',
-        '@storybook/addon-controls',
         'storybook-mobile',
-        '@storybook/addon-actions',
-        '@storybook/addon-measure',
-        '@storybook/addon-outline',
-        '@storybook/addon-viewport',
+        '@storybook/addon-essentials',
         {
             name: 'storybook-addon-next',
             options: {

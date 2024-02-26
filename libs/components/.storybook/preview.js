@@ -1,5 +1,9 @@
-import { ThemeDecorator } from '@edene/foundations';
-import { addDecorator } from '@storybook/react';
+import {
+    blueTheme,
+    defaultTheme,
+    tealTheme,
+    ThemeProvider,
+} from '@edene/foundations';
 import * as nextImage from 'next/image';
 
 import './preview/styles.scss';
@@ -36,4 +40,41 @@ export const parameters = {
     viewport,
 };
 
-addDecorator(ThemeDecorator);
+const getTheme = (theme) => {
+    switch (theme) {
+        case 'teal':
+            return tealTheme;
+        case 'blue':
+            return blueTheme;
+        default:
+            return defaultTheme;
+    }
+};
+
+export const decorators = [
+    (Story, context) => {
+        const theme = getTheme(context.globals.theme);
+
+        return (
+            <ThemeProvider theme={theme}>
+                <Story />
+            </ThemeProvider>
+        );
+    },
+];
+
+export const globalTypes = {
+    theme: {
+        name: 'Theme',
+        description: 'Select theme',
+        defaultValue: 'default',
+        toolbar: {
+            title: 'Theme',
+            items: [
+                { title: 'Default', value: 'default' },
+                { title: 'Teal', value: 'teal' },
+                { title: 'Blue', value: 'blue' },
+            ],
+        },
+    },
+};

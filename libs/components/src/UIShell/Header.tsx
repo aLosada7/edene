@@ -32,7 +32,7 @@ export const Header = ({
         <header
             role="banner"
             css={[
-                header(theme),
+                header,
                 headerTheme(theme),
                 headerPosition(fixed),
                 headerHeight(height),
