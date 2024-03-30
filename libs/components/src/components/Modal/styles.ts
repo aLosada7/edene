@@ -41,3 +41,7 @@ export const modalHeader = css`
     margin-bottom: 16px;
     margin-right: -9px;
 `;
+
+export const modalHeaderActionButton = css`
+    color: black;
+`;

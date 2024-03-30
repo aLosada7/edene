@@ -1,6 +1,6 @@
 {
     "name": "@edene/components",
-    "version": "3.4.0",
+    "version": "3.6.0",
     "dependencies": {
         "@edene/foundations": "2.1.0",
         "@emotion/react": "^11.0.0"
