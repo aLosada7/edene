@@ -20,7 +20,6 @@ export const defaultTheme: Theme = {
     colors,
     label: {
         text: grays[1],
-        optionalText: supporting,
         supportingText: supporting,
     },
     header: {

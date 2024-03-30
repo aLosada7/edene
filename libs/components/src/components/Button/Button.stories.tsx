@@ -74,11 +74,6 @@ export const WithGroup = () => (
     </ButtonGroup>
 );
 
-export const WithRef = () => {
-    const ref = useRef<HTMLButtonElement>(null);
-    return <Button ref={ref}>Ref</Button>;
-};
-
 export const PolymorphicComponent = () => (
     <Button as="a" href="#" variant="outlined">
         Link

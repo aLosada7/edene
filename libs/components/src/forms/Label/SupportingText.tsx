@@ -18,10 +18,10 @@ export const SupportingText = ({
     hideLabel?: boolean;
     children: ReactNode;
 }) => {
-    const theme = useTheme();
+    const { theme } = useTheme();
 
     return (
-        <p css={[supportingText(theme), hideLabel ? visuallyHidden : '']}>
+        <p css={[supportingText({ theme }), hideLabel ? visuallyHidden : '']}>
             {children}
         </p>
     );

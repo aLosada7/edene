@@ -1,5 +1,5 @@
-import { Fragment,LabelHTMLAttributes } from 'react';
-import { Props,useTheme } from '@edene/foundations';
+import { Fragment, LabelHTMLAttributes } from 'react';
+import { Props, useTheme } from '@edene/foundations';
 
 import { label, labelText } from './styles';
 import { SupportingText } from './SupportingText';
@@ -25,10 +25,10 @@ export const Label = ({
     children,
     ...props
 }: LabelProps) => {
-    const theme = useTheme();
+    const { theme } = useTheme();
 
     return (
-        <label css={() => [label, labelText(theme), css]} {...props}>
+        <label css={() => [label, labelText({ theme }), css]} {...props}>
             {supportingText ? (
                 <SupportingText hideLabel={hideLabel}>
                     {supportingText}

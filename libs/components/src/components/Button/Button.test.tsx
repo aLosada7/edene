@@ -1,4 +1,3 @@
-import { ThemeProvider } from '@edene/foundations';
 import { render, screen } from '@testing-library/react';
 
 import { Button } from './Button';
@@ -6,11 +5,7 @@ import { Button } from './Button';
 describe('Button', () => {
     test('should render correctly', () => {
         const name = 'Button';
-        render(
-            <ThemeProvider>
-                <Button>{name}</Button>
-            </ThemeProvider>
-        );
+        render(<Button>{name}</Button>);
 
         expect(screen.getByRole('button', { name })).toBeVisible();
     });
